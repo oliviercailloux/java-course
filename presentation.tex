@@ -1,0 +1,690 @@
+\RequirePackage[l2tabu, orthodox]{nag}
+\RequirePackage{silence}
+\WarningFilter{nag}{There is no environment ``centering'' }%nag complains because beamer titlepage uses a centering environment
+\WarningFilter{nag}{1 complaints in total}
+\WarningFilter{ifpdf}{Someone has redefined \pdfoutput}
+\WarningFilter{fmtcount}{\ordinal already defined use \FCordinal instead}
+\documentclass[english, french]{beamer}
+\input{preamble/packages}
+\input{preamble/math_basics}
+\input{preamble/math_mine}
+\input{preamble/redac}
+\input{preamble/draw}
+\input{preamble/acronyms}
+
+%TODO En bas : Nom du cours ; Nom du sous-titre. En haut : Seulement les headers jusqu’ici, ou le courant. En faire un nouveau thème.
+\title{Conception d’applications internet}
+\subtitle{Introduction}
+\subject{Java EE}
+\keywords{EJB, deployment, modules, servlet}
+\author{Olivier Cailloux}
+\institute[LAMSADE]{LAMSADE, Université Paris-Dauphine}
+\date{\formatdate{12}{11}{2015}}
+
+\begin{document}
+\bibliographystyle{apalike}
+
+  \LetLtxMacro\SavedIncludeGraphics\includegraphics
+  \def\includegraphics#1#{% #1 catches optional stuff (star/opt. arg.)
+    \IncludeGraphicsAux{#1}%
+  }%
+  \newcommand*{\IncludeGraphicsAux}[2]{%
+    \XeTeXLinkBox{%
+      \SavedIncludeGraphics#1{#2}%
+    }%
+  }%
+\begin{frame}[plain]
+	\tikz[remember picture,overlay]{
+		\path (current page.south west) node[anchor=south west, inner sep=0] {
+			\includegraphics[height=1cm]{LAMSADE95.jpg}
+		};
+		\path (current page.south) ++ (0, 1mm) node[anchor=south, inner sep=0] {
+			\includegraphics[height=9mm]{Dauphine.jpg}
+		};
+		\path (current page.south east) node[anchor=south east, inner sep=0] {
+			\includegraphics[height=1cm]{PSL.png}
+		};
+	}
+   \titlepage
+\end{frame}
+\addtocounter{framenumber}{-1}
+
+\section{Présentations}
+\subsection{L’enseignant}
+\begin{frame}
+	\frametitle{L’enseignant}
+	\begin{itemize}
+		\item Olivier Cailloux
+		\item \href{mailto:olivier.cailloux@dauphine.fr}{olivier.cailloux@dauphine.fr}
+		\item Coordonnées : cf. \href{https://www.ent.dauphine.fr/Annuaire/index.php?param0=fiche&param1=ocailloux}{annuaire} de Dauphine
+	\end{itemize}
+\end{frame}
+
+\subsection{Java}
+\begin{frame}[fragile]
+	\frametitle{Le terme Java}
+	
+	Terme \emph{Java} adopté en 1995 (“as an example of yet another name that would never work”) \source{(source: \href{http://www.javaworld.com/article/2077265/core-java/so-why-did-they-decide-to-call-it-java-.html}{Java World})}
+	\hfill
+	\vfill
+	\begin{minipage}[b]{3cm}
+		\includegraphics[height=5.5cm]{Java_beans.jpg}
+	\end{minipage}%
+	\begin{minipage}[b]{(\columnwidth - 3cm)}
+		\centering{\includegraphics[height=9mm]{java-icon.png}}
+		\pause
+		\href{https://en.wikipedia.org/wiki/Java}{\includegraphics[width=\columnwidth]{Java_Locator.svg.png}}
+%		\mbox{} \raggedleft \source{Gunawan Kartapranata - \href{https://en.wikipedia.org/wiki/Java}{wikipedia}}
+	\end{minipage}
+\end{frame}
+
+\begin{frame}
+	\frametitle{A jar full of Java beans, please}
+	\begin{itemize}
+		\item JAR File : introduits à la version 1.1. Une collection de fichiers .java.
+		\item Java Bean (aussi version 1.1). (\href{http://www.oracle.com/technetwork/java/javase/documentation/spec-136004.html}{specs}) : un composant software pour assemblage (par exemple, un bouton AWT, une feuille de calcul à placer dans un document).
+	\end{itemize}
+	\centering{
+		\href{http://houseofjava.ca/}{\includegraphics[height=3cm]{bean-jar.png}}
+	}
+	\begin{block}{Fun fact}
+		Voyons le nombre magique des fichiers .class…
+	\end{block}
+\end{frame}
+
+\subsection{Java EE}
+\begin{frame}
+	\frametitle{Java EE}
+	\begin{itemize}
+		\item Java EE ? \pause Java Platform, Enterprise Edition \pause
+		\item JCP ? \pause Java Community Process \pause
+		\item API ? \pause Application Programming Interface \pause
+	\end{itemize}
+	\begin{block}{Java EE}
+		\begin{itemize}
+			\item \href{http://www.oracle.com/technetwork/java/javaee/tech/index.html}{technologies}
+			\item Spécifications, dont API
+			\item Implémentation de référence
+			\item Version actuelle : 7
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\section{Objectifs pédagogiques}
+\subsection{Objectifs pédagogiques}
+\begin{frame}
+	\frametitle{Objectifs pédagogiques, 1}
+	\begin{block}{Mise en œuvre des patterns}
+		\begin{itemize}
+		\item Mise en œuvre des patterns dans les spécifications Java EE
+		\item Quand les mettre en œuvre ?
+		\item Applications dans programmes propres
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Objectifs pédagogiques, 2}
+	\begin{block}{Lecture de spécifications}
+		\begin{itemize}
+		\item Savoir extraire l’information utile des spécifications !
+		\item Standards W3C, spécifications Java EE…
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Objectifs pédagogiques, 3}
+	\begin{block}{Modélisation}
+		\begin{itemize}
+		\item Réponse à des besoins exprimés vaguement
+		\item Appui sur les standards du web actuels
+		\item Dosage du réalisme et de l’intérêt des fonctionalités
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\subsection{Utilité}
+\begin{frame}
+	\frametitle{Intérêt pratique}
+	\begin{itemize}
+		\item Qu’on soit programmeur, qu’on discute avec des programmeurs
+		\item Rendre le travail plus difficile conceptuellement
+		\item Prendre de la hauteur, éviter les tâches répétitives et se concentrer sur le conceptuel
+		\item Respect et compréhension des standards. (Aperçu de la façon dont ils sont construits.) : compétence essentielle
+		\item … dans de multiples domaines
+		\item Importance des patterns dans de multiples domaines
+	\end{itemize}
+\end{frame}
+
+\section{Moyens}
+\subsection{Théorie}
+\begin{frame}
+	\frametitle{Par cours}
+	À l’issue de chaque (?) cours :
+	\begin{itemize}
+		\item compréhension des bases théoriques d’une technologie (patterns invoqués, liens avec autres technologies)
+		\item capacité de réponse à l’aide de la technologie vue à (au moins) un besoin simple
+	\end{itemize}
+\end{frame}
+
+\subsection{Projet}
+\begin{frame}
+	\frametitle{Projet}
+	\begin{itemize}
+		\item Réponse à un besoin \emph{réel}
+		\item Par groupe
+		\item Pair programming encouragé
+		\item Rapport final
+		\item Recommandé : code en anglais
+	\end{itemize}
+\end{frame}
+
+\subsection{Forum}
+\begin{frame}
+	\frametitle{Forum}
+	\begin{itemize}
+		\item Sur My Course
+		\item Marquer les posts utiles !
+	\end{itemize}
+\end{frame}
+
+\subsection{Évaluation}
+\begin{frame}
+	\frametitle{Évaluation}
+	Résultat : 0,7 × note projet finale + 0,3 × note concept.
+	\begin{block}{Projet}
+		\begin{itemize}
+			\item Évaluation projet final pondérée par code individuel
+			\item Indiquez qui commet et qui est support
+			\item Le rapport peut servir à expliquer des déséquilibres
+			\item Un faible pilotage ne sera pas compensé par un grand support
+			\item Si vous avez testé le pair programming : mieux
+		\end{itemize}
+	\end{block}
+	\begin{block}{Concept}
+		Résumé, tuto, note critique, document explicatif, vidéo, correction de wikipedia, réponses sur stackexchange, sur le forum, code…
+	\end{block}
+	Vote pour le meilleur pédagogue et pour le meilleur projet
+\end{frame}
+
+\subsection{Prérequis}
+\begin{frame}
+	\frametitle{Prérequis}
+	Programmation Java théorique et appliquée ; ingénieurie logicielle théorique
+	\begin{itemize}
+		\item Exceptions
+		\item Héritage
+		\item Concept d’API
+		\item Programmation par contrat
+		\item XML
+		\item Maven
+		\item Git
+	\end{itemize}
+\end{frame}
+
+\section{Java EE}
+\subsection{Processus}
+\begin{frame}
+	\frametitle{Java EE : Processus}
+	\begin{itemize}
+		\item Java EE fortement appuyée sur standards ouverts
+		\item Standards du W3C / IETF ?\pause{} \href{http://www.w3.org/Protocols/}{HTTP}, \href{http://www.w3.org/html/}{HTML}, \href{http://www.w3.org/XML/}{XML}, \href{http://www.w3.org/TR/wsdl}{WSDL}, …\pause
+		\item JCP : implication de \og{}la communauté\fg{} pour standards Java
+		\item Tentions entre standard ouvert et contrôle ! (2010, Apache \href{https://blogs.apache.org/foundation/entry/the_asf_resigns_from_the}{quitte} le comité JCP ; Doug Lea \href{http://gee.cs.oswego.edu/dl/html/jcp22oct10.html}{également}, en faveur de OpenJDK…)
+	\end{itemize}
+\end{frame}
+
+\subsection{Conteneurs}
+\begin{frame}
+	\frametitle{Conteneurs}
+	\begin{itemize}
+		\item Un produit conforme Java EE fournit trois \emph{conteneurs}
+		\begin{itemize}
+			\item Conteneur EJB
+			\item Conteneur web
+			\item Conteneur application client
+		\end{itemize}
+		\item Contenant des \emph{composants} (du type adéquat)
+		\item Chacun fournit des services pour le développeur
+		\item Fournit l’accès aux API (différents conteneurs, différentes API)
+%		\item Différents conteneurs donnent accès à différentes API (ex : pas Web Socket dans EJB conteneur)
+	\end{itemize}
+%	\begin{block}{Conteneurs}
+%	\end{block}
+	\href{https://docs.oracle.com/javaee/7/tutorial/overview007.htm}{\includegraphics[width=\columnwidth]{containers.png}}
+\end{frame}
+
+\subsection{Composants}
+\begin{frame}
+	\frametitle{Composants}
+	\begin{itemize}
+		\item \emph{Composant} : une unité logicielle assemblée dans une application Java EE avec ses classes et fichiers liés et communiquant avec d’autres composants.
+		\item Code Java compilé normalement
+		\item Assemblé dans une application Java EE : peut utiliser les services ; doit se conformer aux spécifications
+		\item Exécution gérée par le conteneur (pas de \texttt{main}, par exemple)
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Composant EJB}
+	\begin{block}{EJB}
+		\begin{itemize}
+			\item \emph{Enterprise} Java Bean
+			\item Composant \og{}business\fg{}, sur le serveur
+			\item Service pouvant être appelé localement ou à distance
+			\item Deux types : session bean, message-driven bean
+		\end{itemize}
+	\end{block}
+	\begin{itemize}
+		\item Le conteneur rend l’EJB accessible de l’extérieur
+		\item Permet le Remote Method Invocation, sorte de RPC
+		\item Le conteneur instancie, facilite la sérialisation, …
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Composant Web}
+	\begin{itemize}
+		\item Java Servlet
+		\item JavaServer Faces
+	\end{itemize}
+\end{frame}
+
+\subsection{Couches}
+\begin{frame}
+	\frametitle{Couches (\og{}tier\fg{})}
+	\begin{minipage}{\columnwidth*\real{0.6}}
+		\href{https://docs.oracle.com/javaee/7/tutorial/overview003.htm}{\includegraphics[width=\columnwidth]{tiers.png}}
+	\end{minipage}%
+	\begin{minipage}{\columnwidth*\real{0.4}}
+		\begin{itemize}
+			\item Ajout d’une couche multithread entre le client et le serveur classique
+			\item Souvent : presentation, logic, data tier
+			\item Couche web: peut être également appelé un client web (pourquoi ?).
+		\end{itemize}
+	\end{minipage}
+\end{frame}
+
+\subsection{Exemples d’applications}
+\begin{frame}
+	\frametitle{Deux applications Java EE}
+	\begin{block}{BDD $⇔$ EJB $⇔$ client}
+		\begin{itemize}
+			\item entreprise A : niveau de stock calculable d’après BDD
+			\item EJB : requête pour obtenir le niveau de stock
+			\item composant client (fournisseur de A) : contacte l’EJB
+		\end{itemize}		
+	\end{block}
+	
+	\begin{block}{BDD $⇔$ EJB $⇔$ Servlet}
+		\begin{itemize}
+			\item entreprise A : niveau de stock calculable d’après BDD
+			\item EJB : requête pour obtenir le niveau de stock
+			\item Web : servlet répondant à HTTP GET (client léger)
+			\item Et puis ? Quel client final ?
+		\end{itemize}		
+	\end{block}
+	
+	Options pour client non-java ?
+\end{frame}
+
+\subsection{Assemblage et déploiement}
+\begin{frame}
+	\frametitle{Modules}
+	\begin{itemize}
+		\item \emph{Module} Java EE : fichier archive compressé
+		\item Ensemble de composants pour un même conteneur {\tiny (typiquement)}
+		\item Éventuellement : un descripteur de déploiement (\texttt{.xml}) pour ce type de conteneur (standard Java EE ou par implémentation)
+		\item Éventuellement :  des pages HTML statiques ; des classes utilité, …
+		\item Les descripteurs surchargent les annotations
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Module Web}
+	\begin{block}{Module Web}
+		\begin{itemize}
+			\item Fichier \texttt{.war}
+			\item Fichiers \texttt{.class} servlets et autres dans WEB-INF/lib ou WEB-INF/classes
+			\item Fichiers web statiques (.html, images, …) dans root
+			\item \texttt{WEB-INF/web.xml} : descripteur pour conteneur Web (JNDI)
+			\item \texttt{META-INF/glassfish-web.xml} : descripteur pour glassfish
+			\item \texttt{META-INF/MANIFEST.MF}
+		\end{itemize}
+	\end{block}
+%	\begin{block}{Module EJB}
+%		\begin{itemize}
+%			\item Fichier \texttt{.jar}
+%			\item Fichiers \texttt{.class} EJB et autres
+%			\item \texttt{META-INF/ejb-jar.xml} : descripteur pour conteneur EJB (attributs de transaction, sécurité, …)
+%			\item \texttt{META-INF/glassfish-ejb-jar.xml} : descripteur pour glassfish
+%			\item \texttt{META-INF/MANIFEST.MF}
+%		\end{itemize}
+%	\end{block}
+%	\item Application client modules (class files and, optionally, an application client deployment descriptor) : \texttt{.jar}.
+%	\item (Resource adapter modules : \texttt{.rar}.)
+%    , which contain all Java interfaces, classes, native libraries, and, optionally, a resource adapter deployment descriptor. Together, these implement the Connector architecture (see Java EE Connector Architecture) for a particular EIS. Resource adapter modules are packaged as JAR files with an .rar (resource adapter archive) extension.
+\end{frame}
+
+\begin{frame}
+	\frametitle{Assemblage et déploiement}
+	\begin{itemize}
+		\item Application Java EE composée d’un ou plusieurs modules
+		\item On peut déployer un module seul (\texttt{.war}, \texttt{.jar})
+		\item Ou assembler les modules dans un fichier Enterprise Archive (\texttt{.ear})
+		\item EAR : plusieurs modules et év. descripteur d’application (\texttt{META-INF/application.xml}, \texttt{META-INF/glassfish-application.xml})
+	\end{itemize}
+	\begin{block}{Déploiement}
+		\begin{itemize}
+			\item Procédure dépend du serveur d’application Java EE
+			\item Typiquement : déplacer l’archive (\texttt{.war}, \texttt{.ear}, \texttt{.jar}) dans un répertoire du serveur
+			\item Accès depuis l’environnement de développement via plug-ins
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\subsection{Services}
+\begin{frame}
+	\frametitle{Services}
+	Exemples :
+	\begin{itemize}
+		\item Managed beans
+		\item CDI
+		\item RestFul
+		\item JSF
+		\item Bean validation
+		\item JAXB, JAX-WS, JNDI (aussi dans Java SE)
+	\end{itemize}
+\end{frame}
+
+\subsection{GlassFish}
+\begin{frame}
+	\frametitle{GlassFish Server Tools}
+	\begin{itemize}
+		\item Démarrer, arrêter le serveur
+		\item Déployer des paquets
+		\item Application : console d’administration
+		\item Base de données
+		\item wsimport : artéfacts JAX-WS depuis WSDL (etc.)
+	\end{itemize}
+	\begin{block}{À vous}
+		\begin{itemize}
+			\item Installez GlassFish (copie depuis \texttt{/usr/local/share/glassfish4/glassfish})
+			\item Démarrez votre serveur (cf. \texttt{bin/}, \url{http://localhost:8080}, \url{http://localhost:4848})
+			\item Désactivez l’écoute sur le port extérieur
+			\item Lisez les logs
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\section[Un servlet]{Mon premier servlet}
+\subsection{HTTP}
+\begin{frame}
+	\frametitle{Notions d’HTTP}
+	\begin{itemize}
+		\item Protocole de communication principal du net
+		\item Échange de requêtes HTTP et réponses HTTP
+		\item Accès à une ressource HTTP via URI
+		\item Requête GET (par exemple)
+		\begin{itemize}
+			\item Paramètres possibles (dans \og{}\href{http://tools.ietf.org/html/rfc3986\#section-3.4}{query}\fg{})
+			\item \url{https://www.google.com/maps?q=paris-dauphine&sourceid=Mozilla-search}
+		\end{itemize}
+		\item Réponse ?\pause
+		\begin{itemize}
+			\item En-tête : \href{http://tools.ietf.org/html/rfc7231\#section-3.1.1.1}{media-type} (\href{http://www.iana.org/assignments/media-types/}{liste}), encodage, code de statut…
+			\item Corps : HTML par exemple
+		\end{itemize}
+		\item Cf. \href{http://www.w3.org/Protocols/}{RFC 723X}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Programmation web \og{}bas\fg{} niveau}
+	\begin{itemize}
+		\item Ouverture d’un socket pour écriture réseau
+		\item Définition de l’encodage binaire
+		\item Client envoie requête de connexion
+		\item Serveur écoute sur un socket
+		\item Établissement de la connexion
+		\item Gestion des threads
+		\item La communication peut commencer
+		\item Dispatch à la bonne classe
+		\item Gestion des time-outs
+		\item …
+	\end{itemize}
+\end{frame}
+
+\subsection{Servlet}
+\begin{frame}
+	\frametitle{Servlet}
+	En Java EE, le conteneur effectue une partie du travail pour nous
+	\begin{itemize}
+		\item Le programmeur (côté serveur) indique ce qu’il faut répondre
+		\item Servlet (ici, HTTP) : classe qui traite les requêtes
+		\item Annoter la classe (\href{https://docs.oracle.com/javaee/7/api/index.html?javax/servlet/annotation/WebServlet.html}{\texttt{javax.servlet.http.WebServlet}}) et étendre \href{https://docs.oracle.com/javaee/7/api/index.html?javax/servlet/http/HttpServlet.html}{\texttt{HttpServlet}} ; préciser \texttt{urlPatterns} (ou \texttt{value})
+		\item Requête associée à un servlet par le conteneur
+		\begin{itemize}
+			\item \texttt{http://server/context-root/servlet-path}
+			\item context-root : associé à un module web en fonction de son nom d’archive (ou dans descripteur non-standard ou dans descripteur standard d’une application Java EE)
+			\item servlet-path : associé à un servlet en fonction de \texttt{urlPatterns}
+		\end{itemize}
+		\item Le conteneur gère le cycle de vie du servlet, lui envoie les objets requête et réponse
+		\item Exemple, \texttt{doGet} : récupérer une sortie (\texttt{getWriter} ; \texttt{getOutputStream}) ; écrire les en-têtes ; écrire le corps
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{À vous : calculons sur le web}
+	\begin{itemize}
+		\item Créer un module web (dynamique ou statique ?)
+		\item Créer un servlet
+		\item Envoyer réponse : "ça fait 0"
+		\item Exporter le module dans une archive déployable (extension ?)
+		\item Déployer le module sur le serveur à la main
+		\item Envoyer une requête GET (comment ?) et voir "ça fait 0"
+		\item Se féliciter
+	\end{itemize}
+	\begin{block}{En plus}
+		\begin{itemize}
+			\item Installer Glassfish Tools (depuis Eclipse Marketplace)
+			\item Accepter deux paramètres \texttt{add1} et \texttt{add2}
+			\item Renvoyer "ça fait " et l’addition des paramètres
+			\item Renvoyer une erreur s’il manque un paramètre
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Avant-première}
+	Comment faciliter le développement de servlets ?\pause
+	\begin{itemize}
+		\item Décodage facile de paramètres
+		\item Réponse HTML
+		\item Réponse XML
+	\end{itemize}
+	\pause
+	\begin{block}{Et plus !}
+		\begin{itemize}
+			\item Injection de références
+			\item Accès à des classes (distantes) pour service (EJB)
+			\item Définition de services web Restful, Soap
+			\item Accès aux données, transactions
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\section{Projets}
+\begin{frame}[allowframebreaks]
+	\frametitle{Projets}
+	Objectif : un projet utile et non redondant. Voici quelques pistes.
+	\begin{itemize}
+		\item Gestion musique ou bibliographie collective : votes ; images …
+		\item Suivi alimentaire (extensions)
+		\item Données de votes et de préférences ({\href{http://whale3.noiraudes.net/whale3/index.do}{whale}, \href{http://www.preflib.org/}{Pref Lib}}) : édition, visualisation, agrégation
+		\item Rendez-vous grâce à synchronisation de calendriers
+		\item Planning des cours : GUI, liens avec calendriers en ligne
+		\item Mise en forme d’articles de blog : imprimer en deux colonnes, transférer sur une liseuse
+		\item Météo : collecte de différentes prédictions ; collecte manuelle ; comparaisons
+		\item Recherche d’emploi / d’appartement fct distance réelle
+		\item Centralisation des dons et objets en vente (collecte listes, post nouveau, log réputation, tri par distance)
+		\item Définition de contraintes linéaires en ligne collaborativement
+		\item Refaire site \href{http://www.poleinfo3.dauphine.fr/}{Pôle info 3}
+		\item Parcours multi-modal (http://velib.io/) ou statistiques vélib
+	\end{itemize}
+	Façade à Diviz : plate-forme d’agrégation de préférences
+	\includegraphics[width=\columnwidth, height=3.5cm, keepaspectratio]{diviz-J-MCDA-components.png}
+\end{frame}
+
+\section{À vous}
+\begin{frame}
+	\frametitle{Sondage !}
+	\begin{itemize}
+		\item Avez-vous une machine à amener en cours ?
+		\item Y a-t-il des prérequis qui vont vous manquer ?
+		\item Sur quoi le cours devrait-il porter ?
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{À faire}
+	\begin{itemize}
+		\item Lisez (ou redirigez) vos e-mails @ Dauphine (pour les annonces)
+		\item Installer les outils sur votre machine : Eclipse Mars Java EE, Java EE 7 (et Glassfish 4), Java 8 (OpenJDK)
+		\item Choix d’un projet sur \href{https://mycourse.dauphine.fr/webapps/blackboard/execute/courseMain?course_id=_34753_1}{MyCourse}
+		\item Présentation (5 à 10 min) de vos idées
+		\item Compte \href{https://github.com/}{GitHub} ou \href{https://bitbucket.org/}{Bitbucket} et commit initial : diapos
+	\end{itemize}
+\end{frame}
+
+\appendix
+\AtBeginSection{
+}
+\section{Licence}
+\begin{frame}
+	\frametitle{Licence}
+	Cette présentation, et le code LaTeX associé, sont sous \href{http://opensource.org/licenses/MIT}{licence MIT}.
+	
+	Le travail réutilisé est à attribuer à \href{http://www.lamsade.dauphine.fr/~ocailloux/}{Olivier Cailloux}, Université Paris-Dauphine.
+	
+	\small{(Ceci ne couvre pas les images incluses dans ce document, puisque je n’en suis généralement pas l’auteur.)}
+\end{frame}
+\end{document}
+
+\section{Bibliographie}
+\begin{frame}[allowframebreaks]
+	\frametitle{Bibliographie}
+	\def\newblock{\hskip .11em plus .33em minus .07em}
+% 	\bibliography{zotero}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Ressources}
+	\begin{itemize}
+		\item JNDI : localiser des composants et des ressources
+		\item Ressource : un objet fournissant une connexion à des systèmes (bdd, messaging)
+		\item Data source : une sorte de ressource, fournissant une connexion à une bdd
+		\item Ressource objet identifiée par son nom JNDI
+		\item Exemple : java:comp/DefaultDataSource
+	\end{itemize}
+	\begin{block}{}
+		
+	\end{block}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Servlet (détails)}
+	\begin{itemize}
+		\item Servlet : classe sur base requête et réponse. (javax.servlet). Must implement Servlet.
+		\item HTTP Servlet (javax.servlet.http). May extend HttpServlet.
+		\item @WebServlet pour déclarer et définir les propriétés et doit étendre HttpServlet. urlPatterns or value (défaut) ; initParams 
+		\item Le conteneur gère le cycle de vie de la servlet.
+		\item Request mapped to servlet
+		\item Instance n’existe pas ? Créée puis initialisée (init)
+		\item Invoque service, avec objets requête et réponse.
+		\item Si doit être détruite, invoque destroy().
+		\item On peut définir une classe comme @WebListener et implémenter un listener pour être averti par le conteneur lors du cycle de vie (création d’une session…)
+		\item Le servlet peut accéder à des objets via getAttribute et setAttribute d’une classe représentant un scope : sur ServletContext, HttpSession, ServletRequest. Il faut se protéger contre les accès concurrents !
+		\item service method do* (pour un HTTP) : prend un output stream (getWriter; getOutputStream) ; mets les en-têtes ; écrit le corps.
+		\item HTTP request URL : http://host:portrequestpath?querystring, with requestpath=contextpathservletpathpathinfo, with contextpath=/contextroot (of the servlet’s web app) or "", servletpath=The path section that corresponds to the component alias that activated this request. This path starts with a forward slash (/) (or is empty), pathinfo = the rest.
+		\item registry of content type names is kept by the Internet Assigned Numbers Authority (IANA) at http://www.iana.org/assignments/media-types/.
+		\item HttpServletResponse a des champs représentant les en-tête HTTP tq status codes.
+		\item On peut ajouter des filtres sur le chemin à configurer dans le conteneur (cryptage, compression, etc.)
+	\end{itemize}
+	\begin{block}{}
+		
+	\end{block}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Dependency Injection}
+	\begin{itemize}
+		\item Inject managed objects (aka managed beans) into other managed objects (aka)
+		\item Managed Currency converter: different life cycle than shopping cart
+		\item Managed bean : just add a scope to any class (@javax.enterprise.context.RequestScoped)
+		\item Chercher \href{http://docs.oracle.com/javaee/7/api/index.html?javax/inject/Named.html}{Named}
+	\end{itemize}
+	\begin{block}{}
+		
+	\end{block}
+\end{frame}
+
+\begin{frame}
+	\frametitle{EJB (détails)}
+	\begin{itemize}
+		\item \href{https://www.jcp.org/en/jsr/detail?id=345}{Specs : JSR 345}
+		\item Session bean. Non persistent. 3 types : statful, stateless ( Peut implémenter un service web.), singleton (peut aussi ; il faut le protéger contre la concurrence). Stateless: peut quand-même avoir un état mais il ne dépend pas du client, il est partagé entre tous les beans de la même classe.
+		\item Session bean accédés à travers no-interface view (tjrs local) ou (local ou remote) business interface. Session beans can have more than one business interface. Session beans should, but are not required to, implement their business interface or interfaces.
+		\item Accès : Dep inj ou JNDI lookup. DI si client managé, JSF web app, JAX-RS WS, EJB, Java EE app client. Si Java SE, lookup explicite requis.
+		\item Although it is uncommon, it is possible for an enterprise bean to allow both remote and local access. If this is the case, either the business interface of the bean must be explicitly designated as a business interface by being decorated with the @Remote or @Local annotations, or the bean class must explicitly designate the business interfaces by using the @Remote and @Local annotations. The same business interface cannot be both a local and a remote business interface.
+		\item Local : dans la même application
+		\item Client local : composant web ou EJB
+		\item  If the bean's business interface is not decorated with @Local or @Remote, and if the bean class does not specify the interface using @Local or @Remote, the business interface is by default a local interface.
+		\item To build an enterprise bean that allows only local access, you may, but are not required to, do one of the following. Create an enterprise bean implementation class that does not implement a business interface, indicating that the bean exposes a no-interface view to clients. @Session public class MyBean { ... }. Annotate the business interface of the enterprise bean as a @Local interface. @Local public interface InterfaceName { ... }. Specify the interface by decorating the bean class with @Local and specify the interface name. @Local(InterfaceName.class) public class BeanName implements InterfaceName  { ... }
+		\item To obtain a reference to the no-interface view, or (local or remote) business interface, of an enterprise bean through dependency injection, use the javax.ejb.EJB annotation
+		\item To obtain a reference to the no-interface view, or (local or remote) business interface, of an enterprise bean through JNDI lookup, use the javax.naming.InitialContext interface's lookup method: ExampleBean exampleBean = (ExampleBean) InitialContext.lookup("java:module/ExampleBean"); or ExampleRemote example = (ExampleRemote) InitialContext.lookup("java:global/myApp/ExampleRemote");
+		\item To create an enterprise bean that allows remote access, you must either Decorate the business interface of the enterprise bean with the @Remote annotation: @Remote public interface InterfaceName { ... }. Or decorate the bean class with @Remote, specifying the business interface or interfaces: @Remote(InterfaceName.class) public class BeanName implements InterfaceName { ... }.
+		\item a web service client can invoke the business methods of a stateless session bean, through the bean's web service endpoint implementation class, Provided that it uses the correct protocols (SOAP, HTTP, WSDL). By default, all public methods in the bean class are accessible to web service clients. The @WebMethod annotation may be used to customize the behavior of web service methods. If the @WebMethod annotation is used to decorate the bean class's methods, only those methods decorated with @WebMethod are exposed to web service clients.
+		\item Local beans should build defensive copies, because when they go remote, they only deal with copies.
+		\item Convention : classe et nom du bean est trucBean, interface est truc.
+		\item V specs EJB p 123 ?
+		\item javax.enterprise.context.SessionScoped : JSR 346, CDI. (javax.annotation.ManagedBean internal use, javax.faces.bean.SessionScoped JSF only, good for web services, \href{http://stackoverflow.com/questions/15057564/why-are-there-different-bean-management-annotations}{SO}).
+		\item Lire : \href{http://stackoverflow.com/questions/6018644/whats-the-point-of-using-scoped-with-ejbs}{scopes}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Logging}
+	\begin{itemize}
+		\item En Java EE comme en Java SE : cf. standard \href{http://docs.oracle.com/javase/8/docs/technotes/guides/logging/index.html}{logging}
+		\item sys out (le conteneur redirige)
+		\item \alert{mieux} : \texttt{LOGGER.warn("Missing parameter here!")}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Servlet HTTP, suite exercices}
+	\begin{itemize}
+		\item Écrire du HTML (vérifier que le type est bien HTML !) ; du texte en UTF-8
+Effectuer une addition
+//Gérer les cas d’erreur
+Injecter une autre classe
+Injecter un EJB
+Service RS qui renvoie un XML ?
+	\end{itemize}
+	\begin{block}{}
+		
+	\end{block}
+\end{frame}
+
+\begin{frame}
+	\frametitle{}
+	\begin{itemize}
+		\item 
+	\end{itemize}
+	\begin{block}{}
+		
+	\end{block}
+\end{frame}
+\end{document}
