@@ -81,14 +81,14 @@
 \begin{frame}
 	\frametitle{A jar full of Java beans, please}
 	\begin{itemize}
-		\item JAR File : introduits à la version 1.1. Une collection de fichiers .java.
-		\item Java Bean (aussi version 1.1). (\href{http://www.oracle.com/technetwork/java/javase/documentation/spec-136004.html}{specs}) : un composant software pour assemblage (par exemple, un bouton AWT, une feuille de calcul à placer dans un document).
+		\item JAR File : introduits à la version 1.1. Une collection de fichiers \texttt{.class}.
+		\item Java Bean (aussi version 1.1). (\href{http://www.oracle.com/technetwork/java/javase/documentation/spec-136004.html}{specs}) : un composant logiciel pour assemblage (par exemple, un bouton AWT, une feuille de calcul à placer dans un document).
 	\end{itemize}
 	\centering{
 		\href{http://houseofjava.ca/}{\includegraphics[height=3cm]{bean-jar.png}}
 	}
 	\begin{block}{Fun fact}
-		Voyons le nombre magique des fichiers .class…
+		Voyons le nombre magique des fichiers \texttt{.class}…
 	\end{block}
 \end{frame}
 
@@ -142,6 +142,7 @@
 		\item Dosage du réalisme et de l’intérêt des fonctionalités
 		\end{itemize}
 	\end{block}
+	Quels sont \emph{vos} objectifs ?
 \end{frame}
 
 \subsection{Utilité}
@@ -151,9 +152,10 @@
 		\item Qu’on soit programmeur, qu’on discute avec des programmeurs
 		\item Rendre le travail plus difficile conceptuellement
 		\item Prendre de la hauteur, éviter les tâches répétitives et se concentrer sur le conceptuel
-		\item Respect et compréhension des standards. (Aperçu de la façon dont ils sont construits.) : compétence essentielle
+		\item Respect et compréhension des standards (aperçu de la façon dont ils sont construits) : compétence essentielle
 		\item … dans de multiples domaines
 		\item Importance des patterns dans de multiples domaines
+		\item Technologie en vogue
 	\end{itemize}
 \end{frame}
 
@@ -196,7 +198,7 @@
 	\begin{block}{Projet}
 		\begin{itemize}
 			\item Évaluation projet final pondérée par code individuel
-			\item Indiquez qui commet et qui est support
+			\item Indiquez (qui commet et) qui est support
 			\item Le rapport peut servir à expliquer des déséquilibres
 			\item Un faible pilotage ne sera pas compensé par un grand support
 			\item Si vous avez testé le pair programming : mieux
@@ -335,7 +337,7 @@
 	\begin{itemize}
 		\item \emph{Module} Java EE : fichier archive compressé
 		\item Ensemble de composants pour un même conteneur {\tiny (typiquement)}
-		\item Éventuellement : un descripteur de déploiement (\texttt{.xml}) pour ce type de conteneur (standard Java EE ou par implémentation)
+		\item Éventuellement : un descripteur de déploiement (\texttt{.xml}) pour ce type de conteneur (standard Java EE ou par produit)
 		\item Éventuellement :  des pages HTML statiques ; des classes utilité, …
 		\item Les descripteurs surchargent les annotations
 	\end{itemize}
@@ -410,7 +412,7 @@
 	\end{itemize}
 	\begin{block}{À vous}
 		\begin{itemize}
-			\item Installez GlassFish (copie depuis \texttt{/usr/local/share/glassfish4/glassfish})
+			\item \og{}Installez\fg{} GlassFish (copie depuis \texttt{/usr/local/share/glassfish4/glassfish})
 			\item Démarrez votre serveur (cf. \texttt{bin/}, \url{http://localhost:8080}, \url{http://localhost:4848})
 			\item Désactivez l’écoute sur le port extérieur
 			\item Lisez les logs
@@ -422,6 +424,7 @@
 \subsection{HTTP}
 \begin{frame}
 	\frametitle{Notions d’HTTP}
+	HTTP ?\pause
 	\begin{itemize}
 		\item Protocole de communication principal du net
 		\item Échange de requêtes HTTP et réponses HTTP
@@ -480,7 +483,7 @@
 	\begin{itemize}
 		\item Créer un module web (dynamique ou statique ?)
 		\item Créer un servlet
-		\item Envoyer réponse : "ça fait 0"
+		\item Programmer réponse : "ça fait 0"
 		\item Exporter le module dans une archive déployable (extension ?)
 		\item Déployer le module sur le serveur à la main
 		\item Envoyer une requête GET (comment ?) et voir "ça fait 0"
