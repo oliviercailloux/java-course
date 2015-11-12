@@ -303,7 +303,7 @@
 		\begin{itemize}
 			\item Ajout d’une couche multithread entre le client et le serveur classique
 			\item Souvent : presentation, logic, data tier
-			\item Couche web: peut être également appelé un client web (pourquoi ?).
+			\item Couche web : peut être également appelé un client web (pourquoi ?).
 		\end{itemize}
 	\end{minipage}
 \end{frame}
@@ -412,15 +412,26 @@
 	\end{itemize}
 	\begin{block}{À vous}
 		\begin{itemize}
-			\item \og{}Installez\fg{} GlassFish (copie depuis \texttt{/usr/local/share/glassfish4/glassfish})
+			\item \og{}Installez\fg{} GlassFish (copie depuis \texttt{/usr/local/glassfish-4.1/glassfish})
 			\item Démarrez votre serveur (cf. \texttt{bin/}, \url{http://localhost:8080}, \url{http://localhost:4848})
-			\item Désactivez l’écoute sur le port extérieur
+			\item Désactivez l’écoute extérieure
 			\item Lisez les logs
 		\end{itemize}
 	\end{block}
 \end{frame}
 
 \section[Un servlet]{Mon premier servlet}
+\subsection{En Eclipse}
+\begin{frame}
+	\frametitle{Accès environnement Java EE via Eclipse}
+	\begin{itemize}
+		\item Accès aux bibliothèques Java EE requis
+		\item En Eclipse : possible d’ajouter un environnement Java EE rudimentaire, \og{}J2EE Preview\fg{} (Preferences / Server / Runtime Environments)
+		\item Quand un projet vise ce runtime, eclipse ajoute les bibliothèques en dépendances
+		\item Ces bibliothèques ne seront cependant pas exportées dans l’archive (pourquoi ?)
+	\end{itemize}
+\end{frame}
+
 \subsection{HTTP}
 \begin{frame}
 	\frametitle{Notions d’HTTP}
@@ -466,7 +477,7 @@
 	\begin{itemize}
 		\item Le programmeur (côté serveur) indique ce qu’il faut répondre
 		\item Servlet (ici, HTTP) : classe qui traite les requêtes
-		\item Annoter la classe (\href{https://docs.oracle.com/javaee/7/api/index.html?javax/servlet/annotation/WebServlet.html}{\texttt{javax.servlet.http.WebServlet}}) et étendre \href{https://docs.oracle.com/javaee/7/api/index.html?javax/servlet/http/HttpServlet.html}{\texttt{HttpServlet}} ; préciser \texttt{urlPatterns} (ou \texttt{value})
+		\item Annoter la classe (\href{https://docs.oracle.com/javaee/7/api/index.html?javax/servlet/annotation/WebServlet.html}{\texttt{javax.servlet.annotation.WebServlet}}) et étendre \href{https://docs.oracle.com/javaee/7/api/index.html?javax/servlet/http/HttpServlet.html}{\texttt{HttpServlet}} ; préciser \texttt{urlPatterns} (ou \texttt{value})
 		\item Requête associée à un servlet par le conteneur
 		\begin{itemize}
 			\item \texttt{http://server/context-root/servlet-path}
@@ -542,15 +553,6 @@
 
 \section{À vous}
 \begin{frame}
-	\frametitle{Sondage !}
-	\begin{itemize}
-		\item Avez-vous une machine à amener en cours ?
-		\item Y a-t-il des prérequis qui vont vous manquer ?
-		\item Sur quoi le cours devrait-il porter ?
-	\end{itemize}
-\end{frame}
-
-\begin{frame}
 	\frametitle{À faire}
 	\begin{itemize}
 		\item Lisez (ou redirigez) vos e-mails @ Dauphine (pour les annonces)
@@ -558,6 +560,15 @@
 		\item Choix d’un projet sur \href{https://mycourse.dauphine.fr/webapps/blackboard/execute/courseMain?course_id=_34753_1}{MyCourse}
 		\item Présentation (5 à 10 min) de vos idées
 		\item Compte \href{https://github.com/}{GitHub} ou \href{https://bitbucket.org/}{Bitbucket} et commit initial : diapos
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Sondage !}
+	\begin{itemize}
+		\item Avez-vous une machine à amener en cours ?
+		\item Y a-t-il des prérequis qui vont vous manquer ?
+		\item Sur quoi le cours devrait-il porter ?
 	\end{itemize}
 \end{frame}
 
@@ -679,6 +690,17 @@ Service RS qui renvoie un XML ?
 	\begin{block}{}
 		
 	\end{block}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Exercices}
+	Ces exercices ont pour but de vous familiariser avec l’environnement de développement et vous permettre de vérifier que vous avez compris les concepts de base. Le but n’est atteint que si vous jouez le jeu. Donnez-vous un peu de temps pour les résoudre sans chercher comment faire sur internet ! Utilisez de l’aide seulement si vous êtes bloqués.
+	\begin{itemize}
+		\item Ajouter un runtime à eclipse : J2EE Runtime library, référencer les bibliothèques installées dans glassfish. Modifier votre projet existant pour utiliser ce runtime (voir propriétés du projet). Qu’est-ce que ça change ?
+		\item Créer un nouveau serveur de type J2EE Preview (vue : Servers). Expliquer pourquoi il n’y a pas \og{}J2EE Runtime library \fg{} dans la liste de serveurs qui peuvent être créés de cette manière. Déployer votre servlet depuis eclipse vers ce nouveau serveur (vue Servers, Add and Remove et Publish). Vérifier que votre servlet fonctionne depuis votre navigateur, ansi que depuis eclipse (Run / Run).\footnote{Il semble qu’un bug dans J2EE Preview empêche parfois l’accès à votre servlet via ce serveur. Vérifiez simplement dans ce cas que vous pouvez accéder à \url{http://server/context-root/}.}
+		\item Installer glassfish plug-in.
+		\item Utiliser glassfish comme runtime. Voir ce que ça change. Déployer vers glassfish et vérifier que le servlet fonctionne toujours.
+	\end{itemize}
 \end{frame}
 
 \begin{frame}
