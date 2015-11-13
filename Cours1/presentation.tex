@@ -12,7 +12,6 @@
 \input{preamble/draw}
 \input{preamble/acronyms}
 
-%TODO En bas : Nom du cours ; Nom du sous-titre. En haut : Seulement les headers jusqu’ici, ou le courant. En faire un nouveau thème.
 \title{Conception d’applications internet}
 \subtitle{Introduction}
 \subject{Java EE}
@@ -24,15 +23,6 @@
 \begin{document}
 \bibliographystyle{apalike}
 
-  \LetLtxMacro\SavedIncludeGraphics\includegraphics
-  \def\includegraphics#1#{% #1 catches optional stuff (star/opt. arg.)
-    \IncludeGraphicsAux{#1}%
-  }%
-  \newcommand*{\IncludeGraphicsAux}[2]{%
-    \XeTeXLinkBox{%
-      \SavedIncludeGraphics#1{#2}%
-    }%
-  }%
 \begin{frame}[plain]
 	\tikz[remember picture,overlay]{
 		\path (current page.south west) node[anchor=south west, inner sep=0] {
@@ -477,7 +467,7 @@
 	\begin{itemize}
 		\item Le programmeur (côté serveur) indique ce qu’il faut répondre
 		\item Servlet (ici, HTTP) : classe qui traite les requêtes
-		\item Annoter la classe (\href{https://docs.oracle.com/javaee/7/api/index.html?javax/servlet/annotation/WebServlet.html}{\texttt{javax.servlet.annotation.WebServlet}}) et étendre \href{https://docs.oracle.com/javaee/7/api/index.html?javax/servlet/http/HttpServlet.html}{\texttt{HttpServlet}} ; préciser \texttt{urlPatterns} (ou \texttt{value})
+		\item Annoter la classe ({\small\href{https://docs.oracle.com/javaee/7/api/index.html?javax/servlet/annotation/WebServlet.html}{\texttt{javax.servlet.annotation.WebServlet}}}) et étendre \href{https://docs.oracle.com/javaee/7/api/index.html?javax/servlet/http/HttpServlet.html}{\texttt{HttpServlet}} ; préciser \texttt{urlPatterns} (ou \texttt{value})
 		\item Requête associée à un servlet par le conteneur
 		\begin{itemize}
 			\item \texttt{http://server/context-root/servlet-path}

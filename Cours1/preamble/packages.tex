@@ -81,6 +81,17 @@
 
 \graphicspath{{graphics/},{graphics-dm/}}
 \DeclareGraphicsExtensions{.pdf}
+\LetLtxMacro\SavedIncludeGraphics\includegraphics
+\AtBeginDocument{
+	\def\includegraphics#1#{% #1 catches optional stuff (star/opt. arg.)
+		\IncludeGraphicsAux{#1}%
+	}%
+}
+\newcommand*{\IncludeGraphicsAux}[2]{%
+	\XeTeXLinkBox{%
+		\SavedIncludeGraphics#1{#2}%
+	}%
+}%
 
 %HACKING
 \usepackage{printlen}
@@ -97,6 +108,6 @@
 \usepackage{appendixnumberbeamer}
 %\setbeamersize{text margin left=0.1cm, text margin right=0.1cm} 
 \setbeamertemplate{navigation symbols}{}
-\usetheme{BrusselsBelgium}
+\usetheme{ParisFrance}
 \usefonttheme{professionalfonts}
 
