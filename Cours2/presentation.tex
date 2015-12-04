@@ -1,0 +1,454 @@
+\RequirePackage[l2tabu, orthodox]{nag}
+\RequirePackage{silence}
+\WarningFilter{nag}{There is no environment ``centering'' }%nag complains because beamer titlepage uses a centering environment
+\WarningFilter{nag}{1 complaints in total}
+\WarningFilter{ifpdf}{Someone has redefined \pdfoutput}
+\WarningFilter{fmtcount}{\ordinal already defined use \FCordinal instead}
+\documentclass[english, french]{beamer}
+\input{preamble/packages}
+\input{preamble/math_basics}
+\input{preamble/math_mine}
+\input{preamble/redac}
+\input{preamble/draw}
+\input{preamble/acronyms}
+
+\title{Conception d’applications internet}
+\subtitle{Servlets HTTP}
+\subject{Java EE}
+%\keywords{logging, annotations, git, modules, servlet}
+\author{Olivier Cailloux}
+\institute[LAMSADE]{LAMSADE, Université Paris-Dauphine}
+\date{\formatdate{7}{12}{2015}}
+
+\begin{document}
+\bibliographystyle{apalike}
+
+\begin{frame}[plain]
+	\tikz[remember picture,overlay]{
+		\path (current page.south west) node[anchor=south west, inner sep=0] {
+			\includegraphics[height=1cm]{LAMSADE95.jpg}
+		};
+		\path (current page.south) ++ (0, 1mm) node[anchor=south, inner sep=0] {
+			\includegraphics[height=9mm]{Dauphine.jpg}
+		};
+		\path (current page.south east) node[anchor=south east, inner sep=0] {
+			\includegraphics[height=1cm]{PSL.png}
+		};
+	}
+   \titlepage
+\end{frame}
+\addtocounter{framenumber}{-1}
+
+\section[Dernier épisode]{Durant le dernier épisode…}
+\subsection{Dépouillement}
+%TODO se connecter à internet avec sa propre machine ?
+%tout le monde (23) a une machine
+%demandes de rappels
+\begin{frame}
+	\frametitle{Prérequis}
+	Programmation Java théorique et appliquée ; ingénieurie logicielle théorique
+	\begin{itemize}
+		\item Exceptions
+		\item Héritage
+		\item Concept d’API
+		\item Programmation par contrat
+		\item XML
+		\item Maven
+		\item Git
+	\end{itemize}
+	Plus : annotations.
+\end{frame}
+
+\subsection{Était à faire}
+\begin{frame}
+	\frametitle{À faire}
+	\begin{itemize}
+		\item Lisez (ou redirigez) vos e-mails @ Dauphine (pour les annonces)
+		\item Installer les outils sur votre machine : Eclipse Mars Java EE, Java EE 7 (et Glassfish 4), Java 8 (OpenJDK)
+		\item Choix d’un projet sur \href{https://mycourse.dauphine.fr/webapps/blackboard/execute/courseMain?course_id=_34753_1}{MyCourse}
+		\item Présentation (5 à 10 min) de vos idées
+		\item Compte \href{https://github.com/}{GitHub} ou \href{https://bitbucket.org/}{Bitbucket} et commit initial : diapos
+	\end{itemize}
+\end{frame}
+
+\subsection{Présentations}
+\begin{frame}
+	\frametitle{Présentations}
+	À vous de jouer !
+\end{frame}
+
+\section[J. EE en pratique]{Développement Java EE en pratique}
+\subsection{Logging}
+\begin{frame}
+	\frametitle{Logging}
+	\begin{itemize}
+		\item \texttt{System.out.println} ? \pause Le conteneur redirige\pause
+		\item \alert{mieux} : \texttt{LOGGER.warn("Missing parameter here!")}
+		\item En Java EE comme en Java SE : cf. standard \href{http://docs.oracle.com/javase/8/docs/technotes/guides/logging/index.html}{logging}
+	\end{itemize}
+\end{frame}
+
+\subsection[Environnements et serveurs]{Environnements et serveurs dans Eclipse}
+\begin{frame}
+	\frametitle{Environnements et serveurs dans Eclipse}
+	\begin{itemize}
+		\item Environnement Runtime : donne accès aux bibliothèques J. EE
+		\item Eclipse : \menuit{Preferences} / \menuit{Server} / \menuit{Runtime Environments}
+		\item Puis sélection par projet via \menuit{Targeted Runtime}
+	\end{itemize}
+	\begin{block}{Serveurs}
+		\begin{itemize}
+			\item Vue \menuit{Servers} dans Eclipse
+			\item Liste les serveurs Java EE sur lesquels déployer les modules
+			\item Utiliser : \menuit{New} ; \menuit{Add and Remove} ; \menuit{Publish}
+			\item Sur un serveur : \menuit{Properties} puis \menuit{Switch location} pour le voir dans un projet spécial (donne plus d’options de configuration)
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\section{Git}
+\subsection{Présentation}
+\begin{frame}
+	\frametitle{Git}
+	\begin{itemize}
+		\item Contrôle de version (VCS, SCM) : conserver l’historique
+		\item Pour tous types de projet : code, images, présentations, article…
+		\item VCS local, centralisé, distribué ? \pause
+		\item Centralisé : seulement sur un serveur distant
+		\item Distribué : copie locale et distante
+	\end{itemize}
+\end{frame}
+
+\subsection[Commits et work dir]{Commits et work dir}
+\begin{frame}
+	\frametitle{Commits et WD}
+	\begin{itemize}
+		\item Histoire : un ensemble structuré (DAG) de \og{}commits\fg{}
+		\item Commit : identifié par un hash SHA-1
+%		\item \emph{Ajout} de données {\tiny presque} uniquement
+		\begin{itemize}
+			\item Contient : \emph{blobs} (captures de fichiers) ; auteur…
+		\end{itemize}
+	\end{itemize}
+	{
+		\centering
+		\begin{tikzpicture}
+			\path node[/Git/commit] (c1) {98C49C};
+			\path (c1.east) ++ (\GitCommitSep, 0) node[anchor=west, /Git/commit] (c2) {34AC2} edge[->] (c1);
+			\path (c2.east) ++ (\GitCommitSep, 6mm) node[anchor=west, /Git/commit] (c3N) {F30AB} edge[->] (c2);
+			\path (c2.east) ++ (\GitCommitSep, -6mm) node[anchor=west, /Git/commit] (c3S) {C32AC} edge[->] (c2);
+			\path (c2 -| c3N.east) ++ (\GitCommitSep, 0) node[anchor=west, /Git/commit] (c4) {175E3A} edge[->] (c3N) edge[->] (c3S);
+		\end{tikzpicture}\par
+	}
+	\begin{itemize}
+		\item Histoire conservée \emph{localement} dans \texttt{.git} à la racine du projet
+		\item WD (\og{}work dir\fg{}) : version du projet (fichiers et sous-répert.)
+	\end{itemize}
+	\texttt{/root}
+	\begin{itemize}
+		\item[] \texttt{/.git}
+		\item[] \texttt{/rép1}
+		\begin{itemize}
+			\item[] \texttt{/fich1}
+		\end{itemize}
+		\item[] \texttt{/fich2}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Préparer un commit}
+	\begin{itemize}
+		\setlength{\itemindent}{-1em}
+		\item WD ; index ; HEAD
+		\item \emph{Index} : changements à apporter au prochain commit
+		\item fich. $\in$ index (HEAD) : blob ds index (HEAD), peut être $≠$ WD
+		\item fichier (du WD) \emph{untracked} : $\notin$ HEAD, $\notin$ index
+		\item fichier \emph{tracked} : blob dans HEAD ou dans index {\tiny (ou les deux)}
+		\item \texttt{git add fichier} : blob mis dans index (\og{}staged\fg{})
+		\item fichier \emph{modified} : ($\notin$ index $⇒$ $≠$ HEAD) ; ($\in$ index $⇒$ $≠$ index)
+		\item \emph{clean} WD : tous {\tiny (sauf fichiers dans gitignore)} tracked et unmodified
+		\item \texttt{git status} : liste untracked, modified, staged ; WD clean ?
+		\item \texttt{git status -{}-short} {\tiny (sauf merge conflict)} : idx VS HEAD ; WD VS idx.
+		\item \texttt{git diff} : WD VS index
+		\item \texttt{git diff -{}-staged} : index VS HEAD
+		\item \texttt{git commit} : commenter et expédier ! (Renvoie son id SHA-1)
+		\item \texttt{git commit -v} : voir l’index en détail
+	\end{itemize}
+\end{frame}
+
+\subsection{Branches}
+\begin{frame}
+	\frametitle{Branches et HEAD}
+	\begin{itemize}
+		\item Branche : pointeur vers un commit
+		\item HEAD : pointeur vers {\tiny (typiquement)} une branche\\et un commit
+		\item Branche \og{}actuelle\fg{}\\désignée par HEAD
+	\end{itemize}
+	\begin{tikzpicture}[overlay]
+		\path (3.7cm, 0) node[/Git/commit] (c1) {98C49C};
+		\path (c1.east) ++ (\GitCommitSep, 0) node[anchor=west, /Git/commit] (c2) {34AC2} edge[->] (c1);
+		\path (c2.east) ++ (\GitCommitSep, 0) node[anchor=west, /Git/commit] (c3) {F30AB} edge[->] (c2);
+		\path (c2.north) ++ (0, 3mm) node[anchor=south, /Git/branch] (master) {master} edge[->] (c2);
+		\path (c3.north) ++ (0, 3mm) node[anchor=south, /Git/branch] (br) {br} edge[->] (c3);
+		\path (br.north) ++ (0, 3mm) node[anchor=south, /Git/head] (head) {HEAD} edge[->] (br);
+	\end{tikzpicture}
+	\vspace{3mm}
+	\begin{itemize}
+		\item commit : avance HEAD et branche actuelle
+		\item \texttt{git branch truc} : crée branche \texttt{truc}. HEAD inchangé !
+		\item \texttt{git checkout truc} : change HEAD et {\tiny éventuellement} WD
+		\item avoir un WD propre avant un checkout !
+		\item \texttt{git log -{}-graph -{}-decorate -{}-oneline -{}-all}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Fusion de branches}
+	{
+	\centering
+	\begin{tikzpicture}
+		\path (3.7cm, 0) node[/Git/commit] (c1) {98C49C};
+		\path (c1.east) ++ (\GitCommitSep, 0) node[anchor=west, /Git/commit] (c2) {34AC2} edge[->] (c1);
+		\path (c2.east) ++ (\GitCommitSep, 4mm) node[anchor=west, /Git/commit] (c3N) {F30AB} edge[->] (c2);
+		\path (c2.east) ++ (\GitCommitSep, -4mm) node[anchor=west, /Git/commit] (c3S) {C32AC} edge[->] (c2);
+		\path (c2.north) ++ (0, 3mm) node[anchor=south, /Git/branch] (master) {master} edge[->] (c2);
+		\path (c3N.north) ++ (0, 3mm) node[anchor=south, /Git/branch] (br) {br} edge[->] (c3N);
+		\path (br.north) ++ (0, 3mm) node[anchor=south, /Git/head] (head) {HEAD} edge[->] (br);
+	\end{tikzpicture}\par
+	}
+	\begin{itemize}
+		\item \texttt{git merge autrebranche} : fusionne changements de \texttt{autrebranche} dans branche actuelle
+		\item Si \texttt{autrebranche} est en avant de l’actuelle : \og{}fast-forward\fg{}
+		\item Sinon, \og{}merge conflict\fg{} possible. Modifier les fichiers à la main et les ajouter à l’index puis commit pour créer un merge.
+		\item checkout d’un commit {\tiny (ou tag)} sans branche {\tiny (detached head state)} : lecture !
+	\end{itemize}
+\end{frame}
+
+\subsection{Serveurs distants}
+\begin{frame}
+	\frametitle{Serveurs distants}
+	\vspace{-1pt}
+	\begin{itemize}
+		\item Réf. distante (\og{}remote ref\fg{}) : pointeurs vers branches {\tiny et tags} sur dépots distants
+		\item \og{}Remote-tracking branch\fg{} : branche locale correspondant à une branche distante et qui connait l’état de la branche distante correspondante la dernière fois qu’on l’a vue
+		\item Remote \og{}origin\fg{} supposé configuré ici
+		\item \texttt{git branch -vv} : voir branches et correspondants distants
+		\item \texttt{git fetch} : récupère les commits distants ; met à jour (ou crée) les références distantes
+		\item \texttt{git push origin mabranche} : sinon, nouvelles branches restent locales
+		\item \texttt{git remote show origin} : voir les réf. distantes
+		\item Suivre une branche distante : checkout \texttt{origin/branche} ; créer branche locale ; \texttt{git branch -{}-set-upstream-to origin/branch}
+	\end{itemize}
+\end{frame}
+
+\subsection{Divers}
+\begin{frame}
+	\frametitle{Divers}
+	\vspace{-1pt}
+	\begin{itemize}
+		\item Utilisez gitignore ! {\tiny (\href{https://github.com/github/gitignore}{modèles})}
+		\item Raccourcis : à éviter au début !
+		\item \texttt{git init} : dépôt git vide dans répertoire courant (rien n’est traqué)
+		\item \texttt{git clone url} : cloner un dépôt (et non checkout !)
+		\item \texttt{git stash} : WD $←$ HEAD
+		\item \texttt{git tag -a montag} {\tiny (tag annoté, recommandé)} puis \texttt{git push origin montag}
+		\item \texttt{git config -{}-global} : écrit dans \texttt{\textasciitilde/.gitconfig}
+		\item Indiquez propriété \texttt{user.name} (et \texttt{user.email})
+		\item Déterminer des \href{https://git-scm.com/book/en/v2/Git-Tools-Revision-Selection}{révisions} {\tiny exemple : HEAD\textasciicircum 1 pour parent de HEAD}
+		\item \href{https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases}{Alias}
+		\item \href{https://git-scm.com/book/en/v2}{Documentation}
+		\item GUI pour diff : \texttt{git difftool}
+		\item GUI pour merge \texttt{git mergetool}
+	\end{itemize}
+\end{frame}
+
+\section{Exercices}
+\subsection{Servlets}
+\begin{frame}[allowframebreaks]
+	\small
+	\frametitle{Exercices : servlets}
+	Ces exercices ont pour but de vous familiariser avec l’environnement de développement et vous permettre de vérifier que vous avez compris les concepts de base. Le but n’est atteint que si vous jouez le jeu : évitez de chercher comment faire sur internet ! Utilisez de l’aide seulement si vous êtes bloqués.
+	\begin{itemize}
+		\item \og{}Installer\fg{} GlassFish (copier \texttt{/usr/local/glassfish-4.1})
+		\item Démarrer votre serveur (cf. \texttt{bin/}, \url{http://localhost:8080}, \url{http://localhost:4848})
+		\item Désactiver l’écoute extérieure
+		\item Lire les logs du serveur
+		\item Ajouter dans Eclipse un environnement runtime Java EE rudimentaire, \og{}J2EE Preview\fg{}
+		\item Créer un projet web dynamique sans runtime puis le modifier pour qu’il vise ce runtime. Vérifier que Eclipse ajoute les bibliothèques en dépendances (lesquelles ?)
+		\item Créer un servlet
+		\item Vérifier que vous avez accès à la javadoc (par exemple sur \texttt{javax.servlet.annotation.WebServlet} et \texttt{javax.servlet.http.HttpServlet}).
+		\item Programmer réponse : "ça fait 0"
+		\item Exporter le module dans une archive déployable (extension ?)
+		\item Vérifier si les bibliothèques ajoutées automatiquement par eclipse ont été incluses dans l’archive exportée. Expliquer pourquoi (pas).
+		\item Déployer le module sur le serveur à la main
+		\item Envoyer une requête GET et observer "ça fait 0"
+		\item Se féliciter\footnote{Cette étape importante est à répéter à l’issue de chaque exercice qui vous a posé une difficulté.}
+		\item Ajouter un runtime à eclipse : J2EE Runtime library, référencer les bibliothèques installées dans glassfish. Modifier votre projet existant pour utiliser ce runtime (voir propriétés du projet). Qu’est-ce que ça change ?
+		\item Créer un nouveau serveur de type J2EE Preview dans Eclipse. Expliquer pourquoi il n’y a pas \og{}J2EE Runtime library\fg{} dans la liste de serveurs qui peuvent être créés de cette manière. Déployer votre servlet depuis eclipse vers ce nouveau serveur. Vérifier que votre servlet fonctionne depuis votre navigateur, ansi que depuis eclipse (\menuit{Run} / \menuit{Run}).\footnote{Il semble qu’un bug dans J2EE Preview empêche parfois l’accès à votre servlet via ce serveur. Vérifiez simplement dans ce cas que vous pouvez accéder à \url{http://server/context-root/}.}
+		\item Installer Glassfish Tools depuis Eclipse Marketplace
+		\item Utiliser glassfish comme runtime. Voir ce que ça change. Déployer vers glassfish et vérifier que le servlet fonctionne toujours
+		\item Envoyer une information de log indiquant le résultat du calcul avant son renvoi à l’expéditeur
+		\item Renvoyer une réponse HTML bien formée : <html><body><p>Ça fait…</p></body></html>. Comment s’assurer que le client web va bien interpréter de l’HTML ?
+		\item Renvoyer ce même contenu mais en texte pur, de façon à ce que ces balises s’affichent sur le client web. Comment s’assurer de l’affichage correct des caractères non ascii, Ç par exemple ?
+		\item[*\footnote{Les astérisques indiquent des exercices plus difficiles, à essayer de faire pour gagner des points de prestige.}] Est-il possible de déployer votre module web comme une archive \texttt{.ear} ? Si oui, essayer de le faire, si non, expliquer pourquoi.
+		\item Accepter deux paramètres dans le servlet : \texttt{add1} et \texttt{add2}. Renvoyer "ça fait " et l’addition des paramètres
+		\item Renvoyer une erreur s’il manque un paramètre (indice : voir la javadoc de \texttt{HttpServletResponse}).
+		\item[*] Comment être sûr du type d’erreur à renvoyer ?
+%		\item Faire appel à une bibliothèque tierce ? (Vérifier où eclipse la met dans l’archive.)
+		\item Ajouter au module une page HTML statique \texttt{index.html} qui dit \og{}Hello !\fg{} lorsqu’on la visite. Où sera-t-elle placée dans l’archive ?
+		\item (Commencer à) développer un servlet qui a sa place dans votre projet
+	\end{itemize}
+\end{frame}
+
+\subsection{Git}
+\begin{frame}[allowframebreaks]
+	\small
+	\frametitle{Exercices : Git}
+	Git en local
+	\begin{itemize}
+		\item Définir globalement (au moins) \texttt{user.name}. Vérifier avec \texttt{git config -{}-list}.
+		\item Créer un répertoire projet et dedans un fichier \texttt{début.txt} contenant \texttt{"coucou"}.
+		\item Initialiser un dépôt git dans ce projet.
+		\item Placer \texttt{début.txt} dans l’index. Modifier \texttt{début.txt} pour qu’il contienne \texttt{"coucou2"}. Visualiser la différence sur ce fichier entre la version WD, index, et dépôt. Faire en sorte que le blob dans l’index contienne bien \texttt{"coucou2"}.
+		\item Effectuer un premier commit, qui contiendra uniquement \texttt{début.txt}. À l’issue de ce commit, vérifier que vous obtenez l’historique suivant.\par
+		{
+			\centering
+			\begin{tikzpicture}
+				\path node[/Git/commit] (c1) {C1};
+				\path (c1.north) ++ (0, 3mm) node[anchor=south, /Git/branch] (master) {master} edge[->] (c1);
+				\path (master.north) ++ (0, 3mm) node[anchor=south, /Git/head] (head) {HEAD} edge[->] (master);
+			\end{tikzpicture}\par
+		}
+		\item Vous avez maintenant une idée audacieuse pour résoudre un problème dans votre projet. Comme vous n’êtes pas sûr de sa pertinence, vous désirez placer vos changements dans une nouvelle branche en attendant d’y réfléchir. Créer une branche \texttt{"dev"} ; y commettre un fichier \texttt{audacieux.txt} (en plus de \texttt{début.txt}, inchangé) contenant \texttt{"approche 1"}. Votre historique doit maintenant être celui-ci (vérifier !).\par
+		{
+			\centering
+			\begin{tikzpicture}
+				\path node[/Git/commit] (c1) {C1};
+				\path (c1.north) ++ (0, 3mm) node[anchor=south, /Git/branch] (master) {master} edge[->] (c1);
+				\path (c1.east) ++ (\GitCommitSep, 0) node[anchor=west, /Git/commit] (c2) {C2} edge[->] (c1);
+				\path (c2.north) ++ (0, 3mm) node[anchor=south, /Git/branch] (dev) {dev} edge[->] (c2);
+				\path (dev.north) ++ (0, 3mm) node[anchor=south, /Git/head] (head) {HEAD} edge[->] (dev);
+			\end{tikzpicture}\par
+		}
+		\item À l’issue de ce travail harrassant, il vous vient une idée alternative. N’étant toujours pas sûr de la valeur de votre première idée (dans \texttt{dev}), vous repartirez de \texttt{master} pour l’implémenter. Depuis \texttt{master}, créer une branche \texttt{dev2}, et y commettre (en plus de \texttt{début.txt}, inchangé) un fichier \texttt{audacieux.txt} contenant \texttt{"approche alternative"}. Vérifier ensuite votre historique.\par
+		{
+			\centering
+			\begin{tikzpicture}
+				\path node[/Git/commit] (c1) {C1};
+				\path (c1.north) ++ (0, 3mm) node[anchor=south, /Git/branch] (master) {master} edge[->] (c1);
+				\path (c1.east) ++ (\GitCommitSep, 4mm) node[anchor=west, /Git/commit] (c2) {C2} edge[->] (c1);
+				\path (c2.north) ++ (0, 2mm) node[anchor=south, /Git/branch] (dev) {dev} edge[->] (c2);
+				\path (c1.east) ++ (\GitCommitSep, -4mm) node[anchor=west, /Git/commit] (c3) {C3} edge[->] (c1);
+				\path (c3.south) ++ (0, -2mm) node[anchor=north, /Git/branch] (dev2) {dev2} edge[->] (c3);
+				\path (dev2.south) ++ (0, -2mm) node[anchor=north, /Git/head] (head) {HEAD} edge[->] (dev2);
+			\end{tikzpicture}\par
+		}
+		\item À la réflexion, votre première idée est bonne. L’intégrer dans \texttt{master} pour obtenir l’historique suivant. Prédire si vous obtiendrez un fast-forward et vérifier.\par
+		{
+			\centering
+			\begin{tikzpicture}
+				\path node[/Git/commit] (c1) {C1};
+				\path (c1.east) ++ (\GitCommitSep, 4mm) node[anchor=west, /Git/commit] (c2) {C2} edge[->] (c1);
+				\path (c2.north) ++ (0, 3mm) node[anchor=south, /Git/branch] (master) {master} edge[->] (c2);
+				\path (master.west) ++ (-5mm, 0) node[anchor=east, /Git/branch] (dev) {dev} edge[->] (c2);
+				\path (c1.east) ++ (\GitCommitSep, -4mm) node[anchor=west, /Git/commit] (c3) {C3} edge[->] (c1);
+				\path (c3.south) ++ (0, -2mm) node[anchor=north, /Git/branch] (dev2) {dev2} edge[->] (c3);
+				\path (master.north) ++ (0, 2mm) node[anchor=south, /Git/head] (head) {HEAD} edge[->] (master);
+			\end{tikzpicture}\par
+		}
+		\item Tout bien réfléchi vous aimez également votre deuxième idée. L’intégrer à son tour dans \texttt{master} et obtenir cet historique. Quel problème allez-vous rencontrer, ce faisant ?\par
+		{
+			\centering
+			\begin{tikzpicture}
+				\path node[/Git/commit] (c1) {C1};
+				\path (c1.east) ++ (\GitCommitSep, 4mm) node[anchor=west, /Git/commit] (c2) {C2} edge[->] (c1);
+				\path (c1.east) ++ (\GitCommitSep, -4mm) node[anchor=west, /Git/commit] (c3) {C3} edge[->] (c1);
+				\path (c1 -| c2.east) ++ (\GitCommitSep, 0) node[anchor=west, /Git/commit] (c4) {C4} edge[->] (c2) edge[->] (c3);
+				\path (c4.north) ++ (0, 3mm) node[anchor=south, /Git/branch] (master) {master} edge[->] (c4);
+				\path (master.north) ++ (0, 2mm) node[anchor=south, /Git/head] (head) {HEAD} edge[->] (master);
+			\end{tikzpicture}\par
+		}
+		\item Imaginons qu’on aurait d’abord intégré \texttt{dev2} à \texttt{master} (ceci aurait-il produit un fast-forward ?) puis \texttt{dev} au résultat. Quel aurait été le résultat final ?
+	\end{itemize}
+	Git distant
+	\begin{itemize}
+		\item Cloner votre dépôt central pour le projet de ce cours.
+		\item Le clonage vous a créé un pointeur vers un serveur distant \texttt{origin}, et une \og{}remote-tracking branch\fg{} \texttt{master}. Voir où pointent \texttt{origin}, \texttt{master} et \texttt{origin/master}.
+		\item Ajouter un fichier \texttt{"macontrib.txt"} contenant votre prénom à votre index local. Commettre dans votre dépôt git local. L’envoyer au dépôt distant. Vérifier (via l’interface web) qu’il s’y trouve et que le commit est associé à votre nom.
+		\item Quand un collègue a fait de même, vous pouvez rapatrier sa modification en local. Après l’avoir fait, prédire où vont pointer \texttt{master} et \texttt{origin/master} et vérifier.
+		\item Si un collègue a publié sa modification avant la vôtre, quel va être votre problème ? Comment le résoudre ? Si vous êtes le premier à publier la modification, allez aider vos collègues à publier la leur !
+	\end{itemize}
+\end{frame}
+
+\section{À faire}
+\begin{frame}
+	\frametitle{À faire}
+	\begin{block}{Avant le 14 décembre}
+		\begin{itemize}
+			\item Terminer les exercices Servlets et Git
+		\end{itemize}
+	\end{block}
+	\begin{block}{Avant le 21 janvier}
+		\begin{itemize}
+			\item[+\footnote{Le + indique que cet aspect intervient dans la note}] Chaque binôme : \emph{au moins} un servlet utile à votre projet
+			\item[+] Au moins un push par personne dans le projet
+		\end{itemize}
+	\end{block}
+	Chaque commit doit indiquer clairement le ou les auteurs
+	\begin{itemize}
+		\item Utilisez user.name
+		\item Indiquez dans le commentaire du commit le binôme éventuel
+	\end{itemize}
+\end{frame}
+
+\appendix
+\AtBeginSection{
+}
+\section{Licence}
+\begin{frame}
+	\frametitle{Licence}
+	Cette présentation, et le code LaTeX associé, sont sous \href{http://opensource.org/licenses/MIT}{licence MIT}. Vous êtes libres de réutiliser des éléments de cette présentation, sous réserve de citer l’auteur.
+	
+	Le travail réutilisé est à attribuer à \href{http://www.lamsade.dauphine.fr/~ocailloux/}{Olivier Cailloux}, Université Paris-Dauphine.
+	
+	\small{(Ceci ne couvre pas les images incluses dans ce document, puisque je n’en suis généralement pas l’auteur.)}
+\end{frame}
+\end{document}
+\begin{frame}
+	\frametitle{}
+	\begin{itemize}
+		\item 
+	\end{itemize}
+	\begin{block}{}
+		
+	\end{block}
+\end{frame}
+
+\section{Bibliographie}
+\begin{frame}[allowframebreaks]
+	\frametitle{Bibliographie}
+	\def\newblock{\hskip .11em plus .33em minus .07em}
+% 	\bibliography{zotero}
+\end{frame}
+
+\section{Autres}
+\begin{frame}
+	\frametitle{Servlet (trop de détails)}
+	\begin{itemize}
+		\item Le servlet peut accéder à des objets via getAttribute et setAttribute d’une classe représentant un scope : sur ServletContext, HttpSession, ServletRequest. Il faut se protéger contre les accès concurrents !
+		\item HTTP request URL : http://host:portrequestpath?querystring, with
+		\item requestpath=contextpathservletpathpathinfo, with 
+		\item contextpath=/contextroot (of the servlet’s web app) or "", 
+		\item servletpath=The path section that corresponds to the component alias that activated this request. This path starts with a forward slash (/) (or is empty), pathinfo = the rest.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{}
+	\begin{itemize}
+		\item 
+	\end{itemize}
+	\begin{block}{}
+		
+	\end{block}
+\end{frame}
+\end{document}
