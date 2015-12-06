@@ -56,12 +56,12 @@
 		\item \emph{Maven}
 		\item \emph{Git}
 	\end{itemize}
-	Plus : annotations.
+	Plus : \emph{annotations}.
 \end{frame}
 
 \subsection{Était à faire}
 \begin{frame}
-	\frametitle{À faire}
+	\frametitle{Était à faire}
 	\begin{itemize}
 		\item Lisez (ou redirigez) vos e-mails @ Dauphine (pour les annonces)
 		\item Installer les outils sur votre machine : Eclipse Mars Java EE, Java EE 7 (et Glassfish 4), Java 8 (OpenJDK)
@@ -116,6 +116,7 @@
 		\item VCS local, centralisé, distribué ? \pause
 		\item Centralisé : seulement sur un serveur distant
 		\item Distribué : copie locale et distante
+		\item Git : distribué
 	\end{itemize}
 \end{frame}
 
@@ -123,7 +124,7 @@
 \begin{frame}
 	\frametitle{Commits et WD}
 	\begin{itemize}
-		\item Histoire : un ensemble structuré (DAG) de \og{}commits\fg{}
+		\item Histoire : un DAG de \og{}commits\fg{}
 		\item Commit : identifié par un hash SHA-1
 %		\item \emph{Ajout} de données {\tiny presque} uniquement
 		\begin{itemize}
@@ -196,8 +197,8 @@
 	\begin{itemize}
 		\item commit : avance HEAD et branche actuelle
 		\item \texttt{git branch truc} : crée branche \texttt{truc}. HEAD inchangé !
-		\item \texttt{git checkout truc} : change HEAD et {\tiny éventuellement} WD
-		\item avoir un WD propre avant un checkout !
+		\item \texttt{git checkout truc} : change HEAD et met à jour WD
+		\item Conseil : WD clean avant checkout !
 		\item \texttt{git log -{}-graph -{}-decorate -{}-oneline -{}-all}
 	\end{itemize}
 \end{frame}
@@ -258,7 +259,7 @@
 		\item \href{https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases}{Alias}
 		\item \href{https://git-scm.com/book/en/v2}{Documentation}
 		\item GUI pour diff : \texttt{git difftool}
-		\item GUI pour merge \texttt{git mergetool}
+		\item GUI pour merge : \texttt{git mergetool}
 	\end{itemize}
 \end{frame}
 
@@ -396,7 +397,7 @@
 	\end{block}
 	Chaque commit doit indiquer clairement le ou les auteurs
 	\begin{itemize}
-		\item Utilisez user.name
+		\item Utilisez \texttt{user.name}
 		\item Indiquez dans le commentaire du commit le binôme éventuel
 	\end{itemize}
 \end{frame}
