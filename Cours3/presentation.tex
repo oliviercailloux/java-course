@@ -126,7 +126,8 @@
 \begin{frame}
 	\frametitle{Types d’exposition}
 	\begin{itemize}
-		\item Le conteneur fournit une vue client pour donner accès (Pattern ? \pause Proxy !)
+		\item Le conteneur fournit une vue client pour donner accès
+		\item Pattern ? \pause Proxy ! \pause
 		\item Le développeur déclare comment l’EJB sera accessible
 		\begin{itemize}
 			\item No-interface view : accès direct et local à l’EJB
@@ -194,9 +195,9 @@
 		\item Accessible via JNDI dans le naming context \texttt{java:comp/env}
 		\item \emph{Ressource} : référence dans env. d’un composant Java EE
 		\item Permet la paramétrisation de l’EJB (exemple : valeur entière)
-		\item Déclaration : où ? \pause Dans descripteur standard EJB.\pause
 		\item Depuis EJB, accéder via JNDI
 		\item Ou utiliser CDI et \href{http://docs.oracle.com/javaee/7/api/javax/annotation/Resource.html}{\texttt{@Resource}}
+		\item Déclaration : où ? \pause Dans descripteur standard EJB.\pause
 		\item Resource non injectée si pas de valeur dans le descripteur : utilise la valeur donnée dans le code
 	\end{itemize}
 \end{frame}
@@ -206,7 +207,7 @@
 	Exemple de déclaration d’une ressource (de type \og{}simple\fg{}) \texttt{java:comp/env/ejb.MySesEjbBean/zeNumber} via \texttt{ejb-jar.xml}
 	\lstinputlisting[firstline=6, lastline=15, basicstyle=\scriptsize]{ejb-jar-zeNumber.xml}
 	Accès à la ressource
-	\lstinputlisting[firstline=11, lastline=15, basicstyle=\scriptsize]{MySesEjbBean.java}
+	\lstinputlisting[firstline=12, lastline=15, basicstyle=\scriptsize]{MySesEjbBean.java}
 \end{frame}
 
 \subsection{Responsabilités}
@@ -228,7 +229,7 @@
 \begin{frame}
 	\frametitle{Références}
 	\begin{itemize}
-		\item \href{http://docs.oracle.com/javaee/7/tutorial/partentbeans.htm}{The Java EE Tutorial: Enterprise Beans}
+		\item The Java EE Tutorial: \href{http://docs.oracle.com/javaee/7/tutorial/partentbeans.htm}{Enterprise Beans}
 		\item \href{https://www.jcp.org/en/jsr/detail?id=345}{JSR 345} (EJB 3.2) (\href{http://download.oracle.com/otn-pub/jcp/ejb-3_2-fr-eval-spec/ejb-3_2-core-fr-spec.pdf}{direct})
 		\item \href{https://www.jcp.org/en/jsr/detail?id=342}{JSR 342} (Java EE 7)
 		\item \href{http://jcp.org/en/jsr/detail?id=346}{JSR 346} (Context and Dependency Injection 1.1 et 1.2) (\href{http://download.oracle.com/otn-pub/jcp/cdi-1_2-mrel-eval-spec/cdi-1.2.pdf}{direct}).
@@ -245,20 +246,9 @@
 		\item Entre autres, une session HTTP
 		\item Objet \href{http://docs.oracle.com/javaee/7/api/javax/servlet/http/HttpSession.html}{\texttt{HttpSession}} rendu disponible par conteneur ({\tiny injection ou } accès via paramètres servlet)
 		\item Le serveur tente de tracker la session via un cookie {\tiny par exemple}
+		\item Le serveur fait expirer le cookie après un temps configurable
 		\item Un bon site fonctionne même sans cookies !
 		\item Classe implémente \href{http://docs.oracle.com/javaee/7/api/javax/servlet/http/HttpSessionListener.html}{\texttt{HttpSessionListener}} pour recevoir notifications \texttt{sessionCreated}, \texttt{sessionDestroyed}.  L’annoter \href{http://docs.oracle.com/javaee/7/api/javax/servlet/annotation/WebListener.html}{\texttt{@WebListener}}. (Pattern ? \pause Observateur !)
-	\end{itemize}
-\end{frame}
-
-\section{Rappel méthodologique}
-\subsection{Cycles courts}
-\begin{frame}
-	\frametitle{Cycles courts}
-	\begin{itemize}
-		\item Développement agile
-		\item Cycles courts : applications complètes !
-		\item Réfléchir aux fonctionnalités prioritaires
-		\item Attention aux mélanges cycle en V et agile !
 	\end{itemize}
 \end{frame}
 
@@ -295,6 +285,18 @@
 		\item Programmer la destruction de votre SFSB à la destruction de la session. Que se passe-t-il si vous ne le faites pas ?
 		\item Programmer l’expiration de la session HTTP après un délai court, via votre servlet (astuce : nous avons déjà rencontré l’objet qui permet de le faire)
 		\item Vérifier (via les logs) que votre SFSB est bien créé et détruit à l’ouverture et à l’expiration des sessions HTTP. Utiliser pour ce faire différents onglets ou fenêtres de votre navigateur et la fonction de suppression des cookies.
+	\end{itemize}
+\end{frame}
+
+\section{Rappel méthodologique}
+\subsection{Cycles courts}
+\begin{frame}
+	\frametitle{Cycles courts}
+	\begin{itemize}
+		\item Développement agile
+		\item Cycles courts : applications complètes !
+		\item Réfléchir aux fonctionnalités prioritaires
+		\item Attention aux mélanges cycle en V et agile !
 	\end{itemize}
 \end{frame}
 
