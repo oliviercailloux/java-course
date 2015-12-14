@@ -284,7 +284,7 @@
 		\item Programmer un SFSB qui incrémente un compteur à l’aide d’une valeur passée en paramètre (reçue via votre servlet)
 		\item Utiliser votre SFSB à la place de votre SLSB dans votre servlet. Durant toute la session HTTP utilisateur, l’utilisateur voit donc le compteur augmenter avec les valeurs qu’il fournit en paramètre.
 		\item Programmer la destruction de votre SFSB à la destruction de la session. Que se passe-t-il si vous ne le faites pas ?
-		\item Programmer l’expiration de la session HTTP après un délai court, via votre servlet (astuce : nous avons déjà rencontré l’objet qui permet de le faire)
+		\item Programmer l’expiration de la session HTTP après un délai court, via votre servlet (indice : nous avons déjà rencontré l’objet qui permet de le faire)
 		\item Vérifier (via les logs) que votre SFSB est bien créé et détruit à l’ouverture et à l’expiration des sessions HTTP. Utiliser pour ce faire différents onglets ou fenêtres de votre navigateur et la fonction de suppression des cookies.
 	\end{itemize}
 \end{frame}
@@ -292,9 +292,9 @@
 \section{Rappel méthodologique}
 \subsection{Cycles courts}
 \begin{frame}
-	\frametitle{Cycles courts}
+	\frametitle{Développement agile \& cycles courts}
 	\begin{itemize}
-		\item Développement agile
+		\item Développement agile : release often
 		\item Cycles courts : applications complètes !
 		\item Réfléchir aux fonctionnalités prioritaires
 		\item Attention aux mélanges cycle en V et agile !
