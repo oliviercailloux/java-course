@@ -1,0 +1,406 @@
+\RequirePackage[l2tabu, orthodox]{nag}
+\RequirePackage{silence}
+\WarningFilter{nag}{There is no environment ``centering'' }%nag complains because beamer titlepage uses a centering environment
+\WarningFilter{nag}{1 complaints in total}
+\WarningFilter{ifpdf}{Someone has redefined \pdfoutput}
+\WarningFilter{fmtcount}{\ordinal already defined use \FCordinal instead}
+\documentclass[english, french]{beamer}
+\input{preamble/packages}
+\input{preamble/math_basics}
+\input{preamble/math_mine}
+\input{preamble/redac}
+\input{preamble/draw}
+\input{preamble/acronyms}
+
+\title{Conception d’applications internet}
+\subtitle{JDBC \& Transactions}
+\subject{Java EE}
+\keywords{JDBC ; Transactions ; Isolation ; Tutoriel}
+\author{Olivier Cailloux}
+\institute[LAMSADE]{LAMSADE, Université Paris-Dauphine}
+\date{\formatdate{21}{1}{2016}}
+
+\begin{document}
+\bibliographystyle{apalike}
+
+\begin{frame}[plain]
+	\tikz[remember picture,overlay]{
+		\path (current page.south west) node[anchor=south west, inner sep=0] {
+			\includegraphics[height=1cm]{LAMSADE95.jpg}
+		};
+		\path (current page.south) ++ (0, 1mm) node[anchor=south, inner sep=0] {
+			\includegraphics[height=9mm]{Dauphine.jpg}
+		};
+		\path (current page.south east) node[anchor=south east, inner sep=0] {
+			\includegraphics[height=1cm]{PSL.png}
+		};
+	}
+   \titlepage
+\end{frame}
+\addtocounter{framenumber}{-1}
+
+\section[Dernier épisode]{Durant le dernier épisode…}
+\subsection{Était à faire}
+\begin{frame}
+	\frametitle{Était à faire}
+	\begin{itemize}
+		\item Groupe sur  \href{https://mycourse.dauphine.fr/webapps/blackboard/execute/courseMain?course_id=_34753_1}{MyCourse} \& serveur git : cf. dernière annonce
+	\end{itemize}
+	\begin{block}{Avant le 21 janvier}
+		\begin{itemize}
+			\item[+\footnote{Le + indique que cet aspect intervient dans la note}] Chaque binôme : \emph{au moins} un servlet utile à votre projet
+			\item[+] Chaque binôme : \emph{au moins} un EJB utile à votre projet
+			\item[+] Au moins un push par personne dans le projet
+		\end{itemize}
+	\end{block}
+	Chaque commit doit indiquer clairement le ou les auteurs
+	\begin{itemize}
+		\item Utilisez \texttt{user.name}
+		\item Indiquez dans le commentaire du commit le binôme éventuel
+	\end{itemize}
+\end{frame}
+
+\section[Java EE et la persistance]{Java EE et la persistance : introduction}
+\begin{frame}
+	\frametitle{Java EE et la persistance : introduction}
+	\begin{itemize}
+		\item BD : modèle relationnel {\tiny typiquement}
+		\item JDBC : accès via Java, modèle relationnel
+		\item JPA : accès via Java, modèle objet
+		\item JPA implémente un \emph{ORM} : Object-Relational Mapping
+	\end{itemize}
+	\begin{block}{JPA}
+		\begin{itemize}
+			\item Inconvénient : plus complexe (?) que JDBC 
+			\item Avec Java EE, JPA généralement utilisé
+			\item JPA s’appuie sur JDBC
+		\end{itemize}
+	\end{block}
+	Dans ce cours : JDBC puis JPA
+\end{frame}
+
+\section{JDBC}
+\subsection{Modèle relationnel}
+\begin{frame}
+	\frametitle{Modèle relationnel}
+	\begin{itemize}
+		\item JDBC permet d’accéder aux BD
+		\item Suit le modèle relationnel
+		\item Élément central du modèle : la relation (une table, par exemple)
+		\item Relations produites par des JOIN, SELECT, etc.
+	\end{itemize}
+	\begin{block}{Forces du modèle relationnel}
+		\pause
+		\begin{itemize}
+			\item Garanties théoriques (algèbre relationnelle)
+			\item Efficace
+			\item Standard de fait depuis \textasciitilde 1990
+			\item Robuste : \href{http://dl.acm.org/citation.cfm?id=362685}{Codd 1970}, ANSI (puis ISO) SQL \href{http://www.iso.org/iso/home/store/catalogue_ics/catalogue_detail_ics.htm?csnumber=16661}{1987} ; … ; \href{http://www.iso.org/iso/home/store/catalogue_ics/catalogue_detail_ics.htm?csnumber=53681}{2011}
+		\end{itemize}
+	\end{block}
+	(Bémol : nombreuses variations propriétaires)
+\end{frame}
+
+\subsection{Vue d’ensemble}
+\begin{frame}
+	\frametitle{Vue d’ensemble de l’API JDBC}
+	\begin{itemize}
+		\item Fournisseur de SGBD implémente un pilote JDBC
+		\item Obtenir une \jseref{java.sql/Connection} (communique avec le pilote)
+		\item \texttt{Connection} permet les \emph{transactions}
+		\item Transaction : ensemble atomique de \og{}statements\fg{} SQL
+		\item Gérer début et fin de transaction via la connexion
+		\item Exécuter des statements SQL via cette connexion
+		\item Par défaut, mode auto-commit : une transaction par stmt
+		\item Via \texttt{Connection} : exécution requêtes, navigation de \href{http://docs.oracle.com/javase/8/docs/api/java/sql/ResultSet.html}{\texttt{ResultSet}}s, …
+%		\item (Pilote JDBC peut aussi supporter JTA)
+		\item Puis \emph{fermer} la connexion
+	\end{itemize}
+	Cf. \href{https://docs.oracle.com/javase/tutorial/jdbc/}{tutoriel}
+\end{frame}
+
+\subsection{Instanciation}
+\begin{frame}
+	\frametitle{Instanciation}
+	\begin{block}{Approche 1 (Java SE, typiquement)}
+		\begin{itemize}
+			\item Une classe fournisseur implémente \href{https://docs.oracle.com/javase/8/docs/api/java/sql/Driver.html}{\texttt{Driver}}
+			\item Développeur appelle \jseref{java.sql/DriverManager}
+			\item \texttt{DriverManager} trouve le pilote et l’instancie
+			\item Exemple : \texttt{DriverManager.getConnection(url)}
+		\end{itemize}
+	\end{block}
+	\begin{block}{Approche 2 (Java EE, typiquement)}
+		\begin{itemize}
+			\item Une classe fournisseur implémente \jseref{javax.sql/DataSource}
+			\item Source accessible via JNDI à un endroit convenu
+			\item Développeur instancie DataSource par \texttt{lookup} JNDI puis appelle \texttt{source.getConnection(…)}
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Injection de la \texttt{DataSource}}
+	\begin{itemize}
+		\item Injection de ressources via \jeeref[@]{javax.annotation/Resource}
+		\item Le conteneur va chercher la ressource via JNDI
+		\item Nom JNDI par défaut selon type de la ressource
+		\item Pour nous : \texttt{@Resource DataSource myDataSource;}
+	\end{itemize}
+\end{frame}
+
+\subsection{Exploitation}
+\subsubsection{Commandes et résultats}
+\begin{frame}
+	\frametitle{\texttt{Statement} et \texttt{ResultSet}}
+	\begin{itemize}
+		\item Création d’un \jseref{java.sql/Statement} (via \texttt{Connection})
+		\item Via \texttt{Statement} : exécution d’une commande SQL (SELECT, UPDATE…)
+		\item Via \texttt{Statement} : paramétrisation possible (nb résultats max…)
+		\item Obtention (si SELECT) d’un \jseref{java.sql/ResultSet}
+		\item \texttt{ResultSet} associé à une ligne courante ; initialement : avant la première
+		\item Naviguer via \texttt{next()} aux lignes suivantes
+		\item Invoquer \texttt{getInt(columnLabel)}, \texttt{getString(columnLabel)}…
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{\texttt{PreparedStatement}}
+	\begin{itemize}
+		\item \jseref{java.sql/PreparedStatement} : précompilé + paramétrisation facile
+		\item La commande SQL contient des \texttt{?}
+		\item Invoquer \texttt{setInt}, \texttt{setString}… pour les paramètres
+	\end{itemize}
+	\begin{exampleblock}{Exemple \texttt{PreparedStatement}}
+		\begin{lstlisting}[keywordstyle=\fontspec{Latin Modern Mono Light}\textbf, emph={String, PreparedStatement}, emphstyle=\fontspec{Latin Modern Mono Light}\textbf, language=Java, basicstyle=\small\NoAutoSpacing\ttfamily, aboveskip=0pt, belowskip=0pt, showstringspaces=false]
+			String s = "update USER set NAME = ? where ID = ?";
+			PreparedStatement stmt = con.prepareStatement(s);
+			stmt.setString(1, "NewName");
+			stmt.setInt(2, 1234);
+			boolean isResultSet = stmt.execute();
+			assert(!isResultSet);
+			assert(stmt.getUpdateCount() == 1);
+		\end{lstlisting}
+	\end{exampleblock}
+	Utiliser \texttt{PreparedStatement} pour éviter les attaques de type injection SQL !
+\end{frame}
+
+\subsubsection{Transactions}
+\begin{frame}
+	\frametitle{Transactions}
+	Par défaut, mode \emph{auto commit} : une transaction par commande
+	\begin{block}{Gestion de transactions explicite}
+		\begin{itemize}
+			\item Invoquer \texttt{setAutoCommit} sur \jseref{java.sql/Connection}
+			\item Exécuter les commandes normalement
+			\item Puis invoquer \texttt{commit} sur \texttt{Connection}
+			\item Ou : \texttt{rollback}
+			\item Voir aussi : \texttt{getTransactionIsolation}, \texttt{setTransactionIsolation}
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\subsection{Outils}
+\begin{frame}
+	\frametitle{Glassfish}
+	\begin{itemize}
+		\item BD intégrée à Glassfish : \href{https://db.apache.org/derby/}{Derby}
+		\item Il faut démarrer la BD : \texttt{asadmin start-database}
+		\item \href{https://db.apache.org/derby/docs/10.10/ref/index.html}{Manuel} SQL pour Derby
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Eclipse}
+	\begin{itemize}
+		\item Pour accéder à une BD, il faut un pilote
+		\item \texttt{Preferences / Data Management / Connectivity / Driver Definitions}
+		\item Créer une instance de pilote pour Derby
+		\item Renseigner le pilote fourni avec glassfish (\texttt{glassfish4/javadb/lib/derbyclient.jar})
+		\item Connexions depuis vue \emph{Data Source Explorer}
+		\item Créer une connexion à BD Derby (via pilote créé)
+		\item Le Schéma à utiliser est \og{}APP\fg{}
+		\item Envoi de commandes : SQL Scrapbook (avec complétion)
+		\item Édition de données : depuis Data Source Explorer
+	\end{itemize}
+\end{frame}
+
+\newlength{\JEEIsolVert}
+\newlength{\JEEIsolBefTr}
+\newlength{\JEEIsolOuter}
+\setlength{\JEEIsolVert}{3mm}
+\setlength{\JEEIsolBefTr}{1.2cm}
+\setlength{\JEEIsolOuter}{3mm}
+
+\section{Concurrence}
+\subsection{Nécessité}
+\begin{frame}
+	\frametitle{Nécessité des transactions atomiques}
+	\begin{itemize}
+		\item Accès concurrents à DB : risques
+		\item Si une transaction par statement ? \pause
+	\end{itemize}
+	\begin{tikzpicture}
+		\path node[rectangle, draw, anchor=west] (risk) {Lost update};
+		\path (risk.east) ++ (\JEEIsolBefTr, 0) coordinate (start line);
+		\path (start line) ++ (0, \JEEIsolVert) node[anchor=east] (trans 1) {Tr. 1};
+		\path (start line) ++ (0, -\JEEIsolVert) node[anchor=east] (trans 2) {Tr. 2};
+		\path[draw, ->] (start line) -- ++ (4.7cm, 0) node[anchor=north west] (time) {temps};
+		\path (trans 1.east) ++ (0.3cm, 0) node[anchor=west, inner sep=0] {$v == v_1$} edge (\tikztostart |- risk);
+		\path (trans 2.east) ++ (2.2cm, 0) node[inner sep=0] {$v ← v_2$} edge (\tikztostart |- risk);
+		\path (trans 1.east) ++ (4.1cm, 0) node[inner sep=0] {$v ← v_3$} edge (\tikztostart |- risk);
+	\end{tikzpicture}
+	\pause
+	\begin{itemize}
+		\item Transaction atomique non triviale (couvrant un ensemble de statements) permet de lire-puis-écrire sans interruption
+		\item Implémentation naïve : DB verrouillée pour un utilisateur pendant le temps de la transaction
+		\item Problème ? \pause Souvent trop peu efficace
+		\item Protection : transaction terminée par \emph{commit} ou \emph{rollback}
+	\end{itemize}
+\end{frame}
+
+\subsection{Niveaux d’isolation}
+\begin{frame}
+	\frametitle{Niveaux d’isolation}
+	\begin{tikzpicture}
+		\path (0, 0) node[rectangle, draw] (risk) {Dirty read};
+		\path (risk.east) ++ (\JEEIsolBefTr, 0) coordinate (start line);
+		\path (start line) ++ (0, \JEEIsolVert) node[anchor=east] (trans 1) {Tr. 1};
+		\path (start line) ++ (0, -\JEEIsolVert) node[anchor=east] (trans 2) {Tr. 2};
+		\path[draw, ->] (start line) -- ++ (5cm, 0) node[anchor=north west] (time) {temps};
+		\path (trans 1.east) ++ (1cm, 0) node[inner sep=0] {$v \leftarrow v'$} edge (\tikztostart |- risk);
+		\path (trans 1.east) ++ (4cm, 0) node[inner sep=0] {rollback} edge (\tikztostart |- risk);
+		\path (trans 2.east) ++ (2.5cm, 0) node[inner sep=0] {$v == v'$} edge (\tikztostart |- risk);
+		\path node[fit={(risk) (trans 1) (time)}] (all) {};
+		\path (all) ++ (0, 1cm) node[inner sep=0] (title) {Read uncommitted (risques ↓)};
+		\path (risk.west)  ++ (-\JEEIsolOuter, 0) coordinate (left border);
+		\path (9.5cm, 0) coordinate (right border);
+		\path[draw] (left border |- title.north) -- (right border |- title.north);
+		\path[draw] (left border |- title.south) -- (right border |- title.south);
+		
+		\path (risk.west) ++ (0, -2cm) node[rectangle, draw, anchor=west] (risk) {\small Non-repeatable rd};
+		\path (risk.east) ++ (\JEEIsolBefTr, 0) coordinate (start line);
+		\path (start line) ++ (0, \JEEIsolVert) node[anchor=east] (trans 1) {Tr. 1};
+		\path (start line) ++ (0, -\JEEIsolVert) node[anchor=east] (trans 2) {Tr. 2};
+		\path[draw, ->] (start line) -- ++ (4.5cm, 0) node[anchor=north west] (time) {temps};
+		\path (trans 1.east) node[anchor=west, inner sep=0] {$v == v_1$} edge (\tikztostart |- risk);
+		\path (trans 2.east) ++ (1.5cm, 0) node[inner sep=0] {$v ← v_2$} edge (\tikztostart |- risk);
+		\path (trans 2.east) ++ (3.0cm, 0) node[inner sep=0] {commit} edge (\tikztostart |- risk);
+		\path (trans 1.east) ++ (3.8cm, 0) node[inner sep=0] {$v == v_2$} edge (\tikztostart |- risk);
+		\path node[fit={(risk) (trans 1) (time)}] (all) {};
+		\path (all) ++ (0, 1cm) node[inner sep=1pt] (title) {Read committed (protection ↑, risques ↓)};
+		\path[draw] (left border |- title.north) -- (right border |- title.north);
+		\path[draw] (left border |- title.south) -- (right border |- title.south);
+		
+		\path (risk.south) coordinate (previous);
+		\path (risk.west) ++ (0, -1.2cm) node[rectangle, draw, anchor=west] (risk) {\nth{2} lost update} edge[->, >=open triangle 90] (\tikztostart |- previous);
+		\path (risk.east) ++ (\JEEIsolBefTr, 0) coordinate (start line);
+		\path (start line) ++ (0, \JEEIsolVert) node[anchor=east] (trans 1) {Tr. 1};
+		\path (start line) ++ (0, -\JEEIsolVert) node[anchor=east] (trans 2) {Tr. 2};
+		\path[draw, ->] (start line) -- ++ (4.7cm, 0) node[anchor=north west] (time) {temps};
+%		\path (trans 2.east) node[anchor=west, inner sep=0] {$v == v_1$} edge (\tikztostart |- risk);
+		\path (trans 1.east) ++ (0.3cm, 0) node[anchor=west, inner sep=0] {$v == v_1$} edge (\tikztostart |- risk);
+		\path (trans 2.east) ++ (2.2cm, 0) node[inner sep=0] {$v ← v_2$} edge (\tikztostart |- risk);
+		\path (trans 2.east) ++ (3.6cm, 0) node[inner sep=0] {commit} edge (\tikztostart |- risk);
+		\path (trans 1.east) ++ (4.1cm, 0) node[inner sep=0] {$v ← v_3$} edge (\tikztostart |- risk);
+		\path node[fit={(risk) (trans 1) (time)}] (all) {};
+		\path (all) ++ (0, -0.9cm) node[inner sep=1pt] (title) {Repeatable read (protection ↑, risques ↓)};
+		\path[draw] (left border |- title.north) -- (right border |- title.north);
+		\path[draw] (left border |- title.south) -- (right border |- title.south);
+		
+		\path (risk.west) ++ (0, -1.8cm) node[rectangle, draw, anchor=west] (risk) {Phantom};
+		\path (risk.east) ++ (\JEEIsolBefTr, 0) coordinate (start line);
+		\path (start line) ++ (0, \JEEIsolVert) node[anchor=east] (trans 1) {Tr. 1};
+		\path (start line) ++ (0, -\JEEIsolVert) node[anchor=east] (trans 2) {Tr. 2};
+		\path[draw, ->] (start line) -- ++ (5.5cm, 0) node[anchor=north west] (time) {temps};
+		\path (trans 2.east) ++ (2.5cm, 0) node[inner sep=0] {insert $r$} edge (\tikztostart |- risk);
+		\path (trans 1.east) ++ (1cm, 0) node[inner sep=0] {lit : $R$} edge (\tikztostart |- risk);
+		\path (trans 1.east) ++ (4cm, 0) node[inner sep=0] {lit : $R \cup \set{r}$} edge (\tikztostart |- risk);
+		\path node[fit={(risk) (trans 1) (time)}] (all) {};
+		\path (all) ++ (0, -0.95cm) node[inner sep=0] (title) {Serializable (protection ↑)};
+		\path[draw] (left border |- title.north) -- (right border |- title.north);
+		\path[draw] (left border |- title.south) -- (right border |- title.south);
+	\end{tikzpicture}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Niveaux d’isolation}
+	\begin{itemize}
+		\item Quatre niveaux d’isolation standards (ANSI ; JDBC ; JTA) {\tiny (\href{http://www.cs.umb.edu/~poneil/iso.pdf}{critiqués})}
+		\item Définis comme protection contre catégories de risques
+		\item Risque défini comme : phénomène problématique
+		\item SGBD configuré pour un niveau d’isolation donné
+		\item Typiquement : Read committed
+		\item Possible de se protéger contre certains risques au cas par cas
+	\end{itemize}
+	\begin{block}{Protection contre \nth{2} lost update}
+		\begin{itemize}
+			\item Optimiste : lire version lors lecture, check version lors écriture
+			\item Pessimiste : verrouiller lors lecture
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\section{Exercices}
+\begin{frame}[label=Exercices]
+	\frametitle{Exercices}
+	\begin{itemize}
+		\item Créer (sur papier) une table pour un type de votre projet.
+		\item La créer dans votre BD via le SQL Scrapbook.
+		\item Tester des requêtes simple de création, sélection, effacement dans le SQL Scrapbook.
+		\item Permettre CR.D : Create, Retrieve, Delete \emph{aussi simple que possible}, via un ou plusieurs servlets. (N’utilisez pas de paramètres complexes, ce n’est pas le but de cet exercice.)
+		\item Programmer une méthode qui transforme un attribut d’un objet. Par exemple, elle met le nom en majuscule s’il ne l’était pas (obligation d’utiliser Java, pas SQL : supposez que la transformation est trop complexe pour être exprimée en SQL).
+		\item[+] Permettre l’application de cette méthode via un servlet. Votre servlet ne doit pas nécessairement accepter de paramètres. Attention à l’atomicité de la transaction !
+	\end{itemize}
+\end{frame}
+
+\section{À vous}
+\begin{frame}
+	\frametitle{À vous de jouer}
+	Exercice à effectuer \emph{avant} le 25 janvier, par chaque membre de chaque équipe.
+	\begin{itemize}
+		\item[+\footnote{Le + indique que cet aspect intervient dans la note}] Un servlet qui applique une transformation quelconque sur un attribut d’un ou plusieurs objets stocké dans votre BD. Cf. \hyperlink{Exercices}{Exercices}.
+	\end{itemize}
+\end{frame}
+
+\appendix
+\AtBeginSection{
+}
+\section{Licence}
+\begin{frame}
+	\frametitle{Licence}
+	Cette présentation, et le code LaTeX associé, sont sous \href{http://opensource.org/licenses/MIT}{licence MIT}. Vous êtes libres de réutiliser des éléments de cette présentation, sous réserve de citer l’auteur.
+	
+	Le travail réutilisé est à attribuer à \href{http://www.lamsade.dauphine.fr/~ocailloux/}{Olivier Cailloux}, Université Paris-Dauphine.
+	
+	\small{(Ceci ne couvre pas les images incluses dans ce document, puisque je n’en suis généralement pas l’auteur.)}
+\end{frame}
+\end{document}
+\begin{frame}
+	\frametitle{}
+	\begin{itemize}
+		\item 
+	\end{itemize}
+	\begin{block}{}
+		
+	\end{block}
+\end{frame}
+
+\section{Bibliographie}
+\begin{frame}[allowframebreaks]
+	\frametitle{Bibliographie}
+	\def\newblock{\hskip .11em plus .33em minus .07em}
+% 	\bibliography{zotero}
+\end{frame}
+
+\section{Autres}
+\begin{frame}
+	\frametitle{}
+	\begin{itemize}
+		\item 
+	\end{itemize}
+	\begin{block}{}
+		
+	\end{block}
+\end{frame}
+\end{document}
