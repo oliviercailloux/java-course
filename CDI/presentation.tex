@@ -1,0 +1,302 @@
+\RequirePackage[l2tabu, orthodox]{nag}
+\RequirePackage{silence}
+\WarningFilter{nag}{There is no environment ``centering'' }%nag complains because beamer titlepage uses a centering environment
+\WarningFilter{nag}{1 complaints in total}
+\WarningFilter{ifpdf}{Someone has redefined \pdfoutput}
+\WarningFilter{fmtcount}{\ordinal already defined use \FCordinal instead}
+\documentclass[english, french]{beamer}
+\input{preamble/packages}
+\input{preamble/math_basics}
+\input{preamble/math_mine}
+\input{preamble/redac}
+\input{preamble/draw}
+\input{preamble/acronyms}
+
+\title{Conception d’applications internet}
+\subtitle{CDI}
+\subject{Java EE}
+\keywords{injection}
+\author{Olivier Cailloux}
+\institute[LAMSADE]{LAMSADE, Université Paris-Dauphine}
+\date{}
+
+\begin{document}
+\bibliographystyle{apalike}
+
+\begin{frame}[plain]
+	\tikz[remember picture,overlay]{
+		\path (current page.south west) node[anchor=south west, inner sep=0] {
+			\includegraphics[height=1cm]{LAMSADE95.jpg}
+		};
+		\path (current page.south) ++ (2mm, 1mm) node[anchor=south, inner sep=0] {
+			\includegraphics[height=9mm]{Dauphine.jpg}
+		};
+		\path (current page.south east) node[anchor=south east, inner sep=0] {
+			\includegraphics[height=1cm]{PSL.png}
+		};
+	}
+   \titlepage
+\end{frame}
+\addtocounter{framenumber}{-1}
+
+\section[Dernier épisode]{Durant le dernier épisode…}
+\subsection{Était à faire}
+\begin{frame}
+	\frametitle{Était à faire}
+	Exercice à effectuer \emph{avant} le 25 janvier, par chaque membre de chaque équipe.
+	\begin{itemize}
+		\item[+\footnote{Le + indique que cet aspect intervient dans la note}] Un servlet qui applique une transformation quelconque sur un attribut d’un ou plusieurs objets stocké dans votre BD. Cf. Exercices.
+	\end{itemize}
+	Exercices :
+	\begin{itemize}
+		\item Programmer une méthode qui transforme un attribut d’un objet. Par exemple, elle met le nom en majuscule s’il ne l’était pas (obligation d’utiliser Java, pas SQL : supposez que la transformation est trop complexe pour être exprimée en SQL).
+		\item[+] Permettre l’application de cette méthode via un servlet. Votre servlet ne doit pas nécessairement accepter de paramètres. Attention à l’atomicité de la transaction !
+	\end{itemize}
+\end{frame}
+
+\subsection{Dépouillement}
+\begin{frame}
+	\frametitle{Dépouillement}
+	\begin{itemize}
+		\item En résumé : détails demandés ; meilleur lien exercices et projet
+		\item En contrepartie : couverture restreinte
+	\end{itemize}
+\end{frame}
+
+\section[Plan]{Plan du reste du cours}
+\begin{frame}
+	\frametitle{Plan du reste du cours}
+	\begin{itemize}
+		\item Cours 5, 6 : CDI (et retour sur EJBs)
+		\item Cours 7, 8 : JSF
+		\item Cours 8 : présentation des projets + vote meilleur projet
+	\end{itemize}
+	Également disponible sur MyCourse : JPA ; JAX-RS (services web REST)
+\end{frame}
+
+\section{Évaluation}
+\subsection{Modifications}
+\begin{frame}
+	\frametitle{Modification évaluation}
+	\begin{itemize}
+		\item Fin des exercices notés
+		\item Note actuelle, si positive, comptera dans pondération individuelle
+		\item Note concept évaluée selon code du projet (sauf demande ≠)
+	\end{itemize}
+\end{frame}
+
+\subsection{Projet}
+\begin{frame}
+	\frametitle{Note projet globale}
+	Technologies vues : \{EJB, Servlet, JDBC ou JPA, CDI, JSF\}
+	\begin{block}{Note projet globale}
+		\begin{itemize}
+			\item Exactitude ; maintenabilité du code ; fonctionnalités
+			\item Utilisation appropriée des technologies vues
+			\item Suivre recommandations données au cours (ou en discuter)
+			\item Si divergences (par ex. JSP au lieu de JSF) : me demander
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Pondération individuelle}
+	\begin{block}{Pondération individuelle}
+		\begin{itemize}
+			\item Éviter la spécialisation : chaque membre doit utiliser directement au moins trois techno.\ vues, auteur ou reviewer
+			\item Pondération si déséquilibre de qual/quantité de contribution
+			\item Pair programming apprécié
+			\item Contribution significative en tant qu’auteur demandée
+		\end{itemize}
+	\end{block}
+	Chaque commit doit indiquer clairement l’auteur et éventuellement le reviewer
+	\begin{itemize}
+		\item Utilisez \texttt{user.name}, \alert{un seul nom}, \alert{gardez le même nom}
+		\item Indiquez dans le commentaire du commit le binôme éventuel : \og\alert{reviewer: Machin}\fg avec Machin le user.name du binôme
+	\end{itemize}
+\end{frame}
+
+\section{CDI}
+\subsection{Utilité de l’injection}
+\begin{frame}
+	\frametitle{Utilité de l’injection}
+	CDI ? \pause Context Dependency \emph{Injection}\pause
+	\begin{itemize}
+		\item Dépendance envers un service
+		\item Pourquoi éviter de la coder en dur ? \pause
+		\item Tests : indépendance et robustesse ; câbler une alternative \pause
+		\item Comment éviter de la coder en dur ? \pause
+		\item L’appelant indique la dépendance (référence dans constructeur…) \pause
+		\item MAIS crée une dépendance encombrante
+		\item Et si classe créée automatiquement ? (exemple ? \pause Servlet !)
+		\item Solution Java EE : CDI
+		\item Requiert gestion du cycle de vie
+	\end{itemize}
+\end{frame}
+
+\subsection{Vue d’ensemble}
+\begin{frame}
+	\frametitle{Vue d’ensemble}
+	\begin{itemize}
+		\item Bean : classe dont le cycle de vie des instances peut être géré par le conteneur (y compris ressources)
+		\item Pour ce faire, préciser son \og{}contextual scope\fg{} : \jeeref[@]{javax.enterprise.context/RequestScoped} ; \jeeref[@]{javax.enterprise.context/SessionScoped} ; \jeeref[@]{javax.enterprise.context/ConversationScoped} ; \jeeref[@]{javax.enterprise.context/ApplicationScoped}…
+		\item Conteneur crée \emph{instance contextuelle} à la demande
+		\item Instance contextuelle détruite à la fin de son scope
+		\item Injection : \jeeref[@]{javax.inject/Inject} sur champ {\tiny ou méthode ou constructeur}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Context object}
+	\begin{itemize}
+		\item \emph{Context object} de scope $S$ : associe un type de bean à maximum une instance contextuelle de scope $S$
+		\item Un context object par requête / session / conversation / …
+		\item Injection possible seulement dans objet ayant accès au scope adéquat
+		\item Recommandation : toujours préciser le scope pour l’injection
+	\end{itemize}
+\end{frame}
+
+\subsection{Scopes}
+\begin{frame}
+	\frametitle{Scopes}
+	\begin{itemize}
+		\item \texttt{@RequestScoped} : détruit après traitement de la requête
+		\item \texttt{@SessionScoped} : référence liée à la session HTTP ; détruit avec la session (cf. Cours 3 EJB)
+		\item \texttt{@ApplicationScoped} : créé au besoin, un par application
+		\item \texttt{@ConversationScoped} : gestion manuelle de la conversation
+		\item \jeeref[@]{javax.enterprise.context/Dependent} : pas un normal scope ; scope lié à la destination de l’injection
+		\item Session et conversation-scoped : implémenter \jseref{java.io/Serializable}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Conversations}
+	\begin{itemize}
+		\item \texttt{@ConversationScoped} : gestion manuelle de la conversation
+		\item \jeeref{javax.enterprise.context/Conversation} : objet \texttt{@RequestScoped} (donc injectable) pour démarrer et terminer une conversation
+		\item Une conversation a un identifiant unique
+		\item Joindre une conversation : envoyer paramètre de requête \texttt{cid} %TODO tester
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Scopes et EJB}
+	\begin{itemize}
+		\item Stateless session bean doit avoir scope \texttt{@Dependent}
+		\item Singleton doit avoir \texttt{@ApplicationScoped} {\tiny ou \texttt{@Dependent}}
+		\item Stateful : tout est permis
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Scopes et concurrence}
+	\begin{itemize}
+		\item Le développeur doit protéger les objets dans un scope contre les accès concurrents
+		\item Sauf ConversationScoped, garanti par le conteneur actif pour une requête à la fois
+	\end{itemize}
+\end{frame}
+
+\subsection{Divers}
+\begin{frame}
+	\frametitle{Désambiguation et production}
+	Comment préciser quelle classe injecter ?
+	\begin{itemize}
+		\item Un bean a des \emph{qualifieurs} : annotations spécialisant un type
+		\item Qualifieur : type annotation annoté \jseref[@]{java.lang.annotation/Retention} \jseref{java.lang.annotation/RetentionPolicy\#RUNTIME} et \jeeref[@]{javax.inject/Qualifier}
+		\item Préciser \texttt{@Inject @Qualifieur Type truc;}
+		\item {\tiny Qualifieurs prédéfinis : \jeeref[@]{javax.enterprise.inject/Default} (tout type sans qualifieur {\tiny ou slmt \jeeref[@]{javax.inject/Named}}), \jeeref[@]{javax.enterprise.inject/Any} (tout {\tiny sauf \jeeref[@]{javax.inject/New}})}
+	\end{itemize}
+	\begin{block}{Producteurs}
+		\begin{itemize}
+			\item Méthode \jeeref[@]{javax.enterprise.inject/Produces} : produit une instance à la demande
+			\item Méthode peut aussi être annotée d’un scope et de qualifieurs (s’appliquent au produit)
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Divers}
+	\begin{itemize}
+		\item \jeeref[@]{javax.transaction/Transactional} démarcation automatique de transaction
+		\item On peut injecter : managed beans et Java EE Resources
+		\item Ressource : bean représentant référence vers environnement composant (\jeeref[@]{javax.ejb/EJB}, \jeeref[@]{javax.annotation/Resource}, {\tiny @WebServiceRef, slmt scope \texttt{@Dependent} standard})
+	\end{itemize}
+	\begin{block}{Tests}
+		\begin{itemize}
+			\item Comment faciliter les tests unitaires (par exemple) ? \pause
+			\item Ajouter des méthodes \texttt{setTruc(Truc)}, visibilité package
+			\item Test sans CDI : initialiser la classe avec \texttt{new}
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\subsection{Références}
+\begin{frame}
+	\frametitle{Références}
+	\begin{itemize}
+		\item The Java EE Tutorial: \href{http://docs.oracle.com/javaee/7/tutorial/partcdi.htm}{Contexts and Dependency Injection}
+		\item \href{https://jcp.org/en/jsr/detail?id=346}{JSR 346} (Context and Dependency Injection 1.1 et 1.2) (\href{http://download.oracle.com/otn-pub/jcp/cdi-1_2-mrel-eval-spec/cdi-1.2.pdf}{direct}).
+		\item \href{https://jcp.org/en/jsr/detail?id=330}{JSR 330} (Dependency Injection) (\href{http://download.oracle.com/otn-pub/jcp/dependency_injection-1.0-final-oth-JSpec/dependency_injection-1_0-final-spec.zip}{direct}) : simplement \href{http://docs.oracle.com/javaee/7/api/javax/inject/Inject.html}{\texttt{@Inject}} et cie
+		\item JSR 330, \href{https://jcp.org/en/jsr/detail?id=330\#4}{section 4} : description courte de l’intérêt du DI
+		\item \href{https://jcp.org/en/jsr/detail?id=342}{JSR 342} (Java EE 7) (\href{http://download.oracle.com/otn-pub/jcp/java_ee-7-mrel-eval-spec/JavaEE_Platform_Spec.pdf}{direct})
+		\item \href{https://jcp.org/en/jsr/detail?id=345}{JSR 345} (EJB 3.2) (\href{http://download.oracle.com/otn-pub/jcp/ejb-3_2-fr-eval-spec/ejb-3_2-core-fr-spec.pdf}{direct})
+	\end{itemize}
+\end{frame}
+
+\section{Exercices}
+\begin{frame}[allowframebreaks]
+	\frametitle{Exercices}
+	\begin{itemize}
+		\item Programmer un bean \texttt{@RequestScoped}
+		\item L’injecter et l’utiliser dans un servlet {\tiny ou autre objet avec portée requête}
+		\item Programmer un bean \texttt{@RequestScoped} avec un état (un simple compteur, par exemple, qui s’incrémente lors de chaque utilisation)
+		\item Observer son comportement lors de l’utilisation dans un servlet
+		\item Rendre votre bean \texttt{@ApplicationScoped} ; observer ce que ça change
+		\item Rendre votre bean \texttt{@SessionScoped} ; observer ce que ça change
+		\item[*] Simuler un traitement long (\texttt{\jseref{java.lang/Thread}.sleep}) dans le bean CDI. Avec deux navigateurs différents, envoyer deux GET simultanées. On souhaite qu’elles soient traitées en parallèle (la deuxième n’attend pas la fin de la première avant de s’exécuter). Comment annoter le bean CDI pour ce faire ? Quelle différence prévoyez-vous par exemple entre \texttt{@ApplicationScoped} et \texttt{@RequestScoped} ?
+		\item[*] Pour le vérifier, modifiez le comportement de votre bean CDI. Il possède maintenant un compteur \texttt{i}. Il incrémente \texttt{i} en entrée d’appel, puis il renvoie la valeur de \texttt{i} à l’appelant, puis il décrémente \texttt{i}. Le bean renverra-t-il toujours la valeur d’initialisation de \texttt{i} + 1, lors d’appels parallèles de clients web différents ? Prédire son comportement en fonction de la portée CDI qui vous lui affectez. Réfléchir aux avantages de différents choix. Pour vérifier vos prédictions, utiliser \texttt{Thread.sleep} judicieusement.
+		\item Programmer un SLSB (stateless session bean), l’injecter avec \jeeref[@]{javax.ejb/EJB} : quelles différences avec un bean \texttt{@RequestScoped} ? Et quelles différences avec d’autres portées ?
+	\end{itemize}
+\end{frame}
+
+\appendix
+\AtBeginSection{
+}
+\section{Licence}
+\begin{frame}
+	\frametitle{Licence}
+	Cette présentation, et le code LaTeX associé, sont sous \href{http://opensource.org/licenses/MIT}{licence MIT}. Vous êtes libres de réutiliser des éléments de cette présentation, sous réserve de citer l’auteur.
+	
+	Le travail réutilisé est à attribuer à \href{http://www.lamsade.dauphine.fr/~ocailloux/}{Olivier Cailloux}, Université Paris-Dauphine.
+	
+	\small{(Ceci ne couvre pas les images incluses dans ce document, puisque je n’en suis généralement pas l’auteur.)}
+\end{frame}
+\end{document}
+\begin{frame}
+	\frametitle{}
+	\begin{itemize}
+		\item 
+	\end{itemize}
+	\begin{block}{}
+		
+	\end{block}
+\end{frame}
+
+\section{Bibliographie}
+\begin{frame}[allowframebreaks]
+	\frametitle{Bibliographie}
+	\def\newblock{\hskip .11em plus .33em minus .07em}
+% 	\bibliography{zotero}
+\end{frame}
+
+\section{Autres}
+\begin{frame}
+	\frametitle{}
+	\begin{itemize}
+		\item 
+	\end{itemize}
+	\begin{block}{}
+		
+	\end{block}
+\end{frame}
+\end{document}
