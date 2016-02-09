@@ -1,0 +1,293 @@
+\RequirePackage[l2tabu, orthodox]{nag}
+\RequirePackage{silence}
+\WarningFilter{nag}{There is no environment ``centering'' }%nag complains because beamer titlepage uses a centering environment
+\WarningFilter{nag}{1 complaints in total}
+\WarningFilter{ifpdf}{Someone has redefined \pdfoutput}
+\WarningFilter{fmtcount}{\ordinal already defined use \FCordinal instead}
+\documentclass[english, french]{beamer}
+\input{preamble/packages}
+\input{preamble/math_basics}
+\input{preamble/math_mine}
+\input{preamble/redac}
+\input{preamble/draw}
+\input{preamble/acronyms}
+
+\title{Conception d’applications internet}
+\subtitle{Services Web REST}
+\subject{Java EE}
+\keywords{REST, JAXB, Web services}
+\author{Olivier Cailloux}
+\institute[LAMSADE]{LAMSADE, Université Paris-Dauphine}
+\date{}
+
+\begin{document}
+\bibliographystyle{apalike}
+
+\begin{frame}[plain]
+	\tikz[remember picture,overlay]{
+		\path (current page.south west) node[anchor=south west, inner sep=0] {
+			\includegraphics[height=1cm]{LAMSADE95.jpg}
+		};
+		\path (current page.south) ++ (0, 1mm) node[anchor=south, inner sep=0] {
+			\includegraphics[height=9mm]{Dauphine.jpg}
+		};
+		\path (current page.south east) node[anchor=south east, inner sep=0] {
+			\includegraphics[height=1cm]{PSL.png}
+		};
+	}
+   \titlepage
+\end{frame}
+\addtocounter{framenumber}{-1}
+
+\section{JAX-RS}
+\subsection{Introduction}
+\begin{frame}
+	\frametitle{Services Web}
+	\begin{itemize}
+		\item SOAP (Simple Object Access Protocol) : standard W3C
+		\item Définit SOAP enveloppe pour transmission (basée sur XML), architecture de liaison avec protocoles sous-jacents, liaison HTTP, compression de messages…
+		\item REST (Representational State Transfer) : contraintes architecturales
+	\end{itemize}
+	Cf. \href{http://www.w3.org/2005/Talks/1115-hh-k-ecows/}{présentation} : Reconciling Web Services and REST Services
+\end{frame}
+
+\begin{frame}
+	\frametitle{Méthodes HTTP}
+	\begin{itemize}
+		\item Basé sur \emph{ressource} (identifiée par URI)
+	\end{itemize}
+	\begin{block}{Exemples de méthodes}
+		\begin{itemize}
+			\item GET : demander représentation d’une ressource {\tiny ou une partie}
+			\item POST : traiter représentation fournie selon ressource indiquée
+			\item PUT : remplacer la ressource par la représentation indiquée
+			\item DELETE : effacer le lien entre la ressource et sa fonction
+		\end{itemize}
+	\end{block}
+	\begin{itemize}
+		\item Idempotent ? \pause Répétition produit même effet (GET, PUT, DELETE)
+		\item Safe ? \pause Pas de changement d’état (GET)
+		\item Représentation sous formes diverses (\href{http://www.iana.org/assignments/media-types/}{liste} \href{http://tools.ietf.org/html/rfc7231\#section-3.1.1.1}{media-types})
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{REST en Java EE : aperçu}
+	\begin{itemize}
+		\item JAX-RS
+		\item Sorte de servlet plus haut-niveau
+		\item Classe ressource : l’annoter \jeeref[@]{javax.ws.rs/Path}
+		\item Méthode ressource :  l’annoter \jeeref[@]{javax.ws.rs/GET}, etc.
+		\item \texttt{@Path} sur méthode : est une sub-resource method {\tiny ou sub-resource locator}
+	\end{itemize}
+\end{frame}
+
+\subsection{Implémentation}
+\begin{frame}
+	\frametitle{Méthodes ressource}
+	\begin{itemize}
+		\item Méthode renvoyant une réponse : annoter \jeeref[@]{javax.ws.rs/Produces}, tableau de \texttt{String} (cf. \jeeref{javax.ws.rs.core/MediaType})
+		\item Choix méthode appelée par le conteneur ? \pause selon HTTP \texttt{accept} et annotations \texttt{@Produces} \pause
+		\item Type retour méthode ? \pause Doit être convertible en type mime adéquat \pause
+		\item Conversion par \emph{Entity provider} \og{}writer\fg{} embarqué ou maison
+		\item Ou : renvoyer \jeeref{javax.ws.rs.core/Response} {\tiny ou \jeeref{javax.ws.rs.core/GenericEntity}}
+		\item Statut ? \pause Mis automatiquement si pas mis {\tiny et pas d’exception} : \texttt{null} ⇒ 204 No Content ; sinon 200 OK
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Entity providers}
+	\begin{itemize}
+		\item Provider : classe annotée \jeeref[@]{javax.ws.rs.ext/Provider} et {\tiny éventuellement} \jeeref[@]{javax.ws.rs/Produces}
+		\item Entity provider \og{}writer\fg{} : provider qui implémente \jeeref{javax.ws.rs.ext/MessageBodyWriter}\texttt{<MyType>}
+		\item Entity provider fournis, exemple \texttt{text/plain} ⇔ \texttt{String} ; \texttt{MultivaluedMap<String, String>} ⇔ \texttt{application/x-www-form-urlencoded}…
+		\item{} {\tiny [text/xml , application/xml, application/*+xml] ⇔ [javax.xml.transform.Source, javax.xml.bind.JAXBElement, application-supplied JAXB classes]} %TODO
+		\item Méthode consommant un contenu : annoter \jeeref[@]{javax.ws.rs/Consumes}, tableau de \texttt{String} (cf. \jeeref{javax.ws.rs.core/MediaType})
+		\item Lecture du contenu ? \pause Méthode a un paramètre non annoté de type convertible en type mime adéquat \pause
+		\item Entity provider \og{}reader\fg{} : classe annotée \jeeref[@]{javax.ws.rs.ext/Provider} qui implémente \jeeref{javax.ws.rs.ext/MessageBodyReader}
+	\end{itemize}
+\end{frame}
+
+\subsection{Paramètres}
+\begin{frame}
+	\frametitle{Paramètres}
+	Accès aux paramètres autres que contenu requête HTTP :
+	\begin{itemize}
+		\item \texttt{\jeeref[@]{javax.ws.rs/DefaultValue}("me") \jeeref[@]{javax.ws.rs/QueryParam}("name") String na}
+		\item Ou classe avec paramètre constructeur \texttt{String} {\tiny ou collections}
+		\item Convertisseurs de base fournis : \texttt{@QueryParam("zevalue") int value}, …
+		\item Penser au défaut explicite ! (Sinon défaut pour type)
+		\item Paramètre dans l’URI : \texttt{@Path("users/\{username\}")} {\tiny ou \texttt{@Path("users/\{username: regexp\}")}, par défaut [\^{}/]+?}
+		\item \texttt{\jeeref[@]{javax.ws.rs/PathParam}("username") String usernameVar;}
+		\item \jeeref[@]{javax.ws.rs/HeaderParam}, \jeeref[@]{javax.ws.rs/CookieParam}, \jeeref[@]{javax.ws.rs/MatrixParam}, \jeeref[@]{javax.ws.rs/FormParam}
+		\item \jeeref[@]{javax.ws.rs.core/Context} \jeeref{javax.ws.rs.core/UriInfo} \texttt{ui} ; \texttt{@Context \jeeref{javax.ws.rs.core/HttpHeaders} hh}
+		\item Aussi sur champs {\tiny ou constructeur pour certains} (restriction ? \pause pour classes ressources de scope requête)
+	\end{itemize}
+\end{frame}
+
+
+\subsection{Cycles de vie}
+\begin{frame}
+	\frametitle{Cycles de vie}
+	\begin{itemize}
+		\item Scopes CDI permis {\tiny en fonction de l’implémentation JAX-RS} {\tiny spécification ambigüe concernant Provider mais fonctionne en pratique}
+		\item Recommandé : toujours préciser scope sur classes ressources et providers
+		\item Permet protection contre accès concurrents
+	\end{itemize}
+\end{frame}
+
+\subsection{Exception}
+\begin{frame}
+	\frametitle{Exceptions}
+	\begin{itemize}
+		\item Provider maison : implémenter \jeeref{javax.ws.rs.ext/ExceptionMapper}\texttt{<MyException>} et renvoyer une Réponse
+		\item Ou lancer \jeeref{javax.ws.rs/WebApplicationException}, indiquer réponse
+		\item \texttt{WebApplicationException} enveloppée dans \jeeref{javax.servlet/ServletException} pour la propager {\tiny pour implémentation appuyée sur servlets}
+	\end{itemize}
+\end{frame}
+
+\subsection{Packaging}
+\begin{frame}
+	\frametitle{Packaging}
+	\begin{itemize}
+		\item \jeeref[@]{javax.ws.rs/ApplicationPath} sur sous-classe de \jeeref{javax.ws.rs.core/Application} (capture value/*)
+		\item Dans \texttt{.war}
+		\item Application sous-classe : singleton {\tiny (@ApplicationScope obligatoirement)}
+	\end{itemize}
+\end{frame}
+
+\subsection{Voir aussi}
+\begin{frame}
+	\frametitle{Voir aussi}
+	\begin{itemize}
+		\item Validation ; Asynchronicité ; Injection de contexte% (dans spec)
+		\item \jeeref{javax.ws.rs.core/UriBuilder} peut être utile
+		\item Considérer implémenter HEAD (sinon délégation à GET)
+%		\item ParamConverter is available via a registered ParamConverterProvider, pour champ @TrucParam MyType param;
+		\item \href{http://www.w3.org/Submission/wadl/}{WADL}, description formelle de services REST
+		\item Une classe ressource peut être un Session bean (quelle sorte ? \pause SLSB ou Singleton : gestion cycle de vie par le conteneur)
+	\end{itemize}
+\end{frame}
+
+\subsection{Client}
+\begin{frame}[fragile]
+	\frametitle{Client}
+	\begin{itemize}
+		\item \jeeref{javax.ws.rs.client/Client} : point d’entrée
+		\item \jeeref{javax.ws.rs.client/WebTarget} pour manipuler des URIs
+	\end{itemize}
+	\begin{block}{Exemple}%
+%		\lstinputlisting[language=Java,basicstyle=\NoAutoSpacing]{Client.java}
+		\begin{lstlisting}[language=Java, basicstyle=\small\NoAutoSpacing, aboveskip=0pt, belowskip=0pt]
+Client client = ClientBuilder.newClient();
+WebTarget t1 = client.target("http://.../users");
+WebTarget t2 = t1.path("{uId}");
+WebTarget t3 = t2.resolveTemplate("uId", "123");
+/** http://example.com/users/123?prof=1 */
+WebTarget t4 = t3.queryParam("prof", "1");
+String result = t4.request(MediaType.TEXT_PLAIN)
+  .get(String.class);
+client.close();
+		\end{lstlisting}
+	\end{block}
+\end{frame}
+
+\subsection{Références}
+\begin{frame}
+	\frametitle{Références}
+	\begin{itemize}
+		\item \href{http://dx.doi.org/10.1145/337180.337228}{Article} REST : Fielding \& Taylor, Principled Design of the Modern Web Architecture (\href{https://www.ics.uci.edu/~fielding/pubs/webarch_icse2000.pdf}{direct})%http://dx.doi.org.gate6.inist.fr/10.1145/337180.337228
+		\item \href{http://www.w3.org/Protocols/}{RFC 7231} : HTTP/1.1, part 2: Semantics and Content
+		\item The Java EE Tutorial: \href{http://docs.oracle.com/javaee/7/tutorial/partwebsvcs.htm}{Web Services}
+		\item \href{https://jcp.org/en/jsr/detail?id=346}{JSR 346} (Context and Dependency Injection 1.1 et 1.2) (\href{http://download.oracle.com/otn-pub/jcp/cdi-1_2-mrel-eval-spec/cdi-1.2.pdf}{direct}).
+		\item \href{https://jcp.org/en/jsr/detail?id=330}{JSR 330} (Dependency Injection) (\href{http://download.oracle.com/otn-pub/jcp/dependency_injection-1.0-final-oth-JSpec/dependency_injection-1_0-final-spec.zip}{direct}) : simplement \href{http://docs.oracle.com/javaee/7/api/javax/inject/Inject.html}{\texttt{@Inject}} et cie
+		\item \href{https://jcp.org/en/jsr/detail?id=339} JSR 339 (JAX-RS 2.0) (\href{http://download.oracle.com/otn-pub/jcp/jaxrs-2_0_rev_A-mrel-eval-spec/jsr339-jaxrs-2.0-final-spec.pdf}{direct})
+		\item \href{https://jcp.org/en/jsr/detail?id=342}{JSR 342} (Java EE 7) (\href{http://download.oracle.com/otn-pub/jcp/java_ee-7-mrel-eval-spec/JavaEE_Platform_Spec.pdf}{direct})
+		\item \href{https://jcp.org/en/jsr/detail?id=345}{JSR 345} (EJB 3.2) (\href{http://download.oracle.com/otn-pub/jcp/ejb-3_2-fr-eval-spec/ejb-3_2-core-fr-spec.pdf}{direct})
+	\end{itemize}
+\end{frame}
+
+\section{Exercices}
+\begin{frame}[allowframebreaks]
+	\frametitle{Exercices}
+	\begin{itemize}
+		\item Implémenter un GET qui renvoie une description d’un objet métier quelconque de votre projet (ou un objet jouet) comme type \texttt{text/plain}. La méthode doit renvoyer un \texttt{String}. Tester.
+		\item Simuler un traitement long dans la méthode ressource (Thread sleep). Avec deux navigateurs différents, envoyer deux GET simultanés. Vérifier qu’elles sont bien traitées en parallèle (la deuxième n’attend pas la fin de la première avant de s’exécuter).
+		\item Modifier la méthode ressource pour qu’elle renvoie l’objet lui-même. Implémenter un provider qui fournit sa description.
+		\item Observer si les requêtes sont traitées en parallèle dans votre provider (simuler un traitement long dans le provider, envoyer deux GET simultanés avec deux navigateurs différents). Modifier la portée CDI du provider et observer l’impact.
+		\item Insérer un état dans le provider. Le provider possède maintenant un compteur \texttt{i}. Il incrémente \texttt{i} en entrée d’appel, puis il indique la valeur de \texttt{i} dans la description renvoyée, puis il décrémente \texttt{i}. Le provider renverra-t-il toujours la valeur d’initialisation de \texttt{i} + 1, lors d’appels parallèles de clients web différents ? Prédire son comportement en fonction de la portée CDI qui vous lui affectez. Réfléchir aux avantages de différents choix.
+	\end{itemize}
+\end{frame}
+
+\section{JAXB}
+\begin{frame}
+	\frametitle{Objectifs}
+	\begin{itemize}
+		\item Java Architecture for XML Binding
+		\item Schema XML ⇔ Classes Java (⇒ xjc ; ⇐ schemagen)
+		\item Instances XML ⇔ Instances Java (JAXB binding runtime)
+		\item JAXB object : annotés
+		\item JAX-RS fournit entity providers pour objets JAXB
+%		\item http://www.xmlvalidation.com/test.xsd
+	\end{itemize}
+%	\begin{block}{}
+%		ContextResolver<JAXBContext> annotated with @Provider. Context providers MAY return null from the getContext method if they do not wish to provide their context for a particular Java type. E.g. a JAXB context provider may wish to only provide the context for certain JAXB classes.%TODO 
+%	\end{block}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Références JAXB}
+	\begin{block}{Références}
+		\begin{itemize}
+			\item \href{https://docs.oracle.com/javase/tutorial/jaxb/index.html}{Tutoriel Oracle}
+			\item \href{http://docs.oracle.com/javase/8/docs/technotes/guides/xml/jaxb/}{Docs Oracle}
+		\end{itemize}
+	\end{block}
+	Dans eclipse :
+	\begin{itemize}
+		\item Désactiver le validateur est probablement nécessaire
+		\item[⇒] cf. \href{https://bugs.eclipse.org/bugs/show_bug.cgi?id=437635}{bug} eclipse%ça fonctionne avec eclipse mars malgré le bug, en tous cas après désactivation du validateur
+	\end{itemize}
+\end{frame}
+
+\appendix
+\AtBeginSection{
+}
+\section{Licence}
+\begin{frame}
+	\frametitle{Licence}
+	Cette présentation, et le code LaTeX associé, sont sous \href{http://opensource.org/licenses/MIT}{licence MIT}. Vous êtes libres de réutiliser des éléments de cette présentation, sous réserve de citer l’auteur.
+	
+	Le travail réutilisé est à attribuer à \href{http://www.lamsade.dauphine.fr/~ocailloux/}{Olivier Cailloux}, Université Paris-Dauphine.
+	
+	\small{(Ceci ne couvre pas les images incluses dans ce document, puisque je n’en suis généralement pas l’auteur.)}
+\end{frame}
+\end{document}
+\begin{frame}
+	\frametitle{}
+	\begin{itemize}
+		\item 
+	\end{itemize}
+	\begin{block}{}
+		
+	\end{block}
+\end{frame}
+
+\section{Bibliographie}
+\begin{frame}[allowframebreaks]
+	\frametitle{Bibliographie}
+	\def\newblock{\hskip .11em plus .33em minus .07em}
+% 	\bibliography{zotero}
+\end{frame}
+
+\section{Autres}
+\begin{frame}
+	\frametitle{}
+	\begin{itemize}
+		\item 
+	\end{itemize}
+	\begin{block}{}
+		
+	\end{block}
+\end{frame}
+\end{document}
