@@ -148,6 +148,18 @@
 	Possibilité de rendre l’application finale fin avril.
 \end{frame}
 
+\subsection{Plan}
+\begin{frame}
+	\frametitle{Plan}
+	\begin{itemize}
+		\item Cours 1 à 4 : Intro, git, Maven, JDBC, DAO
+		\item Cours 2 : projet Eclipse / Maven ; init. JDBC avec BD H2
+		\item Cours 3 : postgresql ; JDBC ; DAO
+		\item Cours 4 : suite JDBC et DAO
+		\item Cours 5 à 8 : JPA
+	\end{itemize}
+\end{frame}
+
 \section{Git}
 \subsection{Présentation}
 \begin{frame}
@@ -240,8 +252,8 @@
 	\begin{itemize}
 		\item \emph{Index} : changements à apporter au prochain commit
 		\item \emph{HEAD} : commit d’où le work dir actuel est issu
-		\item Initialisation nouveau répertoire : Index et HEAD vide
-		\item Juste après un commit : index vide
+		\item Initialisation nouveau répertoire ? \pause Index et HEAD vide \pause
+		\item Juste après un commit ? \pause Index vide
 	\end{itemize}
 \end{frame}
 
@@ -475,9 +487,10 @@
 		}
 		\item Imaginons qu’on aurait d’abord intégré \texttt{dev2} à \texttt{master} (ceci aurait-il produit un fast-forward ?) puis \texttt{dev} au résultat. Quel aurait été le résultat final ?
 	\end{itemize}
+	\framebreak
 	Git distant
 	\begin{itemize}
-		\item Cloner votre dépôt central pour le projet de ce cours.
+		\item Cloner votre dépôt central pour le projet de ce cours (ou votre dépôt local).
 		\item Le clonage vous a créé un pointeur vers un serveur distant \texttt{origin}, et une \og{}remote-tracking branch\fg{} \texttt{master}. Voir où pointent \texttt{origin}, \texttt{master} et \texttt{origin/master}.
 		\item Ajouter un fichier \texttt{"macontrib.txt"} contenant votre prénom à votre index local. Commettre dans votre dépôt git local. L’envoyer au dépôt distant. Vérifier (via l’interface web) qu’il s’y trouve et que le commit est associé à votre nom.
 		\item Quand un collègue a fait de même, vous pouvez rapatrier sa modification en local. Après l’avoir fait, prédire où vont pointer \texttt{master} et \texttt{origin/master} et vérifier.
@@ -522,37 +535,39 @@
 
 \begin{frame}
 	\frametitle{Structure du projet}
-	\begin{minipage}{5.5cm}
-		Structure déterminée {\tiny normalement} par \emph{conventions}
+	Structure déterminée {\tiny normalement} par \emph{conventions}
+	\vfill
+	\begin{minipage}[t]{3.5cm}
+%		\rule{\columnwidth}{1cm}
+		{\centering Arborescence de base\par}
+		\vspace{1ex}
+		\texttt{pom.xml}\\
+		\texttt{/src}
+		\begin{itemize}
+			\item[] \texttt{/main}
+			\begin{itemize}
+				\item[] \texttt{/java}
+			\end{itemize}\vspace{-0.8ex}
+			\begin{itemize}
+				\item[] \texttt{/resources}
+			\end{itemize}\vspace{-0.8ex}
+			\item[] \texttt{/test}
+			\begin{itemize}
+				\item[] \texttt{/java}
+			\end{itemize}\vspace{-0.8ex}
+			\begin{itemize}
+				\item[] \texttt{/resources}
+			\end{itemize}\vspace{-0.8ex}
+		\end{itemize}
+	\end{minipage}\hfill%
+	\begin{minipage}[t]{6.5cm}
+		{\centering Répertoires de base\par}
 		\begin{description}[\texttt{…/resources}]
 			\item[\texttt{/src/main/…}] fichiers code et ressources \og{}normales\fg{}
 			\item[\texttt{/src/test/…}] fichiers code et ressources pour tests
 			\item[\texttt{…/java}] code java
 			\item[\texttt{…/resources}] images, etc., devant être dans classpath
 		\end{description}
-	\end{minipage}\hfill%
-	\begin{minipage}{4cm}
-%		\rule{\columnwidth}{1cm}
-		\texttt{/root}
-		\begin{itemize}
-			\item[] \texttt{/src}
-			\begin{itemize}
-				\item[] \texttt{/main}
-				\begin{itemize}
-					\item[] \texttt{/java}
-				\end{itemize}\vspace{-0.8ex}
-				\begin{itemize}
-					\item[] \texttt{/resources}
-				\end{itemize}\vspace{-0.8ex}
-				\item[] \texttt{/test}
-				\begin{itemize}
-					\item[] \texttt{/java}
-				\end{itemize}\vspace{-0.8ex}
-				\begin{itemize}
-					\item[] \texttt{/resources}
-				\end{itemize}\vspace{-0.8ex}
-			\end{itemize}
-		\end{itemize}
 	\end{minipage}
 \end{frame}
 
@@ -712,7 +727,7 @@
 \begin{frame}
 	\frametitle{Conventions pour ce cours}
 	\begin{itemize}
-		\item Utiliser \texttt{groupId} : \texttt{fr.dauphine.lamsade.hib.2016.nomapp}
+		\item Utiliser \texttt{groupId} : \texttt{fr.dauphine.lamsade.hib.nomapp}
 		\item Utiliser \texttt{artifactId} : \texttt{nomapp}
 		\item Canevas simple disponible \href{https://github.com/oliviercailloux/jee/tree/master/Sample/pom.xml}{ici}
 	\end{itemize}
@@ -876,7 +891,7 @@
 \end{frame}
 
 \begin{frame}
-	\frametitle{Définir et analyser des QCMs (QCMs)}
+	\frametitle{Définir et analyser des QCMs (mchoice)}
 	\begin{itemize}
 		\item Des enseignants peuvent définir des questions
 		\item Des enseignants peuvent définir des réponses
@@ -929,13 +944,11 @@
 			\item Indiquez sur votre groupe MyCourse l’url git de votre projet
 		\end{itemize}
 	\end{block}
-	\emph{Avant} le x signifie : avant qu’on soit le jour x. Donc au plus tard la veille à 
-	23h59 + 1 minute.
-	%23h59 + $ε$, $ε \in [0, 1 \text{minute})$.
+	\emph{Avant} le x signifie : avant qu’on soit le jour x. Donc au plus tard la veille à 23h59 + 1 minute.
 \end{frame}
 
 \begin{frame}
-	\frametitle{À faire : cours suivant}
+	\frametitle{À faire (suite)}
 	\begin{block}{À faire \emph{avant} le 16 mars}
 		\begin{itemize}
 			\item Projet eclipse (configuration sur serveur git)
@@ -958,11 +971,12 @@
 \section{Licence}
 \begin{frame}
 	\frametitle{Licence}
-	Cette présentation, et le code LaTeX associé, sont sous \href{http://opensource.org/licenses/MIT}{licence MIT}. Vous êtes libres de réutiliser des éléments de cette présentation, sous réserve de citer l’auteur.
-	
-	Le travail réutilisé est à attribuer à \href{http://www.lamsade.dauphine.fr/~ocailloux/}{Olivier Cailloux}, Université Paris-Dauphine.
-	
-	\small{(Ceci ne couvre pas les images incluses dans ce document, puisque je n’en suis généralement pas l’auteur.)}
+	\begin{itemize}
+		\item Cette présentation, et le code LaTeX associé, sont sous \href{http://opensource.org/licenses/MIT}{licence MIT}.
+		\item Vous êtes libres de réutiliser des éléments de cette présentation, sous réserve de citer l’auteur.
+		\item Le travail réutilisé est à attribuer à \href{http://www.lamsade.dauphine.fr/~ocailloux/}{Olivier Cailloux}, Université Paris-Dauphine.
+	\end{itemize}
+	\small{(Ceci ne couvre pas les images situées dans le répertoire \texttt{graphics}, dont je ne suis pas l’auteur.)}
 \end{frame}
 \end{document}
 \begin{frame}
