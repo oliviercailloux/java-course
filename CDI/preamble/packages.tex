@@ -71,7 +71,14 @@
 \defaultfontfeatures{}%disable default font features to avoid warnings with math fonts.
 \setmathfont{XITS Math}
 \setmathfont[range={\mathcal,\mathbfcal},StylisticSet=1]{XITS Math}
-\setTransitionTo{MathematicalOperators}{\xitsfamily}
+%silently delays restoring normal font when using e.g. “≠)” or “≠ other word”.
+%\setTransitionTo{MathematicalOperators}{\xitsfamily}
+%this solution explicitly fails on “≠)” and works for “≠ other word.”
+\def\ResetTransitionTo#1{%
+  \XeTeXinterchartoks 255 \csname#1Class\endcsname{\relax}}
+\setTransitionsFor{MathematicalOperators}
+  {\begingroup\ResetTransitionTo{MathematicalOperators}\xitsfamily}
+  {\endgroup}
 
 \usepackage{cleveref}% cleveref should go "laster" than hyperref
 %GRAPHICS
