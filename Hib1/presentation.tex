@@ -572,15 +572,15 @@
 \end{frame}
 
 \begin{frame}{Accès aux ressources en Java}
-	\begin{block}{Accès aux ressources}
-		(Ceci est indépendant de Maven)
+	Rappel : accès aux ressources en Java (indépendant de Maven)
+	\begin{exampleblock}{Exemple d’accès aux ressources}
 		\begin{itemize}
 			\item \texttt{MyClass} dans package \texttt{com.mypkg}
 			\item \texttt{URL url = MyClass.class.\href{https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html\#getResource-java.lang.String-}{getResource}("ploum.txt")}
 			\item \texttt{url} désigne la ressource de chemin \texttt{/com/mypkg/ploum.txt}
 			\item Ensuite : \texttt{url.openStream()} (ou toute autre exploitation)
 		\end{itemize}
-	\end{block}
+	\end{exampleblock}
 	\begin{block}{Positionnement de ressources avec Maven}
 		Placer le fichier dans \texttt{/src/main/resources/com/mypkg/ploum.txt}
 	\end{block}
@@ -677,7 +677,7 @@
 		\item Trouver \texttt{version} : voir \href{https://search.maven.org}{Central}
 		\item Presque tous les projets Java récents font une release Maven
 	\end{itemize}
-	Portées (liste non exhaustive) :
+	Portées {\tiny (liste non exhaustive)} :
 	\begin{description}[\texttt{runtime}]
 		\item[\texttt{compile}] Par défaut
 		\item[\texttt{test}] Bibliothèque incluse uniquement lors phase tests
