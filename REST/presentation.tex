@@ -183,8 +183,8 @@ Client client = ClientBuilder.newClient();
 WebTarget t1 = client.target("http://.../users");
 WebTarget t2 = t1.path("{uId}");
 WebTarget t3 = t2.resolveTemplate("uId", "123");
-/** http://example.com/users/123?prof=1 */
 WebTarget t4 = t3.queryParam("prof", "1");
+/** http://.../users/123?prof=1 */
 String result = t4.request(MediaType.TEXT_PLAIN)
   .get(String.class);
 client.close();
