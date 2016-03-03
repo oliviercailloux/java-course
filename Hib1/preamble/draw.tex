@@ -55,6 +55,17 @@
 	shape=circle, draw
 }}
 
+% Logger objects
+\tikzset{/logger/main/.style={
+	shape=rectangle, draw=black, inner sep=1ex, minimum height=7mm
+}}
+\tikzset{/logger/helper/.style={
+	shape=rectangle, draw=black, dashed, minimum height=7mm
+}}
+\tikzset{/logger/helper line/.style={
+	<->, draw, dotted
+}}
+
 \newcommand{\tikzmark}[1]{%
 	\tikz[overlay, remember picture, baseline=(#1.base)] \node (#1) {};%
 }
