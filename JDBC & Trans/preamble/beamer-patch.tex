@@ -1,0 +1,37 @@
+%From: http://tex.stackexchange.com/questions/168057/beamer-with-xelatex-on-texlive2013-enumerate-numbers-in-black
+%I don’t think it’s useful to submit this as a bug: nothing has been solved since March, 2015. See: https://bitbucket.org/rivanvx/beamer/issues?status=resolved.
+
+\setbeamertemplate{enumerate item}
+{
+  \begin{pgfpicture}{-1ex}{-0.65ex}{1ex}{1ex}
+    \usebeamercolor[fg]{item projected}
+    {\pgftransformscale{1.75}\pgftext{\normalsize\pgfuseshading{bigsphere}}}
+    {\pgftransformshift{\pgfpoint{0pt}{0.5pt}}
+      \pgftext{\usebeamercolor[fg]{item projected}\usebeamerfont*{item projected}\insertenumlabel}}
+  \end{pgfpicture}%
+}
+
+\setbeamertemplate{enumerate subitem}
+{
+  \begin{pgfpicture}{-1ex}{-0.55ex}{1ex}{1ex}
+    \usebeamercolor[fg]{subitem projected}
+    {\pgftransformscale{1.4}\pgftext{\normalsize\pgfuseshading{bigsphere}}}
+    \pgftext{%
+      \usebeamercolor[fg]{subitem projected}%
+      \usebeamerfont*{subitem projected}%
+      \insertsubenumlabel}
+  \end{pgfpicture}%
+}
+
+\setbeamertemplate{enumerate subsubitem}
+{
+  \begin{pgfpicture}{-1ex}{-0.55ex}{1ex}{1ex}
+    \usebeamercolor[fg]{subsubitem projected}
+    {\pgftransformscale{1.4}\pgftext{\normalsize\pgfuseshading{bigsphere}}}
+    \pgftext{%
+      \usebeamercolor[fg]{subsubitem projected}%
+      \usebeamerfont*{subitem projected}%
+      \insertsubsubenumlabel}
+  \end{pgfpicture}%
+}
+
