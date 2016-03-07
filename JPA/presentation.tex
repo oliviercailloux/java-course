@@ -1,0 +1,393 @@
+\RequirePackage[l2tabu, orthodox]{nag}
+\RequirePackage{silence}
+\WarningFilter{nag}{There is no environment ``centering'' }%nag complains because beamer titlepage uses a centering environment
+\WarningFilter{nag}{1 complaints in total}
+\WarningFilter{ifpdf}{Someone has redefined \pdfoutput}
+\WarningFilter{fmtcount}{\ordinal already defined use \FCordinal instead}
+\documentclass[english, french]{beamer}
+\input{preamble/packages}
+\input{preamble/math_basics}
+\input{preamble/math_mine}
+\input{preamble/redac}
+\input{preamble/draw}
+\input{preamble/acronyms}
+\input{preamble/uml}
+
+\title{Conception d’applications internet}
+\subtitle{JPA}
+\subject{object / relationship mismatch}
+\keywords{ORM ; transactions ; isolation}
+\author{Olivier Cailloux}
+\institute[LAMSADE]{LAMSADE, Université Paris-Dauphine}
+\date{Version du \today}
+
+\begin{document}
+\bibliographystyle{apalike}
+
+\begin{frame}[plain]
+	\tikz[remember picture,overlay]{
+		\path (current page.south west) node[anchor=south west, inner sep=0] {
+			\includegraphics[height=1cm]{LAMSADE95.jpg}
+		};
+		\path (current page.south) ++ (0, 1mm) node[anchor=south, inner sep=0] {
+			\includegraphics[height=9mm]{Dauphine.jpg}
+		};
+		\path (current page.south east) node[anchor=south east, inner sep=0] {
+			\includegraphics[height=1cm]{PSL.png}
+		};
+	}
+   \titlepage
+\end{frame}
+\addtocounter{framenumber}{-1}
+
+\section{JPA}
+\subsection{Introduction}
+\begin{frame}
+	\frametitle{Java Persistence API : introduction}
+	\begin{itemize}
+		\item Standard pour gérer la persistence
+		\item Pour Java SE et Java EE
+		\item Modèle Objet / Relationnel (ORM)
+		\item JPA définit les concepts et interfaces, fournisseur JPA les implémente (exemple : Hibernate)
+		\item Pour cette présentation : ORM ; Accès concurrents ; JPA
+		\item Appuié sur JDBC
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Standards JCP}
+	\begin{itemize}
+		\item Implication de \og{}la communauté\fg{} pour standards Java
+		\item JCP ? \pause Java Community Process \pause
+		\item Définit les JSR : standards utilisés en Java SE ou Java EE
+		\item Spécifications tiennent compte de nombreux avis d’horizons divers
+		\item JSR 338 : JPA 2.1 ; JSR 345 : EJB 3.2 ; JSR 342 : Java EE 7 ; JSR 346 : CDI…
+		\item Tentions entre standard ouvert et contrôle ! (2010, Apache \href{https://blogs.apache.org/foundation/entry/the_asf_resigns_from_the}{quitte} le comité JCP ; Doug Lea \href{http://gee.cs.oswego.edu/dl/html/jcp22oct10.html}{également}, en faveur de OpenJDK…)
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Faiblesses du modèle relationnel pur}
+	Problème : \og{}Mismatch\fg{} Objet / Relationnel
+	\begin{itemize}
+		\item Modèle de données (DM) : objets
+		\item Références directionnelles
+		\item Modèle Entité / Relationnel : sans comportement
+		\item Pas de notion de navigation
+		\item Chargement automatique ? \pause Éviter de charger tout le graphe !\pause
+		\item Problème classique : n+1 select
+		\item Cohérence à maintenir entre BD et objets : types, colonnes, contraintes not null ou autres…
+		\item Répétition lors écriture des requêtes de base
+		\item Difficultés particulières : héritage et autres concepts objet
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Avantages d’une solution ORM}
+	ORM ? \pause Object / Relational Mapping \pause
+	\begin{itemize}
+		\item Détection des modifications avec accès BD optimisés
+		\item Réduction code répétitif
+		\item Meilleure portabilité
+		\item Permet modèle objet fin
+		\item Facilite refactoring et développement agile
+	\end{itemize}
+	{\tiny De : \href{http://www.lamsade.dauphine.fr/~manouvri/HIBERNATE/SLIDES/ORM.pdf}{diapos} Maude Manouvrier, p. 22}
+\end{frame}
+
+\subsection{ORM et entités}
+\begin{frame}
+	\frametitle{Entité}
+	\begin{itemize}
+		\item Lien entre DM et BD : \emph{entités} et annotations sur entités
+		\item DM contient des classes \emph{entités}
+		\item Entité : instance représente {\tiny pas toujours} une ligne d’une table
+		\item Marquer classe \jeeref[@]{javax.persistence/Entity} {\tiny (voir aussi \jeeref[@]{javax.persistence/Table})}
+		\item Marquer champs transiants {\tiny (ou méthodes get*)} \jeeref[@]{javax.persistence/Transient} {\tiny (et persistants \jeeref[@]{javax.persistence/Column} si désiré)}
+		\item Marquer un champ persistant id \jeeref[@]{javax.persistence/Id} (et \jeeref[@]{javax.persistence/GeneratedValue})
+		\item Id représente la clé primaire
+		\item Id initialisé par le fournisseur de persistence (pas de \texttt{setId} public) {\tiny (sauf si clé naturelle, généralement déconseillé)}
+		\item Pour permettre concurrence optimiste : marquer un champ persistant version \jeeref[@]{javax.persistence/Version} (écriture : slmt fournisseur)
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Unité de persistance}
+	\begin{itemize}
+		\item Ensemble d’entités contenu dans une \og{}persistence unit\fg{}
+		\item Unité liée à un pilote JDBC et des propriétés de connexion par configuration
+		\item Unité associée à \jeeref{javax.persistence/EntityManagerFactory}
+		\item \jeeref{javax.persistence/EntityManager} gère entités dans unité persistance
+	\end{itemize}
+\end{frame}
+
+\subsection{Contexte de persistance}
+\begin{frame}
+	\frametitle{Contexte de persistance}
+	\begin{itemize}
+		\item EntityManager lié à un \emph{contexte de persistance}
+		\item Contexte : associe une ligne DB à (max.) une instance d’entité
+	\end{itemize}
+	Cycle typique :
+	\begin{itemize}
+		\item \texttt{e = new MyEntity(); e.setTruc(…);//} e est \og{}new\fg{}
+		\item \texttt{entityManager.persist(e);//} e est \og{}managed\fg{}
+		\item fermeture du entityManager : e est \og{}detached\fg{}
+	\end{itemize}
+	\begin{block}{États d’une instance d’entité}
+		\begin{description}[detached]
+			\item[new] sans identité persistante, pas dans le contexte
+			\item[managed] avec identité persistante, dans le contexte
+			\item[detached] avec identité persistante, pas dans le contexte
+			\item[removed] avec identité persistante, dans le contexte de persistance, marquée pour effacement
+		\end{description}
+	\end{block}
+\end{frame}
+
+\begin{frame}
+	\frametitle{EM et transactions}
+	\begin{itemize}
+		\item Les changements du contexte de persistance via l’entity manager sont synchronisés avec la BD au commit {\tiny (ou flush)}
+		\item Les changements à la BD sont annulés par un rollback
+		\item Injection dans EJB : \jeeref[@]{javax.persistence/PersistenceContext} \texttt{EntityManager}
+		\item Persistence context (par défaut) a le scope de la transaction en cours
+	\end{itemize}
+	Exemple de changement :
+	\begin{itemize}
+		\item \texttt{e=entityManager.find(…);//} e est \og{}managed\fg{}
+		\item \texttt{e.setTruc(…);//} changement marqué
+		\item fermeture du entityManager : synchronisation
+	\end{itemize}
+\end{frame}
+
+\subsection{En pratique}
+\begin{frame}
+	\frametitle{Configuration unité de persistance}
+	\begin{itemize}
+		\item Persistence unit définie dans \texttt{META-INF/\href{http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd}{persistence.xml}} dans un jar comme bibliothèque du \texttt{.ear} {\tiny (aussi possible dans EJB ou .war)}
+%		\item Cet EAR est alors le scope de l’unité
+		\item Génération du schéma par JPA : dans \texttt{persistence.xml}, propriété \texttt{javax.persistence.schema-generation.database.action}, valeur \texttt{drop-and-create}
+		\item Fournisseur trouvé dans classpath
+%<property name="hibernate.show_sql" value="true"/>
+%<property name="hibernate.format_sql" value="true"/>
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Unité de persistance en Java SE}
+	\begin{itemize}
+		\item Persistence.createEntityManagerFactory("helloworld");
+	\end{itemize}
+%<properties>
+%<property name="hibernate.connection.driver_class"
+%value="org.hsqldb.jdbcDriver"/>
+%<property name="hibernate.connection.url"
+%value="jdbc:hsqldb:hsql://localhost"/>
+%<property name="hibernate.connection.username"
+%value="sa"/>
+\end{frame}
+
+\begin{frame}
+	\frametitle{Unité de persistance en Java EE}
+	\begin{itemize}
+		\item En général, préciser jta-data-source : un nom JNDI
+		\item Conteneur Java EE définit \texttt{java:comp/DefaultDataSource} : nom utilisé par défaut
+	\end{itemize}
+\end{frame}
+
+%instancier EM en Java SE : ben, l’instancier, et puis le fermer ! Démarrer et fermer la transaction entretemps.
+
+%\subsection[Transactions EE]{Transactions et Java EE}
+\begin{frame}
+	\frametitle{Transactions et Java EE}
+	\begin{itemize}
+		\item Pilotes JDBC supportent {\tiny généralement} JTA (Java Transaction API)
+		\item Permet {\tiny entre autres} la gestion des transactions par le conteneur
+		\item Transactions gérées par le conteneur par défaut pour EJB {\tiny (ou utiliser \jeeref[@]{javax.ejb/TransactionManagement})}
+		\item Chaque méthode participe alors par défaut à une transaction
+		\item Si pas de transaction en cours lors de l’appel : le conteneur démarre puis termine automatiquement une transaction (commit si ok, rollback si exception {\tiny sauf exception application})
+		\item Si transaction en cours, la méthode y participe
+		\item Ou annoter la méthode \jeeref[@]{javax.ejb/TransactionAttribute}
+	\end{itemize}
+\end{frame}
+
+\section{Exercices}
+\begin{frame}
+	\frametitle{Exercices}
+	\begin{itemize}
+		\item Créer une entité pour un type de votre projet.
+		\item Faire en sorte que la table correspondante soit créée automatiquement lors du déploiement de l’entité.
+		\item Permettre CR.D : Create, Retrieve, Delete \emph{aussi simple que possible}, via un ou plusieurs servlets. (N’utilisez pas de paramètres complexes, ce n’est pas le but de cet exercice.)
+		\item Programmer une méthode qui transforme un attribut d’un objet.
+		\item Permettre l’application de cette méthode via un SLSB appelé par un servlet. Votre servlet ne doit pas nécessairement accepter de paramètres. Quid de l’atomicité de la transaction ?
+	\end{itemize}
+\end{frame}
+
+\section{JPA : Mise en œuvre}
+\subsection{Liens entre entités}
+\begin{frame}
+	\frametitle{Liens entre entités}
+	Exemple : un item a plusieurs bid associés {\tiny tiré de Java Persistence with Hibernate}
+	\begin{itemize}
+		\item Chaque bout d’une association : to one ou to many
+		\item To one (\texttt{Item forItem} dans \texttt{Bid}) : annoter \jeeref[@]{javax.persistence/ManyToOne}, préciser éventuellement \texttt{optional=false} {\tiny et \texttt{fetch}}
+		\item Si bidirectionnelle : votre code doit maintenir la synchronisation, malgré annotations (Pourquoi ? \pause pour indépendance à ORM)\pause
+		\item Pour autre bout d’un lien bidirectionnel (ne compte pas dans DDL) : \jeeref[@]{javax.persistence/OneToMany} et préciser \texttt{mappedBy}
+		\item Liens one to one similaire, utiliser \jeeref[@]{javax.persistence/OneToOne}
+	\end{itemize}
+\end{frame}
+
+\subsection{Value type}
+\begin{frame}
+	\frametitle{Exemple pour Value type}
+	\begin{itemize}
+		\item User a une adresse
+		\item Dans BD, une seule table
+		\item Dans modèle objet, objet User et objet Adresse
+		\item Modèle objet : granularité plus fine
+		\item Pourquoi cette différence ? \pause
+		\item Classes ont des responsabilités
+		\item Réutiliser une classe, ne pas la dupliquer
+		\item Schéma BD stable dans le temps
+	\end{itemize}
+\end{frame}
+
+%\begin{frame}
+%	\frametitle{}
+%	\begin{itemize}
+%		\item 
+%	\end{itemize}
+%	\begin{block}{}
+%		
+%	\end{block}
+%\end{frame}
+%
+%\begin{frame}
+%	\frametitle{}
+%	\begin{itemize}
+%		\item 
+%	\end{itemize}
+%	\begin{block}{}
+%		
+%	\end{block}
+%\end{frame}
+%
+%\begin{frame}
+%	\frametitle{}
+%	\begin{itemize}
+%		\item 
+%	\end{itemize}
+%	\begin{block}{}
+%		
+%	\end{block}
+%\end{frame}
+
+\subsection{Aspects pratiques}
+\begin{frame}
+	\frametitle{Concurrence}
+	\begin{itemize}
+		\item Entité avec \texttt{@Version} : protection optimiste par défaut
+		\item Après update, effacement, merge : vérification automatique du n° de version en cache
+		\item Vérification effectuée au moment même ou au \texttt{flush}
+		\item Si versions ne correspondent pas : \jeeref{javax.persistence/OptimisticLockException}
+		\item Protection pessimiste : utiliser \texttt{EntityManager.lock(entity, \href{https://docs.oracle.com/javaee/7/api/javax/persistence/LockModeType.html}{lockModeType})}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Différentes égalités}
+	\begin{block}{Trois types d’égalités}
+		\begin{itemize}
+			\item Égalité en mémoire : \texttt{a == b}
+			\item Égalité objet : \texttt{a.equals(b)}
+			\item Égalité DB : \texttt{a.getId().equals(b.getId())}
+		\end{itemize}
+	\end{block}
+	Quelles propriétés prendre en compte dans \texttt{hashCode} et \texttt{equals} ?
+	\begin{itemize}
+		\item Table de hachage : objet ne peut changer de hash / d’égalité
+		\item Dans une session il faut éviter deux objets not equals() et concernant la même ligne de la table
+		\item Id pour égalité : pourquoi pas ? \pause Tant que non persistantes, ne fonctionne pas ; change lors sauvegarde \pause
+		\item[$⇒$] Ensemble d’attributs déterminants pt de vue utilisateur ! (username…)
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Patterns}
+	\begin{itemize}
+		\item DM \emph{sans} dépendance persistance (tests ;  simplification dépendances)
+		\item Entités transversales (couche web et business)
+		\item Qqs classes service business
+		\item Qqs classes persistence visibles du business
+		\item Ou pattern DAO…
+		\item Explorer : SFSB et \jeeref[@]{javax.persistence/PersistenceContext}(\jeeref{javax.persistence/PersistenceContextType\#EXTENDED})
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Usages plus avancés et divers}
+	\begin{itemize}
+		\item Entité peut être non chargée entièrement (\texttt{getReference})
+		\item Accès éventuellement impossible après fermeture du contexte
+		\item Contexte peut persister au-delà de la transaction ; peut être non synchronisé (\jeeref[@]{javax.persistence/PersistenceContext})
+		\item Transitivité de la persistence, cf. \texttt{cascade} sur \texttt{@OneToMany} (par exemple)
+		\item Type \og{}Value\fg{} plutôt que Entity pour des objets de cycle de vie dépendents d’autres
+	\end{itemize}
+	
+\end{frame}
+
+\subsection{Références}
+\begin{frame}
+	\frametitle{Références}
+	\begin{itemize}
+		\item Java Persistence with Hibernate : \href{http://gen.lib.rus.ec/book/index.php?md5=5D9F8BC8761804C0EBB8FE6A60BCF817}{1\iere} édition, \href{https://www.manning.com/books/java-persistence-with-hibernate-second-edition}{2\ieme} édition
+		\item Hibernate 5.1 \href{http://docs.jboss.org/hibernate/orm/5.1/userguide/html_single/Hibernate_User_Guide.html}{User Guide}
+		\item \href{https://jcp.org/en/jsr/detail?id=338}{JSR 338} (JPA 2.1) (\href{http://download.oracle.com/otn-pub/jcp/persistence-2_1-fr-eval-spec/JavaPersistence.pdf}{direct})
+		\item \href{https://jcp.org/en/jsr/detail?id=907}{JSR 907} (JTA) (moins utile pour développeur Java EE)
+		\item ENORM: An Essential Notation for Object-Relational Mapping, ACM SIGMOD Record 43(2), June 2014, pp 23–28 (\href{http://dx.doi.org/10.1145/2694413.2694418}{doi}, \href{http://www.sigmod.org/publications/sigmod-record/1406/pdfs/05.articles.Torres.pdf}{pdf} article)
+%	Patterns Command, tout ça
+	\end{itemize}
+\end{frame}
+
+\appendix
+\AtBeginSection{
+}
+\section{Licence}
+\begin{frame}
+	\frametitle{Licence}
+	Cette présentation, et le code LaTeX associé, sont sous \href{http://opensource.org/licenses/MIT}{licence MIT}. Vous êtes libres de réutiliser des éléments de cette présentation, sous réserve de citer l’auteur.
+	
+	Le travail réutilisé est à attribuer à \href{http://www.lamsade.dauphine.fr/~ocailloux/}{Olivier Cailloux}, Université Paris-Dauphine.
+	
+	\small{(Ceci ne couvre pas les images incluses dans ce document, puisque je n’en suis généralement pas l’auteur.)}
+\end{frame}
+
+\end{document}
+\begin{frame}
+	\frametitle{}
+	\begin{itemize}
+		\item 
+	\end{itemize}
+	\begin{block}{}
+		
+	\end{block}
+\end{frame}
+
+\section{Bibliographie}
+\begin{frame}[allowframebreaks]
+	\frametitle{Bibliographie}
+	\def\newblock{\hskip .11em plus .33em minus .07em}
+% 	\bibliography{zotero}
+\end{frame}
+
+\section{Autres}
+\begin{frame}
+	\frametitle{}
+	\begin{itemize}
+		\item 
+	\end{itemize}
+	\begin{block}{}
+		
+	\end{block}
+\end{frame}
+\end{document}

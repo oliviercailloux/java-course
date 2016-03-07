@@ -1,0 +1,60 @@
+
+\newbool{refAPIIsAnnotation}
+\pgfkeys{
+	/refAPI/.is family,
+	/refAPI/.cd,
+	base url/.estore in = \refAPIBaseUrl,
+	@/.is if = refAPIIsAnnotation,
+	prefix/.store in = \refAPIPrefix,
+	suffix/.estore in = \refAPISuffix,
+	default/.style = {
+		base url = ,
+		@ = false,
+		prefix = \texttt,
+		suffix = ,
+	},
+}
+
+%Usage: \refAPIParseRef{javax.persistence/EntityManager} ; \refAPIParseRef{javax.persistence/PersistenceContextType\#EXTENDED}
+%Defines: \refAPIFQName (before #) ; \refAPIField (after #) ; \refAPIPackageSlashes (FQName before / with slashes instead of dots) ; \refAPIClass (FQName after /)
+\newcommand{\refAPIParseRef}[1]{%
+	\IfSubStr{#1}{\#}{%
+		\StrBefore{#1}{\#}[\refAPIFQName]%
+		\StrBehind{#1}{\#}[\refAPIField]%
+	}{%
+		\edef\refAPIFQName{#1}%
+		\edef\refAPIField{}%
+	}%
+	\StrBefore{\refAPIFQName}{/}[\refAPIPackage]%
+	\StrBehind{\refAPIFQName}{/}[\refAPIClass]%
+	\StrSubstitute{\refAPIPackage}{.}{/}[\refAPIPackageSlashes]%
+}
+
+%Usage: \jeeref{javax.persistence/EntityManager} ; \jeeref[@]{javax.persistence/PersistenceContextType\#EXTENDED}
+\newcommand{\jeeref}[2][]{\refAPIParseRef{#2}\jrefAPI{base url = https://docs.oracle.com/javaee/7/api/, #1}}
+\newcommand{\jseref}[2][]{\refAPIParseRef{#2}\jrefAPI{base url = https://docs.oracle.com/javase/8/docs/api/, #1}}
+
+%Accepts keys: @, prefix, suffix. Requires key: base url. Expects defined: \refAPIField ; \refAPIPackageSlashes ; \refAPIClass
+\newcommand{\jrefAPI}[1]{%
+	\pgfkeys{/refAPI/.cd, default, #1}%
+	\ifbool{refAPIIsAnnotation}{\edef\refAPIAnnot{@}}{\edef\refAPIAnnot{}}%
+	\IfEq{\refAPIField}{}{%
+		{\refAPIPrefix{%
+			\href{%
+				\refAPIBaseUrl\refAPIPackageSlashes/\refAPIClass.html\#\refAPIField%
+			}{%
+				\refAPIAnnot\refAPIClass%
+			}%
+		}\refAPISuffix}%
+	}{%
+		{\refAPIPrefix{%
+			\refAPIAnnot\refAPIClass.%
+			\href{%
+				\refAPIBaseUrl\refAPIPackageSlashes/\refAPIClass.html%
+			}{%
+				\refAPIField%
+			}%
+		}\refAPISuffix}%
+	}%
+}
+

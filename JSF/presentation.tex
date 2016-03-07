@@ -1,0 +1,1069 @@
+\RequirePackage[l2tabu, orthodox]{nag}
+\RequirePackage{silence}
+\WarningFilter{nag}{There is no environment ``centering'' }%nag complains because beamer titlepage uses a centering environment
+\WarningFilter{nag}{1 complaints in total}
+\WarningFilter{ifpdf}{Someone has redefined \pdfoutput}
+\WarningFilter{fmtcount}{\ordinal already defined use \FCordinal instead}
+\documentclass[english, french]{beamer}
+\input{preamble/packages}
+\input{preamble/math_basics}
+\input{preamble/math_mine}
+\input{preamble/redac}
+\input{preamble/draw}
+\input{preamble/acronyms}
+\input{preamble/uml}
+
+\title{Conception d’applications internet}
+\subtitle{JSF}
+\subject{Java EE}
+\keywords{Java Server Faces, Facelets, Servlets, web}
+\author{Olivier Cailloux}
+\institute[LAMSADE]{LAMSADE, Université Paris-Dauphine}
+\date{}
+
+\begin{document}
+\bibliographystyle{apalike}
+
+\begin{frame}[plain]
+	\tikz[remember picture,overlay]{
+		\path (current page.south west) node[anchor=south west, inner sep=0] {
+			\includegraphics[height=1cm]{LAMSADE95.jpg}
+		};
+		\path (current page.south) ++ (0, 1mm) node[anchor=south, inner sep=0] {
+			\includegraphics[height=9mm]{Dauphine.jpg}
+		};
+		\path (current page.south east) node[anchor=south east, inner sep=0] {
+			\includegraphics[height=1cm]{PSL.png}
+		};
+	}
+   \titlepage
+\end{frame}
+\addtocounter{framenumber}{-1}
+
+\section{JSF}
+\subsection{Introduction}
+\begin{frame}
+	\frametitle{Objectif de JSF}
+	Objectif : apporter une solution aux difficultés du développement web
+	\begin{block}{Difficultés web}
+		\begin{itemize}
+			\item synchronisation état
+			\item validation
+			\item contexte
+			\item canevas pages
+			\item requêtes partielles…
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Exemple}
+	Voyons une page simple et sa description (partielle) en Facelet.
+	\begin{block}{Page souhaitée}
+		\centering
+%		\fbox{
+			\begin{tikzpicture}[remember picture]
+				\path node (name) {Name: };
+				\path (name.east) ++ (1ex, 0) node[anchor=west, draw, text width=8em, minimum height=1.5em] (input) {};
+				\path (input.east) ++ (1ex, 0) node[anchor=west, /GUI/button] (button) {Submit};
+			\end{tikzpicture}
+%		}\\
+	\end{block}
+		\begin{itemize}
+			\item Développeur décrit page en XHTML
+			\item Dans XHTML : \texttt{<h:}%
+				\begin{tikzpicture}[remember picture, baseline=(input expl.base)]%
+					\path node[inner sep=0, outer sep=0] (input expl) {%
+						\texttt{inputText}%
+					};%
+				\end{tikzpicture}%
+				\texttt{ value="\#\{myBean.text\}">}
+			\item Développeur crée un managed bean \texttt{MyBean} {\tiny(\jeeref[@]{javax.inject/Named})}
+		\end{itemize}%
+		\begin{tikzpicture}[overlay, remember picture]
+			\path[draw, color=red, ->] (input expl) -- (input);
+		\end{tikzpicture}%
+		Quand page invoquée :
+		\begin{itemize}
+			\item Serveur crée un composant JSF \jeeref{javax.jsf/HtmlInputText}
+		\end{itemize}
+		Quand formulaire soumis :
+		\begin{itemize}
+			\item JSF place valeur via \texttt{MyBean.setText}
+		\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Vue d’ensemble}
+	Fourni par JSF : 
+	\begin{itemize}
+		\item API : état composants ; événements ; validation ; conversions ; navigation ; i18n
+		\item Utilise managed beans
+		\item Composants UI ; modèle de rendering ; de conversion ; d’écoute ; de validation
+		\item View Definition Languages
+	\end{itemize}
+	\begin{block}{View Definition Languages}
+		\begin{itemize}
+			\item Facelets (et JSP)
+			\item bibliothèque de tags
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\subsection{Composants}
+\begin{frame}
+	\newlength{\umlVertSep}
+	\setlength{\umlVertSep}{1cm}
+	\frametitle{Composants}
+	\begin{tikzpicture}
+		\newcommand{\ifaceline}{\normalfont\texttt{<{}<interface>{}>}\\}
+		\path node[/uml/abstract class] (UIComponentBase) {\jeeref[prefix=]{javax.faces.component/UIComponentBase}};
+		\path (UIComponentBase.east) ++ (1cm, 0) node[/uml/abstract class, anchor=west] (StateHolder) {\ifaceline\jeeref[prefix=]{javax.faces.component/StateHolder}};
+		\path[/uml/implements] (UIComponentBase) -- (StateHolder);
+		
+		\path (UIComponentBase.south) ++ (2.5mm, -2.5mm) node[/uml/class, anchor=north west] (UIViewRoot) {\small\jeeref[prefix=]{javax.faces.component/UIViewRoot}};
+		\path[/uml/extends] (UIViewRoot) -- (UIComponentBase);
+		
+		\path (UIComponentBase.south) ++ (0, -\umlVertSep) node[/uml/class, anchor=north] (UIOutput) {\jeeref[prefix=]{javax.faces.component/UIOutput}};
+		\path[/uml/extends] (UIOutput) -- (UIComponentBase);
+		\path (UIOutput.east) ++ (12mm, 0) node[/uml/abstract class, anchor=west] (ValueHolder) {\ifaceline\jeeref[prefix=]{javax.faces.component/ValueHolder}};
+		\path[/uml/implements] (UIOutput) -- (ValueHolder);
+		
+		\path (UIComponentBase.south) ++ (-2.5cm, -\umlVertSep) node[/uml/class, anchor=north] (UICommand) {\jeeref[prefix=]{javax.faces.component/UICommand}};
+		\path[/uml/extends] (UICommand) -- (UIComponentBase);
+		\path (UICommand.north) ++ (-1cm, 0.5*\umlVertSep) node[/uml/abstract class, anchor=south] (ActionSource2) {\ifaceline\jeeref[prefix=]{javax.faces.component/ActionSource2}};
+		\path[/uml/implements] (UICommand) -- (ActionSource2);
+		
+		\path (UIOutput.south) ++ (0, -\umlVertSep) node[/uml/class, anchor=north] (UIInput) {\jeeref[prefix=]{javax.faces.component/UIInput}};
+		\path[/uml/extends] (UIInput) -- (UIOutput);
+		\path (UIInput -| ValueHolder) node[/uml/abstract class] (EditableValueHolder) {\ifaceline\jeeref[prefix=]{javax.faces.component/EditableValueHolder}};
+		\path[/uml/implements] (UIInput) -- (EditableValueHolder);
+		\path[/uml/extends] (EditableValueHolder) -- (ValueHolder);
+		
+		\path (UIOutput.south) ++ (0, -\umlVertSep) node[/uml/class, anchor=north] (UIInput) {\jeeref[prefix=]{javax.faces.component/UIInput}};
+		\path[/uml/extends] (UIInput) -- (UIOutput);
+		
+		\path (UICommand.south) ++ (-11mm, -3mm) node[/uml/class, fill=yellow!10, anchor=north] (HtmlCommandButton) {\small\jeeref[prefix=]{javax.faces.component.html/HtmlCommandButton}};
+		\path[/uml/extends] (HtmlCommandButton) -- (UICommand);
+		
+		\path (HtmlCommandButton.south -| UICommand) ++ (0mm, -3mm) node[/uml/class, fill=yellow!10, anchor=north] (HtmlOutputText) {\small\jeeref[prefix=]{javax.faces.component.html/HtmlOutputText}};
+		\path[/uml/extends] (HtmlOutputText) -- (UIOutput);
+		
+		\path (UIInput.south) ++ (17mm, -3mm) node[/uml/class, anchor=north] (UISelectBoolean) {\jeeref[prefix=]{javax.faces.component/UISelectBoolean}};
+		\path[/uml/extends] (UISelectBoolean) -- (UIInput);
+
+		\path (UISelectBoolean.west) ++ (-4mm, 0) node[/uml/class, fill=yellow!10, anchor=east] (HtmlSelectBooleanCheckbox) {\small\jeeref[prefix=]{javax.faces.component.html/HtmlSelectBooleanCheckbox}};
+		\path[/uml/extends] (HtmlSelectBooleanCheckbox) -- (UISelectBoolean);
+	\end{tikzpicture}%
+	\begin{itemize}
+		\item Composants {\tiny (ici, uniquement composants UI)} : les briques des vues
+%		\item \textbf{\jeeref[prefix=\fontspec{Latin Modern Mono Light}]{javax.faces.component/UIComponentBase}}%fonctionne !
+		\item \texttt{UIComponentBase} : état et comportement par défaut
+		\item \texttt{UIOutput} : affiche {\tiny typiquement} une sortie sur la page
+		\item \texttt{UIInput} : prend une entrée utilisateur
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Composants et actions}
+	\begin{itemize}
+		\item \texttt{StateHolder} : a un état à sauver
+		\item \texttt{ActionSource2} peut entraîner navigation vers nouvelle vue
+		\item \texttt{ValueHolder} maintient une valeur et fournit accès à des données dans le niveau modèle
+		\item \texttt{EditableValueHolder} : validation, événements de changement de valeur
+		\item On peut enregistrer un convertisseur sur \texttt{ValueHolder}
+		\item JSF propose des convertisseurs par défaut
+		\item Composant \texttt{ValueHolder} associé à un objet côté serveur et affiché sur client à l’aide du convertisseur
+		\item On peut enregistrer un validateur sur \texttt{EditableValueHolder} (validation avant mise à jour du modèle)
+		\item JSF fournit des \texttt{Validator}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Hiérarchie de composants}
+	\begin{itemize}
+		\item Racine : \texttt{UIViewRoot}
+		\item Représente la vue décrite en VDL par le développeur
+		\item Composants associés à listeners, etc.
+		\item Seront utilisés par les phases ultérieures
+		\item Composants responsables de l’invocation du code développeur
+		\item Pas d’interaction explicite avec ces composants {\tiny pour usage habituel}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Rendu}
+	\begin{itemize}
+		\item Un composant UI est associé à un \jeeref{javax.faces.render/Renderer} {\tiny si delegated implementation}
+		\item \texttt{Renderer}s contenus dans une bibliothèque fournie par conteneur ou tierce partie
+		\item Fournisseur donne éventuellement des composants UI supplémentaires 
+		\item Fournisseur implémente \jeeref{javax.faces.render/RenderKit} associant les composants et les renderers
+		\item Une application peut déclarer (dans descripteur) un \texttt{RenderKit} différent du standard
+		\item Les composants et les renderer ont des attributs configurables
+		\item Exemple, composant \texttt{UIInput} : attributs \texttt{id}, \texttt{value}…
+		\item Exemple, renderer {\tiny hypothétique} \texttt{TextBox} : attribut \texttt{width}
+		\item Rendu standard ?
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Rendu HTML}
+	\begin{itemize}
+		\item JSF fournit Standard HTML RenderKit et composants HTML
+		\item Composants HTML particularisent les composants UI de base
+		\item Composants base associés à un ou plusieurs modes de rendu
+		\item JSF fournit un Renderer et un composant HTML pour chaque association [composant de base, mode de rendu]
+		\item Exemple : \texttt{UICommand} ? \pause
+		\begin{itemize}
+			\item Renderer \href{https://docs.oracle.com/javaee/7/javaserver-faces-2-2/renderkitdocs/HTML_BASIC/javax.faces.Commandjavax.faces.Button.html}{Button} + Composant \jeeref{javax.faces.component.html/HtmlCommandButton}
+			\item Renderer \href{https://docs.oracle.com/javaee/7/javaserver-faces-2-2/renderkitdocs/HTML_BASIC/javax.faces.Commandjavax.faces.Link.html}{Link} + Composant \jeeref{javax.faces.component.html/HtmlCommandLink}
+		\end{itemize}
+		\pause
+		\item \texttt{UIInput} ⇒ Renderers \texttt{File}, \texttt{Hidden}, \texttt{Secret}, \texttt{Text}, \texttt{Textarea} ; Composants \texttt{HtmlInputFile}, …
+		\item \texttt{UISelectBoolean} ⇒ Renderer \href{https://docs.oracle.com/javaee/7/javaserver-faces-2-2/renderkitdocs/HTML_BASIC/javax.faces.SelectBooleanjavax.faces.Checkbox.html}{Checkbox} + Composant \jeeref{javax.faces.component.html/HtmlSelectBooleanCheckbox}
+	\end{itemize}
+\end{frame}
+
+\subsection[Itération web]{Itération web JSF}
+\begin{frame}
+	\frametitle{Traitement de requêtes par JSF}
+	\begin{itemize}
+		\item Certaines requêtes associées à JSF
+		\item Implémenté comme un servlet associé à certaines urls
+		\item Préciser dans le descripteur à quels urls associer JSF
+		\item \emph{Itération web JSF} : requête du client {\tiny traitée par JSF} jusqu’à réponse du serveur
+		\item JSF implémente IOC (? \pause Inversion of Control) \pause : code du développeur appelé à des moments spécifiés dans un cycle de vie pré-défini
+		\item (Autre IOC déjà vu ? \pause Servlets !)
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Cycle de vie d’une itération web}
+	\begin{minipage}[t]{6.8cm}\vspace{-2em}%
+		\begin{block}{Exécution}
+			\begin{enumerate}
+				\item \emph{Restore View}
+				\item \emph{Apply Request Values} ; PE
+				\item \emph{Process Validations} {\tiny and convert} ; PE
+				\item \emph{Update Model Values} ; PE
+				\item \emph{Invoke Application} ; PE
+			\end{enumerate}
+		\end{block}
+	\end{minipage}\hfill%
+	\begin{minipage}[t]{\columnwidth - 4mm - 6.8cm}
+		Lors des Process Events (PE) :
+		\begin{itemize}
+			\item Response complete → arrêt
+			\item Render Response ou erreurs Validation ou Conversion → court-circuit
+		\end{itemize}
+	\end{minipage}
+	\begin{block}{Rendu (rendering)}
+		\begin{enumerate}\setcounter{enumi}{5}
+			\item \emph{Render Response} : typiquement, génération d’HTML
+		\end{enumerate}
+	\end{block}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Contexte}
+	\begin{itemize}
+		\item Un \jeeref{javax.faces.context/FacesContext} associé à chaque requête
+		\item Modifié au cours du cycle de vie de l’itération web
+		\item Stocke la vue (arbre de composants)
+		\item Contient les messages d’erreur durant validation, conversion…
+		\item Le développeur y a accès
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[label=ph-rv]
+	\frametitle{Fonctionnement : phase \emph{Restore View}}
+	La spécification JSF définit des classes et leurs comportements. Examinons le démarrage d’une requête JSF.
+	\begin{itemize}
+		\item \texttt{input} déterminé depuis Servlet %view-id-temp
+%		\item Si requête est un postback : suffit de restaurer le UIViewRoot depuis le FacesContext
+		\item Détermination de la vue via \jeeref{javax.faces.application/ViewHandler} par défaut {\tiny ou autre}
+		\item \texttt{deriveViewId(FacesCon. c, String input)} ⇒ \texttt{viewId}
+		\item \texttt{viewId} : chemin {\tiny (relatif contexte)} page XHTML décrivant vue {\tiny (cas Facelet)}
+		\item \texttt{restoreView(FacesC. c, String viewId): \jeeref{javax.faces.component/UIViewRoot}}
+		\item si \texttt{null} : \texttt{createView(F c, String viewId): UIViewRoot}
+		\item \texttt{createView} utilise \texttt{ViewDeclarationLanguageFactory} → \texttt{vdl} puis \texttt{vdl.createView(FacesCon. c, String viewId)}
+		\item À l’issue de la phase \emph{Restore View} : hiérarchie de composants
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[label=ph-arv]
+	\frametitle{Phase \emph{Apply Request Values}}
+	\begin{itemize}
+		\item \texttt{UIViewRoot.processDecodes()}
+		\item Appelle {\tiny normalement} les processDecodes de tout l’arbre
+		\item Délègue à \texttt{renderer.decode()}%Indiqué en 3.1.13.
+		\item \texttt{EditableValueHolder} ⇒ récupère valeur dans requête (non convertie {\tiny sauf \texttt{immediate}})
+		\item \texttt{ActionSource2} activé ⇒ \texttt{ActionEvent} dans queue
+		\item Événements \texttt{ActionEvent} seront délivrés à la fin de \emph{Invoke Application} {\tiny ou de \emph{Apply Request Values} si \texttt{immediate}}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Phase \emph{Apply Request Values} : exemple}
+	\begin{tikzpicture}
+		\path node (name) {Name: };
+		\path (name.east) ++ (1ex, 0) node[anchor=west, draw, text width=8em, minimum height=1.5em] (input) {Mon Nom};
+		\path (input.east) ++ (1ex, 0) node[anchor=west, /GUI/button] (button) {Submit};
+	\end{tikzpicture}
+	\begin{itemize}
+		\item Bouton associé à composant \texttt{HtmlCommandButton} 
+		\item \texttt{HtmlCommandButton} implémente \texttt{ActionSource2}
+		\item Utilisateur a cliqué sur \og{}Submit\fg{}
+		\item Composant \texttt{HtmlCommandButton} activé
+		\item \texttt{ActionEvent} de source \texttt{HtmlCommandButton} placé dans queue
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Phase \emph{Process Validations}}
+	\begin{itemize}
+		\item À ce stade, composants \texttt{UIInput} connaissent leur valeur soumise
+		\item \texttt{processValidators()} sur {\tiny (normalement)} chaque composant (propagés par \texttt{UIViewRoot})
+		\item \texttt{UIInput} : appelle {\tiny \texttt{validate()} qui appelle {getConvertedValue} qui appelle} \texttt{Renderer.getConvertedValue} puis \texttt{validateValue}
+		\item \texttt{validateValue} appelle \texttt{validate()} sur les \texttt{Validator} enregistrés
+		\item \texttt{validateValue} appelle la méthode liée à propriété \texttt{validatorBinding} (deprecated)
+		\item Messages d’erreurs enregistrés dans le \texttt{FacesContext} {\tiny cf. \texttt{addMessage()}}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[label=ph-umv]
+	\frametitle{Phase \emph{Update Model Values}}
+	\begin{itemize}
+		\item À ce stade, requête valide, valeurs composants ok
+		\item processUpdates() sur {\tiny (normalement)} chaque composant (propagés par \texttt{UIComponent})
+		\item \texttt{UIInput} : appelle {\tiny \texttt{updateModel()} qui appelle} la méthode liée à propriété \texttt{value}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[label=ph-ia]
+	\frametitle{Phase \emph{Invoke Application}}
+	Dans cette phase : traitement des \texttt{ActionEvent} et navigation
+	\begin{itemize}
+		\item Événement \texttt{ActionEvent} issu de composant \og{}source\fg{} {\tiny (implémentant \texttt{ActionSource2})}
+		\item Méthode \texttt{fromAction} liée à \texttt{actionExpression} de \og{}source\fg{}
+		\item \texttt{ActionEvent} traités par \texttt{ActionListener} par défaut {\tiny sauf remplacement maison}
+%		\item renderResponse in order to bypass any intervening lifecycle phases, once the method returns.
+%actionExpression: A MethodExpression (see Section 5.8.4 “MethodBinding”) that must (if non-null) point at an action method
+		\item Invoque \texttt{action} {\tiny ⇒ \texttt{toString()}} ⇒ String: \texttt{logicalOutcome}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Phase \emph{Invoke Application} : Exemple}
+	\begin{tikzpicture}
+		\path node (name) {Name: };
+		\path (name.east) ++ (1ex, 0) node[anchor=west, draw, text width=8em, minimum height=1.5em] (input) {Mon Nom};
+		\path (input.east) ++ (1ex, 0) node[anchor=west, /GUI/button] (button) {Submit};
+	\end{tikzpicture}
+	\begin{itemize}
+		\item Développeur a enregistré \texttt{\#\{myActor.processSubmit()\}} comme \texttt{actionExpression} du \texttt{HtmlCommandButton}
+		\item \texttt{processSubmit(): String} enregistre le nom dans la BD
+		\item … et renvoie \texttt{"success"} (ou \texttt{"failure"} si échec)
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[label=ph-ian]
+	\frametitle{Phase \emph{Invoke Application} : Navigation}
+	\begin{itemize}
+		\item Récupère instance de \texttt{NavigationHandler} par défaut {\tiny sauf remplacement maison}
+% If the originating component has an attribute whose name is equal to the value of the symbolic constant ActionListener.TO\_FLOW\_DOCUMENT\_ID\_ATTR\_NAME, invoke handleNavigation(FacesContext, String, String, String) passing the value of the attribute as the last parameter. Otherwise,
+		\item Invoque \texttt{handleNavigation(FacesContext c, String fromAction, String logicalOutcome)}
+%		\item Premier String : forme String de la méthode fromAction (valueExpression, par exemple)
+		\item \texttt{navigationHandler} indique (facultativement) une nouvelle vue à rendre {\tiny ou flow node à sélectionner}
+		\item \texttt{logicalOutcome} = \texttt{null} ou \texttt{""}: ré-affiche vue actuelle
+%		\item Sinon, sélectionne vue, appelle createView() on the ViewHandler instance for this application… Ou, complete the actual response (for example, by issuing an HTTP redirect), and call responseComplete() on the FacesContext instance.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Navigation (détails)}
+	\begin{itemize}
+		\item \texttt{outcome} (\texttt{blah?t=1}) ⇒ \texttt{queryString} (\texttt{?t=1}) / \texttt{out} (\texttt{blah})
+		\item \texttt{isRedirect} := \texttt{faces-redirect=true} ∈ \texttt{queryString}
+		\item \texttt{includeViewParams} := \texttt{includeViewParams=true} {\tiny ou \texttt{faces-include-view-params=true}} ∈ \texttt{queryString} %When performing preemptive navigation, redirect is implied, even if the navigation case doesn't indicate it, and the query string must be preserved. Refer to Section 4.1.9 “UIOutcomeTarget” for more information on preemptive navigation.
+		\item Si sans extension : \texttt{out} += extension du \texttt{viewId} actuel
+		\item Si \texttt{out} relatif : \texttt{out} := chemin \texttt{viewId} actuel {\tiny (jusqu. dernier \texttt{/})} + \texttt{out}
+		\item Récupérer \texttt{viewHandler} par défaut {\tiny ou remplacement maison}
+		\item \texttt{viewHandler.deriveViewId(FacesContext c, String out)} ⇒ \texttt{implicitViewId} {\tiny supposé non \texttt{null}}
+%		\item (If implicitViewId is non-null, discover if fromOutcome is equal to the flow-id of an existing flow in the FlowHandler. If so find the start node of the flow. If the start node is a ViewNode, let outcome be the vdlDocumentId value of the ViewNode. Call deriveViewId as in the preceding step and let the result be implicitViewId. If fromOutcome is not equal to the flow-id of an existing flow in the FlowHandler, and we are currently in a flow, discover if this is call to a faces-flow-return node. If so, obtain the fromOutcome of the faces-flow-return node, re-apply this algorithm to derive the value of the implicitViewId and continue.)
+%		\item implicitNavigationCase = <navigation-case>fromViewId = current viewId, fromAction = fromAction, fromOutcome = fromOutcome, toViewId = implicitViewId, and redirect is the value of isRedirect, and include-view-params is includeViewParams. Treat implicitNavigationCase as a matching navigation case and return to the first step above that starts with “If a matching <navigation-case> element was located...”.
+		\item Si \texttt{isRedirect} : envoi HTTP redirect {\tiny (vers \texttt{implicitViewId} + \texttt{queryString})} au client {\tiny via \texttt{viewHandler.getRedirectUrl%(F c, String implicitViewId, Map viewParameters, bool includeViewParams)
+		}} ; ResponseComplete
+		\item Sinon : \texttt{viewHandler} ⇒ crée vue \texttt{implicitViewId}
+%		\item If UIViewAction.isProcessingBroadcast() returns true, call getFlash().setKeepMessages(true) on the current FacesContext. (en fait sur https://docs.oracle.com/javaee/7/api/javax/faces/context/ExternalContext.html !)
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Phase \emph{Render Response}}
+	\begin{itemize}
+		\item Chaque composant de l’arbre contribue à encodage réponse
+		\item Délégation aux \texttt{renderer}s
+		\item Renderer et composant collaborent pour afficher le texte désiré
+		\item Exemple : Renderer HTML \texttt{Output-Text} affiche {\tiny dans le cas le plus simple} l’attribut \texttt{value} du composant
+	\end{itemize}
+	\begin{exampleblock}{Exemple}
+		\begin{itemize}
+			\item Composant \texttt{HTMLOutputText} : \texttt{value} = \texttt{Name:}
+			\item Composant \texttt{HTMLInputText} : \texttt{value} = \texttt{Mon Nom}
+			\item Composant \texttt{HTMLCommandButton} : \texttt{value} = \texttt{Submit}
+			\item[⇒] \texttt{Name:<input type="text" … value="Mon Nom" /> <input type="submit" … value="Submit" />}
+		\end{itemize}
+		\begin{tikzpicture}
+			\path node (name) {Name: };
+			\path (name.east) ++ (1ex, 0) node[anchor=west, draw, align=left, text width=8em, minimum height=1.5em] (input) {Mon Nom};
+			\path (input.east) ++ (1ex, 0) node[anchor=west, /GUI/button] (button) {Submit};
+		\end{tikzpicture}
+	\end{exampleblock}
+\end{frame}
+
+\subsection{Facelets}
+\begin{frame}
+	\frametitle{Facelets}
+	\begin{itemize}
+		\item Un des VDL défini par JSF
+		\item ViewId pointe vers une page Facelet (XHTML 1.0)
+		\item Éléments XML non préfixés : seront simplement restitués au client tels quels
+		\item Éléments XML préfixés référençant une bibliothèque de tags JSF : agissent sur la vue construite par JSF
+		\item JSF définit des bibliothèques de tags et leur sémantique
+		\item Associés à des préfixes d’une lettre {\tiny (standards, mais peuvent être changés)}
+		\item Utilisation de tags tierce-partie possible
+		\item \tiny Tag également appelé custom action ou custom tag
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Standard HTML RenderKit Tag Library}
+	\begin{itemize}
+		\item \texttt{http://xmlns.jcp.org/jsf/html}, préfixe \texttt{h:}
+		\item Chaque tag associé à un composant et un renderer  %cf. \jsftag{h/body} correspondant à HtmlBody (mais pas dans spec !)
+		\item \jsftag{h/commandButton} ; \jsftag{h/commandLink} ; \jsftag{h/inputFile} ; \jsftag{h/inputTextarea} ; \jsftag{h/selectBooleanCheckbox} ; \jsftag{h/outputLink}…
+		\item Mais aussi \jsftag{h/link} (\href{http://stackoverflow.com/questions/6469298/difference-between-hlink-and-houtputlink}{diff}), \jsftag{h/button} (?)
+		\item Ces tags ont pour propriétés l’union des attributs du Composant et du Renderer sur lesquels ils sont basés
+		\item Exemple : propriété \texttt{value} pour tags créant des composants \texttt{ValueHolder} (ou \texttt{UICommand})
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Exemple de page Facelet}
+	\begin{lstlisting}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict …>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+  <head>
+    <meta http-equiv="Content-Type" content = … />
+    <title>Title</title>
+  </head>
+  <body>
+    <h:outputText value="Hello" />
+  </body>
+</html>
+	\end{lstlisting}
+\end{frame}
+	
+\begin{frame}
+	\frametitle{Actions}
+	\begin{itemize}
+		\item Tags créant composant \texttt{ActionSource2} a propriété \texttt{action}
+		\item Valeur sera transférée à \texttt{actionExpression} du composant
+		\item Phase \hyperlink{ph-arv}{\emph{Apply Request Values}} : génération de \texttt{ActionEvent}
+		\item Phase \hyperlink{ph-ia}{\emph{Invoke Application}} : traitement de l’action et navigation
+		\item Cas le plus simple : indiquer le nom de la page où aller
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Actions : Exemple}
+	Page \texttt{index.xhtml} (extrait) :
+	\begin{lstlisting}[aboveskip=1em, belowskip=1em]
+<body>
+  <h:commandButton value="Submit" action="response" />
+</body>
+	\end{lstlisting}
+	\begin{itemize}
+		\item[⇒] Cliquer sur Submit envoie à la page \texttt{response.xhtml}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Facelet Core Tag Library}
+	\begin{itemize}
+		\item \texttt{http://xmlns.jcp.org/jsf/core}, préfixe \texttt{f:}
+		\item Agissent {\tiny généralement} sur le composant parent le plus proche
+		\item Indépendant de HTML
+		\item Exemple, \jsftag{f/convertNumber} : enregistre un convertisseur sur un composant
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Recommandations pages Facelet}
+	\begin{block}{Objectif}
+		\begin{itemize}
+			\item Objectif : servir une page HTML 5 {\tiny (conforme à spec HTML 5, sérialisation HTML 5)}
+			\item … Tout en écrivant une page valide XHTML 1.0
+		\end{itemize}
+	\end{block}
+	Pour ce faire :
+	\begin{itemize}
+		\item PAS d’en-tête XML {\tiny c-à-d <?xml version="1.0" … ?>}
+		\item \texttt{<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">}
+		\item \texttt{<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://xmlns.jcp.org/jsf/html" …>}
+	\end{itemize}
+\end{frame}
+
+\subsection{Packaging}
+\begin{frame}[fragile]
+	\frametitle{Descripteur web}
+	\begin{itemize}
+		\item Dans module web (\texttt{.war})
+	\end{itemize}
+	Dans descripteur web \texttt{WEB-INF/web.xml} :
+	\begin{lstlisting}[aboveskip=1em, belowskip=1em]
+<web-app …>
+  <servlet>
+    <servlet-name>my-faces-servlet-name</servlet-name>
+    <servlet-class>javax.faces.webapp.FacesServlet
+    </servlet-class>
+  </servlet>
+  <servlet-mapping>
+  ...
+  </servlet-mapping>
+</web-app>
+	\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Descripteur web : association URL}
+	Association préfixe recommandée {\tiny (existe aussi association suffixe)} :
+	\begin{lstlisting}[aboveskip=1em, belowskip=1em]
+<web-app …>
+  <servlet-mapping>
+    <servlet-name>my-faces-servlet-name</servlet-name>
+    <url-pattern>/faces/*</url-pattern>
+  </servlet-mapping>
+</web-app>
+	\end{lstlisting}
+	\begin{itemize}
+		\item[⇒] Requête \texttt{contextPath/faces/faces/faces/view.xhtml} associée à viewId \texttt{view.xhtml} lors \hyperlink{ph-rv}{\emph{Restore View}}
+	\end{itemize}
+\end{frame}
+
+\subsection[EL]{Expression Language}
+\begin{frame}[fragile]
+	\frametitle{Expression Language}
+	\begin{itemize}
+		\item Unified Expression Language
+		\item Permet de référencer des propriétés ou des méthodes
+		\item … d’objets \emph{instanciés}
+		\item Value expression, r-value : propriété (lecture seule)
+		\item Value expression, l-value : propriété (lecture et écriture)
+		\item Pourquoi \{l / r\}-value ? \uncover<2>{Similaire à x := 3 (x est une l-value)}
+		\item Method expression : méthode
+	\end{itemize}
+Exemple :
+	\begin{lstlisting}
+<h:inputText rendered = "#{day.odd}"
+    value = "#{employee.name}"/>
+	\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Instanciation}
+	\begin{itemize}
+		\item Exemple de value expression : \texttt{\#\{employee.name\}}
+		\item Référence managed bean nommé \texttt{Employee}
+		\item Instanciation automatique d’après son scope
+		\item Utilise méthode \texttt{getName()} pour lecture
+		\item Utilise méthode \texttt{setName(String)} pour écriture
+		\item Scopes \alert{CDI} sur managed beans ! {\tiny et pas \texttt{javax.faces.bean…}}
+		\item Pour classe accessible via EL : l’annoter en plus \texttt{@Named}
+	\end{itemize}
+Exemple :
+	\begin{lstlisting}[escapechar=*]
+*\jeeref[@]{javax.inject/Named}*
+*\jeeref[@]{javax.enterprise.context/SessionScoped}*
+public class Employee {
+	\end{lstlisting}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Combinaison de EL et Facelets}
+	\begin{itemize}
+		\item EL : spécification indépendante de Facelets
+		\item Mais usage souvent combiné
+		\item Cf. fonctionnement normal du cycle de vie Facelets !
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Combinaison de EL et Facelets : exemple}
+	\begin{exampleblock}{Exemple}
+	\begin{lstlisting}[aboveskip=0em, belowskip=0em]
+<h:inputText value = "#{employee.name}" />
+<h:commandButton action = "#{myCtrl.submitName}" />
+	\end{lstlisting}
+	\begin{tikzpicture}
+		\path node[anchor=west, draw, align=left, text width=8em, minimum height=1.5em] (input) {Mon Nom};
+		\path (input.east) ++ (1ex, 0) node[anchor=west, /GUI/button] (button) {Submit};
+	\end{tikzpicture}
+	\end{exampleblock}
+	Quel traitement après envoi via bouton Submit ?
+	\pause
+	\begin{itemize}
+		\item Lors \hyperlink{ph-prv}{\emph{Process Request Values}} : "Mon nom" enregistré dans \texttt{HtmlInputText} \pause
+		\item … \texttt{ActionEvent} lié à \texttt{HtmlCommandButton} placé dans queue \pause
+		\item Lors \hyperlink{ph-umv}{\emph{Update Model Values}} : \texttt{employee.setName(Mon nom)} \pause
+		\item Lors \hyperlink{ph-ia}{\emph{Invoke Application}} : \texttt{myCtrl.submitName()}
+	\end{itemize}
+\end{frame}
+
+\subsection{Facets}
+\begin{frame}
+	\frametitle{Utilité des Facets}
+	\begin{itemize}
+		\item Composants organisés en arbre (parent – enfant)
+		\item Parfois nécessaire d’associer à un composant des sous-composants non enfants
+		\item Ou des sous-composants jouant un rôle particulier
+		\item Possible grâce aux \og{}Facets\fg{}
+	\end{itemize}
+	\begin{exampleblock}{Exemple : tableau de données}
+		\begin{itemize}
+			\item Enfants : colonnes de données
+			\item Sous-composant de rôle \og{}header\fg{}
+			\item Sous-composant de rôle \og{}footer\fg{}
+		\end{itemize}		
+	\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Facets : mécanisme}
+	\begin{itemize}
+		\item Chaque composant a des Facets : \texttt{public Map<String, UIComponent> getFacets();}
+		\item Facet : une association d’un rôle (String) et d’un composant
+	\end{itemize}
+	\begin{block}{En Facelets}
+		\begin{lstlisting}
+<h:someComponent … >
+  <f:facet name="someRole">
+    <h:someSubComponent />
+  </f:facet>
+</h:someComponent>
+		\end{lstlisting}
+	\end{block}
+\end{frame}
+
+\begin{frame}
+	\frametitle{\texttt{f:metadata}}
+	\begin{itemize}
+		\item Nous allons avoir besoin d’une Facet sur \texttt{UIViewRoot}
+		\item Problème (avec Facelets) ? \pause Pas d’élément représentant \texttt{UIViewRoot} \pause
+		\item Mais on peut utiliser le tag \jsftag{f/metadata}
+		\item {\tiny Typiquement} juste dessous le tag \texttt{html}
+		\item Enregistre une Facet sur \texttt{UIViewRoot} (avec rôle métadonnée) {\tiny en fait un \jeeref{javax.faces.component/UIPanel}}
+		\item Permet d’inclure du comportement qui ne rentre pas ailleurs sur la page
+		\item En l’occurence : pour récupérer les paramètres requêtes lors d’un GET
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Requête GET}
+	\begin{itemize}
+		\item GET HTTP : information requête contenue entièrement dans l’URL
+		\item Représente requête idempotente
+		\item Peut donc être \og{}bookmarquée\fg{}
+		\item Ou référencée de n’importe où
+		\item Paramètres envoyés via composante \og{}query{} de URL
+		\item Exemple : \path{http://…/context/faces/user.xhtml?idUser=25161&details=3}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Récupération paramètres GET en Facelets}
+	\begin{itemize}
+		\item En Facelet : paramètre capturé à l’aide de \jsftag{f/viewParam}
+		\item Doit être dans élément \texttt{f:metadata}
+		\item Fonctionne comme un \texttt{UIInput}
+	\end{itemize}
+	\begin{exampleblock}{Capture de paramètres \texttt{idUser} et \texttt{details}}
+		\begin{lstlisting}
+<html …>
+  <f:metadata>
+    <f:viewParam name=idUser
+       value="#{userBean.id}" />
+    <f:viewParam name=details
+        value="#{displayBean.detailLevel}" />
+  </f:metadata>
+		\end{lstlisting}
+	\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Événements du cycle de vie}
+	\begin{itemize}
+		\item On peut aussi intervenir à des moments donnés du cycle de vie de l’itération web
+		\item Par exemple : charger contenu de la page en fonction de paramètres requêtes
+		\item Utiliser \jsftag{f/event}
+	\end{itemize}
+	\begin{exampleblock}{Intervention pré-\emph{Render Response}}
+		\begin{lstlisting}
+<f:metadata>
+   <f:event type="preRenderView"
+     listener="#{ctrl.loadAnswer}"/>
+</f:metadata>
+		\end{lstlisting}
+	\end{exampleblock}
+\end{frame}
+
+\subsection{Usage}
+\begin{frame}
+	\frametitle{GET Vs POST}
+	\begin{itemize}
+		\item Le plus souvent : méthode GET
+		\item Utiliser POST \alert{ssi requête pas idempotente}
+		\item Formulaire de recherche : doit générer un GET
+		\item Concevoir d’abord les pages de résultat
+		\item Doivent fonctionner même lors d’une requête extérieure
+		\item Attention : beaucoup de tutoriaux sur le net se concentrent sur les requêtes POST {\tiny (plus intéressant, raison historique)}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Recherche via GET}
+	\begin{exampleblock}{Formulaire de recherche par nom}
+			\begin{tikzpicture}
+				\path node (name) {Name pattern: };
+				\path (name.east) ++ (1ex, 0) node[anchor=west, draw, align=left, text width=8em, minimum height=1.5em] (input) {*john*};
+				\path (input.east) ++ (1ex, 0) node[anchor=west, /GUI/button] (button) {Search};
+			\end{tikzpicture}
+		\begin{itemize}
+			\item Concevoir d’abord page de résultats !
+			\item Répond à un GET : \texttt{…/search.xhtml?pattern=…}
+			\item Tester indépendamment du formulaire de recherche
+			\item Ensuite, il n’y a plus qu’à s’arranger pour que le formulaire de recherche renvoie à la bonne URL
+		\end{itemize}
+	\end{exampleblock}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Formulaires GET et Facelets}
+	\begin{itemize}
+		\item Composants \texttt{ActionSource2} génèrent des requêtes POST
+		\item Dans cas simples, un formulaire HTML statique suffit !
+		\item Si composants facelets nécessaires : pattern PRG (voir plus loin)
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Formulaires HTML}
+	Rappel formulaires HTML (\href{https://www.w3.org/TR/html4/interact/forms.html}{spec})
+	\begin{itemize}
+		\item Utiliser élément \texttt{form}
+		\item Indiquer méthode GET ou POST : \texttt{form method="get"} {\tiny (GET par défaut)}
+		\item Placer éléments \texttt{input} {\tiny ou autres contrôles} dans formulaire
+		\item Données formulaire (\emph{form data set}) : noms contrôles et valeurs associées
+		\item GET : Le client envoie un GET avec données dans l’URL
+		\item POST : le client envoie un POST avec données dans le corps
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Exemple de formulaire HTML (GET)}
+	\begin{exampleblock}{Un formulaire HTML}
+		\begin{lstlisting}
+<form action="http://example.com/…getuser.xhtml"
+      method="get">
+  First name: <input type="text" name="fname" />
+  Last name: <input type="text" name="lname" />
+  <br />
+  <input type="submit" value="Send" />
+</form>
+		\end{lstlisting}
+	\end{exampleblock}
+	\begin{tikzpicture}[remember picture]
+		\path node[inner xsep=0] (first name) {First name: };
+		\path (first name.east) ++ (1ex, 0) node[anchor=west, draw, text width=7em, minimum height=1.5em] (input first) {First};
+		\path (input first.east) ++ (1ex, 0) node[anchor=west] (last name) {Last name: };
+		\path (last name.east) node[anchor=west, draw, text width=7em, minimum height=1.5em] (input last) {Last};
+		\path (first name.south west) ++ (0, -0.5ex) node[anchor=north west, /GUI/button] (button) {Send};
+	\end{tikzpicture}
+	\begin{itemize}
+		\item Utilisateur entre les données et clique sur Send
+		\item Le client envoie un GET à \path{http://example.com…/getuser.xhtml?fname=First&lname=Last}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Requêtes POST}
+	\begin{itemize}
+		\item Modifications données {\tiny ou autres requêtes non idempotentes} : utiliser POST
+		\item Afficher les résultats : utiliser un GET ! {\tiny permet traitement correct du refresh côté utilisateur, affichage url correcte…}
+		\item Pour combiner les deux : pattern POST-redirect-GET
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Pattern POST-redirect-GET}
+	\begin{enumerate}
+		\item Affichage initial de la page contenant formulaire POST
+		\item Utilisateur clique élément correspondant à composant \texttt{ActionSource2}
+		\item Client envoie \emph{postback} : requête sous forme POST avec données de l’utilisateur
+		\item Activation du composant \texttt{ActionSource2} côté serveur
+		\item Réponse du serveur : redirect vers page-réponse
+		\item Client s’exécute en effectuant un GET
+	\end{enumerate}
+\end{frame}
+
+\begin{frame}
+	\frametitle{POST et Facelets}
+	\begin{itemize}
+		\item Sur \path{initial.xhtml} : utiliser composant \texttt{ActionSource2} (t.q. \texttt{h:commandButton})
+		\item Rendu page initiale : indique au client d’utiliser POST
+		\item Utilisateur soumet formulaire : action composant invoquée
+		\item Action renvoie outcome sous forme \path{response.xhtml?faces-redirect=true&…}
+		\item Serveur répond HTTP REDIRECT vers \path{response.xhtml?…}
+		\item Client demande \path{response.xhtml?…}
+		\item Serveur sert \path{response.xhtml?…}
+	\end{itemize}
+	En résumé : fait savoir au client qu’il est renvoyé de \path{initial.xhtml} à \path{response.xhtml}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Mémorisation de l’état}
+	\begin{itemize}
+		\item Rappel : HTTP sans état
+		\item Mais en réalité il faut souvent conserver un état !
+		\item Exemple : utilisateur enregistre un nouvel item
+		\item Il faut retenir l’id item pour le montrer à l’utilisateur en réponse
+		\item Recommandé (quand possible) : le \emph{client} conserve l’état
+		\item Car conforme à philosophie HTTP
+		\item Permet bookmarks, etc.
+		\item[⇒] Favoriser managed beans de scope Request
+		\item Mais : conserver un état sur le serveur peut s’imposer si état compliqué, …
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Mémorisation de l’état : deux façons}
+	\begin{exampleblock}{Client conserve l’état}
+		\begin{itemize}
+			\item Client charge page \path{newitem.xhtml}
+			\item Client soumet formulaire avec détails item
+			\item App. renvoie {\footnotesize\path{response.xhtml?faces-redirect=true&itemId=13}}
+			\item Client demande \path{response.xhtml?itemId=13}
+		\end{itemize}
+	\end{exampleblock}
+	\begin{exampleblock}{Serveur conserve l’état}
+		\begin{itemize}
+			\item Client charge page \path{newitem.xhtml}, soumet formulaire
+			\item Serveur retient item id dans bean \texttt{SessionScoped}
+			\item App. renvoie \path{response.xhtml?faces-redirect=true}
+			\item Client demande \path{response.xhtml}
+			\item Serveur sait quel item montrer au client grâce au bean\vspace{-2pt}
+		\end{itemize}
+	\end{exampleblock}
+\end{frame}
+
+\subsection[Suppl]{Informations supplémentaires}
+\begin{frame}
+	\frametitle{Ressources web}
+	\begin{itemize}
+		\item Parfois nécessaire d’accéder (via Facelets par exemple) à des \emph{ressources web}
+		\item Ressource web : fichier image, script, …
+		\item À placer dans \texttt{web-root/resources/rid}
+		\item Ou dans classpath : \texttt{META-INF/resources/rid}
+		\item Rid : [locale-prefix/][library-name/][library-version/]resource-name[/resource-version]
+		\item Exemple : \texttt{<h:outputStylesheet library="css" name="default.css" />} ⇒ \texttt{web-root/resources/css/default.css}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{\texttt{PROJECT\_STAGE}}
+	\begin{itemize}
+		\item Options de configuration via descripteur web
+		\item Recommandé : mettre \texttt{PROJECT\_STAGE} à \texttt{Development} {\tiny (par défaut : \texttt{Production}), valeurs permises : voir \jeeref{javax.faces.application/ProjectStage}, cf. \jeeref{javax.faces.application/Application}}%javax.faces.PROJECT_STAGE -- A human readable string describing where this particular JSF application is in the software development lifecycle. Valid values are “Development”, “UnitTest”, “SystemTest”, or “Production”, corresponding to the enum constants of the class javax.faces.application.ProjectStage. It is also possible to set this value via JNDI. See the javadocs for Application.getProjectStage().
+		\item Plus d’informations de débuggage lors \texttt{Exception}
+	\end{itemize}
+	\begin{exampleblock}{Modification \texttt{PROJECT\_STAGE}}
+		\begin{lstlisting}
+<web-app …>
+  <context-param>
+    <param-name>javax.faces.PROJECT_STAGE
+    </param-name>
+    <param-value>Development</param-value>
+  </context-param>
+		\end{lstlisting}
+	\end{exampleblock}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Voir aussi}
+	\begin{itemize}
+		\item Utiliser l’attribut "immediate" pour traiter certains composants avant les autres (utile pour passer outre erreurs de validation par exemple)
+		\item Pour utiliser des templates, voir Facelets tag library (\texttt{http://xmlns.jcp.org/jsf/facelets}, préfixe \texttt{ui:}) %Tags for templating Utiliser <ui:insert> dans template puis <ui:composition> avec <ui:define>
+		\item Facilités de localisation
+		\item Interventions avancées possibles via fichier \texttt{WEB-INF/faces-config.xml}
+%		\item[⇒] Voir livre ou autres \hyperlink{Références}{références}
+		\item Résultat action : {\texttt{faces-redirect=true\&amp;includeViewParams=true}} ajoute paramètres de la cible à requête de redirection
+		\item \jsftag{h/link} : lien sans action ({≠} \jsftag{h/commandLink}), génère élément \texttt{a}
+		\item \jsftag{h/button} : bouton sans action ({≠} \jsftag{h/commandButton})
+		\item Cible connue lors rendu initial {\tiny et non lors du postback}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Spécifications pages Facelet}
+	\begin{itemize}
+		\item Une page Facelet doit se conformer au DTD \href{http://www.w3.org/TR/xhtml1/\#a\_dtd\_XHTML-1.0-Transitional}{XHTML-1.0-Transitional}
+		\item Éléments dans namespace XHTML {\tiny (\texttt{http://www.w3.org/1999/xhtml})} rendus tels quels
+		\item Modes de traitement : HTML 5 (\texttt{<process-as>html5</process-as>} dans \texttt{faces-config}), Facelets XHTML (\texttt{xhtml}), XML View (\texttt{xml}), et Facelets JSPX (\texttt{jspx})
+		\item En mode html 5, déclaration XML et DOCTYPE rendues ssi présentes dans le fichier VDL {\tiny spécification ambigüe}
+		\item En mode html 5, XML Doctype simplifié en \texttt{<!DOCTYPE html>}
+	\end{itemize}
+\end{frame}
+
+\subsection{Références}
+\begin{frame}
+	\frametitle{Références}
+	\begin{itemize}
+		\item \href{https://docs.oracle.com/javaee/7/javaserver-faces-2-2/vdldocs-facelets/toc.htm}{Facelets tags}
+		\item Exemples du tutorial Java EE 7 : voir par exemple \texttt{web/jsf/guessnumber-jsf}
+		\item \href{http://gen.lib.rus.ec/book/index.php?md5=DED75FBAF79F19E9473C4EDF96EC9B57}{Livre} JavaServer Faces 2.0
+		\item The Java EE Tutorial: \href{https://docs.oracle.com/javaee/7/tutorial/jsf-intro.htm}{JavaServer Faces Technology}
+		\item \href{http://www.w3schools.com/tags/tryit.asp?filename=tryhtml_basic}{Try it} HTML Editor (\href{http://www.w3schools.com/tags/tryit.asp?filename=tryhtml_form_method}{formulaires})
+		\item \href{https://jcp.org/en/jsr/detail?id=344}{JSR 344} (JavaServer Faces 2.2) (\href{http://download.oracle.com/otn-pub/jcp/jsf-2_2-fr-eval-spec/javax.faces-api-2.2-FINAL.zip}{zip complet}, \href{http://www.sws.bfh.ch/~fischli/courses/eadj/jsf/doc/JSF_20130320.pdf}{PDF principal})
+		\item \href{https://docs.oracle.com/javaee/7/javaserver-faces-2-2/renderkitdocs/toc.htm}{HTML\_BASIC RenderKit} (information redondante, voir plutôt Facelets tags)
+		\item \href{https://jcp.org/en/jsr/detail?id=245}{JSR 245} (JavaServer Pages 2.3, contient Unified Expression Language) (\href{http://download.oracle.com/otn-pub/jcp/jsp-2_3-mrel2-eval-spec/JSP2.3MR.pdf}{direct})
+	\end{itemize}
+\end{frame}
+
+\section{Exercices}
+\begin{frame}[allowframebreaks]
+	\frametitle{Exercices}
+	\begin{itemize}
+		\item Créer un projet JSF (ou ajouter facette JSF à un projet web existant)
+		\item Configurer descripteur web pour qu’il serve les requêtes Faces
+		\item Créer une page Facelet \path{index.xhtml} conforme à la syntaxe Facelet (suivre recommandations pour avoir l’en-tête correct) mais sans composants actifs (sans tags Facelets). La page affiche simplement "Hello".
+		\item Publier le projet sur le serveur
+		\item Naviguer vers cette page pour qu’elle soit considérée comme une requête Faces (comment ?)
+		\item Vérifier qu’elle a bien été servie par le servlet Faces en regardant le code source de la page reçue par votre navigateur : le doctype résultant doit avoir été transformé en \texttt{<!DOCTYPE html>}
+		\item Modifier la page \path{index.xhtml} : elle doit contenir un tag \jsftag{h/outputText} qui est chargé de générer le texte "Hello". Pour le moment ce texte est toujours inscrit en dur dans la page.
+		\item Observer le résultat (vous savez quoi faire à ce stade…)
+		\item Reprendre le cycle de vie d’une itération web. Décrire ce qui se passe à chaque étape sur cet exemple.
+		\item Créer un managed bean \texttt{Greeter} \texttt{@RequestScoped} et une méthode \texttt{getGreeting()} qui renvoie "Hello".
+		\item Ajouter ce qu’il faut pour que votre \texttt{Greeter} soit accessible par EL
+		\item Modifier la page (vous le voyiez venir ?) : au lieu d’écrire "Hello" en dur, le tag doit invoquer la méthode \texttt{getGreeting()} pour générer le texte
+		\item Vérifier que ça fonctionne
+		\item Décrire ce qui se passe à chaque étape du cycle de vie après ces modifications
+		\item Faire en sorte que la page affiche "Hello, " suivi de \texttt{myname} quand on appelle \path{index.xhtml?name=myname} {\tiny (astuce : enregistrer la valeur envoyée dans une propriété de \texttt{Greeter}, vérifier que ceci fonctionne puis la réutiliser)}
+		\item En supposant maintenant qu’on appelle \path{index.xhtml?name=myname&feelgood=true}, faire en sorte que l’état de bien-être binaire passé en paramètre s’enregistre dans une propriété de type \texttt{Boolean} de \texttt{Greeter}. Utiliser pour ce faire les mécanismes de conversion automatique de JSF {\tiny (astuce : faites au plus simple)}.
+		\item Modifier la page pour que JSF affiche une erreur quand le nom manque, en utilisant le mécanisme de validation de JSF. {\tiny (Astuce : jeter un œil au tag h:messages.)}%En cas de donnée manquante, le nom et autres données envoyées par le client ne doivent pas s’enregistrer dans \texttt{Greeter}. Vérifier.
+		\item Logger les types des composants composant l’arbre de composants (en commençant par sa racine, \texttt{UIViewRoot}) juste avant le rendu de la page {\tiny (astuce : faire en sorte qu’une méthode de \texttt{Greeter} — ou d’un autre bean créé à cet effet — soit exécutée juste avant le rendu)}
+		\item Créer un managed bean \texttt{ZeList} qui contient une liste \texttt{fakeDb} de strings inscrite en dur dans votre application, dans un champ immutable (par exemple \texttt{private static List<String> fakeDb = Arrays.asList("string 1", "blah", "hey", …);}) et dont la responsabilité est simplement se servir cette liste. Quel est le scope adéquat pour ce bean ?
+		\item Créer une page \path{search.xhtml} contenant un seul contrôle texte et un bouton Search. Lorsque l’utilisateur clique Search il voit tous les strings de \texttt{fakeDb} contenant la chaîne qu’il a introduit dans le contrôle texte. Créer un bean à cet effet et y injecter \texttt{ZeList}.
+	\end{itemize}
+\end{frame}
+
+\section{À faire}
+\begin{frame}
+	\frametitle{À faire}
+	
+	\begin{itemize}
+		\item Remise finale : mi-juin
+		\item Date exacte ?
+	\end{itemize}
+	Review :
+	\begin{itemize}
+		\item Créer une branche appelée \texttt{review}
+		\item Je considérerai ce qui se trouve dans cette branche à la fin du 29 mars
+		\item Je vous remets mes commentaires le 12 avril
+		\item Le contenu de la review ne compte pas dans la note
+		\item Vous serez sanctionné en cas de non respect de la date limite
+	\end{itemize}
+\end{frame}
+
+\appendix
+\AtBeginSection{
+}
+\section{Rappels (X)HTML}
+\begin{frame}
+	\frametitle{Rappels XHTML 1.x}
+	\begin{itemize}
+		\item \href{https://www.w3.org/TR/xhtml1/}{XHTML 1.0} : reformulation de HTML 4 compatible XML 1.0
+		\item 3 DTDs correspondant aux DTDs HTML 4
+		\item Sémantique : cf. HTML 4
+		\item Déclaration XML : jamais obligatoire, mais fortement encouragée pour tous documents XHTML
+		\item DOCTYPE obligatoire avant la racine : \texttt{\small{<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">}} {\tiny (ou Transitional ou Frameset)}%NB no spaces in -strict!
+		\item Racine : \texttt{\small{<html xmlns="http://www.w3.org/1999/xhtml" …>}}%<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+		\item Media type : \texttt{text/html} ou \texttt{application/xhtml+xml}
+		\item XHTML 1.1 : relâche compatibilité HTML 4, plus strict {\tiny (<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">)}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{HTML 5}
+	Spec HTML 5 : 
+	\begin{itemize}
+		\item Langage, API interaction avec représentation mémoire (DOM)
+		\item Deux syntaxes concrètes pour transmission dans ce langage
+	\end{itemize}
+	\begin{block}{Syntaxe HTML version 5.0 ("HTML 5")}
+		\begin{itemize}
+			\item Recommandée
+			\item Media type \texttt{text/html}
+			\item Pas d’en-tête xml
+			\item{} <!DOCTYPE html> puis élément racine html {\tiny ou DOCTYPE obsolètes}% (start tag élément root peut être omis)%DOCTYPEs are required for legacy reasons. When omitted, browsers tend to use a different rendering mode that is incompatible with some specifications. Including the DOCTYPE in a document ensures that the browser makes a best-effort attempt at following the relevant specifications.
+%		\item HTML Syntax : To help authors transition from HTML4 and XHTML1, an obsolete permitted DOCTYPE string can be inserted into the DOCTYPE (in the position defined above). Par exemple <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">. Authors should not use obsolete permitted DOCTYPEs, as they are unnecessarily long.
+		\end{itemize}
+	\end{block}
+	\begin{block}{Syntaxe XHTML version 5.0 ("XHTML 5")}
+		\begin{itemize}
+			\item Media type XML tel que \texttt{application/xhtml+xml}
+			\item DOCTYPE non obligatoire pour syntaxe XHTML 5
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\section{Licence}
+\begin{frame}
+	\frametitle{Licence}
+	Cette présentation, et le code LaTeX associé, sont sous \href{http://opensource.org/licenses/MIT}{licence MIT}. Vous êtes libres de réutiliser des éléments de cette présentation, sous réserve de citer l’auteur.
+	
+	Le travail réutilisé est à attribuer à \href{http://www.lamsade.dauphine.fr/~ocailloux/}{Olivier Cailloux}, Université Paris-Dauphine.
+	
+	\small{(Ceci ne couvre pas les images incluses dans ce document, puisque je n’en suis généralement pas l’auteur.)}
+\end{frame}
+
+\end{document}
+\begin{frame}
+	\frametitle{}
+	\begin{itemize}
+		\item 
+	\end{itemize}
+	\begin{block}{}
+		
+	\end{block}
+\end{frame}
+
+\section{Bibliographie}
+\begin{frame}[allowframebreaks]
+	\frametitle{Bibliographie}
+	\def\newblock{\hskip .11em plus .33em minus .07em}
+% 	\bibliography{zotero}
+\end{frame}
+
+\section{Autres}
+\begin{frame}
+	\frametitle{}
+	\begin{itemize}
+		\item 
+	\end{itemize}
+	\begin{block}{}
+		
+	\end{block}
+\end{frame}
+\end{document}
