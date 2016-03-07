@@ -443,7 +443,6 @@
 		\item \texttt{http://xmlns.jcp.org/jsf/html}, préfixe \texttt{h:}
 		\item Chaque tag associé à un composant et un renderer  %cf. \jsftag{h/body} correspondant à HtmlBody (mais pas dans spec !)
 		\item \jsftag{h/commandButton} ; \jsftag{h/commandLink} ; \jsftag{h/inputFile} ; \jsftag{h/inputTextarea} ; \jsftag{h/selectBooleanCheckbox} ; \jsftag{h/outputLink}…
-		\item Mais aussi \jsftag{h/link} (\href{http://stackoverflow.com/questions/6469298/difference-between-hlink-and-houtputlink}{diff}), \jsftag{h/button} (?)
 		\item Ces tags ont pour propriétés l’union des attributs du Composant et du Renderer sur lesquels ils sont basés
 		\item Exemple : propriété \texttt{value} pour tags créant des composants \texttt{ValueHolder} (ou \texttt{UICommand})
 	\end{itemize}
@@ -912,6 +911,7 @@ public class Employee {
 		\item \jsftag{h/link} : lien sans action ({≠} \jsftag{h/commandLink}), génère élément \texttt{a}
 		\item \jsftag{h/button} : bouton sans action ({≠} \jsftag{h/commandButton})
 		\item Cible connue lors rendu initial {\tiny et non lors du postback}
+%		\item Mais aussi \jsftag{h/link} (\href{http://stackoverflow.com/questions/6469298/difference-between-hlink-and-houtputlink}{diff}), \jsftag{h/button}
 	\end{itemize}
 \end{frame}
 
