@@ -40,7 +40,7 @@
 \end{frame}
 \addtocounter{framenumber}{-1}
 
-\section{JPA}
+\section{JPA : démarrage}
 \subsection{Introduction}
 \begin{frame}
 	\frametitle{Java Persistence API : introduction}
@@ -224,7 +224,205 @@
 \end{frame}
 
 \section{JPA : Mise en œuvre}
+\subsection{Value types}
+\begin{frame}
+	\frametitle{Définition}
+	\begin{itemize}
+		\item Entity type : une classe représentant une table
+		\item Value type : une classe représentant une \emph{partie} d’une table
+		\item Entité a un cycle de vie propre
+		\item Value type attachée à une entité
+		\item Cycle de vie dépend de l’entité parente
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Sortes de value types}
+	\begin{itemize}
+		\item Value type de base : champ int par exemple
+		\begin{itemize}
+			\item Représente une colonne avec un type simple Java
+			\item Utilise les conversions JDBC
+			\item Exemple : Date, int…
+		\end{itemize}
+		\item Value type collection : pour liens multiples entre instances
+		\item Value type embarqué
+		\begin{itemize}
+			\item Représente \emph{plusieurs} colonne avec un type Java non élémentaire
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\subsection{Value type embarqué}
+\begin{frame}
+	\frametitle{Justification}
+	\begin{exampleblock}{Value type embarqué}
+		\begin{itemize}
+			\item Dans BD, une seule table \texttt{User}
+			\item User a une adresse
+			\item Dans modèle objet, classe \texttt{User} et classe \texttt{Adresse}
+		\end{itemize}
+	\end{exampleblock}
+	\begin{itemize}
+		\item Modèle objet : \emph{granularité} plus fine peut être désirable
+		\item Pourquoi cette différence ? \pause
+		\item Classes ont des responsabilités
+		\item Réutiliser une classe, ne pas la dupliquer
+		\item Schéma BD stable dans le temps
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Utilisation}
+	\begin{itemize}
+		\item Annoter le value type \jeeref[@]{javax.persistence/Embeddable}
+		\item Annoter son utilisation \jeeref[@]{javax.persistence/Embedded}
+		\item On peut aussi utiliser un value type dans un value type
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Exemple d’utilisation}
+%	\begin{exampleblock}{Adresse et ZipCode}
+		\begin{lstlisting}[language=Java]
+@Embeddable
+public class Zip {
+  private String postalCode;
+  private String city;
+}
+@Embeddable
+public class Address {
+  private String street;
+  @Embedded
+  private ZipCode zipCode;
+}
+@Entity
+public class User {
+  private String name;
+  @Embedded
+  private Address address;
+}
+		\end{lstlisting}
+%	\end{exampleblock}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Utilisation via \texttt{EntityManager}}
+	\begin{itemize}
+		\item Créer une instance \texttt{user}
+		\item Créer une instance \texttt{address}
+		\item \texttt{user.setAddress(address)}
+		\item \texttt{em.persist(user)}
+		\item L’EM persiste le user \emph{et} son adresse
+		\item Cycle de vie \texttt{address} lié à cycle \texttt{user}
+		\item De même, effacement d’un user efface son adresse
+	\end{itemize}
+\end{frame}
+
 \subsection{Liens entre entités}
+\begin{frame}
+	\frametitle{Association one-to-many}
+	\begin{itemize}
+		\item Une personne a plusieurs numéros de téléphone
+		\item BD ? \pause clé étrangère \texttt{Phone} référence \texttt{Person}
+	\end{itemize}
+	\begin{tikzpicture}
+		\path node[/uml/table2] (Phone) {%
+				\nodepart[font=\bfseries]{one}
+				Phone
+				\nodepart{two}
+				person\_id: int\\
+				type: char[]
+			};
+		\path (Phone.east) ++(1ex, 0.5ex) node[anchor=base] {n};
+		\path (Phone.east) ++(1.5cm, 0) node[/uml/table2, anchor=west] (Person) {%
+				\nodepart[font=\bfseries]{one}
+				Person
+				\nodepart{two}
+				id: int\\
+				name: char[]
+			};
+		\path (Person.west) ++(-1ex, 0.5ex) node[anchor=base] {1};
+		\path[/uml/dbkey] (Phone) -- (Person);
+	\end{tikzpicture}
+	\pause
+	
+	\vspace{1em}
+	Représentation avec ORM ? \pause
+	\begin{itemize}
+		\item Classe \texttt{Phone} référence \texttt{Person}
+		\item Classe \texttt{Person} a une collection de \texttt{Phone}s
+		\item Les deux
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Mapping proche BD}
+	Classe \texttt{Phone} référence \texttt{Person}
+	\begin{itemize}
+		\item Entités normales \texttt{Phone} et \texttt{Person}
+		\item Dans \texttt{Phone}, inclure champ \texttt{Person}
+		\item L’annoter \jeeref[@]{javax.persistence/ManyToOne} {\tiny voir aussi \jeeref[@]{javax.persistence/JoinColumn}}
+		\item Retenir : "…ToOne" plutôt que "Many" !
+		 \item Crée schema présenté précédemment
+	\end{itemize}
+	\begin{lstlisting}[language=Java]
+@Entity
+public class Phone {
+  @Id …
+  
+  @ManyToOne
+  private Person person;
+}
+	\end{lstlisting}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Usage mapping \texttt{ManyToOne}}
+	\begin{itemize}
+		 \item Par défaut : nécessaire persister \emph{\texttt{Phone} et} \texttt{Person}
+		 \item Nécessaire effacer \texttt{Phone} en plus de \texttt{Person}
+	\end{itemize}
+	\begin{block}{}
+		
+	\end{block}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Limites du mapping \texttt{ManyToOne}}
+	\begin{itemize}
+		\item Solution précédente simple
+		\item Mais… ? \pause Peu naturelle \pause
+		\item Comment trouver les n° de téléphone d’une personne ? \pause
+		\item On peut toujours le faire par requête SQL !
+		\item Mais on peut souhaiter pouvoir le faire via navigation de pointeurs
+	\end{itemize}
+	\begin{block}{}
+		
+	\end{block}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Mapping \texttt{OneToMany}}
+	\begin{itemize}
+		\item Mapping inverse : ref \jeeref[@]{javax.persistence/OneToMany} unidirectionnelle
+		\item 
+	\end{itemize}
+	\begin{block}{}
+		
+	\end{block}
+\end{frame}
+
+\begin{frame}
+	\frametitle{}
+	\begin{itemize}
+		\item 
+	\end{itemize}
+	\begin{block}{}
+		
+	\end{block}
+\end{frame}
+
 \begin{frame}
 	\frametitle{Liens entre entités}
 	Exemple : un item a plusieurs bid associés {\tiny tiré de Java Persistence with Hibernate}
@@ -237,50 +435,56 @@
 	\end{itemize}
 \end{frame}
 
-\subsection{Value type}
+\subsection{Héritage}
 \begin{frame}
-	\frametitle{Exemple pour Value type}
+	\frametitle{}
 	\begin{itemize}
-		\item User a une adresse
-		\item Dans BD, une seule table
-		\item Dans modèle objet, objet User et objet Adresse
-		\item Modèle objet : granularité plus fine
-		\item Pourquoi cette différence ? \pause
-		\item Classes ont des responsabilités
-		\item Réutiliser une classe, ne pas la dupliquer
-		\item Schéma BD stable dans le temps
+		\item 
 	\end{itemize}
+	\begin{block}{}
+		
+	\end{block}
 \end{frame}
 
-%\begin{frame}
-%	\frametitle{}
-%	\begin{itemize}
-%		\item 
-%	\end{itemize}
-%	\begin{block}{}
-%		
-%	\end{block}
-%\end{frame}
-%
-%\begin{frame}
-%	\frametitle{}
-%	\begin{itemize}
-%		\item 
-%	\end{itemize}
-%	\begin{block}{}
-%		
-%	\end{block}
-%\end{frame}
-%
-%\begin{frame}
-%	\frametitle{}
-%	\begin{itemize}
-%		\item 
-%	\end{itemize}
-%	\begin{block}{}
-%		
-%	\end{block}
-%\end{frame}
+\begin{frame}
+	\frametitle{}
+	\begin{itemize}
+		\item 
+	\end{itemize}
+	\begin{block}{}
+		
+	\end{block}
+\end{frame}
+
+\begin{frame}
+	\frametitle{}
+	\begin{itemize}
+		\item 
+	\end{itemize}
+	\begin{block}{}
+		
+	\end{block}
+\end{frame}
+
+\begin{frame}
+	\frametitle{}
+	\begin{itemize}
+		\item 
+	\end{itemize}
+	\begin{block}{}
+		
+	\end{block}
+\end{frame}
+
+\begin{frame}
+	\frametitle{}
+	\begin{itemize}
+		\item 
+	\end{itemize}
+	\begin{block}{}
+		
+	\end{block}
+\end{frame}
 
 \subsection{Aspects pratiques}
 \begin{frame}
@@ -352,6 +556,95 @@
 \appendix
 \AtBeginSection{
 }
+\section{Architecture}
+\begin{frame}
+	\frametitle{Pattern DAO}
+	Extraction des aspects propres à la persistance
+	\begin{itemize}
+		\item DAO ? \pause Data Access Object \pause
+		\item \og{}Modèle\fg{} découpé en aspects Persistance et Domain Model
+		\item Domain Model : opérations logiques, connaissance métier
+		\item Persistance : seule autorisée à communiquer avec la BD
+	\end{itemize}
+	\centering
+	\begin{tikzpicture}
+		\path node[draw, rectangle] (ItemServlet) {ItemServlet};
+		\path node[draw, ellipse, fit=(ItemServlet)] (Web) {};
+		\path (Web.north) node[anchor=south] {Web};
+		\path (Web.south) ++(-2cm, -1.5cm) node[anchor=north, draw, rectangle] (Item) {Item};
+		\path node[draw, ellipse, fit=(Item)] (DM) {};
+		\path (DM.north) node[anchor=south] {Domain Model};
+		\path (Web.south) ++(2cm, -1.5cm) node[anchor=north, draw, rectangle] (DAOItem) {DAOItem};
+		\path node[draw, ellipse, fit=(DAOItem)] (Persistence) {};
+		\path (Persistence.north) node[anchor=south] {Persistance};
+		\path[<->, draw] (Web) -- (DM);
+		\path[<->, draw] (Web) -- (Persistence);
+	\end{tikzpicture}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{DAO : mise en œuvre}
+	
+	\begin{minipage}[t]{4.5cm}
+		Classe parent
+		\begin{itemize}
+			\item abstraite 
+			\item générique : 
+			\begin{itemize}
+				\item \texttt{T} = type entité
+				\item \texttt{I} = type ID
+			\end{itemize}
+			\item contient les méthodes \emph{CRUD} : Create / Read / Update / Delete
+		\end{itemize}
+		\vspace{2em}
+		Sous-classes
+		\begin{itemize}
+			\item contiennent les méthodes spécialisées
+		\end{itemize}
+	\end{minipage}\hspace{7mm}%
+	\begin{minipage}[t]{\columnwidth-4.5cm-7mm}
+		\begin{tikzpicture}[baseline={([yshift=-1em] current bounding box.north)}]
+			\path node[/uml/class3] (GenericDAO) {%
+				\nodepart[font=\itshape\bfseries]{one}
+				GenericDAO
+				\nodepart{three}
+				findById(id: I)\\
+				findAll()\\
+				save(entity: T)\\
+				remove(entity: T)\\
+				flush()\\
+				close()
+			};
+			\path (GenericDAO.north east) node[dashed, draw, fill=white, node font=\fontspec{Latin Modern Mono Light}] {T, I};
+			\path (GenericDAO.south) ++ (-15.6mm, -1cm) node[anchor=north, /uml/class3] (ItemDAO) {
+				\nodepart{one}
+				ItemDAO
+				\nodepart{three}
+				getMaxBid(id)
+			};
+			\path (GenericDAO.south) ++ (15.6mm, -1cm) node[/uml/class, anchor=north] (OtherDAO) {OtherDAO};
+			\path (ItemDAO) edge[/uml/extends] node[align=left] {\tiny <<bind>>\\\fontspec{Latin Modern Mono Light}T: Item, I: Long} (GenericDAO);
+			\path[/uml/extends] (OtherDAO) -- (GenericDAO);
+		\end{tikzpicture}
+		
+		\raggedleft{{\tiny Inspiré par : Java persistence with hibernate}}
+	\end{minipage}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Autres remarques architecturales et références}
+	\begin{itemize}
+		\item Alternative au DAO : Active Record
+		\item Avec JPA, DAO peut être superflu
+	\end{itemize}
+	\begin{block}{Références}
+		\begin{itemize}
+			\item \href{http://gen.lib.rus.ec/book/index.php?md5=5D9F8BC8761804C0EBB8FE6A60BCF817}{Java Persistence with Hibernate}
+			\item \href{http://gen.lib.rus.ec/book/index.php?md5=37E9F4F25E3C5609E14415472408B80C}{Patterns of Enterprise Application Architecture}
+		\end{itemize}
+	\end{block}
+\end{frame}
+
 \section{Licence}
 \begin{frame}
 	\frametitle{Licence}

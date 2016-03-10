@@ -214,7 +214,7 @@
 	\frametitle{Serveur d’application}
 	\begin{itemize}
 		\item Avec un serveur d’application, il faut renseigner le pilote JDBC utilisé dans JNDI
-		\item Conseil : s’assurer d’abord que l’instanciation fonctionne avec un projet simple Java SE et Maven (cf. exercices)
+		\item Conseil : s’assurer d’abord que l’instanciation fonctionne avec un projet simple Java SE et Maven
 		\item Via l’interface d’administration, indiquer la source à utiliser pour la connexion JNDI par défaut
 		\item Inclure le pilote JDBC PostgreSQL dans les bibliothèques du serveur d’application
 	\end{itemize}
@@ -232,101 +232,31 @@
 
 \subsection{Architecture}
 \begin{frame}
-	\frametitle{Pattern DAO}
-	Extraction des aspects propres à la persistance
+	\frametitle{Deux patterns principaux}
+	Deux patterns courants liés à persistance : \emph{Active Record} et \emph{DAO}
 	\begin{itemize}
+		\item Active Record : chaque objet responsable de sa propre persistance
+		\item Chaque objet contient méthodes CRUD : Create, Read, Update, Delete
 		\item DAO ? \pause Data Access Object \pause
-		\item \og{}Modèle\fg{} découpé en aspects Persistance et Domain Model
-		\item Domain Model : opérations logiques, connaissance métier
-		\item Persistance : seule autorisée à communiquer avec la BD
-	\end{itemize}
-	\centering
-	\begin{tikzpicture}
-		\path node[draw, rectangle] (ItemServlet) {ItemServlet};
-		\path node[draw, ellipse, fit=(ItemServlet)] (Web) {};
-		\path (Web.north) node[anchor=south] {Web};
-		\path (Web.south) ++(-2cm, -1.5cm) node[anchor=north, draw, rectangle] (Item) {Item};
-		\path node[draw, ellipse, fit=(Item)] (DM) {};
-		\path (DM.north) node[anchor=south] {Domain Model};
-		\path (Web.south) ++(2cm, -1.5cm) node[anchor=north, draw, rectangle] (DAOItem) {DAOItem};
-		\path node[draw, ellipse, fit=(DAOItem)] (Persistence) {};
-		\path (Persistence.north) node[anchor=south] {Persistance};
-		\path[<->, draw] (Web) -- (DM);
-		\path[<->, draw] (Web) -- (Persistence);
-	\end{tikzpicture}
-\end{frame}
-
-\begin{frame}[fragile]
-	\frametitle{DAO : mise en œuvre}
-	
-	\begin{minipage}[t]{5cm}
-		Classe parent
-		\begin{itemize}
-			\item abstraite 
-			\item générique : 
-			\begin{itemize}
-				\item \texttt{T} = type entité
-				\item \texttt{I} = type ID
-			\end{itemize}
-			\item contient les méthodes \emph{CRUD} : Create / Update / Read / Delete
-		\end{itemize}
-		\vspace{2em}
-		Sous-classes
-		\begin{itemize}
-			\item contiennent les méthodes spécialisées
-		\end{itemize}
-	\end{minipage}\hspace{5mm}%
-	\begin{minipage}[t]{\columnwidth-5cm-5mm}
-		\begin{tikzpicture}[baseline={([yshift=-1em] current bounding box.north)}]
-			\path node[/uml/class3] (GenericDAO) {%
-				\nodepart[font=\itshape\bfseries]{one}
-				GenericDAO
-				\nodepart{three}
-				findById(id: I)\\
-				findAll()\\
-				save(entity: T)\\
-				remove(entity: T)\\
-				flush()\\
-				close()
-			};
-			\path (GenericDAO.north east) node[dashed, draw, fill=white, node font=\fontspec{Latin Modern Mono Light}] {T, I};
-			\path (GenericDAO.south) ++ (-1.4cm, -1cm) node[anchor=north, /uml/class3] (ItemDAO) {
-				\nodepart{one}
-				ItemDAO
-				\nodepart{three}
-				getMaxBid(id)
-			};
-			\path (GenericDAO.south) ++ (1.4cm, -1cm) node[/uml/class, anchor=north] (OtherDAO) {OtherDAO};
-			\path (ItemDAO) edge[/uml/extends] node[align=left] {\tiny <<bind>>\\\fontspec{Latin Modern Mono Light}T: Item, I: Long} (GenericDAO);
-			\path[/uml/extends] (OtherDAO) -- (GenericDAO);
-		\end{tikzpicture}
-		
-		\raggedleft{{\tiny Inspiré par : Java persistence with hibernate}}
-	\end{minipage}
-\end{frame}
-
-\begin{frame}
-	\frametitle{Autres remarques architecturales et références}
-	\begin{itemize}
-		\item Alternative au DAO : Active Record
-		\item Avec JPA, DAO peut être superflu
+		\item Classes dédiées à interaction avec BD
+		\item Permet isolation de cet aspect
+		\item Typiquement utilisé avec Data Transfer Object
 	\end{itemize}
 	\begin{block}{Références}
 		\begin{itemize}
-			\item \href{http://gen.lib.rus.ec/book/index.php?md5=5D9F8BC8761804C0EBB8FE6A60BCF817}{Java Persistence with Hibernate}
 			\item \href{http://gen.lib.rus.ec/book/index.php?md5=37E9F4F25E3C5609E14415472408B80C}{Patterns of Enterprise Application Architecture}
+			\item \href{http://www.oracle.com/technetwork/java/dataaccessobject-138824.html}{Core J2EE Patterns - Data Access Object}
 		\end{itemize}
 	\end{block}
 \end{frame}
 
+\section{Concurrence}
 \newlength{\JEEIsolVert}
 \newlength{\JEEIsolBefTr}
 \newlength{\JEEIsolOuter}
 \setlength{\JEEIsolVert}{3mm}
 \setlength{\JEEIsolBefTr}{1.2cm}
 \setlength{\JEEIsolOuter}{3mm}
-
-\section{Concurrence}
 \subsection{Nécessité}
 \begin{frame}
 	\frametitle{Nécessité des transactions atomiques}
@@ -442,10 +372,9 @@
 		\item Créer (sur papier) une table pour un type de votre projet.
 		\item La créer dans votre BD via le SQL Scrapbook.
 		\item Tester des requêtes simple de création, sélection, effacement dans le SQL Scrapbook.
-		\item Créer un projet eclipse Java SE avec Maven, inclure le pilote JDBC à l’aide de Maven, tester son instanciation
-		\item Permettre CR.D : Create, Retrieve, Delete \emph{aussi simple que possible}, via un ou plusieurs servlets ou GUI. (N’utilisez pas de paramètres complexes, ce n’est pas le but de cet exercice.)
+		\item[+\footnote{Le + indique que cet aspect intervient dans la note}] Permettre CR.D : Create, Read, Delete \emph{aussi simple que possible}, via un ou plusieurs servlets ou GUI. (N’utilisez pas de paramètres complexes, ce n’est pas le but de cet exercice.)
 		\item Programmer une méthode qui transforme un attribut d’un objet. Par exemple, elle met le nom en majuscule s’il ne l’était pas (obligation d’utiliser Java, pas SQL : supposez que la transformation est trop complexe pour être exprimée en SQL).
-		\item[+\footnote{Le + indique que cet aspect intervient dans la note}] \label{Exercices} Permettre l’application de cette méthode (via un servlet ou via GUI). Votre servlet ne doit pas nécessairement accepter de paramètres. Attention à l’atomicité de la transaction !
+		\item[+] \label{Exercices} Permettre l’application de cette méthode (via un servlet ou via GUI). Votre servlet ne doit pas nécessairement accepter de paramètres. Attention à l’atomicité de la transaction !
 	\end{itemize}
 \end{frame}
 
@@ -467,6 +396,35 @@
 \end{frame}
 
 \begin{frame}
+	\frametitle{À faire (suite)}
+	\begin{block}{À rendre \emph{avant} le 23 mars : par l’équipe}
+		\begin{itemize}
+			\item Application accédant à une base PostgreSQL (Java SE + Maven ou Java EE)
+		\end{itemize}
+	\end{block}
+	\begin{itemize}
+		\item L’équipe conçoit des objets et tables pour les stocker
+		\item Ces objets doivent avoir des connexions entre eux
+		\item Votre conception devra soutenir les fonctionnalités futures de votre application
+		\item Chaque membre choisit (au moins) un objet stocké dans la BD dont il aura la responsabilité principale
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{À faire (suite)}
+	\begin{block}{À rendre \emph{avant} le 23 mars : par chacun}
+		\begin{itemize}
+			\item Des servlets (Java EE) ou des fonctionnalités (Java SE)
+			\item Qui permettent la création, lecture, effacement des objets dont vous êtes responsable ;
+			\item Et qui permettent d’appliquer une transformation quelconque sur un attribut des objets en question (cf. \hyperlink{Exercices}{Exercices})
+			\item Partie de votre application de groupe
+%			\item Avec application du pattern DAO
+		\end{itemize}
+	\end{block}
+	L’élégance de la conception et du code seront prépondérants dans l’évaluation
+\end{frame}
+
+\begin{frame}
 	\frametitle{Auteurs}
 	Chaque commit doit pouvoir être associé à ses auteurs
 	\begin{itemize}
@@ -481,16 +439,6 @@
 		\item Mais chacun doit être auteur à part \sim{} égale
 	\end{itemize}
 \end{frame}
-
-%\begin{frame}
-%	\frametitle{À vous de jouer}
-%	Exercice à effectuer \emph{avant} le , par chaque membre de chaque équipe.
-%	\begin{itemize}
-%		\item Un projet (partagé par l’équipe) qui accède à une base PostgreSQL (Java SE + Maven ou Java EE)
-%		\item Un servlet (Java EE) ou une fonctionnalité (Java SE) qui applique une transformation quelconque sur un attribut d’un ou plusieurs objets stocké dans votre BD. Cf. \hyperlink{Exercices}{Exercices}. Ceci est à effectuer par chaque membre de l’équipe (sur des objets et tables différents)
-%		\item Avec application du pattern DAO
-%	\end{itemize}
-%\end{frame}
 
 \appendix
 \AtBeginSection{

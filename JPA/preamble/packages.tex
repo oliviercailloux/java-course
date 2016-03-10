@@ -20,7 +20,7 @@
 
 \usepackage[super]{nth}
 \usepackage{listings} %typeset source code listings
-	\lstset{language=XML,tabsize=2,captionpos=b}
+	\lstset{language=XML, tabsize=2, captionpos=b, basicstyle=\NoAutoSpacing, keywordstyle=\fontspec{Latin Modern Mono Light}\textbf, emph={project, dependency, modelVersion, groupId, artifactId, version, scope}, emphstyle=\fontspec{Latin Modern Mono Light}\textbf, basicstyle=\small\NoAutoSpacing\ttfamily, aboveskip=0pt, belowskip=0pt, showstringspaces=false}
 \usepackage[nolist,smaller,printonlyused]{acronym}%,smaller option produces warnings from relsize in some cases, it seems.
 \usepackage[nodayofweek]{datetime}%must be loaded after the babel package
 \usepackage{xspace}
@@ -76,7 +76,7 @@
 %GRAPHICS
 \usepackage{pgf}
 \usepackage{pgfplots}
-	\usetikzlibrary{matrix,fit,plotmarks,calc,trees,shapes.geometric,positioning,plothandlers,arrows, shadows}
+	\usetikzlibrary{babel, matrix, fit, plotmarks, calc, trees, shapes.geometric, positioning, plothandlers, arrows, shapes.multipart}
 \pgfplotsset{compat=1.11}
 \usepackage{graphicx}
 
