@@ -4,6 +4,7 @@
 \usepackage[log-declarations=false]{xparse}
 \usepackage{fontspec} %font selecting commands
 \usepackage{xunicode}
+\usepackage{ucharclasses}
 %warn about missing characters
 \tracinglostchars=2
 
@@ -71,6 +72,8 @@
 \defaultfontfeatures{}%disable default font features to avoid warnings with math fonts.
 \setmathfont{XITS Math}
 \setmathfont[range={\mathcal,\mathbfcal},StylisticSet=1]{XITS Math}
+\setTransitionsFor{MathematicalOperators}{\begingroup\xitsfamily}{\endgroup}
+\setTransitionsFor{Arrows}{\begingroup\xitsfamily}{\endgroup}
 
 \usepackage{cleveref}% cleveref should go "laster" than hyperref
 %GRAPHICS

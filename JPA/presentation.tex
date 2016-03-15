@@ -283,7 +283,7 @@
 
 \begin{frame}[fragile]
 	\frametitle{Exemple d’utilisation}
-%	\begin{exampleblock}{Adresse et ZipCode}
+	\begin{minipage}{6.3cm}
 		\begin{lstlisting}[language=Java]
 @Embeddable
 public class Zip {
@@ -303,7 +303,17 @@ public class User {
   private Address address;
 }
 		\end{lstlisting}
-%	\end{exampleblock}
+	\end{minipage}%
+	\begin{minipage}{\columnwidth - 6.3cm}
+		\begin{tikzpicture}
+			\path node[circle, draw, minimum size=1cm] (Zip) {};
+			\path (Zip.north east) ++ (-1mm, -1mm) node[anchor=south west] (Zip text) {Zip};
+			\path node[fit={(Zip) (Zip text)}, draw, ellipse] (Address) {};
+			\path (Address.north -| Address.east) node[anchor=south east] (Address text) {Address};
+			\path node[fit={(Address) (Address text)}, draw, ellipse] (User) {};
+			\path (User.north east) node[anchor=south west] (User text) {User};
+		\end{tikzpicture}
+	\end{minipage}
 \end{frame}
 
 \begin{frame}
@@ -320,6 +330,7 @@ public class User {
 \end{frame}
 
 \subsection{Liens entre entités}
+\subsubsection{One-to-many}
 \begin{frame}
 	\frametitle{Association one-to-many}
 	\begin{itemize}
@@ -354,6 +365,7 @@ public class User {
 		\item Classe \texttt{Person} a une collection de \texttt{Phone}s
 		\item Les deux
 	\end{itemize}
+	Côté \texttt{Person} appelé parent ; côté \texttt{Phone} appelé enfant
 \end{frame}
 
 \begin{frame}[fragile]
@@ -380,12 +392,17 @@ public class Phone {
 \begin{frame}
 	\frametitle{Usage mapping \texttt{ManyToOne}}
 	\begin{itemize}
-		 \item Par défaut : nécessaire persister \emph{\texttt{Phone} et} \texttt{Person}
-		 \item Nécessaire effacer \texttt{Phone} en plus de \texttt{Person}
+		\item Deux entités aux cycles de vie indépendants
+		\item Par défaut : nécessaire persister \emph{\texttt{Phone} et} \texttt{Person}
+		\item \texttt{phone.setPerson(person)}
+		\item \texttt{em.persist(phone)}
+		\item \texttt{em.persist(person)}%TODO table requiert association des deux côtés, em.persist le fait en une fois ?
+		%TODO parler de auto flush par défaut : flush before query (if overlap), en Hibernate.
+		\item De même, nécessaire effacer \texttt{Phone} en plus de \texttt{Person}
+		\item Pour éviter ceci : \texttt{cascade=ALL} sur annotation \texttt{ManyToOne}
+		\item Dès lors persister, effacer, etc. \texttt{person} s’applique également à \texttt{phone}s liés
+		\item NB cascade va toujours du parent (\texttt{person}) vers ses enfants (\texttt{phone}s)%TODO vérifier
 	\end{itemize}
-	\begin{block}{}
-		
-	\end{block}
 \end{frame}
 
 \begin{frame}
@@ -397,20 +414,149 @@ public class Phone {
 		\item On peut toujours le faire par requête SQL !
 		\item Mais on peut souhaiter pouvoir le faire via navigation de pointeurs
 	\end{itemize}
-	\begin{block}{}
-		
-	\end{block}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Mapping \texttt{OneToMany} unidirectionnel}
+	\begin{itemize}
+		\item Mapping inverse : ref \jeeref[@]{javax.persistence/OneToMany} unidirectionnelle
+		\item Hibernate utilise une table intermédiaire \texttt{Person\_Phone}%TODO pourquoi ?
+	\end{itemize}
+	\begin{lstlisting}[language=Java]
+@Entity
+public class Phone {
+  @Id …
+
+@Entity
+public class Person {
+  @Id …
+  
+  @OneToMany
+  private List<Phone> phones;
+}
+	\end{lstlisting}
 \end{frame}
 
 \begin{frame}
-	\frametitle{Mapping \texttt{OneToMany}}
+	\frametitle{Usage mapping \texttt{OneToMany}}
 	\begin{itemize}
-		\item Mapping inverse : ref \jeeref[@]{javax.persistence/OneToMany} unidirectionnelle
-		\item 
+		\item Effacement peu efficace : Hibernate enlève tous les phones et réinsère les non-effacés
+		\item Il faut maintenir la référence vers une même collection%TODO liste ou autre ? Faut-il l’initialiser ? Peut-elle être final ?
+		\item Retrait d’un \texttt{phone} depuis la liste depuis \texttt{person} : penser à effacer également l’entité \texttt{phone} correspondante
+		\item \texttt{person.getPhones().remove(phone)}
+		\item \texttt{em.remove(phone)}
+		\item Ou effacement automatique avec \texttt{orphanRemoval} sur annotation \texttt{OneToMany}%TODO mieux vaudrait alors utiliser une collection de valuetypes !
+		\item Différence avec cascade ? \pause Avec cascade : \texttt{em.remove(person)} ⇒ efface également ses téléphones
 	\end{itemize}
-	\begin{block}{}
-		
-	\end{block}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Mapping \texttt{OneToMany} bidirectionnel}
+	\begin{itemize}
+		\item Et si on veut pouvoir naviguer depuis les deux côtés ?
+		\item \texttt{OneToMany} côté parent, \texttt{ManyToOne} côté enfant
+		\item Il faut un seul propriétaire de la relation
+		\item Propriétaire toujours côté enfant (\texttt{ManyToOne})
+		\item Côté inverse : préciser \texttt{mappedBy = "person"} sur \texttt{OneToMany}
+	\end{itemize}
+	\begin{lstlisting}[language=Java]
+@Entity
+public class Phone {
+  @ManyToOne
+  private Person person;
+
+@Entity
+public class Person {
+  @OneToMany(mappedBy = "person")
+  private List<Phone> phones;
+}
+	\end{lstlisting}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Usage mapping \texttt{OneToMany} bidirectionnel}
+	Deux côtés dans modèle, mais un côté dans BD :\par
+	{\centering
+		\begin{tikzpicture}
+			\path node[/uml/table2] (Phone) {%
+					\nodepart[font=\bfseries]{one}
+					Phone
+					\nodepart{two}
+					person\_id: int\\
+					type: char[]
+				};
+			\path (Phone.east) ++(1ex, 0.5ex) node[anchor=base] {n};
+			\path (Phone.east) ++(1.5cm, 0) node[/uml/table2, anchor=west] (Person) {%
+					\nodepart[font=\bfseries]{one}
+					Person
+					\nodepart{two}
+					id: int\\
+					name: char[]
+				};
+			\path (Person.west) ++(-1ex, 0.5ex) node[anchor=base] {1};
+			\path[/uml/dbkey] (Phone) -- (Person);
+		\end{tikzpicture}
+		\par
+	}
+	
+	\begin{itemize}
+		\item Maintenir les pointeurs corrects dans le modèle des \emph{deux côtés}
+		\item Méthode ajout téléphone : \texttt{person.getPhones().add(phone) ; phone.setPerson(person);}
+		\item Pourquoi cette nécessité ? \pause Pour code correct indépendamment du code de persistence \pause
+		\item Si cascades, partent toujours du côté parent {\tiny : effacer \texttt{person} peut être répercuté sur \texttt{phone}s}
+		\item Nettement plus efficace {\tiny effacer un \texttt{phone} : seulement une opération}%TODO vérifier que update activé du côté propriétaire (phone) (si phone non managé, person.getPhones().add(phone), rien ne se passe), comme indiqué dans Bauer. Toutefois, avec cascade, ajout d’un phone côté person fait persister le nouveau phone également.
+	\end{itemize}
+\end{frame}
+
+\subsubsection{Many-to-many}
+\begin{frame}
+	\frametitle{Association many-to-many}
+	\begin{itemize}
+		\item Deux personnes peuvent partager un téléphone {\tiny par ex.\ co-habitants partageant un fixe}
+		\item Représentation en BD ? \pause
+	\end{itemize}
+	{\centering
+	\begin{tikzpicture}
+		\path node[/uml/table2] (Phone) {%
+				\nodepart[font=\bfseries]{one}
+				Phone
+				\nodepart{two}
+				id: int\\
+				type: char[]
+			};
+		\path (Phone.south) ++(3ex, 0) node[anchor=north] {1};
+		\path (Phone.east) ++(1.5cm, 0) node[/uml/table2, anchor=west] (Person) {%
+				\nodepart[font=\bfseries]{one}
+				Person
+				\nodepart{two}
+				id: int\\
+				name: char[]
+			};
+		\path (Person.south) ++(-3ex, 0) node[anchor=north] {1};
+		\path ($(Phone.east)!0.5!(Person.west)$) ++(0, -5em) node[/uml/table2, anchor=north] (PersonPhone) {%
+				\nodepart[font=\bfseries]{one}
+				PersonPhone
+				\nodepart{two}
+				id\_phone: int\\
+				id\_person: int\\
+				order\_nb: boolean
+			};
+		\path (PersonPhone.north west) ++(4ex, 0) node[anchor=south] {n};
+		\path (PersonPhone.north east) ++(-4ex, 0) node[anchor=south] {n};
+		\path[/uml/dbkey] (PersonPhone) -- (Phone);
+		\path[/uml/dbkey] (PersonPhone) -- (Person);
+	\end{tikzpicture}\par
+	}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Implémentation}
+	\begin{itemize}
+		\item Déclarer entité PersonPhone {\tiny autres possibilités existent}
+		\item Associations JPA \texttt{ManyToOne}, \texttt{OneToMany} selon contraintes de navigabilité
+		\item Exemple : deux associations bidirectionnelles Phone – PersonPhone et Person – PersonPhone
+		\item Cf. exercices !
+	\end{itemize}
 \end{frame}
 
 \begin{frame}
@@ -418,9 +564,6 @@ public class Phone {
 	\begin{itemize}
 		\item 
 	\end{itemize}
-	\begin{block}{}
-		
-	\end{block}
 \end{frame}
 
 \begin{frame}
