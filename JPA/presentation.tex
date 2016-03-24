@@ -18,7 +18,7 @@
 \institute[LAMSADE]{LAMSADE, Université Paris-Dauphine}
 \date{Version du \today}
 
-%TODO questions hib ; id set when persist? Yes, empirically.
+%TODO questions hib ; id set when persist? Yes, empirically. Hib et JUL ? (Cf. projet Hib)
 
 \begin{document}
 \bibliographystyle{apalike}
@@ -91,7 +91,6 @@
 		\item Pour Java SE et Java EE
 		\item Modèle Objet / Relationnel (ORM)
 		\item JPA définit les concepts et interfaces, fournisseur JPA les implémente (exemple : Hibernate)
-		\item Pour cette présentation : ORM ; Accès concurrents ; JPA
 		\item Appuié sur JDBC
 	\end{itemize}
 \end{frame}
@@ -103,7 +102,7 @@
 		\item JCP ? \pause Java Community Process \pause
 		\item Définit les JSR : standards utilisés en Java SE ou Java EE
 		\item Spécifications tiennent compte de nombreux avis d’horizons divers
-		\item JSR 338 : JPA 2.1 ; JSR 345 : EJB 3.2 ; JSR 342 : Java EE 7 ; JSR 346 : CDI…
+		\item Exemples ? \pause JSR 221 : JDBC 4.0 ; JSR 338 : JPA 2.1 ; JSR 345 : EJB 3.2 ; JSR 342 : Java EE 7 ; JSR 346 : CDI… \pause
 		\item Tentions entre standard ouvert et contrôle ! (2010, Apache \href{https://blogs.apache.org/foundation/entry/the_asf_resigns_from_the}{quitte} le comité JCP ; Doug Lea \href{http://gee.cs.oswego.edu/dl/html/jcp22oct10.html}{également}, en faveur de OpenJDK…)
 	\end{itemize}
 \end{frame}
@@ -112,7 +111,7 @@
 	\frametitle{Faiblesses du modèle relationnel pur}
 	Problème : \og{}Mismatch\fg{} Objet / Relationnel
 	\begin{itemize}
-		\item Modèle de données (DM) : objets
+		\item Modèle de données : objets
 		\item Références directionnelles
 		\item Modèle Entité / Relationnel : sans comportement
 		\item Pas de notion de navigation
@@ -211,12 +210,15 @@
 \begin{frame}
 	\frametitle{Propriétés unité de persistance}
 	\begin{itemize}
-		\item Génération du schéma par JPA : propriété {\small\texttt{javax.persistence.schema-generation.database.action}}, valeur {\small\texttt{drop-and-create}} {dans \texttt{persistence.xml}}
-		\item Propriétés propriétaires, exemple Hibernate
-		\item \texttt{"hibernate.show\_sql"} (valeur : \texttt{true})
-		\item \texttt{"hibernate.format\_sql"}
 		\item Java SE : configurer JDBC
 		\item Propriétés \texttt{javax.persistence.jdbc.url}, \texttt{javax.persistence.jdbc.user}, \texttt{javax.persistence.jdbc.password} {\tiny (\texttt{javax.persistence.jdbc.driver} : semble non nécessaire (spec ambigüe))}
+		\item Génération du schéma par JPA : propriété {\small\texttt{javax.persistence.schema-generation.database.action}}, valeur {\small\texttt{drop-and-create}} {\tiny cf. \href{https://docs.oracle.com/javaee/7/tutorial/persistence-intro005.htm}{tutorial}}
+		\item Propriétés propriétaires
+	\end{itemize}
+Exemple, Hibernate :
+	\begin{itemize}
+		\item \texttt{hibernate.show\_sql} (valeur : \texttt{true})
+		\item \texttt{hibernate.format\_sql}
 	\end{itemize}
 \end{frame}
 
@@ -246,6 +248,7 @@
 		\item Java SE : {\small \texttt{\jeeref{javax.persistence/Persistence}.createEntityManagerFactory("MyUnit");}}
 		\item Fournisseur JPA lit la configuration et instantie une Factory
 		\item Obtenir la Factory une seule fois (coûteux)
+		\item Fermer la Factory en quittant
 		\item Java EE : le conteneur s’occupe de l’\texttt{EntityManagerFactory}
 	\end{itemize}
 \end{frame}
