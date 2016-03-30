@@ -18,7 +18,7 @@
 \institute[LAMSADE]{LAMSADE, Université Paris-Dauphine}
 \date{Version du \today}
 
-%TODO questions hib ; id set when persist? Yes, empirically. Hib et JUL ? (Cf. projet Hib)
+%TODO questions hib. Hib et JUL ? (Cf. projet Hib)
 
 \begin{document}
 \bibliographystyle{apalike}
@@ -333,15 +333,69 @@ em.close();
 
 \subsection{Java EE}
 \begin{frame}
-	\frametitle{Transactions et Java EE}
+	\frametitle{\texttt{EntityManager} géré par l’application}
 	\begin{itemize}
-		\item Pilotes JDBC supportent {\tiny généralement} JTA (Java Transaction API)
-		\item Permet {\tiny entre autres} la gestion des transactions par le conteneur
-		\item EJBs : transactions gérées par le conteneur {\tiny (ou utiliser \jeeref[@]{javax.ejb/TransactionManagement})}
+		\item Le plus proche de Java SE : contexte de persistance géré par l’application
+		\item \jeeref[@]{javax.persistence/PersistenceUnit} \texttt{private EntityManagerFactory emf;}
+		\item L’application instancie elle-même son \texttt{EntityManager}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{JTA}
+	\begin{itemize}
+		\item JTA entity manager ≠ resource-local entity manager
+		\item Resource-local: utiliser \texttt{EntityTransaction}
+		\item JTA: Java Transaction API
+		\item Interface unique pour gérer transactions
+		\item Utiliser \jeeref{javax.transaction/UserTransaction}
+		\item Conteneur rend \texttt{UserTransaction} disponible via JNDI
+		\item Injecter \texttt{UserTransaction} avec \texttt{@Resource}
+		\item L’utiliser pour démarrer et commettre la transaction
+		\item Permet d’associer transaction à thread courante
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Portée du contexte de persistance}
+	\begin{itemize}
+		\item Contexte de persistance peut être géré par conteneur
+		\item \jeeref[@]{javax.persistence/PersistenceContext} \texttt{private EntityManager em;}
+		\item Portée gérée par conteneur
+		\item Portée par défaut : transaction JTA
+		\item Invoquer \texttt{em} \emph{après} ouverture transaction JTA
+		\item Conteneur crée le contexte lors première invocation \texttt{em} {\tiny si aucun contexte associé à transaction}
+		\item Conteneur ferme le contexte après fermeture transaction JTA
+		\item Portée \jeeref{javax.persistence/PersistenceContextType\#EXTENDED} : portée liée à managed bean le contenant %TODO (slmt pour stateful EJB ?)
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Synchronisation du contexte de persistance}
+	\begin{itemize}
+		\item Ceci s’applique si gestion du contexte par le conteneur
+		\item Par défaut, synchronisé
+		\begin{itemize}
+			\item Joint automatiquement transaction JTA en cours
+		\end{itemize}
+		\item Si non synchronisé
+		\begin{itemize}
+			\item Joindre \texttt{em} à la transaction : \texttt{em.joinTransaction()}
+			\item Rejoindre transactions suivantes après commit de la première et ouverture d’une nouvelle
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Gestion démarcation transactions}
+	\begin{itemize}
+		\item Conteneur peut également gérer les transactions : CMT
+		\item EJB : fait par défaut {\tiny (ou utiliser \jeeref[@]{javax.ejb/TransactionManagement} pour BMT)}
+		\item Autres managed beans (CDI) : utiliser \jeeref[@]{javax.transaction/Transactional}
 		\item Chaque méthode participe alors par défaut à une transaction
-		\item Si pas de transaction en cours lors de l’appel : le conteneur démarre puis termine automatiquement une transaction (commit si ok, rollback si exception {\tiny sauf exception application})
+		\item Ou annoter la méthode \jeeref[@]{javax.ejb/TransactionAttribute} sur EJBs
 		\item Si transaction en cours, la méthode y participe
-		\item Ou annoter la méthode \jeeref[@]{javax.ejb/TransactionAttribute}
+		\item Si pas de transaction en cours lors de l’appel : le conteneur démarre puis termine automatiquement une transaction (commit si ok, rollback si exception {\tiny sauf exception application})
 	\end{itemize}
 \end{frame}
 
@@ -350,8 +404,6 @@ em.close();
 	\begin{itemize}
 		\item Conteneur Java EE définit \texttt{java:comp/DefaultDataSource} : nom utilisé par défaut
 		\item Sinon, indiquer, dans \texttt{persistence.xml}, \texttt{jta-data-source} : un nom JNDI
-		\item Injection dans EJB : \jeeref[@]{javax.persistence/PersistenceContext} \texttt{EntityManager}
-		\item Persistence context (par défaut) a le scope de la transaction en cours
 	\end{itemize}
 \end{frame}
 
@@ -385,7 +437,7 @@ em.close();
 	\begin{exampleblock}{Effacement}
 		Supponsons entité \texttt{u} \emph{managed}
 		\begin{itemize}
-			\item \texttt{u.remove(); //} \texttt{u} est \emph{removed}
+			\item \texttt{em.remove(u); //} \texttt{u} est \emph{removed}
 			\item \texttt{em.flush(); //} \texttt{DELETE}…
 		\end{itemize}
 	\end{exampleblock}
@@ -636,7 +688,7 @@ public class Person {
 \begin{frame}
 	\frametitle{Usage mapping \texttt{OneToMany}}
 	\begin{itemize}
-		\item Effacement peu efficace : Hibernate enlève tous les phones et réinsère les non-effacés
+		\item Effacement peu efficace : Hibernate enlève tous les \texttt{phone}s et réinsère les non-effacés
 		\item Il faut maintenir la référence vers une même collection%TODO liste ou autre ? Faut-il l’initialiser ? Peut-elle être final ?
 		\item Retrait d’un \texttt{phone} depuis la liste depuis \texttt{person} : penser à effacer également l’entité \texttt{phone} correspondante
 		\item \texttt{person.getPhones().remove(phone)}
@@ -755,13 +807,9 @@ public class Person {
 \end{frame}
 
 \begin{frame}
-	\frametitle{Liens entre entités}
-	Exemple : un item a plusieurs bid associés {\tiny tiré de Java Persistence with Hibernate}
+	\frametitle{Informations supplémentaires}
 	\begin{itemize}
-		\item Chaque bout d’une association : to one ou to many
-		\item To one (\texttt{Item forItem} dans \texttt{Bid}) : annoter \jeeref[@]{javax.persistence/ManyToOne}, préciser éventuellement \texttt{optional=false} {\tiny et \texttt{fetch}}
-		\item Si bidirectionnelle : votre code doit maintenir la synchronisation, malgré annotations (Pourquoi ? \pause pour indépendance à ORM)\pause
-		\item Pour autre bout d’un lien bidirectionnel (ne compte pas dans DDL) : \jeeref[@]{javax.persistence/OneToMany} et préciser \texttt{mappedBy}
+		\item Autre bout d’un lien bidirectionnel (\texttt{@OneToMany}, \texttt{mappedBy}) : ne compte pas dans DDL
 		\item Liens one to one similaire, utiliser \jeeref[@]{javax.persistence/OneToOne}
 	\end{itemize}
 \end{frame}
@@ -769,13 +817,73 @@ public class Person {
 \begin{frame}
 	\frametitle{Chargement d’entités via référence}
 	\begin{itemize}
-		\item Entité \texttt{u} d’état \emph{managed}
-		\item \texttt{u.getChildren();}
+		\item Entité \texttt{person} d’état \emph{managed}
+		\item \texttt{person.getPhones();}
 		\item L’entity manager charge les enfants
 	\end{itemize}
 \end{frame}
 
-\subsubsection{Héritage}%TODO
+\subsubsection{Héritage}
+\begin{frame}
+	\frametitle{Héritage}
+	\begin{tikzpicture}
+		\path node[/uml/class3] (animal) {%
+			\nodepart{one}
+			Animal
+			\nodepart{two}
+			mainColor\\
+			speed
+		};
+		\path (animal.south) ++(-3.2cm, -1em) node[anchor=north, /uml/class3] (animal1) {%
+			\nodepart{one}
+			Snake
+			\nodepart{two}
+			likesElephants
+		};
+		\path (animal.south) ++(0, -1em) node[anchor=north, /uml/class3] (animal2) {%
+			\nodepart{one}
+			Cat
+			\nodepart{two}
+			likesCouch
+		};
+		\path (animal.south) ++(3.5cm, -1em) node[anchor=north, /uml/class3] (animal3) {%
+			\nodepart{one}
+			Crocodile
+			\nodepart{two}
+			likesMissionnaries
+		};
+		\path[/uml/extends] (animal1) -- (animal);
+		\path[/uml/extends] (animal2) -- (animal);
+		\path[/uml/extends] (animal3) -- (animal);
+	\end{tikzpicture}
+	\begin{description}[Mapped superclass]
+		\item[Mapped superclass]\mbox{}%
+		\uncover<2>{%
+			$n$ tables non liées
+			\begin{itemize}
+				\item Inconvénient : pas de requêtes \texttt{Animal}
+			\end{itemize}
+		}
+		\item[Single table]\mbox{}%
+		\uncover<2>{%
+			1 table + champ \texttt{DTYPE}
+			\begin{itemize}
+				\item Inconvénient : pas de \texttt{NOT NULL}
+			\end{itemize}
+		}
+		\item[Joined table]\mbox{}%
+		\uncover<2>{%
+			$n + 1$ tables avec liens
+			\begin{itemize}
+				\item Inconvénient : moins performant (\texttt{JOIN})
+			\end{itemize}
+		}
+		\item[Table per class]\mbox{}%
+		\uncover<2>{%
+			$n + 1$ tables non liées (dupl. champs)
+		}
+	\end{description}
+\end{frame}
 
 \subsection{Chargement tardif}
 \begin{frame}
@@ -933,7 +1041,7 @@ em2.getTransaction().commit(); // $\textsf{mise à jour BD}$
 %	\frametitle{Usages plus avancés et divers}
 %	\begin{itemize}
 %		\item Contexte peut persister au-delà de la transaction ; peut être non synchronisé (\jeeref[@]{javax.persistence/PersistenceContext})
-%		\item Explorer : SFSB et \jeeref[@]{javax.persistence/PersistenceContext}(\jeeref{javax.persistence/PersistenceContextType\#EXTENDED})
+%		\item Explorer : SFSB et \jeeref[@]{javax.persistence/PersistenceContext}()
 %	\end{itemize}
 %\end{frame}
 
