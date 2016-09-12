@@ -1,0 +1,120 @@
+\RequirePackage[l2tabu, orthodox]{nag}
+\RequirePackage{silence}
+\WarningFilter{fmtcount}{\ordinal already defined use \FCordinal instead}
+\documentclass[english, french]{beamer}
+\input{preamble/packages}
+\input{preamble/math_basics}
+\input{preamble/math_mine}
+\input{preamble/redac}
+\input{preamble/draw}
+\input{preamble/acronyms}
+\input{preamble/uml}
+
+\setbeamertemplate{headline}[singleline]
+
+\title{Annotations}
+\subject{Java}
+\keywords{Metadata}
+\author{Olivier Cailloux}
+\institute[LAMSADE]{LAMSADE, Université Paris-Dauphine}
+\date{Version du \today}
+
+\begin{document}
+\bibliographystyle{apalike}
+
+\begin{frame}[plain]
+	\tikz[remember picture,overlay]{
+		\path (current page.south west) node[anchor=south west, inner sep=0] {
+			\includegraphics[height=1cm]{LAMSADE95.jpg}
+		};
+		\path (current page.south) ++ (0, 1mm) node[anchor=south, inner sep=0] {
+			\includegraphics[height=9mm]{Dauphine.jpg}
+		};
+		\path (current page.south east) node[anchor=south east, inner sep=0] {
+			\includegraphics[height=1cm]{PSL.png}
+		};
+	}
+   \titlepage
+\end{frame}
+\addtocounter{framenumber}{-1}
+
+\section{Présentation}
+\begin{frame}
+	\frametitle{Annotations : présentation}
+	\begin{itemize}
+		\item Une forme de métadonnée
+		\item Détection d’erreurs supplémentaires
+		\item Configuration du compilateur
+		\item Génération de code (XML, etc.)
+		\item Traitement runtime possible
+	\end{itemize}
+\end{frame}
+
+\section{Types}
+\begin{frame}[fragile]
+	\frametitle{Types annotation}
+	\begin{lstlisting}
+@interface NameAndNumber {
+  String name();
+  int number() default 1;
+}
+	\end{lstlisting}
+	\begin{itemize}
+		\item \emph{Type} annotation : sorte d’interface ; type doté d’\emph{élements}
+		\item Élément : type, identifiant, valeur par défaut
+		\item Si pas d’élément, l’annotation est un \emph{Marqueur}
+		\item Si un seul élément, élément souvent nommé \texttt{value}
+		\item Prédéfinies ou définies par l’utilisateur
+	\end{itemize}
+\end{frame}
+
+\section{Annotations}
+\begin{frame}
+	\frametitle{Annotations}
+	\texttt{@Deprecated} ; \texttt{@SuppressWarnings(value = "unchecked")} ; \texttt{@SuppressWarnings("unchecked")} ; \texttt{@NameAndNumber(name = "Benjamin Franklin", number = 3)}
+	\begin{itemize}
+		\item Annotation : nom d’un type annotation et valeurs pour ses éléments
+		\item Si seulement une valeur : utilisée pour \texttt{value}
+		\item Appliquées sur des déclarations (classes, champs, méthodes, usages de types) ; multiples annotations pour une déclaration permises
+	\end{itemize}
+	Exemple d’usage : \texttt{@NonNull String str;}
+\end{frame}
+
+\appendix
+\section{Licence}
+\begin{frame}
+	\frametitle{Licence}
+	Cette présentation, et le code LaTeX associé, sont sous \href{http://opensource.org/licenses/MIT}{licence MIT}. Vous êtes libres de réutiliser des éléments de cette présentation, sous réserve de citer l’auteur.
+	
+	Le travail réutilisé est à attribuer à \href{http://www.lamsade.dauphine.fr/~ocailloux/}{Olivier Cailloux}, Université Paris-Dauphine.
+\end{frame}
+\end{document}
+
+\begin{frame}
+	\frametitle{}
+	\begin{itemize}
+		\item 
+	\end{itemize}
+	\begin{block}{}
+		
+	\end{block}
+\end{frame}
+
+\section{Bibliographie}
+\begin{frame}[allowframebreaks]
+	\frametitle{Bibliographie}
+	\def\newblock{\hskip .11em plus .33em minus .07em}
+% 	\bibliography{zotero}
+\end{frame}
+
+\section{Autres}
+\begin{frame}
+	\frametitle{}
+	\begin{itemize}
+		\item 
+	\end{itemize}
+	\begin{block}{}
+		
+	\end{block}
+\end{frame}
+\end{document}

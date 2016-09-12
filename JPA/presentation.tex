@@ -10,15 +10,14 @@
 \input{preamble/acronyms}
 \input{preamble/uml}
 
-\title{Conception d’applications internet}
-\subtitle{JPA}
-\subject{object / relationship mismatch}
-\keywords{ORM ; transactions ; isolation}
+%\setbeamertemplate{headline}[singleline]
+
+\title{JPA}
+\subject{ORM}
+\keywords{ORM, Hibernate, Persistence, CDI, Transactions, JTA}
 \author{Olivier Cailloux}
 \institute[LAMSADE]{LAMSADE, Université Paris-Dauphine}
 \date{Version du \today}
-
-%TODO questions hib. Hib et JUL ? (Cf. projet Hib)
 
 \begin{document}
 \bibliographystyle{apalike}
@@ -39,49 +38,6 @@
 \end{frame}
 \addtocounter{framenumber}{-1}
 
-\section{Annotations}
-\subsection{Présentation}
-\begin{frame}
-	\frametitle{Annotations : présentation}
-	\begin{itemize}
-		\item Une forme de métadonnée
-		\item Détection d’erreurs supplémentaires
-		\item Configuration du compilateur
-		\item Génération de code (XML, etc.)
-		\item Traitement runtime possible
-	\end{itemize}
-\end{frame}
-
-\subsection{Types}
-\begin{frame}[fragile]
-	\frametitle{Types annotation}
-	\begin{lstlisting}
-@interface NameAndNumber {
-  String name();
-  int number() default 1;
-}
-	\end{lstlisting}
-	\begin{itemize}
-		\item \emph{Type} annotation : sorte d’interface ; type doté d’\emph{élements}
-		\item Élément : type, identifiant, valeur par défaut
-		\item Si pas d’élément, l’annotation est un \emph{Marqueur}
-		\item Si un seul élément, élément souvent nommé \texttt{value}
-		\item Prédéfinies ou définies par l’utilisateur
-	\end{itemize}
-\end{frame}
-
-\subsection{Annotations}
-\begin{frame}
-	\frametitle{Annotations}
-	\texttt{@Deprecated} ; \texttt{@SuppressWarnings(value = "unchecked")} ; \texttt{@SuppressWarnings("unchecked")} ; \texttt{@NameAndNumber(name = "Benjamin Franklin", number = 3)}
-	\begin{itemize}
-		\item Annotation : nom d’un type annotation et valeurs pour ses éléments
-		\item Si seulement une valeur : utilisée pour \texttt{value}
-		\item Appliquées sur des déclarations (classes, champs, méthodes, usages de types) ; multiples annotations pour une déclaration permises
-	\end{itemize}
-	Exemple d’usage : \texttt{@NonNull String str;}
-\end{frame}
-
 \section{JPA : démarrage}
 \subsection{Introduction}
 \begin{frame}
@@ -96,15 +52,19 @@
 \end{frame}
 
 \begin{frame}
-	\frametitle{Standards JCP}
+	\frametitle{Introduction}
 	\begin{itemize}
-		\item Implication de \og{}la communauté\fg{} pour standards Java
-		\item JCP ? \pause Java Community Process \pause
-		\item Définit les JSR : standards utilisés en Java SE ou Java EE
-		\item Spécifications tiennent compte de nombreux avis d’horizons divers
-		\item Exemples ? \pause JSR 221 : JDBC 4.0 ; JSR 338 : JPA 2.1 ; JSR 345 : EJB 3.2 ; JSR 342 : Java EE 7 ; JSR 346 : CDI… \pause
-		\item Tentions entre standard ouvert et contrôle ! (2010, Apache \href{https://blogs.apache.org/foundation/entry/the_asf_resigns_from_the}{quitte} le comité JCP ; Doug Lea \href{http://gee.cs.oswego.edu/dl/html/jcp22oct10.html}{également}, en faveur de OpenJDK…)
+		\item BD : modèle relationnel {\tiny typiquement}
+		\item JDBC : accès via Java, modèle relationnel
+		\item JPA : accès via Java, modèle objet
+		\item JPA implémente un \emph{ORM} : Object-Relational Mapping
 	\end{itemize}
+	\begin{block}{JPA}
+		\begin{itemize}
+			\item Avec Java EE, JPA généralement utilisé
+			\item JPA s’appuie sur JDBC
+		\end{itemize}
+	\end{block}
 \end{frame}
 
 \begin{frame}
@@ -452,22 +412,6 @@ em.close();
 EntityManager em2 = emfactory.createEntityManager();
 	\end{lstlisting}
 	⇒ Dans \texttt{em2}, \texttt{u} est… ? \pause \emph{detached} 
-\end{frame}
-
-\section{Exercices}
-\begin{frame}
-	\frametitle{Exercices}
-	\begin{itemize}
-		\item Créer une entité pour un type de votre application, sans liens avec d’autres entités pour le moment
-		\item Faire en sorte que la table correspondante soit créée automatiquement lors du déploiement de l’entité
-		\item Vérifier si ça fonctionne. Se féliciter.
-		\item Permettre CRUD
-		\item Lui ajouter des liens à d’autres objets
-		\item Étendre à toutes les entités de votre application et ajouter des fonctionnalités
-		%Attendu : de chaque binôme, au moins deux applications non triviale utilisées à bon escient (liens entre objets, value types, héritage).
-		%Attendu : au moins une application de l’héritage pour tout le groupe
-		%Attendu : bonne gestion de la concurrence
-	\end{itemize}
 \end{frame}
 
 \section{JPA : Mise en œuvre}
@@ -1059,35 +1003,9 @@ em2.getTransaction().commit(); // $\textsf{mise à jour BD}$
 	\end{itemize}
 \end{frame}
 
-\section{À vous}
-\begin{frame}
-	\frametitle{Votre mission : tout au long du cours}
-	\begin{itemize}
-		\item Indiquer, sur chaque classe, l’auteur principal de la classe (javadoc \texttt{@author}) et éventuellement le pair programmeur (indiquer : \texttt{Reviewer: …})
-		\item Relire diapo Auteurs précédente, toujours valable
-		\item Je vous demanderai des remises intermédiaires à intervalles réguliers (cf. diapo suivante)
-		\item Note CC 4 sera sur l’ensemble de ces remises intermédiaires
-		\item Conseil : mettez en place vos entités et gestion de base rapidement. La partie difficile vient après ! (Synchronisation des contextes de persistence et gestion de la concurrence, liens GUI et BD…)
-	\end{itemize}
-\end{frame}
-
-\begin{frame}
-	\frametitle{Votre mission : à court terme}
-	Avant la fin du prochain cours (31 mars, 17h)
-	\begin{itemize}
-		\item Créer une branche \texttt{review}
-		\item Y placer une partie présentable de votre travail
-		\item Requiert de vous accorder avec votre groupe
-		\item Je commenterai cette partie pour vous aiguiller
-		\item L’existence d’un travail de chacun d’entre vous dans cette branche est obligatoire
-		\item Le respect de la date butoir est également obligatoire
-		\item Je vous interrogerai en cas de doute concernant votre participation au code
-	\end{itemize}
-\end{frame}
 
 \appendix
-\AtBeginSection{
-}
+
 \section{Architecture}
 \begin{frame}
 	\frametitle{Pattern DAO}
@@ -1169,28 +1087,34 @@ em2.getTransaction().commit(); // $\textsf{mise à jour BD}$
 	Cette présentation, et le code LaTeX associé, sont sous \href{http://opensource.org/licenses/MIT}{licence MIT}. Vous êtes libres de réutiliser des éléments de cette présentation, sous réserve de citer l’auteur.
 	
 	Le travail réutilisé est à attribuer à \href{http://www.lamsade.dauphine.fr/~ocailloux/}{Olivier Cailloux}, Université Paris-Dauphine.
-	
-	\small{(Ceci ne couvre pas les images incluses dans ce document, puisque je n’en suis généralement pas l’auteur.)}
 \end{frame}
-
 \end{document}
+
 \begin{frame}
 	\frametitle{}
 	\begin{itemize}
 		\item 
 	\end{itemize}
-\end{frame}
-
 	\begin{block}{}
-		\begin{itemize}
-			\item 
-		\end{itemize}
+		
 	\end{block}
+\end{frame}
 
 \section{Bibliographie}
 \begin{frame}[allowframebreaks]
 	\frametitle{Bibliographie}
 	\def\newblock{\hskip .11em plus .33em minus .07em}
 % 	\bibliography{zotero}
+\end{frame}
+
+\section{Autres}
+\begin{frame}
+	\frametitle{}
+	\begin{itemize}
+		\item 
+	\end{itemize}
+	\begin{block}{}
+		
+	\end{block}
 \end{frame}
 \end{document}

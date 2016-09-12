@@ -1,0 +1,313 @@
+\RequirePackage[l2tabu, orthodox]{nag}
+\RequirePackage{silence}
+\WarningFilter{fmtcount}{\ordinal already defined use \FCordinal instead}
+\documentclass[english, french]{beamer}
+\input{preamble/packages}
+\input{preamble/math_basics}
+\input{preamble/math_mine}
+\input{preamble/redac}
+\input{preamble/draw}
+\input{preamble/acronyms}
+\input{preamble/uml}
+
+\setbeamertemplate{headline}[singleline]
+
+\title{Conception d’applications web en Java}
+\subtitle{Présentation du cours}
+\author{Olivier Cailloux}
+\institute[LAMSADE]{LAMSADE, Université Paris-Dauphine}
+\date{Version du \today}
+
+\begin{document}
+\bibliographystyle{apalike}
+
+\begin{frame}[plain]
+	\tikz[remember picture,overlay]{
+		\path (current page.south west) node[anchor=south west, inner sep=0] {
+			\includegraphics[height=1cm]{LAMSADE95.jpg}
+		};
+		\path (current page.south) ++ (0, 1mm) node[anchor=south, inner sep=0] {
+			\includegraphics[height=9mm]{Dauphine.jpg}
+		};
+		\path (current page.south east) node[anchor=south east, inner sep=0] {
+			\includegraphics[height=1cm]{PSL.png}
+		};
+	}
+   \titlepage
+\end{frame}
+\addtocounter{framenumber}{-1}
+
+\section{L’enseignant}
+\begin{frame}
+	\frametitle{L’enseignant}
+	\begin{itemize}
+		\item Olivier Cailloux
+		\item \href{mailto:olivier.cailloux@dauphine.fr}{olivier.cailloux@dauphine.fr}
+		\item Coordonnées : cf. \href{https://www.ent.dauphine.fr/Annuaire/index.php?param0=fiche&param1=ocailloux}{annuaire} de Dauphine
+	\end{itemize}
+\end{frame}
+
+\section[Obj. pédagogiques]{Objectifs pédagogiques}
+\begin{frame}
+	\frametitle{Objectifs pédagogiques}
+	\begin{itemize}
+		\item Programmer des applications d’envergure
+		\item De qualité
+		\item Portables
+	\end{itemize}
+	Complexité :
+	\begin{itemize}
+		\item Appui sur de nombreuses API open source
+		\item Programmer selon les specs
+		\item Beaucoup de paramètres ⇒ comprendre !
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Un environnement complexe}
+	De \url{http://graphserver.github.io/graphserver/} :
+	\begin{quote}
+		First, get Java 1.6. Or Java6. I think they're the same thing. Get the JDK, but not the JVM, the JRE, SDK, SDN, or the JCE. Note Java SE comes with Jave EE, which is apparently at version 5, and may or may not have anything to do with J2EE. I don't know what those have to do with anything. Google it or something. I don't know. They don't make it particularly easy for you. It's like, they've got more money than god and nothing pleases them better than pouring all that expertise into baffling the hell out of you. Honestly, I can't stand Java, but you need it to run Osmosis.
+	\end{quote}
+	La complexité est-elle une mauvaise chose ?
+\end{frame}
+
+\begin{frame}
+	\frametitle{Les bienfaits de la complexité}
+	\begin{minipage}{6cm}
+		\begin{itemize}
+			\item Activité plus difficile : souvent plus attrayante
+			\item Évite les activités répétitives : complexité amène diversité
+			\item Récompenses plus grandes
+			\item Recherche d’un accomplissement personnel
+			\item Cercle vertueux : accès à activités plus complexes
+			\item Pas un bien positionnel : accessible à tous
+		\end{itemize}
+	\end{minipage}\hspace{5mm}%
+	\begin{minipage}{\columnwidth-6.5cm}
+		\href{https://fr.wikipedia.org/wiki/\%C3\%89criture_hi\%C3\%A9ratique}{\includegraphics[width=\columnwidth]{Papyrus_Ebers.png}}
+		\small{Écriture \href{https://en.wikipedia.org/wiki/Hieratic}{hiératique}, égypte ancienne}
+	\end{minipage}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Objectifs pédagogiques}
+	\begin{block}{Mise en œuvre des patterns}
+		\begin{itemize}
+		\item Mise en œuvre des patterns dans les spécifications Java EE
+		\item Quand les mettre en œuvre ?
+		\item Applications dans programmes propres
+		\end{itemize}
+	\end{block}
+	\begin{itemize}
+		\item Prise en main d’outils de dév avancés : 
+		\begin{itemize}
+			\item eclipse ;
+			\item Maven ;
+			\item git…
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Objectifs pédagogiques, suite}
+	\begin{block}{Modélisation}
+		\begin{itemize}
+		\item Réponse à des besoins exprimés vaguement
+		\item Appui sur les standards du web actuels
+		\item Réusinage fréquent
+		\item Dosage du réalisme et de l’intérêt des fonctionalités
+		\end{itemize}
+	\end{block}
+	Approche agile ? À moitié !
+	\begin{itemize}
+		\item Livraisons fréquentes
+		\item Travail en binôme
+		\item Réusinage intense
+	\end{itemize}
+\end{frame}
+
+\section{Utilité}
+\begin{frame}
+	\frametitle{Intérêt pratique}
+	\begin{itemize}
+		\item Qu’on soit programmeur, qu’on discute avec des programmeurs
+		\item Prendre de la hauteur, éviter les tâches répétitives et se concentrer sur le conceptuel
+		\item Respect et compréhension des standards (aperçu de la façon dont ils sont construits) : compétence essentielle
+		\item … dans de multiples domaines
+		\item Importance des patterns dans de multiples domaines
+		\item Technologie en vogue
+	\end{itemize}
+\end{frame}
+
+\section{Évaluation}
+\begin{frame}
+	\frametitle{Implémentation}
+	\begin{itemize}
+		\item Implémentation des techniques sur un projet
+		\item Objectif : un projet utile
+		\item Un projet ≠ par groupe
+		\item Programmation en binôme, équipes tournantes : diversification, pas spécialisation
+		\item À gérer de façon agile car fonctionnalités ajoutées au fil du cours : cycles courts, réusinage…
+		\item Fonctionnalités de l’application décrites de manière vague : à vous de m’interroger
+		\item Fin d’année : présentation collective de vos projets
+		\item Vote pour la meilleure application
+		\item Livraisons exclusivement via git
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Évaluation}
+	L’évaluation se fait par contrôle continu exclusivement.
+	\begin{itemize}
+		\item qualité du code 
+		\item respect des demandes de l’utilisateur
+		\item mise en œuvre adéquate des technologies dans l’application
+		\item livraisons régulières
+		\item ampleur des fonctionnalités
+		\item qualité générale de l’application
+		\item qualité de la présentation finale
+		\item Note finale : agrégation des notes reçues au long de l’année (nombre de notes : aléatoire)
+		\item Vous êtes toujours censés comprendre votre code
+	\end{itemize}
+\end{frame}
+
+\section{Prérequis}
+\begin{frame}
+	\frametitle{Prérequis}
+	\begin{itemize}
+		\item Programmation en Java, manipulation d’un environnement de développement, compréhension des notions algorithmiques élémentaires.
+		\item Capacité à comprendre des textes en anglais liés à l’informatique.
+		\item HTTP, HTML, XML, XSD, SQL.
+	\end{itemize}
+\end{frame}
+
+\section{Mise en œuvre}
+\begin{frame}
+	\frametitle{Mise en œuvre}
+	\begin{itemize}
+		\item Pédagogie : \emph{partiellement} inversée
+		\item Central : travail sur projet
+		\item Durant cours $x$ : constituez un binôme ≠ du précédent
+		\item Travaillez sur une issue de votre projet
+		\item Doit mettre en œuvre la techno vue au cours $x$
+		\item À remettre avant cours $x + 1$
+		\item Début cours $x + 1$ : je tire des personnes au hasard
+		\item J’évalue, avec le binôme, le travail fourni depuis la dernière évaluation
+		\item Lors premiers cours : une brève introduction à une technologie par cours
+		\item Je joue le rôle du client et vous renseigne concernant les issues à implémenter
+	\end{itemize}
+\end{frame}
+
+\section{Plan}
+\begin{frame}
+	\frametitle{Plan}
+	
+	\begin{itemize}
+		\item Cours 1 : Git, aperçu de Java EE, Maven
+		\item À faire : lire doc eclipse, canevas projet de groupe + branche personnelle, servlet simple
+		\item Cours 2 : CDI.
+		\item À faire : modèle singleton (injecté), lié à servlet.
+		\item Cours 3 : JPA.
+		\item À faire : modèle persistent.
+		\item Cours 4 : JSF.
+		\item À faire : pages JSF.
+		\item Puis, approfondissements et élaboration du projet
+	\end{itemize}
+	Plus : Éléments d’ingénieurie (programmation par contrat…)
+\end{frame}
+
+\section{Astuces}
+\begin{frame}
+	\frametitle{Astuces importantes}
+	\begin{itemize}
+		\item Éviter l’essai / erreur : comprendre
+		\item Poser des questions !
+		\item Commencer simple
+		\item Si ça ne fonctionne pas : faire plus simple
+		\item Exclure bugs possibles pas à pas
+		\item Éviter débuggage pas à pas
+		\item Se méfier du code auto-généré
+		\item Choisir \emph{une} approche cohérente. Mélange deux tutos : problèmes presque assurés ({}≠ versions ; ≠ annotations…)
+	\end{itemize}
+\end{frame}
+
+\section{À vous}
+\begin{frame}
+	\frametitle{À faire}
+	Immédiat :
+	\begin{itemize}
+		\item \href{https://github.com/oliviercailloux/projets}{Choix} d’un projet
+		\item Indication du choix sur \href{https://mycourse.dauphine.fr/webapps/blackboard/execute/courseMain?course_id=_34753_1}{MyCourse}
+			\item Nom groupe MyCourse = nom application = nom entre ()
+	\end{itemize}
+	Avant le prochain cours :
+	\begin{itemize}
+		\item Rediriger vos e-mails @ Dauphine si nécessaire pour vous assurer de recevoir les annonces
+		\item Installer les outils sur votre machine : Eclipse Neon Java EE, Java EE 7 (et Glassfish 4), Java 8 (OpenJDK), git
+		\item Compte \href{https://github.com/}{GitHub}
+		\item Commit initial projet git de groupe
+		\item Indiquez sur votre groupe MyCourse l’url git de votre projet
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{À faire}
+	Avant chaque cours :
+	\begin{itemize}
+		\item Constituez un binôme ≠ du précédent
+		\item Par binôme : Choix d’une issue sur projet git (création éventuelle)
+		\item Par binôme : Commit branche perso, nom branche = n° issue
+		\item Par chacun : Indication sur MyCourse (dans devoirs) de l’URL issue travaillée + nom binôme
+		\item Conseil : \emph{vérifier} que je verrai votre code en effectuant un nouveau clone vous-même
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Sondage !}
+	\begin{itemize}
+		\item Avez-vous une machine à amener en cours ?
+		\item Quels sont les prérequis qui vous manquent ?
+		\item Est-ce une bonne idée d’effectuer les prochains cours en salle de classe (sans machines, mais avec prises de courant) ?
+		\item Autres remarques sur l’approche proposée ? (Contenu du cours ; craintes ; envies…)
+	\end{itemize}
+\end{frame}
+
+\appendix
+\section{Licence}
+\begin{frame}
+	\frametitle{Licence}
+	Cette présentation, et le code LaTeX associé, sont sous \href{http://opensource.org/licenses/MIT}{licence MIT}. Vous êtes libres de réutiliser des éléments de cette présentation, sous réserve de citer l’auteur.
+	
+	Le travail réutilisé est à attribuer à \href{http://www.lamsade.dauphine.fr/~ocailloux/}{Olivier Cailloux}, Université Paris-Dauphine.
+\end{frame}
+\end{document}
+
+\begin{frame}
+	\frametitle{}
+	\begin{itemize}
+		\item 
+	\end{itemize}
+	\begin{block}{}
+		
+	\end{block}
+\end{frame}
+
+\section{Bibliographie}
+\begin{frame}[allowframebreaks]
+	\frametitle{Bibliographie}
+	\def\newblock{\hskip .11em plus .33em minus .07em}
+% 	\bibliography{zotero}
+\end{frame}
+
+\section{Autres}
+\begin{frame}
+	\frametitle{}
+	\begin{itemize}
+		\item 
+	\end{itemize}
+	\begin{block}{}
+		
+	\end{block}
+\end{frame}
+\end{document}

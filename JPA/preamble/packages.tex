@@ -21,7 +21,7 @@
 
 \usepackage[super]{nth}
 \usepackage{listings} %typeset source code listings
-	\lstset{language=XML, tabsize=2, captionpos=b, keywordstyle=\fontspec{Latin Modern Mono Light}\textbf, emph={}, keywords={}, emphstyle=\fontspec{Latin Modern Mono Light}\textbf, basicstyle=\small\NoAutoSpacing\ttfamily, aboveskip=0pt, belowskip=0pt, showstringspaces=false}
+	\lstset{language=XML, tabsize=2, captionpos=b, basicstyle=\NoAutoSpacing, keywordstyle=\fontspec{Latin Modern Mono Light}\textbf, emph={project, dependency, modelVersion, groupId, artifactId, version, scope}, emphstyle=\fontspec{Latin Modern Mono Light}\textbf, basicstyle=\small\NoAutoSpacing\ttfamily, aboveskip=0pt, belowskip=0pt, showstringspaces=false}
 \usepackage[nolist,smaller,printonlyused]{acronym}%,smaller option produces warnings from relsize in some cases, it seems.
 \usepackage[nodayofweek]{datetime}%must be loaded after the babel package
 \usepackage{xspace}
@@ -32,7 +32,7 @@
 %pdfborder (0 0 1, set to 0 0 0 if colorlinks): width of PDF link border
 %hidelinks
 \hypersetup{breaklinks, bookmarksopen, hyperfigures=true}
-%\hypersetup{breaklinks,bookmarksopen,colorlinks=true,urlcolor=blue,hyperfigures=true}
+% \hypersetup{breaklinks,bookmarksopen,colorlinks=true,urlcolor=blue,linkcolor=,hyperfigures=true}
 % hyperref doc says: Package bookmark replaces hyperref’s bookmark organization by a new algorithm (...) Therefore I recommend using this package.
 \usepackage{bookmark}
 
@@ -74,6 +74,7 @@
 \setmathfont[range={\mathcal,\mathbfcal},StylisticSet=1]{XITS Math}
 \setTransitionsFor{MathematicalOperators}{\begingroup\xitsfamily}{\endgroup}
 \setTransitionsFor{Arrows}{\begingroup\xitsfamily}{\endgroup}
+\setTransitionsFor{Dingbats}{\begingroup\xitsfamily}{\endgroup}
 
 \usepackage{cleveref}% cleveref should go "laster" than hyperref
 %GRAPHICS
@@ -108,10 +109,12 @@
 \usepackage{xltxtra} %somebody said that this is loaded by fontspec, but does not seem correct: if not loaded explicitly, does not appear in the log and \showhyphens is not corrected.
 
 %Beamer-specific
-%ADD
 \usepackage{appendixnumberbeamer}
 %\setbeamersize{text margin left=0.1cm, text margin right=0.1cm} 
 \setbeamertemplate{navigation symbols}{}
+%\usetheme{ParisFrance}
 \usepackage{preamble/beamerthemeParisFrance}
 \usefonttheme{professionalfonts}
+\input{preamble/beamer-patch.tex}
+\setcounter{tocdepth}{10}
 

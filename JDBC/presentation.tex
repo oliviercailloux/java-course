@@ -1,0 +1,337 @@
+\RequirePackage[l2tabu, orthodox]{nag}
+\RequirePackage{silence}
+\WarningFilter{fmtcount}{\ordinal already defined use \FCordinal instead}
+\documentclass[english, french]{beamer}
+\input{preamble/packages}
+\input{preamble/math_basics}
+\input{preamble/math_mine}
+\input{preamble/redac}
+\input{preamble/draw}
+\input{preamble/acronyms}
+\input{preamble/uml}
+
+\setbeamertemplate{headline}[singleline]
+
+\title{JDBC}
+\subject{Databases}
+\keywords{Transaction}
+\author{Olivier Cailloux}
+\institute[LAMSADE]{LAMSADE, Université Paris-Dauphine}
+\date{Version du \today}
+
+\begin{document}
+\bibliographystyle{apalike}
+
+\begin{frame}[plain]
+	\tikz[remember picture,overlay]{
+		\path (current page.south west) node[anchor=south west, inner sep=0] {
+			\includegraphics[height=1cm]{LAMSADE95.jpg}
+		};
+		\path (current page.south) ++ (0, 1mm) node[anchor=south, inner sep=0] {
+			\includegraphics[height=9mm]{Dauphine.jpg}
+		};
+		\path (current page.south east) node[anchor=south east, inner sep=0] {
+			\includegraphics[height=1cm]{PSL.png}
+		};
+	}
+   \titlepage
+\end{frame}
+\addtocounter{framenumber}{-1}
+
+\section{Présentation}
+\begin{frame}
+	\frametitle{Présentation}
+	\begin{itemize}
+		\item JDBC ? \pause Java Database Connectivity \pause
+		\item Une API pour se connecter à des données relationnelles
+	\end{itemize}
+	\begin{minipage}[t]{4cm}
+		\begin{itemize}
+			\item Programmation indépendante du fournisseur de BD
+			\item App. programmée via API JDBC
+			\item App. inclut pilotes du fournisseur
+			\item Ces pilotes font la traduction
+		\end{itemize}
+	\end{minipage}\hfill%
+	\begin{minipage}[t]{6.6cm}
+		\begin{tikzpicture}[baseline=(App.north)]
+			\path node[draw, ellipse] (App) {Application};
+			\path (App.south) ++(0, -3mm) node[draw, ellipse, anchor=north] (JDBC) {API JDBC};
+			\path (JDBC.south) ++(-1.4cm, -3mm) node[draw, ellipse, anchor=north] (Driver1) {Pilote Pg.};
+			\path (Driver1.south) ++(0, -6mm) node[draw, ellipse, anchor=north] (BD1) {BD Postgresql};
+			\path (JDBC.south) ++(1.4cm, -3mm) node[draw, ellipse, anchor=north] (Driver2) {Pilote H2};
+			\path (Driver2.south) ++(0, -2mm) node[draw, ellipse, anchor=north] (BD2) {BD en mémoire};
+			\path[<->, draw] (App) -- (JDBC);
+			\path[<->, draw] (JDBC) -- (Driver1);
+			\path[<->, draw] (JDBC) -- (Driver2);
+			\path[<->, draw] (Driver1) -- (BD1);
+			\path[<->, draw] (Driver2) -- (BD2);
+		\end{tikzpicture}
+	\end{minipage}
+\end{frame}
+
+\section{Instanciation}
+\begin{frame}
+	\frametitle{Instantiation}
+	\begin{itemize}
+		\item Souhait : instancier pilote adéquat avec minimum de code spécifique à un fournisseur
+		\item API JDBC nous fournit \jseref{java.sql/DriverManager}
+		\item Appeler \texttt{DriverManager.getConnection(String url)}
+		\item \texttt{url} au format \texttt{jdbc:subprotocol:subname}
+		\item Exemple : \texttt{jdbc:postgresql:mydb} (cf. \href{https://jdbc.postgresql.org/documentation/head/connect.html}{Doc JDBC Postgresql})
+	\end{itemize}
+	Mais comment ça marche ?
+\end{frame}
+
+\begin{frame}
+	\frametitle{Fonctionnement de l’instantiation}
+	\begin{itemize}
+		\item Le pilote fournisseur est inclus aux bibliothèques runtime de l’application
+		\item Le JAR pilote inclut un fichier nommé (par convention) \texttt{META-INF/services/java.sql.Driver}
+		\item Ce fichier nomme la classe que \texttt{DriverManager} doit charger
+		\item \texttt{DriverManager} charge toutes ces classes (si plusieurs pilotes accessibles)
+		\item Ayant l’URL, \texttt{DriverManager} cherche un pilote enregistré qui peut la lire
+		\item Il instancie ce pilote et le renvoie à l’appelant ou l’utilise en arrière-plan
+	\end{itemize}
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Remarques concernant l’instanciation}
+	\begin{itemize}
+		\item Avec \texttt{DriverManager} on peut aussi obtenir le \jseref{java.sql/Driver} (utile pour avoir n° de version par exemple)
+		\item Beaucoup de tutoriels sur le net suggèrent d’enregistrer explicitement le pilote {\tiny par exemple avec \texttt{Class.forName()}}. Ce n’est plus nécessaire depuis longtemps (cf. explication précédente).
+	\end{itemize}
+\end{frame}
+
+\section{Modèle relationnel}
+\begin{frame}
+	\frametitle{Modèle relationnel}
+	\begin{itemize}
+		\item JDBC permet d’accéder aux BD
+		\item Suit le modèle relationnel
+		\item Élément central du modèle : la relation (une table, par exemple)
+		\item Relations produites par des JOIN, SELECT, etc.
+	\end{itemize}
+	\begin{block}{Forces du modèle relationnel}
+		\pause
+		\begin{itemize}
+			\item Garanties théoriques (algèbre relationnelle)
+			\item Efficace
+			\item Standard de fait depuis \textasciitilde 1990
+			\item Robuste : \href{http://dl.acm.org/citation.cfm?id=362685}{Codd 1970}, ANSI (puis ISO) SQL \href{http://www.iso.org/iso/home/store/catalogue_ics/catalogue_detail_ics.htm?csnumber=16661}{1987} ; … ; \href{http://www.iso.org/iso/home/store/catalogue_ics/catalogue_detail_ics.htm?csnumber=53681}{2011}
+		\end{itemize}
+	\end{block}
+	(Bémol : nombreuses variations propriétaires)
+\end{frame}
+
+\section{Vue d’ensemble}
+\begin{frame}
+	\frametitle{Vue d’ensemble de l’API JDBC}
+	\begin{itemize}
+		\item Fournisseur de SGBD implémente un pilote JDBC
+		\item Obtenir une \jseref{java.sql/Connection} (communique avec le pilote)
+		\item \texttt{Connection} permet les \emph{transactions}
+		\item Transaction : ensemble atomique de \og{}statements\fg{} SQL
+		\item Gérer début et fin de transaction via la connexion
+		\item Exécuter des statements SQL via cette connexion
+		\item Par défaut, mode auto-commit : une transaction par stmt
+		\item Via \texttt{Connection} : exécution requêtes, navigation de \href{http://docs.oracle.com/javase/8/docs/api/java/sql/ResultSet.html}{\texttt{ResultSet}}s, …
+%		\item (Pilote JDBC peut aussi supporter JTA)
+		\item Puis \emph{fermer} la connexion
+	\end{itemize}
+	Cf. \href{https://docs.oracle.com/javase/tutorial/jdbc/}{tutoriel}
+\end{frame}
+
+\section{Instanciation}
+\begin{frame}
+	\frametitle{Instanciation}
+	\begin{block}{Approche 1 (Java SE, typiquement)}
+		\begin{itemize}
+			\item Une classe fournisseur implémente \href{https://docs.oracle.com/javase/8/docs/api/java/sql/Driver.html}{\texttt{Driver}}
+			\item Développeur appelle \jseref{java.sql/DriverManager}
+			\item \texttt{DriverManager} trouve le pilote et l’instancie
+			\item Exemple : \texttt{DriverManager.getConnection(url)}
+		\end{itemize}
+	\end{block}
+	\begin{block}{Approche 2 (Java EE, typiquement)}
+		\begin{itemize}
+			\item Une classe fournisseur implémente \jseref{javax.sql/DataSource}
+			\item Source accessible via JNDI à un endroit convenu
+			\item Développeur instancie DataSource par \texttt{lookup} JNDI puis appelle \texttt{source.getConnection(…)}
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Injection de la \texttt{DataSource} (Java EE)}
+	\begin{itemize}
+		\item Injection de ressources via \jeeref[@]{javax.annotation/Resource}
+		\item Le conteneur va chercher la ressource via JNDI
+		\item Nom JNDI par défaut selon type de la ressource
+		\item Pour nous : \texttt{@Resource DataSource myDataSource;}
+	\end{itemize}
+\end{frame}
+
+\section{Exploitation}
+\subsubsection{Commandes et résultats}
+\begin{frame}
+	\frametitle{\texttt{Statement} et \texttt{ResultSet}}
+	\begin{itemize}
+		\item Création d’un \jseref{java.sql/Statement} (via \texttt{Connection})
+		\item Via \texttt{Statement} : exécution d’une commande SQL (SELECT, UPDATE…)
+		\item Via \texttt{Statement} : paramétrisation possible (nb résultats max…)
+		\item Obtention (si SELECT) d’un \jseref{java.sql/ResultSet}
+		\item \texttt{ResultSet} associé à une ligne courante ; initialement : avant la première
+		\item Naviguer via \texttt{next()} aux lignes suivantes
+		\item Invoquer \texttt{getInt(columnLabel)}, \texttt{getString(columnLabel)}…
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{\texttt{PreparedStatement}}
+	\begin{itemize}
+		\item \jseref{java.sql/PreparedStatement} : précompilé + paramétrisation facile
+		\item La commande SQL contient des \texttt{?}
+		\item Invoquer \texttt{setInt}, \texttt{setString}… pour les paramètres
+	\end{itemize}
+	\begin{exampleblock}{Exemple \texttt{PreparedStatement}}
+		\begin{lstlisting}[keywordstyle=\fontspec{Latin Modern Mono Light}\textbf, emph={String, PreparedStatement}, emphstyle=\fontspec{Latin Modern Mono Light}\textbf, language=Java, basicstyle=\small\NoAutoSpacing\ttfamily, aboveskip=0pt, belowskip=0pt, showstringspaces=false]
+			String s = "update USER set NAME = ? where ID = ?";
+			PreparedStatement stmt = con.prepareStatement(s);
+			stmt.setString(1, "NewName");
+			stmt.setInt(2, 1234);
+			boolean isResultSet = stmt.execute();
+			assert(!isResultSet);
+			assert(stmt.getUpdateCount() == 1);
+		\end{lstlisting}
+	\end{exampleblock}
+	Utiliser \texttt{PreparedStatement} pour éviter les attaques de type injection SQL !
+\end{frame}
+
+\subsubsection{Transactions}
+\begin{frame}
+	\frametitle{Transactions}
+	Par défaut, mode \emph{auto commit} : une transaction par commande
+	\begin{block}{Gestion de transactions explicite}
+		\begin{itemize}
+			\item Invoquer \texttt{setAutoCommit} sur \jseref{java.sql/Connection}
+			\item Exécuter les commandes normalement
+			\item Puis invoquer \texttt{commit} sur \texttt{Connection}
+			\item Ou : \texttt{rollback}
+			\item Voir aussi : \texttt{getTransactionIsolation}, \texttt{setTransactionIsolation}
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\section{Outils}
+\begin{frame}
+	\frametitle{PostgreSQL}
+	\begin{itemize}
+		\item Installer PostgreSQL (\href{http://www.postgresql.org/}{site} {\tiny ou \texttt{sudo apt-get install postgresql}})
+		\item Possible d’utiliser l’interface graphique d’administration pgAdmin {\tiny voir \href{https://wiki.postgresql.org/wiki/Troubleshooting_Installation\#Collect_the_installer_log_file}{logs} si nécessaire}
+		\item Instructions ci-dessous pour ligne de commande linux, adapter pour autres OS
+		\item En mode privilégié : \texttt{sudo -u postgres bash}
+		\begin{itemize}
+			\item Se créer un utilisateur avec mot de passe : \texttt{createuser -P user}
+			\item Créer une base de données à laquelle cet utilisateur a accès : \texttt{createdb -O user db}
+		\end{itemize}
+		\item Test connexion : psql db (ok sans mot de passe)
+		\item Test connexion réseau : psql -h localhost db (exige mot de passe)
+		\item Droits de connexion : voir \path{/etc/postgresql/9.4/main/} \path{pg_hba.conf} {\tiny changer ligne IPv6 local connections puis reload}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Eclipse}
+	\begin{itemize}
+		\item Pour accéder à une BD, il faut un pilote : \href{https://jdbc.postgresql.org/}{téléchargement} {\tiny ou \texttt{sudo apt-get install libpostgresql-jdbc-java}}
+		\item \texttt{Preferences / Data Management / Connectivity / Driver Definitions}
+		\item Créer une instance de pilote pour PostgreSQL
+		\item Connexions depuis vue \emph{Data Source Explorer}
+		\item Créer une connexion à BD (via pilote créé)
+		\item Envoi de commandes : SQL Scrapbook (avec complétion)
+		\item Édition de données : depuis Data Source Explorer
+		\item Ouvrir vues ou éditeurs depuis Eclipse : voir \texttt{Window / Navigation / Quick Access}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Serveur d’application}
+	\begin{itemize}
+		\item Avec un serveur d’application, il faut renseigner le pilote JDBC utilisé dans JNDI
+		\item Conseil : s’assurer d’abord que l’instanciation fonctionne avec un projet simple Java SE et Maven
+		\item Via l’interface d’administration, indiquer la source à utiliser pour la connexion JNDI par défaut
+		\item Inclure le pilote JDBC PostgreSQL dans les bibliothèques du serveur d’application
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Glassfish}
+	\begin{itemize}
+		\item BD intégrée à Glassfish : \href{https://db.apache.org/derby/}{Derby}
+		\item Il faut démarrer la BD : \texttt{asadmin start-database}
+		\item \href{https://db.apache.org/derby/docs/10.10/ref/index.html}{Manuel} SQL pour Derby
+		\item Cependant pour ce cours on préférera PostgreSQL
+	\end{itemize}
+\end{frame}
+
+\section{Architecture}
+\begin{frame}
+	\frametitle{Deux patterns principaux}
+	Deux patterns courants liés à persistance : \emph{Active Record} et \emph{DAO}
+	\begin{itemize}
+		\item Active Record : chaque objet responsable de sa propre persistance
+		\item Chaque objet contient méthodes CRUD : Create, Read, Update, Delete
+		\item DAO ? \pause Data Access Object \pause
+		\item Classes dédiées à interaction avec BD
+		\item Permet isolation de cet aspect
+		\item Typiquement utilisé avec Data Transfer Object
+	\end{itemize}
+	\begin{block}{Références}
+		\begin{itemize}
+			\item \href{http://gen.lib.rus.ec/book/index.php?md5=37E9F4F25E3C5609E14415472408B80C}{Patterns of Enterprise Application Architecture}
+			\item \href{http://www.oracle.com/technetwork/java/dataaccessobject-138824.html}{Core J2EE Patterns - Data Access Object}
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\appendix
+
+\section{Licence}
+\begin{frame}
+	\frametitle{Licence}
+	Cette présentation, et le code LaTeX associé, sont sous \href{http://opensource.org/licenses/MIT}{licence MIT}. Vous êtes libres de réutiliser des éléments de cette présentation, sous réserve de citer l’auteur.
+	
+	Le travail réutilisé est à attribuer à \href{http://www.lamsade.dauphine.fr/~ocailloux/}{Olivier Cailloux}, Université Paris-Dauphine.
+\end{frame}
+\end{document}
+
+\begin{frame}
+	\frametitle{}
+	\begin{itemize}
+		\item 
+	\end{itemize}
+	\begin{block}{}
+		
+	\end{block}
+\end{frame}
+
+\section{Bibliographie}
+\begin{frame}[allowframebreaks]
+	\frametitle{Bibliographie}
+	\def\newblock{\hskip .11em plus .33em minus .07em}
+% 	\bibliography{zotero}
+\end{frame}
+
+\section{Autres}
+\begin{frame}
+	\frametitle{}
+	\begin{itemize}
+		\item 
+	\end{itemize}
+	\begin{block}{}
+		
+	\end{block}
+\end{frame}
+\end{document}

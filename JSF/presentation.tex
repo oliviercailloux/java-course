@@ -1,8 +1,5 @@
 \RequirePackage[l2tabu, orthodox]{nag}
 \RequirePackage{silence}
-\WarningFilter{nag}{There is no environment ``centering'' }%nag complains because beamer titlepage uses a centering environment
-\WarningFilter{nag}{1 complaints in total}
-\WarningFilter{ifpdf}{Someone has redefined \pdfoutput}
 \WarningFilter{fmtcount}{\ordinal already defined use \FCordinal instead}
 \documentclass[english, french]{beamer}
 \input{preamble/packages}
@@ -13,10 +10,12 @@
 \input{preamble/acronyms}
 \input{preamble/uml}
 
-\title{Conception d’applications internet}
-\subtitle{JSF}
+\setbeamertemplate{headline}[singleline]
+
+\title{JSF}
+\subtitle{}
 \subject{Java EE}
-\keywords{Java Server Faces, Facelets, Servlets, web}
+\keywords{}
 \author{Olivier Cailloux}
 \institute[LAMSADE]{LAMSADE, Université Paris-Dauphine}
 \date{Version du \today}
@@ -40,8 +39,7 @@
 \end{frame}
 \addtocounter{framenumber}{-1}
 
-\section{JSF}
-\subsection{Introduction}
+\section{Introduction}
 \begin{frame}
 	\frametitle{Objectif de JSF}
 	Objectif : apporter une solution aux difficultés du développement web
@@ -168,7 +166,7 @@
 	\end{itemize}
 \end{frame}
 
-\subsection[Itération web]{Itération web JSF}
+\section[Itération web]{Itération web JSF}
 \begin{frame}
 	\frametitle{Traitement de requêtes par JSF}
 	\begin{itemize}
@@ -321,7 +319,7 @@
 	\end{exampleblock}
 \end{frame}
 
-\subsection{Facelets}
+\section{Facelets}
 \begin{frame}
 	\frametitle{Facelets}
 	\begin{itemize}
@@ -375,8 +373,8 @@
 	\end{itemize}
 \end{frame}
 
-\subsection{Packaging}
-\subsection[EL]{Expression Language}
+\section{Packaging}
+\section[EL]{Expression Language}
 \begin{frame}[fragile]
 	\frametitle{Expression Language}
 	\begin{itemize}
@@ -445,7 +443,7 @@ public class Employee {
 	\end{itemize}
 \end{frame}
 
-\subsection{Facets}
+\section{Facets}
 \begin{frame}
 	\frametitle{Utilité des Facets}
 	\begin{itemize}
@@ -542,7 +540,7 @@ public class Employee {
 	\end{exampleblock}
 \end{frame}
 
-\subsection{Usage}
+\section{Usage}
 \begin{frame}
 	\frametitle{GET Vs POST}
 	\begin{itemize}
@@ -691,7 +689,7 @@ public class Employee {
 	\end{exampleblock}
 \end{frame}
 
-\subsection[Suppl]{Informations supplémentaires}
+\section[Suppl]{Informations supplémentaires}
 \begin{frame}
 	\frametitle{Ressources web}
 	\begin{itemize}
@@ -739,7 +737,7 @@ public class Employee {
 	\end{itemize}
 \end{frame}
 
-\subsection{Références}
+\section{Références}
 \begin{frame}
 	\frametitle{Références}
 	\begin{itemize}
@@ -781,26 +779,7 @@ public class Employee {
 	\end{itemize}
 \end{frame}
 
-\section{À faire}
-\begin{frame}
-	\frametitle{À faire}
-	
-	\begin{itemize}
-		\item Remise finale : 19 juin
-	\end{itemize}
-	Review :
-	\begin{itemize}
-		\item Créer une branche appelée \texttt{review}
-		\item Je considérerai ce qui se trouve dans cette branche à la fin du 29 mars
-		\item Je vous remets mes commentaires le 12 avril
-		\item Le contenu de la review ne compte pas dans la note
-		\item Vous serez sanctionné en cas de non respect de la date limite
-	\end{itemize}
-\end{frame}
-
 \appendix
-\AtBeginSection{
-}
 \section{Composants}
 \begin{frame}
 	\newlength{\umlVertSep}
@@ -1067,11 +1046,9 @@ public class Employee {
 	Cette présentation, et le code LaTeX associé, sont sous \href{http://opensource.org/licenses/MIT}{licence MIT}. Vous êtes libres de réutiliser des éléments de cette présentation, sous réserve de citer l’auteur.
 	
 	Le travail réutilisé est à attribuer à \href{http://www.lamsade.dauphine.fr/~ocailloux/}{Olivier Cailloux}, Université Paris-Dauphine.
-	
-	\small{(Ceci ne couvre pas les images incluses dans ce document, puisque je n’en suis généralement pas l’auteur.)}
 \end{frame}
-
 \end{document}
+
 \begin{frame}
 	\frametitle{}
 	\begin{itemize}

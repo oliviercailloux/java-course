@@ -1,0 +1,421 @@
+\RequirePackage[l2tabu, orthodox]{nag}
+\RequirePackage{silence}
+\WarningFilter{fmtcount}{\ordinal already defined use \FCordinal instead}
+\documentclass[english, french]{beamer}
+\input{preamble/packages}
+\input{preamble/math_basics}
+\input{preamble/math_mine}
+\input{preamble/redac}
+\input{preamble/draw}
+\input{preamble/acronyms}
+\input{preamble/uml}
+
+\setbeamertemplate{headline}[singleline]
+
+\title{Git}
+\subject{Git}
+\keywords{VCS, SCM, version control}
+\author{Olivier Cailloux}
+\institute[LAMSADE]{LAMSADE, Université Paris-Dauphine}
+\date{Version du \today}
+
+\begin{document}
+\bibliographystyle{apalike}
+
+\begin{frame}[plain]
+	\tikz[remember picture,overlay]{
+		\path (current page.south west) node[anchor=south west, inner sep=0] {
+			\includegraphics[height=1cm]{LAMSADE95.jpg}
+		};
+		\path (current page.south) ++ (0, 1mm) node[anchor=south, inner sep=0] {
+			\includegraphics[height=9mm]{Dauphine.jpg}
+		};
+		\path (current page.south east) node[anchor=south east, inner sep=0] {
+			\includegraphics[height=1cm]{PSL.png}
+		};
+	}
+   \titlepage
+\end{frame}
+\addtocounter{framenumber}{-1}
+
+\section{Présentation}
+\begin{frame}
+	\frametitle{Git}
+	\begin{itemize}
+		\item Contrôle de version (VCS, SCM) : conserver l’historique
+		\item Pour tous types de projet : code, images, présentations, article…
+		\item VCS local, centralisé, distribué ? \pause
+		\item Centralisé : seulement sur un serveur distant
+		\item Distribué : copie locale et distante
+		\item Git : distribué
+	\end{itemize}
+\end{frame}
+
+\section{Commits}
+\begin{frame}
+	\frametitle{Commits et historique}
+	\begin{itemize}
+		\item Blob : capture d’un fichier à un moment donné
+		\item Commit : identifié par un hash SHA-1
+		\begin{itemize}
+			\item Contient : structure de répertoires ; \emph{blobs} ; auteur…
+		\end{itemize}
+		\item Histoire : un DAG de \og{}commits\fg{}
+	\end{itemize}
+	{
+		\centering
+		\begin{tikzpicture}
+			\path node[/Git/commit] (c1) {98C49C};
+			\path (c1.east) ++ (\GitCommitSep, 0) node[anchor=west, /Git/commit] (c2) {34AC2} edge[->] (c1);
+			\path (c2.east) ++ (\GitCommitSep, 6mm) node[anchor=west, /Git/commit] (c3N) {F30AB} edge[->] (c2);
+			\path (c2.east) ++ (\GitCommitSep, -6mm) node[anchor=west, /Git/commit] (c3S) {C32AC} edge[->] (c2);
+			\path (c2 -| c3N.east) ++ (\GitCommitSep, 0) node[anchor=west, /Git/commit] (c4) {175E3A} edge[->] (c3N) edge[->] (c3S);
+		\end{tikzpicture}\par
+	}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Work dir (WD)}
+	\begin{itemize}
+		\item Histoire conservée \emph{localement} dans \texttt{.git} à la racine du projet
+		\item WD (\og{}work dir\fg{}) : version du projet (fichiers et sous-répert.)
+		\item Interaction avec sous-rép. \texttt{.git} : \emph{uniquement} via outils git
+	\end{itemize}
+	\texttt{/root}
+	\begin{itemize}
+		\item[] \texttt{/.git}
+		\item[] \texttt{/rép1}
+		\begin{itemize}
+			\item[] \texttt{/fich1}
+		\end{itemize}\vspace{-0.8ex}
+		\item[] \texttt{/fich2}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Préparer un commit}
+	\begin{minipage}[t]{0.33 \columnwidth}
+		\textbf{Work dir}
+		\begin{itemize}
+%			\item[] \texttt{/.git}
+			\item[] \texttt{/rép1}
+			\begin{itemize}
+				\item[] \texttt{/fich1}
+			\end{itemize}\vspace{-0.8ex}
+			\item[] \texttt{/fich2}
+			\item[] \texttt{/fich3}
+		\end{itemize}
+	\end{minipage}%
+	\begin{minipage}[t]{0.33 \columnwidth}
+		\textbf{Index}
+		\begin{itemize}
+			\item[] \texttt{/rép1}
+			\begin{itemize}
+				\item[] \texttt{/fich1'}
+			\end{itemize}\vspace{-0.8ex}
+			\item[] \texttt{/fich2}
+		\end{itemize}
+	\end{minipage}%
+	\begin{minipage}[t]{0.33 \columnwidth}
+		\textbf{HEAD}
+		\begin{itemize}
+			\item[] \texttt{/rép1}
+			\begin{itemize}
+				\item[] \texttt{/fich1}
+			\end{itemize}\vspace{-0.8ex}
+			\item[] \texttt{/fich2'}
+		\end{itemize}
+	\end{minipage}
+	\begin{itemize}
+		\item \emph{Index} : changements à apporter au prochain commit
+		\item \emph{HEAD} : commit d’où le work dir actuel est issu
+		\item Initialisation nouveau répertoire ? \pause Index et HEAD vide \pause
+		\item Juste après un commit ? \pause Index vide
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Préparer un commit : définitions}
+%	\small
+	\begin{minipage}[t]{0.33 \columnwidth}
+		\textbf{Work dir}
+		\begin{itemize}
+%			\item[] \texttt{/.git}
+			\item[] \texttt{/rép1}
+			\begin{itemize}
+				\item[] \texttt{/fich1}
+			\end{itemize}\vspace{-0.8ex}
+			\item[] \texttt{/fich2}
+%			\item[] \texttt{/fich3}
+		\end{itemize}
+	\end{minipage}%
+	\begin{minipage}[t]{0.33 \columnwidth}
+		\textbf{Index}
+		\begin{itemize}
+			\item[] \texttt{/rép1}
+			\begin{itemize}
+				\item[] \texttt{/fich1'}
+			\end{itemize}\vspace{-0.8ex}
+			\item[] \texttt{/fich2}
+		\end{itemize}
+	\end{minipage}%
+	\begin{minipage}[t]{0.33 \columnwidth}
+		\textbf{HEAD}
+		\begin{itemize}
+			\item[] \texttt{/rép1}
+			\begin{itemize}
+				\item[] %\texttt{/fich1}
+			\end{itemize}\vspace{-0.8ex}
+			\item[] \texttt{/fich2'}
+		\end{itemize}
+	\end{minipage}
+	\begin{block}{Définitions (étant donné un fichier)}
+	%nb on devrait peut-être appliquer modified et unmodified seulement pour les \emph{tracked}. Auquel cas on peut aussi définir :\item[\emph{modified}] [{∈} index ⇒ ≠ index] ; [{∉} index ⇒ {∈} HEAD ∧ ≠ HEAD]. Donc modified implique tracked.
+		\begin{description}[\emph{unmodified}]
+			\item[{∈} index] blob ds index, peut être ≠ WD
+			\item[∈ HEAD] blob ds HEAD, peut être ≠ WD
+			\item[\emph{untracked}] [{∉} index] et [{∉} HEAD]
+			\item[\emph{tracked}] [{∈} index] ou [{∈} HEAD] {\tiny (ou les deux)}
+			\item[\emph{modified}] [{∈} index ⇒ ≠ index] ; [{∉} index ⇒ ≠ HEAD]
+			\item[\emph{unmodified}] [{∈} index ⇒ = index] ; [{∉} index ⇒ = HEAD]
+		\end{description}
+	\end{block}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Préparer un commit : commandes}
+%	\begin{block}{Commandes}
+		\begin{itemize}\setlength{\itemindent}{-1em}
+			\item \texttt{git add fichier} : blob mis dans index (\og{}staged\fg{})
+			\item \emph{clean} WD : tous {\tiny (sauf fichiers dans gitignore)} tracked et unmodified
+			\item \texttt{git status} : liste untracked, {\tiny tracked-}modified, staged
+			\item \texttt{git status -{}-short} {\tiny (sauf merge conflict)} : idx VS HEAD ; WD VS idx.
+			\item \texttt{git diff} : WD VS index
+			\item \texttt{git diff -{}-staged} : index VS HEAD
+			\item \texttt{git commit} : commenter et expédier ! (Renvoie son id SHA-1)
+			\item \texttt{git commit -v} : voir l’index en détail
+		\end{itemize}
+%	\end{block}
+\end{frame}
+
+\section{Branches}
+\begin{frame}
+	\frametitle{Branches et HEAD}
+	\begin{itemize}
+		\item Branche : pointeur vers un commit
+		\item HEAD : pointeur vers {\tiny (typiquement)} une branche\\et un commit
+		\item Branche \og{}actuelle\fg{}\\désignée par HEAD
+	\end{itemize}
+	\begin{tikzpicture}[overlay]
+		\path (3.7cm, 0) node[/Git/commit] (c1) {98C49C};
+		\path (c1.east) ++ (\GitCommitSep, 0) node[anchor=west, /Git/commit] (c2) {34AC2} edge[->] (c1);
+		\path (c2.east) ++ (\GitCommitSep, 0) node[anchor=west, /Git/commit] (c3) {F30AB} edge[->] (c2);
+		\path (c2.north) ++ (0, 3mm) node[anchor=south, /Git/branch] (master) {master} edge[->] (c2);
+		\path (c3.north) ++ (0, 3mm) node[anchor=south, /Git/branch] (br) {br} edge[->] (c3);
+		\path (br.north) ++ (0, 3mm) node[anchor=south, /Git/head] (head) {HEAD} edge[->] (br);
+	\end{tikzpicture}
+	\vspace{3mm}
+	\begin{itemize}
+		\item commit : avance HEAD et branche actuelle
+		\item \texttt{git branch truc} : crée branche \texttt{truc}. HEAD inchangé !
+		\item \texttt{git checkout truc} : change HEAD et met à jour WD
+		\item Conseil : WD clean avant checkout !
+		\item \texttt{git log -{}-graph -{}-decorate -{}-oneline -{}-all}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Fusion de branches}
+	{
+	\centering
+	\begin{tikzpicture}
+		\path (3.7cm, 0) node[/Git/commit] (c1) {98C49C};
+		\path (c1.east) ++ (\GitCommitSep, 0) node[anchor=west, /Git/commit] (c2) {34AC2} edge[->] (c1);
+		\path (c2.east) ++ (\GitCommitSep, 4mm) node[anchor=west, /Git/commit] (c3N) {F30AB} edge[->] (c2);
+		\path (c2.east) ++ (\GitCommitSep, -4mm) node[anchor=west, /Git/commit] (c3S) {C32AC} edge[->] (c2);
+		\path (c2.north) ++ (0, 3mm) node[anchor=south, /Git/branch] (master) {master} edge[->] (c2);
+		\path (c3N.north) ++ (0, 3mm) node[anchor=south, /Git/branch] (br) {br} edge[->] (c3N);
+		\path (br.north) ++ (0, 3mm) node[anchor=south, /Git/head] (head) {HEAD} edge[->] (br);
+	\end{tikzpicture}\par
+	}
+	\begin{itemize}
+		\item \texttt{git merge autrebranche} : fusionne changements de \texttt{autrebranche} dans branche actuelle
+		\item Si \texttt{autrebranche} est en avant de l’actuelle : \og{}fast-forward\fg{}
+		\item Sinon, \og{}merge conflict\fg{} possible. Modifier les fichiers à la main et les ajouter à l’index puis commit pour créer un merge.
+		\item checkout d’un commit {\tiny (ou tag)} sans branche {\tiny (detached head state)} : lecture !
+	\end{itemize}
+\end{frame}
+
+\section{Serveurs distants}
+\begin{frame}
+	\frametitle{Serveurs distants}
+	\vspace{-1pt}
+	\begin{itemize}
+		\item Réf. distante (\og{}remote ref\fg{}) : pointeurs vers branches {\tiny et tags} sur dépots distants
+		\item \og{}Remote-tracking branch\fg{} : branche locale correspondant à une branche distante et qui connait l’état de la branche distante correspondante la dernière fois qu’on l’a vue
+		\item Remote \og{}origin\fg{} supposé configuré ici
+		\item \texttt{git branch -vv} : voir branches et correspondants distants
+		\item \texttt{git fetch} : récupère les commits distants ; met à jour (ou crée) les références distantes
+		\item \texttt{git push origin mabranche} : sinon, nouvelles branches restent locales
+		\item \texttt{git remote show origin} : voir les réf. distantes
+		\item Suivre une branche distante : checkout \texttt{origin/branche} ; créer branche locale ; \texttt{git branch -{}-set-upstream-to origin/branch}
+	\end{itemize}
+\end{frame}
+
+\section{Divers}
+\begin{frame}
+	\frametitle{Divers}
+	\vspace{-1pt}
+	\begin{itemize}
+		\item Utilisez gitignore {\tiny (\href{https://github.com/github/gitignore}{modèles})}
+		\item Créez-vous une paire clé publique / privée
+		\item Raccourcis : à éviter au début
+		\item \texttt{git init} : dépôt vide dans rép. courant (rien n’est traqué)
+		\item \texttt{git clone url} : cloner un dépôt (et non checkout !)
+		\item \texttt{git stash} : WD $←$ HEAD
+		\item \texttt{git tag -a montag} {\tiny (tag annoté, recommandé)} puis \texttt{git push origin montag}
+		\item \texttt{git config -{}-global} : écrit dans \texttt{\textasciitilde/.gitconfig}
+		\item Indiquez propriété \texttt{user.name} (et \texttt{user.email})
+		\item Déterminer des \href{https://git-scm.com/book/en/v2/Git-Tools-Revision-Selection}{révisions} {\tiny exemple : HEAD\textasciicircum 1 pour parent de HEAD}
+		\item \href{https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases}{Alias}
+		\item \href{https://git-scm.com/book/en/v2}{Documentation}
+		\item GUI pour diff : \texttt{git difftool}
+		\item GUI pour merge : \texttt{git mergetool}
+	\end{itemize}
+\end{frame}
+
+\section{Références}
+\begin{frame}
+	\frametitle{Références}
+	\begin{itemize}
+		\item \href{https://git-scm.com/downloads}{Téléchargement} officiel
+		\item \href{https://git-scm.com/book/}{Livre} Pro Git
+		\item \href{https://try.github.io/}{tryGit}
+	\end{itemize}
+\end{frame}
+
+\section{Exercices}
+\begin{frame}[allowframebreaks]
+	\small
+	\frametitle{Exercices : Git}
+	Git en local
+	\begin{itemize}
+		\item Définir globalement (au moins) \texttt{user.name}. Vérifier avec \texttt{git config -{}-list}.
+		\item Créer un répertoire projet et dedans un fichier \texttt{début.txt} contenant \texttt{"coucou"}.
+		\item Initialiser un dépôt git dans ce projet.
+		\item Placer \texttt{début.txt} dans l’index. Modifier \texttt{début.txt} pour qu’il contienne \texttt{"coucou2"}. Visualiser la différence sur ce fichier entre la version WD, index, et dépôt. Faire en sorte que le blob dans l’index contienne bien \texttt{"coucou2"}.
+		\item Effectuer un premier commit, qui contiendra uniquement \texttt{début.txt}. À l’issue de ce commit, vérifier que vous obtenez l’historique suivant.\par
+		{
+			\centering
+			\begin{tikzpicture}
+				\path node[/Git/commit] (c1) {C1};
+				\path (c1.north) ++ (0, 3mm) node[anchor=south, /Git/branch] (master) {master} edge[->] (c1);
+				\path (master.north) ++ (0, 3mm) node[anchor=south, /Git/head] (head) {HEAD} edge[->] (master);
+			\end{tikzpicture}\par
+		}
+		\item Vous avez maintenant une idée audacieuse pour résoudre un problème dans votre projet. Comme vous n’êtes pas sûr de sa pertinence, vous désirez placer vos changements dans une nouvelle branche en attendant d’y réfléchir. Créer une branche \texttt{"dev"} ; y commettre un fichier \texttt{audacieux.txt} (en plus de \texttt{début.txt}, inchangé) contenant \texttt{"approche 1"}. Votre historique doit maintenant être celui-ci (vérifier !).\par
+		{
+			\centering
+			\begin{tikzpicture}
+				\path node[/Git/commit] (c1) {C1};
+				\path (c1.north) ++ (0, 3mm) node[anchor=south, /Git/branch] (master) {master} edge[->] (c1);
+				\path (c1.east) ++ (\GitCommitSep, 0) node[anchor=west, /Git/commit] (c2) {C2} edge[->] (c1);
+				\path (c2.north) ++ (0, 3mm) node[anchor=south, /Git/branch] (dev) {dev} edge[->] (c2);
+				\path (dev.north) ++ (0, 3mm) node[anchor=south, /Git/head] (head) {HEAD} edge[->] (dev);
+			\end{tikzpicture}\par
+		}
+		\item À l’issue de ce travail harrassant, il vous vient une idée alternative. N’étant toujours pas sûr de la valeur de votre première idée (dans \texttt{dev}), vous repartirez de \texttt{master} pour l’implémenter. Depuis \texttt{master}, créer une branche \texttt{dev2}, et y commettre (en plus de \texttt{début.txt}, inchangé) un fichier \texttt{audacieux.txt} contenant \texttt{"approche alternative"}. Vérifier ensuite votre historique.\par
+		{
+			\centering
+			\begin{tikzpicture}
+				\path node[/Git/commit] (c1) {C1};
+				\path (c1.north) ++ (0, 3mm) node[anchor=south, /Git/branch] (master) {master} edge[->] (c1);
+				\path (c1.east) ++ (\GitCommitSep, 4mm) node[anchor=west, /Git/commit] (c2) {C2} edge[->] (c1);
+				\path (c2.north) ++ (0, 2mm) node[anchor=south, /Git/branch] (dev) {dev} edge[->] (c2);
+				\path (c1.east) ++ (\GitCommitSep, -4mm) node[anchor=west, /Git/commit] (c3) {C3} edge[->] (c1);
+				\path (c3.south) ++ (0, -2mm) node[anchor=north, /Git/branch] (dev2) {dev2} edge[->] (c3);
+				\path (dev2.south) ++ (0, -2mm) node[anchor=north, /Git/head] (head) {HEAD} edge[->] (dev2);
+			\end{tikzpicture}\par
+		}
+		\item À la réflexion, votre première idée est bonne. L’intégrer dans \texttt{master} pour obtenir l’historique suivant. Prédire si vous obtiendrez un fast-forward et vérifier.\par
+		{
+			\centering
+			\begin{tikzpicture}
+				\path node[/Git/commit] (c1) {C1};
+				\path (c1.east) ++ (\GitCommitSep, 4mm) node[anchor=west, /Git/commit] (c2) {C2} edge[->] (c1);
+				\path (c2.north) ++ (0, 3mm) node[anchor=south, /Git/branch] (master) {master} edge[->] (c2);
+				\path (master.west) ++ (-5mm, 0) node[anchor=east, /Git/branch] (dev) {dev} edge[->] (c2);
+				\path (c1.east) ++ (\GitCommitSep, -4mm) node[anchor=west, /Git/commit] (c3) {C3} edge[->] (c1);
+				\path (c3.south) ++ (0, -2mm) node[anchor=north, /Git/branch] (dev2) {dev2} edge[->] (c3);
+				\path (master.north) ++ (0, 2mm) node[anchor=south, /Git/head] (head) {HEAD} edge[->] (master);
+			\end{tikzpicture}\par
+		}
+		\item Tout bien réfléchi vous aimez également votre deuxième idée. L’intégrer à son tour dans \texttt{master} et obtenir cet historique. Quel problème allez-vous rencontrer, ce faisant ?\par
+		{
+			\centering
+			\begin{tikzpicture}
+				\path node[/Git/commit] (c1) {C1};
+				\path (c1.east) ++ (\GitCommitSep, 4mm) node[anchor=west, /Git/commit] (c2) {C2} edge[->] (c1);
+				\path (c1.east) ++ (\GitCommitSep, -4mm) node[anchor=west, /Git/commit] (c3) {C3} edge[->] (c1);
+				\path (c1 -| c2.east) ++ (\GitCommitSep, 0) node[anchor=west, /Git/commit] (c4) {C4} edge[->] (c2) edge[->] (c3);
+				\path (c4.north) ++ (0, 3mm) node[anchor=south, /Git/branch] (master) {master} edge[->] (c4);
+				\path (master.north) ++ (0, 2mm) node[anchor=south, /Git/head] (head) {HEAD} edge[->] (master);
+			\end{tikzpicture}\par
+		}
+		\item Imaginons qu’on aurait d’abord intégré \texttt{dev2} à \texttt{master} (ceci aurait-il produit un fast-forward ?) puis \texttt{dev} au résultat. Quel aurait été le résultat final ?
+	\end{itemize}
+	\framebreak
+	Git distant
+	\begin{itemize}
+		\item Cloner votre dépôt central pour le projet de ce cours (ou votre dépôt local).
+		\item Le clonage vous a créé un pointeur vers un serveur distant \texttt{origin}, et une \og{}remote-tracking branch\fg{} \texttt{master}. Voir où pointent \texttt{origin}, \texttt{master} et \texttt{origin/master}.
+		\item Ajouter un fichier \texttt{"macontrib.txt"} contenant votre prénom à votre index local. Commettre dans votre dépôt git local. L’envoyer au dépôt distant. Vérifier (via l’interface web) qu’il s’y trouve et que le commit est associé à votre nom.
+		\item Quand un collègue a fait de même, vous pouvez rapatrier sa modification en local. Après l’avoir fait, prédire où vont pointer \texttt{master} et \texttt{origin/master} et vérifier.
+		\item Si un collègue a publié sa modification avant la vôtre, quel va être votre problème ? Comment le résoudre ? Si vous êtes le premier à publier la modification, allez aider vos collègues à publier la leur !
+	\end{itemize}
+\end{frame}
+
+
+\appendix
+\AtBeginSection{
+}
+
+\section{Licence}
+\begin{frame}
+	\frametitle{Licence}
+	Cette présentation, et le code LaTeX associé, sont sous \href{http://opensource.org/licenses/MIT}{licence MIT}. Vous êtes libres de réutiliser des éléments de cette présentation, sous réserve de citer l’auteur.
+	
+	Le travail réutilisé est à attribuer à \href{http://www.lamsade.dauphine.fr/~ocailloux/}{Olivier Cailloux}, Université Paris-Dauphine.
+	
+	\small{(Ceci ne couvre pas les images incluses dans ce document, puisque je n’en suis généralement pas l’auteur.)}
+\end{frame}
+\end{document}
+
+\begin{frame}
+	\frametitle{}
+	\begin{itemize}
+		\item 
+	\end{itemize}
+	\begin{block}{}
+		
+	\end{block}
+\end{frame}
+
+\section{Bibliographie}
+\begin{frame}[allowframebreaks]
+	\frametitle{Bibliographie}
+	\def\newblock{\hskip .11em plus .33em minus .07em}
+% 	\bibliography{zotero}
+\end{frame}
+
+\section{Autres}
+\begin{frame}
+	\frametitle{}
+	\begin{itemize}
+		\item 
+	\end{itemize}
+	\begin{block}{}
+		
+	\end{block}
+\end{frame}
+\end{document}

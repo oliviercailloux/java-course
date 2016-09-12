@@ -1,8 +1,5 @@
 \RequirePackage[l2tabu, orthodox]{nag}
 \RequirePackage{silence}
-\WarningFilter{nag}{There is no environment ``centering'' }%nag complains because beamer titlepage uses a centering environment
-\WarningFilter{nag}{1 complaints in total}
-\WarningFilter{ifpdf}{Someone has redefined \pdfoutput}
 \WarningFilter{fmtcount}{\ordinal already defined use \FCordinal instead}
 \documentclass[english, french]{beamer}
 \input{preamble/packages}
@@ -11,14 +8,17 @@
 \input{preamble/redac}
 \input{preamble/draw}
 \input{preamble/acronyms}
+\input{preamble/uml}
 
-\title{Conception d’applications internet}
-\subtitle{CDI}
-\subject{Java EE}
-\keywords{injection}
+\setbeamertemplate{headline}[singleline]
+
+\title{CDI}
+\subtitle{}
+\subject{Dependency injection}
+\keywords{Java EE}
 \author{Olivier Cailloux}
 \institute[LAMSADE]{LAMSADE, Université Paris-Dauphine}
-\date{}
+\date{Version du \today}
 
 \begin{document}
 \bibliographystyle{apalike}
@@ -28,7 +28,7 @@
 		\path (current page.south west) node[anchor=south west, inner sep=0] {
 			\includegraphics[height=1cm]{LAMSADE95.jpg}
 		};
-		\path (current page.south) ++ (2mm, 1mm) node[anchor=south, inner sep=0] {
+		\path (current page.south) ++ (0, 1mm) node[anchor=south, inner sep=0] {
 			\includegraphics[height=9mm]{Dauphine.jpg}
 		};
 		\path (current page.south east) node[anchor=south east, inner sep=0] {
@@ -39,85 +39,7 @@
 \end{frame}
 \addtocounter{framenumber}{-1}
 
-\section[Dernier épisode]{Durant le dernier épisode…}
-\subsection{Était à faire}
-\begin{frame}
-	\frametitle{Était à faire}
-	Exercice à effectuer \emph{avant} le 25 janvier, par chaque membre de chaque équipe.
-	\begin{itemize}
-		\item[+\footnote{Le + indique que cet aspect intervient dans la note}] Un servlet qui applique une transformation quelconque sur un attribut d’un ou plusieurs objets stocké dans votre BD. Cf. Exercices.
-	\end{itemize}
-	Exercices :
-	\begin{itemize}
-		\item Programmer une méthode qui transforme un attribut d’un objet. Par exemple, elle met le nom en majuscule s’il ne l’était pas (obligation d’utiliser Java, pas SQL : supposez que la transformation est trop complexe pour être exprimée en SQL).
-		\item[+] Permettre l’application de cette méthode via un servlet. Votre servlet ne doit pas nécessairement accepter de paramètres. Attention à l’atomicité de la transaction !
-	\end{itemize}
-\end{frame}
-
-\subsection{Dépouillement}
-\begin{frame}
-	\frametitle{Dépouillement}
-	\begin{itemize}
-		\item En résumé : détails demandés ; meilleur lien exercices et projet
-		\item En contrepartie : couverture restreinte
-	\end{itemize}
-\end{frame}
-
-\section[Plan]{Plan du reste du cours}
-\begin{frame}
-	\frametitle{Plan du reste du cours}
-	\begin{itemize}
-		\item Cours 5, 6 : CDI (et retour sur EJBs)
-		\item Cours 7, 8 : JSF
-		\item Cours 8 : présentation des projets + vote meilleur projet
-	\end{itemize}
-	Également disponible sur MyCourse : JPA ; JAX-RS (services web REST)
-\end{frame}
-
-\section{Évaluation}
-\subsection{Modifications}
-\begin{frame}
-	\frametitle{Modification évaluation}
-	\begin{itemize}
-		\item Fin des exercices notés
-		\item Note actuelle, si positive, comptera dans pondération individuelle
-		\item Note concept évaluée selon code du projet (sauf demande {≠})
-	\end{itemize}
-\end{frame}
-
-\subsection{Projet}
-\begin{frame}
-	\frametitle{Note projet globale}
-	Technologies vues : \{EJB, Servlet, JDBC ou JPA, CDI, JSF\}
-	\begin{block}{Note projet globale}
-		\begin{itemize}
-			\item Exactitude ; maintenabilité du code ; fonctionnalités
-			\item Utilisation appropriée des technologies vues
-			\item Suivre recommandations données au cours (ou en discuter)
-			\item Si divergences (par ex. JSP au lieu de JSF) : me demander
-		\end{itemize}
-	\end{block}
-\end{frame}
-
-\begin{frame}
-	\frametitle{Pondération individuelle}
-	\begin{block}{Pondération individuelle}
-		\begin{itemize}
-			\item Éviter la spécialisation : chaque membre doit utiliser directement au moins trois techno.\ vues, auteur ou reviewer
-			\item Pondération si déséquilibre de qual/quantité de contribution
-			\item Pair programming apprécié
-			\item Contribution significative en tant qu’auteur demandée
-		\end{itemize}
-	\end{block}
-	Chaque commit doit indiquer clairement l’auteur et éventuellement le reviewer
-	\begin{itemize}
-		\item Utilisez \texttt{user.name}, \alert{un seul nom}, \alert{gardez le même nom}
-		\item Indiquez dans le commentaire du commit le binôme éventuel : \og\alert{reviewer: Machin}\fg avec Machin le user.name du binôme
-	\end{itemize}
-\end{frame}
-
-\section{CDI}
-\subsection{Utilité de l’injection}
+\section{Utilité de l’injection}
 \begin{frame}
 	\frametitle{Utilité de l’injection}
 	CDI ? \pause Context Dependency \emph{Injection}\pause
@@ -134,7 +56,7 @@
 	\end{itemize}
 \end{frame}
 
-\subsection{Vue d’ensemble}
+\section{Vue d’ensemble}
 \begin{frame}
 	\frametitle{Vue d’ensemble}
 	\begin{itemize}
@@ -156,7 +78,7 @@
 	\end{itemize}
 \end{frame}
 
-\subsection{Scopes}
+\section{Scopes}
 \begin{frame}
 	\frametitle{Scopes}
 	\begin{itemize}
@@ -196,7 +118,7 @@
 	\end{itemize}
 \end{frame}
 
-\subsection{Divers}
+\section{Divers}
 \begin{frame}
 	\frametitle{Désambiguation et production}
 	Comment préciser quelle classe injecter ?
@@ -230,7 +152,7 @@
 	\end{block}
 \end{frame}
 
-\subsection{Références}
+\section{Références}
 \begin{frame}
 	\frametitle{Références}
 	\begin{itemize}
@@ -260,18 +182,15 @@
 \end{frame}
 
 \appendix
-\AtBeginSection{
-}
 \section{Licence}
 \begin{frame}
 	\frametitle{Licence}
 	Cette présentation, et le code LaTeX associé, sont sous \href{http://opensource.org/licenses/MIT}{licence MIT}. Vous êtes libres de réutiliser des éléments de cette présentation, sous réserve de citer l’auteur.
 	
 	Le travail réutilisé est à attribuer à \href{http://www.lamsade.dauphine.fr/~ocailloux/}{Olivier Cailloux}, Université Paris-Dauphine.
-	
-	\small{(Ceci ne couvre pas les images incluses dans ce document, puisque je n’en suis généralement pas l’auteur.)}
 \end{frame}
 \end{document}
+
 \begin{frame}
 	\frametitle{}
 	\begin{itemize}

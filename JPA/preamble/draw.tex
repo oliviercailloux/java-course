@@ -47,12 +47,9 @@
 	matrix, row sep=-\pgflinewidth, column sep=-\pgflinewidth, nodes={shape=rectangle, draw=black, inner sep=0mm, text depth=0.5ex, text height=1em, minimum height=\MCDSEvalRowHeight, minimum width=12mm}, nodes in empty cells, matrix of nodes, inner sep=0mm, outer sep=0mm, row 1/.style={nodes={draw=none, minimum height=0em, text height=, inner ysep=1mm}}
 }}
 
-% Beliefs
-\tikzset{/Beliefs/D/S/attacker/.style={
-	shape=rectangle, draw, minimum size=8mm
-}}
-\tikzset{/Beliefs/D/S/supporter/.style={
-	shape=circle, draw
+% GUI
+\tikzset{/GUI/button/.style={
+	rectangle, very thick, rounded corners, draw=black, fill=black!40%, top color=black!70, bottom color=white
 }}
 
 % Logger objects
@@ -64,6 +61,14 @@
 }}
 \tikzset{/logger/helper line/.style={
 	<->, draw, dotted
+}}
+
+% Beliefs
+\tikzset{/Beliefs/D/S/attacker/.style={
+	shape=rectangle, draw, minimum size=8mm
+}}
+\tikzset{/Beliefs/D/S/supporter/.style={
+	shape=circle, draw
 }}
 
 \newcommand{\tikzmark}[1]{%

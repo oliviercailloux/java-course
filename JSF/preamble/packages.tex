@@ -21,7 +21,7 @@
 
 \usepackage[super]{nth}
 \usepackage{listings} %typeset source code listings
-	\lstset{language=XML, tabsize=2, captionpos=b, basicstyle=\NoAutoSpacing, keywordstyle=\fontspec{Latin Modern Mono Light}\textbf, emph={project, dependency, modelVersion, groupId, artifactId, version, scope}, emphstyle=\fontspec{Latin Modern Mono Light}\textbf, language=XML, basicstyle=\small\NoAutoSpacing\ttfamily, aboveskip=0pt, belowskip=0pt, showstringspaces=false}
+	\lstset{language=XML, tabsize=2, captionpos=b, basicstyle=\NoAutoSpacing, keywordstyle=\fontspec{Latin Modern Mono Light}\textbf, emph={project, dependency, modelVersion, groupId, artifactId, version, scope}, emphstyle=\fontspec{Latin Modern Mono Light}\textbf, basicstyle=\small\NoAutoSpacing\ttfamily, aboveskip=0pt, belowskip=0pt, showstringspaces=false}
 \usepackage[nolist,smaller,printonlyused]{acronym}%,smaller option produces warnings from relsize in some cases, it seems.
 \usepackage[nodayofweek]{datetime}%must be loaded after the babel package
 \usepackage{xspace}
@@ -32,6 +32,7 @@
 %pdfborder (0 0 1, set to 0 0 0 if colorlinks): width of PDF link border
 %hidelinks
 \hypersetup{breaklinks, bookmarksopen, hyperfigures=true}
+% \hypersetup{breaklinks,bookmarksopen,colorlinks=true,urlcolor=blue,linkcolor=,hyperfigures=true}
 % hyperref doc says: Package bookmark replaces hyperref’s bookmark organization by a new algorithm (...) Therefore I recommend using this package.
 \usepackage{bookmark}
 
@@ -42,7 +43,7 @@
 % \makeatother
 \usepackage{ragged2e} %new com­mands \Cen­ter­ing, \RaggedLeft, and \RaggedRight and new en­vi­ron­ments Cen­ter, FlushLeft, and FlushRight, which set ragged text and are eas­ily con­fig­urable to al­low hy­phen­ation (the cor­re­spond­ing com­mands in LaTeX, all of whose names are lower-case, pre­vent hy­phen­ation al­to­gether). 
 \usepackage{siunitx} %[expproduct=tighttimes, decimalsymbol=comma]
-\sisetup{detect-all}% to detect e.g. when in math mode (use a math font)
+\sisetup{detect-all, locale = FR, strict}% to detect e.g. when in math mode (use a math font) - check whether this makes sense with strict
 \usepackage{braket} %for \Set
 \usepackage{natbib}
 
@@ -73,6 +74,7 @@
 \setmathfont[range={\mathcal,\mathbfcal},StylisticSet=1]{XITS Math}
 \setTransitionsFor{MathematicalOperators}{\begingroup\xitsfamily}{\endgroup}
 \setTransitionsFor{Arrows}{\begingroup\xitsfamily}{\endgroup}
+\setTransitionsFor{Dingbats}{\begingroup\xitsfamily}{\endgroup}
 
 \usepackage{cleveref}% cleveref should go "laster" than hyperref
 %GRAPHICS
@@ -107,7 +109,6 @@
 \usepackage{xltxtra} %somebody said that this is loaded by fontspec, but does not seem correct: if not loaded explicitly, does not appear in the log and \showhyphens is not corrected.
 
 %Beamer-specific
-%ADD
 \usepackage{appendixnumberbeamer}
 %\setbeamersize{text margin left=0.1cm, text margin right=0.1cm} 
 \setbeamertemplate{navigation symbols}{}
@@ -115,4 +116,5 @@
 \usepackage{preamble/beamerthemeParisFrance}
 \usefonttheme{professionalfonts}
 \input{preamble/beamer-patch.tex}
+\setcounter{tocdepth}{10}
 

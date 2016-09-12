@@ -29,12 +29,19 @@
 
 \hypersetup{colorlinks=true, linkcolor=blue!70!red, urlcolor=blue}
 
-\setbeamertemplate{headline}{%
-\begin{beamercolorbox}[ht=2.6ex,dp=1ex]{section in head/foot}%2.5 creates plenty of compilation errors
-  \insertsectionnavigationhorizontal{\paperwidth}{}{}
+\defbeamertemplate{headline}{singleline}{%
+\hypersetup{linkcolor=.}%
+\begin{beamercolorbox}[ht=2.6ex,dp=1ex]{section in head/foot}%
+  \insertsectionnavigationhorizontal{\paperwidth}{}{}%
 \end{beamercolorbox}%
-\begin{beamercolorbox}[ht=2.5ex,dp=1ex]{subsection in head/foot}
-  \insertsubsectionnavigationhorizontal{\paperwidth}{}{}
+}
+\defbeamertemplate*{headline}{doubleline}{%
+\hypersetup{linkcolor=.}%
+\begin{beamercolorbox}[ht=2.5ex,dp=1ex]{section in head/foot}%
+  \insertsectionnavigationhorizontal{\paperwidth}{}{}%
+\end{beamercolorbox}%
+\begin{beamercolorbox}[ht=2.5ex,dp=1ex]{subsection in head/foot}%
+  \insertsubsectionnavigationhorizontal{\paperwidth}{}{}%
 \end{beamercolorbox}
 }
 
@@ -74,7 +81,6 @@
 	}
 }
 %avoids coloring the links according to hyperref linkcolor (which would bypass beamer’s color system); see http://tex.stackexchange.com/questions/203056/changing-url-colors-in-headline-footline-of-beamer-template
-\addtobeamertemplate{headline}{\hypersetup{linkcolor=.}}{}
 \addtobeamertemplate{footline}{\hypersetup{linkcolor=.}}{}
 
 \mode<all>

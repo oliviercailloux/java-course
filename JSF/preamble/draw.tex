@@ -52,6 +52,17 @@
 	rectangle, very thick, rounded corners, draw=black, fill=black!40%, top color=black!70, bottom color=white
 }}
 
+% Logger objects
+\tikzset{/logger/main/.style={
+	shape=rectangle, draw=black, inner sep=1ex, minimum height=7mm
+}}
+\tikzset{/logger/helper/.style={
+	shape=rectangle, draw=black, dashed, minimum height=7mm
+}}
+\tikzset{/logger/helper line/.style={
+	<->, draw, dotted
+}}
+
 % Beliefs
 \tikzset{/Beliefs/D/S/attacker/.style={
 	shape=rectangle, draw, minimum size=8mm

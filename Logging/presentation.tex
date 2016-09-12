@@ -1,0 +1,289 @@
+\RequirePackage[l2tabu, orthodox]{nag}
+\RequirePackage{silence}
+\WarningFilter{fmtcount}{\ordinal already defined use \FCordinal instead}
+\documentclass[english, french]{beamer}
+\input{preamble/packages}
+\input{preamble/math_basics}
+\input{preamble/math_mine}
+\input{preamble/redac}
+\input{preamble/draw}
+\input{preamble/acronyms}
+\input{preamble/uml}
+
+\setbeamertemplate{headline}[singleline]
+
+\title{Java Utils Logging}
+\subtitle{JUL}
+\subject{Logging in Java}
+\keywords{JUL}
+\author{Olivier Cailloux}
+\institute[LAMSADE]{LAMSADE, Université Paris-Dauphine}
+\date{Version du \today}
+
+\begin{document}
+\bibliographystyle{apalike}
+
+\begin{frame}[plain]
+	\tikz[remember picture,overlay]{
+		\path (current page.south west) node[anchor=south west, inner sep=0] {
+			\includegraphics[height=1cm]{LAMSADE95.jpg}
+		};
+		\path (current page.south) ++ (0, 1mm) node[anchor=south, inner sep=0] {
+			\includegraphics[height=9mm]{Dauphine.jpg}
+		};
+		\path (current page.south east) node[anchor=south east, inner sep=0] {
+			\includegraphics[height=1cm]{PSL.png}
+		};
+	}
+   \titlepage
+\end{frame}
+\addtocounter{framenumber}{-1}
+
+\section{Introduction}
+\begin{frame}
+	\frametitle{Utilité du logging}
+	Logging : pour quoi faire ? \pause
+	\begin{itemize}
+		\item Débug pour soi-même
+		\item Écriture systématique de ce qui se passe : souhait de conserver les informations dans le code
+		\item Tout en pouvant désactiver la sortie à la demande
+		\item Gain de temps possible par rapport à points d’arrêt
+		\item Débug chez le client
+		\item Visualisation des opérations des bibliothèques utilisées
+		\item Granularité fine : seulement tel type de message
+		\item Exemple : voir les commandes SQL envoyées par fournisseur de persistance
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Moteurs de logging}
+	\begin{itemize}
+		\item Ici : utilisation de Java util logging (JUL)
+		\item Partie de Java SE
+		\item En Java SE comme en Java EE
+		\item Autres moteurs populaires de logging en Java : SLF4J, Commons logging {\tiny voir \hyperlink{Bataille}{annexe} pour brève justification du choix}
+		\item Interfaçage {\tiny généralement presque} transparent
+		\item Exemple : Hibernate utilise JBoss Logging, mais fonctionne avec logging standard
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Vue d’ensemble}
+	\begin{itemize}
+		\item Développeur utilise \jseref{java.util.logging/Logger}s pour logger
+		\item Relation parent – enfant d’après noms des loggers
+		\item Loggers passent les logs {\tiny sous forme de \jseref{java.util.logging/LogRecord}s} à \jseref{java.util.logging/Handler}
+		\item Passés aussi à logger parent
+		\item \texttt{Handler}s publient (avec \jseref{java.util.logging/Formatter}s)
+		\item Ou \texttt{Handler} fait suivre à autre \texttt{Handler}
+		\item \texttt{Logger}s et \texttt{Handler}s utilisent log levels et filtres
+	\end{itemize}
+	\begin{tikzpicture}
+		\path node[/logger/main] (logger) {logger};
+		\path (logger.east) ++ (1cm, 0) node[/logger/main, anchor=west] (handler) {handler};
+		\path[->, draw] (logger) -- (handler);
+		\path (handler.east) ++ (1cm, 0) node[/logger/main, anchor=west] (handler2) {handler2};
+		\path[->, draw] (handler) -- (handler2);
+		\path (handler2.east) ++ (1cm, 0) node[/logger/main, anchor=west] (out) {monde extérieur};
+		\path[->, draw] (handler2) -- (out);
+		\path (logger.north) ++ (0, 3mm) node[/logger/main, anchor=south] (logger parent) {logger parent};
+		\path[->, draw] (logger) -- (logger parent);
+		\path (handler2.south) ++(3mm, -6mm) node[/logger/helper, anchor=north west] (formatter) {formatter};
+		\path[/logger/helper line] (formatter) -- (handler2);
+		\path (handler2.south) ++ (-3mm, -6mm) node[/logger/helper, anchor=north east] (filterh2) {filtre handler2};
+		\path[/logger/helper line] (filterh2) -- (handler2);
+		\path (logger.south) ++ (0, -6mm) node[/logger/helper, anchor=north] (filterl) {filtre logger};
+		\path[/logger/helper line] (filterl) -- (logger);
+	\end{tikzpicture}
+\end{frame}
+
+\section{Loggers}
+\begin{frame}
+	\frametitle{Hiérarchie}
+	\begin{itemize}
+		\item Root logger nommé ""
+		\item Hiérarchie suit typiquement le nom des packages
+		\item Recommandation : nommer le logger d’une classe selon le nom de la classe
+	\end{itemize}
+	\begin{tikzpicture}
+		\path[level distance=1.2cm, level 2/.style={sibling distance=5cm}, level 3/.style={sibling distance=3.2cm}] node {""}
+			child {
+				node {"app"}
+					child {
+						node {"app.pack1"}
+							child {
+								node {"app.pack1.MyClass"} 
+							}
+					}
+					child {
+						node {"app.pack2"} 
+							child {
+								node {"app.pack2.Class2"} 
+							}
+							child {
+								node {"app.pack2.Class3"} 
+							}
+					}
+			}
+		;
+	\end{tikzpicture}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Obtention d’un \texttt{Logger}}
+	\begin{itemize}
+		\item Recommandation : \texttt{Logger} pour une classe stocké dans champ \texttt{private static Logger logger}
+		\item Obtenir logger d’après nom avec \texttt{Logger.getLogger(String)}
+		\item Nom : \texttt{MyClass.\href{https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html}{class}.getCanonicalName())}
+		\item String renvoyé ? \pause "app.pack1.MyClass" \pause
+		\item Avantage par rapport à  \texttt{Logger.getLogger("app.pack1.MyClass")} ? \pause Refactoring : nom lié explicitement à la classe \pause
+	\end{itemize}
+	\begin{lstlisting}
+private static Logger logger = Logger.getLogger(
+    MyClass.class.getCanonicalName());
+	\end{lstlisting}
+\end{frame}
+
+\section{Mise en œuvre}
+\begin{frame}
+	\frametitle{Loggons}
+	\begin{itemize}
+		\item Recommandation : se concentrer sur 3 niveaux de log {\tiny (parmi \href{https://docs.oracle.com/javase/8/docs/api/java/util/logging/Level.html}{sept})}
+		\item SEVERE (erreurs), INFO, FINE (debug fin)
+		\item \texttt{logger.info(String)}
+		\item \texttt{logger.log(Level, String, Throwable)}
+		\item \texttt{logger.log(Level, String, Object[])}
+		\item Ne pas logger une exception si elle est relancée (pourquoi ? \pause sinon, double log !)
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Configuration}
+	\begin{itemize}
+		\item \jseref{java.util.logging/LogManager} chargé de la configuration
+		\item \texttt{LogManager} est singleton
+		\item Lit fichier de configuration au démarrage {\tiny ou utilise classe spéciale}
+		\item D’après propriété système \texttt{java.util.logging.config.file}
+		\item Format standard fichier de propriétés java {\tiny (\jseref{java.util/Properties})}
+		\item Sinon, configuration par défaut {\tiny fichier \texttt{lib/logging.properties} installé avec Java}
+		\item Aussi possible configurer via API de \texttt{LogManager}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Fichier de configuration}
+	Fichier de configuration contient des paires \texttt{prop = valeur}.\\
+	Propriétés :
+	\begin{description}[monlogger.useParentHandlers]
+		\item[monlogger.level] Niveau de log de monlogger et ses enfants (cf. \jseref{java.util.logging/Level})
+		\item[monlogger.handlers] Liste de classes \texttt{Handler}s pour monlogger
+		\item[handlers] Liste de classes \texttt{Handler}s pour root logger
+		\item[monlogger.useParentHandlers] Bool, indique s’il faut faire suivre le message aux parents
+		\item[HandlerClass.level] Niveau de log de HandlerClass
+		\item[HandlerClass.prop] Autre propriété de HandlerClass
+	\end{description}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Handlers et formatters inclus}
+	Handlers inclus :
+	\begin{description}[\jseref{java.util.logging/ConsoleHandler}]
+		\item[\jseref{java.util.logging/StreamHandler}] Écrit dans un OutputStream
+		\item[\jseref{java.util.logging/ConsoleHandler}] Écrit dans \texttt{System.err}
+		\item[\jseref{java.util.logging/FileHandler}] Écrit dans fichiers
+		\item[\jseref{java.util.logging/SocketHandler}] Écrit sur ports TCP
+		\item[\jseref{java.util.logging/MemoryHandler}] Enregistre en mémoire
+	\end{description}
+	Formatters inclus :
+	\begin{description}[\jseref{java.util.logging/SimpleFormatter}]
+		\item[\jseref{java.util.logging/SimpleFormatter}]
+		\item[\jseref{java.util.logging/XMLFormatter}]
+	\end{description}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Configuration : recommandations}
+	\begin{itemize}
+		\item Indiquer configuration dans un fichier \texttt{logging.properties}
+		\item Livrer ce fichier avec l’application {\tiny (dans classpath : requiert un chargement adapté)}
+		\item Permet à l’utilisateur de changer les options de log au besoin
+		\item Indiquer à la JVM le fichier de configuration avec option \texttt{-Dprop=value}
+		\item Changer le niveau de log de certains loggers en fonction intérêt du développeur
+	\end{itemize}
+	\begin{block}{Option JVM}
+		\begin{itemize}
+			\item Démarrer avec : {\small\texttt{"-Djava.util.logging.config.file=logging.properties"}}
+			\item Dans eclipse : \texttt{Preferences / Java / Installed JREs / Edit / Default VM arguments}\vspace{-1pt}
+		\end{itemize}
+	\end{block}
+	Exemple de configuration \href{https://github.com/oliviercailloux/jee/blob/master/Sample/logging.properties}{ici}
+\end{frame}
+
+\section{Références}
+\begin{frame}
+	\frametitle{Références}
+	\begin{itemize}
+		\item \href{https://docs.oracle.com/javase/8/docs/technotes/guides/logging/overview.html}{Guide} Oracle
+	\end{itemize}
+\end{frame}
+
+\appendix
+\section{SLF4J – JUL}
+\begin{frame}[label = Bataille]
+	\frametitle{SLF4J – JUL}
+	\begin{itemize}
+		\item SLF4J souvent plébiscité sur le web comparé à JUL (\href{http://stackoverflow.com/questions/11359187/why-not-use-java-util-logging}{SO})
+		\item Options toutes deux raisonnables, mais pour ce cours il fallait faire un choix : pourquoi JUL ?
+		\item Favoriser les standards
+		\item Fonctionne sans configuration dans environnement Java EE
+		\item JUL \emph{semble} aussi populaire {\tiny d’après une estimation \emph{très} hasardeuse}
+		\item On peut intégrer certains avantages de SLF4J \href{http://www.slf4j.org/legacy.html\#jul-to-slf4j}{après coup} {\tiny n’évite sans-doute pas une perte de performance, mais vraisemblablement sans importance}
+	\end{itemize}
+	\begin{block}{Popularité}
+		\sisetup{round-mode=figures, round-precision=2, scientific-notation = engineering}
+		Nombre de correspondances dans codes sur GitHub
+		\begin{description}[SLF4J]
+			\item[\href{https://github.com/search?l=java&q="org.slf4j"&type=Code}{SLF4J}] \num{2 003 451} {\tiny Ou \href{https://github.com/search?l=java&q="org.slf4j.Logger"&type=Code}{org.slf4j.Logger} : \num{1 963 334}}
+			\item[\href{https://github.com/search?l=java&q="java.util.logging"&type=Code}{JUL}] \num{2 028 941} {\tiny Ou \href{https://github.com/search?l=java&q="java.util.logging.Logger"&type=Code}{java.util.logging.Logger} : \num{1 683 302}}
+		\end{description}
+		{\tiny Mais il vaudrait mieux comparer le nombre de (gros) projets (récents) qui utilisent chaque moteur…}
+	\end{block}
+\end{frame}
+
+\section{Licence}
+\begin{frame}
+	\frametitle{Licence}
+	Cette présentation, et le code LaTeX associé, sont sous \href{http://opensource.org/licenses/MIT}{licence MIT}. Vous êtes libres de réutiliser des éléments de cette présentation, sous réserve de citer l’auteur.
+	
+	Le travail réutilisé est à attribuer à \href{http://www.lamsade.dauphine.fr/~ocailloux/}{Olivier Cailloux}, Université Paris-Dauphine.
+\end{frame}
+\end{document}
+
+\begin{frame}
+	\frametitle{}
+	\begin{itemize}
+		\item 
+	\end{itemize}
+	\begin{block}{}
+		
+	\end{block}
+\end{frame}
+
+\section{Bibliographie}
+\begin{frame}[allowframebreaks]
+	\frametitle{Bibliographie}
+	\def\newblock{\hskip .11em plus .33em minus .07em}
+% 	\bibliography{zotero}
+\end{frame}
+
+\section{Autres}
+\begin{frame}
+	\frametitle{}
+	\begin{itemize}
+		\item 
+	\end{itemize}
+	\begin{block}{}
+		
+	\end{block}
+\end{frame}
+\end{document}

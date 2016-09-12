@@ -1,0 +1,330 @@
+\RequirePackage[l2tabu, orthodox]{nag}
+\RequirePackage{silence}
+\WarningFilter{fmtcount}{\ordinal already defined use \FCordinal instead}
+\documentclass[english, french]{beamer}
+\input{preamble/packages}
+\input{preamble/math_basics}
+\input{preamble/math_mine}
+\input{preamble/redac}
+\input{preamble/draw}
+\input{preamble/acronyms}
+\input{preamble/uml}
+
+\setbeamertemplate{headline}[singleline]
+
+\title{Maven}
+\subject{Maven}
+\keywords{Java SE, Java EE}
+\author{Olivier Cailloux}
+\institute[LAMSADE]{LAMSADE, Université Paris-Dauphine}
+\date{Version du \today}
+
+\begin{document}
+\bibliographystyle{apalike}
+
+\begin{frame}[plain]
+	\tikz[remember picture,overlay]{
+		\path (current page.south west) node[anchor=south west, inner sep=0] {
+			\includegraphics[height=1cm]{LAMSADE95.jpg}
+		};
+		\path (current page.south) ++ (0, 1mm) node[anchor=south, inner sep=0] {
+			\includegraphics[height=9mm]{Dauphine.jpg}
+		};
+		\path (current page.south east) node[anchor=south east, inner sep=0] {
+			\includegraphics[height=1cm]{PSL.png}
+		};
+	}
+   \titlepage
+\end{frame}
+\addtocounter{framenumber}{-1}
+
+\section{Présentation}
+\begin{frame}
+	\frametitle{Présentation}
+	\begin{itemize}
+		\item Apache Maven
+		\item Outil de gestion de projet
+		\item Principalement gestion de dépendances
+		\item Description de votre projet via POM (Project Object Model)
+		\item Convention over configuration : peu de configuration grâce aux valeurs par défaut
+		\item Dépôt central avec publications open source
+		\item Fortement basé sur plugins
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Le POM}
+	\begin{itemize}
+		\item Fichier XML
+		\item Décrit un projet ou module et comment le construire (\emph{build})
+		\item Un projet \emph{peut} être composé de modules
+	\end{itemize}
+	\begin{block}{Exemple de POM}
+		\begin{lstlisting}
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+ xmlns:xsi="…"  xsi:schemaLocation="…">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>myGroupId</groupId>
+  <artifactId>myArtifactId</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+</project>
+		\end{lstlisting}
+	\end{block}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Structure du projet}
+	Structure déterminée {\tiny normalement} par \emph{conventions}
+	\vfill
+	\begin{minipage}[t]{3.5cm}
+%		\rule{\columnwidth}{1cm}
+		{\centering Arborescence de base\par}
+		\vspace{1ex}
+		\texttt{pom.xml}\\
+		\texttt{/src}
+		\begin{itemize}
+			\item[] \texttt{/main}
+			\begin{itemize}
+				\item[] \texttt{/java}
+			\end{itemize}\vspace{-0.8ex}
+			\begin{itemize}
+				\item[] \texttt{/resources}
+			\end{itemize}\vspace{-0.8ex}
+			\item[] \texttt{/test}
+			\begin{itemize}
+				\item[] \texttt{/java}
+			\end{itemize}\vspace{-0.8ex}
+			\begin{itemize}
+				\item[] \texttt{/resources}
+			\end{itemize}\vspace{-0.8ex}
+		\end{itemize}
+	\end{minipage}\hfill%
+	\begin{minipage}[t]{6.5cm}
+		{\centering Répertoires de base\par}
+		\begin{description}[\texttt{…/resources}]
+			\item[\texttt{/src/main/…}] fichiers code et ressources \og{}normales\fg{}
+			\item[\texttt{/src/test/…}] fichiers code et ressources pour tests
+			\item[\texttt{…/java}] code java
+			\item[\texttt{…/resources}] images, etc., devant être dans classpath
+		\end{description}
+	\end{minipage}
+\end{frame}
+
+\begin{frame}{Accès aux ressources en Java}
+	Rappel : accès aux ressources en Java (indépendant de Maven)
+	\begin{exampleblock}{Exemple d’accès aux ressources}
+		\begin{itemize}
+			\item \texttt{MyClass} dans package \texttt{com.mypkg}
+			\item \texttt{URL url = MyClass.class.\href{https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html\#getResource-java.lang.String-}{getResource}("ploum.txt")}
+			\item \texttt{url} désigne la ressource de chemin \texttt{/com/mypkg/ploum.txt}
+			\item Ensuite : \texttt{url.openStream()} (ou toute autre exploitation)
+		\end{itemize}
+	\end{exampleblock}
+	\begin{block}{Positionnement de ressources avec Maven}
+		Placer le fichier dans \texttt{/src/main/resources/com/mypkg/ploum.txt}
+	\end{block}
+\end{frame}
+
+\section{Cycle de vie}
+\begin{frame}
+	\frametitle{Cycles de vie Maven}
+	\begin{itemize}
+		\item Maven utilise des cycles de vie
+		\item Cycles embarqués : default ; clean ; site
+		\item Cycle : ensemble ordonné de \emph{phases}
+		\item Cycle “clean” contient {\tiny essentiellement} phase “clean”
+		\item Cycle “site” contient {\tiny essentiellement} phase “site”
+		\item Lors exécution de Maven, préciser une phase (Maven en déduit le cycle)
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Cycle “default”}
+	Phases {\tiny (non exhaustif)} dans cycle “default” :
+	\begin{description}[process-resources]
+		\item[validate] valide informations du projet
+		\item[process-resources] copie vers destination
+		\item[compile] compilation du code source
+		\item[test] lancement des tests
+		\item[package] création d’un paquet
+		\item[integration-test] tests d’intégration
+		\item[verify] vérification de la validité du paquet
+		\item[install] installation en local
+		\item[deploy] déploiement dans dépôt configuré
+	\end{description}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Phases}
+	\begin{itemize}
+		\item Chaque phase associée à un ensemble de plugins et d’objectifs (\emph{goals})
+		\item Phase process-resources associée {\tiny par défaut} à plugin \textbf{Resources}, objectif \texttt{resource}
+		\item Phase test associée {\tiny par défaut} à plugin \textbf{Surefire}, objectif \texttt{test}
+		\item Phase package associée {\tiny par exemple} à plugin \textbf{JAR}, objectif \texttt{JAR}
+	\end{itemize}
+	\begin{block}{Exécution}
+		Lancement de Maven avec \texttt{mvn phasechoisie} :
+		\begin{itemize}
+			\item Maven détecte de quel cycle il s’agit
+			\item Maven exécute toutes les phases jusqu’à “phasechoisie”
+			\item Exemple : exécution systématique de \texttt{test} avant \texttt{package}
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\section{Dépendances}
+\begin{frame}
+	\frametitle{Dépendances}
+	\begin{itemize}
+		\item Maven permet de gérer les \og{}dépendances\fg{}
+		\item Bibliothèques dont votre code dépend
+		\item Pour compiler (dépendance statique) ; s’exécuter ; pour tests uniquement…
+		\item Une bibliothèque dont vous dépendez peut elle-même avoir des dépendances
+		\item Maven gère ces dépendances transitives pour vous !
+		\item Dépendances prises {\tiny par défaut} dans Maven Central Repository
+		\item Dans POM : section \texttt{<dependencies>}
+		\item Dans cette section : ajouter une section \texttt{<dependency>} pour chaque dépendance à gérer
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Dépendances : exemples}
+	\begin{block}{Exemple : dépendance vers Google \href{https://github.com/google/guava/blob/master/README.md}{Guava}}
+		\begin{lstlisting}
+<dependency>
+  <groupId>com.google.guava</groupId>
+  <artifactId>guava</artifactId>
+  <version>19.0</version>
+</dependency>
+		\end{lstlisting}	
+	\end{block}
+	\begin{block}{Exemple : dépendance vers junit}
+		\begin{lstlisting}
+<dependency>
+  <groupId>junit</groupId>
+  <artifactId>junit</artifactId>
+  <version>4.12</version>
+  <scope>test</scope>
+</dependency>
+		\end{lstlisting}	
+	\end{block}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Dépendances dans POM}
+	\begin{itemize}
+		\item Trouver \texttt{groupId} et \texttt{artifactId} : voir site du projet
+		\item Trouver \texttt{version} : voir \href{https://search.maven.org}{Central}
+		\item Presque tous les projets Java récents font une release Maven
+	\end{itemize}
+	Portées {\tiny (liste non exhaustive)} :
+	\begin{description}[\texttt{runtime}]
+		\item[\texttt{compile}] Par défaut
+		\item[\texttt{test}] Bibliothèque incluse uniquement lors phase tests
+		\item[\texttt{runtime}] Bibliothèque incluse uniquement lors exécution, pas lors compilation
+	\end{description}
+\end{frame}
+
+\section{Configuration}
+\begin{frame}
+	\frametitle{Configuration des plugins}
+	\begin{itemize}
+		\item Voir \href{https://maven.apache.org/plugins/index.html}{Liste} pour plugins de Apache
+		\item Configuration parfois utile
+		\item Dans POM : ajouter section \texttt{<build><plugins><plugin>…</plugin></plugins></build>}
+		\item Exemple : pour configurer la compilation, voir la page “Apache Maven Compiler Plugin”
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Propriétés}
+	\begin{itemize}
+		\item Propriété \texttt{ma propriété} : accessible via \texttt{\$\{ma propriété\}}
+		\item Nommage souvent hiérarchique : \texttt{catégorie.sous-catégorie.nom-propriété}
+	\end{itemize}
+	Dans POM : 
+	\begin{lstlisting}[keywordstyle=\fontspec{Latin Modern Mono Light}\textbf, emph={project, modelVersion, groupId, artifactId, version}, emphstyle=\fontspec{Latin Modern Mono Light}\textbf, language=XML, basicstyle=\small\NoAutoSpacing\ttfamily, aboveskip=0pt, belowskip=0pt, showstringspaces=false]
+<properties>
+  <cat.etc.prop1>valeur1</cat.etc.prop1>
+  <cat.etc.prop2>valeur2</cat.etc.prop2>
+</properties>
+(...)
+<balise-quelconque>${cat.etc.prop1}</balise-quelconque>
+		\end{lstlisting}
+\end{frame}
+
+\section{En pratique}
+\begin{frame}
+	\frametitle{Conventions et configurations classiques}
+	\begin{itemize}
+		\item Utiliser comme groupeId un nom unique : généralement un nom de domaine inversé
+		\item Le paquet de base de toutes les classes doit être ce nom
+		\item Indiquer propriété \texttt{project.build.sourceEncoding} avec valeur \texttt{UTF-8}
+		\item Indiquer propriétés \texttt{maven.compiler.source} et \texttt{maven.compiler.target} avec valeur \texttt{1.8}
+		\item Canevas simples disponibles \href{https://github.com/oliviercailloux/samples}{ici}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Maven et Eclipse}
+	\begin{itemize}
+		\item M2Eclipse (m2e) fournit support Maven pour Eclipse
+		\item Maven embarqué
+		\item Wizards pour démarrer ou importer un projet maven
+		\item Conseil : utiliser l’option \texttt{Maven / Update project / Update project configuration from pom.xml} pour configuration correcte du projet dans Eclipse
+	\end{itemize}
+\end{frame}
+
+\section{Références}
+\begin{frame}
+	\frametitle{Références}
+	\begin{itemize}
+		\item \href{https://maven.apache.org/guides/getting-started/index.html}{Tutoriel} Apache Maven
+		\item \href{http://gen.lib.rus.ec/book/index.php?md5=6e0bc8159b52299fdb912e3726c43bd9}{Apache Maven Cookbook}, Raghuram Bharathan, 2015
+	\end{itemize}
+	Omis dans cette présentation :
+	\begin{itemize}
+		\item Archetypes (\href{http://maven.apache.org/archetype/maven-archetype-plugin/usage.html}{maven-archetype-plugin})
+		\item Packaging
+		\item Assembly (\href{http://maven.apache.org/plugins/maven-assembly-plugin/}{maven-assembly-plugin})
+	\end{itemize}
+\end{frame}
+
+\appendix
+
+\section{Licence}
+\begin{frame}
+	\frametitle{Licence}
+	Cette présentation, et le code LaTeX associé, sont sous \href{http://opensource.org/licenses/MIT}{licence MIT}. Vous êtes libres de réutiliser des éléments de cette présentation, sous réserve de citer l’auteur.
+	
+	Le travail réutilisé est à attribuer à \href{http://www.lamsade.dauphine.fr/~ocailloux/}{Olivier Cailloux}, Université Paris-Dauphine.
+\end{frame}
+\end{document}
+
+\begin{frame}
+	\frametitle{}
+	\begin{itemize}
+		\item 
+	\end{itemize}
+	\begin{block}{}
+		
+	\end{block}
+\end{frame}
+
+\section{Bibliographie}
+\begin{frame}[allowframebreaks]
+	\frametitle{Bibliographie}
+	\def\newblock{\hskip .11em plus .33em minus .07em}
+% 	\bibliography{zotero}
+\end{frame}
+
+\section{Autres}
+\begin{frame}
+	\frametitle{}
+	\begin{itemize}
+		\item 
+	\end{itemize}
+	\begin{block}{}
+		
+	\end{block}
+\end{frame}
+\end{document}
