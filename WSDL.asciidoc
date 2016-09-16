@@ -7,25 +7,27 @@ This document gives a _rough_ and _incomplete_ overview of WSDL 1.1. (WSDL 2.0 b
 
 NOTE: The reader supposedly has basic knowledge of HTTP, XML and SOAP.
 
+NOTE: The parts marked BP are complements to the spec given by WS-I BP (all versions from 1.0 to 2.0) (see <<refs>>).
+
 ////
 TODO Find out how to escape bracket in [Public domain]; C++.
+Link image to https://commons.wikimedia.org/wiki/File:WSDL_11vs20.png
 Return value?
 soapAction may be left undefined?
 portType ⇐ binding ⇐ port ⇐ soap:address
-service: set of ports.
 ////
 
 == Overview
 The Web Services Description Language (WSDL) spec defines a WSDL document. A WSDL document is an XML document that describes a web service, abstractly and concretely.
 
-Except when mentioned, the elements this document refers to are XML elements with WSDL namespace.
+Except when mentioned, the elements this document refers to are XML elements with WSDL namespace [small]#(`\http://schemas.xmlsoap.org/wsdl/`)#.
 
 .WSDL 1.1
-image:WSDL_11.png[Under a WSDL 1.1 document: an abstract description (types, message, portType), and a concrete description (binding, service)., title="derived from work by Cristcost [Public domain, via Wikimedia Commons", float="left"]
+image:WSDL_11.png[Under a WSDL 1.1 document: an abstract description (types, message, portType), and a concrete description (binding, service)., title="derived from work by Cristcost [Public domain\], via Wikimedia Commons", float="left"]
 
 * An abstract description indicates the operations that the web service provides, and the types it uses.
 ** The types it uses are defined under `types` and `message` elements.
-** The operations are grouped together in `portType` elements. Though obscurely named, a `portType` simply represents a set of operations that coherently fit together (think about interfaces in Java, or abstract classes in C+\+).
+** The operations are grouped together in `portType` elements. Though obscurely named, a `portType` simply represents a set of operations that coherently fit together (think about interfaces in Java, or abstract classes in C++).
 ** A WSDL file may define several such `portType` elements.
 * A concrete description indicates how those abstract operations must be invoked, by linking them to an underlying exchange protocol, using a _link-type_.
 ** This is done using two elements: `binding`, that makes operations concrete (and specify how to encode types, …), and `service`, that defines concrete endpoints. (Those two elements may appear several times in a document.)
@@ -59,28 +61,27 @@ The `binding` element is used to specify how abstract messages sent to or from a
 * The `binding` indicates that the link-type is SOAP by including as a sub-element the element `soap:binding`, where the `soap` prefix corresponds to the WSDL namespace for WSDL SOAP link-type [small]#(\http://schemas.xmlsoap.org/wsdl/soap12/)#.
 * The `soap:binding` sub-element has a `transport` attribute, whose value is typically `\http://schemas.xmlsoap.org/soap/http`, to indicate that the HTTP binding is chosen as a SOAP binding.
 * The `soap:binding` sub-element has a `style` attribute, whose value may be `document` (default) or `rpc`. [small]#(The `style` may also be set per-operation instead of for a whole `portType`.)#
-* The `binding` element has one `operation` sub-element per operation that is to be reachable by SOAP. That sub-element specifies linking information for the _abstract_ operation with the same name within the related `portType`. Each such `operation` element has a `<soap:operation soapAction="uri"/>` sub-element that specifies the SOAP action to use to target that operation. Each `operation` also has sub-elements for each of the input, output and faults defined in the corresponding abstract operation, with for each of those a sub-element `soap:body` that, for `rpc` style, specifies a namespace (BP). Unbound parts are discouraged and should be ignored (BP #R2209).
+* The `binding` element has one `operation` sub-element per operation that is to be reachable by SOAP. That sub-element specifies linking information for the _abstract_ operation with the same name within the related `portType`. Each such `operation` element has a `<soap:operation soapAction="uri"/>` sub-element that specifies the SOAP action to use to target that operation. Each `operation` also has sub-elements for each of the input, output and faults defined in the corresponding abstract operation, with for each of those a sub-element `soap:body` that, for `rpc` style, specifies a namespace (BP). Unbound parts are discouraged and should be ignored (BP http://ws-i.org/Profiles/BasicProfile-2.0-2010-11-09.html#R2209[R2209]).
 
-Here is how BP 1.2 and 2.0 (see link:#Refs) interpret these informations.
+Here is how to interpret these informations (BP).
 
-With `document` style, there can be at most one message part in a message [small]#(unless `soap:body` `part` attribute is used). That part must be defined using the `element` attribute. It appears directly under the SOAP Body element. (An operation signature is given by this element fully qualified name.)
+With `document` style, there can be at most one message part in a message [small]#(unless `soap:body` `part` attribute is used)#. That part must be defined using the `element` attribute. It appears directly under the SOAP Body element.
 
-With `rpc` style, each part is a parameter or a return value and appears inside a wrapper element within the body: `<opName><part1>…</part1><part2>…</part2></opName>`. Parts must be defined using the `type` attribute. The part wrapper will have that type. And no namespace and a local name of the same value as the name attribute of the corresponding wsdl:part element. The wrapper element namespace is the value of the namespace attribute of the soap:body element and its local name is either the name of the operation or the name of the operation suffixed with "Response".
+With `rpc` style, each part is a parameter or a return value. Parts must be defined using the `type` attribute. The SOAP Body element will contain an operation wrapper element containing, for each part, a part wrapper element followed by the content of the part: `<opName><part1>…</part1><part2>…</part2></opName>`. The operation wrapper element namespace is the value of the namespace attribute of the `soap:body` element and its local name is either the name of the operation, for a SOAP Request, or the name of the operation suffixed with “Response”. The `name` and `type` attributes of `part` elements define the local name and type of the corresponding part wrapper. Part wrappers have no namespace.
 
 Document style is http://ws-i.org/Profiles/BasicProfile-2.0-2010-11-09.html#Consistency_of_style_Attribute[encouraged].
 
-BP mandates unique operation signatures, so that an endpoint may identify which operation is invoked based on the input message. The operation signature is the fully qualified name of the child element of SOAP body of the SOAP input message described by an operation in a WSDL binding (assuming to wsa:Action SOAP header blocks are used).
+BP mandates unique operation signatures, so that an endpoint may identify which operation is invoked based on the input message. The operation signature is the fully qualified name of the child element of the SOAP body [small]#(assuming no wsa:Action SOAP header blocks are used)#.
 
 The `service` element consists in a set of `port` elements. Each `port` refers to a given `binding` element using a QName.
 A sub-element of `port` gives the SOAP HTTP address to use to call the SOAP web service: `soap:address location="uri"`.
 
-[[Refs]]
+[[refs]]
 == Refs
 * W3C https://www.w3.org/TR/wsdl[WSDL 1.1] note
 * WSDL https://www.w3.org/standards/techs/wsdl[Current Status] on W3C
-* Web Services Interoperability (WS-I) http://www.ws-i.org/deliverables/workinggroup.aspx?wg=basicprofile[Basic Profile] (BP) clarifies and modifies WSDL and other specifications to promote interoperability.
+* Web Services Interoperability (WS-I) http://www.ws-i.org/deliverables/workinggroup.aspx?wg=basicprofile[Basic Profile] (BP) clarifies and modifies WSDL and related specifications to promote interoperability.
 * BP 2.0 corrected http://ws-i.org/profiles/basic/1.1/wsdl-2004-08-24.xsd[WSDL schema]
-* BP 2.0 corrected http://schemas.xmlsoap.org/wsdl/soap12/wsdl11soap12-20060302.xsd[SOAP binding schema]
 
 == Supplementary details
 What this document calls a link-type, namely the type of relation between the abstract and the concrete web service descriptions, is usually referred to as a _binding_. This presents risks of confusion with the WSDL `binding` element. Here the word “binding” is only used to refer to the element.

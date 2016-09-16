@@ -22,11 +22,11 @@ The Simple Object Access Protocol (SOAP) specification defines [small]#(non exha
 
 === XML Infoset
 
-* An XML Infoset is an abstract data type, not a concrete representation in bytes.
+* An XML Infoset is an abstract data type. _Serialization_ transforms the XML Infoset into a concrete representation in bytes.
 * An obvious example of serialization of an XML Infoset is the XML serialization (`<book><title>Sir</title></book>`), but others are conceivable (some encrypted serialization for example) or exist. As an example, the W3C _SOAP Message Transmission Optimization Mechanism_ (https://www.w3.org/TR/2005/REC-soap12-mtom-20050125/[MTOM]) spec defines an optimized serialization of SOAP messages.
 
 === SOAP transmission
-A SOAP transmission may involve several nodes having distinct roles. Two special roles are the Initial SOAP sender and the Ultimate SOAP receiver roles.
+A SOAP transmission may involve several nodes having distinct roles. Two special roles are the _Initial SOAP sender_ and the _Ultimate SOAP receiver_ roles.
 
 == SOAP message
 SOAP [small]#typically# transmits _SOAP messages_. A SOAP message is a species of XML Infoset. It has an `env:Envelope` root element, which may contain two sub-elements. [small]#(The `env` prefix corresponds to the namespace name `\http://www.w3.org/2003/05/soap-envelope`.)#
@@ -73,6 +73,7 @@ The spec defines how SOAP may be used for Remote Procedure Calls (RPCs).
 
 * W3C https://www.w3.org/TR/soap/[SOAP] recommendation
 * W3C https://www.w3.org/TR/2007/REC-soap12-part0-20070427/[SOAP primer] (I recommend it, it’s clear and short)
+* Web Services Interoperability (WS-I) http://www.ws-i.org/deliverables/workinggroup.aspx?wg=basicprofile[Basic Profile] (BP) clarifies and modifies SOAP and related specifications to promote interoperability.
 
 == Supplementary details
 
