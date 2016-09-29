@@ -53,7 +53,7 @@ The types are used to define messages, using `message` elements.
 An operation has a name, (usually) an input message, possibly an output message, and possibly fault messages. When output and fault messages are defined, it is to be understood that either the output or a fault will be returned, not both. Each of the `input`, `output` and `fault` elements designate the corresponding message using a QName.
 
 == SOAP link-type
-The SOAP link-type is used to complement an abstract web service description (consisting in `types`, `message` and `portType` elements) in order to make it a description of a SOAP web service. The SOAP binding used is the HTTP one (see link:SOAP.asciidoc#HTTP_binding[SOAP in brief]). [small]#(WSDL tolerates other SOAP bindings as well.)# Such a link is done using one `binding` element per `portType` to be defined as a component of the SOAP web service, and one `service` element.
+The SOAP link-type is used to complement an abstract web service description (consisting in `types`, `message` and `portType` elements) in order to make it a description of a SOAP web service. The SOAP binding used is the HTTP one (see link:SOAP.adoc#HTTP_binding[SOAP in brief]). [small]#(WSDL tolerates other SOAP bindings as well.)# Such a link is done using one `binding` element per `portType` to be defined as a component of the SOAP web service, and one `service` element.
 
 The `binding` element is used to specify how abstract messages sent to or from an abstract interface (defined as a `portType`) are to be serialized as SOAP messages.
 

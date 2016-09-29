@@ -77,7 +77,7 @@ The spec defines how SOAP may be used for Remote Procedure Calls (RPCs).
 
 == Supplementary details
 
-The spec defines a specific encoding, SOAP encoding, for structs used in RPCs, but it is not used anymore. (See link:WSDL.asciidoc[WSDL in brief].)
+The spec defines a specific encoding, SOAP encoding, for structs used in RPCs, but it is not used anymore. (See link:WSDL.adoc[WSDL in brief].)
 
 A SOAP Web Method is one of `GET`, `POST`, `PUT`, `DELETE`, understood as their HTTP equivalent. The SOAP Web Method feature permits to specify which SOAP Web Method is to be used for a given SOAP message exchange. This feature is available for use in any binding.
 
