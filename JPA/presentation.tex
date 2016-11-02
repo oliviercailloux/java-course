@@ -150,8 +150,6 @@
 	\frametitle{Configuration unité de persistance}
 	\begin{itemize}
 		\item Unité de pers. définie dans \texttt{META-INF/persistence.xml} {\tiny (\href{http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd}{xsd})}
-		\item Java EE : dans un jar comme bibliothèque du \texttt{.ear} {\tiny (aussi possible dans EJB ou .war)}
-%		\item Cet EAR est alors le scope de l’unité
 		\item Par défaut, unité contient toutes les entités du projet {\tiny (non-standard JPA en Java SE)}
 	\end{itemize}
 	\begin{lstlisting}[language = XML]
@@ -170,8 +168,6 @@
 \begin{frame}
 	\frametitle{Propriétés unité de persistance}
 	\begin{itemize}
-		\item Java SE : configurer JDBC
-		\item Propriétés \texttt{javax.persistence.jdbc.url}, \texttt{javax.persistence.jdbc.user}, \texttt{javax.persistence.jdbc.password} {\tiny (\texttt{javax.persistence.jdbc.driver} : semble non nécessaire (spec ambigüe))}
 		\item Génération du schéma par JPA : propriété {\small\texttt{javax.persistence.schema-generation.database.action}}, valeur {\small\texttt{drop-and-create}} {\tiny cf. \href{https://docs.oracle.com/javaee/7/tutorial/persistence-intro005.htm}{tutorial}}
 		\item Propriétés propriétaires
 	\end{itemize}
@@ -183,32 +179,12 @@ Exemple, Hibernate :
 \end{frame}
 
 \begin{frame}
-	\frametitle{Fournisseur JPA}
-	\begin{itemize}
-		\item Fournisseur trouvé dans classpath
-		\item Java EE : fournisseur JPA donné par serveur d’application
-	\end{itemize}
-	Java SE + Maven :
-	\begin{itemize}
-		\item Dépendance API JPA (fournie par Hibernate) : \href{http://search.maven.org/\#search|gav|1|g\%3A\%22org.hibernate.javax.persistence\%22\%20AND\%20a\%3A\%22hibernate-jpa-2.1-api\%22}{hibernate-jpa-2.1-api}
-		\item \href{http://docs.jboss.org/hibernate/orm/5.1/quickstart/html_single/\#_the_hibernate_modules_artifacts}{Dépendances} implémentation Hibernate {\tiny (\href{http://docs.jboss.org/hibernate/orm/5.1/quickstart/html_single/\#_maven_repository_artifacts}{groupId} = \texttt{org.hibernate})} :
-		\item \texttt{hibernate-core} : Hibernate natif
-		\item \href{http://search.maven.org/\#search|ga|1|g\%3A\%22org.hibernate\%22\%20AND\%20a\%3A\%22hibernate-entitymanager\%22}{\texttt{hibernate-entitymanager}} : implémentation JPA
-		\item \texttt{hibernate-java8} : types spécifiques java 8{\tiny, principalement \href{https://docs.oracle.com/javase/tutorial/datetime/}{Date-Time}}
-    		\item Quels scopes ?
-		\item Quelles versions ?
-	\end{itemize}
-\end{frame}
-
-\begin{frame}
 	\frametitle{\texttt{EntityManager}}
 	\begin{itemize}
 		\item Unité associée à \jeeref{javax.persistence/EntityManagerFactory}
 		\item \jeeref{javax.persistence/EntityManager} gère entités dans unité persistance
 		\item Java SE : {\small \texttt{\jeeref{javax.persistence/Persistence}.createEntityManagerFactory("MyUnit");}}
 		\item Fournisseur JPA lit la configuration et instantie une Factory
-		\item Obtenir la Factory une seule fois (coûteux)
-		\item Fermer la Factory en quittant
 		\item Java EE : le conteneur s’occupe de l’\texttt{EntityManagerFactory}
 	\end{itemize}
 \end{frame}
@@ -269,50 +245,80 @@ Exemple, Hibernate :
 		\item Changements à la BD annulés par un \texttt{rollback}
 		\item Rollback n’annule \emph{pas} les changements en mémoire
 	\end{itemize}
+%EntityTransaction tx = em.getTransaction();
+%tx.begin();
+%tx.commit();
 	\begin{exampleblock}{Transaction simple}
 		\begin{lstlisting}[language=, escapechar=$]
 EntityManager em = …;
-EntityTransaction tx = em.getTransaction();
-tx.begin();
+// Start transaction
 e = new MyEntity(); e.setTruc(…);
-em.persist(e);// $\sffamily \emph{pas} de requête à ce stade$
-tx.commit(); // INSERT …
+em.persist(e);// $\sffamily \emph{pas} {\tiny{nécessairement}} de requête à ce stade$
+// Commit transaction : INSERT …
 em.close();
 		\end{lstlisting}
 	\end{exampleblock}
 \end{frame}
 
 \begin{frame}
-	\frametitle{Éviter les courants d’air}
-	\begin{itemize}
-		\item Ne pas oublier de fermer le contexte : \texttt{em.close()}
-		\item Fermer le contexte \emph{après} le commit
-		\item Possible : plusieurs transactions dans un contexte de persistence
-	\end{itemize}
-\end{frame}
-
-\subsection{Java EE}
-\begin{frame}
 	\frametitle{\texttt{EntityManager} géré par l’application}
 	\begin{itemize}
-		\item Le plus proche de Java SE : contexte de persistance géré par l’application
+		\item Contexte de persistance géré par l’application (Java SE, ou EE si désiré)
 		\item \jeeref[@]{javax.persistence/PersistenceUnit} \texttt{private EntityManagerFactory emf;}
 		\item L’application instancie elle-même son \texttt{EntityManager}
 	\end{itemize}
 \end{frame}
 
 \begin{frame}
+	\frametitle{Éviter les courants d’air}
+	\begin{itemize}
+		\item Ne pas oublier de fermer le contexte (si créé à la main) : \texttt{em.close()}
+		\item Fermer le contexte \emph{après} le commit
+		\item Possible : plusieurs transactions dans un contexte de persistence
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
 	\frametitle{JTA}
 	\begin{itemize}
-		\item JTA entity manager ≠ resource-local entity manager
-		\item Resource-local: utiliser \texttt{EntityTransaction}
-		\item JTA: Java Transaction API
+		\item JTA entity manager (VS : resource-local entity manager)
+		\item JTA : Java Transaction API
+		\item Transaction associée à thread courante
 		\item Interface unique pour gérer transactions
 		\item Utiliser \jeeref{javax.transaction/UserTransaction}
 		\item Conteneur rend \texttt{UserTransaction} disponible via JNDI
 		\item Injecter \texttt{UserTransaction} avec \texttt{@Resource}
 		\item L’utiliser pour démarrer et commettre la transaction
-		\item Permet d’associer transaction à thread courante
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Synchronisation du contexte de persistance}
+	\begin{itemize}
+		\item JTA EM peut être synchronisé ou non synchronisé
+		\item Si synchronisé
+		\begin{itemize}
+			\item Joint automatiquement transaction JTA en cours
+		\end{itemize}
+		\item Si non synchronisé
+		\begin{itemize}
+			\item Joindre \texttt{em} à la transaction : \texttt{em.joinTransaction()}
+			\item Rejoindre transactions suivantes après commit de la première et ouverture d’une nouvelle
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\subsection{Java EE}
+\begin{frame}
+	\frametitle{Gestion démarcation transactions}
+	\begin{itemize}
+		\item Conteneur peut également gérer les transactions : CMT
+		\item CDI managed beans : utiliser \jeeref[@]{javax.transaction/Transactional}
+		\item Chaque méthode participe alors par défaut à une transaction
+		\item Si transaction en cours, la méthode y participe
+		\item Si pas de transaction en cours lors de l’appel : le conteneur démarre puis termine automatiquement une transaction (commit si ok, rollback si exception {\tiny sauf exception application})
+		\item EJB : CMT par défaut {\tiny (ou utiliser \jeeref[@]{javax.ejb/TransactionManagement} pour BMT)}
+		\item Ou annoter la méthode \jeeref[@]{javax.ejb/TransactionAttribute} sur EJBs
 	\end{itemize}
 \end{frame}
 
@@ -326,36 +332,7 @@ em.close();
 		\item Invoquer \texttt{em} \emph{après} ouverture transaction JTA
 		\item Conteneur crée le contexte lors première invocation \texttt{em} {\tiny si aucun contexte associé à transaction}
 		\item Conteneur ferme le contexte après fermeture transaction JTA
-		\item Portée \jeeref{javax.persistence/PersistenceContextType\#EXTENDED} : portée liée à managed bean le contenant %TODO (slmt pour stateful EJB ?)
-	\end{itemize}
-\end{frame}
-
-\begin{frame}
-	\frametitle{Synchronisation du contexte de persistance}
-	\begin{itemize}
-		\item Ceci s’applique si gestion du contexte par le conteneur
-		\item Par défaut, synchronisé
-		\begin{itemize}
-			\item Joint automatiquement transaction JTA en cours
-		\end{itemize}
-		\item Si non synchronisé
-		\begin{itemize}
-			\item Joindre \texttt{em} à la transaction : \texttt{em.joinTransaction()}
-			\item Rejoindre transactions suivantes après commit de la première et ouverture d’une nouvelle
-		\end{itemize}
-	\end{itemize}
-\end{frame}
-
-\begin{frame}
-	\frametitle{Gestion démarcation transactions}
-	\begin{itemize}
-		\item Conteneur peut également gérer les transactions : CMT
-		\item EJB : fait par défaut {\tiny (ou utiliser \jeeref[@]{javax.ejb/TransactionManagement} pour BMT)}
-		\item Autres managed beans (CDI) : utiliser \jeeref[@]{javax.transaction/Transactional}
-		\item Chaque méthode participe alors par défaut à une transaction
-		\item Ou annoter la méthode \jeeref[@]{javax.ejb/TransactionAttribute} sur EJBs
-		\item Si transaction en cours, la méthode y participe
-		\item Si pas de transaction en cours lors de l’appel : le conteneur démarre puis termine automatiquement une transaction (commit si ok, rollback si exception {\tiny sauf exception application})
+		\item Portée \jeeref{javax.persistence/PersistenceContextType\#EXTENDED} : portée liée à managed bean le contenant
 	\end{itemize}
 \end{frame}
 
@@ -364,6 +341,10 @@ em.close();
 	\begin{itemize}
 		\item Conteneur Java EE définit \texttt{java:comp/DefaultDataSource} : nom utilisé par défaut
 		\item Sinon, indiquer, dans \texttt{persistence.xml}, \texttt{jta-data-source} : un nom JNDI
+		\item Fournisseur trouvé dans classpath
+		\item Java EE : fournisseur JPA donné par serveur d’application
+		\item Java EE : \texttt{META-INF/persistence.xml} dans le \texttt{.war} {\tiny (aussi possible dans EJB ou dans un jar bibliothèque du \texttt{.ear})}
+%		\item Cet EAR est alors le scope de l’unité
 	\end{itemize}
 \end{frame}
 
@@ -1005,6 +986,32 @@ em2.getTransaction().commit(); // $\textsf{mise à jour BD}$
 
 
 \appendix
+
+\section{Java SE}
+\begin{frame}
+	\frametitle{Fournisseur JPA en Java SE}
+	Fournisseur trouvé dans classpath. Java SE + Maven :
+	\begin{itemize}
+		\item Dépendance API JPA (fournie par Hibernate) : \href{http://search.maven.org/\#search|gav|1|g\%3A\%22org.hibernate.javax.persistence\%22\%20AND\%20a\%3A\%22hibernate-jpa-2.1-api\%22}{hibernate-jpa-2.1-api}
+		\item \href{http://docs.jboss.org/hibernate/orm/5.1/quickstart/html_single/\#_the_hibernate_modules_artifacts}{Dépendances} implémentation Hibernate {\tiny (\href{http://docs.jboss.org/hibernate/orm/5.1/quickstart/html_single/\#_maven_repository_artifacts}{groupId} = \texttt{org.hibernate})} :
+		\item \texttt{hibernate-core} : Hibernate natif
+		\item \href{http://search.maven.org/\#search|ga|1|g\%3A\%22org.hibernate\%22\%20AND\%20a\%3A\%22hibernate-entitymanager\%22}{\texttt{hibernate-entitymanager}} : implémentation JPA
+		\item \texttt{hibernate-java8} : types spécifiques java 8{\tiny, principalement \href{https://docs.oracle.com/javase/tutorial/datetime/}{Date-Time}}
+    		\item Quels scopes ?
+		\item Quelles versions ?
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Configuration et usage en Java SE}
+	\begin{itemize}
+		\item Configurer JDBC
+		\item Propriétés \texttt{javax.persistence.jdbc.url}, \texttt{javax.persistence.jdbc.user}, \texttt{javax.persistence.jdbc.password} {\tiny (\texttt{javax.persistence.jdbc.driver} : semble non nécessaire (spec ambigüe))}
+		\item Obtenir la Factory une seule fois (coûteux)
+		\item Fermer la Factory en quittant
+		\item Si resource-local entity manager : utiliser \texttt{EntityTransaction}
+	\end{itemize}
+\end{frame}
 
 \section{Architecture}
 \begin{frame}
