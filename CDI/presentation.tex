@@ -60,34 +60,37 @@
 \begin{frame}
 	\frametitle{Vue d’ensemble}
 	\begin{itemize}
-		\item Bean : classe dont le cycle de vie des instances peut être géré par le conteneur (y compris ressources)
-		\item Pour ce faire, préciser son \og{}contextual scope\fg{} : \jeeref[@]{javax.enterprise.context/RequestScoped} ; \jeeref[@]{javax.enterprise.context/SessionScoped} ; \jeeref[@]{javax.enterprise.context/ConversationScoped} ; \jeeref[@]{javax.enterprise.context/ApplicationScoped}…
+		\item Bean géré (\emph{managed bean}) : classe dont le cycle de vie des instances peut être géré par le conteneur (y compris ressources)
+		\item Pour ce faire, préciser sa portée contextuelle (\emph{contextual scope}) : \jeeref[@]{javax.enterprise.context/RequestScoped} ; \jeeref[@]{javax.enterprise.context/SessionScoped} ; \jeeref[@]{javax.enterprise.context/ConversationScoped} ; \jeeref[@]{javax.enterprise.context/ApplicationScoped}…
 		\item Conteneur crée \emph{instance contextuelle} à la demande
 		\item Instance contextuelle détruite à la fin de son scope
 		\item Injection : \jeeref[@]{javax.inject/Inject} sur champ {\tiny ou méthode ou constructeur}
 	\end{itemize}
 \end{frame}
 
+\section{Portée contextuelle}
 \begin{frame}
-	\frametitle{Context object}
-	\begin{itemize}
-		\item \emph{Context object} de scope $S$ : associe un type de bean à maximum une instance contextuelle de scope $S$
-		\item Un context object par requête / session / conversation / …
-		\item Injection possible seulement dans objet ayant accès au scope adéquat
-		\item Recommandation : toujours préciser le scope pour l’injection
-	\end{itemize}
-\end{frame}
-
-\section{Scopes}
-\begin{frame}
-	\frametitle{Scopes}
+	\frametitle{Portées contextuelles}
 	\begin{itemize}
 		\item \texttt{@RequestScoped} : détruit après traitement de la requête
-		\item \texttt{@SessionScoped} : référence liée à la session HTTP ; détruit avec la session (cf. Cours 3 EJB)
+		\item \texttt{@SessionScoped} : référence liée à la session HTTP ; détruit avec la session
 		\item \texttt{@ApplicationScoped} : créé au besoin, un par application
 		\item \texttt{@ConversationScoped} : gestion manuelle de la conversation
 		\item \jeeref[@]{javax.enterprise.context/Dependent} : pas un normal scope ; scope lié à la destination de l’injection
 		\item Session et conversation-scoped : implémenter \jseref{java.io/Serializable}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Objets gestionnaires de contexte}
+	\begin{itemize}
+		\item Le conteneur utilise un objet gestionnaire de contexte (\emph{context object}) pour chaque contexte
+		\item Exemple : quatre gestionnaires de contexte si le conteneur gère actuellement une application, une session, deux requêtes
+		\item Chaque objet gestionnaire de contexte associe un type de bean à maximum une instance contextuelle
+		\item Exemple : l’objet gestionnaire du contexte \og{}Session 1\fg{} associe le type \texttt{SayHelloService} à zéro instance
+		\item Le gestionnaire du contexte crée une instance contextuelle de \texttt{SayHelloService} à la demande d’un servlet servant \og{}Session 1\fg{}
+		\item Le gestionnaire du contexte sert \emph{la même} instance à un autre servlet servant la même session
+		\item À la destruction de la session, le gestionnaire du contexte détruit l’instance
 	\end{itemize}
 \end{frame}
 
@@ -97,24 +100,25 @@
 		\item \texttt{@ConversationScoped} : gestion manuelle de la conversation
 		\item \jeeref{javax.enterprise.context/Conversation} : objet \texttt{@RequestScoped} (donc injectable) pour démarrer et terminer une conversation
 		\item Une conversation a un identifiant unique
-		\item Joindre une conversation : envoyer paramètre de requête \texttt{cid} %TODO tester
+		\item Joindre une conversation : envoyer paramètre de requête \texttt{cid}
+		\item Voir application \href{https://github.com/oliviercailloux/samples/tree/master/JavaEE-Inject-Servlets-Conversation}{JavaEE-Inject-Servlets-Conversation}
 	\end{itemize}
 \end{frame}
 
 \begin{frame}
-	\frametitle{Scopes et EJB}
+	\frametitle{Portées et EJB}
 	\begin{itemize}
-		\item Stateless session bean doit avoir scope \texttt{@Dependent}
+		\item Stateless session bean doit avoir portée \texttt{@Dependent}
 		\item Singleton doit avoir \texttt{@ApplicationScoped} {\tiny ou \texttt{@Dependent}}
 		\item Stateful : tout est permis
 	\end{itemize}
 \end{frame}
 
 \begin{frame}
-	\frametitle{Scopes et concurrence}
+	\frametitle{Portées et concurrence}
 	\begin{itemize}
-		\item Le développeur doit protéger les objets dans un scope contre les accès concurrents
-		\item Sauf ConversationScoped, garanti par le conteneur actif pour une requête à la fois
+		\item Le développeur doit protéger les objets dans un contexte contre les accès concurrents
+		\item Sauf \texttt{ConversationScoped}, garanti par le conteneur actif pour une requête à la fois
 	\end{itemize}
 \end{frame}
 
