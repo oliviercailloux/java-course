@@ -20,7 +20,7 @@ portType ⇐ binding ⇐ port ⇐ soap:address
 == Overview
 The Web Services Description Language (WSDL) spec defines a WSDL document. A WSDL document is an XML document that describes a web service, abstractly and concretely.
 
-Except when mentioned, the elements this document refers to are XML elements with WSDL namespace [small]#(`\http://schemas.xmlsoap.org/wsdl/`)#.
+Except when mentioned otherwise, the elements this document refers to are XML elements with WSDL namespace [small]#(`\http://schemas.xmlsoap.org/wsdl/`)#.
 
 .WSDL 1.1
 image:WSDL_11.png[Under a WSDL 1.1 document: an abstract description (types, message, portType), and a concrete description (binding, service)., title="derived from work by Cristcost [Public domain\], via Wikimedia Commons", float="left"]
@@ -78,7 +78,7 @@ A sub-element of `port` gives the SOAP HTTP address to use to call the SOAP web 
 
 [[refs]]
 == Refs
-* W3C https://www.w3.org/TR/wsdl[WSDL 1.1] note
+* W3C https://www.w3.org/TR/wsdl[WSDL 1.1] note; https://www.w3.org/Submission/2006/SUBM-wsdl11soap12-20060405/[WSDL 1.1 to SOAP 1.2] link-type
 * WSDL https://www.w3.org/standards/techs/wsdl[Current Status] on W3C
 * Web Services Interoperability (WS-I) http://www.ws-i.org/deliverables/workinggroup.aspx?wg=basicprofile[Basic Profile] (BP) clarifies and modifies WSDL and related specifications to promote interoperability.
 * BP 2.0 corrected http://ws-i.org/profiles/basic/1.1/wsdl-2004-08-24.xsd[WSDL schema]
@@ -90,12 +90,9 @@ The WSDL element `import` can be used to import WSDL documents into other WSDL d
 
 In WSDL 2.0, `portType` is called `interface`, `port` is called `endpoint`.
 
-Each of the operation message (input, …) has a `soap:body` whose `use` must be `literal` (or left to the default, `literal`, BP 1.2). (`encoded` is not used any more).
+Each of the operation message (input, …) in a SOAP link-type has a `soap:body` whose `use` must (http://ws-i.org/Profiles/BasicProfile-2.0-2010-11-09.html#R2706[BP 2.0], 1.1) be `literal` (or left to the default, `literal`, BP 1.2). (`encoded` is not used any more, see this https://msdn.microsoft.com/en-us/library/ms995710.aspx[opinion]).
 
 BP 2.0 does not require the sender to set soapAction in the HTTP header nor as part of the Content-Type header. Thus, it may not be relied upon.
 
-An operation can be: one way (input only); req-resp (inp-out-fault); or other two types (unused).
-
-== JAX-WS
-JAX-WS converts WSDL `portType` elements into java interfaces. A Java interface that corresponds to a `portType` is called a Service Endpoint Interface (SEI).
+An operation can be classified as: One-way (input only); Request-response (with input, output, and possibly fault messages); or other two types (that this document is not concerned with).
 

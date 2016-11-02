@@ -52,7 +52,7 @@ The spec defines two basic MEPs:
 == The HTTP binding
 The spec specifies what a SOAP binding is in general (see above), and specifies one such concrete binding, namely the HTTP one.
 
-This binding has two MEPs (that consists in further specifying the two basic MEPs seen above).
+This binding has two MEPs (that consist in further specifying the two basic MEPs seen above).
 
 * SOAP Response: an HTTP `GET` followed by an HTTP response that contains a SOAP message as a body;
 * SOAP Request-Response: an HTTP `POST` containing a SOAP body, followed by a response as above.
