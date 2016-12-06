@@ -1,0 +1,158 @@
+\RequirePackage[l2tabu, orthodox]{nag}
+\RequirePackage{silence}
+\WarningFilter{fmtcount}{\ordinal already defined use \FCordinal instead}
+\documentclass[english, french]{beamer}
+\input{preamble/packages}
+\input{preamble/math_basics}
+\input{preamble/math_mine}
+\input{preamble/redac}
+\input{preamble/draw}
+\input{preamble/acronyms}
+\input{preamble/uml}
+
+\setbeamertemplate{headline}[singleline]
+
+\title{Notions d’objet en Java}
+\subtitle{}
+\subject{Java}
+\keywords{JVM}
+\author{Olivier Cailloux}
+\institute[LAMSADE]{LAMSADE, Université Paris-Dauphine}
+\date{Version du \today}
+
+\begin{document}
+\bibliographystyle{apalike}
+
+\begin{frame}[plain]
+	\tikz[remember picture,overlay]{
+		\path (current page.south west) node[anchor=south west, inner sep=0] {
+			\includegraphics[height=1cm]{LAMSADE95.jpg}
+		};
+		\path (current page.south) ++ (0, 1mm) node[anchor=south, inner sep=0] {
+			\includegraphics[height=9mm]{Dauphine.jpg}
+		};
+		\path (current page.south east) node[anchor=south east, inner sep=0] {
+			\includegraphics[height=1cm]{PSL.png}
+		};
+	}
+   \titlepage
+\end{frame}
+\addtocounter{framenumber}{-1}
+
+\section{Méthodes, classes, objets}
+\begin{frame}
+	\frametitle{Sous-routines}
+	\begin{itemize}
+		\item Sous-routine : entrée (facultative), ensemble d’instructions, sortie (facultative)
+		\item Fait qqch
+		\item On peut l’appeler sans savoir comment elle procède (boîte noire)
+		\item \texttt{Math.random();} \texttt{Math.sqrt(4);}
+		\item Sous-routine sqrt statique se trouvant dans classe \texttt{Math}
+		\item Classes regroupent des variables et sous-routines statiques
+		\item \texttt{System.out} : variable statique \texttt{out} dans classe \texttt{System}
+		\item Permet d’\emph{organiser} et de \emph{nommer}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{String vers int}
+	\begin{itemize}
+		\item Création d’un int ? \pause
+		\begin{itemize}
+			\item \texttt{2}
+			\item \texttt{int zeRoot = Math.sqrt(4);} \pause
+		\end{itemize}
+		\item Parfois possible de créer une instance avec la classe elle-même
+		\item \texttt{int i = Integer.parseInt("10");}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Deux rôles des classes}
+	\begin{itemize}
+		\item Classe : conteneur à variables et sous-routines statiques
+		\item Mais peut aussi être considérée comme un \emph{type} : spécification, modèle, moule à objets
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{La trahison des images}
+	\centering\includegraphics[height=\textheight-15mm]{pipe.jpg}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Classes et objets}
+	\begin{itemize}
+		\item Classe : moule à objets, appelée type de l’objet
+		\item Objet : instance de classe
+		\item Exemple : classe \texttt{V} modélise une voiture
+		\item Objet correspondant est une voiture donnée (de type \texttt{V})
+		\item Classe \texttt{String}, Objet : \texttt{"blah"}
+		\item Classe \texttt{Scanner}, Objet \texttt{scanner} utilisé pour récupérer le texte entré par l’utilisateur
+	\end{itemize}
+\end{frame}
+
+\section{Strings}
+\begin{frame}
+	\frametitle{Opérations sur String}
+	\begin{itemize}
+		\item \texttt{"Hello".toUpperCase();}
+		\item \texttt{"Hello".indexOf("l");} ⇒ \pause \texttt{2}
+		\item \texttt{"Hello".substring(1, 3);} ⇒ \pause \texttt{"el"}
+	\end{itemize}
+	Attention au test d’égalité :
+	\begin{itemize}
+		\item[\mkkOK] utiliser \texttt{s1.equals(s2)} 
+		\item[\mkkNO] et \emph{pas} \texttt{s1 == s2}
+	\end{itemize}
+\end{frame}
+
+\section{Scanner}
+\begin{frame}
+	\frametitle{Scanner}
+	\begin{itemize}
+		\item Objet créé par \texttt{new}
+		\item \texttt{Scanner stdin = new Scanner(System.in);}
+		\item \texttt{String usersName = stdin.nextLine();}
+	\end{itemize}
+\end{frame}
+
+\appendix
+
+\section{Licence}
+\begin{frame}
+	\frametitle{Licence}
+	Cette présentation, et le code LaTeX associé, sont sous \href{http://opensource.org/licenses/MIT}{licence MIT}. Vous êtes libres de réutiliser des éléments de cette présentation, sous réserve de citer l’auteur.
+	
+	Le travail réutilisé est à attribuer à \href{http://www.lamsade.dauphine.fr/~ocailloux/}{Olivier Cailloux}, Université Paris-Dauphine.
+\end{frame}
+\end{document}
+
+\begin{frame}
+	\frametitle{}
+	\begin{itemize}
+		\item 
+	\end{itemize}
+	\begin{block}{}
+		
+	\end{block}
+\end{frame}
+
+\section{Bibliographie}
+\begin{frame}[allowframebreaks]
+	\frametitle{Bibliographie}
+	\def\newblock{\hskip .11em plus .33em minus .07em}
+% 	\bibliography{zotero}
+\end{frame}
+
+\section{Autres}
+\begin{frame}
+	\frametitle{}
+	\begin{itemize}
+		\item 
+	\end{itemize}
+	\begin{block}{}
+		
+	\end{block}
+\end{frame}
+\end{document}
