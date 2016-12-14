@@ -1,5 +1,10 @@
 = Various tools
-Various useful tools for developers.
+Various useful tools for Java (EE) developers.
+
+* Eclipse https://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/neonr[Neon] Java EE
+* `GlassFish Tools for Eclipse` plug-in: from Eclipse, Help / Eclipse Marketplace…
+* https://glassfish.java.net/download.html[Glassfish] 4.1.1 (Java EE 7 Full Platform)
+* http://www.oracle.com/technetwork/java/javase/downloads/index.html[Java] 8
 
 == Git
 
@@ -8,11 +13,10 @@ Various useful tools for developers.
 ** https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup[Configure] your git identity: user.name and user.email. (Specific for GitHub: https://help.github.com/articles/setting-your-username-in-git/[user.name], https://help.github.com/articles/setting-your-email-in-git/[user.email].)
 
 == Eclipse
-For eclipse users, I strongly recommend reading
+For Eclipse users, I strongly recommend reading the following. It does take some time, but will pay off as it will greatly increase your productivity and pleasure of coding.
 
 * Eclipse Workbench User Guide, http://help.eclipse.org/neon/topic/org.eclipse.platform.doc.user/gettingStarted/qs-02a.htm?cp=0_1_0_0[Basic tutorial]
 * Workbench User Guide, http://help.eclipse.org/neon/topic/org.eclipse.platform.doc.user/tips/platform_tips.html?cp=0_5[Tips and Tricks]
 * Java development user guide, http://help.eclipse.org/neon/topic/org.eclipse.jdt.doc.user/gettingStarted/qs-2.htm[Basic tutorial]
 * Java development user guide, http://help.eclipse.org/neon/topic/org.eclipse.jdt.doc.user/tips/jdt_tips.html?cp=1_5[Tips and Tricks] (JDT) (bit by bit!)
 
-It does take some time, but will pay off as it will greatly increase your productivity and pleasure of coding.
