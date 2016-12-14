@@ -3,4 +3,5 @@ Various useful tools for developers.
 
 * Git https://git-scm.com/downloads[client]
 ** Optional: https://git-for-windows.github.io/[Git for Windows]; https://tortoisegit.org/[TortoiseGit].
+** https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup[Configure] your git identity: user.name and user.email. (Specific for GitHub: https://help.github.com/articles/setting-your-username-in-git/[user.name], https://help.github.com/articles/setting-your-email-in-git/[user.email].)
 
