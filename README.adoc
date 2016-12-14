@@ -3,11 +3,3 @@ Course (in LaTeX) about Java and Java EE
 
 See also: https://github.com/oliviercailloux/samples[samples].
 
-For eclipse users, I strongly recommend reading
-
-* Eclipse Workbench User Guide, http://help.eclipse.org/neon/topic/org.eclipse.platform.doc.user/gettingStarted/qs-02a.htm?cp=0_1_0_0[Basic tutorial]
-* Workbench User Guide, http://help.eclipse.org/neon/topic/org.eclipse.platform.doc.user/tips/platform_tips.html?cp=0_5[Tips and Tricks]
-* Java development user guide, http://help.eclipse.org/neon/topic/org.eclipse.jdt.doc.user/gettingStarted/qs-2.htm[Basic tutorial]
-* Java development user guide, http://help.eclipse.org/neon/topic/org.eclipse.jdt.doc.user/tips/jdt_tips.html?cp=1_5[Tips and Tricks] (JDT) (bit by bit!)
-
-It does take some time, but will pay off as it will greatly increase your productivity and pleasure of coding.
