@@ -1,0 +1,6 @@
+= Various tools
+Various useful tools for developers.
+
+* Git https://git-scm.com/downloads[client]
+** Optional: https://git-for-windows.github.io/[Git for Windows]; https://tortoisegit.org/[TortoiseGit].
+
