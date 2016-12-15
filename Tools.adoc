@@ -1,7 +1,14 @@
 = Various tools
 Various useful tools for Java (EE) developers.
 
-* Eclipse https://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/neonr[Neon] Java EE
+== Java SE
+
+* Eclipse https://www.eclipse.org/downloads/packages/eclipse-ide-java-developers/neon1a[Neon] Java
+* http://www.oracle.com/technetwork/java/javase/downloads/index.html[Java] 8
+
+== Java EE
+
+* Eclipse https://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/neon1a[Neon] Java EE
 * `GlassFish Tools for Eclipse` plug-in: from Eclipse, Help / Eclipse Marketplace…
 * https://glassfish.java.net/download.html[Glassfish] 4.1.1 (Java EE 7 Full Platform)
 * http://www.oracle.com/technetwork/java/javase/downloads/index.html[Java] 8
