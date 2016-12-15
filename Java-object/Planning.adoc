@@ -29,7 +29,7 @@ You know algorithmics and the basic (non object-oriented) programming concepts i
 * ES1.5
 * ES2.2.1, 2.3.1, 2.3.2, 2.4.6 [I]
 * ES1.6, 1.7 [O]
-* Read link:../Tools.adoc[parts] of Eclipse doc [I]
+* Read link:../Tools.adoc#eclipse[parts] of Eclipse doc [I]
 
 Approximatively: 10p. (+ 30p. SK)
 
