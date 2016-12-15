@@ -37,7 +37,7 @@ Approximatively: 10p. (+ 30p. SK)
 * http://math.hws.edu/eck/cs124/javanotes7/c2/quiz.html[EQ2.1] to 2.4; 2.6 to 2.9; 2.11
 * (link:http://math.hws.edu/eck/cs124/javanotes7/c2/exercises.html[EE2.1] to 2.6)
 * EE2.7: you may use user input (Scanner) instead of file input; do not use TextIO (I suggest you do only this one among the exercices of chapter 2, unless you lack some prerequisites)
-* http://math.hws.edu/eck/cs124/javanotes7/c3/exercises.html[EE3.1] to 3.6
-* EE3.5, 3.6 [M]
+* http://math.hws.edu/eck/cs124/javanotes7/c3/exercises.html[EE3.1] to 3.3
+* EE3.4, 3.6 [M]
 * EE3.8, 3.9 [O]
 
