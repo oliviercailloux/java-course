@@ -31,7 +31,7 @@ You know algorithmics and the basic (non object-oriented) programming concepts i
 * ES1.6, 1.7 [O]
 * Read link:../Tools.adoc#eclipse[parts] of Eclipse doc [I]
 
-Approximatively: 10p. (+ 30p. SK)
+Approximatively: 10p. (+ 30p. [SK])
 
 * http://math.hws.edu/eck/cs124/javanotes7/c1/quiz.html[EQ1.3] to 1.9
 * http://math.hws.edu/eck/cs124/javanotes7/c2/quiz.html[EQ2.1] to 2.4; 2.6 to 2.9; 2.11
