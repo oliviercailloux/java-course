@@ -9,6 +9,7 @@ You know algorithmics and the basic (non object-oriented) programming concepts i
 * [I]: Important (some parts may be both SK and I)
 * [O]: Optional
 * [M]: Mandatory exercices
+* Markers apply to the whole line. Example: "4.3 intro to 4.3.2, 4.6.1 [I]" means that everything in between 4.3 and 4.3.2 plus 4.6.1 are important.
 * ESx.y(.z): designates section x.y (or x.y.z) in Eck’s http://math.hws.edu/eck/cs124/javanotes7/[book] (in chapter x)
 * EQx.y: question number y in Eck’s book, from quiz chapter x
 * EEx.y: exercice number y in Eck’s book, from exercices chapter x
@@ -40,4 +41,42 @@ Approximatively: 10p. (+ 30p. [SK])
 * http://math.hws.edu/eck/cs124/javanotes7/c3/exercises.html[EE3.1] to 3.3
 * EE3.4, 3.6 [M]
 * EE3.8, 3.9 [O]
+
+== S2
+
+* Exceptions; sub-routines; design: contract, black-box, preconditions.
+* EE4.5 together?
+* Mosaic together?
+* ES3.7 (except 3.7.3), 4 intro to 4.7.
+* ES4.3 intro to 4.3.2, 4.6.1 [I]
+
+Approximatively: 48p.
+
+* http://math.hws.edu/eck/cs124/javanotes7/c4/exercises.html[EE4]?
+* EE4.5, EE4.6, comment with Javadoc [M]
+
+== S3
+
+* Objects.
+* http://math.hws.edu/eck/cs124/javanotes7/c5/[ES5] intro to 5.7
+* ES5.3.4, 5.7 [I]
+
+Approximatively: 50p.
+
+== S4
+
+* Robustesse, programmation défensive
+* http://math.hws.edu/eck/cs124/javanotes7/c8/[ES8] intro to 8.4
+
+== Then
+
+T5 Th Générique. 
+
+2.3.4 Enums, nouveau.
+Bibliothèques. Maven.
+Logging ?
+SWT ?
+Annotations ?
+	Fichiers et flux
+	REST client ?
 
