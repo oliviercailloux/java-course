@@ -1,0 +1,192 @@
+\RequirePackage[l2tabu, orthodox]{nag}
+\RequirePackage{silence}
+\WarningFilter{fmtcount}{\ordinal already defined use \FCordinal instead}
+\documentclass[english, french]{beamer}
+\input{preamble/packages}
+\input{preamble/math_basics}
+\input{preamble/math_mine}
+\input{preamble/redac}
+\input{preamble/draw}
+\input{preamble/acronyms}
+\input{preamble/uml}
+
+\setbeamertemplate{headline}[singleline]
+
+\title{Découpe et contrats en génie logiciel}
+\subtitle{}
+\subject{Génie logiciel}
+\keywords{Java, JVM, sous-routines, boite noire}
+\author{Olivier Cailloux}
+\institute[LAMSADE]{LAMSADE, Université Paris-Dauphine}
+\date{Version du \today}
+
+\begin{document}
+\bibliographystyle{apalike}
+
+\begin{frame}[plain]
+	\tikz[remember picture,overlay]{
+		\path (current page.south west) node[anchor=south west, inner sep=0] {
+			\includegraphics[height=1cm]{LAMSADE95.jpg}
+		};
+		\path (current page.south) ++ (0, 1mm) node[anchor=south, inner sep=0] {
+			\includegraphics[height=9mm]{Dauphine.jpg}
+		};
+		\path (current page.south east) node[anchor=south east, inner sep=0] {
+			\includegraphics[height=1cm]{PSL.png}
+		};
+	}
+   \titlepage
+\end{frame}
+\addtocounter{framenumber}{-1}
+
+\section{Découpe en sous-routines}
+\subsection{Sous-routines}
+\begin{frame}
+	\frametitle{\subsecname}
+	\begin{itemize}
+		\item Sous-routine : entrée (facultative), ensemble d’instructions, sortie (facultative)
+		\item Fait qqch
+		\item On peut l’appeler sans savoir comment elle procède (boite noire)
+		\item \texttt{Math.random();} \texttt{Math.sqrt(4);}
+		\item Sous-routine sqrt statique se trouvant dans classe \texttt{Math}
+		\item Classes regroupent des variables et sous-routines statiques
+		\item \texttt{System.out} : variable statique \texttt{out} dans classe \texttt{System}
+		\item Permet d’\emph{organiser} et de \emph{nommer}
+	\end{itemize}
+\end{frame}
+
+\subsection{Exemple}
+\begin{frame}
+	\frametitle{\subsecname}
+	\begin{itemize}
+		\item Dans méthode main
+		\item Manipulation donnée d’une chaine
+		\item À plusieurs endroits
+	\end{itemize}
+	\begin{block}{Réusinage}
+		\begin{itemize}
+			\item Pour éviter duplication du code:
+			\item En faire une sous-routine
+			\item Appelée à plusieurs endroits
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\subsection{Intérêt}
+\begin{frame}
+	\frametitle{\subsecname}
+	Pourquoi créer une sous-routine ?
+	\begin{itemize}
+		\item Éviter la duplication de code. Pourquoi ? \pause
+		\begin{itemize}
+			\item Bugs : correction à un seul endroit
+			\item Factorisation : application conçue comme assemblage de blocs élémentaires
+			\item Clarté du code
+			\item Réusinage peut être facilité (trouver tous les endroits où routine est appelée)
+		\end{itemize}\pause
+		\item Clarté du code : auto-documentation ; boite noire
+		\item Partage du travail entre développeurs
+		\item Estimation quantité de travail
+	\end{itemize}
+\end{frame}
+
+\subsection{Factorisation}
+\begin{frame}
+	\frametitle{\subsecname}
+	\begin{itemize}
+		\item Code peut se ressembler sans être identique
+		\item Modifier pour qu’il soit identique mais paramétré
+		\item Exemple : Échecs, dessin du plateau vu du côté noir ou blanc
+		\item[⇒] Une seule routine de dessin, paramétré selon couleur
+	\end{itemize}
+\end{frame}
+
+\section{Contrat}
+\subsection{Contrat}
+\begin{frame}
+	\frametitle{\subsecname}
+	\begin{itemize}
+		\item Clarification des responsabilités nécessaires
+		\item Sous-routine fonctionnant sous certaines conditions
+		\item Exemple : entier fourni en paramètre > 0
+		\item Appelées \emph{préconditions}
+		\item \emph{Contrat} entre appelant et programmeur de la sous-routine
+		\item Sous ces conditions, méthode fournit un service
+		\item Exemple : renvoie un nombre aléatoire entre 0 et l’entier fourni, exclu
+		\item Si conditions non remplies : pas de garanties offertes !
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Contrat à expliciter}
+	\begin{itemize}
+		\item Contrat facilite l’implémentation de la sous-routine
+		\item Contrat facilite la vie de l’utilisateur
+		\item À condition de rendre le contrat explicite
+		\item Documenter les préconditions
+		\item Utilisateur averti : pensera plus probablement à vérifier les préconditions
+	\end{itemize}
+\end{frame}
+
+\section{Programmation défensive}
+\subsection{Programmation défensive}
+\begin{frame}
+	\frametitle{\subsecname}
+	\begin{itemize}
+		\item Aider les utilisateurs imprudents
+		\item Si précondition non satisfaite : le dire
+		\item Principe de l’\emph{échec rapide} (\emph{fail-fast})
+		\item Mieux vaut une erreur immédiate qu’une action inattendue
+		\item Facilite les corrections de bug
+		\item En pratique : tester les préconditions en entrée de sous-routine (lorsque raisonnable)
+	\end{itemize}
+\end{frame}
+
+\subsection{Assertions en Java}
+\begin{frame}
+	\frametitle{\subsecname}
+	\texttt{assert} : solution \emph{imparfaite} pour tester facilement les préconditions en Java
+	\begin{itemize}
+		\item \texttt{assert i > 0;}
+		\item Voire \texttt{assert i > 0 : "Integer must be strictly positive, received " + i + ".";}
+		\item Assertions non exécutées par défaut
+		\item Exécutées ssi JVM reçoit paramètre \texttt{-ea}
+		\item Intérêt ? \pause Pas de ralentissement en production \pause
+		\item Si assertion non satisfaite : arrêt de l’exécution + affichage de l’appel fautif (et des appels parents)
+		\item Inconvénients ? \pause
+		\begin{itemize}
+			\item Changement de comportement en production !
+			\item Pas de distinction préconditions et autres vérifications
+		\end{itemize}
+		\item En outre, gain de performance souvent négligeable
+		\item[⇒] Assertions à réserver pour tests couteux en temps
+	\end{itemize}
+\end{frame}
+
+\appendix
+\section{Licence}
+\begin{frame}
+	\frametitle{Licence}
+	Cette présentation, et le code LaTeX associé, sont sous \href{http://opensource.org/licenses/MIT}{licence MIT}. Vous êtes libres de réutiliser des éléments de cette présentation, sous réserve de citer l’auteur.
+	
+	Le travail réutilisé est à attribuer à \href{http://www.lamsade.dauphine.fr/~ocailloux/}{Olivier Cailloux}, Université Paris-Dauphine.
+\end{frame}
+\end{document}
+
+\section{Bibliographie}
+\begin{frame}[allowframebreaks]
+	\frametitle{Bibliographie}
+	\def\newblock{\hskip .11em plus .33em minus .07em}
+% 	\bibliography{zotero}
+\end{frame}
+
+\section{Autres}
+
+\begin{frame}
+	\frametitle{\subsecname}
+	\begin{itemize}
+		\item 
+	\end{itemize}
+\end{frame}
+
+\end{document}
