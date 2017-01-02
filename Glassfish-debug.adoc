@@ -5,7 +5,7 @@ Here is a useful trick for starters. When you can’t reach your servlet, check 
 * Start your domain
 * Run `asadmin`
 * `list-applications` ⇒ check that your application appears, otherwise, it is most probably not deployed correctly
-* `list-sub-components ` <app-name> ⇒ check that your servlet appears.
+* `list-sub-components` <app-name> ⇒ check that your servlet appears.
 
 If your application deploys but your servlet isn’t seen, you may have forgotten an annotation. Do check the server log, it probably contains useful information.
 
