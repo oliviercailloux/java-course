@@ -1,0 +1,108 @@
+\RequirePackage[l2tabu, orthodox]{nag}
+\RequirePackage{silence}
+\WarningFilter{fmtcount}{\ordinal already defined use \FCordinal instead}
+\documentclass[english, french]{beamer}
+\input{preamble/packages}
+\input{preamble/math_basics}
+\input{preamble/math_mine}
+\input{preamble/redac}
+\input{preamble/draw}
+\input{preamble/acronyms}
+\input{preamble/uml}
+
+\setbeamertemplate{headline}[singleline]
+
+\title{La notion d’exception en génie logiciel}
+\subtitle{}
+\subject{Génie logiciel}
+\keywords{Interruption}
+\author{Olivier Cailloux}
+\institute[LAMSADE]{LAMSADE, Université Paris-Dauphine}
+\date{Version du \today}
+
+\begin{document}
+\bibliographystyle{apalike}
+
+\begin{frame}[plain]
+	\tikz[remember picture,overlay]{
+		\path (current page.south west) node[anchor=south west, inner sep=0] {
+			\includegraphics[height=1cm]{LAMSADE95.jpg}
+		};
+		\path (current page.south) ++ (0, 1mm) node[anchor=south, inner sep=0] {
+			\includegraphics[height=9mm]{Dauphine.jpg}
+		};
+		\path (current page.south east) node[anchor=south east, inner sep=0] {
+			\includegraphics[height=1cm]{PSL.png}
+		};
+	}
+   \titlepage
+\end{frame}
+\addtocounter{framenumber}{-1}
+
+\section{Définition}
+\begin{frame}
+	\frametitle{\secname}
+	\begin{itemize}
+		\item Interrompt le flux normal de traitement
+		\item Pour gérer une situation exceptionnelle
+		\item Exemple ? \onslide<2->{Mémoire vive épuisée}
+		\item Est une forme d’\emph{interruption}
+		\item Exemple d’interruption qui n’est pas une exception ? \onslide<3->{Interruption pour basculer à une autre tâche}
+		\item Ici : exception au sens génie logiciel (sens Java un peu différent)
+	\end{itemize}
+\end{frame}
+
+\section{Problème résolu par les exceptions}
+\begin{frame}
+	\frametitle{\secname}
+	\begin{itemize}
+		\item Opérations communes souvent faillibles
+		\item Exemple : allouer de la mémoire, écrire sur un fichier
+		\item Si échec, souhait d’interrompre le flux normal
+		\item Éviter de devoir écrire une commande spécifique de traitement à chaque invocation
+		\item[⇒] Certaines opérations peuvent lancer une \emph{exception}
+	\end{itemize}
+\end{frame}
+
+\section{Gestion d’exceptions}
+\begin{frame}
+	\frametitle{\secname}
+	\begin{itemize}
+		\item Certains problèmes sont réparables
+		\item Exemple : échec lors écriture sur fichier
+		\item Le programmeur doit pouvoir intervenir et \emph{gérer} l’exception
+		\item Certains problèmes sont difficilement réparables
+		\item Exemple : échec lors allocation mémoire
+		\item Si pas de gestion spécifique prévue, comportement par défaut
+		\item Souvent : passage de l’exception pour traitement possible à un niveau supérieur
+		\item Si pas de gestion du tout : arrêt du programme
+	\end{itemize}
+\end{frame}
+
+\appendix
+\section{Licence}
+\begin{frame}
+	\frametitle{Licence}
+	Cette présentation, et le code LaTeX associé, sont sous \href{http://opensource.org/licenses/MIT}{licence MIT}. Vous êtes libres de réutiliser des éléments de cette présentation, sous réserve de citer l’auteur.
+	
+	Le travail réutilisé est à attribuer à \href{http://www.lamsade.dauphine.fr/~ocailloux/}{Olivier Cailloux}, Université Paris-Dauphine.
+\end{frame}
+\end{document}
+
+\section{Bibliographie}
+\begin{frame}[allowframebreaks]
+	\frametitle{Bibliographie}
+	\def\newblock{\hskip .11em plus .33em minus .07em}
+% 	\bibliography{zotero}
+\end{frame}
+
+\section{Autres}
+
+\begin{frame}
+	\frametitle{\subsecname}
+	\begin{itemize}
+		\item 
+	\end{itemize}
+\end{frame}
+
+\end{document}
