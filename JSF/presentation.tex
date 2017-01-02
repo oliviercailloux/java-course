@@ -45,71 +45,112 @@
 	Objectif : apporter une solution aux difficultés du développement web
 	\begin{block}{Difficultés web}
 		\begin{itemize}
+			\item canevas pages
 			\item synchronisation état
 			\item validation
 			\item contexte
-			\item canevas pages
 			\item requêtes partielles…
 		\end{itemize}
 	\end{block}
 \end{frame}
 
+\subsection{Requête Servlet normale}
 \begin{frame}
-	\frametitle{Exemple}
-	Voyons une page simple et sa description (partielle) en Facelet.
-	\begin{block}{Page souhaitée}
-		\centering
-%		\fbox{
-			\begin{tikzpicture}[remember picture]
-				\path node (name) {Name: };
-				\path (name.east) ++ (1ex, 0) node[anchor=west, draw, text width=8em, minimum height=1.5em] (input) {};
-				\path (input.east) ++ (1ex, 0) node[anchor=west, /GUI/button] (button) {Submit};
-			\end{tikzpicture}
-%		}\\
-	\end{block}
-		\begin{itemize}
-			\item Développeur décrit page en XHTML
-			\item Dans XHTML : \texttt{<h:}%
-				\begin{tikzpicture}[remember picture, baseline=(input expl.base)]%
-					\path node[inner sep=0, outer sep=0] (input expl) {%
-						\texttt{inputText}%
-					};%
-				\end{tikzpicture}%
-				\texttt{ value="\#\{myBean.text\}">}
-			\item Développeur crée un managed bean \texttt{MyBean} {\tiny(\jeeref[@]{javax.inject/Named})}
-		\end{itemize}%
-		\begin{tikzpicture}[overlay, remember picture]
-			\path[draw, color=red, ->] (input expl) -- (input);
-		\end{tikzpicture}%
-		Quand page invoquée :
-		\begin{itemize}
-			\item Serveur crée un composant JSF \jeeref{javax.jsf/HtmlInputText}
-		\end{itemize}
-		Quand formulaire soumis :
-		\begin{itemize}
-			\item JSF place valeur via \texttt{MyBean.setText}
-		\end{itemize}
+	\frametitle{\subsecname}
+	\begin{tikzpicture}
+		\path node[draw, rectangle] (client) {Client};
+		\path (client.base east) ++ (3cm, 0) node[anchor=base west] (container text) {Container};
+		\path (container text.south west) ++ (2mm, -2mm) node[draw, rectangle, anchor=north west] (servlet) {\texttt{MyServlet}};
+		\path node[fit={(container text) (servlet)}, rectangle, draw] (container) {};
+		\path (servlet.west) ++ (0, 1mm) coordinate (servletw1);
+		\path (servlet.west) ++ (0, -1mm) coordinate (servletw2);
+		\path[->, draw] (container.west |- servletw1) -- (servletw1);
+		\path[->, draw] (servletw2) -- (container.west |- servletw2);
+		\path (client.east) ++ (0, 1mm) coordinate (cliente1);
+		\path (client.east) ++ (0, -1mm) coordinate (cliente2);
+		\path[->, draw] (cliente1) -- (cliente1 -| container.west) node[pos=0.5, above] {request};
+		\path[->, draw] (container.west |- cliente2) -- (cliente2) node[pos=0.5, below] {response};
+	\end{tikzpicture}
+	\begin{itemize}
+		\item Problème : envoyer une page HTML à l’aide d’un servlet (page non statique)
+		\item Construire le code HTML via du code Java ?
+		\item \texttt{out.print("<html><head>");}…
+		\item Illisible, inélégant, difficile à tester et à valider…
+		\item Souhait : langage approprié pour générer HTML
+		\item Solution JSF : langage basé sur XML
+	\end{itemize}
 \end{frame}
 
+\subsection{Requête JSF}
 \begin{frame}
-	\frametitle{Vue d’ensemble}
-	Fourni par JSF : 
+	\frametitle{\subsecname}
+	\begin{tikzpicture}
+		\path node[draw, rectangle] (client) {Client};
+		\path (client.base east) ++ (3cm, 0) node[anchor=base west] (container text) {Container};
+		\path (container text.south west) ++ (2mm, -2mm) node[draw, rectangle, anchor=north west] (servlet) {\texttt{FacesServlet}};
+		\path (servlet.south west) ++ (2mm, -2mm) node[draw, rectangle, anchor=north west] (page) {\texttt{mypage.xhtml}};
+		\path (page.north) ++ (-1mm, 0) coordinate (pagen1);
+		\path (page.north) ++ (1mm, 0) coordinate (pagen2);
+		\path[->, draw] (servlet.south -| pagen1) -- (pagen1);
+		\path[->, draw] (pagen2) -- (servlet.south -| pagen2);
+		\path node[fit={(container text) (servlet) (page)}, rectangle, draw] (container) {};
+		\path (servlet.west) ++ (0, 1mm) coordinate (servletw1);
+		\path (servlet.west) ++ (0, -1mm) coordinate (servletw2);
+		\path[->, draw] (container.west |- servletw1) -- (servletw1);
+		\path[->, draw] (servletw2) -- (container.west |- servletw2);
+		\path (client.east) ++ (0, 1mm) coordinate (cliente1);
+		\path (client.east) ++ (0, -1mm) coordinate (cliente2);
+		\path[->, draw] (cliente1) -- (cliente1 -| container.west) node[pos=0.5, above] {request};
+		\path[->, draw] (container.west |- cliente2) -- (cliente2) node[pos=0.5, below] {response};
+	\end{tikzpicture}
 	\begin{itemize}
-		\item API : état composants ; événements ; validation ; conversions ; navigation ; i18n
-		\item Utilise managed beans
-		\item Composants UI ; modèle de rendering ; de conversion ; d’écoute ; de validation
-		\item View Definition Languages
+		\item Router la requête vers le servlet JSF : \texttt{FacesServlet}
+		\item Déjà fourni par Java EE
+		\item \texttt{FacesServlet} cherche une page correspondant à la requête
+		\item Exemple : \texttt{contextPath/faces/mypage.xhtml} ⇒ JSF cherche page \texttt{mypage.xhtml}
+		\item Page à décrire dans un langage de définition de vue (VDL)
+		\item {\tiny Requête JSF ≠ Requête Faces d’après spec JSF}
 	\end{itemize}
+\end{frame}
+
+\subsection{Composition de JSF}
+\begin{frame}
+	\frametitle{\subsecname}
 	\begin{block}{View Definition Languages}
 		\begin{itemize}
-			\item Facelets (et JSP)
+			\item Facelets (autre ? \pause JSP, déprécié) \pause
 			\item bibliothèque de tags
 		\end{itemize}
 	\end{block}
+	\begin{itemize}
+		\item API : état composants ; événements ; validation ; conversions ; navigation ; i18n
+		\item Utilise beans gérés
+		\item Composants UI ; modèle de rendering ; de conversion ; d’écoute ; de validation
+	\end{itemize}
 \end{frame}
 
+\subsection{Facelets}
+\begin{frame}
+	\frametitle{\subsecname}
+	\begin{itemize}
+		\item Page décrite en langage Facelets : page XHTML
+		\item Utilisant des éléments HTML
+		\item Et des éléments Facelets
+	\end{itemize}
+\end{frame}
+
+\subsection{Facelet my-static-page.xhtml}
 \begin{frame}[fragile]
-	\frametitle{Exemple de page Facelet}
+	\frametitle{Facelet \texttt{my-static-page.xhtml}}
+	\begin{block}{Page souhaitée}
+		\centering
+			\begin{tikzpicture}[remember picture]
+				\path node (name) {Name: };
+				\path (name.east) ++ (1ex, 0) node[anchor=west, draw, text width=8em, minimum height=1.5em] (input) {Mon nom};
+			\end{tikzpicture}
+	\end{block}
+	\texttt{my-static-page.xhtml}:
+	\vspace{1em}\vspace{-2pt}
 	\begin{lstlisting}
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict …>
 <html xmlns="http://www.w3.org/1999/xhtml"
@@ -120,64 +161,26 @@
   </head>
   <body>
     <h:outputText value="Name:" />
-    <h:inputText value="#{myBean.text}" />
-    <h:commandButton value="submit" />
+    <h:inputText value="Mon nom" />
   </body>
 </html>
 	\end{lstlisting}
 \end{frame}
-	
-\begin{frame}[fragile]
-	\frametitle{Descripteur web}
-	\begin{itemize}
-		\item Certaines requêtes associées à JSF
-		\item Implémenté comme un servlet associé à certaines urls
-		\item Préciser dans le descripteur à quels urls associer JSF
-		\item Dans module web (\texttt{.war})
-	\end{itemize}
-	Dans descripteur web \texttt{WEB-INF/web.xml} :
-	\begin{lstlisting}[aboveskip=0.2em, belowskip=0em]
-<web-app …>
-  <servlet>
-    <servlet-name>my-faces-servlet-name</servlet-name>
-    <servlet-class>javax.faces.webapp.FacesServlet
-    </servlet-class>
-  </servlet>
-  <servlet-mapping>
-  ...
-  </servlet-mapping>
-</web-app>
-	\end{lstlisting}
-\end{frame}
 
-\begin{frame}[fragile]
-	\frametitle{Descripteur web : association URL}
-	Association préfixe recommandée {\tiny (existe aussi association suffixe)} :
-	\begin{lstlisting}[aboveskip=1em, belowskip=1em]
-<web-app …>
-  <servlet-mapping>
-    <servlet-name>my-faces-servlet-name</servlet-name>
-    <url-pattern>/faces/*</url-pattern>
-  </servlet-mapping>
-</web-app>
-	\end{lstlisting}
-	\begin{itemize}
-		\item Distingue requêtes \emph{faces} (exemple \texttt{contextPath/faces/view.xhtml}) de requêtes non-faces (exemple \texttt{contextPath/view.xhtml})
-	\end{itemize}
-\end{frame}
-
-\section[Itération web]{Itération web JSF}
+\section[Cycle de traitement]{Cycle de traitement de requête}
+\subsection{Cycle de traitement}
 \begin{frame}
-	\frametitle{Traitement de requêtes par JSF}
+	\frametitle{\subsecname}
 	\begin{itemize}
-		\item \emph{Itération web JSF} : requête du client {\tiny traitée par JSF} jusqu’à réponse du serveur
+		\item Cycle de traitement de requête (\emph{Request Processing Lifecycle}) : requête du client {\tiny traitée par JSF} jusqu’à réponse du serveur
 		\item JSF implémente IOC (? \pause Inversion of Control) \pause : code du développeur appelé à des moments spécifiés dans un cycle de vie pré-défini
 		\item (Autre IOC déjà vu ? \pause Servlets !)
 	\end{itemize}
 \end{frame}
 
+\subsection{Phases du cycle de traitement}
 \begin{frame}
-	\frametitle{Cycle de vie d’une itération web}
+	\frametitle{\subsecname}
 	\begin{minipage}[t]{6.8cm}\vspace{-2em}%
 		\begin{block}{Exécution}
 			\begin{enumerate}
@@ -203,120 +206,153 @@
 	\end{block}
 \end{frame}
 
-\begin{frame}[label=ph-rv]
-	\frametitle{Phase \emph{Restore View}}
-	\begin{itemize}
-		\item Associe l’url à un \texttt{viewId}
-		\item[⇒] Requête \texttt{contextPath/faces/view.xhtml} associée à viewId \texttt{view.xhtml}
-		\item Si requête initiale : lit la page \texttt{viewId}
-		\item Construit un arbre de \emph{composants JSF}
-		\item[⇒] Construit composant \jeeref{javax.jsf/HtmlInputText}, …
-		\item Si arbre existe déjà dû à requête précédente : le restaure
-	\end{itemize}
-\end{frame}
-
-\begin{frame}[label=ph-arv]
-	\frametitle{Phase \emph{Apply Request Values}}
-	\begin{tikzpicture}
-		\path node (name) {Name: };
-		\path (name.east) ++ (1ex, 0) node[anchor=west, draw, text width=8em, minimum height=1.5em] (input) {Mon Nom};
-		\path (input.east) ++ (1ex, 0) node[anchor=west, /GUI/button] (button) {Submit};
-	\end{tikzpicture}
-	\begin{itemize}
-		\item Place valeurs envoyées dans composants JSF {\tiny implémentant \jeeref{javax.faces.component/EditableValueHolder}}
-		\item[⇒] Place \texttt{"Mon nom"} dans composant \jeeref{javax.faces.component.html/HtmlInputText}
-		\item Retient quel composant {\tiny ou composants} a été activé {\tiny implémentant \texttt{ActionSource2}}
-		\item[⇒] Utilisateur a cliqué sur \og{}Submit\fg{} : événement associé à composant \texttt{HtmlCommandButton}
-		\item[⇒] {\tiny \texttt{ActionEvent} de source \texttt{HtmlCommandButton} placé dans queue}
-	\end{itemize}
-\end{frame}
-
+\subsection{Exemple statique}
 \begin{frame}
-	\frametitle{Phase \emph{Process Validations}}
+	\frametitle{\subsecname}
 	\begin{itemize}
-		\item Convertit et valide les valeurs des composants
-		\item Selon convertisseurs et validateurs enregistrés
-		\item Messages d’erreurs enregistrés dans le \texttt{FacesContext} {\tiny cf. \texttt{addMessage()}}
-		\item Si erreur de conversion ou validation : passe directement à \emph{Render Response}
+		\item Requête vers \texttt{faces/my-static-page.xhtml}
+		\item Requête JSF : exécution cycle de traitement
+		\item \emph{Restore view} : création composants \jeeref{javax.faces.component.html/HtmlOutputText}, \jeeref{javax.faces.component.html/HtmlInputText}
+		\item Retiennent paramètres \texttt{value} correspondants
 	\end{itemize}
-\end{frame}
-
-\begin{frame}
-	\frametitle{Contexte}
-	\begin{itemize}
-		\item Un \jeeref{javax.faces.context/FacesContext} associé à chaque requête Faces
-		\item Modifié au cours du cycle de vie de l’itération web
-		\item Stocke la vue (arbre de composants)
-		\item Contient les messages d’erreur durant validation, conversion…
-		\item Accès via \texttt{FacesContext.getCurrentInstance()}
-	\end{itemize}
-\end{frame}
-
-\begin{frame}[label=ph-umv]
-	\frametitle{Phase \emph{Update Model Values}}
-	\begin{itemize}
-		\item À ce stade, requête valide, valeurs composants ok
-		\item Composants pouvant être édités {\tiny implémentant \texttt{EditableValueHolder}} : appelle la méthode liée à propriété \texttt{value}
-		\item[⇒] Appelle \texttt{"\#\{myBean.text\}"}
-		\item Désigne la méthode \texttt{setText} d’une instance de la classe \texttt{MyBean}
-	\end{itemize}
-\end{frame}
-
-\begin{frame}[label=ph-ia]
-	\frametitle{Phase \emph{Invoke Application}}
-	Dans cette phase : traitement des actions et navigation
-	\begin{tikzpicture}
-		\path node (name) {Name: };
-		\path (name.east) ++ (1ex, 0) node[anchor=west, draw, text width=8em, minimum height=1.5em] (input) {Mon Nom};
-		\path (input.east) ++ (1ex, 0) node[anchor=west, /GUI/button] (button) {Submit};
-	\end{tikzpicture}
-	\begin{itemize}
-		\item Si un composant a été activé, on l’a retenu en phase \hyperlink{ph-arv}{\emph{Apply Request Values}} {\tiny (\jeeref{javax.faces/ActionEvent} issu de composants implémentant \jeeref{javax.faces/ActionSource2})}
-		\item Si on vient d’arriver sur la page : rien à faire à cette phase
-		\item Si composant activé : méthode liée à \texttt{action} invoquée
-		\item[⇒] Développeur a enregistré \texttt{\#\{myActor.processSubmit()\}} comme \texttt{action} du \texttt{HtmlCommandButton}
-		\item[⇒] \texttt{processSubmit(): String} enregistre le nom dans la BD
-		\item[⇒] … et renvoie \texttt{"success"} (ou \texttt{"failure"} si échec)
-		\item Conteneur récupère \texttt{String} de l’action {\tiny ou invoque \texttt{toString()}} et déclenche navigation vers cette \texttt{viewId}
-		\item Donc \alert{retour à phase 1 !}
-	\end{itemize}
-\end{frame}
-
-\begin{frame}[fragile]
-	\frametitle{Actions : Exemple Facelets}
-	Page \texttt{index.xhtml} (extrait) :
-	\begin{lstlisting}[aboveskip=1em, belowskip=1em]
-<body>
-  <h:commandButton value="Submit" action="response" />
-</body>
-	\end{lstlisting}
-	\begin{itemize}
-		\item L’action peut aussi être un simple string
-		\item[⇒] Cliquer sur Submit envoie à la page \texttt{response.xhtml}
-	\end{itemize}
-\end{frame}
-
-\begin{frame}
-	\frametitle{Phase \emph{Render Response}}
-	\begin{itemize}
-		\item Chaque composant de l’arbre contribue à encodage réponse
-		\item Délégation aux \texttt{renderer}s
-		\item Renderer et composant collaborent pour afficher le texte désiré
-		\item Exemple : Renderer HTML \texttt{Output-Text} affiche {\tiny dans le cas le plus simple} l’attribut \texttt{value} du composant
-	\end{itemize}
-	\begin{exampleblock}{Exemple}
+	\begin{exampleblock}{Composants générés (\texttt{my-static-page.xhtml})}
 		\begin{itemize}
 			\item Composant \texttt{HTMLOutputText} : \texttt{value} = \texttt{Name:}
 			\item Composant \texttt{HTMLInputText} : \texttt{value} = \texttt{Mon Nom}
-			\item Composant \texttt{HTMLCommandButton} : \texttt{value} = \texttt{Submit}
-			\item[⇒] \texttt{Name:<input type="text" … value="Mon Nom" /> <input type="submit" … value="Submit" />}
+		\end{itemize}
+	\end{exampleblock}
+\end{frame}
+
+\begin{frame}
+	\frametitle{\subsecname{} (2)}
+	\begin{itemize}
+		\item Phases \emph{Apply Request Values}, \emph{Process Validations}, \emph{Update Model Values}, \emph{Invoke Application} : rien à faire
+		\item \emph{Render Response} : HTML en entrée renvoyé tel quel ; composants invoqués pour génération HTML
+	\end{itemize}
+	\begin{exampleblock}{HTML généré (\texttt{my-static-page.xhtml})}
+		\begin{itemize}
+			\item[⇒] \texttt{Name:<input type="text" … value="Mon Nom" />}
 		\end{itemize}
 		\begin{tikzpicture}
 			\path node (name) {Name: };
 			\path (name.east) ++ (1ex, 0) node[anchor=west, draw, align=left, text width=8em, minimum height=1.5em] (input) {Mon Nom};
-			\path (input.east) ++ (1ex, 0) node[anchor=west, /GUI/button] (button) {Submit};
 		\end{tikzpicture}
 	\end{exampleblock}
+\end{frame}
+
+\subsection{Lecture dynamique}
+\begin{frame}
+	\frametitle{\subsecname}
+	\begin{itemize}
+		\item Souhait : afficher le nom enregistré dans un bean géré
+		\item \texttt{MyBean.uname} {\tiny(\jeeref[@]{javax.inject/Named})} contient le nom de l’utilisateur
+	\end{itemize}
+	\begin{block}{Page souhaitée}
+		\centering
+		\begin{tikzpicture}[remember picture]
+			\path node (name) {Name: };
+			\path (name.east) ++ (1ex, 0) node[anchor=west, draw, text width=8em, minimum height=1.5em] (input) {Nom-dans-bean};
+		\end{tikzpicture}
+	\end{block}
+	\begin{itemize}
+		\item En Facelet : \texttt{<h:}%
+			\begin{tikzpicture}[remember picture, baseline=(input expl.base)]%
+				\path node[inner sep=0, outer sep=0] (input expl) {%
+					\texttt{inputText}%
+				};%
+			\end{tikzpicture}%
+			\texttt{ value="\#\{myBean.uname\}">}
+			\begin{tikzpicture}[overlay, remember picture]
+				\path[draw, color=red, ->] (input expl) -- (input);
+			\end{tikzpicture}%
+		\item Lors exécution du cycle de traitement ? \pause
+		\item \emph{Restore view} : création composants, dont \texttt{HtmlInputText} avec \texttt{value} qui référence propriété \texttt{uname} dans \texttt{myBean}
+		\item \emph{Render Response} : lors génération HTML par composant \texttt{HtmlInputText}, utilisation de la valeur de \texttt{uname}
+	\end{itemize}%
+\end{frame}
+
+\subsection{Formulaire POST}
+\begin{frame}[fragile]
+	\frametitle{\subsecname}
+	\begin{block}{Page souhaitée dans formulaire HTML}
+		 \begin{center}
+		\begin{tikzpicture}[remember picture]
+			\path node (name) {Name: };
+			\path (name.east) ++ (1ex, 0) node[anchor=west, draw, text width=8em, minimum height=1.5em] (input) {};
+			\path (input.east) ++ (1ex, 0) node[anchor=west, /GUI/button] (button) {Submit};
+		\end{tikzpicture}
+		\end{center}
+	\end{block}
+	Souhaité : envoi formulaire en POST lors soumission\\
+	Code Facelet:
+	\begin{lstlisting}
+  <body>
+    <h:form>
+      <h:outputText value="Name:" />
+      <h:inputText value="#{myBean.uname}" />
+      <h:commandButton value="Submit"
+        action="#{myBean.submitName}" />
+    </h:form>
+  </body>
+	\end{lstlisting}
+	⇒ création de trois composants + formulaire\\
+	⇒ encapsulation dans un élément \texttt{<form method="post">} HTML
+\end{frame}
+
+\subsection{Postback}
+\begin{frame}
+	\frametitle{\subsecname}	
+	\begin{itemize}
+		\item Utilisateur remplit formulaire
+		\item Utilisateur clique Submit
+		\item Navigateur envoie données du formulaire en POST à la même page
+		\item \emph{Postback} : nom de la requête POST quand envoyée à la page d’origine
+		\item Dans l’exemple : postback vers \texttt{…/faces/mypage.xhtml}
+		\item Requête JSF ⇒ cycle de traitement démarre
+	\end{itemize}
+\end{frame}
+
+\subsection{Cycle postback}
+\begin{frame}
+	\frametitle{\subsecname}	
+	\begin{itemize}
+		\item \emph{Restore View} : restauration arbre de composants depuis mémoire
+		\item \emph{Apply Request Values} :
+		\begin{itemize}
+			\item Place valeur nom entrée dans composant \texttt{HTMLInputText}
+			\item Enregistre que bouton a été cliqué dans composant \texttt{HTMLCommandButton}
+		\end{itemize}
+		\item \emph{Process Validations} : rien à faire
+		\item \emph{Update Model Values} : place valeur de \texttt{HTMLInputText} dans propriété \texttt{uname} de \texttt{myBean}
+		\item \emph{Invoke Application} :
+		\begin{itemize}
+			\item active événement lié au \texttt{HTMLCommandButton}
+			\item[⇒] exécute méthode \texttt{submitName} de \texttt{myBean}
+			\item conseillé : envoie redirection {\tiny ou navigue et recommence cycle, ou passe à phase Rendering}
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\subsection{Redirection suite à postback}
+\begin{frame}[fragile]
+	\frametitle{\subsecname}
+	Conseillé : utiliser le patron de conception PRG (? \pause POST-redirect-GET) \pause
+	\vspace{1em}
+	\begin{lstlisting}
+public String submitName() {
+  // do stuff
+  // if success:
+    return "my-page-when-successful?faces-redirect=true";
+  // otherwise:
+    return "my-page-when-failure?faces-redirect=true";
+}
+	\end{lstlisting}
+	\begin{itemize}
+		\item \texttt{?faces-redirect=true} : fait savoir à JSF qu’il doit renvoyer une réponse de redirection
+		\item JSF renvoie HTTP REDIRECT vers …\texttt{/faces/my-page-}…
+		\item Client demande …\texttt{/faces/my-page-}…
+		\item Requête traitée par \texttt{FacesServlet}
+	\end{itemize}
 \end{frame}
 
 \section{Facelets}
@@ -328,7 +364,7 @@
 		\item Éléments XML non préfixés : seront simplement restitués au client tels quels
 		\item Éléments XML préfixés référençant une bibliothèque de tags JSF : agissent sur la vue construite par JSF
 		\item JSF définit des bibliothèques de tags et leur sémantique
-		\item Associés à des préfixes d’une lettre {\tiny (standards, mais peuvent être changés)}
+		\item Associés à des préfixes d’une lettre {\tiny (usage courant, mais peuvent être changés)}
 		\item Utilisation de tags tierce-partie possible
 		\item \tiny Tag également appelé custom action ou custom tag
 	\end{itemize}
@@ -373,7 +409,6 @@
 	\end{itemize}
 \end{frame}
 
-\section{Packaging}
 \section[EL]{Expression Language}
 \begin{frame}[fragile]
 	\frametitle{Expression Language}
@@ -526,7 +561,7 @@ public class Employee {
 \begin{frame}[fragile]
 	\frametitle{Événements du cycle de vie}
 	\begin{itemize}
-		\item On peut aussi intervenir à des moments donnés du cycle de vie de l’itération web
+		\item On peut aussi intervenir à des moments donnés du cycle de traitement
 		\item Par exemple : charger contenu de la page en fonction de paramètres requêtes
 		\item Utiliser \jsftag{f/event}
 	\end{itemize}
@@ -737,6 +772,46 @@ public class Employee {
 	\end{itemize}
 \end{frame}
 
+\section{Configuration}
+\subsection{Descripteur web}
+\begin{frame}[fragile]
+	\frametitle{\subsecname}
+	\begin{itemize}
+		\item Préciser dans le descripteur quelles requêtes (quelles urls) sont adressées à JSF (à \texttt{FacesServlet})
+		\item Dans module web (\texttt{.war})
+	\end{itemize}
+	Dans descripteur web \texttt{WEB-INF/web.xml} :
+	\begin{lstlisting}[aboveskip=0.2em, belowskip=0em]
+<web-app …>
+  <servlet>
+    <servlet-name>my-faces-servlet-name</servlet-name>
+    <servlet-class>javax.faces.webapp.FacesServlet
+    </servlet-class>
+  </servlet>
+  <servlet-mapping>
+  ...
+  </servlet-mapping>
+</web-app>
+	\end{lstlisting}
+\end{frame}
+
+\subsection{Association préfixe}
+\begin{frame}[fragile]
+	\frametitle{Descripteur web : association préfixe}
+	Association préfixe recommandée {\tiny (existe aussi association suffixe)} :
+	\begin{lstlisting}[aboveskip=1em, belowskip=1em]
+<web-app …>
+  <servlet-mapping>
+    <servlet-name>my-faces-servlet-name</servlet-name>
+    <url-pattern>/faces/*</url-pattern>
+  </servlet-mapping>
+</web-app>
+	\end{lstlisting}
+	\begin{itemize}
+		\item Distingue requêtes \emph{faces} (exemple \texttt{contextPath/faces/view.xhtml}) de requêtes non-faces (exemple \texttt{contextPath/view.xhtml})
+	\end{itemize}
+\end{frame}
+
 \section{Références}
 \begin{frame}
 	\frametitle{Références}
@@ -764,7 +839,7 @@ public class Employee {
 		\item Vérifier qu’elle a bien été servie par le servlet Faces en regardant le code source de la page reçue par votre navigateur : le doctype résultant doit avoir été transformé en \texttt{<!DOCTYPE html>}
 		\item Modifier la page \path{index.xhtml} : elle doit contenir un tag \jsftag{h/outputText} qui est chargé de générer le texte "Hello". Pour le moment ce texte est toujours inscrit en dur dans la page.
 		\item Observer le résultat (vous savez quoi faire à ce stade…)
-		\item Reprendre le cycle de vie d’une itération web. Décrire ce qui se passe à chaque étape sur cet exemple.
+		\item Reprendre le cycle de traitement. Décrire ce qui se passe à chaque étape sur cet exemple.
 		\item Créer un managed bean \texttt{Greeter} \texttt{@RequestScoped} et une méthode \texttt{getGreeting()} qui renvoie "Hello".
 		\item Ajouter ce qu’il faut pour que votre \texttt{Greeter} soit accessible par EL
 		\item Modifier la page (vous le voyiez venir ?) : au lieu d’écrire "Hello" en dur, le tag doit invoquer la méthode \texttt{getGreeting()} pour générer le texte
@@ -780,6 +855,110 @@ public class Employee {
 \end{frame}
 
 \appendix
+\section{Détails phases}
+\begin{frame}[label=ph-rv]
+	\frametitle{Phase \emph{Restore View}}
+	\begin{itemize}
+		\item Associe l’url à un \texttt{viewId}
+		\item[⇒] Requête \texttt{contextPath/faces/view.xhtml} associée à viewId \texttt{view.xhtml}
+		\item Si requête initiale : lit la page \texttt{viewId}
+		\item Construit un arbre de \emph{composants JSF}
+		\item[⇒] Construit composant \jeeref{javax.faces.component.html/HtmlInputText}, …
+		\item Si arbre existe déjà dû à requête précédente : le restaure
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[label=ph-arv]
+	\frametitle{Phase \emph{Apply Request Values}}
+	\begin{tikzpicture}
+		\path node (name) {Name: };
+		\path (name.east) ++ (1ex, 0) node[anchor=west, draw, text width=8em, minimum height=1.5em] (input) {Mon Nom};
+		\path (input.east) ++ (1ex, 0) node[anchor=west, /GUI/button] (button) {Submit};
+	\end{tikzpicture}
+	\begin{itemize}
+		\item Place valeurs envoyées dans composants JSF {\tiny implémentant \jeeref{javax.faces.component/EditableValueHolder}}
+		\item[⇒] Place \texttt{"Mon nom"} dans composant \jeeref{javax.faces.component.html/HtmlInputText}
+		\item Retient quel composant {\tiny ou composants} a été activé {\tiny implémentant \texttt{ActionSource2}}
+		\item[⇒] Utilisateur a cliqué sur \og{}Submit\fg{} : événement associé à composant \texttt{HtmlCommandButton}
+		\item[⇒] {\tiny \texttt{ActionEvent} de source \texttt{HtmlCommandButton} placé dans queue}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Phase \emph{Process Validations}}
+	\begin{itemize}
+		\item Convertit et valide les valeurs des composants
+		\item Selon convertisseurs et validateurs enregistrés
+		\item Messages d’erreurs enregistrés dans le \texttt{FacesContext} {\tiny cf. \texttt{addMessage()}}
+		\item Si erreur de conversion ou validation : passe directement à \emph{Render Response}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Contexte}
+	\begin{itemize}
+		\item Un \jeeref{javax.faces.context/FacesContext} associé à chaque requête Faces
+		\item Modifié au cours du cycle de traitement de la requête
+		\item Stocke la vue (arbre de composants)
+		\item Contient les messages d’erreur durant validation, conversion…
+		\item Accès via \texttt{FacesContext.getCurrentInstance()}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[label=ph-umv]
+	\frametitle{Phase \emph{Update Model Values}}
+	\begin{itemize}
+		\item À ce stade, requête valide, valeurs composants ok
+		\item Composants pouvant être édités {\tiny implémentant \texttt{EditableValueHolder}} : appelle la méthode liée à propriété \texttt{value}
+		\item[⇒] Appelle \texttt{"\#\{myBean.text\}"}
+		\item Désigne la méthode \texttt{setText} d’une instance de la classe \texttt{MyBean}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[label=ph-ia]
+	\frametitle{Phase \emph{Invoke Application}}
+	Dans cette phase : traitement des actions et navigation
+	\begin{tikzpicture}
+		\path node (name) {Name: };
+		\path (name.east) ++ (1ex, 0) node[anchor=west, draw, text width=8em, minimum height=1.5em] (input) {Mon Nom};
+		\path (input.east) ++ (1ex, 0) node[anchor=west, /GUI/button] (button) {Submit};
+	\end{tikzpicture}
+	\begin{itemize}
+		\item Si un composant a été activé, on l’a retenu en phase \hyperlink{ph-arv}{\emph{Apply Request Values}} {\tiny (\jeeref{javax.faces/ActionEvent} issu de composants implémentant \jeeref{javax.faces/ActionSource2})}
+		\item Si on vient d’arriver sur la page : rien à faire à cette phase
+		\item Si composant activé : méthode liée à \texttt{action} invoquée
+		\item[⇒] Développeur a enregistré \texttt{\#\{myActor.processSubmit()\}} comme \texttt{action} du \texttt{HtmlCommandButton}
+		\item[⇒] \texttt{processSubmit(): String} enregistre le nom dans la BD
+		\item[⇒] … et renvoie \texttt{"success"} (ou \texttt{"failure"} si échec)
+		\item Conteneur récupère \texttt{String} de l’action {\tiny ou invoque \texttt{toString()}} et déclenche navigation vers cette \texttt{viewId}
+		\item Donc \alert{retour à phase 1 !}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Actions : Exemple Facelets}
+	Page \texttt{index.xhtml} (extrait) :
+	\begin{lstlisting}[aboveskip=1em, belowskip=1em]
+<body>
+  <h:commandButton value="Submit" action="response" />
+</body>
+	\end{lstlisting}
+	\begin{itemize}
+		\item L’action peut aussi être un simple string
+		\item[⇒] Cliquer sur Submit envoie à la page \texttt{response.xhtml}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Phase \emph{Render Response}}
+	\begin{itemize}
+		\item Chaque composant de l’arbre contribue à encodage réponse
+		\item Délégation aux \texttt{renderer}s
+		\item Renderer et composant collaborent pour afficher le texte désiré
+		\item Exemple : Renderer HTML \texttt{Output-Text} affiche {\tiny dans le cas le plus simple} l’attribut \texttt{value} du composant
+	\end{itemize}
+\end{frame}
+
 \section{Composants}
 \begin{frame}
 	\newlength{\umlVertSep}
@@ -894,7 +1073,7 @@ public class Employee {
 	\end{itemize}
 \end{frame}
 
-\section{Itération web : détails}
+\section{Cycle de traitement : détails}
 \begin{frame}[label=ph-rv-details]
 	\frametitle{Phase \emph{Restore View}}
 	La spécification JSF définit des classes et leurs comportements. Examinons le démarrage d’une requête JSF.
@@ -1049,14 +1228,12 @@ public class Employee {
 \end{frame}
 \end{document}
 
+\subsection{}
 \begin{frame}
-	\frametitle{}
+	\frametitle{\subsecname}
 	\begin{itemize}
 		\item 
 	\end{itemize}
-	\begin{block}{}
-		
-	\end{block}
 \end{frame}
 
 \section{Bibliographie}
@@ -1064,16 +1241,5 @@ public class Employee {
 	\frametitle{Bibliographie}
 	\def\newblock{\hskip .11em plus .33em minus .07em}
 % 	\bibliography{zotero}
-\end{frame}
-
-\section{Autres}
-\begin{frame}
-	\frametitle{}
-	\begin{itemize}
-		\item 
-	\end{itemize}
-	\begin{block}{}
-		
-	\end{block}
 \end{frame}
 \end{document}
