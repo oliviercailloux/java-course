@@ -1,5 +1,7 @@
 = Debug under Glassfish
+
 Here is a useful trick for starters. When you can’t reach your servlet, check out that Glassfish sees it.
+
 * Start your domain
 * Run `asadmin`
 * `list-applications` ⇒ check that your application appears, otherwise, it is most probably not deployed correctly
