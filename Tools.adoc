@@ -3,15 +3,17 @@ Various useful tools for Java (EE) developers.
 
 == Java SE
 
-* Eclipse https://www.eclipse.org/downloads/packages/eclipse-ide-java-developers/neon1a[Neon] Java
+* Eclipse https://www.eclipse.org/downloads/packages/eclipse-ide-java-developers/neon2[Neon] Java
 * http://www.oracle.com/technetwork/java/javase/downloads/index.html[Java] 8
+** Important advice. Uninstall every version of Java you have, keep only one: the latest JDK (not a JRE).
 
 == Java EE
 
-* Eclipse https://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/neon1a[Neon] Java EE
+* Eclipse https://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/neon2[Neon] Java EE
 * `GlassFish Tools for Eclipse` plug-in: from Eclipse, Help / Eclipse Marketplace…
 * https://glassfish.java.net/download.html[Glassfish] 4.1.1 (Java EE 7 Full Platform)
 * http://www.oracle.com/technetwork/java/javase/downloads/index.html[Java] 8
+** Important advice. Uninstall every version of Java you have, keep only one: the latest JDK (not a JRE).
 
 == Git
 
