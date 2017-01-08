@@ -1,0 +1,138 @@
+\RequirePackage[l2tabu, orthodox]{nag}
+\RequirePackage{silence}
+\WarningFilter{fmtcount}{\ordinal already defined use \FCordinal instead}
+\documentclass[english, french]{beamer}
+\input{preamble/packages}
+\input{preamble/math_basics}
+\input{preamble/math_mine}
+\input{preamble/redac}
+\input{preamble/draw}
+\input{preamble/acronyms}
+\input{preamble/uml}
+
+\setbeamertemplate{headline}[singleline]
+
+\title{Les Assertions en Java}
+\subject{Java}
+\keywords{assert}
+\author{Olivier Cailloux}
+\institute[LAMSADE]{LAMSADE, Université Paris-Dauphine}
+\date{Version du \today}
+
+\begin{document}
+\bibliographystyle{apalike}
+
+\begin{frame}[plain]
+	\tikz[remember picture,overlay]{
+		\path (current page.south west) node[anchor=south west, inner sep=0] {
+			\includegraphics[height=1cm]{LAMSADE95.jpg}
+		};
+		\path (current page.south) ++ (0, 1mm) node[anchor=south, inner sep=0] {
+			\includegraphics[height=9mm]{Dauphine.jpg}
+		};
+		\path (current page.south east) node[anchor=south east, inner sep=0] {
+			\includegraphics[height=1cm]{PSL.png}
+		};
+	}
+   \titlepage
+\end{frame}
+\addtocounter{framenumber}{-1}
+
+\section{Principe}
+\begin{frame}
+	\frametitle{\secname}
+	\begin{itemize}
+		\item Assertion : s’assurer d’une condition en cours de programme
+		\item Exemple : vérifier que $i$ est bien positif
+		\item En Java : avec \texttt{assert}
+	\end{itemize}
+	\begin{block}{Assertion sans explication}
+		\texttt{assert i > 0;}
+	\end{block}
+	\begin{block}{Assertion avec explication}
+		\texttt{assert i > 0 : "Integer must be strictly positive, received " + i + ".";}
+	\end{block}
+	\begin{itemize}
+		\item Usage sans explication acceptable \emph{si} vous êtes à peu près certain que l’assertion ne sera jamais levée
+		\item Utilité dans ce cas ? \pause Échec rapide si jamais vous vous êtes trompé ; documentation du code
+	\end{itemize}
+\end{frame}
+
+\section{Fonctionnement}
+\begin{frame}
+	\frametitle{\secname}
+	\begin{itemize}
+		\item Si assertion non satisfaite : arrêt de l’exécution + affichage de l’appel fautif (et des appels parents)
+		\item Assertions non exécutées par défaut
+		\item Exécutées ssi JVM reçoit paramètre \texttt{-ea}
+		\item Intérêt exécution conditionnelle ? \pause Pas de ralentissement en production \pause
+		\item Inconvénient ? \pause
+		\begin{itemize}
+			\item Changement de comportement en production !
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\section[Préconditions]{Assert pour vérifier préconditions ?}
+\begin{frame}
+	\frametitle{\secname}
+	assert : solution \emph{imparfaite} pour tester les préconditions en Java
+	\begin{block}{Inconvénients assert}
+		\begin{itemize}
+			\item Changement de comportement en production !
+			\item Pas de distinction préconditions et autres vérifications
+			\item En outre, gain de performance souvent négligeable
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\section{Usage}
+\begin{frame}
+	\frametitle{\secname}
+	\begin{itemize}
+		\item[⇒] Assertions à réserver pour tests couteux en temps
+		\item Ou pour conditions assurées par déductions
+		\item ≠ préconditions : conditions assurées par contrat
+		\item Pour vérifier précondition ? \pause Utiliser exception !
+	\end{itemize}
+\end{frame}
+
+\appendix
+
+\section{Licence}
+\begin{frame}
+	\frametitle{Licence}
+	Cette présentation, et le code LaTeX associé, sont sous \href{http://opensource.org/licenses/MIT}{licence MIT}. Vous êtes libres de réutiliser des éléments de cette présentation, sous réserve de citer l’auteur.
+	
+	Le travail réutilisé est à attribuer à \href{http://www.lamsade.dauphine.fr/~ocailloux/}{Olivier Cailloux}, Université Paris-Dauphine.
+\end{frame}
+\end{document}
+
+\begin{frame}
+	\frametitle{}
+	\begin{itemize}
+		\item 
+	\end{itemize}
+	\begin{block}{}
+		
+	\end{block}
+\end{frame}
+
+\section{Bibliographie}
+\begin{frame}[allowframebreaks]
+	\frametitle{Bibliographie}
+	\def\newblock{\hskip .11em plus .33em minus .07em}
+% 	\bibliography{zotero}
+\end{frame}
+
+\section{Autres}
+\begin{frame}
+	\frametitle{}
+	\begin{itemize}
+		\item 
+	\end{itemize}
+	\begin{block}{}
+		
+	\end{block}
+\end{frame}
+\end{document}

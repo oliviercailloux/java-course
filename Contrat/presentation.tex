@@ -138,28 +138,7 @@
 		\item Principe de l’\emph{échec rapide} (\emph{fail-fast})
 		\item Mieux vaut une erreur immédiate qu’une action inattendue
 		\item Facilite les corrections de bug
-		\item En pratique : tester les préconditions en entrée de sous-routine (lorsque raisonnable)
-	\end{itemize}
-\end{frame}
-
-\subsection{Assertions en Java}
-\begin{frame}
-	\frametitle{\subsecname}
-	\texttt{assert} : solution \emph{imparfaite} pour tester facilement les préconditions en Java
-	\begin{itemize}
-		\item \texttt{assert i > 0;}
-		\item Voire \texttt{assert i > 0 : "Integer must be strictly positive, received " + i + ".";}
-		\item Assertions non exécutées par défaut
-		\item Exécutées ssi JVM reçoit paramètre \texttt{-ea}
-		\item Intérêt ? \pause Pas de ralentissement en production \pause
-		\item Si assertion non satisfaite : arrêt de l’exécution + affichage de l’appel fautif (et des appels parents)
-		\item Inconvénients ? \pause
-		\begin{itemize}
-			\item Changement de comportement en production !
-			\item Pas de distinction préconditions et autres vérifications
-		\end{itemize}
-		\item En outre, gain de performance souvent négligeable
-		\item[⇒] Assertions à réserver pour tests couteux en temps
+		\item En pratique : tester les préconditions en entrée de sous-routine {\tiny (sauf si très couteux en temps)}
 	\end{itemize}
 \end{frame}
 
