@@ -7,7 +7,7 @@ You know algorithmics and the basic (non object-oriented) programming concepts i
 
 * [SK]: Supposedly Known
 * [I]: Important (some parts may be both SK and I)
-* [O]: Optional
+* [O]: Optional (do it if you are specifically interested in the related aspect)
 * [M]: Mandatory exercices
 * Markers apply to the whole line. Example: "4.3 intro to 4.3.2, 4.6.1 [I]" means that everything in between 4.3 and 4.3.2 plus 4.6.1 are important.
 * ESx.y(.z): designates section x.y (or x.y.z) in Eck’s http://math.hws.edu/eck/cs124/javanotes7/[book] (in chapter x)
@@ -44,39 +44,55 @@ Approximatively: 10p. (+ 30p. [SK])
 
 == S2
 
-* Exceptions; sub-routines; design: contract, black-box, preconditions.
-* EE4.5 together?
-* Mosaic together?
-* ES3.7 (except 3.7.3), 4 intro to 4.7.
+* Design: exceptions, contract, black-box, preconditions.
+* Assertions en Java.
+* Javadoc: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours4.pdf[Airiau C4], p. 14 to 21.
+* (Use of Javadoc in Eclipse.)
+* http://math.hws.edu/eck/cs124/javanotes7/c3/[ES3.7] (except 3.7.3), http://math.hws.edu/eck/cs124/javanotes7/c4/[4 intro] to 4.7.
 * ES4.3 intro to 4.3.2, 4.6.1 [I]
 
-Approximatively: 48p.
+Approximatively: 48p. 
 
-* http://math.hws.edu/eck/cs124/javanotes7/c4/exercises.html[EE4]?
-* EE4.5, EE4.6, comment with Javadoc [M]
+* http://math.hws.edu/eck/cs124/javanotes7/c4/exercises.html[EE4.1], 4.2
+* EE4.3, comment with Javadoc [M]
+* EE4.4
+* EE4.5, 4.6 [O]
+* EE4.7, comment with Javadoc [M]
 
 == S3
 
-* Objects.
-* http://math.hws.edu/eck/cs124/javanotes7/c5/[ES5] intro to 5.7
-* ES5.3.4, 5.7 [I]
+* Packages, classes and directories.
+* Objects: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours2.pdf[Airiau C2].
+* Interfaces: design; use as type; replaceability.
+* http://math.hws.edu/eck/cs124/javanotes7/c5/[ES5] intro to 5.4
+* ES5.3.4 [I]
 
 Approximatively: 50p.
 
+* http://math.hws.edu/eck/cs124/javanotes7/c5/exercises.html[EE5]
+* EE5.3, comment with Javadoc [M]
+* EE5.7, comment with Javadoc [M] (the part about anonymous classes is optional)
+
 == S4
 
-* Robustesse, programmation défensive
-* http://math.hws.edu/eck/cs124/javanotes7/c8/[ES8] intro to 8.4
+* Inheritance: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours3.pdf[Airiau C3]
+* Generics and collections: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours6.pdf[Airiau C6]
+* http://math.hws.edu/eck/cs124/javanotes7/c5/[ES5.5] to 5.8
+* http://math.hws.edu/eck/cs124/javanotes7/c10/[ES10] to 10.2
+
+* http://math.hws.edu/eck/cs124/javanotes7/c10/exercises.html[EE10]
 
 == Then
 
-T5 Th Générique. 
-
-2.3.4 Enums, nouveau.
-Bibliothèques. Maven.
-Logging ?
-SWT ?
-Annotations ?
-	Fichiers et flux
-	REST client ?
+* Maps
+* Robust programming
+* Exceptions in Java.
+* http://math.hws.edu/eck/cs124/javanotes7/c8/[ES8] intro to 8.4
+* Libraries.
+* Maven
+* Logging
+* SWT?
+* Annotations
+* Files, flows?
+* REST client?
 
