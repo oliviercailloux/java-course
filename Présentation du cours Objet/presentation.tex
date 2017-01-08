@@ -1,0 +1,240 @@
+\RequirePackage[l2tabu, orthodox]{nag}
+\RequirePackage{silence}
+\WarningFilter{fmtcount}{\ordinal already defined use \FCordinal instead}
+\documentclass[english, french]{beamer}
+\input{preamble/packages}
+\input{preamble/math_basics}
+\input{preamble/math_mine}
+\input{preamble/redac}
+\input{preamble/draw}
+\input{preamble/acronyms}
+\input{preamble/uml}
+
+\setbeamertemplate{headline}[singleline]
+
+\title{Java Objet}
+\subtitle{Présentation du cours}
+\author{Olivier Cailloux}
+\institute[LAMSADE]{LAMSADE, Université Paris-Dauphine}
+\date{Version du \today}
+
+\begin{document}
+\bibliographystyle{apalike}
+
+\begin{frame}[plain]
+	\tikz[remember picture,overlay]{
+		\path (current page.south west) node[anchor=south west, inner sep=0] {
+			\includegraphics[height=1cm]{LAMSADE95.jpg}
+		};
+		\path (current page.south) ++ (0, 1mm) node[anchor=south, inner sep=0] {
+			\includegraphics[height=9mm]{Dauphine.jpg}
+		};
+		\path (current page.south east) node[anchor=south east, inner sep=0] {
+			\includegraphics[height=1cm]{PSL.png}
+		};
+	}
+   \titlepage
+\end{frame}
+\addtocounter{framenumber}{-1}
+
+\section{L’enseignant}
+\begin{frame}
+	\frametitle{L’enseignant}
+	\begin{itemize}
+		\item Olivier Cailloux
+		\item \href{mailto:olivier.cailloux@dauphine.fr}{olivier.cailloux@dauphine.fr}
+		\item Coordonnées : cf. \href{https://www.ent.dauphine.fr/Annuaire/index.php?param0=fiche&param1=ocailloux}{annuaire} de Dauphine
+	\end{itemize}
+\end{frame}
+
+\section[Obj. pédagogiques]{Objectifs pédagogiques}
+\subsection{Objectifs pédagogiques}
+\begin{frame}
+	\frametitle{Objectifs pédagogiques}
+	\begin{itemize}
+		\item Programmer des vraies applications
+		\item De qualité
+		\item Fournir et utiliser des composants réutilisables
+		\item Conception objet
+		\item Prise en main d’outils de dév avancés : 
+		\begin{itemize}
+			\item Eclipse ;
+			\item Maven ;
+			\item Git…
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Objectifs pédagogiques : modélisation}
+	\begin{block}{Modélisation}
+		\begin{itemize}
+		\item Réponse à des besoins exprimés vaguement
+		\item Appui sur les standards du web actuels
+		\item Réusinage fréquent
+		\item Dosage du réalisme et de l’intérêt des fonctionalités
+		\end{itemize}
+	\end{block}
+	Approche agile ? À moitié !
+	\begin{itemize}
+		\item Livraisons fréquentes
+		\item Travail en binôme
+		\item Réusinage intense
+	\end{itemize}
+\end{frame}
+
+\subsection{Utilité}
+\begin{frame}
+	\frametitle{Intérêt pratique}
+	\begin{itemize}
+		\item Technologies utiles
+		\item Qu’on soit programmeur, qu’on discute avec des programmeurs
+		\item Résolution de problèmes
+		\item Décomposition abstraite en responsabilités
+		\item … au-delà de la programmation
+	\end{itemize}
+\end{frame}
+
+\subsection{Prérequis}
+\begin{frame}
+	\frametitle{Prérequis}
+	\begin{itemize}
+		\item Programmation élémentaire en Java, manipulation d’un environnement de développement, compréhension des notions algorithmiques élémentaires.
+		\item Capacité à comprendre des textes en anglais liés à l’informatique.
+	\end{itemize}
+\end{frame}
+
+\section{Mise en œuvre}
+\subsection{Mise en œuvre}
+\begin{frame}
+	\frametitle{Approche}
+	\begin{itemize}
+		\item Pédagogie par projet et \emph{partiellement} inversée
+		\item Central : travail sur projet
+		\item Objectif : un projet utile
+		\item Un projet ≠ par groupe
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Mise en œuvre}
+	\begin{itemize}
+		\item Durant séance $x$ : constituez un binôme ≠ du précédent
+		\item Programmation en binôme, équipes tournantes : diversification, pas spécialisation
+		\item Travaillez sur une fonctionnalité de votre projet \emph{ou} des exercices
+		\item À remettre avant le jour de la séance $x + 1$
+		\item Livraisons exclusivement via Git
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Agilité}
+	\begin{itemize}
+		\item À gérer de façon agile car fonctionnalités ajoutées au fil du cours : cycles courts, réusinage…
+		\item Je joue le rôle du client : détail des fonctionnalités à implémenter
+		\item Fonctionnalités de l’application décrites de manière vague : à vous de m’interroger
+	\end{itemize}
+\end{frame}
+
+\subsection{Évaluation}
+\begin{frame}
+	\frametitle{Évaluation}
+	L’évaluation se fait par contrôle continu exclusivement.
+	\begin{itemize}
+		\item Durant chaque séance : je tire des personnes au hasard
+		\item J’évalue, avec le binôme, le travail fourni depuis la dernière évaluation
+		\item Note finale : agrégation des notes reçues au long de l’année (nombre de notes : aléatoire)
+		\item \emph{Vous êtes toujours censés comprendre votre code}
+		\item Si ≠ niveaux : l’avancé aide le débutant
+		\item Fin d’année : présentation collective de vos projets
+		\item Vote pour la meilleure application
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Aspects pris en compte}
+	\begin{itemize}
+		\item Qualité du code 
+		\item Respect des demandes de l’utilisateur
+		\item Mise en œuvre adéquate des technologies dans l’application
+		\item Livraisons régulières
+		\item Ampleur des fonctionnalités
+		\item Qualité générale de l’application
+		\item Qualité de la présentation finale…
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Travail attendu}
+	\begin{itemize}
+		\item Étudiants en commun avec cours Dan Dimcea : 6 ECTS
+		\item \{[(25 à 30h / ECTS) × 5 ECTS] − 48 h\} / 7 inter-séances
+		\item 18 heures de travail entre chaque séance
+		\item Autres étudiants : 9 heures entre chaque séance
+	\end{itemize}
+\end{frame}
+
+\subsection{Plan}
+\begin{frame}
+	\frametitle{Plan}
+	
+	\begin{itemize}
+		\item Git, Maven
+		\item Programmation objets : responsabilités ; techniques
+		\item Éléments d’ingénierie : programmation par contrat ; patrons de conception…
+		\item Exceptions
+		\item Logging
+		\item Utilisation de bibliothèques tierces
+		\item Interfaces graphiques (SWT)
+		\item Et plus selon demandes
+	\end{itemize}
+\end{frame}
+
+\section{Attendu}
+\begin{frame}
+	\frametitle{Attendu}
+	\begin{itemize}
+		\item Rediriger vos e-mails @ Dauphine si nécessaire pour vous assurer de recevoir les annonces
+		\item Vous êtes supposé lire les annonces publiées sur MyCourse
+		\item Suivre \emph{scrupuleusement} les instructions qui s’y trouvent SVP
+	\end{itemize}
+\end{frame}
+
+\appendix
+\section{Licence}
+\begin{frame}
+	\frametitle{Licence}
+	Cette présentation, et le code LaTeX associé, sont sous \href{http://opensource.org/licenses/MIT}{licence MIT}. Vous êtes libres de réutiliser des éléments de cette présentation, sous réserve de citer l’auteur.
+	
+	Le travail réutilisé est à attribuer à \href{http://www.lamsade.dauphine.fr/~ocailloux/}{Olivier Cailloux}, Université Paris-Dauphine.
+\end{frame}
+\end{document}
+
+\begin{frame}
+	\frametitle{}
+	\begin{itemize}
+		\item 
+	\end{itemize}
+	\begin{block}{}
+		
+	\end{block}
+\end{frame}
+
+\section{Bibliographie}
+\begin{frame}[allowframebreaks]
+	\frametitle{Bibliographie}
+	\def\newblock{\hskip .11em plus .33em minus .07em}
+% 	\bibliography{zotero}
+\end{frame}
+
+\section{Autres}
+\begin{frame}
+	\frametitle{}
+	\begin{itemize}
+		\item 
+	\end{itemize}
+	\begin{block}{}
+		
+	\end{block}
+\end{frame}
+\end{document}
