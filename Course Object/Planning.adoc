@@ -1,4 +1,7 @@
 = Planning
+:toc:
+:toc-placement: preamble
+:sectanchors:
 
 == Prerequisites
 You know algorithmics and the basic (non object-oriented) programming concepts in Java. If you have followed an algorithmics course with illustrations and exercices in Java, you satisfy the prerequisites.
@@ -24,6 +27,7 @@ You know algorithmics and the basic (non object-oriented) programming concepts i
 == S1
 
 * Basic concepts and structures of Java: variables; types; subroutines; control structures; identifiers… [SK]
+** http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours1.pdf[Airiau C1], http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours2.pdf[Airiau C2] (compil, p. 15 to 19)
 * Git
 * http://math.hws.edu/eck/cs124/javanotes7/c1/[ES1.1], 1.2, 1.3, 1.4, 2 intro, 2.1, 2.2, 2.3.3, 2.4.1, 2.5, 2.6.6 [SK]
 * For beginners in Java: ES3 intro to 3.6 [SK]
