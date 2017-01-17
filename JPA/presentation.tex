@@ -974,9 +974,8 @@ em2.getTransaction().commit(); // $\textsf{mise à jour BD}$
 \begin{frame}
 	\frametitle{Références}
 	\begin{itemize}
-		\item Hibernate 5.1 \href{http://docs.jboss.org/hibernate/orm/5.1/userguide/html_single/Hibernate_User_Guide.html}{User Guide}
-		\item Hibernate 5.1 \href{http://docs.jboss.org/hibernate/orm/5.1/quickstart/html_single/}{Getting Started Guide}
-		\item Java Persistence with Hibernate : \href{http://gen.lib.rus.ec/book/index.php?md5=5D9F8BC8761804C0EBB8FE6A60BCF817}{1\iere} édition, \href{https://www.manning.com/books/java-persistence-with-hibernate-second-edition}{2\ieme} édition
+		\item Hibernate 5.2 \href{http://docs.jboss.org/hibernate/orm/5.2/userguide/html_single/Hibernate_User_Guide.html}{User Guide}
+		\item \href{http://gen.lib.rus.ec/book/index.php?md5=637EF62E37571955C70D1EF40114341A}{Livre} Java Persistence with Hibernate
 		\item \href{https://jcp.org/en/jsr/detail?id=338}{JSR 338} (JPA 2.1) (\href{http://download.oracle.com/otn-pub/jcp/persistence-2_1-fr-eval-spec/JavaPersistence.pdf}{direct})
 		\item \href{https://jcp.org/en/jsr/detail?id=907}{JSR 907} (JTA) (moins utile pour développeur final)
 		\item ENORM: An Essential Notation for Object-Relational Mapping, ACM SIGMOD Record 43(2), June 2014, pp 23–28 (\href{http://dx.doi.org/10.1145/2694413.2694418}{doi}, \href{http://www.sigmod.org/publications/sigmod-record/1406/pdfs/05.articles.Torres.pdf}{pdf} article)
@@ -993,10 +992,8 @@ em2.getTransaction().commit(); // $\textsf{mise à jour BD}$
 	Fournisseur trouvé dans classpath. Java SE + Maven :
 	\begin{itemize}
 		\item Dépendance API JPA (fournie par Hibernate) : \href{http://search.maven.org/\#search|gav|1|g\%3A\%22org.hibernate.javax.persistence\%22\%20AND\%20a\%3A\%22hibernate-jpa-2.1-api\%22}{hibernate-jpa-2.1-api}
-		\item \href{http://docs.jboss.org/hibernate/orm/5.1/quickstart/html_single/\#_the_hibernate_modules_artifacts}{Dépendances} implémentation Hibernate {\tiny (\href{http://docs.jboss.org/hibernate/orm/5.1/quickstart/html_single/\#_maven_repository_artifacts}{groupId} = \texttt{org.hibernate})} :
-		\item \texttt{hibernate-core} : Hibernate natif
-		\item \href{http://search.maven.org/\#search|ga|1|g\%3A\%22org.hibernate\%22\%20AND\%20a\%3A\%22hibernate-entitymanager\%22}{\texttt{hibernate-entitymanager}} : implémentation JPA
-		\item \texttt{hibernate-java8} : types spécifiques java 8{\tiny, principalement \href{https://docs.oracle.com/javase/tutorial/datetime/}{Date-Time}}
+		\item \href{http://docs.jboss.org/hibernate/orm/5.2/quickstart/html_single/\#_the_hibernate_modules_artifacts}{Dépendances} implémentation Hibernate {\tiny (\href{http://docs.jboss.org/hibernate/orm/5.2/quickstart/html_single/\#_maven_repository_artifacts}{groupId} = \texttt{org.hibernate})} :
+		\item \texttt{hibernate-core} : Hibernate natif (seul composant obligatoire)
     		\item Quels scopes ?
 		\item Quelles versions ?
 	\end{itemize}
