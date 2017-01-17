@@ -26,7 +26,7 @@ You know algorithmics and the basic (non object-oriented) programming concepts i
 
 == S1
 
-* https://github.com/oliviercailloux/java-course/blob/3d297d81b8e5bf6dcc825b2b3b7634c18282fc24/Pr%C3%A9sentation%20du%20cours%20Objet/presentation.pdf[Pres course]
+* https://github.com/oliviercailloux/java-course/blob/1580d14b95224ac5e5fd66c84fe440ff84a98246/Pr%C3%A9sentation%20du%20cours%20Objet/presentation.pdf[Pres course]
 * Basic concepts and structures of Java: variables; types; subroutines; control structures; identifiers… [SK]
 ** http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours1.pdf[Airiau C1], http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours2.pdf[Airiau C2] (compil, p. 15 to 19)
 * https://github.com/oliviercailloux/java-course/blob/3d297d81b8e5bf6dcc825b2b3b7634c18282fc24/Git/presentation.pdf[Git]
