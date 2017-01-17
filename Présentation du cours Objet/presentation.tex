@@ -9,6 +9,10 @@
 \input{preamble/draw}
 \input{preamble/acronyms}
 \input{preamble/uml}
+\usepackage{expl3}
+\ExplSyntaxOn
+  \cs_new_eq:NN \fpeval \fp_eval:n
+\ExplSyntaxOff
 
 \setbeamertemplate{headline}[singleline]
 
@@ -70,7 +74,7 @@
 	\begin{block}{Modélisation}
 		\begin{itemize}
 		\item Réponse à des besoins exprimés vaguement
-		\item Appui sur les standards du web actuels
+		\item Appui sur standards récents
 		\item Réusinage fréquent
 		\item Dosage du réalisme et de l’intérêt des fonctionalités
 		\end{itemize}
@@ -139,7 +143,7 @@
 \subsection{Évaluation}
 \begin{frame}
 	\frametitle{Évaluation}
-	L’évaluation se fait par contrôle continu exclusivement.
+	L’évaluation se fait par contrôle continu (100\% pour Projet, 70\% pour Java Objet)
 	\begin{itemize}
 		\item Durant chaque séance : je tire des personnes au hasard
 		\item J’évalue, avec le binôme, le travail fourni depuis la dernière évaluation
@@ -167,10 +171,10 @@
 \begin{frame}
 	\frametitle{Travail attendu}
 	\begin{itemize}
-		\item Étudiants en commun avec cours Dan Dimcea : 6 ECTS
-		\item \{[(25 à 30h / ECTS) × 5 ECTS] − 48 h\} / 7 inter-séances
-		\item 18 heures de travail entre chaque séance
-		\item Autres étudiants : 9 heures entre chaque séance
+		\item \{[(25 à 30h / ECTS) × 5 ECTS] − 51 h\} / 16 inter-séances
+		\pgfmathsetmacro{\mycalcMin}{(25*5-51)/16}
+		\pgfmathsetmacro{\mycalcMax}{(30*5-51)/16}
+		\item \numrange[round-mode=places, round-precision=0, mode=text]{\mycalcMin}{\mycalcMax} heures de travail entre chaque séance
 	\end{itemize}
 \end{frame}
 
