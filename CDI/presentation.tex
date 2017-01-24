@@ -82,6 +82,55 @@
 \end{frame}
 
 \begin{frame}
+	\frametitle{Exemple portée Application - Programmé}
+	\begin{itemize}
+		\item Bean géré \texttt{ASMB}, annoté \texttt{@ApplicationScoped}
+		\item Servlet \texttt{MyServlet}
+		\item Servlet injecte une instance de \texttt{ASMB}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Exemple portée Application - Comportement}
+	Supposé : application vient d’être déployée
+	\begin{itemize}
+		\item Première requête R1 entrante, vers \texttt{MyServlet}
+		\item \pause Conteneur doit créer instance \texttt{s1} de \texttt{MyServlet} pour traitement R1
+		\item \pause Conteneur doit injecter dans \texttt{s1} une instance de \texttt{ASMB}
+		\item \pause Conteneur crée une instance \texttt{b1} de \texttt{ASMB}
+		\item \pause Conteneur injecte \texttt{b1} dans \texttt{s1} 
+		\item En parallèle : requête R2 vers \texttt{ASMB}
+		\item \pause Conteneur doit créer instance \texttt{s2} de \texttt{MyServlet} pour traitement R2
+		\item \pause Conteneur injecte \texttt{b1} dans \texttt{s2}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Exemple portée Requête - Programmé}
+	\begin{itemize}
+		\item Bean géré \texttt{RSMB}, annoté \texttt{@RequestScoped}
+		\item Servlet \texttt{MyServlet}
+		\item Servlet injecte une instance de \texttt{RSMB}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Exemple portée Requête - Comportement}
+	Supposé : application vient d’être déployée
+	\begin{itemize}
+		\item Première requête R1 entrante, vers \texttt{MyServlet}
+		\item \pause Conteneur doit créer instance \texttt{s1} de \texttt{MyServlet} pour traitement R1
+		\item \pause Conteneur doit injecter dans \texttt{s1} une instance de \texttt{RSMB}
+		\item \pause Conteneur crée une instance \texttt{b1} de \texttt{RSMB}
+		\item \pause Conteneur injecte \texttt{b1} dans \texttt{s1} 
+		\item En parallèle : requête R2 vers \texttt{RSMB}
+		\item \pause Conteneur doit créer instance \texttt{s2} de \texttt{MyServlet} pour traitement R2
+		\item \pause Conteneur crée une instance \texttt{b2} de \texttt{RSMB}
+		\item \pause Conteneur injecte \texttt{b2} dans \texttt{s2}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
 	\frametitle{Objets gestionnaires de contexte}
 	\begin{itemize}
 		\item Le conteneur utilise un objet gestionnaire de contexte (\emph{context object}) pour chaque contexte
