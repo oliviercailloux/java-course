@@ -15,6 +15,7 @@ You know algorithmics and the basic (non object-oriented) programming concepts i
 * Markers apply to the whole line. Example: "4.3 intro to 4.3.2, 4.6.1 [I]" means that everything in between 4.3 and 4.3.2 plus 4.6.1 are important.
 * ESx.y(.z): designates section x.y (or x.y.z) in Eck’s http://math.hws.edu/eck/cs124/javanotes7/[book] (in chapter x)
 * EQx.y: question number y in Eck’s book, from quiz chapter x
+* EQx: quiz chapter x
 * EEx.y: exercice number y in Eck’s book, from exercices chapter x
 * Ranges are always given with ends included (EQ1.3 to 1.9 means 3 and 9 included)
 
@@ -51,7 +52,7 @@ Approximatively: 10p. (+ 30p. [SK])
 == S2
 
 * Design: exceptions, contract, black-box, preconditions.
-* Assertions en Java.
+* Assertions in Java.
 * Javadoc: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours4.pdf[Airiau C4], p. 14 to 21.
 * (Use of Javadoc in Eclipse.)
 * http://math.hws.edu/eck/cs124/javanotes7/c3/[ES3.7] (except 3.7.3), http://math.hws.edu/eck/cs124/javanotes7/c4/[4 intro] to 4.7.
@@ -64,6 +65,7 @@ Approximatively: 48p.
 * EE4.4
 * EE4.5, 4.6 [O]
 * EE4.7, comment with Javadoc [M]
+* http://math.hws.edu/eck/cs124/javanotes7/c4/quiz.html[EQ4]
 
 == S3
 
