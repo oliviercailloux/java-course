@@ -3,6 +3,8 @@
 :toc-placement: preamble
 :sectanchors:
 
+The planning of the course.
+
 == Prerequisites
 You know algorithmics and the basic (non object-oriented) programming concepts in Java. If you have followed an algorithmics course with illustrations and exercices in Java, you satisfy the prerequisites.
 
