@@ -41,35 +41,23 @@
 \section{JPA : démarrage}
 \subsection{Introduction}
 \begin{frame}
-	\frametitle{Java Persistence API : introduction}
+	\frametitle{\subsecname}
 	\begin{itemize}
+		\item JPA ? \pause Java Persistence API
 		\item Standard pour gérer la persistence
 		\item Pour Java SE et Java EE
-		\item Modèle Objet / Relationnel (ORM)
-		\item JPA définit les concepts et interfaces, fournisseur JPA les implémente (exemple : Hibernate)
-		\item Appuié sur JDBC
-	\end{itemize}
-\end{frame}
-
-\begin{frame}
-	\frametitle{Introduction}
-	\begin{itemize}
 		\item BD : modèle relationnel {\tiny typiquement}
 		\item JDBC : accès via Java, modèle relationnel
 		\item JPA : accès via Java, modèle objet
 		\item JPA implémente un \emph{ORM} : Object-Relational Mapping
+		\item JPA définit les concepts et interfaces, fournisseur JPA les implémente (exemple : Hibernate)
 	\end{itemize}
-	\begin{block}{JPA}
-		\begin{itemize}
-			\item Avec Java EE, JPA généralement utilisé
-			\item JPA s’appuie sur JDBC
-		\end{itemize}
-	\end{block}
+	 Avec Java EE, JPA généralement utilisé
 \end{frame}
 
 \begin{frame}
 	\frametitle{Faiblesses du modèle relationnel pur}
-	Problème : \og{}Mismatch\fg{} Objet / Relationnel
+	Problème : non concordance (\emph{Mismatch}) Objet / Relationnel
 	\begin{itemize}
 		\item Modèle de données : objets
 		\item Références directionnelles
@@ -85,13 +73,13 @@
 
 \begin{frame}
 	\frametitle{Avantages d’une solution ORM}
-	ORM ? \pause Object / Relational Mapping \pause
+	ORM : Object / Relational Mapping
 	\begin{itemize}
 		\item Détection des modifications avec accès BD optimisés
 		\item Réduction code répétitif
 		\item Meilleure portabilité
 		\item Permet modèle objet fin
-		\item Facilite refactoring et développement agile
+		\item Facilite réusinage et développement agile
 	\end{itemize}
 	{\tiny De : \href{http://www.lamsade.dauphine.fr/~manouvri/HIBERNATE/SLIDES/ORM.pdf}{diapos} Maude Manouvrier, p. 22}
 \end{frame}
@@ -166,6 +154,17 @@
 \end{frame}
 
 \begin{frame}
+	\frametitle{Unité de persistance en Java EE}
+	\begin{itemize}
+		\item Conteneur Java EE définit \texttt{java:comp/DefaultDataSource} : nom utilisé par défaut
+		\item Sinon, indiquer, dans \texttt{persistence.xml}, \texttt{jta-data-source} : un nom JNDI
+		\item Fournisseur trouvé dans classpath
+		\item Java EE : fournisseur JPA donné par serveur d’application
+		\item Java EE : \texttt{META-INF/persistence.xml} dans le \texttt{.war} {\tiny (aussi possible dans EJB ou dans un jar bibliothèque du \texttt{.ear})}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
 	\frametitle{Propriétés unité de persistance}
 	\begin{itemize}
 		\item Génération du schéma par JPA : propriété {\small\texttt{javax.persistence.schema-generation.database.action}}, valeur {\small\texttt{drop-and-create}} {\tiny cf. \href{https://docs.oracle.com/javaee/7/tutorial/persistence-intro005.htm}{tutorial}}
@@ -236,79 +235,38 @@ Exemple, Hibernate :
 	\end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]
-	\frametitle{EM et transactions}
+\subsection{Transactions}
+\begin{frame}
+	\frametitle{Nécessité des transactions en Java EE}
 	\begin{itemize}
 		\item Les modifications doivent avoir lieu dans une transaction
+		\item Pourquoi pas toujours une transaction par requête ? \pause
+		\item Méthode m appelle m1 et m2
+		\item m1 et m2 effectuent chacune des opérations BD
+		\item Une ou deux transactions ? \pause
+		\item Ça dépend !
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{EM et transactions}
+	\begin{itemize}
 		\item JPA désactive mode auto-commit de JDBC
 		\item Transaction {\tiny normalement} terminée par un \texttt{commit}
 		\item Changements à la BD annulés par un \texttt{rollback}
 		\item Rollback n’annule \emph{pas} les changements en mémoire
-	\end{itemize}
-%EntityTransaction tx = em.getTransaction();
-%tx.begin();
-%tx.commit();
-	\begin{exampleblock}{Transaction simple}
-		\begin{lstlisting}[language=, escapechar=$]
-EntityManager em = …;
-// Start transaction
-e = new MyEntity(); e.setTruc(…);
-em.persist(e);// $\sffamily \emph{pas} {\tiny{nécessairement}} de requête à ce stade$
-// Commit transaction : INSERT …
-em.close();
-		\end{lstlisting}
-	\end{exampleblock}
-\end{frame}
-
-\begin{frame}
-	\frametitle{\texttt{EntityManager} géré par l’application}
-	\begin{itemize}
-		\item Contexte de persistance géré par l’application (Java SE, ou EE si désiré)
-		\item \jeeref[@]{javax.persistence/PersistenceUnit} \texttt{private EntityManagerFactory emf;}
-		\item L’application instancie elle-même son \texttt{EntityManager}
-	\end{itemize}
-\end{frame}
-
-\begin{frame}
-	\frametitle{Éviter les courants d’air}
-	\begin{itemize}
-		\item Ne pas oublier de fermer le contexte (si créé à la main) : \texttt{em.close()}
-		\item Fermer le contexte \emph{après} le commit
-		\item Possible : plusieurs transactions dans un contexte de persistence
 	\end{itemize}
 \end{frame}
 
 \begin{frame}
 	\frametitle{JTA}
 	\begin{itemize}
-		\item JTA entity manager (VS : resource-local entity manager)
+		\item Unité de persistance est gérée à l’aide de JTA {\tiny par défaut en Java EE (sinon \og{}resource-local\fg{})}
 		\item JTA : Java Transaction API
 		\item Transaction associée à thread courante
-		\item Interface unique pour gérer transactions
-		\item Utiliser \jeeref{javax.transaction/UserTransaction}
-		\item Conteneur rend \texttt{UserTransaction} disponible via JNDI
-		\item Injecter \texttt{UserTransaction} avec \texttt{@Resource}
-		\item L’utiliser pour démarrer et commettre la transaction
 	\end{itemize}
 \end{frame}
 
-\begin{frame}
-	\frametitle{Synchronisation du contexte de persistance}
-	\begin{itemize}
-		\item JTA EM peut être synchronisé ou non synchronisé
-		\item Si synchronisé
-		\begin{itemize}
-			\item Joint automatiquement transaction JTA en cours
-		\end{itemize}
-		\item Si non synchronisé
-		\begin{itemize}
-			\item Joindre \texttt{em} à la transaction : \texttt{em.joinTransaction()}
-			\item Rejoindre transactions suivantes après commit de la première et ouverture d’une nouvelle
-		\end{itemize}
-	\end{itemize}
-\end{frame}
-
-\subsection{Java EE}
 \begin{frame}
 	\frametitle{Gestion démarcation transactions}
 	\begin{itemize}
@@ -327,27 +285,24 @@ em.close();
 	\begin{itemize}
 		\item Contexte de persistance peut être géré par conteneur
 		\item \jeeref[@]{javax.persistence/PersistenceContext} \texttt{private EntityManager em;}
-		\item Portée gérée par conteneur
+		\item Injection ⇒ Portée gérée par conteneur
 		\item Portée par défaut : transaction JTA
 		\item Invoquer \texttt{em} \emph{après} ouverture transaction JTA
 		\item Conteneur crée le contexte lors première invocation \texttt{em} {\tiny si aucun contexte associé à transaction}
 		\item Conteneur ferme le contexte après fermeture transaction JTA
-		\item Portée \jeeref{javax.persistence/PersistenceContextType\#EXTENDED} : portée liée à managed bean le contenant
 	\end{itemize}
 \end{frame}
 
 \begin{frame}
-	\frametitle{Unité de persistance en Java EE}
+	\frametitle{Synchronisation du contexte de persistance}
 	\begin{itemize}
-		\item Conteneur Java EE définit \texttt{java:comp/DefaultDataSource} : nom utilisé par défaut
-		\item Sinon, indiquer, dans \texttt{persistence.xml}, \texttt{jta-data-source} : un nom JNDI
-		\item Fournisseur trouvé dans classpath
-		\item Java EE : fournisseur JPA donné par serveur d’application
-		\item Java EE : \texttt{META-INF/persistence.xml} dans le \texttt{.war} {\tiny (aussi possible dans EJB ou dans un jar bibliothèque du \texttt{.ear})}
-%		\item Cet EAR est alors le scope de l’unité
+		\item JTA EM peut être synchronisé ou non synchronisé
+		\item Si synchronisé (par défaut) :
+		\item Joint automatiquement transaction JTA en cours
 	\end{itemize}
 \end{frame}
 
+\subsection{Java EE}
 \subsection{Gestion des entités}
 \begin{frame}
 	\frametitle{Mise à jour état entités}
@@ -376,7 +331,7 @@ em.close();
 \begin{frame}[fragile]
 	\frametitle{Effacer une entité}
 	\begin{exampleblock}{Effacement}
-		Supponsons entité \texttt{u} \emph{managed}
+		Supposons entité \texttt{u} \emph{managed}
 		\begin{itemize}
 			\item \texttt{em.remove(u); //} \texttt{u} est \emph{removed}
 			\item \texttt{em.flush(); //} \texttt{DELETE}…
@@ -388,7 +343,6 @@ em.close();
 	\end{itemize}
 	\begin{lstlisting}
 User u = em.find(User.class, 1234);
-em.getTransaction().commit();
 em.close();
 EntityManager em2 = emfactory.createEntityManager();
 	\end{lstlisting}
@@ -902,7 +856,6 @@ SELECT DISTINCT pr FROM Person pr
 	\end{itemize}
 	\begin{lstlisting}[escapechar=$]
 User u = em.find(User.class, 1234);
-em.getTransaction().commit();
 em.close(); // u $\textsf{détaché du contexte}$
 u.setName("HerName");
 EntityManager em2 = emFactory.createEntityManager();
@@ -1083,6 +1036,57 @@ em2.getTransaction().commit(); // $\textsf{mise à jour BD}$
 		
 		\raggedleft{{\tiny Inspiré par : Java persistence with hibernate}}
 	\end{minipage}
+\end{frame}
+
+\section{Autres gestions de la persistance}
+\begin{frame}
+	\frametitle{\texttt{EntityManager} géré par l’application}
+	\begin{itemize}
+		\item Contexte de persistance géré par l’application (Java SE, ou EE si désiré)
+		\item \jeeref[@]{javax.persistence/PersistenceUnit} \texttt{private EntityManagerFactory emf;}
+		\item L’application instancie elle-même son \texttt{EntityManager}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Éviter les courants d’air}
+	\begin{itemize}
+		\item Ne pas oublier de fermer le contexte (si créé à la main) : \texttt{em.close()}
+		\item Fermer le contexte \emph{après} le commit
+		\item Possible : plusieurs transactions dans un contexte de persistence
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Gestion de transaction manuelle via JTA}
+	\begin{itemize}
+		\item JTA fournit une interface unique pour gérer transactions
+		\item Utiliser \jeeref{javax.transaction/UserTransaction}
+		\item Conteneur rend \texttt{UserTransaction} disponible via JNDI
+		\item Injecter \texttt{UserTransaction} avec \texttt{@Resource}
+		\item L’utiliser pour démarrer et commettre la transaction
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{JTA EM non synchronisé}
+	\begin{itemize}
+		\item JTA EM peut être synchronisé ou non synchronisé
+		\item Si non synchronisé
+		\item Joindre \texttt{em} à la transaction : \texttt{em.joinTransaction()}
+		\item Rejoindre transactions suivantes après commit de la première et ouverture d’une nouvelle
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Portée du contexte de persistance}
+	\begin{itemize}
+		\item Contexte de persistance peut être géré par conteneur
+		\item \jeeref[@]{javax.persistence/PersistenceContext} \texttt{private EntityManager em;}
+		\item Portée gérée par conteneur
+		\item Portée \jeeref{javax.persistence/PersistenceContextType\#TRANSACTION} (par défaut) : portée liée à transaction JTA
+		\item Portée \jeeref{javax.persistence/PersistenceContextType\#EXTENDED} : portée liée à managed bean le contenant
+	\end{itemize}
 \end{frame}
 
 \section{Licence}
