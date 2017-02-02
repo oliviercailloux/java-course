@@ -1,0 +1,25 @@
+= Maven best practices
+
+== Naming conventions
+
+* Maven coordinate identifiers (`groupId` and `artifactId`) should contain lowercase letters, digits, and hyphens only (https://maven.apache.org/maven-conventions.html[source]).
+* To make sure they are unique, use a domain name you control as a `groupId` (possibly adding sub-parts to it), and invert it (https://maven.apache.org/guides/mini/guide-naming-conventions.html[source]).
+* Java conventions suggest to ensure uniqueness of your package names using the same rule (source: http://docs.oracle.com/javase/tutorial/java/package/namingpkgs.html[tutorial], or see the non-normative note “Package names” in the http://docs.oracle.com/javase/specs/jls/se8/html/jls-6.html#jls-6.1[specs]).
+* Thus, I suggest naming your packages according to your `groupId` followed by a dot followed by your `artifactId`.
+* Hyphens are not allowed in package names, but underscores are (package names consist in dot-separated identifiers, see http://docs.oracle.com/javase/specs/jls/se8/html/jls-7.html#jls-7.4.1[JLS 7.4.1]; identifiers consist in a `JavaLetter` then a set of `JavaLetterOrDigit`, a `JavaLetter` being a character for which `Character.isJavaIdentifierStart(int)` returns `true`, see http://docs.oracle.com/javase/specs/jls/se8/html/jls-3.html#jls-Identifier[JLS Identifiers]; this includes the ASCII underscore (known as LOW LINE in Unicode, U+005F) but not the hyphen, see https://docs.oracle.com/javase/8/docs/api/index.html?java/lang/Character.html#isJavaIdentifierStart-int-[Character], http://www.fileformat.info/info/unicode/category/Pc/list.htm[Unicode], http://stackoverflow.com/a/32065830[SO]).
+* Thus, I suggest to transform hyphens used in `artifactId` into underscores when converting to package name. (Applying the conventional strategy for transforming domain names into valid Java identifiers.)
+* In Maven identifiers, avoid Java keywords and “words” consisting only of digits: they are legal in Maven but not convertible to Java identifiers.
+* Example: `groupId` = `io.github.oliviercailloux`; `artifactId` = `my-project-name`;  base package name = `io.github.oliviercailloux.my_project_name`.
+
+== Encoding
+Include the property `<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>` in your POM to ensure platform-independent behavior (and get rid of the warning Maven prints otherwise).
+
+== Java version
+Include properties: `<maven.compiler.source>1.8</maven.compiler.source> <maven.compiler.target>1.8</maven.compiler.target>` (or adjust to the desired java version) to indicate which java version you develop in (and for). This is https://maven.apache.org/plugins/maven-compiler-plugin/compile-mojo.html[officially supported] and is thus to be preferred to the more verbose explicit https://maven.apache.org/plugins/maven-compiler-plugin/examples/set-compiler-source-and-target.html[configuration] of the `maven-compiler-plugin`.
+
+== Do not require web descriptor
+Web applications do not require a web descriptor (the `web.xml` file that goes in the `WEB-INF` folder). Maven however required it by default when asked to package a war file. If you do not need a web descriptor, make your project as clean as possible and do not include one! Rather, include the property `<failOnMissingWebXml>false</failOnMissingWebXml>` in your `pom.xml`.
+
+* [Note 1: As of Release 3.0.0 of the Apache Maven WAR Plugin, this is no more necessary: “The default value for failOnMissingWebXml has been changed from true to false.” (https://maven.apache.org/plugins/maven-war-plugin/index.html[source]). However including the property anyway improves your project compatibility. See also http://svn.apache.org/viewvc/maven/plugins/trunk/maven-war-plugin/src/main/java/org/apache/maven/plugins/war/WarMojo.java?view=log[source code history], http://svn.apache.org/viewvc/maven/plugins/tags/[releases].] 
+* [Note 2: Web applications do not require a web descriptor any more since more than 10 years, since Servlet 2.5 MR 5 (see JSR 340 Servlet 3.1 http://download.oracle.com/otn-pub/jcp/servlet-3_1-fr-eval-spec/servlet-3_1-final.pdf[spec], A.7.6 and 10.13).]
+
