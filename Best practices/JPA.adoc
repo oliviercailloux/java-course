@@ -1,11 +1,13 @@
 = JPA best practices
 
 == Use delimited identifiers
-Tell JPA to use delimited identifiers (see the object/relational xml mapping file, `orm.xml`, in the JPA samples). (See JSR 338 JPA 2.1 http://download.oracle.com/otn-pub/jcp/persistence-2_1-fr-eval-spec/JavaPersistence.pdf[spec], section 2.13.) JPA will then “delimit” (quote) all SQL identifiers, thus avoiding conflicts with e.g. table names that are also SQL keywords. Note that this render identifiers case sensitive. Delimited identifiers is off by default and may cause nasty problems, especially because SQL keywords differ by vendor (and it’s hard to keep track of all of them, see e.g. http://hsqldb.org/doc/guide/lists-app.html[here] or https://www.drupal.org/node/141051[here]). A typical problem with non delimited identifiers occurs when using an entity named `User`: this may work on some DBMS and fail at runtime on others.
+Tell JPA to use delimited identifiers (see the object/relational xml mapping file, `orm.xml`, in my JPA https://github.com/oliviercailloux/samples[samples]). (See JSR 338 JPA 2.1 http://download.oracle.com/otn-pub/jcp/persistence-2_1-fr-eval-spec/JavaPersistence.pdf[spec], section 2.13.) JPA will then “delimit” (quote) all SQL identifiers, thus avoiding conflicts with e.g. table names that are also SQL keywords. Note that this render identifiers case sensitive.
+
+* Delimited identifiers is off by default and may cause nasty problems, especially because SQL keywords differ by vendor (and it’s hard to keep track of all of them, see e.g. http://hsqldb.org/doc/guide/lists-app.html[here] or https://www.drupal.org/node/141051[here]). A typical problem with non delimited identifiers occurs when using an entity named `User`: this may work on some DBMS and fail at runtime on others.
 
 [[metamodel]]
 == Metamodel generator for typesafe JPA queries
-To generate the metamodel for use with typesafe Criteria queries, suffices to include a metamodel generator in your classpath (http://hibernate.org/orm/tooling/[doc]). Set it to `<provided>` scope as your code does not depend on it at runtime. 
+To generate the metamodel for use with typesafe Criteria queries, suffices to include a metamodel generator in your classpath (http://hibernate.org/orm/tooling/[doc], see my https://github.com/oliviercailloux/samples/tree/master/JavaEE-JPA-JSF[JavaEE-JPA-JSF] sample). Set it to `<provided>` scope as your code does not depend on it at runtime. 
 
 * For correct integration in Eclipse (neon, Java EE version), I have installed `Maven Integration for Eclipse JDT Annotation Processor Toolkit`, then in the project settings, Maven / Annotation Processing, selected: Automatically configure JDT APT. (Eclipse also has an internal option to generate the metamodel, see the project options at JPA / Canonical metamodel, but I don’t use that as it would reduce compatibility of the project with other IDEs.)
 
