@@ -8,9 +8,6 @@ There’s some debate about whether `NullPointerException` or `IllegalArgumentEx
 
 I admit this is a good argument but there’s also good arguments against. Thus, I consider it sensible to follow the standard. And the standard is to throw `NullPointerException`.
 
-* Many APIs in the JDK pro-actively throws NullPointerException.
-** the Javadoc for https://docs.oracle.com/javase/8/docs/api/java/util/Map.html#containsKey-java.lang.Object-[`Map.containsKey`] states: `@throws NullPointerException` if the key is null and this map does not permit null keys
-** https://docs.oracle.com/javase/8/docs/api/java/util/Objects.html#requireNonNull-T-[`Objects.requireNonNull`] method - clearly specified for checking that object references are non-null, clearly specified for doing parameter validation in methods/constructors, and clearly specified to throw an NPE if the object is null.
-** All the above is copied from http://stackoverflow.com/questions/3881/illegalargumentexception-or-nullpointerexception-for-a-null-parameter/6358#6358[SO]
+* Many APIs in the JDK pro-actively throws NullPointerException, e.g. https://docs.oracle.com/javase/8/docs/api/java/util/Map.html#containsKey-java.lang.Object-[`Map.containsKey`], https://docs.oracle.com/javase/8/docs/api/java/util/Objects.html#requireNonNull-T-[`Objects.requireNonNull`] (I got the argument from http://stackoverflow.com/questions/3881/illegalargumentexception-or-nullpointerexception-for-a-null-parameter/6358#6358[SO].)
 * http://google.github.io/guava/releases/snapshot/api/docs/com/google/common/base/Preconditions.html#checkNotNull-T-[Guava] also favors `NullPointerException` over `IllegalArgumentException`.
 * “Effective Java” agrees, see http://stackoverflow.com/questions/3881/illegalargumentexception-or-nullpointerexception-for-a-null-parameter/8160#8160[SO].
