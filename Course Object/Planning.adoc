@@ -62,26 +62,33 @@ Approximatively: 10p. (+ 30p. [SK])
 
 Approximatively: 48p. 
 
+* You are expected to comment all your code appropriately with Javadoc, for all exercices from now on [M]
 * http://math.hws.edu/eck/cs124/javanotes7/c4/exercises.html[EE4.1], 4.2
-* EE4.3, comment with Javadoc [M]
+* EE4.3 [M]
 * EE4.4
 * EE4.5, 4.6 [O]
-* EE4.7, comment with Javadoc [M]
+* EE4.7 [M]
 * http://math.hws.edu/eck/cs124/javanotes7/c4/quiz.html[EQ4]
 
 == S3
 
 * Packages, classes and directories.
-* Objects: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours2.pdf[Airiau C2].
+* Objects.
 * Interfaces: design; use as type; replaceability.
 * http://math.hws.edu/eck/cs124/javanotes7/c5/[ES5] intro to 5.4
 * ES5.3.4 [I]
 
 Approximatively: 50p.
 
+* You are expected to not use the default package, for all exercices from now on [M]
 * http://math.hws.edu/eck/cs124/javanotes7/c5/exercises.html[EE5]
-* EE5.3, comment with Javadoc [M]
-* EE5.7, comment with Javadoc [M] (the part about anonymous classes is optional)
+* EE5.3 [M]
+* EE5.7 [M] (the part about anonymous classes is optional)
+** Supplementary requirements: your code must lie in at least two packages;
+** Simulate that three different people work on this exercice: one provides some interfaces; another implements the interfaces; a third one uses the interfaces and their implementations to solve the exercice (except you represent all these persons!)
+** declare at least one interface in another Eclipse project, exported as a Java archive (JAR file);
+** implement those interfaces in another Eclipse project, exported as a Java archive (JAR file) (will you need the previous JAR file? Why / why not?);
+** solve the exercices in a third Eclipse project (will you need the previous JAR files? Which ones and why?).
 
 == S4
 
@@ -90,11 +97,16 @@ Approximatively: 50p.
 * http://math.hws.edu/eck/cs124/javanotes7/c5/[ES5.5] to 5.8
 * http://math.hws.edu/eck/cs124/javanotes7/c10/[ES10] to 10.2
 
-* http://math.hws.edu/eck/cs124/javanotes7/c10/exercises.html[EE10]
+* http://math.hws.edu/eck/cs124/javanotes7/c5/exercises.html[EE5.4] [M]
+* http://math.hws.edu/eck/cs124/javanotes7/c7/exercises.html[EE7.1], 7.5
+* EE7.7 [M] (you may use standard input instead of file input)
+* http://math.hws.edu/eck/cs124/javanotes7/c10/exercises.html[EE10.2] [M]
+* EE5.5
+* EE10.4 (except you use the https://docs.oracle.com/javase/8/docs/api/java/util/function/Predicate.html[Predicate] interface from the JRE instead of writing your own)
 
 == Then
 
-* Maps
+* Maps, Comparable, Comparator
 * Robust programming
 * Exceptions in Java.
 * http://math.hws.edu/eck/cs124/javanotes7/c8/[ES8] intro to 8.4
