@@ -1,0 +1,170 @@
+\RequirePackage[l2tabu, orthodox]{nag}
+\RequirePackage{silence}
+\WarningFilter{fmtcount}{\ordinal already defined use \FCordinal instead}
+\documentclass[english, french]{beamer}
+\input{preamble/packages}
+\input{preamble/math_basics}
+\input{preamble/math_mine}
+\input{preamble/redac}
+\input{preamble/draw}
+\input{preamble/acronyms}
+\input{preamble/uml}
+
+\setbeamertemplate{headline}[singleline]
+
+\title{Class path, packages, archives}
+\subtitle{}
+\subject{Java}
+\keywords{}
+\author{Olivier Cailloux}
+\institute[LAMSADE]{LAMSADE, Université Paris-Dauphine}
+\date{Version du \today}
+
+\begin{document}
+\bibliographystyle{apalike}
+
+\begin{frame}[plain]
+	\tikz[remember picture,overlay]{
+		\path (current page.south west) node[anchor=south west, inner sep=0] {
+			\includegraphics[height=1cm]{LAMSADE95.jpg}
+		};
+		\path (current page.south) ++ (0, 1mm) node[anchor=south, inner sep=0] {
+			\includegraphics[height=9mm]{Dauphine.jpg}
+		};
+		\path (current page.south east) node[anchor=south east, inner sep=0] {
+			\includegraphics[height=1cm]{PSL.png}
+		};
+	}
+   \titlepage
+\end{frame}
+\addtocounter{framenumber}{-1}
+
+\section{Packages}
+\begin{frame}
+	\frametitle{Packages : principe}
+	\begin{itemize}
+		\item Chaque classe principale Java : dans son fichier
+		\item Classe \texttt{MyClass} dans fichier ? \pause \texttt{MyClass.java}
+		\item Compilée dans fichier ? \pause \texttt{MyClass.class}
+		\item Chaque fichier déclaré dans un \emph{package} {\tiny Sauf si package par défaut, non recommandé.}
+		\item Packages structurés hiérarchiquement, comme un arbre
+		\item Structure indiquée par des points
+		\item Exemples dans la JRE : \texttt{java.nio.file}, \texttt{java.util.logging}
+		\item Quand utilisation d’une classe, il faut l’importer en indiquant son package
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Utilité des packages}
+	\begin{itemize}
+		\item Recommandé : créez vos packages !
+		\item Organiser par thème
+		\item Unicité de nom
+		\item Vous utilisez des classes créées par d’autres
+		\item L’une d’elle s’appelle \texttt{MathUtils}
+		\item Vous avez aussi une classe \texttt{MathUtils}
+		\item Pas de problème si dans packages différents
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Packages et répertoires}
+	\begin{itemize}
+		\item Fichier dans un package \texttt{nom1.nom2.nom3}
+		\item Se trouve dans sous-répertoire \texttt{nom1/nom2/nom3}
+		\item Utilité de cette séparation en répertoires ? \pause Organisation ; Unicité de nom
+		\item Chemin considéré à partir du répertoire source
+		\item Dans Eclipse par défaut : \texttt{myproject/src/nom1/nom2/nom3}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Compilation}
+	\begin{itemize}
+		\item Classes compilées : où ? \pause
+		\item Souvent : dans répertoire \texttt{bin} ou \texttt{target}
+		\item Structure des sources conservée !
+		\item Exemple : classe dans \texttt{src/myutils/draft/MathUtils.java} compilée dans \texttt{bin/myutils/draft/MathUtils.class}
+		\item Package ? \pause \texttt{myutils.draft}
+	\end{itemize}
+\end{frame}
+
+\section{Archives}
+\begin{frame}
+	\frametitle{Archives}
+	\begin{itemize}
+		\item Pour distribuer vos classes
+		\item Ou partager entre vos propres projets
+		\item JAR ? \pause Java ARchive
+		\item Fichier compressé
+		\item Contenu ? \pause Collection de classes compilées (\texttt{.class}) et leur package
+		\item Facultatif : code source
+		\item Facultatif : \texttt{Main-Class} {\tiny dans META-INF/MANIFEST.MF}
+		\item Et autres méta-données facultatives
+	\end{itemize}
+\end{frame}
+
+\section{Nommage}
+\begin{frame}
+	\frametitle{Unicité de nommage}
+	\begin{itemize}
+		\item Objectif du système de packages et de classes : assurer l’unicité de nom
+		\item Pour éviter conflits lors utilisation d’un jar tiers (par exemple)
+		\item Problème ? \pause Il faut packages uniques !
+		\item Convention : base = votre domaine internet inversé
+		\item Exemple : \href{https://github.com/google/guava/blob/master/guava/src/com/google/common/io/ByteSource.java}{\texttt{com.google.common.io.ByteSource}}
+	\end{itemize}
+\end{frame}
+
+\section{Class path}
+\begin{frame}
+	\frametitle{Class path}
+	\begin{itemize}
+		\item Comment lancer une application ?
+		\item Il faut indiquer où aller chercher toutes les classes requises
+		\item Dans de multiples répertoires ou fichiers JAR
+		\item Class path : les chemins que la JVM utilise pendant son exécution pour charger les classes
+		\item Class path fourni à la JVM au démarrage, exemple \texttt{java -cp path1:path2:path3 name1.name2.myclass}
+		\item NB il doit contenir des classes compilées
+		\item Classes dans la JRE : rien à préciser
+		\item Class path par défaut ? \pause “\texttt{.}”
+		\item Dans Eclipse : voir Java Build Path
+	\end{itemize}
+\end{frame}
+
+\appendix
+
+\section{Licence}
+\begin{frame}
+	\frametitle{Licence}
+	Cette présentation, et le code LaTeX associé, sont sous \href{http://opensource.org/licenses/MIT}{licence MIT}. Vous êtes libres de réutiliser des éléments de cette présentation, sous réserve de citer l’auteur.
+	
+	Le travail réutilisé est à attribuer à \href{http://www.lamsade.dauphine.fr/~ocailloux/}{Olivier Cailloux}, Université Paris-Dauphine.
+\end{frame}
+\end{document}
+
+\begin{frame}
+	\frametitle{}
+	\begin{itemize}
+		\item 
+	\end{itemize}
+\end{frame}
+
+\section{Bibliographie}
+\begin{frame}[allowframebreaks]
+	\frametitle{Bibliographie}
+	\def\newblock{\hskip .11em plus .33em minus .07em}
+% 	\bibliography{zotero}
+\end{frame}
+
+\section{Autres}
+\begin{frame}
+	\frametitle{}
+	\begin{itemize}
+		\item 
+	\end{itemize}
+	\begin{block}{}
+		
+	\end{block}
+\end{frame}
+\end{document}

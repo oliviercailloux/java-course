@@ -1,0 +1,173 @@
+\RequirePackage[l2tabu, orthodox]{nag}
+\RequirePackage{silence}
+\WarningFilter{fmtcount}{\ordinal already defined use \FCordinal instead}
+\documentclass[english, french]{beamer}
+\input{preamble/packages}
+\input{preamble/math_basics}
+\input{preamble/math_mine}
+\input{preamble/redac}
+\input{preamble/draw}
+\input{preamble/acronyms}
+\input{preamble/uml}
+
+\setbeamertemplate{headline}[singleline]
+
+\title{Objets}
+\subtitle{}
+\subject{Java}
+\keywords{}
+\author{Olivier Cailloux}
+\institute[LAMSADE]{LAMSADE, Université Paris-Dauphine}
+\date{Version du \today}
+
+\begin{document}
+\bibliographystyle{apalike}
+
+\begin{frame}[plain]
+	\tikz[remember picture,overlay]{
+		\path (current page.south west) node[anchor=south west, inner sep=0] {
+			\includegraphics[height=1cm]{LAMSADE95.jpg}
+		};
+		\path (current page.south) ++ (0, 1mm) node[anchor=south, inner sep=0] {
+			\includegraphics[height=9mm]{Dauphine.jpg}
+		};
+		\path (current page.south east) node[anchor=south east, inner sep=0] {
+			\includegraphics[height=1cm]{PSL.png}
+		};
+	}
+   \titlepage
+\end{frame}
+\addtocounter{framenumber}{-1}
+
+\section{Objets}
+\begin{frame}
+	\frametitle{Rôle des classes}
+	Classe : conteneur à méthodes statiques
+	\begin{itemize}
+		\item \jseref{java.lang/Math\#random}, \jseref{java.lang/Math\#abs}…
+		\item Pour organiser
+	\end{itemize}
+	Classe : représente une idée
+	\begin{itemize}
+		\item L’idée de radiateur ≠ un radiateur concret
+		\item L’idée de radiateur est associée à des propriétés 
+		\item Décrivent un radiateur : taille, couleur, allumé / éteint…
+		\item Idée de radiateur : pas de valeur pour ces propriétés
+		\item Radiateur concret : valeur pour chaque propriété
+		\item Classe \texttt{Heater} : idée, modèle abstrait, non instancié
+		\item Objet \texttt{heater} : instance de radiateur
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{État et comportement}
+	\begin{itemize}
+		\item Un objet a un état : l’ensemble des valeurs de ses propriétés
+		\item Exemple : {taille = 60 cm ; couleur = blanc ; allumé}
+		\item Un objet a un comportement : l’ensemble de ses méthodes
+		\item Exemple : \texttt{isOn(): bool; getCalories(double seconds): double; activate()}
+		\item Classe définit : états possibles + comportement
+		\item Toutes les instances ont le même comportement {\tiny sauf héritage}
+		\item Mais toutes n’ont pas le même état
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Construction}
+	\begin{itemize}
+		\item Une classe a {\tiny généralement} (au moins) un constructeur
+		\item Construit, initialise les instances de la classe
+		\item Exemple : un nouveau radiateur est toujours allumé ⇒ initialiser la propriété correspondante dans le constructeur
+		\item Attention à initialiser toutes vos propriétés (valeurs par défaut)
+		\item Ou fournir un constructeur avec paramètres
+	\end{itemize}
+\end{frame}
+
+\section{Conception}
+\begin{frame}
+	\frametitle{Conception}
+	\begin{itemize}
+		\item Réfléchir à l’interface (implicite) de votre classe
+		\item C-à-d la façon dont les programmeurs (vous ou d’autres) vont l’utiliser
+		\item Exemple : ajouter \texttt{getPower()} ? Ou utile seulement en interne ?
+		\item Bonne pratique : interdire aux utilisateurs de changer l’état de votre objet directement
+		\item Exemple : dire d’utiliser \texttt{heater.activate()} plutôt que \texttt{heater.activated ← true}
+		\item Plus grande interface : plus de documentation à apporter, plus de méthodes à maintenir, plus de complexité
+	\end{itemize}
+\end{frame}
+
+\section{En Java}
+\begin{frame}
+	\frametitle{En Java}
+	\begin{itemize}
+		\item Distinguer méthodes \texttt{private} et \texttt{public} {\tiny et package}
+		\item Champs (propriétés) : privilégier \texttt{private}
+		\item Initialiser : utiliser \texttt{new}
+		\item Variable contient une référence vers un objet (sur le tas)
+		\item Deux variables réfèrent à un même objet ≠ deux variables réfèrent à deux objets dans le même état
+		\item Destruction : par GC (? \pause Garbage Collector)
+		\item Quand plus aucune référence vers l’objet
+		\item Méthodes \texttt{toString()}, \texttt{equals()}, \texttt{hashcode()}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Interfaces explicites}
+	\begin{itemize}
+		\item Java distingue \texttt{Class} et \texttt{Interface}
+		\item Le deuxième : seulement des en-têtes de méthodes {\tiny ou default methods}
+		\item Exemple : classe \texttt{Heater} et interface \texttt{IHeater}
+		\item Rend explicite ≠ entre interface et implémentation
+		\item Indiquez que votre classe implémente votre interface
+		\item L’utilisateur de votre classe ne dépend que de l’interface
+		\item Il ne doit pas avoir votre classe pour compiler son code
+		\item Vous pouvez fournir la classe plus tard
+		\item Remplacement possible par une autre classe sans recompilation par l’utilisateur
+		\item Interfaces ≠ pour une même classe !
+		\item Interfaces explicites : cas avancés (pas pour classes simples)
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{}
+	\begin{itemize}
+		\item 
+	\end{itemize}
+\end{frame}
+
+\appendix
+
+\section{Licence}
+\begin{frame}
+	\frametitle{Licence}
+	Cette présentation, et le code LaTeX associé, sont sous \href{http://opensource.org/licenses/MIT}{licence MIT}. Vous êtes libres de réutiliser des éléments de cette présentation, sous réserve de citer l’auteur.
+	
+	Le travail réutilisé est à attribuer à \href{http://www.lamsade.dauphine.fr/~ocailloux/}{Olivier Cailloux}, Université Paris-Dauphine.
+\end{frame}
+\end{document}
+
+\begin{frame}
+	\frametitle{}
+	\begin{itemize}
+		\item 
+	\end{itemize}
+\end{frame}
+
+\section{Bibliographie}
+\begin{frame}[allowframebreaks]
+	\frametitle{Bibliographie}
+	\def\newblock{\hskip .11em plus .33em minus .07em}
+% 	\bibliography{zotero}
+\end{frame}
+
+\section{Autres}
+\begin{frame}
+	\frametitle{}
+	\begin{itemize}
+		\item 
+	\end{itemize}
+	\begin{block}{}
+		
+	\end{block}
+\end{frame}
+\end{document}
