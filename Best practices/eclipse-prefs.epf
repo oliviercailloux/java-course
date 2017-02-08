@@ -1,0 +1,82 @@
+file_export_version=3.0
+
+#Java
+#→Code Style / Code Templates
+/instance/org.eclipse.jdt.ui/org.eclipse.jdt.ui.text.custom_code_templates=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><templates><template autoinsert\="false" context\="catchblock_context" deleted\="false" description\="Code in new catch blocks" enabled\="true" id\="org.eclipse.jdt.ui.text.codetemplates.catchblock" name\="catchblock">throw new IllegalStateException(e);</template><template autoinsert\="false" context\="methodbody_context" deleted\="false" description\="Code in created method stubs" enabled\="true" id\="org.eclipse.jdt.ui.text.codetemplates.methodbody" name\="methodbody">TODO();\n${body_statement}</template><template autoinsert\="false" context\="constructorbody_context" deleted\="false" description\="Code in created constructor stubs" enabled\="true" id\="org.eclipse.jdt.ui.text.codetemplates.constructorbody" name\="constructorbody">${body_statement}\nTODO();</template></templates>
+
+#→Compiler / Building
+/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.incompatibleJDKLevel=warning
+
+#→Compiler / Errors/Warnings
+/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.fatalOptionalError=enabled
+#→→Code style
+/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.explicitlyClosedAutoCloseable=error
+/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.indirectStaticAccess=error
+/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.methodWithConstructorName=error
+/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.parameterAssignment=error
+/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.staticAccessReceiver=ignore
+/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.syntheticAccessEmulation=ignore
+/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.undocumentedEmptyBlock=warning
+#→→Potential programming problems
+/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.autoboxing=ignore
+/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.comparingIdentical=error
+/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.emptyStatement=error
+/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.fallthroughCase=warning
+/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.incompleteEnumSwitch=error
+/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.missingDefaultCase=error
+/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.missingEnumCaseDespiteDefault=enabled
+/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.missingHashCodeMethod=error
+/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.missingSerialVersion=ignore
+/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.missingSynchronizedOnInheritedMethod=error
+/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.noEffectAssignment=error
+/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.possibleAccidentalBooleanAssignment=error
+/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.potentiallyUnclosedCloseable=warning
+/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.unusedObjectAllocation=warning
+#→→Name shadowing and conflicts
+/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.fieldHiding=error
+/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.localVariableHiding=warning
+#→→Deprecated and restricted API
+/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.deprecationWhenOverridingDeprecatedMethod=enabled
+#→→Unnecessary code
+/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.unnecessaryElse=warning
+/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.unnecessaryTypeCheck=error
+/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.unusedDeclaredThrownExceptionIncludeDocCommentReference=disabled
+/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.unusedDeclaredThrownException=warning
+/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.unusedExceptionParameter=warning
+/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.unusedImport=ignore
+/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.unusedLabel=error
+/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.unusedParameter=error
+/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.unusedParameterIncludeDocCommentReference=disabled
+/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.unusedTypeParameter=warning
+#→→Generic types
+/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.redundantSpecificationOfTypeArguments=warning
+/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.unavoidableGenericTypeProblems=disabled
+#→→Annotations
+/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.missingDeprecatedAnnotation=warning
+/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.missingOverrideAnnotation=warning
+/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.unusedWarningToken=ignore
+#→→Null analysis
+/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.includeNullInfoFromAsserts=enabled
+/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.nullReference=error
+/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.potentialNullReference=error
+/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.redundantNullCheck=error
+
+#→Editor
+#→→Content Assist
+/instance/org.eclipse.jdt.ui/content_assist_favorite_static_members=org.junit.Assert.*
+#→→Templates
+/instance/org.eclipse.jdt.ui/org.eclipse.jdt.ui.text.custom_templates=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><templates><template autoinsert\="false" context\="java-statements" deleted\="false" description\="iterate over array" enabled\="false" id\="org.eclipse.jdt.ui.templates.for_array" name\="for">for (int ${index} \= 0; ${index} &lt; ${array}.length; ${index}++) {\n\t${line_selection}${cursor}\n}</template><template autoinsert\="false" context\="java-statements" deleted\="false" description\="iterate over array with temporary variable" enabled\="false" id\="org.eclipse.jdt.ui.templates.for_temp" name\="for">for (int ${index} \= 0; ${index} &lt; ${array}.length; ${index}++) {\n\t${array_type} ${array_element} \= ${array}[${index}];\n\t${cursor}\n}</template><template autoinsert\="false" context\="java-members" deleted\="false" description\="test method (JUnit 3)" enabled\="false" id\="org.eclipse.jdt.ui.templates.test" name\="test3">public void test${name}() throws Exception {\n\t${cursor}\n}</template><template autoinsert\="false" context\="java" deleted\="false" description\="runnable" enabled\="false" id\="org.eclipse.jdt.ui.templates.runnable" name\="runnable">new Runnable() {\n\tpublic void run() {\n\t\t${line_selection}\n\t}\n}</template><template autoinsert\="true" context\="java" deleted\="false" description\="Static JUL Logger" enabled\="true" name\="JUL">${\:import(java.util.logging.Logger)}@SuppressWarnings("unused")\nprivate static final Logger LOGGER \= Logger.getLogger(${enclosing_type}.class.getCanonicalName());</template><template autoinsert\="true" context\="java" deleted\="false" description\="SLF4J logger" enabled\="true" name\="SLF4J">${\:import(org.slf4j.Logger,org.slf4j.LoggerFactory)}@SuppressWarnings("unused")\nprivate static final Logger LOGGER \= LoggerFactory.getLogger(${enclosing_type}.class);</template></templates>
+
+#Java Persistence
+/instance/org.eclipse.jpt.core/problem.XML_VERSION_NOT_LATEST=error
+/instance/org.eclipse.jpt.core/problem.PROJECT_NO_CONNECTION=ignore
+#/instance/org.eclipse.jpt.core/problem.PERSISTENCE_MULTIPLE_PERSISTENCE_UNITS=error
+
+#Maven
+/instance/org.eclipse.m2e.core/eclipse.m2.defaultPomEditorPage=true
+/instance/org.eclipse.m2e.core/eclipse.m2.downloadJavadoc=true
+/instance/org.eclipse.m2e.core/eclipse.m2.downloadSources=true
+#→Java EE Integration
+#Disable these two, otherwise eclipse adds these natures when Maven-updating project, which (for JSF) creates default configuration files.
+/instance/org.eclipse.m2e.wtp/org.eclipse.m2e.wtp.jaxrs.enabler.enabled=false
+/instance/org.eclipse.m2e.wtp/org.eclipse.m2e.wtp.jsf.enabler.enabled=false
