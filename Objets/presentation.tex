@@ -42,6 +42,7 @@
 \section{Objets}
 \begin{frame}
 	\frametitle{Rôle des classes}
+	Deux rôles des classes ? \pause
 	Classe : conteneur à méthodes statiques
 	\begin{itemize}
 		\item \jseref{java.lang/Math\#random}, \jseref{java.lang/Math\#abs}…
@@ -65,7 +66,7 @@
 		\item Un objet a un état : l’ensemble des valeurs de ses propriétés
 		\item Exemple : {taille = 60 cm ; couleur = blanc ; allumé}
 		\item Un objet a un comportement : l’ensemble de ses méthodes
-		\item Exemple : \texttt{isOn(): bool; getCalories(double seconds): double; activate()}
+		\item Exemple : \texttt{isOn(): bool; getCalories(double seconds): double; powerOn()}
 		\item Classe définit : états possibles + comportement
 		\item Toutes les instances ont le même comportement {\tiny sauf héritage}
 		\item Mais toutes n’ont pas le même état
@@ -91,7 +92,7 @@
 		\item C-à-d la façon dont les programmeurs (vous ou d’autres) vont l’utiliser
 		\item Exemple : ajouter \texttt{getPower()} ? Ou utile seulement en interne ?
 		\item Bonne pratique : interdire aux utilisateurs de changer l’état de votre objet directement
-		\item Exemple : dire d’utiliser \texttt{heater.activate()} plutôt que \texttt{heater.activated ← true}
+		\item Exemple : dire d’utiliser \texttt{heater.powerOn()} plutôt que \texttt{heater.on ← true}
 		\item Plus grande interface : plus de documentation à apporter, plus de méthodes à maintenir, plus de complexité
 	\end{itemize}
 \end{frame}
@@ -125,13 +126,6 @@
 		\item Remplacement possible par une autre classe sans recompilation par l’utilisateur
 		\item Interfaces ≠ pour une même classe !
 		\item Interfaces explicites : cas avancés (pas pour classes simples)
-	\end{itemize}
-\end{frame}
-
-\begin{frame}
-	\frametitle{}
-	\begin{itemize}
-		\item 
 	\end{itemize}
 \end{frame}
 
