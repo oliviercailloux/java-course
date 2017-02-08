@@ -34,4 +34,7 @@ I recommend to ask Eclipse to show more errors and warnings in order to help spo
 
 * From Eclipse, import my sample link:++Best practices/Eclipse-prefs.epf++[epf] (Eclipse preference) file.
 * You can read the file contents to see what this changes to your Eclipse configuration.
-* Check in `Windows / Preferences` whether the changes were applied indeed. For example, check in `Java / Code Style / Code Templates` that the `Catch block body` contains `throw new IllegalStateException(e);`.
+* Check in `Windows / Preferences` whether the changes were applied. For example, check in `Java / Code Style / Code Templates` that the `Catch block body` contains `throw new IllegalStateException(e);`.
+* Make sure your Java compiler configuration of your project is set to reflect the one from the global workspace.
+* Clean and recompile your projects to see the effect.
+
