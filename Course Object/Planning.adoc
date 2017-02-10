@@ -85,8 +85,8 @@ Approximatively: 50p.
 * EE5.3 [M]
 * EE5.7 [M] (the part about anonymous classes is optional)
 ** Supplementary requirements: your code must lie in at least two packages;
-** Simulate that three different people work on this exercice: one provides some interfaces; another implements the interfaces; a third one uses the interfaces and their implementations to solve the exercice (except you represent all these persons!)
-** declare at least one interface in another Eclipse project, exported as a Java archive (JAR file);
+** The idea of this exercice is that you simulate that three different people work on this exercice: one provides some interfaces; another implements the interfaces; a third one uses the interfaces and their implementations to solve the exercice (except you represent all these persons).
+** Declare at least one interface in another Eclipse project, exported as a Java archive (JAR file);
 ** implement those interfaces in another Eclipse project, exported as a Java archive (JAR file) (will you need the previous JAR file? Why / why not?);
 ** solve the exercices in a third Eclipse project (will you need the previous JAR files? Which ones and why?).
 
@@ -97,6 +97,7 @@ Approximatively: 50p.
 * http://math.hws.edu/eck/cs124/javanotes7/c5/[ES5.5] to 5.8
 * http://math.hws.edu/eck/cs124/javanotes7/c10/[ES10] to 10.2
 
+* EE5.7 modified, reported from above [M]
 * http://math.hws.edu/eck/cs124/javanotes7/c5/exercises.html[EE5.4] [M]
 * http://math.hws.edu/eck/cs124/javanotes7/c7/exercises.html[EE7.1], 7.5
 * EE7.7 [M] (you may use standard input instead of file input)
