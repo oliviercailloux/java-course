@@ -97,7 +97,7 @@ Approximatively: 50p.
 * http://math.hws.edu/eck/cs124/javanotes7/c5/[ES5.5] to 5.8
 * http://math.hws.edu/eck/cs124/javanotes7/c10/[ES10] to 10.2
 
-* EE5.7 modified, reported from above [M]
+* EE5.7 modified, from above [M]
 * http://math.hws.edu/eck/cs124/javanotes7/c5/exercises.html[EE5.4] [M]
 * http://math.hws.edu/eck/cs124/javanotes7/c7/exercises.html[EE7.1], 7.5
 * EE7.7 [M] (you may use standard input instead of file input)
@@ -105,15 +105,21 @@ Approximatively: 50p.
 * EE5.5
 * EE10.4 (except you use the https://docs.oracle.com/javase/8/docs/api/java/util/function/Predicate.html[Predicate] interface from the JRE instead of writing your own)
 
-== Then
+== S5
 
+* Exceptions in Java
 * Maps, Comparable, Comparator
-* Robust programming
-* Exceptions in Java.
-* http://math.hws.edu/eck/cs124/javanotes7/c8/[ES8] intro to 8.4
-* Libraries.
+* Unit testing
+
+== S6
+
 * Maven
 * Logging
+
+== Then
+
+* Robust programming
+* http://math.hws.edu/eck/cs124/javanotes7/c8/[ES8] intro to 8.4
 * SWT?
 * Annotations
 * Files, flows?
