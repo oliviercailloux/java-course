@@ -30,7 +30,7 @@ For Eclipse users, I strongly recommend reading the following. It does take some
 * Java development user guide, http://help.eclipse.org/neon/topic/org.eclipse.jdt.doc.user/tips/jdt_tips.html?cp=1_5[Tips and Tricks] (JDT) (bit by bit!)
 
 === Configuration
-I recommend configuring Eclipse to show more errors and warnings in order to help spot mistakes and bugs early.
+I recommend configuring Eclipse to show more errors and warnings in order to help spot mistakes and code smells early.
 
 * From Eclipse, import my sample https://raw.githubusercontent.com/edoreld/java-course/patch-1/Best%20practices/Eclipse-prefs.epf[epf] file (Eclipse preference). 
 * You can read the file contents to see what this changes to your Eclipse configuration.
