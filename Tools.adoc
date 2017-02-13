@@ -32,7 +32,7 @@ For Eclipse users, I strongly recommend reading the following. It does take some
 === Configuration
 I recommend configuring Eclipse to show more errors and warnings in order to help spot mistakes and bugs early.
 
-* From Eclipse, import my sample preference https://raw.githubusercontent.com/edoreld/java-course/patch-1/Best%20practices/Eclipse-prefs.epf[epf] file (Eclipse preference). 
+* From Eclipse, import my sample https://raw.githubusercontent.com/edoreld/java-course/patch-1/Best%20practices/Eclipse-prefs.epf[epf] file (Eclipse preference). 
 * You can read the file contents to see what this changes to your Eclipse configuration.
 * Check in `Windows / Preferences` whether the changes were applied. For example, check in `Java / Code Style / Code Templates` that the `Catch block body` contains `throw new IllegalStateException(e);`.
 * Make sure your Java compiler configuration of your project is set to reflect the one from the global workspace.
