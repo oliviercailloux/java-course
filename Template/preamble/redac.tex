@@ -1,16 +1,42 @@
-\newcommand{\source}{\scriptsize}
+\definecolor{darkgreen}{rgb}{0,0.6,0}
 \newcommand{\commentOC}[1]{{\selectlanguage{french}{\todo{OC : #1}}}}
 %Or: \todo[color=green!40]
+\newcommand{\innote}[1]{{\scriptsize{#1}}}
 
 %this probably requires outdated float package, see doc KomaScript for an alternative.
 % \newfloat{program}{t}{lop}
 % \floatname{program}{PM}
 
+%definition, theorem, lemma, example environments, qed trickery are only needed in article mode (not Beamer)
+\nottoggle{LCpres}{
+%style is plain by default (italic text)
+	\newtheorem{definition}{Definition}
+	\newtheorem{theorem}{Theorem}
+%no italic: expected.
+%http://tex.stackexchange.com/questions/144653/italicizing-of-amsthm-package
+	\newtheorem{lemma}{Lemma}
 %\crefname{axiom}{axiom}{axioms}%might be needed for workaround bug in cref when defining new theorems?
 
 %\ifdefined\theorem\else
 %\newtheorem{theorem}{\iflanguage{english}{Theorem}{Théorème}}
 %\fi
+
+\theoremstyle{remark}
+	\newtheorem{examplex}{Example}
+	\newtheorem{remarkx}{Remark}
+
+%trickery allowing use of \qedhere and the like.
+\newenvironment{example}{
+	\pushQED{\qed}\renewcommand{\qedsymbol}{$\triangle$}\examplex
+}{
+	\popQED\endexamplex
+}
+\newenvironment{remark}{
+	\pushQED{\qed}\renewcommand{\qedsymbol}{$\triangle$}\remarkx
+}{
+	\popQED\endremarkx
+}
+}
 
 %which line breaks are chosen: accept worse lines, therefore reducing risk of overfull lines. Default = 200
 \tolerance=2000
@@ -20,6 +46,14 @@
 \hbadness 5000
 %sloppy sets tolerance to 9999
 \apptocmd{\sloppy}{\hbadness 10000\relax}{}{}
+
+\bibliographystyle{abbrvnat}
+%or \bibliographystyle{apalike} for presentations?
+
+%doi package uses old-style dx.doi url, see 3.8 DOI system Proxy Server technical details, “Users may resolve DOI names that are structured to use the DOI system Proxy Server (http://doi.org (preferred) or http://dx.doi.org).”, https://www.doi.org/doi_handbook/3_Resolution.html
+\makeatletter
+\patchcmd{\@doi}{dx.doi.org}{doi.org}{}{}
+\makeatother
 
 % WRITING
 %\newcommand{\ie}{i.e.\@\xspace}%to try
@@ -51,8 +85,4 @@
 
 %TODO
 % \newcommand{\textstyleElProm}[1]{{\rmfamily\textsc{#1}}} 
-
-\newcommand{\menuit}{\emph}
-
-\input{preamble/refAPIcmds}
 
