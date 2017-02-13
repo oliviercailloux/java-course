@@ -1,0 +1,228 @@
+\RequirePackage[l2tabu, orthodox]{nag}
+\RequirePackage{silence}
+\WarningFilter{fmtcount}{\ordinal already defined use \FCordinal instead}
+\documentclass[french, english]{beamer}
+\input{preamble/packages}
+\input{preamble/math_basics}
+\input{preamble/math_mine}
+\input{preamble/redac}
+\input{preamble/draw}
+\input{preamble/acronyms}
+\input{preamble/uml}
+
+\setbeamertemplate{headline}[singleline]
+
+\title{Logging in Java}
+\subtitle{Using SLF4J and Logback}
+\subject{Java}
+\author{Olivier Cailloux}
+\institute[LAMSADE]{LAMSADE, Université Paris-Dauphine}
+\date{Version of \today}
+
+\begin{document}
+\bibliographystyle{apalike}
+
+\begin{frame}[plain]
+	\tikz[remember picture,overlay]{
+		\path (current page.south west) node[anchor=south west, inner sep=0] {
+			\includegraphics[height=1cm]{LAMSADE95.jpg}
+		};
+		\path (current page.south) ++ (0, 1mm) node[anchor=south, inner sep=0] {
+			\includegraphics[height=9mm]{Dauphine.jpg}
+		};
+		\path (current page.south east) node[anchor=south east, inner sep=0] {
+			\includegraphics[height=1cm]{PSL.png}
+		};
+	}
+   \titlepage
+\end{frame}
+\addtocounter{framenumber}{-1}
+
+\section{Introduction}
+\begin{frame}
+	\frametitle{What’s logging?}
+	\begin{itemize}
+		\item Write out statements about what happens in the program
+		\begin{itemize}
+			\item Which parts of the code were executed
+			\item In what order
+			\item With what parameters
+			\item Etc.
+		\end{itemize}
+		\item Similar but ≠: temporary debug statements in the code
+		\item Logging (generally) designates: 
+		\begin{itemize}
+			\item statements that stay in the code
+			\item and that follow a systematic strategy
+		\end{itemize}
+		\item Write to temporary output: ?\pause standard output stream (or standard error stream)
+		\item Or write to persistent output: ?\pause file
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Why log?}
+	\begin{itemize}	
+		\item Debug information for the programmer
+		\item Document your code
+		\item Keep the statements in your code but disable output on demand
+		\item Usually: save time comparing to step-by-step debugging
+		\item Debug hard to reproduce problems
+		\item See what the libraries you use do
+		\item Permit fine selection of what to show
+		\item Example: only see statements related to some computation
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Frameworks}
+	\begin{itemize}
+		\item (Too) Many popular logging frameworks in Java
+		\item “Most” standard (\href{https://jcp.org/en/jsr/detail?id=47}{JSR 47}): Java util logging (JUL)
+		\item But not the best technically
+		\item Here: SLF4J + Logback
+		\item SLF4J? \pause Simple Logging Facade for Java
+		\item ≠ solutions generally interface well, e.g. Hibernate use JBoss Logging, but can interface with SLF4J
+	\end{itemize}
+\end{frame}
+
+\section{SLF4J}
+\begin{frame}
+	\frametitle{Overview}
+	\begin{itemize}
+		\item Interfaces (and some basic code) are in SLF4J
+		\item You depend on \texttt{slf4j-api-xxx.jar}
+		\item Permit to declare and invoke loggers in your code
+		\item Declare a logger LOGGER in your class
+		\item Invoke with \texttt{LOGGER.debug(String)}, \texttt{LOGGER.info(String)}…
+		\item At run time: depend on a logger provider (an SLF4J binding)
+		\item E.g. \emph{logback}
+		\item Provide a configuration file
+		\item Specifies what and where to log
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Declare logger}
+	\begin{itemize}
+		\item Loggers have names
+		\item Permit to classify statements
+		\item Typical idiom: logger name = class name
+		\item Logger for a given class is in field \texttt{private static final Logger LOGGER}
+		\item Because: no need to distinguish loggers per instance
+		\item Obtain the logger using \texttt{LoggerFactory.getLogger(MyClass.class);}
+		\item Advantage wrt \texttt{LoggerFactory.getLogger("app.pack1.MyClass")}? \pause Refactoring: explicit link to class \pause
+	\end{itemize}
+	\begin{lstlisting}
+@SuppressWarnings("unused")
+private static final Logger LOGGER = 
+  LoggerFactory.getLogger(MyClass.class);
+	\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Log statements}
+	Normal use of a \href{https://www.slf4j.org/api/org/slf4j/Logger.html}{LOGGER}:
+	\begin{lstlisting}
+logger.debug("Temperature set to {}. 
+    Old temperature was {}.", t, oldT);
+	\end{lstlisting}
+	\vspace{1em}
+	Log an exception:
+	\begin{lstlisting}
+String s = "Hello world";
+try {
+  Integer i = Integer.valueOf(s);
+} catch (NumberFormatException e) {
+  logger.error("Failed to format {}", s, e);
+}
+	\end{lstlisting}
+\end{frame}
+
+\section{Logback}
+\begin{frame}
+	\frametitle{SLF4J bindings}
+	\begin{itemize}
+		\item Multiple bindings exist
+		\item At runtime, have only one binding
+		\item A set of classes that bind to SLF4J
+		\item Put the right jar in the classpath
+		\item Example, \emph{Simple} binding: Sends all log statements to \texttt{System.err}
+		\item Or JDK14: sends log statements to JUL
+		\item We will rather use \emph{Logback}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Logback}
+	\begin{itemize}
+		\item The main implementation for SLF4J
+		\item No configuration file: outputs logs to \texttt{System.out}
+		\item Much flexibility with configuration file(s)
+		\item Put into the classpath
+		\item Name: \texttt{logback.xml} {\tiny or \texttt{logback.groovy} or \texttt{logback-test.xml}}
+		\item Configure: Logger, Appender and Layouts
+		\item To enable and direct specific statements
+		\item {\tiny can also configure programatically}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Logger level}
+	\begin{itemize}
+		\item Loggers in a hierarchy: dot-separated
+		\item Every logger may have an \emph{assigned} log level (or \texttt{null}) {\tiny root logger always has an assigned log level, default is DEBUG}
+		\item Every logger has an \emph{effective} log level
+		\item Used to filter received logs
+		\item Example: a log request of level DEBUG is not sent to a logger with effective level INFO
+		\item Log level not configured explicitly ⇒ inherited from parent
+		\item If root has level DEBUG and no other is configured: all DEBUG
+		\item If root has level DEBUG and X.Y has level INFO, X has effective level? \pause DEBUG; X.Z? \pause DEBUG; X.Y.Z? INFO
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Appenders}
+	\begin{itemize}
+		\item Appenders attached to a logger
+		\item Indicate where to log
+		\item Its children inherit the appenders
+		\item Can log to console, a file, a DB, a remote server…
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{}
+	\begin{itemize}
+		\item 
+	\end{itemize}
+\end{frame}
+
+
+\appendix
+
+\section{License}
+\begin{frame}
+	\frametitle{License}
+	This presentation, and the associated \LaTeX{} code, are published under the \href{http://opensource.org/licenses/MIT}{MIT license}. Feel free to reuse (parts of) the presentation, under condition that you cite the author.
+	
+	Credits are to be given to \href{http://www.lamsade.dauphine.fr/~ocailloux/}{Olivier Cailloux}, Université Paris-Dauphine.
+\end{frame}
+\end{document}
+
+\begin{frame}
+	\frametitle{}
+	\begin{itemize}
+		\item 
+	\end{itemize}
+\end{frame}
+
+\section{Bibliographie}
+\begin{frame}[allowframebreaks]
+	\frametitle{Bibliographie}
+	\def\newblock{\hskip .11em plus .33em minus .07em}
+% 	\bibliography{zotero}
+\end{frame}
+
+\section{Autres}
+\end{document}
