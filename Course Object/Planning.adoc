@@ -107,9 +107,12 @@ Approximatively: 50p.
 
 == S5
 
-* Exceptions in Java
-* Maps, Comparable, Comparator
-* Unit testing
+* Exceptions in Java: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours5.pdf[Airiau C5]
+* Maps, Comparable, Comparator: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours6.pdf[Airiau C6]
+* Unit testing: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours8.pdf[Airiau C8]
+* http://math.hws.edu/eck/cs124/javanotes7/c10/[ES10.3] to 10.5
+
+* http://math.hws.edu/eck/cs124/javanotes7/c10/exercises.html[EE10]
 
 == S6
 
