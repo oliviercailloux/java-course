@@ -1,0 +1,33 @@
+= Access databases from Eclipse
+:toc:
+:toc-placement: preamble
+:sectanchors:
+
+This document briefly explains how to access SQL databases from Eclipse. We illustrate with a PostgreSQL DB.
+
+NOTE: The reader supposedly has basic knowledge of JDBC and Eclipse.
+
+* First, you need a JDBC driver, that Eclipse will use to access your DB. See https://jdbc.postgresql.org/[here] for PostgreSQL, or find the one you need for your DB type. [small]#(or `sudo apt-get install https://packages.debian.org/stable/libpostgresql-jdbc-java[libpostgresql-jdbc-java]`)#
+* Within Eclipse: `Preferences / Data Management / Connectivity / Driver Definitions`
+* Register there your driver for PostgreSQL (or the DB type you need)
+** This does _not_ create a connexion: it only declares a new driver definition, that is, a _kind_ of connexion (that you will use in the next step)
+** Eclipse asks that you start with a template. Eclipse uses it to provide particular features for your DB type. (Unfortunately, JDBC is not a good enough abstraction and Eclipse has to know which flavor of SQL and protocol your DB implements.)
+** Choose the Eclipse template version that is the highest possible, but lower than or equal to your JDBC driver version (http://stackoverflow.com/a/39304224/859604[SO])
+* From the `Data Source Explorer` view, create a connexion to your DB (using the driver definition created previously)
+* You can now view and edit data from the `Data Source Explorer` view
+* You can write and send SQL commands from the `SQL Scrapbook` (with completion!)
+
+== Further notes
+
+To open views or editors from within Eclipse, see `Window / Navigation / Quick Access`
+
+== Glassfish and Derby
+
+* If you use a Java EE application server, it comes preconfigured with a default DB (that it will connect to when requested by JPA, for example)
+* If you use a Glassfish application server, it comes with an embedded https://db.apache.org/derby/[Derby] DB
+* You have to start the DB manually: `asadmin start-database`
+* You’ll find a suitable JDBC driver for Eclipse in `glassfish4/javadb/lib/derbyclient.jar`
+* To find the properties your server uses by default for connexion to the DB: look in the Administration Console, `Resources / JDBC / JDBC Resources`, to find out which pool it uses for `java:comp/DefaultDataSource`, then within `JDBC Connection Pools`, look into `Additional Properties`
+
+* See the https://db.apache.org/derby/docs/10.10/ref/index.html[Manual] about Derby’s flavor of SQL (and more)
+

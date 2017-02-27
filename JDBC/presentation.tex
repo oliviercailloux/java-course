@@ -243,36 +243,12 @@
 \end{frame}
 
 \begin{frame}
-	\frametitle{Eclipse}
-	\begin{itemize}
-		\item Pour accéder à une BD, il faut un pilote : \href{https://jdbc.postgresql.org/}{téléchargement} {\tiny ou \texttt{sudo apt-get install libpostgresql-jdbc-java}}
-		\item \texttt{Preferences / Data Management / Connectivity / Driver Definitions}
-		\item Créer une instance de pilote pour PostgreSQL
-		\item Connexions depuis vue \emph{Data Source Explorer}
-		\item Créer une connexion à BD (via pilote créé)
-		\item Envoi de commandes : SQL Scrapbook (avec complétion)
-		\item Édition de données : depuis Data Source Explorer
-		\item Ouvrir vues ou éditeurs depuis Eclipse : voir \texttt{Window / Navigation / Quick Access}
-	\end{itemize}
-\end{frame}
-
-\begin{frame}
 	\frametitle{Serveur d’application}
 	\begin{itemize}
 		\item Avec un serveur d’application, il faut renseigner le pilote JDBC utilisé dans JNDI
 		\item Conseil : s’assurer d’abord que l’instanciation fonctionne avec un projet simple Java SE et Maven
 		\item Via l’interface d’administration, indiquer la source à utiliser pour la connexion JNDI par défaut
 		\item Inclure le pilote JDBC PostgreSQL dans les bibliothèques du serveur d’application
-	\end{itemize}
-\end{frame}
-
-\begin{frame}
-	\frametitle{Glassfish}
-	\begin{itemize}
-		\item BD intégrée à Glassfish : \href{https://db.apache.org/derby/}{Derby}
-		\item Il faut démarrer la BD : \texttt{asadmin start-database}
-		\item \href{https://db.apache.org/derby/docs/10.10/ref/index.html}{Manuel} SQL pour Derby
-		\item Cependant pour ce cours on préférera PostgreSQL
 	\end{itemize}
 \end{frame}
 
