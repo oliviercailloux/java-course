@@ -7,6 +7,8 @@ This document briefly explains how to access SQL databases from Eclipse. We illu
 
 NOTE: The reader supposedly has basic knowledge of JDBC and Eclipse.
 
+== Configure access to DB
+
 * First, you need a JDBC driver, that Eclipse will use to access your DB. See https://jdbc.postgresql.org/[here] for PostgreSQL, or find the one you need for your DB type. [small]#(or `sudo apt-get install https://packages.debian.org/stable/libpostgresql-jdbc-java[libpostgresql-jdbc-java]`)#
 * Within Eclipse: `Preferences / Data Management / Connectivity / Driver Definitions`
 * Register there your driver for PostgreSQL (or the DB type you need)
