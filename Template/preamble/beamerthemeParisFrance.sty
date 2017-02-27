@@ -59,7 +59,16 @@
 \defbeamertemplate{footline}{onlypage}{%
 	\leavevmode%
 	\hfill
-	\begin{beamercolorbox}[wd=.1\paperwidth,ht=2.25ex,dp=1ex,right]{page number in head/foot}%
+	\usebeamerfont*{page number in head/foot}
+	\usebeamercolor*[fg]{page number in head/foot}
+%	\begin{beamercolorbox}[wd=.1\paperwidth,ht=2.25ex,dp=1ex,right]{page number in head/foot}%
+		\insertframenumber{} / \inserttotalframenumber\hspace*{2ex}%
+%	\end{beamercolorbox}%
+}
+
+\defbeamertemplate{footline}{pagebox}{%
+	\leavevmode%
+	\begin{beamercolorbox}[wd=\paperwidth,ht=2.25ex,dp=1ex,right]{page number in head/foot}%
 		\insertframenumber{} / \inserttotalframenumber\hspace*{2ex}%
 	\end{beamercolorbox}%
 }
