@@ -10,7 +10,7 @@
 \input{preamble/acronyms}
 \input{preamble/uml}
 
-%\setbeamertemplate{headline}[singleline]
+\setbeamertemplate{headline}[singleline]
 \setbeamertemplate{footline}[onlypage]
 
 \title{REST}
@@ -40,8 +40,7 @@
 \end{frame}
 \addtocounter{framenumber}{-1}
 
-\section{JAX-RS}
-\subsection{Introduction}
+\section{Introduction}
 \begin{frame}
 	\frametitle{Services Web}
 	\begin{itemize}
@@ -83,12 +82,12 @@
 	\end{itemize}
 \end{frame}
 
-\subsection{Implémentation}
+\section{Implémentation}
 \begin{frame}
 	\frametitle{Méthodes ressource}
 	\begin{itemize}
 		\item Méthode renvoyant une réponse : annoter \jeeref[@]{javax.ws.rs/Produces}, tableau de \texttt{String} (cf. \jeeref{javax.ws.rs.core/MediaType})
-		\item Choix méthode appelée par le conteneur ? \pause selon HTTP \texttt{accept} et annotations \texttt{@Produces} \pause
+		\item Conteneur choisit méthode selon HTTP \texttt{accept} et annotations \texttt{@Path}, \texttt{@Produces}
 		\item Type retour méthode ? \pause Doit être convertible en type mime adéquat \pause
 		\item Conversion par \emph{Entity provider} \og{}writer\fg{} embarqué ou maison
 		\item Ou : renvoyer \jeeref{javax.ws.rs.core/Response} {\tiny ou \jeeref{javax.ws.rs.core/GenericEntity}}
@@ -96,6 +95,7 @@
 	\end{itemize}
 \end{frame}
 
+\section{Conversions}
 \begin{frame}
 	\frametitle{Entity providers}
 	\begin{itemize}
@@ -109,35 +109,31 @@
 	\end{itemize}
 \end{frame}
 
-\subsection{Paramètres}
 \begin{frame}
 	\frametitle{Paramètres}
 	Accès aux paramètres autres que contenu requête HTTP :
 	\begin{itemize}
-		\item \texttt{\jeeref[@]{javax.ws.rs/DefaultValue}("me") \jeeref[@]{javax.ws.rs/QueryParam}("name") String na}
-		\item Ou classe avec paramètre constructeur \texttt{String} {\tiny ou collections}
+		\item \texttt{\jeeref[@]{javax.ws.rs/DefaultValue}("me") \jeeref[@]{javax.ws.rs/QueryParam}("name") String n}
 		\item Convertisseurs de base fournis : \texttt{@QueryParam("zevalue") int value}, …
 		\item Penser au défaut explicite ! (Sinon défaut pour type)
 		\item Paramètre dans l’URI : \texttt{@Path("users/\{username\}")} {\tiny ou \texttt{@Path("users/\{username: regexp\}")}, par défaut [\^{}/]+?}
 		\item \texttt{\jeeref[@]{javax.ws.rs/PathParam}("username") String usernameVar;}
 		\item \jeeref[@]{javax.ws.rs/HeaderParam}, \jeeref[@]{javax.ws.rs/CookieParam}, \jeeref[@]{javax.ws.rs/MatrixParam}, \jeeref[@]{javax.ws.rs/FormParam}
 		\item \jeeref[@]{javax.ws.rs.core/Context} \jeeref{javax.ws.rs.core/UriInfo} \texttt{ui} ; \texttt{@Context \jeeref{javax.ws.rs.core/HttpHeaders} hh}
-		\item Aussi sur champs {\tiny ou constructeur pour certains} (restriction ? \pause pour classes ressources de scope requête)
+		\item Aussi sur champs {\tiny ou constructeur pour certains} (pour classes ressources de scope requête)
 	\end{itemize}
 \end{frame}
 
-
-\subsection{Cycles de vie}
+\section{Mise en œuvre}
 \begin{frame}
 	\frametitle{Cycles de vie}
 	\begin{itemize}
-		\item Scopes CDI permis {\tiny en fonction de l’implémentation JAX-RS} {\tiny spécification ambigüe concernant Provider mais fonctionne en pratique}
+		\item Scopes CDI permis {\tiny en fonction de l’implémentation JAX-RS,} {\tiny spécification ambigüe concernant Provider mais fonctionne en pratique}
 		\item Recommandé : toujours préciser scope sur classes ressources et providers
 		\item Permet protection contre accès concurrents
 	\end{itemize}
 \end{frame}
 
-\subsection{Exception}
 \begin{frame}
 	\frametitle{Exceptions}
 	\begin{itemize}
@@ -147,17 +143,16 @@
 	\end{itemize}
 \end{frame}
 
-\subsection{Packaging}
 \begin{frame}
 	\frametitle{Packaging}
 	\begin{itemize}
-		\item \jeeref[@]{javax.ws.rs/ApplicationPath} sur sous-classe de \jeeref{javax.ws.rs.core/Application} (capture value/*)
+		\item \jeeref[@]{javax.ws.rs/ApplicationPath} sur sous-classe de \jeeref{javax.ws.rs.core/Application}
 		\item Dans \texttt{.war}
-		\item Application sous-classe : singleton {\tiny (@ApplicationScope obligatoirement)}
+		\item Sous-classe de \texttt{Application} : singleton {\tiny (@ApplicationScope obligatoirement)}
 	\end{itemize}
 \end{frame}
 
-\subsection{Voir aussi}
+\section{Voir aussi}
 \begin{frame}
 	\frametitle{Voir aussi}
 	\begin{itemize}
@@ -170,7 +165,6 @@
 	\end{itemize}
 \end{frame}
 
-\subsection{Références}
 \begin{frame}
 	\frametitle{Références}
 	\begin{itemize}
