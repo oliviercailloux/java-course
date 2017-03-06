@@ -117,7 +117,7 @@ Approximatively: 50p.
 == S6
 
 * Maven
-* Logging
+* Logging (SLF4J) (if time permits)
 
 == Then
 
