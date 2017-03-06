@@ -1,0 +1,22 @@
+= Glassfish
+
+== RollbackException with no cause
+This is not a “best practice”, rather a “trick” about how to work around a bug in Glassfish.
+
+When your method in a CDI bean marked `@Transactional` throws an exception, Glassfish will (as it should) throw a `RollbackException`. You will see this in the log. However, because of a https://java.net/jira/browse/GLASSFISH-21172[bug], Glassfish hides the cause of the exception.
+
+To see the cause of the failure, you will have to catch the exception inside of the method that fails and log the exception yourself before re-throwing it. To do this you might want to use a big try-catch in the method that fails.
+
+[source,java]
+----
+@Transactional
+public void myTransactionalMethodThatFails(…) {
+	try {
+		// doStuff…
+	} catch (Throwable t) {
+		LOGGER.log(Level.SEVERE, "myTransactionalMethodThatFails just failed.", t);
+		throw t;
+	}
+}
+----
+
