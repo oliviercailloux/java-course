@@ -115,9 +115,12 @@ Approximatively: 50p.
 * http://math.hws.edu/eck/cs124/javanotes7/c10/exercises.html[EE10]
 
 == S6
+Consolidation
+
+== S7
 
 * Maven
-* Logging (SLF4J) (if time permits)
+* Logging (SLF4J)
 
 == Then
 
