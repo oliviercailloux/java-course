@@ -18,7 +18,7 @@ Here is a simple way to access your resource.
 
 [source,java]
 ----
-URL resourceUrl = MyClass.class.getResource("data_file.csv")
+URL resourceUrl = MyClass.class.getResource("data_file.csv");
 ----
 With this statement you ask the class loader to get your resource from the classpath, relative to the path of `MyClass`. You obtain a reference to the said resource. You can then invoke `resourceUrl.openStream()`, for example.
 
