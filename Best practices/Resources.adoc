@@ -1,0 +1,24 @@
+= Resources
+
+== Access resources from code
+Scenario: your class `MyClass` requires a resource `data_file.csv` to work. Where should you put it and how to access it from code?
+
+You first decision is to either access the resource through the file system, or through the classpath. I favor classpath access (unless specific objections apply). Here we assume the resource is accessed through the classpath.
+
+=== Use unique names
+You need to give your resource a unique name. Otherwise, conflicts may happen with other packages (another package might come with a resource named like yours). To get things nicely sorted out, I suggest to use the package name of the (main) class that uses the resource. (Your class does have a link:Maven.adoc[unique package name], right?)
+
+To recap.
+
+* _Wrong_: putting your resource named `data_file.csv` in the root of your classpath. (What happens if another package you depend on also happens to ship with a resource named `data_file.csv` and has followed the same wrong strategy?)
+* _Right_: the resource is processed by some class `MyClass` in the package `com.mydomain.myproject.mysubpackage`, and therefore your resource goes into the folder `com/mydomain/myproject/mysubpackage` in your resource folder.
+
+=== Access the resource
+Here is a simple way to access your resource.
+
+[source,java]
+----
+URL resourceUrl = MyClass.class.getResource("data_file.csv")
+----
+With this statement you ask the class loader to get your resource from the classpath, relative to the path of `MyClass`. You obtain a reference to the said resource. You can then invoke `resourceUrl.openStream()`, for example.
+
