@@ -59,6 +59,7 @@ Approximatively: 10p. (+ 30p. [SK])
 * (Use of Javadoc in Eclipse.)
 * http://math.hws.edu/eck/cs124/javanotes7/c3/[ES3.7] (except 3.7.3), http://math.hws.edu/eck/cs124/javanotes7/c4/[4 intro] to 4.7.
 * ES4.3 intro to 4.3.2, 4.6.1 [I]
+* http://www-users.math.umn.edu/~arnold/disasters/ariane.html, https://www.youtube.com/watch?v=gp_D8r-2hwk
 
 Approximatively: 48p. 
 
@@ -111,11 +112,12 @@ Approximatively: 50p.
 * Maps, Comparable, Comparator: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours6.pdf[Airiau C6]
 * Unit testing: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours8.pdf[Airiau C8]
 * http://math.hws.edu/eck/cs124/javanotes7/c10/[ES10.3] to 10.5
+* http://math.hws.edu/eck/cs124/javanotes7/c8/[ES8] intro to 8.4
 
 * http://math.hws.edu/eck/cs124/javanotes7/c10/exercises.html[EE10]
 
 == S6
-Consolidation
+Consolidation (retour sur Git)
 
 == S7
 
@@ -124,10 +126,10 @@ Consolidation
 
 == Then
 
-* Robust programming
-* http://math.hws.edu/eck/cs124/javanotes7/c8/[ES8] intro to 8.4
-* SWT?
 * Annotations
+* CI
 * Files, flows?
-* REST client?
+* REST client
+* DBs
+* SWT
 
