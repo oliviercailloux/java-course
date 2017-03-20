@@ -1,0 +1,92 @@
+= Servlets in brief
+:toc:
+:toc-placement: preamble
+:sectanchors:
+
+This document gives a (rough and incomplete) overview of Servlets in Java EE application servers. This document may serve as an introduction to application servers in Java EE.
+
+== Overview
+=== Application servers
+Java EE defines a http://www.oracle.com/technetwork/java/javaee/tech/index.html[set] of specifications, known as Java Specification Requests (JSR). Application servers have to implement [small]#(parts of)# these standards in order to be compliant with [small]#(a subset of)# Java EE. An important standard among those is the Servlet API, or https://www.jcp.org/en/jsr/detail?id=340[JSR 340].
+
+A Java EE application server is a piece of software that ease the development of web applications, by providing services to the Java web developer. Your application server provides containers in which you, the web developer, embed your code. The container calls your code whenever adequate.
+
+Examples of Java EE compliant application servers: GlassFish (Oracle, open source, reference implementation of Java EE), WildFly (Red Hat / JBoss, open source), WebSphere AS (IBM)…
+
+=== Servlets
+A servlet is a piece of software that, given some web request parameters, returns some response to the request. You, the web application developer, write the code that, given the request parameters, computes the response. That code gets embedded into the “web” container of your application server.
+
+The web container is one of the containers provided by any Java EE compliant application server. The web container listens for web requests on some port and will call your servlet code whenever it detects a web request directed to your servlet. The Java servlet specification also defines how to tell the application server which web requests should be sent to your servlet code.
+
+An application will typically contain many such servlets, configured to process different kinds of web requests.
+
+In this document, web requests are considered to be HTTP requests. [small]#(The specification is more general but I doubt anybody would seriously consider writing non HTTP servlets in a Java EE application server.)#
+
+=== HTTP requests
+HTTP, Hypertext Transfer Protocol, is a W3C / IETF https://tools.ietf.org/html/rfc7540[standard] that describes a way of exchanging information between a client and a server. It is ubiquitous on the internet. In an HTTP exchange, a client sends an HTTP request to a server, then the server sends an HTTP response back to the client. An HTTP message is either an HTTP request or an HTTP response. The client is typically a browser (such as your browser you use when you browse the internet).
+
+.Example of an HTTP exchange
+====
+A client might send an HTTP request, targeted to http://example.com/mycat, specifying that the chosen HTTP method is HTTP GET. The server then replies with an HTTP response with a header “content-type = image/jpeg” and a message body containing an image of a cat.
+====
+
+An HTTP message contains headers and possibly a message body [small]#(this document considers pseudo-headers or start-line data as headers, for simplicity)#. The headers for an HTTP request specify the URI that the request targets, the request method to be used for the exchange, and possibly other information such as the encodings used in the message body, … The headers for an HTTP response specify the status code (three digits that indicate whether something went wrong), and possibly other information such as the content-type of the message body, …
+
+HTTP requests target _resources_, identified by URIs (Uniform Resource Identifiers). For example, the URI http://example.com/mycat might identify the resource describing someone’s cat.
+
+Request methods indicate the request semantics: what the client wishes to do in relation with the targeted resource. A GET request method asks the server for a current representation of the target resource. This is the method your browser uses when you type a URI in your browser navigation bar and hit enter, and by far the most common request method. A GET request [small]#typically# has no message body. A POST request method, on the contrary, typically has a message body. It asks the server to perform resource-specific processing on the message body. It is typically used to post new data to a server, for example, to post a new image of your cat for it to become accessible at some URI.
+
+== Servlets in Java EE
+
+=== My first servlet
+For you to define a new servlet that will be recognized as such by the container, you must define a new class that represents your servlet, and:
+
+* your class must extend http://docs.oracle.com/javaee/7/api/javax/servlet/http/HttpServlet.html[`HttpServlet`] (a class provided by Java EE);
+* your class must be annotated with http://docs.oracle.com/javaee/7/api/javax/servlet/annotation/WebServlet.html[`@WebServlet`];
+* your class overrides one method, depending on the request method you want it to handle.
+
+The value of the `@WebServlet` annotation is the URI at which your servlet must be reached.
+
+.An example of a Java EE servlet [source, java]
+----
+include::https://github.com/oliviercailloux/samples/raw/master/JavaEE-Servlets/src/main/java/io/github/oliviercailloux/javaee_servlets/servlets/SayHelloServlet.java[]
+----
+
+(You may define more than one servlet. [small]#The constraints described above are not the only way to define a Java EE compliant servlet.#)
+
+=== Packaging and deploying the application
+You then package your application as a WAR (Web ARchive format), and deploy it to your application server. (Exact procedures to do this depend on your IDE for the WAR and on your application server for the deployment.)
+
+Each Java EE application has a context root, the root URI at which your application is reachable on the server. If your application context root is `MyContextRoot` and your application is deployed on a server reachable at `+++http://example.com+++`, then your application is reachable at the `+++http://example.com/MyContextRoot+++` root URI. (The context root can be configured on your application server, by default it is typically the name of your WAR file without the extension.)
+
+The web container will recognize your servlets at deployment time. When the server will receive an HTTP request targeted at your application (meaning: targeted at the corresponding context root), it will examine its target URI and dispatch it to the appropriate servlet, according to the values in the `@WebServlet` annotations. For example, a request targeted at `+++http://example.com/MyContextRoot/sayHelloServlet+++` will be sent to the application corresponding to the `MyContextRoot` context root, and inside this application, to the servlet annotated with `@WebServlet("/sayHelloServlet")`.
+
+=== Execution
+The container will then instanciate your class and execute your code, under the method corresponding to the request method in the request (example: `doGet` for a GET request method). The container gives the method two Java EE objects as parameters, http://docs.oracle.com/javaee/7/api/javax/servlet/http/HttpServletRequest.html[`HttpServletRequest`] and http://docs.oracle.com/javaee/7/api/javax/servlet/http/HttpServletResponse.html[`HttpServletResponse`]. 
+
+* The `HttpServletRequest` object represents the request message: your code can read from this object to obtain information in the request, such as which data is contained in the headers or the message body of the request.
+* The `HttpServletResponse` object represents the response being constructed: your code uses this object to specify the response that the server must sent back to the client.
+
+== Test servlets from command line
+Once you have written your servlet, you want to easily test it. GET requests may be sent by simply directing your browser to the right adress. POST requests (and other request methods) can’t be tested so easily with a browser. I recommend to use https://en.wikipedia.org/wiki/cURL[`curl`]: a command line tool that sends HTTP requests and displays the response sent by the server.
+
+Quick help:
+
+* `curl +++http://example.com/MyContextRoot/sayHelloServlet+++` curl will send a GET request to the given URI and print out the response received in return from the server
+* `curl --include +++http://example.com/MyContextRoot/sayHelloServlet+++` The `--include` option tells curl to include the received HTTP headers in the output
+* `curl --data "name=daniel&skill=lousy" +++http://example.com/MyContextRoot/sayHelloServlet+++` curl will send a POST request to the given URI, passing the data to the server using the content-type `application/x-www-form-urlencoded` (in the same way that a browser does when a user has filled in an HTML form and presses the submit button)
+
+Other notes:
+
+* Official https://curl.haxx.se/docs/tooldocs.html[doc] for curl. curl is available in your favorite linux distribution. Other OSes: try https://curl.haxx.se/download.html[here] (untested by this author), write to me if you know more.
+* https://en.wikipedia.org/wiki/wget[Wget] is an alternative to curl. It is available in your favorite linux distribution. Other OSes: try http://wget.addictivecode.org/Faq.html#download[here] (untested by this author).
+
+== Refs
+* Servlet 3.1 (JSR 340) specification: http://download.oracle.com/otn-pub/jcp/servlet-3_1-fr-eval-spec/servlet-3_1-final.pdf[PDF]
+
+== Supplementary details
+
+*Inversion of control* Instead of you providing a `main` method as a starting point of your application, in Java EE, your code gets embedded into a container provided by the application server, and the container calls your code when adequate. This is an example of the https://martinfowler.com/bliki/InversionOfControl.html[pattern] “Inversion of control”. The pattern is also called the Hollywood principle: “Don’t call us, we’ll call you”.
+
+*Request methods* https://tools.ietf.org/html/rfc7231#section-4.3.1[RFC 7231] lists the request methods available in HTTP, and defines properties of request methods. Of special importance are safe methods (essentially read-only) and idempotent methods (repeated identical requests have the same effect as a single request). Safe implies idempotent. GET is both, POST is neither.
+
