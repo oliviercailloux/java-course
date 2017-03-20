@@ -48,9 +48,9 @@ For you to define a new servlet that will be recognized as such by the container
 The value of the `@WebServlet` annotation is the URI at which your servlet must be reached.
 
 .An example of a Java EE servlet [source, java]
-----
+--
 include::README.adoc[]
-----
+--
 
 (You may define more than one servlet. [small]#The constraints described above are not the only way to define a Java EE compliant servlet.#)
 
