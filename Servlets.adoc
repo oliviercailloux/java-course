@@ -69,6 +69,8 @@ The container will then instanciate your class and execute your code, under the 
 * The `HttpServletRequest` object represents the request message: your code can read from this object to obtain information in the request, such as which data is contained in the headers or the message body of the request.
 * The `HttpServletResponse` object represents the response being constructed: your code uses this object to specify the response that the server must sent back to the client.
 
+Observe that the container makes your life as web developer much simpler: you do not have to listen to ports, spawn threads to process incoming requests, decode and encode requests and responses on the wire, manage sockets, parse HTTP headers, and so on. The container does this for you. This is an example of the services that Java EE application servers provide to the developers. [small]#(Of course, other frameworks than Java EE provide this kind of services to developers in Java or other languages.)#
+
 == Test servlets from command line
 Once you have written your servlet, you want to easily test it. GET requests may be sent by simply directing your browser to the right adress. POST requests (and other request methods) can’t be tested so easily with a browser. I recommend to use https://en.wikipedia.org/wiki/cURL[`curl`]: a command line tool that sends HTTP requests and displays the response sent by the server.
 
