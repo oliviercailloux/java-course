@@ -49,7 +49,7 @@ The value of the `@WebServlet` annotation is the URI at which your servlet must 
 
 .An example of a Java EE servlet [source, java]
 ----
-include::https://github.com/oliviercailloux/samples/raw/master/JavaEE-Servlets/src/main/java/io/github/oliviercailloux/javaee_servlets/servlets/SayHelloServlet.java[]
+include::README.adoc[]
 ----
 
 (You may define more than one servlet. [small]#The constraints described above are not the only way to define a Java EE compliant servlet.#)
