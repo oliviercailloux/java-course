@@ -11,6 +11,7 @@
 \input{preamble/uml}
 
 \setbeamertemplate{headline}[singleline]
+\setbeamertemplate{footline}[onlypage]
 
 \title{Maven}
 \subject{Maven}
@@ -38,13 +39,51 @@
 \end{frame}
 \addtocounter{framenumber}{-1}
 
-\section{Présentation}
+\section{Introduction}
 \begin{frame}
-	\frametitle{Présentation}
+	\frametitle{Problème des dépendances transitives}
+	\begin{itemize}
+		\item Souhait d’utiliser une bibliothèque tierce
+		\item Cette bibliothèque requiert d’autres bibliothèques
+		\item[⇒] Nécessité de télécharger et configurer IDE pour chaque dépendance
+		\item Si d’autres utilisent mon code : amplification du problème pour eux
+		\item Bonne pratique : découpe du code en bibliothèques séparées (outils, etc.) pour gestion d’entités plus petites
+		\item Amplifie encore le problème !
+	\end{itemize}
+	\begin{example}[JasperReports]
+		\begin{itemize}
+			\item 18 dépendances {\tiny (\href{http://search.maven.org/\#artifactdetails|net.sf.jasperreports|jasperreports|6.4.0|jar}{Central}, \href{https://mvnrepository.com/artifact/net.sf.jasperreports/jasperreports/6.4.0}{détails})}
+			\item Plus facultatif (exemple) Apache Batik (génération de SVG), qui requiert batik-awt-util, batik-util, xml-apis
+		\end{itemize}
+	\end{example}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Problème de l’environnement de compilation}
+	\begin{itemize}
+		\item Partage du code source avec autres développeurs
+		\item Utilisent un autre IDE
+		\item Doivent à leur tour configurer les dépendances
+		\item Et autres paramètres du projet
+		\item Exemple : répertoires code source, répertoires ressources
+		\item Quand changement de configuration : à répercuter sur tous les environnements !
+	\end{itemize}
+	\begin{block}{Intégration continue}
+		\begin{itemize}
+			\item Envoi du code sur un serveur
+			\item Le serveur compile et exécute les tests
+			\item Permet d’assurer la reproductibilité de la construction
+			\item Requiert manière automatique de préciser l’environnement (dépendances, paramètres)
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Présentation de Maven}
 	\begin{itemize}
 		\item Apache Maven
-		\item Outil de gestion de projet
-		\item Principalement gestion de dépendances
+		\item Outil de gestion de configuration de projet
+		\item En particulier : gestion de dépendances
 		\item Description de votre projet via POM (Project Object Model)
 		\item \emph{Convention over configuration} : peu de configuration grâce aux valeurs par défaut
 		\item Dépôt central avec publications open source
@@ -110,21 +149,6 @@
 	\end{minipage}
 \end{frame}
 
-\begin{frame}{Accès aux ressources en Java}
-	Rappel : accès aux ressources en Java (indépendant de Maven)
-	\begin{exampleblock}{Exemple d’accès aux ressources}
-		\begin{itemize}
-			\item \texttt{MyClass} dans package \texttt{com.mypkg}
-			\item \texttt{URL url = MyClass.class.\href{https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html\#getResource-java.lang.String-}{getResource}("ploum.txt")}
-			\item \texttt{url} désigne la ressource de chemin \texttt{/com/mypkg/ploum.txt}
-			\item Ensuite : \texttt{url.openStream()} (ou toute autre exploitation)
-		\end{itemize}
-	\end{exampleblock}
-	\begin{block}{Positionnement de ressources avec Maven}
-		Placer le fichier dans \texttt{/src/main/resources/com/mypkg/ploum.txt}
-	\end{block}
-\end{frame}
-
 \section{Cycle de vie}
 \begin{frame}
 	\frametitle{Cycles de vie Maven}
@@ -176,10 +200,8 @@
 	\frametitle{Dépendances}
 	\begin{itemize}
 		\item Maven permet de gérer les \og{}dépendances\fg{}
-		\item Bibliothèques dont votre code dépend
 		\item Pour compiler (dépendance statique) ; s’exécuter ; pour tests uniquement…
-		\item Une bibliothèque dont vous dépendez peut elle-même avoir des dépendances
-		\item Maven gère ces dépendances transitives pour vous !
+		\item Maven gère les dépendances transitives pour vous !
 		\item Dépendances prises {\tiny par défaut} dans Maven Central Repository
 		\item Dans POM : section \texttt{<dependencies>}
 		\item Dans cette section : ajouter une section \texttt{<dependency>} pour chaque dépendance à gérer
@@ -193,11 +215,11 @@
 <dependency>
   <groupId>com.google.guava</groupId>
   <artifactId>guava</artifactId>
-  <version>20.0</version>
+  <version>21.0</version>
 </dependency>
 		\end{lstlisting}	
 	\end{block}
-	\begin{block}{Exemple : dépendance vers junit}
+	\begin{block}{Exemple : dépendance vers \href{http://search.maven.org/\#search|gav|1|g:"junit" AND a:"junit"}{junit}}
 		\begin{lstlisting}
 <dependency>
   <groupId>junit</groupId>
@@ -323,8 +345,5 @@
 	\begin{itemize}
 		\item 
 	\end{itemize}
-	\begin{block}{}
-		
-	\end{block}
 \end{frame}
 \end{document}
