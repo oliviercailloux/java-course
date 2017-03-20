@@ -9,7 +9,9 @@ Course (in LaTeX, mostly) about Java and Java EE.
 
 Look into the various sub-folders and `.adoc` files, depending on your interest! See below for further pointers.
 
-See also: https://github.com/oliviercailloux/samples[samples].
+== See also
+* https://github.com/oliviercailloux/samples[samples]
+* https://drive.google.com/drive/folders/0BzAfb5IHjkJsOHpPdFBPQUYzVDg[Slides] Dan Dimcea
 
 == JAX-RS Client
 
