@@ -25,9 +25,10 @@ In this document, web requests are considered to be HTTP requests. [small]#(The 
 === HTTP requests
 HTTP, Hypertext Transfer Protocol, is a W3C / IETF https://tools.ietf.org/html/rfc7540[standard] that describes a way of exchanging information between a client and a server. It is ubiquitous on the internet. In an HTTP exchange, a client sends an HTTP request to a server, then the server sends an HTTP response back to the client. An HTTP message is either an HTTP request or an HTTP response. The client is typically a browser (such as your browser you use when you browse the internet).
 
-.Example of an HTTP exchange
+.An HTTP exchange
 ====
-A client might send an HTTP request, targeted to http://example.com/mycat, specifying that the chosen HTTP method is HTTP GET. The server then replies with an HTTP response with a header “content-type = image/jpeg” and a message body containing an image of a cat.
+. A client sends an HTTP request, targeted to http://example.com/mycat, specifying that the chosen HTTP method is HTTP GET.
+. The server replies with an HTTP response with a header “content-type = image/jpeg” and a message body containing an image of a cat.
 ====
 
 An HTTP message contains headers and possibly a message body [small]#(this document considers pseudo-headers or start-line data as headers, for simplicity)#. The headers for an HTTP request specify the URI that the request targets, the request method to be used for the exchange, and possibly other information such as the encodings used in the message body, … The headers for an HTTP response specify the status code (three digits that indicate whether something went wrong), and possibly other information such as the content-type of the message body, …
