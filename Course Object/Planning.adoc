@@ -124,6 +124,11 @@ Consolidation (retour sur Git)
 * Maven
 * Logging (SLF4J)
 
+== S8
+
+* Avancée sur projets
+* Surcharger `toString()`
+
 == Then
 
 * Annotations
