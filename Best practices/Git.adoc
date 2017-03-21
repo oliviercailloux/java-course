@@ -1,0 +1,8 @@
+= Git best practices
+:sectanchors:
+
+== Your project at the root of your repository
+Put your project immediately at the root of your repository (e.g., the `pom.xml` file).
+
+https://github.com/oliviercailloux/test-call-xmcda-ws[Example]
+
