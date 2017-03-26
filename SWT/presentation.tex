@@ -1,0 +1,382 @@
+\RequirePackage[l2tabu, orthodox]{nag}
+\RequirePackage{silence}
+\WarningFilter{fmtcount}{\ordinal already defined use \FCordinal instead}
+\documentclass[french, english]{beamer}
+\input{preamble/packages}
+\input{preamble/math_basics}
+\input{preamble/math_mine}
+\input{preamble/redac}
+\input{preamble/draw}
+\input{preamble/acronyms}
+\input{preamble/uml}
+\input{preamble/refAPIcmds}
+
+\setbeamertemplate{headline}[singleline]
+\setbeamertemplate{footline}[onlypage]
+
+\title{SWT}
+\subtitle{}
+\subject{Java}
+\keywords{GUI}
+\author{Olivier Cailloux}
+\institute[LAMSADE]{LAMSADE, Université Paris-Dauphine}
+\date{Version of \today}
+
+\begin{document}
+\bibliographystyle{apalike}
+
+\begin{frame}[plain]
+	\tikz[remember picture,overlay]{
+		\path (current page.south west) node[anchor=south west, inner sep=0] {
+			\includegraphics[height=1cm]{LAMSADE95.jpg}
+		};
+		\path (current page.south) ++ (0, 1mm) node[anchor=south, inner sep=0] {
+			\includegraphics[height=9mm]{Dauphine.jpg}
+		};
+		\path (current page.south east) node[anchor=south east, inner sep=0] {
+			\includegraphics[height=1cm]{PSL.png}
+		};
+	}
+   \titlepage
+\end{frame}
+\addtocounter{framenumber}{-1}
+
+\section{GUIs in general}
+\begin{frame}
+	\frametitle{What’s a GUI?}
+	\begin{itemize}
+		\item GUI? \pause Graphical User Interface
+		\item \emph{An} interface between the user and your program
+		\item Assembles graphical components
+		\item Components are provided
+		\item By the OS or language-specific
+		\item You can design your own components
+		\item Own components: rare!
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Control in GUIs}
+	\begin{itemize}
+		\item IoC? \pause Inversion of control
+		\item AKA The Hollywood principle: “Don’t call us, we’ll call you”
+		\item Usually: you control the application flow
+		\item From \texttt{main}, go to this method, …
+		\item With a GUI, the GUI controls the flow
+		\item Most of the time: do “nothing”
+		\begin{itemize}
+			\item Meaning: nothing you program
+			\item Refresh components when necessary, …
+			\item Done by the GUI library
+		\end{itemize}
+		\item Your program acts when the user clicks a button, …
+		\item Called an event
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Hierarchical design}
+	Components are {\tiny typically} assembled into a tree
+	\begin{example}[A tree of GUI components]
+		\begin{tikzpicture}
+			\path node[matrix of nodes, row sep=5mm] {
+				& & & & |(App)| App\\
+				& & & |(Win1)| Win1 & & |(Win2)| Win2\\
+				& |(Left)| Left pane & |(Main)| Main pane & |(Menu)| Menu bar & |(Status)| Status bar\\
+				|(Top)| Top text & & |(Middle)| Left content\\
+			};
+				
+			\path graph[use existing nodes, left anchor=south, right anchor=north] {
+				App -- {
+					Win1 -- {
+						Left -- {Top, Middle},
+						Main,
+						Menu,
+						Status
+					}, 
+					Win2
+				}
+			}; 
+		\end{tikzpicture}
+	\end{example}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Observer situation}
+	Situation: One object must advertise events to other objects
+	\begin{example}[Advertiser]
+		\begin{itemize}
+			\item A button advertises that it has been pressed
+			\item A data store warns that it has almost no space left
+		\end{itemize}
+	\end{example}
+	Simplest approach: 
+	\begin{itemize}
+		\item The advertiser knows the interested objects and call them
+	\end{itemize}
+	\begin{center}
+		\begin{tikzpicture}
+			\path node[/uml/class3] (a) {
+				\nodepart{one}
+				AlmostFullHandler
+				\nodepart{three}
+				almostFullEvent()
+			};
+			\path (a.east) ++ (1cm, 0) node[anchor=west, /uml/class3] (d) {
+				\nodepart{one}
+				DataStore
+				\nodepart{two}
+				almostFullH
+				\nodepart{three}
+				warnAlmostFull()
+			};
+			\path (d.three south) ++ (0, -4mm) node[anchor=north] {\texttt{\{almostFullH.almostFullEvent();\}}} edge[-] (d.three east);
+		\end{tikzpicture}
+	\end{center}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Observer pattern}
+	Situation:
+	\begin{itemize}
+		\item You want one object to advertise events to observers
+		\item You do not know all possible observers at development time
+		\item You want loose coupling between objects
+	\end{itemize}
+	\begin{itemize}
+		\item The observed object calls any observer object
+		\item Observer is an interface
+		\item Observers must register to the observed object
+	\end{itemize}
+	\begin{center}
+		\begin{tikzpicture}
+			\path node[/uml/class3] (o) {
+				\nodepart[font=]{one} \small <<interface>>\\\bfseries
+				Observer
+				\nodepart{three}
+				almostFullEvent()
+			};
+			\path (o.east) ++ (1cm, 0) node[anchor=west, /uml/class3] (d) {
+				\nodepart{one}
+				DataStore
+				\nodepart{two}
+				observer
+				\nodepart{three}
+				registerObserver(o: Observer)\\
+				warnAlmostFull()
+			};
+			\path (d.three south) node[anchor=north] {\texttt{\{o.almostFullEvent();\}}};
+		\end{tikzpicture}
+	\end{center}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Programming a GUI}
+	Simple approach:
+	\begin{itemize}
+		\item Assemble your graphical components into a tree
+		\item Register observers on components
+		\item Start the GUI event loop
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{GUIs in Java}
+	\begin{itemize}
+		\item Abstract Window Toolkit (AWT): oldest and most basic
+		\item Uses native GUI components
+		\item Swing: higher-level controls
+		\item Reuses part of AWT to plug into OS
+		\item Paints its own controls (consistent look and feel across OSes)
+		\item JavaFX: replacer of Swing
+		\item Declarative language for definition of the GUI; animations; CSS styles
+		\item Paints its own controls
+		\item AWT, Swing, JavaFX part of the JRE
+		\item Standard Widget Toolkit (SWT): Eclipse’s alternative to AWT/Swing
+		\item JFace: Eclipse’s advanced library that supplements SWT
+	\end{itemize}
+\end{frame}
+
+\section{SWT}
+\begin{frame}
+	\frametitle{Characteristics}
+	\begin{itemize}
+		\item A blatant lie in the name (? \pause It’s not standard!)
+		\item JavaFX is newer and (possibly) more popular, and (really) standard
+		\item SWT uses native graphical components (like AWT)
+		\item JFace/SWT has high-level components (like Swing or JavaFX)
+		\item[⇒] Native look and feel with high-level components
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Hierarchical structure}
+	Example:
+	\footnotesize
+	\begin{tikzpicture}
+		\path node[matrix of nodes, row sep=5mm] {
+			& & & & |(App)| display: \texttt{Display}\\
+			& & & |(Win1)| win1: \texttt{Shell} & & |(Win2)| win2\\
+			& |(Left)| Left pane & |(Main)| Main pane: \texttt{Composite} & |(Menu)| Menu bar & |(Status)| Status bar\\
+			|(Top)| Top text & & |(Middle)| Left content: \texttt{Tree} \\
+		};
+			
+		\path graph[use existing nodes, left anchor=south, right anchor=north] {
+			App -- {
+				Win1 -- {
+					Left -- {Top, Middle},
+					Main,
+					Menu,
+					Status
+				}, 
+				Win2
+			}
+		}; 
+	\end{tikzpicture}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Core concepts}
+	\begin{minipage}[t]{\widthof{“Child of” relation}+3mm}
+		\begin{block}{“Child of” relation}
+			\begin{center}
+				\begin{tikzpicture}
+					\path node[/uml/class] (widget) {Widget};
+					\path (widget.south) ++(0, -3mm) node[/uml/class, anchor=north] (control) {Control};
+					\path (control.south) ++(0, -3mm) node[/uml/class, anchor=north] (composite) {Composite};
+					\path (composite.south) ++(0, -3mm) node[/uml/class, anchor=north] (shell) {Shell};
+					\path[/uml/extends] (shell) -- (composite);
+					\path[/uml/extends] (composite) -- (control);
+					\path[/uml/extends] (control) -- (widget);
+				\end{tikzpicture}
+			\end{center}
+		\end{block}
+	\end{minipage}\hfill
+	\begin{minipage}[t]{\textwidth-35mm}
+		\begin{itemize}
+			\item \href{http://help.eclipse.org/neon/advanced/content.jsp?topic=/org.eclipse.platform.doc.isv/reference/api/org/eclipse/swt/widgets/Widget.html}{\texttt{Widget}}: GUI component; can send events; must be disposed
+			\item \href{http://help.eclipse.org/neon/advanced/content.jsp?topic=/org.eclipse.platform.doc.isv/reference/api/org/eclipse/swt/widgets/Control.html}{\texttt{Control}}: may be put into a composite; has bounds
+			\item \href{http://help.eclipse.org/neon/advanced/content.jsp?topic=/org.eclipse.platform.doc.isv/reference/api/org/eclipse/swt/widgets/Composite.html}{\texttt{Composite}}: can contain child controls
+			\item \href{http://help.eclipse.org/neon/advanced/content.jsp?topic=/org.eclipse.platform.doc.isv/reference/api/org/eclipse/swt/widgets/Shell.html}{\texttt{Shell}}: top-level window connected to a display
+			\item \href{http://help.eclipse.org/neon/advanced/content.jsp?topic=/org.eclipse.platform.doc.isv/reference/api/org/eclipse/swt/widgets/Display.html}{\texttt{Display}}: represents the connection to the native display
+		\end{itemize}
+	\end{minipage}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{General structure}
+	\begin{itemize}
+		\item Create the display
+		\item Create a shell bound to the display
+		\item Put the desired controls into the shell
+		\item Run the event loop
+	\end{itemize}
+	\begin{lstlisting}
+Display display = new Display();
+Shell shell = new Shell(display);
+// … populate shell …
+shell.open();
+while (!shell.isDisposed()) {
+  if (!display.readAndDispatch()) {
+    display.sleep();
+  }
+}
+display.dispose();
+	\end{lstlisting}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Create and position a control}
+	\begin{itemize}
+		\item Use its constructor
+		\item Provide the parent composite, and the style bits
+		\item \texttt{new Button(shell, SWT.PUSH | SWT.WRAP);}
+		\item A control has a position (relative to its parent) and a size
+		\item Bounds of the control: rectangle that contains it entirely (> client area)
+		\item \texttt{control.setBounds(10, 0, 50, 20);} (location: (10, 0); size: 50 × 20)
+		\item Hard to determine the right size! Depends on text content, …
+		\item Compute preferred size: \texttt{control.computeSize(…)}
+		\item Set to preferred size: \texttt{control.pack();}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Listen to widgets}
+	\begin{itemize}
+		\item Implement the right *Listener interface
+		\item Example: \href{http://help.eclipse.org/neon/advanced/content.jsp?topic=/org.eclipse.platform.doc.isv/reference/api/org/eclipse/swt/events/SelectionListener.html}{\texttt{SelectionListener}}
+		\item Add your implementer to the observers of the widget
+		\item \texttt{button.addSelectionListener(myListener);}
+		\item When the widget fires the corresponding event, your listener will be called
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Dispose resources}
+	\begin{itemize}
+		\item Widgets relate to native resources
+		\item Must be explicitly disposed of
+		\item Rule: if you create it, you must dispose of it
+		\item \texttt{composite.dispose()} ⇒ disposes of all the children
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Items in controls}
+	\begin{itemize}
+		\item Some controls must be populated with items
+		\item Example: \href{http://help.eclipse.org/neon/advanced/content.jsp?topic=/org.eclipse.platform.doc.isv/reference/api/org/eclipse/swt/widgets/TableItem.html}{\texttt{TableItem}} represents a row of a \href{http://help.eclipse.org/neon/advanced/content.jsp?topic=/org.eclipse.platform.doc.isv/reference/api/org/eclipse/swt/widgets/Table.html}{\texttt{Table}}
+		\item \href{http://help.eclipse.org/neon/advanced/content.jsp?topic=/org.eclipse.platform.doc.isv/reference/api/org/eclipse/swt/widgets/Item.html}{\texttt{Item}}s are widgets but not controls: their position is {\tiny partly} controlled by their parent
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Widgets in practice}
+	\begin{itemize}
+		\item These are only general guidelines
+		\item Each widget has its own specificities
+		\item Choose your widget using the screenshots (see \href{https://github.com/oliviercailloux/java-course/blob/master/SWT.adoc}{doc})
+		\item Then check the javadoc or snippets
+		\item Then check what JFace provides to help
+	\end{itemize}
+\end{frame}
+
+\section{Practicalities}
+\begin{frame}
+	\frametitle{Practicalities}
+	\begin{itemize}
+		\item Maven: SWT not nicely mavenized (see \href{https://github.com/oliviercailloux/java-course/blob/master/SWT.adoc}{doc})
+		\item UI Thread: the thread that created the display
+		\item Access GUI widgets: only through the UI thread
+		\item Event loop must be run from the UI thread
+	\end{itemize}
+\end{frame}
+
+\appendix
+
+\section{Licence}
+\clearpage\pdfbookmark{License}{License}
+\begin{frame}[plain]
+	\frametitle{Licence}
+	Cette présentation, et le code LaTeX associé, sont sous \href{http://opensource.org/licenses/MIT}{licence MIT}. Vous êtes libres de réutiliser des éléments de cette présentation, sous réserve de citer l’auteur.
+	
+	Le travail réutilisé est à attribuer à \href{http://www.lamsade.dauphine.fr/~ocailloux/}{Olivier Cailloux}, Université Paris-Dauphine.
+\end{frame}
+\addtocounter{framenumber}{-1}
+\end{document}
+
+\clearpage\pdfbookmark[2]{\refname}{\refname}
+\begin{frame}[allowframebreaks]
+	\frametitle{\refname}
+% 	\bibliography{zotero}
+\end{frame}
+
+\section{Autres}
+\begin{frame}
+	\frametitle{}
+	\begin{itemize}
+		\item 
+	\end{itemize}
+\end{frame}
+
+\end{document}
