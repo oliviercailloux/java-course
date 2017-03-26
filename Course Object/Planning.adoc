@@ -126,12 +126,16 @@ Consolidation (retour sur Git)
 
 == S8
 
+* Annotations
 * Avancée sur projets
-* Surcharger `toString()`
+* Notes
+** Surcharger `toString()`
+** createHeater(Color color, int height, int width, int depth, int maxPower, boolean isOn, …)
+** Dépôt clair
+** Fermeture des ressources
 
 == Then
 
-* Annotations
 * CI
 * Files, flows?
 * REST client
