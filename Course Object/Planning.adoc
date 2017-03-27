@@ -27,6 +27,8 @@ You know algorithmics and the basic (non object-oriented) programming concepts i
 * Use the quiz as a test: read the text, _then_ check that you can answer the quiz.
 * Don’t feel obliged to implement all exercices (especially the simple ones): try to estimate whether you’re able to solve the problem; do implement some of them to check whether you really can.
 
+// Object: 10 ; Project: 7
+
 == S1
 
 * https://github.com/oliviercailloux/java-course/blob/1580d14b95224ac5e5fd66c84fe440ff84a98246/Pr%C3%A9sentation%20du%20cours%20Objet/presentation.pdf[Pres course]
@@ -117,7 +119,7 @@ Approximatively: 50p.
 * http://math.hws.edu/eck/cs124/javanotes7/c10/exercises.html[EE10]
 
 == S6
-Consolidation (retour sur Git)
+Git in practice
 
 == S7
 
@@ -127,18 +129,20 @@ Consolidation (retour sur Git)
 == S8
 
 * Annotations
-* Avancée sur projets
+* Tracking projects
 * Notes
-** Surcharger `toString()`
-** createHeater(Color color, int height, int width, int depth, int maxPower, boolean isOn, …)
-** Dépôt clair
-** Fermeture des ressources
+** Overload `toString()`
+** Clean repo
+** Close resources
+
+== S9 (27th March)
+
+* Files and flows
+* SWT ?
 
 == Then
 
 * CI
-* Files, flows?
 * REST client
 * DBs
-* SWT
 
