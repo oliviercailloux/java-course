@@ -137,8 +137,16 @@ Git in practice
 
 == S9 (27th March)
 
-* Files and flows
-* SWT ?
+* Files and flows (from https://docs.oracle.com/javase/tutorial/essential/io/index.html[Basic I/O] in the Java Tutorials)
+* SWT
+
+== S10
+
+* Projects
+
+== S11
+
+* General eval! (After the session.)
 
 == Then
 
