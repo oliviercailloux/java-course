@@ -1,0 +1,7 @@
+= Libs
+
+My recommendations concerning various libraries.
+
+* Google https://github.com/google/guava[Guava]: “new collection types (such as multimap and multiset), immutable collections, a graph library, functional types, an in-memory cache, and APIs/utilities for concurrency, I/O, hashing, primitives, reflection, string processing, and much more”. You should definitely use their preconditions helpers. Then check whatever else you might have a use for.
+* http://super-csv.github.io/super-csv/index.html[SuperCSV]
+
