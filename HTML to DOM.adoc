@@ -2,18 +2,19 @@
 
 A short note about parsing HTML documents in Java using W3C’s DOM (Document Object Model)
 
-== Valid HTML
+== XHTML
 
-.Obtain a DOM object from a valid HTML document
+.Obtain a DOM object from a valid XHTML document
 [source,java]
 ----
 DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 DocumentBuilder builder = factory.newDocumentBuilder();
+Document doc;
 try (InputStream input = new FileInputStream(new File("input.html"))) {
-	Document doc = builder.parse(input);
-	Element docE = doc.getDocumentElement();
-	LOGGER.info("Main tag name: {}.", docE.getTagName());
+	doc = builder.parse(input);
 }
+Element docE = doc.getDocumentElement();
+LOGGER.info("Main tag name: {}.", docE.getTagName());
 ----
 
 == Real-life HTML
