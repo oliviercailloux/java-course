@@ -1,0 +1,36 @@
+= HTML to DOM
+
+A short note about parsing HTML documents in Java using W3C’s DOM (Document Object Model)
+
+== Valid HTML
+
+.Obtain a DOM object from a valid HTML document
+[source,java]
+----
+DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+DocumentBuilder builder = factory.newDocumentBuilder();
+try (InputStream input = new FileInputStream(new File("input.html"))) {
+	Document doc = builder.parse(input);
+	Element docE = doc.getDocumentElement();
+	LOGGER.info("Main tag name: {}.", docE.getTagName());
+}
+----
+
+== Real-life HTML
+
+.Obtain a DOM object from a real-life HTML document
+[source,java]
+----
+File inputFile = new File("input.html");
+org.jsoup.nodes.Document jsoupDoc = Jsoup.parse(inputFile, StandardCharsets.UTF_8.name());
+Document doc = new W3CDom().fromJsoup(jsoupDoc);
+Element docE = doc.getDocumentElement();
+LOGGER.info("Main tag name: {}.", docE.getTagName());
+----
+
+== Refs
+
+* https://jsoup.org/[jsoup]
+* Parsing from DOM and related technologies in Java: see https://docs.oracle.com/javase/tutorial/jaxp/TOC.html[JAXP] tutorial (focus on the parts related to the DOM)
+* https://en.wikipedia.org/wiki/Comparison_of_HTML_parsers[Comparison] of HTML parsers (Wikipedia)
+
