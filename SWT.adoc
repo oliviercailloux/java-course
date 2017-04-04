@@ -62,8 +62,7 @@ Further notes:
 * Some non-official SWT artifacts misleadingly appear to be much more recent than the official ones (e.g., 4.6.1 instead of 3.105.0), because they use the version of the Eclipse release in which the SWT artifact is found rather than the version of the artifact itself. You can easily check this. In Eclipse Neon, check Eclipse Installation Details, Plug-ins, Plug-in Id `org.eclipse.swt`: it has version 3.105.0.v… (Further https://bugs.eclipse.org/bugs/show_bug.cgi?id=484004#c90[explanations].)
 * Bug https://bugs.eclipse.org/bugs/show_bug.cgi?id=484004[484004] - Start publishing Eclipse platform artifacts to Maven central
 * Current https://bugs.eclipse.org/bugs/show_bug.cgi?id=510186[discussion] about correctly releasing SWT to Maven Central
-* A https://github.com/maven-eclipse/maven-eclipse.github.io/#how-to-use[non-official way] of including SWT into your project
-* For JFace, adding the dependency `org.eclipse.scout.sdk.deps:org.eclipse.jface:3.12.0.v20160518-1929` also worked for me (see also further https://github.com/maven-eclipse/maven-eclipse.github.io/issues/1[links])
+* A https://github.com/maven-eclipse/maven-eclipse.github.io/#how-to-use[non-official way] of including SWT into your project. For JFace, adding the dependency `org.eclipse.scout.sdk.deps:org.eclipse.jface:3.12.0.v20160518-1929` also worked for me (see also further https://github.com/maven-eclipse/maven-eclipse.github.io/issues/1[links]).
 
 == See also
 * http://wiki.eclipse.org/JFace_Data_Binding[JFace Data Binding]
