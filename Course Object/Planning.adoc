@@ -140,17 +140,19 @@ Git in practice
 * Files and flows (from https://docs.oracle.com/javase/tutorial/essential/io/index.html[Basic I/O] in the Java Tutorials)
 * SWT
 
-== S10
+== S10 (28th March)
 
 * Projects
+* Rev: API, …
 
-== S11
+== S11 (2nd May)
 
-* General eval! (After the session.)
+* DOM
+* REST client
+* General eval! (Evals received after the session.)
 
 == Then
 
 * CI
-* REST client
 * DBs
 

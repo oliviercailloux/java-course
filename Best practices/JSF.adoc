@@ -1,5 +1,8 @@
 = JSF best practices
 
+== Use CDI annotations, rather than Faces annotations
+Faces scopes http://docs.oracle.com/javaee/7/api/javax/faces/bean/package-summary.html[annotations] are being deprecated. Rather use CDI scope annotations (such as http://docs.oracle.com/javaee/7/api/javax/enterprise/context/SessionScoped.html[@SessionScoped]) and http://docs.oracle.com/javaee/7/api/javax/inject/Named.html[@Named] (http://stackoverflow.com/questions/4347374/backing-beans-managedbean-or-cdi-beans-named[SO]). The CDI mechanism is more general.
+
 [[multifield]]
 == Multiple field validation
 Sometimes the validation logic requires knowledge of the value of multiple fields. (Example: required `start` ≤ `end`, where `start` and `end` are two request parameters.) In such case I consider the usual JSF validation approach (namely, by treating the problem in the JSF validation phase) inelegant, because it is designed for single-field validation. I prefer to use case-based navigation in the action phase. Some may disagree, see e.g. BalusC, “JSF ajax/action/listener methods are semantically the wrong place to do validation” http://stackoverflow.com/a/5897183/859604[here] and an alternative proposal http://balusc.omnifaces.org/2007/12/validator-for-multiple-fields.html[here]. 
