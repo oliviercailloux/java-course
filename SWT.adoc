@@ -20,26 +20,26 @@
 
 == Table widget
 
-“Raw” table widgets (that is, without using JFace additions to it) work as follows. You add +TableItem+ s to it (one per line); and +TableColumn+ s (one per, well, column). You set text on the table items by column index using `setText(int, String)`. You need to manually keep the table items synced to your model. You may insert and remove table items by index.
+“Raw” table widgets (that is, without using JFace additions to it) work as follows. You add `TableItem` s to it (one per line); and `TableColumn` s (one per, well, column). You set text on the table items by column index using `setText(int, String)`. You need to manually keep the table items synced to your model. You may insert and remove table items by index.
 
-To support edition, add +TableEditor+ s to cells in the table. A table editor has a cell editor control (of type control and not +CellEditor+) and is bound to a cell in the table (actually, to a table item and a column). You need to register manually for events to detect when the user has validated some new input, and update your model accordingly. You probably also need to manually toggle between the normal table view and the table editor view. For example, if a specific column requires a combo box for edition, you probably want to display a combo box only when the user has focussed on a cell in that column, and otherwise just display a string with no combo box.
+To support edition, add `TableEditor` s to cells in the table. A table editor has a cell editor control (of type control and not `CellEditor`) and is bound to a cell in the table (actually, to a table item and a column). You need to register manually for events to detect when the user has validated some new input, and update your model accordingly. You probably also need to manually toggle between the normal table view and the table editor view. For example, if a specific column requires a combo box for edition, you probably want to display a combo box only when the user has focussed on a cell in that column, and otherwise just display a string with no combo box.
 
-You may want to use a JFace +TableViewer+ to alleviate these difficulties. A JFace viewer has:
+You may want to use a JFace `TableViewer` to alleviate these difficulties. A JFace viewer has:
 
 * a list of elements,
 * a (table) widget, 
 * an +IContentProvider+, able to transform an input element to content elements,
 * an +ILabelProvider+, able to transform a content element to a label,
-* a viewer sorter (possibly), which sorts content elements.
+* (optionally) a viewer sorter, which sorts content elements.
 
-A table viewer is a sort of column viewer. It has:
+//A table viewer is a sort of column viewer. It has:
 
-* an IStructuredContentProvider
-* instead of ILabelProvider, rather: ITableLabelProvider which has separate labels text for each column; or ILabelProvider but only first column; or CellLabelProvider or its extension ColumnLabelProvider;
-* may have ViewerColumn s: each of them has a label provider, which use CellLabelProvider, and editing support, which use CellEditor.
-* may alternatively use setCellModifier(ICellModifier), setCellEditors(CellEditor[]).
+//* an IStructuredContentProvider
+//* instead of ILabelProvider, rather: ITableLabelProvider which has separate labels text for each column; or ILabelProvider but only first column; or CellLabelProvider or its extension ColumnLabelProvider;
+//* may have ViewerColumn s: each of them has a label provider, which use CellLabelProvider, and editing support, which use CellEditor.
+//* may alternatively use setCellModifier(ICellModifier), setCellEditors(CellEditor[]).
 
-A TextCellEditor is an example of CellEditor.
+//A TextCellEditor is an example of CellEditor.
 
 == Maven
 
