@@ -1,7 +1,7 @@
 = JSF best practices
 
 == Use CDI annotations, rather than Faces annotations
-Faces scopes http://docs.oracle.com/javaee/7/api/javax/faces/bean/package-summary.html[annotations] are being deprecated. Rather use CDI scope annotations (such as http://docs.oracle.com/javaee/7/api/javax/enterprise/context/SessionScoped.html[@SessionScoped]) and http://docs.oracle.com/javaee/7/api/javax/inject/Named.html[@Named] (http://stackoverflow.com/questions/4347374/backing-beans-managedbean-or-cdi-beans-named[SO]). The CDI mechanism is more general.
+Faces scopes http://docs.oracle.com/javaee/7/api/javax/faces/bean/package-summary.html[annotations] are being deprecated. Rather use CDI scope http://docs.oracle.com/javaee/7/api/javax/enterprise/context/package-summary.html[annotations] and http://docs.oracle.com/javaee/7/api/javax/inject/Named.html[@Named] (http://stackoverflow.com/questions/4347374/backing-beans-managedbean-or-cdi-beans-named[SO]). The CDI mechanism is more general.
 
 [[multifield]]
 == Multiple field validation
