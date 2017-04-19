@@ -22,19 +22,23 @@
 
 “Raw” table widgets (that is, without using JFace additions to it) work as follows. You add `TableItem` s to it (one per line); and `TableColumn` s (one per, well, column). You set text on the table items by column index using `setText(int, String)`. You need to manually keep the table items synced to your model. You may insert and remove table items by index.
 
-To support edition, add `TableEditor` s to cells in the table. A table editor has a cell editor control (of type control and not `CellEditor`) and is bound to a cell in the table (actually, to a table item and a column). You need to register manually for events to detect when the user has validated some new input, and update your model accordingly. You probably also need to manually toggle between the normal table view and the table editor view. For example, if a specific column requires a combo box for edition, you probably want to display a combo box only when the user has focussed on a cell in that column, and otherwise just display a string with no combo box.
+To support edition, add `TableEditor` s to cells in the table. A table editor has a cell editor control (of type control and not `CellEditor`) and is bound to a cell in the table (actually, to a table item and a column). The cell editor control appears on top of (that is, instead of) the normal cell of the table. You need to register manually for events to detect when the user has validated some new input, and update your model accordingly. You probably also need to manually toggle between the normal table view and the table editor view. For example, if a specific column requires a combo box for edition, you probably want to display a combo box only when the user has focussed on a cell in that column, and otherwise just display a string with no combo box.
 
-//You may want to use a JFace `TableViewer` to alleviate these difficulties. A JFace viewer has:
+== JFace TableViewer
 
-//* a list of elements,
-//* a (table) widget, 
-//* an +IContentProvider+, able to transform an input element to content elements,
-//* an +ILabelProvider+, able to transform a content element to a label,
-//* (optionally) a viewer sorter, which sorts content elements.
+You may want to use a JFace `TableViewer` to more easily manage some aspects of the behavior of a `Table` widget. A TableViewer is an example of a JFace viewer. (JFace also offers viewers for lists or other widgets.)
 
-//A table viewer is a sort of column viewer. It has:
+A JFace viewer wraps some SWT widget. Apart from its wrapped widget, you need to provide it with:
 
-//* an IStructuredContentProvider
+* an +IContentProvider+, able to transform an input element into content elements,
+* an +ILabelProvider+, able to transform a content element to a label,
+* (optionally) a viewer sorter, which sorts content elements.
+
+You then set the input element of the viewer. Typically, this is a collection of things, where a thing is some object of your creation. The content provider in the viewer will then transform this input element (the collection of things) into content elements (that is, a list of things). The viewer is thus said to have a list of content elements. You need not mix up the concept of _input_ element, that typically represents a set of objects (it is typically a collection), but is considered by the viewer content provider as a single object, and the _content_ elements, that the viewer has a list of.
+
+A JFace table viewer is a sort of viewer. More precisely, it is a sort of column viewer (a viewer that can display informations by column). A table viewer wraps an SWT table widget, and has:
+
+* an `IStructuredContentProvider` (which extends `IContentProvider`),
 //* instead of ILabelProvider, rather: ITableLabelProvider which has separate labels text for each column; or ILabelProvider but only first column; or CellLabelProvider or its extension ColumnLabelProvider;
 //* may have ViewerColumn s: each of them has a label provider, which use CellLabelProvider, and editing support, which use CellEditor.
 //* may alternatively use setCellModifier(ICellModifier), setCellEditors(CellEditor[]).
@@ -81,8 +85,9 @@ You need to replace the artifactId with the one corresponding to your platform (
 
 Further notes:
 
+* You might have to manually make the Javadoc location point http://help.eclipse.org/neon/topic/org.eclipse.platform.doc.isv/reference/api/[here] from your project build path configuration.
 * Official link:++http://search.maven.org/#search|ga|1|g:%22org.eclipse.platform%22 org.eclipse.swt++[SWT], link:++http://search.maven.org/#search|ga|1|g:%22org.eclipse.platform%22 a:%22org.eclipse.jface%22++[JFace] artifacts in Central
-* Some non-official SWT artifacts misleadingly appear to be much more recent than the official ones (e.g., 4.6.1 instead of 3.105.0), because they use the version of the Eclipse release in which the SWT artifact is found rather than the version of the artifact itself. You can easily check this. In Eclipse Neon, check Eclipse Installation Details, Plug-ins, Plug-in Id `org.eclipse.swt`: it has version 3.105.0.v… (Further https://bugs.eclipse.org/bugs/show_bug.cgi?id=484004#c90[explanations].)
+* Some non-official SWT artifacts misleadingly seem more recent than the official ones (e.g., 4.6.1 instead of 3.105.0), because they use the version of the Eclipse release in which the SWT artifact is found rather than the version of the artifact itself. (You can easily check this. In Eclipse Neon, check Eclipse Installation Details, Plug-ins, Plug-in Id `org.eclipse.swt`: it has version 3.105…) (https://bugs.eclipse.org/bugs/show_bug.cgi?id=484004#c90[Source].)
 * Bug https://bugs.eclipse.org/bugs/show_bug.cgi?id=484004[484004] - Start publishing Eclipse platform artifacts to Maven central
 * Current https://bugs.eclipse.org/bugs/show_bug.cgi?id=510186[discussion] about correctly releasing SWT to Maven Central
 * A https://github.com/maven-eclipse/maven-eclipse.github.io/#how-to-use[non-official way] of including SWT into your project. For JFace, adding the dependency `org.eclipse.scout.sdk.deps:org.eclipse.jface:3.12.0.v20160518-1929` also worked for me (see also further https://github.com/maven-eclipse/maven-eclipse.github.io/issues/1[links]).
