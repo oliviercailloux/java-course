@@ -20,30 +20,53 @@
 
 == Table widget
 
-“Raw” table widgets (that is, without using JFace additions to it) work as follows. You add `TableItem` s to it (one per line); and `TableColumn` s (one per, well, column). You set text on the table items by column index using `setText(int, String)`. You need to manually keep the table items synced to your model. You may insert and remove table items by index.
+“Raw” table widgets (that is, without using JFace additions to it) work as follows. You add `http://help.eclipse.org/neon/advanced/content.jsp?topic=/org.eclipse.platform.doc.isv/reference/api/org/eclipse/swt/widgets/TableItem.html[TableItem]` s to it (one per line); and `http://help.eclipse.org/neon/advanced/content.jsp?topic=/org.eclipse.platform.doc.isv/reference/api/org/eclipse/swt/widgets/TableColumn.html[TableColumn]` s (one per, well, column). You set text on the table items by column index using `setText(int, String)`. You need to manually keep the table items synced to your model. You may insert and remove table items by index.
 
-To support edition, add `TableEditor` s to cells in the table. A table editor has a cell editor control (of type control and not `CellEditor`) and is bound to a cell in the table (actually, to a table item and a column). The cell editor control appears on top of (that is, instead of) the normal cell of the table. You need to register manually for events to detect when the user has validated some new input, and update your model accordingly. You probably also need to manually toggle between the normal table view and the table editor view. For example, if a specific column requires a combo box for edition, you probably want to display a combo box only when the user has focussed on a cell in that column, and otherwise just display a string with no combo box.
+To support edition, add `http://help.eclipse.org/neon/advanced/content.jsp?topic=/org.eclipse.platform.doc.isv/reference/api/org/eclipse/swt/custom/TableEditor.html[TableEditor]` s to cells in the table. A table editor has a cell editor control (of type control and not `CellEditor`) and is bound to a cell in the table (actually, to a table item and a column). The cell editor control appears on top of (that is, instead of) the normal cell of the table. You need to register manually for events to detect when the user has validated some new input, and update your model accordingly. You probably also need to manually toggle between the normal table view and the table editor view. For example, if a specific column requires a combo box for edition, you probably want to display a combo box only when the user has focussed on a cell in that column, and otherwise just display a string with no combo box.
 
 == JFace TableViewer
 
-You may want to use a JFace `TableViewer` to more easily manage some aspects of the behavior of a `Table` widget. A TableViewer is an example of a JFace viewer. (JFace also offers viewers for lists or other widgets.)
+You may want to use a JFace `http://help.eclipse.org/neon/advanced/content.jsp?topic=/org.eclipse.platform.doc.isv/reference/api/org/eclipse/jface/viewers/TableViewer.html[TableViewer]` to ease the management of a `Table` widget. A `TableViewer` is a sort of JFace viewer. (JFace also offers viewers for lists or other widgets.)
+
+=== JFace viewers
 
 A JFace viewer wraps some SWT widget. Apart from its wrapped widget, you need to provide it with:
 
-* an +IContentProvider+, able to transform an input element into content elements,
-* an +ILabelProvider+, able to transform a content element to a label,
+* an `http://help.eclipse.org/neon/advanced/content.jsp?topic=/org.eclipse.platform.doc.isv/reference/api/org/eclipse/jface/viewers/IContentProvider.html[IContentProvider]`, able to transform an input element into content elements,
+* an `http://help.eclipse.org/neon/advanced/content.jsp?topic=/org.eclipse.platform.doc.isv/reference/api/org/eclipse/jface/viewers/ILabelProvider.html[ILabelProvider]`, able to transform a content element to a label,
 * (optionally) a viewer sorter, which sorts content elements.
 
-You then set the input element of the viewer. Typically, this is a collection of things, where a thing is some object of your creation. The content provider in the viewer will then transform this input element (the collection of things) into content elements (that is, a list of things). The viewer is thus said to have a list of content elements. You need not mix up the concept of _input_ element, that typically represents a set of objects (it is typically a collection), but is considered by the viewer content provider as a single object, and the _content_ elements, that the viewer has a list of.
+You then set the input element of the viewer. Typically, this is a collection of things, where a thing is some object of your creation. The content provider in the viewer will then transform this input element (the collection of things) into content elements (that is, a list of things). The viewer is thus said to have a list of content elements. Make sure you understand the distinction between the _input_ element, that typically represents a set of objects (it is typically a collection), but is considered by the viewer content provider as a single object, and the _content_ elements, that the viewer has a list of.
+
+=== Overview of table viewer
 
 A JFace table viewer is a sort of viewer. More precisely, it is a sort of column viewer (a viewer that can display informations by column). A table viewer wraps an SWT table widget, and has:
 
-* an `IStructuredContentProvider` (which extends `IContentProvider`),
-//* instead of ILabelProvider, rather: ITableLabelProvider which has separate labels text for each column; or ILabelProvider but only first column; or CellLabelProvider or its extension ColumnLabelProvider;
-//* may have ViewerColumn s: each of them has a label provider, which use CellLabelProvider, and editing support, which use CellEditor.
-//* may alternatively use setCellModifier(ICellModifier), setCellEditors(CellEditor[]).
+* an `http://help.eclipse.org/neon/advanced/content.jsp?topic=/org.eclipse.platform.doc.isv/reference/api/org/eclipse/jface/viewers/IStructuredContentProvider.html[IStructuredContentProvider]` (which extends `IContentProvider`),
+* specialized kinds of `ILabelProvider` that transform content elements into sets of labels (see below),
+* may have `http://help.eclipse.org/neon/advanced/content.jsp?topic=/org.eclipse.platform.doc.isv/reference/api/org/eclipse/jface/viewers/TableViewerColumn.html[TableViewerColumn]` s: a sort of `http://help.eclipse.org/neon/advanced/content.jsp?topic=/org.eclipse.platform.doc.isv/reference/api/org/eclipse/jface/viewers/ViewerColumn.html[ViewerColumn]`, each of them has a label provider, which use CellLabelProvider, and editing support, which use CellEditor,
+* alternatively (older API), may have a set of column “properties” (strings that designate columns), one per columns, together with an `http://help.eclipse.org/neon/advanced/content.jsp?topic=/org.eclipse.platform.doc.isv/reference/api/org/eclipse/jface/viewers/ICellModifier.html[ICellModifier]` and one `http://help.eclipse.org/neon/advanced/content.jsp?topic=/org.eclipse.platform.doc.isv/reference/api/org/eclipse/jface/viewers/CellEditor.html[CellEditor]` per column.
+//* Check also: `http://help.eclipse.org/neon/advanced/content.jsp?topic=/org.eclipse.platform.doc.isv/reference/api/org/eclipse/jface/viewers/ColumnViewerEditor.html[ColumnViewerEditor]`.
 
-//A TextCellEditor is an example of CellEditor.
+=== Label providers for table viewer
+
+If you provide a simple `ILabelProvider` (that is not an `ITableLabelProvider` nor a `CellLabelProvider`) to a table viewer, it will be used to provide a label only for the first column. Rather use one of the more specialized label providers for table viewers.
+
+* An `http://help.eclipse.org/neon/advanced/content.jsp?topic=/org.eclipse.platform.doc.isv/reference/api/org/eclipse/jface/viewers/ITableLabelProvider.html[ITableLabelProvider]` provides separate labels text for each column.
+* A `http://help.eclipse.org/neon/advanced/content.jsp?topic=/org.eclipse.platform.doc.isv/reference/api/org/eclipse/jface/viewers/CellLabelProvider.html[CellLabelProvider]` has more control over what’s shown to the user: instead of merely providing a label when asked for (as with `ITableLabelProvider`), it is responsible for updating whole viewer cells. It can thus, for example, manage the font of the related cell. Override the `update` method and use its `http://help.eclipse.org/neon/advanced/content.jsp?topic=/org.eclipse.platform.doc.isv/reference/api/org/eclipse/jface/viewers/ViewerCell.html[ViewerCell]` parameter to query for the current element and column index to be updated.
+* A `http://help.eclipse.org/neon/advanced/content.jsp?topic=/org.eclipse.platform.doc.isv/reference/api/org/eclipse/jface/viewers/ColumnLabelProvider.html[ColumnLabelProvider]` extends `CellLabelProvider`. It has the extended flexibility of `CellLabelProvider` but also provides simplified specification of a text or other parameters of a label (such as a font or a background), given a content element. Just override the method corresponding to your needs.
+
+=== Cell editors
+
+Cell editors may be of kind `http://help.eclipse.org/neon/advanced/content.jsp?topic=/org.eclipse.platform.doc.isv/reference/api/org/eclipse/jface/viewers/TextCellEditor.html[TextCellEditor]`, `http://help.eclipse.org/neon/advanced/content.jsp?topic=/org.eclipse.platform.doc.isv/reference/api/org/eclipse/jface/viewers/ComboBoxCellEditor.html[ComboBoxCellEditor]`, … In all cases, you create the editor giving it its parent table as parameter. Editors have a value, taken from the cell modifier, when edition starts. They also send a value to the cell modifier when user has finished edition. The type of those values depend on the editor: text cell editors work with string values, combo box cell editors work with zero-based index of the selected item as values, …
+
+=== Using table viewer columns in a table viewer
+
+I recommend to use the more flexible and more recent API that involves table column viewers. This way you deal with your table logic one column at a time. You add table column viewers to your JFace table viewer (one per column of your underlying table widget). For each column viewer you set a label provider. To support edition in that column, use an `http://help.eclipse.org/neon/advanced/content.jsp?topic=/org.eclipse.platform.doc.isv/reference/api/org/eclipse/jface/viewers/EditingSupport.html[EditingSupport]` object. You override this class and provide the kind of cell editor you want. (An EditingSupport object plays the role of an ICellModifier in the older API, but for a given column.)
+
+=== Edition in a table viewer with column properties, a cell modifier and cell editors
+
+As an alternative way of supporting edition, use a cell modifier. It uses column properties, text strings that identifies columns and that also are set on the viewer itself.
 
 == Maven
 
@@ -55,13 +78,7 @@ Eclipse recently (and finally!) started publishing its artifacts to Maven Centra
 <dependency>
 	<groupId>org.eclipse.platform</groupId>
 	<artifactId>org.eclipse.swt.gtk.linux.x86_64</artifactId>
-	<version>3.105.2</version>
-	<exclusions>
-		<exclusion>
-			<groupId>org.eclipse.platform</groupId>
-			<artifactId>org.eclipse.swt</artifactId>
-		</exclusion>
-	</exclusions>
+	<version>3.105.3</version>
 </dependency>
 ----
 
@@ -73,24 +90,42 @@ You need to replace the artifactId with the one corresponding to your platform (
 <dependency>
 	<groupId>org.eclipse.platform</groupId>
 	<artifactId>org.eclipse.jface</artifactId>
-	<version>3.12.1</version>
-	<exclusions>
-		<exclusion>
+	<version>3.12.2</version>
+</dependency>
+----
+
+When depending on SWT, you also need to add the following in your dependencyManagement section (to specify the versions and hence avoid relying on the versions ranges provided in the pom of SWT).
+
+.Specify version of dependences in your `pom.xml`
+[source,xml]
+----
+<dependencyManagement>
+	<dependencies>
+		<dependency>
 			<groupId>org.eclipse.platform</groupId>
 			<artifactId>org.eclipse.swt</artifactId>
-		</exclusion>
-	</exclusions>
-</dependency>
+			<version>3.105.3</version>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.platform</groupId>
+			<artifactId>org.eclipse.core.commands</artifactId>
+			<version>3.8.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.platform</groupId>
+			<artifactId>org.eclipse.equinox.common</artifactId>
+			<version>3.8.0</version>
+		</dependency>
+	</dependencies>
+</dependencyManagement>
 ----
 
 Further notes:
 
-* You might have to manually make the Javadoc location point http://help.eclipse.org/neon/topic/org.eclipse.platform.doc.isv/reference/api/[here] from your project build path configuration.
 * Official link:++http://search.maven.org/#search|ga|1|g:%22org.eclipse.platform%22 org.eclipse.swt++[SWT], link:++http://search.maven.org/#search|ga|1|g:%22org.eclipse.platform%22 a:%22org.eclipse.jface%22++[JFace] artifacts in Central
 * Some non-official SWT artifacts misleadingly seem more recent than the official ones (e.g., 4.6.1 instead of 3.105.0), because they use the version of the Eclipse release in which the SWT artifact is found rather than the version of the artifact itself. (You can easily check this. In Eclipse Neon, check Eclipse Installation Details, Plug-ins, Plug-in Id `org.eclipse.swt`: it has version 3.105…) (https://bugs.eclipse.org/bugs/show_bug.cgi?id=484004#c90[Source].)
 * Bug https://bugs.eclipse.org/bugs/show_bug.cgi?id=484004[484004] - Start publishing Eclipse platform artifacts to Maven central
 * Current https://bugs.eclipse.org/bugs/show_bug.cgi?id=510186[discussion] about correctly releasing SWT to Maven Central
-* A https://github.com/maven-eclipse/maven-eclipse.github.io/#how-to-use[non-official way] of including SWT into your project. For JFace, adding the dependency `org.eclipse.scout.sdk.deps:org.eclipse.jface:3.12.0.v20160518-1929` also worked for me (see also further https://github.com/maven-eclipse/maven-eclipse.github.io/issues/1[links]).
 
 == See also
 * http://wiki.eclipse.org/JFace_Data_Binding[JFace Data Binding]
