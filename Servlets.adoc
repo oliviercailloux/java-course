@@ -27,13 +27,13 @@ HTTP, Hypertext Transfer Protocol, is a W3C / IETF https://tools.ietf.org/html/r
 
 .An HTTP exchange
 ====
-. A client sends an HTTP request, targeted to http://example.com/mycat, specifying that the chosen HTTP method is HTTP GET.
+. A client sends an HTTP request, targeted to +++http://example.com/mycat+++, specifying that the chosen HTTP method is HTTP GET.
 . The server replies with an HTTP response with a header “content-type = image/jpeg” and a message body containing an image of a cat.
 ====
 
 An HTTP message contains headers and possibly a message body [small]#(this document considers pseudo-headers or start-line data as headers, for simplicity)#. The headers for an HTTP request specify the URI that the request targets, the request method to be used for the exchange, and possibly other information such as the encodings used in the message body, … The headers for an HTTP response specify the status code (three digits that indicate whether something went wrong), and possibly other information such as the content-type of the message body, …
 
-HTTP requests target _resources_, identified by URIs (Uniform Resource Identifiers). For example, the URI http://example.com/mycat might identify the resource describing someone’s cat.
+HTTP requests target _resources_, identified by URIs (Uniform Resource Identifiers). For example, the URI +++http://example.com/mycat+++ might identify the resource describing someone’s cat.
 
 Request methods indicate the request semantics: what the client wishes to do in relation with the targeted resource. A GET request method asks the server for a current representation of the target resource. This is the method your browser uses when you type a URI in your browser navigation bar and hit enter, and by far the most common request method. A GET request [small]#typically# has no message body. A POST request method, on the contrary, typically has a message body. It asks the server to perform resource-specific processing on the message body. It is typically used to post new data to a server, for example, to post a new image of your cat for it to become accessible at some URI.
 
