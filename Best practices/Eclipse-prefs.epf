@@ -45,7 +45,8 @@ file_export_version=3.0
 /instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.unusedExceptionParameter=warning
 /instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.unusedImport=ignore
 /instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.unusedLabel=error
-/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.unusedParameter=error
+#warning better than error: can be suppressed in case a parameter is there in a base class or interface with default method only to be used for overriders
+/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.unusedParameter=warning
 /instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.unusedParameterIncludeDocCommentReference=disabled
 /instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.unusedTypeParameter=warning
 #→→Generic types
