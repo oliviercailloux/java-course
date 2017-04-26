@@ -1,4 +1,6 @@
 = Various tools
+:sectanchors:
+
 Various useful tools for Java (EE) developers.
 
 == Java SE
@@ -29,6 +31,7 @@ For Eclipse users, I strongly recommend reading the following. It does take some
 * Java development user guide, http://help.eclipse.org/neon/topic/org.eclipse.jdt.doc.user/gettingStarted/qs-2.htm[Basic tutorial]
 * Java development user guide, http://help.eclipse.org/neon/topic/org.eclipse.jdt.doc.user/tips/jdt_tips.html?cp=1_5[Tips and Tricks] (JDT) (bit by bit!)
 
+[[Eclipse-strict]]
 === Configuration
 I recommend configuring Eclipse to show more errors and warnings in order to help spot mistakes and code smells early.
 

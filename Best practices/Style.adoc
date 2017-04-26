@@ -13,6 +13,10 @@ I disagree with the following in GJSG.
 
 http://google.github.io/styleguide/javaguide.html#s2.3.1-whitespace-characters[2.3.1], “the ASCII horizontal space character (0x20) is the only whitespace character that appears anywhere in a source file”. I rather use tab characters to indent. Tabs for indentation encode intent rather than forcing a specific display behavior. The reader of my source code can then choose (by configuring its editor) to make tabs appear as x number of white spaces, with x its preferred number. (GJSG use whitespace, I believe, because it suggests using a different number of whitespace characters for different types of indent, which I do not do.)
 
+== Compiler settings
+Ask your compiler to enable strict checks of possible errors. See link:../Tools.adoc#Eclipse-strict[].
+
+As an exception to strict checking, I authorize boxing and unboxing without warnings. This is because first, the warning has drawbacks and second, it is not very effective. First, this warning sometimes encourage writing more obscure code, for example `myMap.put(Integer.valueOf(myInt), myValue)` instead of `myMap.set(myInt, myValue)`. (And stuffing your code with a lot of `@SuppressWarnings("boxing")` is not very clean either.) Second, this warning only helps avoiding possible null pointer exceptions (when unboxing), and this anyway is a problem that happens when dealing with objects. It feels unjustified to spend so much energy specifically on this risk when dealing with numeric types.
 
 == Outdated references
 * http://www.oracle.com/technetwork/java/namingconventions-139351.html[Oracle J2EE] (but Oracle themselves say it’s outdated, https://bugs.openjdk.java.net/browse/JDK-8039151[apparently]).

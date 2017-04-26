@@ -3,5 +3,5 @@
 
 This folder lists (what I consider to be) best practices in Java SE and Java EE, by topic.
 
-As always, this is only to be considered reasonable default guidelines: you might have good reasons to deviate.
+As always, this is only to be considered reasonable _default_ guidelines: you might have good reasons to deviate.
 
