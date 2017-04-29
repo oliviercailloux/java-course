@@ -96,7 +96,7 @@ You need to replace the artifactId with the one corresponding to your platform (
 
 When depending on SWT, you also need to add the following in your dependencyManagement section (to specify the versions and hence avoid relying on the versions ranges provided in the pom of SWT).
 
-.Specify version of dependences in your `pom.xml`
+.Specify version of dependencies in your `pom.xml`
 [source,xml]
 ----
 <dependencyManagement>
