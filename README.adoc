@@ -7,33 +7,9 @@ Course (in LaTeX, mostly) about Java and Java EE.
 
 == Main content
 
-Look into the various sub-folders and `.adoc` files, depending on your interest! See below for further pointers.
+Look into the various `.adoc` files and sub-folders, depending on your interest!
 
 == See also
 * https://github.com/oliviercailloux/samples[Samples]
 * https://drive.google.com/drive/folders/0BzAfb5IHjkJsOHpPdFBPQUYzVDg[Slides] Dan Dimcea
-
-== JAX-RS Client
-
-JAX-RS Client API permits to easily access RESTful web services. See:
-
-* https://docs.oracle.com/javaee/7/api/javax/ws/rs/client/Client.html[Client] the entry point
-* https://docs.oracle.com/javaee/7/api/javax/ws/rs/client/WebTarget.html[WebTarget] to manipulate URLs
-* http://doi.org/10.1145/337180.337228[Article] REST : Fielding & Taylor, Principled Design of the Modern Web Architecture (https://www.ics.uci.edu/~fielding/pubs/webarch_icse2000.pdf[PDF])
-* http://www.w3.org/Protocols/[RFC 7231]: HTTP/1.1, part 2: Semantics and Content
-* http://docs.oracle.com/javaee/7/tutorial/jaxrs-client.htm[Accessing REST Resources with the JAX-RS Client API] in The Java EE Tutorial
-* https://jcp.org/en/jsr/detail?id=339[JSR 339]: JAX-RS 2.0 (http://download.oracle.com/otn-pub/jcp/jaxrs-2_0_rev_A-mrel-eval-spec/jsr339-jaxrs-2.0-final-spec.pdf[PDF])
-
-[source,java]
-----
-Client client = ClientBuilder.newClient();
-WebTarget t1 = client.target("http://.../users");
-WebTarget t2 = t1.path("{uId}");
-WebTarget t3 = t2.resolveTemplate("uId", "123");
-WebTarget t4 = t3.queryParam("prof", "1");
-/** http://.../users/123?prof=1 */
-String result = t4.request(MediaType.TEXT_PLAIN).get(String.class);
-client.close();
-----
-
 
