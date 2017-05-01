@@ -138,7 +138,7 @@ Git in practice
 == S9 (27th March)
 
 * Files and flows (from https://docs.oracle.com/javase/tutorial/essential/io/index.html[Basic I/O] in the Java Tutorials)
-* SWT
+* link:../SWT.adoc[SWT]
 
 == S10 (28th March)
 
@@ -147,9 +147,8 @@ Git in practice
 
 == S11 (2nd May)
 
-* DOM
-* REST client
-* General eval! (Evals received after the session.)
+* Parsing HTML: link:../HTML%20to%20DOM.adoc[DOM]
+* Accessing REST web services: link:../JAX-RS%20client.adoc[JAX-RS client]
 
 == Then
 
