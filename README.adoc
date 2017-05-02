@@ -1,5 +1,4 @@
 = Java Course
-:toc:
 :toc-placement: preamble
 :sectanchors:
 
