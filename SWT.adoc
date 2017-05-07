@@ -70,7 +70,7 @@ As an alternative way of supporting edition, use a cell modifier. It uses column
 
 == Maven
 
-Eclipse recently (and finally!) started publishing its artifacts to Maven Central. It is still to be polished somewhat, but it can be made to work (thanks to this https://bugs.eclipse.org/bugs/show_bug.cgi?id=510072#c9[comment]).
+Eclipse recently (and finally!) started publishing its artifacts to Maven Central. It is still to be polished somewhat, but it can be made to work.
 
 .Include SWT as a dependency in your `pom.xml`
 [source,xml]
@@ -79,6 +79,7 @@ Eclipse recently (and finally!) started publishing its artifacts to Maven Centra
 	<groupId>org.eclipse.platform</groupId>
 	<artifactId>org.eclipse.swt.gtk.linux.x86_64</artifactId>
 	<version>3.105.3</version>
+	<optional>true</optional>
 </dependency>
 ----
 
@@ -124,8 +125,8 @@ Further notes:
 
 * Official link:++http://search.maven.org/#search|ga|1|g:%22org.eclipse.platform%22 org.eclipse.swt++[SWT], link:++http://search.maven.org/#search|ga|1|g:%22org.eclipse.platform%22 a:%22org.eclipse.jface%22++[JFace] artifacts in Central
 * Some non-official SWT artifacts misleadingly seem more recent than the official ones (e.g., 4.6.1 instead of 3.105.0), because they use the version of the Eclipse release in which the SWT artifact is found rather than the version of the artifact itself. (You can easily check this. In Eclipse Neon, check Eclipse Installation Details, Plug-ins, Plug-in Id `org.eclipse.swt`: it has version 3.105…) (https://bugs.eclipse.org/bugs/show_bug.cgi?id=484004#c90[Source].)
-* Bug https://bugs.eclipse.org/bugs/show_bug.cgi?id=484004[484004] - Start publishing Eclipse platform artifacts to Maven central
-* Current https://bugs.eclipse.org/bugs/show_bug.cgi?id=510186[discussion] about correctly releasing SWT to Maven Central
+* Bug https://bugs.eclipse.org/bugs/show_bug.cgi?id=484004[484004] - Start publishing Eclipse platform artifacts to Maven central 
+* Current https://bugs.eclipse.org/bugs/show_bug.cgi?id=510186[discussion] about correctly releasing SWT to Maven Central (and https://bugs.eclipse.org/bugs/show_bug.cgi?id=510072[related])
 
 == See also
 * http://wiki.eclipse.org/JFace_Data_Binding[JFace Data Binding]
