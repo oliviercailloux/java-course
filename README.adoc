@@ -2,7 +2,7 @@
 :toc-placement: preamble
 :sectanchors:
 
-Course (in LaTeX, mostly) about Java and Java EE.
+Course (in LaTeX, mostly) about Java SE and Java EE.
 
 == Main content
 

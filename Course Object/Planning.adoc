@@ -149,6 +149,7 @@ Git in practice
 
 * Parsing HTML: link:../HTML%20to%20DOM.adoc[DOM]
 * Accessing REST web services: link:../JAX-RS%20client.adoc[JAX-RS client]
+* equals, hashCode
 
 == Then
 
