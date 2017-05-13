@@ -119,6 +119,7 @@ Approximatively: 50p.
 * http://math.hws.edu/eck/cs124/javanotes7/c10/exercises.html[EE10]
 
 == S6
+
 Git in practice
 
 == S7
@@ -151,8 +152,14 @@ Git in practice
 * Accessing REST web services: link:../JAX-RS%20client.adoc[JAX-RS client]
 * equals, hashCode
 
-== Then
+== S12 (15 May)
 
+* Remarques
+** code inutilisé à effacer
+** pourquoi faire mieux si ça marche ?
+** pom exemple
+** pourquoi UTF 8 ?
 * CI
-* DBs
+* Equals, Hashcode
+* QCM test?
 
