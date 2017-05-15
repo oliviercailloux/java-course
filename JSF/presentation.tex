@@ -581,7 +581,7 @@ public class Employee {
 	\frametitle{GET Vs POST}
 	\begin{itemize}
 		\item Le plus souvent : méthode GET
-		\item Utiliser GET {\tiny en première approximation} \alert{ssi requête \og{}safe \fg{}} {\tiny (lecture seule)}
+		\item Utiliser GET {\tiny en première approximation} \alert{ssi requête \og{}safe\fg{}} {\tiny (lecture seule)}
 		\item Formulaire de recherche : doit générer un GET
 		\item Concevoir d’abord les pages de résultat
 		\item Doivent fonctionner même lors d’une requête extérieure
@@ -925,7 +925,7 @@ public class Employee {
 		\path (input.east) ++ (1ex, 0) node[anchor=west, /GUI/button] (button) {Submit};
 	\end{tikzpicture}
 	\begin{itemize}
-		\item Si un composant a été activé, on l’a retenu en phase \hyperlink{ph-arv}{\emph{Apply Request Values}} {\tiny (\jeeref{javax.faces/ActionEvent} issu de composants implémentant \jeeref{javax.faces/ActionSource2})}
+		\item Si un composant a été activé, on l’a retenu en phase \hyperlink{ph-arv}{\emph{Apply Request Values}} {\tiny (\jeeref{javax.faces.event/ActionEvent} issu de composants implémentant \jeeref{javax.faces.component/ActionSource2})}
 		\item Si on vient d’arriver sur la page : rien à faire à cette phase
 		\item Si composant activé : méthode liée à \texttt{action} invoquée
 		\item[⇒] Développeur a enregistré \texttt{\#\{myActor.processSubmit()\}} comme \texttt{action} du \texttt{HtmlCommandButton}
