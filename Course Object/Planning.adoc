@@ -159,7 +159,14 @@ Git in practice
 ** pourquoi faire mieux si ça marche ?
 ** pom exemple
 ** pourquoi UTF 8 ?
-* CI
 * Equals, Hashcode
-* QCM test?
+** Hash function
+** Uses
+** Equals in Java
+** Hashcode in Java: consistency
+** Implementation
+
+== S13
+
+* CI
 
