@@ -29,7 +29,7 @@ You know algorithmics and the basic (non object-oriented) programming concepts i
 
 // Object: 10 ; Project: 7
 
-== S1
+== S1 (11th Jan)
 
 * https://github.com/oliviercailloux/java-course/blob/1580d14b95224ac5e5fd66c84fe440ff84a98246/Pr%C3%A9sentation%20du%20cours%20Objet/presentation.pdf[Pres course]
 * Basic concepts and structures of Java: variables; types; subroutines; control structures; identifiers… [SK]
@@ -53,7 +53,7 @@ Approximatively: 10p. (+ 30p. [SK])
 * EE3.4, 3.6 [M]
 * EE3.8, 3.9 [O]
 
-== S2
+== S2 (25th Jan)
 
 * Design: exceptions, contract, black-box, preconditions.
 * Assertions in Java.
@@ -73,7 +73,7 @@ Approximatively: 48p.
 * EE4.7 [M]
 * http://math.hws.edu/eck/cs124/javanotes7/c4/quiz.html[EQ4]
 
-== S3
+== S3 (7th Feb)
 
 * Packages, classes and directories.
 * Objects.
@@ -93,7 +93,7 @@ Approximatively: 50p.
 ** implement those interfaces in another Eclipse project, exported as a Java archive (JAR file) (will you need the previous JAR file? Why / why not?);
 ** solve the exercices in a third Eclipse project (will you need the previous JAR files? Which ones and why?).
 
-== S4
+== S4 (10th Feb)
 
 * Inheritance: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours3.pdf[Airiau C3]
 * Generics and collections: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours6.pdf[Airiau C6]
@@ -108,7 +108,7 @@ Approximatively: 50p.
 * EE5.5
 * EE10.4 (except you use the https://docs.oracle.com/javase/8/docs/api/java/util/function/Predicate.html[Predicate] interface from the JRE instead of writing your own)
 
-== S5
+== S5 (23rd Feb)
 
 * Exceptions in Java: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours5.pdf[Airiau C5]
 * Maps, Comparable, Comparator: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours6.pdf[Airiau C6]
@@ -118,16 +118,16 @@ Approximatively: 50p.
 
 * http://math.hws.edu/eck/cs124/javanotes7/c10/exercises.html[EE10]
 
-== S6
+== S6 (7th Mar)
 
 Git in practice
 
-== S7
+== S7 (9th Mar)
 
 * Maven
 * Logging (SLF4J)
 
-== S8
+== S8 (21st Mar)
 
 * Annotations
 * Tracking projects
@@ -152,7 +152,7 @@ Git in practice
 * Accessing REST web services: link:../JAX-RS%20client.adoc[JAX-RS client]
 * equals, hashCode
 
-== S12 (15 May)
+== S12 (15th May)
 
 * Remarques
 ** code inutilisé à effacer
@@ -166,7 +166,7 @@ Git in practice
 ** Hashcode in Java: consistency
 ** Implementation
 
-== S13
+== S13 (16th May)
 
 * CI
 
