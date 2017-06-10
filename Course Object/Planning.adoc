@@ -156,9 +156,6 @@ Git in practice
 
 * Remarques
 ** code inutilisé à effacer
-** pourquoi faire mieux si ça marche ?
-** pom exemple
-** pourquoi UTF 8 ?
 * Equals, Hashcode
 ** Hash function
 ** Uses
@@ -169,4 +166,20 @@ Git in practice
 == S13 (16th May)
 
 * CI
+
+== S14 (31st May)
+
+* link:..[QCM test]
+
+== S15 (13th June)
+
+* Révisions
+
+== S16 (16th June)
+
+* Révisions
+
+== S17 (27th June)
+
+* Présentations
 
