@@ -11,6 +11,7 @@
 \input{preamble/uml}
 
 \setbeamertemplate{headline}[singleline]
+\setbeamertemplate{footline}[onlypage]
 
 \title{Class path, packages, archives}
 \subtitle{}
@@ -123,7 +124,7 @@
 		\item Comment lancer une application ?
 		\item Il faut indiquer où aller chercher toutes les classes requises
 		\item Dans de multiples répertoires ou fichiers JAR
-		\item Class path : les chemins que la JVM utilise pendant son exécution pour charger les classes
+		\item Class path : les chemins que la JVM utilise pendant son exécution pour charger les classes (sauf celles de la JRE)
 		\item Class path fourni à la JVM au démarrage, exemple \texttt{java -cp path1:path2:path3 name1.name2.myclass}
 		\item NB il doit contenir des classes compilées
 		\item Classes dans la JRE : rien à préciser
