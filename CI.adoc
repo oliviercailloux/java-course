@@ -38,6 +38,9 @@ git:
 jdk:
   - oraclejdk8
 dist: trusty
+cache:  
+  directories:  
+    - $HOME/.m2  
 ----
 
 Travis will start a new build each time you send a commit to your GitHub repository.
@@ -48,7 +51,8 @@ The sample configuration file suggested here tells Travis to:
 
 * fetch only the tip of your git history (`git https://git-scm.com/docs/git-clone#git-clone---depthltdepthgt[depth] 1`);
 * use JDK 8 (default is 7);
-* run the build in a container-based https://docs.travis-ci.com/user/ci-environment/[environment] using the (Ubuntu 14) https://en.wikipedia.org/wiki/Ubuntu_version_history#Ubuntu_14.04_LTS_.28Trusty_Tahr.29[Trusty] distribution (the default being (Ubuntu 12) https://en.wikipedia.org/wiki/Ubuntu_version_history#Ubuntu_12.04_LTS_.28Precise_Pangolin.29[Pangolin]).
+* run the build in a container-based https://docs.travis-ci.com/user/ci-environment/[environment] using the (Ubuntu 14) https://en.wikipedia.org/wiki/Ubuntu_version_history#Ubuntu_14.04_LTS_.28Trusty_Tahr.29[Trusty] distribution (the default being (Ubuntu 12) https://en.wikipedia.org/wiki/Ubuntu_version_history#Ubuntu_12.04_LTS_.28Precise_Pangolin.29[Pangolin]);
+* cache the directory where Maven downloads its files (http://muelder.blogspot.fr/2015/08/building-eclipse-plugins-with-maven.html[thanks]).
 
 Travis allows you to configure automatic deployment, run scripts of your own, and https://docs.travis-ci.com/[much more].
 
