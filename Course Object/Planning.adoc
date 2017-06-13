@@ -169,17 +169,18 @@ Git in practice
 
 == S14 (31st May)
 
-* link:..[QCM test]
+* link:++../Course Object++[QCM test]
 
 == S15 (13th June)
 
 * Results QCM
 * Licenses
 * Classpath (bis)
+* Reminder: exceptions; naming conventions; config Eclipse
 
 == S16 (16th June)
 
-* Révisions
+* (présentations dernière séance, remise dimanche 18 juin, ne pas utiliser de blanco)
 
 == S17 (27th June)
 
