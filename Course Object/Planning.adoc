@@ -173,7 +173,9 @@ Git in practice
 
 == S15 (13th June)
 
-* Révisions
+* Results QCM
+* Licenses
+* Classpath (bis)
 
 == S16 (16th June)
 
@@ -181,5 +183,5 @@ Git in practice
 
 == S17 (27th June)
 
-* Présentations
+* Presentations
 
