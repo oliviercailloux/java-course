@@ -180,7 +180,8 @@ Git in practice
 
 == S16 (16th June)
 
-* (présentations dernière séance, remise dimanche 18 juin, ne pas utiliser de blanco)
+* Work on project
+//* (présentations dernière séance, remise dimanche 18 juin, ne pas utiliser de blanco)
 
 == S17 (27th June)
 
