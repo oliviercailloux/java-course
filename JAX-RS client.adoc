@@ -9,6 +9,26 @@ JAX-RS Client API permits to easily access RESTful web services. See:
 * http://docs.oracle.com/javaee/7/tutorial/jaxrs-client.htm[Accessing REST Resources with the JAX-RS Client API] in The Java EE Tutorial
 * https://jcp.org/en/jsr/detail?id=339[JSR 339]: JAX-RS 2.0 (http://download.oracle.com/otn-pub/jcp/jaxrs-2_0_rev_A-mrel-eval-spec/jsr339-jaxrs-2.0-final-spec.pdf[PDF])
 
+If you use Java SE, you need to add the JAX-RS API and a JAX-RS implementation to your dependencies. (If you use Java EE, this is already provided by your application server.)
+
+.Specify dependencies in your `pom.xml`
+[source,xml]
+----
+<dependency>
+	<groupId>javax.ws.rs</groupId>
+	<artifactId>javax.ws.rs-api</artifactId>
+	<version>2.0.1</version>
+</dependency>
+<dependency>
+	<groupId>org.glassfish.jersey.bundles</groupId>
+	<artifactId>jaxrs-ri</artifactId>
+	<version>2.26-b06</version>
+	<scope>runtime</scope>
+</dependency>
+----
+
+You may now use the JAX-RS Client API.
+
 [source,java]
 ----
 Client client = ClientBuilder.newClient();
