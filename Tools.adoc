@@ -39,5 +39,5 @@ I recommend configuring Eclipse to show more errors and warnings in order to hel
 * You can read the file contents to see what this changes to your Eclipse configuration.
 * Check in `Windows / Preferences` whether the changes were applied. For example, check in `Java / Code Style / Code Templates` that the `Catch block body` contains `throw new IllegalStateException(e);`.
 * Make sure your Java compiler configuration of your project is set to reflect the one from the global workspace.
-* Clean and recompile your projects to see the effect.
+* Clean and recompile your projects to see the effect. (And check in your project properties, `Java Compiler / Errors/Warnings` that the project uses your global Eclipse compiler settings.)
 
