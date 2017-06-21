@@ -1,0 +1,295 @@
+%%AMC:latex_engine=xelatex
+\RequirePackage[l2tabu, orthodox]{nag}
+\RequirePackage{silence}\WarningFilter{fmtcount}{\ordinal already defined use \FCordinal instead}
+\documentclass[version=last, pagesize, twoside=semi, DIV=calc, 12pt, a4paper, english, french]{scrartcl}
+\usepackage{environ}
+\usepackage[completemulti, francais]{automultiplechoice}
+\input{preamble/packages}
+\input{preamble/math_basics}
+\input{preamble/math_mine}
+\input{preamble/redac}
+\input{preamble/draw}
+\input{preamble/acronyms}
+
+\begin{document}
+\title{QCM Test}
+\author{}
+\date{\vspace{-2em}\formatdate{31}{05}{2017}}
+\AMCopenOpts{dots=false, lines=5, scan=false}
+
+\AMCrandomseed{1237893}
+
+\element{wholegroup}{
+\begin{questionmult}{git}
+	Cocher toutes les affirmations correctes concernant HEAD dans un dépôt git quelconque.
+	\begin{reponses}
+		\mauvaise{HEAD pointe, généralement mais pas toujours, vers un commit (directement ou indirectement)}
+		\bonne{HEAD pointe toujours vers un commit (directement ou indirectement)}
+		\bonne{HEAD pointe, généralement mais pas toujours, vers une branche (directement ou indirectement)}
+		\mauvaise{HEAD pointe toujours vers une branche (directement ou indirectement)}
+		\mauvaise{HEAD représente un sous-ensemble de l’arbre des commits}
+		\mauvaise{HEAD représente l’équivalent distant de l’historique sauvegardé localement par git, lorsqu’un serveur distant est configuré}
+	\end{reponses}
+\end{questionmult}
+}
+
+\element{wholegroup}{
+\begin{question}{equals}
+	En Java, \texttt{"a".equals("b");}
+	\begin{reponses}
+		\mauvaise{ne compile pas}
+		\mauvaise{compile, mais produit une erreur à l’exécution}
+		\bonne{exécute la méthode equals définie dans la classe String}
+		\mauvaise{exécute la méthode equals définie dans la classe Object}
+	\end{reponses}
+\end{question}
+}
+
+\element{wholegroup}{
+\begin{questionmult}{contrat}
+	Considérer une méthode d’en-tête suivant, qui retourne $\sqrt{a + b}$.
+	
+	\texttt{public double sqrtSum(double a, double b);}
+
+	Le principe de la programmation par contrat requiert (cocher tout ce qui s’applique) de
+	\begin{reponses}
+		\bonne{documenter l’en-tête des méthodes pour indiquer les contraintes sur les paramètres}
+		\bonne{documenter l’en-tête des méthodes pour indiquer les garanties sur les résultats}
+		\mauvaise{documenter l’en-tête des méthodes pour indiquer le fonctionnement détaillé de la méthode de façon suffisamment claire pour que l’utilisateur de la méthode sache comment la méthode procède pour calculer son résultat, sans devoir lire le code source (par exemple en indiquant l’algorithme utilisé pour le calcul, ou les méthodes appelées)}
+		\mauvaise{affecter tout résultat intermédiaire à une variable, dans le corps de la méthode}
+		\mauvaise{logger les valeurs des paramètres reçus et de la valeur renvoyée}
+		\mauvaise{utiliser \texttt{assert} pour avertir l’utilisateur final lorsqu’il entre des valeurs incorrectes dans l’interface graphique (si une interface graphique est utilisée)}
+	\end{reponses}
+\end{questionmult}
+}
+
+\newsavebox\lstboxexc
+\begin{lrbox}{\lstboxexc}
+\begin{lstlisting}
+System.out.println("Coucou1");
+Exception e = new IllegalArgumentException();
+System.out.println("Coucou2");
+throw e;
+System.out.println("Coucou3");
+\end{lstlisting}
+\end{lrbox}  
+
+\element{wholegroup}{
+\begin{question}{exc}
+	Considérer le code Java suivant (supposé constituer une méthode).
+
+	\usebox\lstboxexc
+	
+	Cette méthode
+	\begin{reponses}
+		\mauvaise{ne compile pas}
+		\mauvaise{compile et affiche \texttt{Coucou1} puis lance une exception, et n’affiche rien d’autre}
+		\bonne{compile et affiche \texttt{Coucou1} puis \texttt{Coucou2} puis lance une exception, et n’affiche rien d’autre}
+		\mauvaise{compile et affiche \texttt{Coucou1} puis \texttt{Coucou2} puis lance une exception puis affiche \texttt{Coucou3}}
+		\mauvaise{compile et affiche \texttt{Coucou1} puis \texttt{Coucou2} puis lance une exception puis affiche \texttt{Coucou3} si et seulement si l’appelant de la méthode "attrape" (\texttt{catch}) l’exception lancée}
+		\mauvaise{compile et affiche \texttt{Coucou1} puis \texttt{Coucou2} puis lance une exception puis affiche \texttt{Coucou3} si et seulement si l’appelant de la méthode n’attrape pas l’exception lancée}
+	\end{reponses}
+\end{question}
+}
+
+\newsavebox\lstboxinterfacescorps
+\begin{lrbox}{\lstboxinterfacescorps}%
+\begin{lstlisting}[xleftmargin=3.4pt, xrightmargin=13.4pt]
+public interface MyInterface {
+	public void myFirstMethod() {
+		System.out.println("Coucou.");
+	}
+}
+public class MyClass implements MyInterface {
+	public void myMethod() {
+		System.out.println("Coucou.");
+	}
+}
+\end{lstlisting}%
+\end{lrbox}  
+
+\element{wholegroup}{
+\begin{question}{interfacescorps}
+	Le code suivant compile-t-il ? (On suppose que le code est placé dans des fichiers nommés de façon adéquate et que les imports éventuels sont corrects.)
+	
+	\usebox\lstboxinterfacescorps
+
+	\begin{reponses}
+		\mauvaise{Oui}
+		\bonne{Non}
+	\end{reponses}
+\end{question}
+}
+
+\element{wholegroup}{
+\begin{question}{maven}
+	Soit un projet configuré de façon classique utilisant Maven, structuré en sous-répertoires et en fichiers comme suit :
+	\begin{itemize}
+		\item Racine, contenant pom.xml
+		\item Racine/src/main/java/rep1, contenant AFile.java et AFile.txt
+		\item Racine/src/test/java, contenant AnotherFile.java
+	\end{itemize}
+En supposant que le projet compile, quelles classes et ressources se retrouveront dans le classpath lors de l’exécution des tests ? (Une seule réponse.)
+	\begin{reponses}
+		\mauvaise{pom.xml, les classes AFile et AnotherFile, et le fichier ressource AFile.txt.}
+		\bonne{Les classes AFile et AnotherFile, et le fichier ressource AFile.txt.}
+		\mauvaise{Les classes AFile et AnotherFile.}
+		\mauvaise{La classe AnotherFile.}
+		\mauvaise{Le fichier ressource AFile.txt.}
+		\mauvaise{Rien.}
+	\end{reponses}
+\end{question}
+}
+
+\element{wholegroup}{
+\begin{questionmult}{swt}
+	SWT est (cocher toutes les affirmations correctes)
+	\begin{reponses}
+		\bonne{une bibliothèque non incluse en standard dans Java}
+		\mauvaise{une bibliothèque incluse en standard dans Java}
+		\mauvaise{un autre nom pour Swing}
+		\mauvaise{une bibliothèque allant souvent de pair avec Swing}
+		\bonne{une bibliothèque allant souvent de pair avec JFace}
+	\end{reponses}
+\end{questionmult}
+}
+
+\newsavebox\lstboxcreat
+\begin{lrbox}{\lstboxcreat}
+\begin{lstlisting}[escapechar=\$]
+public class MyClass {
+	public static void printOut(Set<String> s) {
+		// nothing
+	}
+	public static void main(String args[]) { 
+		$…$
+	}
+}
+\end{lstlisting}
+\end{lrbox}  
+
+\element{wholegroup}{
+\begin{questionmult}{creat}
+	Considérons la classe suivante.
+
+	\usebox\lstboxcreat
+	
+	Quels codes sont corrects, en supposant qu’ils soient insérés dans la méthode \texttt{main} ci-dessus à la place des points de suspension ?
+	\begin{reponses}
+		\bonne{\texttt{Set<String> strs = new HashSet<>();} \texttt{printOut(strs);}}
+		\bonne{\texttt{HashSet<String> strs = new HashSet<>(); printOut(strs);}}
+		\mauvaise{\texttt{HashSet<Integer> strs = new HashSet<>(); printOut(strs);}}
+		\bonne{\texttt{HashSet<String> strs = new HashSet<String>(); printOut(strs);}}
+		\mauvaise{\texttt{HashSet<String> strs = new HashSet<Integer>(); printOut(strs);}}
+	\end{reponses}
+\end{questionmult}
+}
+
+\newsavebox\lstboxgener
+\begin{lrbox}{\lstboxgener}
+\begin{lstlisting}
+public interface MyInterface<V> {
+	public V myFirstMethod();
+}
+
+public class MyClass<V> implements MyInterface<Integer> {
+	public void myMethod() {
+		System.out.println("Coucou.");
+	}
+	public Integer myFirstMethod() {
+		return null;
+	}
+}
+\end{lstlisting}
+\end{lrbox}  
+
+\element{wholegroup}{
+\begin{question}{gener}
+	Le code suivant compile-t-il ? (On suppose que le code est placé dans des fichiers nommés de façon adéquate et que les imports éventuels sont corrects.)
+	
+	\usebox\lstboxgener
+	
+	\begin{reponses}
+		\bonne{Oui}
+		\mauvaise{Non}
+	\end{reponses}
+\end{question}
+}
+
+\newsavebox\lstboxhashcode
+\begin{lrbox}{\lstboxhashcode}
+\begin{lstlisting}
+public class MyClass {
+	private String lastName;
+	private String firstName;
+	public boolean equals(Object o) {
+		if (!o instanceof MyClass) return false;
+		return Objects.equals(firstName, ((MyClass)o).firstName);
+	}
+	public int hashcode() {
+		return Objects.hash(firstName, lastName);
+	}
+}
+\end{lstlisting}
+\end{lrbox}  
+
+\element{wholegroup}{
+\begin{question}{hashcode}
+	L’implémentation suivante respecte-t-elle bien ce qui est exigé d’une fonction de hachage, relativement à l’implémentation de \texttt{equals} fournie ? Voici la javadoc des méthodes invoquées : 
+	\begin{itemize}
+		\item \texttt{static boolean equals(Object a, Object b)} : “Returns true if the arguments are equal to each other and false otherwise”
+		\item \texttt{static int hash(Object... values)} : “Generates a hash code for a sequence of input values”
+	\end{itemize}
+
+	\usebox\lstboxhashcode
+	
+	\begin{reponses}
+		\mauvaise{Oui}
+		\bonne{Non}
+	\end{reponses}
+\end{question}
+}
+
+\begin{copieexamen}[2]
+\maketitle
+\thispagestyle{fancy}
+
+Une réponse est considérée comme correcte \emph{seulement} quand elle est entièrement correcte. Sinon, elle est incorrecte. Par exemple, si une question demande de cocher toutes les affirmations vraies, qu’il y a trois affirmations vraies sur quatre, et que vous avez coché deux des trois affirmations vraies, la réponse est considérée comme incorrecte.
+
+Une réponse correcte rapporte un point. Une réponse incorrecte coute un demi-point, sauf s’il n’y a que deux réponses possibles (questions de type vrai ou faux), auquel cas une réponse incorrecte coute un point.
+
+Par exemple, si vous avez 5 réponses correctes, 2 réponses incorrectes, et avez laissé 3 questions sans réponse, dans un questionnaire sans questions vrai ou faux, vous obtenez 4/10.
+
+\vspace{1em}
+\champnom{%
+	\fbox{%
+		\parbox{\dimexpr\textwidth-2\fboxsep-2\fboxrule}{%
+			\vspace{1em}
+			\begin{description}
+				\item[Nom] \dotfill
+				\item[Prénom] \vspace{1em}\dotfill
+			\end{description}
+		}%
+	}
+}
+\vspace{1em}
+
+% Desired: v or e (no answer or incoherent) ⇒ 0; all correct ⇒ 1; some incorrect ⇒ − 0.5.
+%fails, only counts whether the number of checked answers are correct, not the right ones
+%\baremeDefautM{formula=(NB==NBC? 1 : -0.5), v=0, e=0}
+%the following works if you substract 0.5 to each question.
+%\baremeDefautM{v=0.5, e=0.5, mz=1.5}
+%doesn’t work, seems like mz unaffected by d
+%\baremeDefautM{v=0, e=0, mz=3.5, d=4}
+%N = nb of answers checked
+\baremeDefautM{v=0, e=0, m=-100, b=1, p=-0.5, d=1-N}
+\baremeDefautS{v=0, e=0, m=-1, b=1, p=-1}
+
+%rather use setdefaultgroupmode, but my version might be too old.
+\shufflegroup{wholegroup}
+\restituegroupe{wholegroup}
+
+%\vspace{1cm}\mbox{}%rempli la page (évite tassement en bas quand underful vbox)
+%\def\AMCbeginQuestion#1#2{\par #2\hspace*{1em}}%évite d’afficher Question #1
+\end{copieexamen}
+\end{document}

@@ -1,0 +1,22 @@
+\newcommand{\R}{ℝ}
+\newcommand{\N}{ℕ}
+\newcommand{\Z}{ℤ}
+\newcommand{\card}[1]{\lvert{#1}\rvert}
+\newcommand{\powerset}[1]{\mathscr{P}(#1)}%\mathscr rather than \mathcal: scr is rounder than cal (at least in XITS Math).
+\newcommand{\suchthat}{\;\ifnum\currentgrouptype=16 \middle\fi|\;}
+%\newcommand{\Rplus}{\reels^+\xspace}
+
+\AtBeginDocument{%
+	\renewcommand{\epsilon}{\varepsilon}
+% we want straight form of \phi for mathematics, as recommended in UTR #25: Unicode support for mathematics.
+%	\renewcommand{\phi}{\varphi}
+}
+
+% with amssymb, but I don’t want to use amssymb just for that.
+% \newcommand{\restr}[2]{{#1}_{\restriction #2}}
+%\newcommand{\restr}[2]{{#1\upharpoonright}_{#2}}
+\newcommand{\restr}[2]{{#1|}_{#2}}%sometimes typed out incorrectly within \set.
+%\newcommand{\restr}[2]{{#1}_{\vert #2}}%\vert errors when used within \Set and is typed out incorrectly within \set.
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+

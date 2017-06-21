@@ -1,0 +1,104 @@
+\definecolor{darkgreen}{rgb}{0,0.6,0}
+\newcommand{\commentOC}[1]{{\small\color{blue}{\selectlanguage{french}$\big[$OC: #1$\big]$}}}
+%\newcommand{\commentOC}[1]{{\selectlanguage{french}{\todo{OC : #1}}}}
+%Or: \todo[color=green!40]
+\newcommand{\innote}[1]{{\scriptsize{#1}}}
+
+%this probably requires outdated float package, see doc KomaScript for an alternative.
+% \newfloat{program}{t}{lop}
+% \floatname{program}{PM}
+
+%definition, theorem, lemma, example environments, qed trickery are only needed in article mode (not Beamer)
+\nottoggle{LCpres}{
+%style is plain by default (italic text)
+	\newtheorem{definition}{Definition}
+	\newtheorem{theorem}{Theorem}
+%no italic: expected.
+%http://tex.stackexchange.com/questions/144653/italicizing-of-amsthm-package
+	\newtheorem{lemma}{Lemma}
+%\crefname{axiom}{axiom}{axioms}%might be needed for workaround bug in cref when defining new theorems?
+
+%\ifdefined\theorem\else
+%\newtheorem{theorem}{\iflanguage{english}{Theorem}{Théorème}}
+%\fi
+
+\theoremstyle{remark}
+	\newtheorem{examplex}{Example}
+	\newtheorem{remarkx}{Remark}
+
+%trickery allowing use of \qedhere and the like.
+\newenvironment{example}{
+	\pushQED{\qed}\renewcommand{\qedsymbol}{$\triangle$}\examplex
+}{
+	\popQED\endexamplex
+}
+\newenvironment{remark}{
+	\pushQED{\qed}\renewcommand{\qedsymbol}{$\triangle$}\remarkx
+}{
+	\popQED\endremarkx
+}
+}{
+}
+\crefname{examplex}{example}{examples}% I wonder why this is unnecessary in case of singular
+
+%which line breaks are chosen: accept worse lines, therefore reducing risk of overfull lines. Default = 200
+\tolerance=2000
+%accept overfull hbox up to...
+\hfuzz=2cm
+%reduces verbosity about the bad line breaks
+\hbadness 5000
+%sloppy sets tolerance to 9999
+\apptocmd{\sloppy}{\hbadness 10000\relax}{}{}
+
+\bibliographystyle{abbrvnat}
+%or \bibliographystyle{apalike} for presentations?
+
+%doi package uses old-style dx.doi url, see 3.8 DOI system Proxy Server technical details, “Users may resolve DOI names that are structured to use the DOI system Proxy Server (http://doi.org (preferred) or http://dx.doi.org).”, https://www.doi.org/doi_handbook/3_Resolution.html
+\makeatletter
+\patchcmd{\@doi}{dx.doi.org}{doi.org}{}{}
+\makeatother
+
+% WRITING
+%\newcommand{\ie}{i.e.\@\xspace}%to try
+%\newcommand{\eg}{e.g.\@\xspace}
+%\newcommand{\etal}{et al.\@\xspace}
+\newcommand{\ie}{i.e.\ }
+\newcommand{\eg}{e.g.\ }
+\newcommand{\mkkOK}{\checkmark}%\color{green}{\checkmark}
+\newcommand{\mkkREQ}{\ding{53}}%requires pifont?%\color{green}{\checkmark}
+\newcommand{\mkkNO}{}%\text{\color{red}{\textsf{X}}}
+
+\newlength{\xdescwd}
+\makeatletter
+\NewEnviron{xdesc}{%
+  \setbox0=\vbox{\hbadness=\@M \global\xdescwd=0pt
+    \def\item[##1]{%
+      \settowidth\@tempdima{\textbf{##1}:}%
+      \ifdim\@tempdima>\xdescwd \global\xdescwd=\@tempdima\fi}
+  \BODY}
+  \begin{description}[leftmargin=\dimexpr\xdescwd+.5em\relax,
+    labelindent=0pt,labelsep=.5em,
+    labelwidth=\xdescwd,align=left]\BODY\end{description}}
+\makeatother
+
+\makeatletter
+\newcommand{\boldor}[2]{%
+	\ifnum\strcmp{\f@series}{bx}=\z@
+		#1%
+	\else
+		#2%
+	\fi
+}
+\newcommand{\textstyleElProm}[1]{\boldor{\MakeUppercase{#1}}{\textsc{#1}}}
+\makeatother
+\newcommand{\electre}{\textstyleElProm{Électre}\xspace}
+\newcommand{\electreIv}{\textstyleElProm{Électre Iv}\xspace}
+\newcommand{\electreIV}{\textstyleElProm{Électre IV}\xspace}
+\newcommand{\electreIII}{\textstyleElProm{Électre III}\xspace}
+\newcommand{\electreTRI}{\textstyleElProm{Électre Tri}\xspace}
+% \newcommand{\utadis}{\texorpdfstring{\textstyleElProm{utadis}\xspace}{UTADIS}}
+% \newcommand{\utadisI}{\texorpdfstring{\textstyleElProm{utadis i}\xspace}{UTADIS I}}
+
+%TODO
+% \newcommand{\textstyleElProm}[1]{{\rmfamily\textsc{#1}}} 
+
