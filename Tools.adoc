@@ -1,21 +1,23 @@
 = Various tools
 :sectanchors:
 
-Various useful tools for Java (EE) developers.
+Various useful tools for Java and Java EE developers.
 
-== Java SE
+== Java
+
+* http://www.oracle.com/technetwork/java/javase/downloads/index.html[Java] 8
+** Important advice. Uninstall every version of Java you have, keep only one: the latest JDK (which includes a JRE).
+** On Debian: https://packages.debian.org/search?keywords=openjdk-8-jdk&searchon=names&exact=1&suite=all&section=all[openjdk-8-jdk] (optionally, install https://packages.debian.org/search?keywords=openjdk-8-source&searchon=names&exact=1&suite=all&section=all[openjdk-8-source] to have the Javadoc accessible even when coding offline).
+
+For Java SE, add:
 
 * Eclipse https://www.eclipse.org/downloads/packages/eclipse-ide-java-developers/neon2[Neon] Java
-* http://www.oracle.com/technetwork/java/javase/downloads/index.html[Java] 8
-** Important advice. Uninstall every version of Java you have, keep only one: the latest JDK (not a JRE).
 
-== Java EE
+For Java EE, add:
 
 * Eclipse https://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/neon2[Neon] Java EE
 * `GlassFish Tools for Eclipse` plug-in: from Eclipse, Help / Eclipse Marketplace…
 * https://glassfish.java.net/download.html[Glassfish] 4.1.1 (Java EE 7 Full Platform)
-* http://www.oracle.com/technetwork/java/javase/downloads/index.html[Java] 8
-** Important advice. Uninstall every version of Java you have, keep only one: the latest JDK (not a JRE).
 
 == Git
 
@@ -38,6 +40,6 @@ I recommend configuring Eclipse to show more errors and warnings in order to hel
 * From Eclipse, import my sample link:++Best practices/Eclipse-prefs.epf++[epf] (Eclipse preference) file. 
 * You can read the file contents to see what this changes to your Eclipse configuration.
 * Check in `Windows / Preferences` whether the changes were applied. For example, check in `Java / Code Style / Code Templates` that the `Catch block body` contains `throw new IllegalStateException(e);`.
-* Make sure your Java compiler configuration of your project is set to reflect the one from the global workspace.
-* Clean and recompile your projects to see the effect. (And check in your project properties, `Java Compiler / Errors/Warnings` that the project uses your global Eclipse compiler settings.)
+* Check in your project properties, `Java Compiler / Errors/Warnings` that the project uses your global Eclipse compiler settings.
+* Clean and recompile your project to see the effect.
 
