@@ -11,13 +11,13 @@ Various useful tools for Java and Java EE developers.
 
 For Java SE, add:
 
-* Eclipse https://www.eclipse.org/downloads/packages/eclipse-ide-java-developers/neon2[Neon] Java
+* https://www.eclipse.org/downloads/[Eclipse IDE] “for Java Developers”
 
 For Java EE, add:
 
-* Eclipse https://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/neon2[Neon] Java EE
+* https://www.eclipse.org/downloads/[Eclipse IDE] “for Java EE Developers”
 * `GlassFish Tools for Eclipse` plug-in: from Eclipse, Help / Eclipse Marketplace…
-* https://glassfish.java.net/download.html[Glassfish] 4.1.1 (Java EE 7 Full Platform)
+* https://javaee.github.io/glassfish/download[GlassFish] 4.1.2 (Full Platform)
 
 == Git
 
