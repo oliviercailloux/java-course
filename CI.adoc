@@ -54,5 +54,6 @@ The sample configuration file suggested here tells Travis to:
 * run the build in a container-based https://docs.travis-ci.com/user/ci-environment/[environment] using the (Ubuntu 14) https://en.wikipedia.org/wiki/Ubuntu_version_history#Ubuntu_14.04_LTS_.28Trusty_Tahr.29[Trusty] distribution (the default being (Ubuntu 12) https://en.wikipedia.org/wiki/Ubuntu_version_history#Ubuntu_12.04_LTS_.28Precise_Pangolin.29[Pangolin]);
 * cache the directory where Maven downloads its files (http://muelder.blogspot.fr/2015/08/building-eclipse-plugins-with-maven.html[thanks]).
 
-Travis allows you to configure automatic deployment, run scripts of your own, and https://docs.travis-ci.com/[much more].
+Travis allows you to configure automatic deployment, run scripts of your own, and https://docs.travis-ci.com/[much more]. https://github.com/oliviercailloux/PDF-Number-pages/tree/ff1ed77ece1b9e6154e7bc9390c0ff60d1ba2313[This] example sets up Travis so that a project dependency is cloned from GitHub and installed locally before the main project is built. (This may be useful in case one of the dependency is not pushed to a public Maven repository.)
+
 
