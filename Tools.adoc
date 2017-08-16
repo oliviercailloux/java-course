@@ -8,6 +8,7 @@ Various useful tools for Java and Java EE developers.
 * http://www.oracle.com/technetwork/java/javase/downloads/index.html[Java] 8
 ** Important advice. Uninstall every version of Java you have, keep only one: the latest JDK (which includes a JRE).
 ** On Debian: https://packages.debian.org/search?keywords=openjdk-8-jdk&searchon=names&exact=1&suite=all&section=all[openjdk-8-jdk] (optionally, install https://packages.debian.org/search?keywords=openjdk-8-source&searchon=names&exact=1&suite=all&section=all[openjdk-8-source] to have the Javadoc accessible even when coding offline).
+* https://maven.apache.org/download.cgi[Maven]
 
 For Java SE, add:
 
