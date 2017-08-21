@@ -11,6 +11,7 @@
 \input{preamble/uml}
 
 \setbeamertemplate{headline}[singleline]
+\setbeamertemplate{footline}[onlypage]
 
 \title{Conception d’applications web en Java}
 \subtitle{Présentation du cours}
@@ -55,22 +56,23 @@
 		\item Programmer des applications d’envergure
 		\item De qualité
 		\item Portables
-	\end{itemize}
-	Complexité :
-	\begin{itemize}
-		\item Appui sur API ouvertes
-		\item Programmer selon les specs
-		\item Beaucoup de paramètres ⇒ comprendre !
+		\begin{itemize}
+			\item Appui sur API ouvertes
+			\item Programmer selon les specs
+		\end{itemize}
+		\item Programmation Java (mais surtout principes généraux !)
 	\end{itemize}
 \end{frame}
 
 \begin{frame}
-	\frametitle{Objectifs pédagogiques}
-	\begin{block}{Mise en œuvre des patterns}
+	\frametitle{Objectifs pédagogiques (plus précisément)}
+	\begin{block}{Architecture web}
+		Appui sur quelques standards du web actuels
 		\begin{itemize}
-		\item Mise en œuvre des patterns dans les spécifications Java EE
-		\item Quand les mettre en œuvre ?
-		\item Applications dans programmes propres
+			\item Services Web REST
+			\item Formats complémentaires : XML et JSON
+			\item BD SQL et ORM
+			\item Réduction de la complexité par division
 		\end{itemize}
 	\end{block}
 	\begin{itemize}
@@ -80,6 +82,17 @@
 			\item Maven ;
 			\item Git…
 		\end{itemize}
+		\item Beaucoup de paramètres ⇒ comprendre !
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Objectifs pédagogiques (agilité)}
+	Approche agile ? À moitié !
+	\begin{itemize}
+		\item Livraisons fréquentes
+		\item Travail en binôme
+		\item Réusinage fréquent
 	\end{itemize}
 \end{frame}
 
@@ -100,24 +113,6 @@
 	\end{quote}
 \end{frame}
 
-\begin{frame}
-	\frametitle{Objectifs pédagogiques, suite}
-	\begin{block}{Modélisation}
-		\begin{itemize}
-		\item Réponse à des besoins exprimés vaguement
-		\item Appui sur les standards du web actuels
-		\item Réusinage fréquent
-		\item Dosage du réalisme et de l’intérêt des fonctionalités
-		\end{itemize}
-	\end{block}
-	Approche agile ? À moitié !
-	\begin{itemize}
-		\item Livraisons fréquentes
-		\item Travail en binôme
-		\item Réusinage intense
-	\end{itemize}
-\end{frame}
-
 \subsection{Utilité}
 \begin{frame}
 	\frametitle{Intérêt pratique}
@@ -126,7 +121,6 @@
 		\item Prendre de la hauteur, éviter les tâches répétitives et se concentrer sur le conceptuel
 		\item Respect et compréhension des standards (aperçu de la façon dont ils sont construits) : compétence essentielle
 		\item … dans de multiples domaines
-		\item Importance des patterns dans de multiples domaines
 		\item Technologie en vogue
 		\begin{itemize}
 			\item Java EE VS Spring VS … ?
@@ -158,8 +152,7 @@
 	\begin{itemize}
 		\item Programmation en Java, manipulation d’un environnement de développement, compréhension des notions algorithmiques élémentaires.
 		\item Capacité à comprendre des textes en anglais liés à l’informatique.
-		\item HTTP, HTML, XML, XSD, SQL.
-		\item Bases théoriques de Java EE.
+		\item HTTP, HTML, XML, SQL.
 	\end{itemize}
 \end{frame}
 
@@ -168,80 +161,85 @@
 \begin{frame}
 	\frametitle{Mise en œuvre}
 	\begin{itemize}
-		\item Pédagogie par projet et \emph{partiellement} inversée
 		\item Central : travail sur projet
 		\item Objectif : un projet utile
 		\item Un projet ≠ par groupe
-		\item Durant cours $x$ : constituez un binôme ≠ du précédent
 		\item Programmation en binôme, équipes tournantes : diversification, pas spécialisation
+		\item Si ≠ niveaux : l’avancé aide le débutant
+		\item Durant séance $x$ : constituez un binôme ≠ du précédent
 		\item Travaillez sur une fonctionnalité de votre projet
-		\item À remettre avant le jour du cours $x + 1$
-		\item Livraisons exclusivement via Git
+		\item À remettre avant séance $x + 1$
+		\item Livraisons exclusivement via git
 	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Agilité (test)}
+	\begin{itemize}
+		\item Je joue le rôle du client : détail des fonctionnalités à implémenter
+		\item Fonctionnalités de l’application décrites de manière vague : à vous de m’interroger
+	\end{itemize}
+	\newlength{\agTotHeight}
+	\newlength{\agTotWidth}
+	\settoheight\agTotHeight{\includegraphics{Demarcheinformatique.jpg}}
+	\settowidth\agTotWidth{\includegraphics{Demarcheinformatique.jpg}}
+	\newlength{\agPanelHeight}
+	\setlength{\agPanelHeight}{\agTotHeight / 2}
+%	\newlength{\agPanelWidth}
+%	\setlength{\agPanelWidth}{\agTotWidth / 3}
+	\newlength{\agHeight}
+	\setlength{\agHeight}{2.5cm}
+
+%	\printlength{\agTotWidth}
+%	\printlength{\agPanelWidth}
+
+%https://tex.stackexchange.com/questions/118494/how-to-use-only-half-an-image/118495#118495
+%\includegraphics[trim=0.5\imagewidth{} 0 0 0, clip, width = 0.1\imagewidth{}]{Demarcheinformatique.jpg}
+%	\hfill\includegraphics[clip, trim=0 \the\textwidth{} 13cm 0, height=\agHeight]{Demarcheinformatique.jpg}%
+%	\includegraphics[clip, trim=6.5cm 6.5cm 6.5cm 0, height=\agHeight]{Demarcheinformatique.jpg}
+%Fails (also with GNU.png)
+%	\includegraphics[clip, trim=0 0 0.5\textwidth{} 0, height=10cm]{Demarcheinformatique.jpg}
 \end{frame}
 
 \begin{frame}
 	\frametitle{Agilité}
 	\begin{itemize}
-		\item À gérer de façon agile car fonctionnalités ajoutées au fil du cours : cycles courts, réusinage…
 		\item Je joue le rôle du client : détail des fonctionnalités à implémenter
 		\item Fonctionnalités de l’application décrites de manière vague : à vous de m’interroger
 	\end{itemize}
+	\centering\includegraphics[height=\textheight - 93.5pt]{Demarcheinformatique.jpg}
 \end{frame}
 
 \subsection{Évaluation}
 \begin{frame}
 	\frametitle{Évaluation}
-	L’évaluation se fait par contrôle continu exclusivement.
+	 Évaluation individuelle et collective !
 	\begin{itemize}
-		\item Durant chaque cours : je tire des personnes au hasard
-		\item J’évalue, avec le binôme, le travail fourni depuis la dernière évaluation
-		\item Note finale : agrégation des notes reçues au long de l’année (nombre de notes : aléatoire)
-		\item \emph{Vous êtes toujours censés comprendre votre code}
-		\item Si ≠ niveaux : l’avancé aide le débutant
-		\item Fin d’année : présentation collective de vos projets
-		\item Vote pour la meilleure application
-	\end{itemize}
-\end{frame}
-
-\begin{frame}
-	\frametitle{Aspects pris en compte}
-	\begin{itemize}
-		\item Qualité du code 
-		\item Respect des demandes de l’utilisateur
-		\item Mise en œuvre adéquate des technologies dans l’application
-		\item Livraisons régulières
-		\item Ampleur des fonctionnalités
-		\item Qualité générale de l’application
-		\item Qualité de la présentation finale…
+		\item 50\% CC
+		\begin{itemize}
+			\item Une note par fonctionnalité
+			\item Obligation : ≥ 1 point de difficulté par séance pour chacun
+			\item \emph{Vous êtes toujours censés comprendre votre code}
+		\end{itemize}
+		\item 50\% Projet (fin d’année)
+		\begin{itemize}
+			\item Qualité générale du projet, correction collective des défauts relevés pendant l’année
+			\item Présentation collective de vos projets
+			\item Soutenance orale : comprenez-vous votre code ?
+			\item Nb points de difficultés
+			\item Diversité des aspects
+		\end{itemize}
+		\item Fin d’année : Vote pour la meilleure application
 	\end{itemize}
 \end{frame}
 
 \begin{frame}
 	\frametitle{Travail attendu}
 	\begin{itemize}
-		\item Étudiants en commun avec cours Dan Dimcea : 6 ECTS
-		\item \{[(25 à 30h / ECTS) × 6 ECTS] − 48 h\} / 7 inter-séances
-		\item 18 heures de travail entre chaque séance
-		\item Autres étudiants : 9 heures entre chaque séance
-		\item Peuvent donc sauter une séance sur deux
-		\item Ou auront meilleure note
-		\item Ou binôme se sépare pour une partie du travail
+		\item \{[(25 à 30h / ECTS) × 3 ECTS] − 24 h\} / 7 inter-séances
+		\item 9 heures de travail entre chaque séance
+		\item Voir exigences sur le site GitHub java-course
 	\end{itemize}
-\end{frame}
-
-\subsection{Plan}
-\begin{frame}
-	\frametitle{Plan}
-	
-	\begin{itemize}
-		\item Git, Maven
-		\item CDI
-		\item JSF
-		\item JAX-RS
-		\item Et plus selon demandes
-	\end{itemize}
-	Plus : Éléments d’ingénierie (programmation par contrat…)
 \end{frame}
 
 \section{Astuces}
@@ -263,22 +261,9 @@
 \begin{frame}
 	\frametitle{Attendu}
 	\begin{itemize}
-		\item Rediriger vos e-mails @ Dauphine si nécessaire pour vous assurer de recevoir les annonces
 		\item Vous êtes supposé lire les annonces publiées sur MyCourse
-		\item Suivre \emph{scrupuleusement} les instructions qui s’y trouvent SVP
-	\end{itemize}
-\end{frame}
-
-\begin{frame}
-	\frametitle{À faire}
-	Avant chaque cours :
-	\begin{itemize}
-		\item Constituez un binôme ≠ du précédent
-		\item Par binôme : Création d’un problème git (\emph{issue}) sur projet Git
-		\item Par binôme : Commit branche perso, nom branche = n° issue
-		\item Par chacun : Indication sur MyCourse de l’URL issue travaillée + nom binôme
-		\item Conseil : \emph{vérifier} que je verrai votre code en effectuant un nouveau clone vous-même
-		\item Voir détails sur MyCourse
+		\item Rediriger vos e-mails @ Dauphine si nécessaire pour vous assurer de recevoir les annonces
+		\item Suivre \emph{scrupuleusement} les instructions sur le site SVP
 	\end{itemize}
 \end{frame}
 
