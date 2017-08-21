@@ -174,40 +174,36 @@
 \end{frame}
 
 \begin{frame}
-	\frametitle{Agilité (test)}
+	\frametitle{Agilité}
 	\begin{itemize}
 		\item Je joue le rôle du client : détail des fonctionnalités à implémenter
 		\item Fonctionnalités de l’application décrites de manière vague : à vous de m’interroger
 	\end{itemize}
 	\newlength{\agTotHeight}
 	\newlength{\agTotWidth}
-	\settoheight\agTotHeight{\includegraphics{Demarcheinformatique.jpg}}
-	\settowidth\agTotWidth{\includegraphics{Demarcheinformatique.jpg}}
-	\newlength{\agPanelHeight}
-	\setlength{\agPanelHeight}{\agTotHeight / 2}
-%	\newlength{\agPanelWidth}
-%	\setlength{\agPanelWidth}{\agTotWidth / 3}
-	\newlength{\agHeight}
-	\setlength{\agHeight}{2.5cm}
-
-%	\printlength{\agTotWidth}
-%	\printlength{\agPanelWidth}
-
-%https://tex.stackexchange.com/questions/118494/how-to-use-only-half-an-image/118495#118495
-%\includegraphics[trim=0.5\imagewidth{} 0 0 0, clip, width = 0.1\imagewidth{}]{Demarcheinformatique.jpg}
-%	\hfill\includegraphics[clip, trim=0 \the\textwidth{} 13cm 0, height=\agHeight]{Demarcheinformatique.jpg}%
-%	\includegraphics[clip, trim=6.5cm 6.5cm 6.5cm 0, height=\agHeight]{Demarcheinformatique.jpg}
-%Fails (also with GNU.png)
-%	\includegraphics[clip, trim=0 0 0.5\textwidth{} 0, height=10cm]{Demarcheinformatique.jpg}
-\end{frame}
-
-\begin{frame}
-	\frametitle{Agilité}
-	\begin{itemize}
-		\item Je joue le rôle du client : détail des fonctionnalités à implémenter
-		\item Fonctionnalités de l’application décrites de manière vague : à vous de m’interroger
-	\end{itemize}
-	\centering\includegraphics[height=\textheight - 93.5pt]{Demarcheinformatique.jpg}
+	\settoheight{\agTotHeight}{\includegraphics{Demarcheinformatique.jpg}}
+	\settowidth{\agTotWidth}{\includegraphics{Demarcheinformatique.jpg}}
+	\newlength{\agTopHalf}
+	\setlength{\agTopHalf}{\agTotHeight / 2 + 1mm}
+	\newlength{\agBottomHalf}
+	\setlength{\agBottomHalf}{\agTotHeight / 2 + 1mm}
+	\newlength{\agPanelWidth}
+	\setlength{\agPanelWidth}{\agTotWidth / 3}
+	\newlength{\agWidth}
+	\setlength{\agWidth}{3.0cm - 1pt}
+	\newlength{\agTopCrop}
+	\setlength{\agTopCrop}{3mm}
+	\newlength{\agBottomCrop}
+	\setlength{\agBottomCrop}{6mm}
+	\begin{center}
+		\includegraphics[clip, trim=0 \agBottomHalf{} 2\agPanelWidth{} \agTopCrop{}, width=\agWidth]{Demarcheinformatique.jpg}%
+		\includegraphics[clip, trim=\agPanelWidth{} \agBottomHalf{} \agPanelWidth{} \agTopCrop{}, width=\agWidth]{Demarcheinformatique.jpg}%
+		\includegraphics[clip, trim=2\agPanelWidth{} \agBottomHalf{} 0 \agTopCrop{}, width=\agWidth]{Demarcheinformatique.jpg}%
+			
+		\includegraphics[clip, trim=0 \agBottomCrop{} 2\agPanelWidth{} \agTopHalf{}, width=\agWidth]{Demarcheinformatique.jpg}%
+		\includegraphics[clip, trim=\agPanelWidth{} \agBottomCrop{} \agPanelWidth{} \agTopHalf{}, width=\agWidth]{Demarcheinformatique.jpg}%
+		\includegraphics[clip, trim=2\agPanelWidth{} \agBottomCrop{} 0 \agTopHalf{}, width=\agWidth]{Demarcheinformatique.jpg}%
+	\end{center}
 \end{frame}
 
 \subsection{Évaluation}
