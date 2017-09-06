@@ -5,6 +5,8 @@
 
 This document gives a (rough and incomplete) overview of Servlets in Java EE application servers. This document may serve as an introduction to application servers in Java EE.
 
+NOTE: The reader supposedly has basic knowledge of link:HTTP.adoc[HTTP].
+
 == Overview
 === Application servers
 Java EE defines a http://www.oracle.com/technetwork/java/javaee/tech/index.html[set] of specifications, known as Java Specification Requests (JSR). Application servers have to implement [small]#(parts of)# these standards in order to be compliant with [small]#(a subset of)# Java EE. An important standard among those is the Servlet API, or https://www.jcp.org/en/jsr/detail?id=340[JSR 340].
@@ -21,21 +23,6 @@ The web container is one of the containers provided by any Java EE compliant app
 An application will typically contain many such servlets, configured to process different kinds of web requests.
 
 In this document, web requests are considered to be HTTP requests. [small]#(The specification is more general but I doubt anybody would seriously consider writing non HTTP servlets in a Java EE application server.)#
-
-=== HTTP requests
-HTTP, Hypertext Transfer Protocol, is a W3C / IETF https://tools.ietf.org/html/rfc7540[standard] that describes a way of exchanging information between a client and a server. It is ubiquitous on the internet. In an HTTP exchange, a client sends an HTTP request to a server, then the server sends an HTTP response back to the client. An HTTP message is either an HTTP request or an HTTP response. The client is typically a browser (such as your browser you use when you browse the internet).
-
-.An HTTP exchange
-====
-. A client sends an HTTP request, targeted to +++http://example.com/mycat+++, specifying that the chosen HTTP method is HTTP GET.
-. The server replies with an HTTP response with a header “content-type = image/jpeg” and a message body containing an image of a cat.
-====
-
-An HTTP message contains headers and possibly a message body [small]#(this document considers pseudo-headers or start-line data as headers, for simplicity)#. The headers for an HTTP request specify the URI that the request targets, the request method to be used for the exchange, and possibly other information such as the encodings used in the message body, … The headers for an HTTP response specify the status code (three digits that indicate whether something went wrong), and possibly other information such as the content-type of the message body, …
-
-HTTP requests target _resources_, identified by URIs (Uniform Resource Identifiers). For example, the URI +++http://example.com/mycat+++ might identify the resource describing someone’s cat.
-
-Request methods indicate the request semantics: what the client wishes to do in relation with the targeted resource. A GET request method asks the server for a current representation of the target resource. This is the method your browser uses when you type a URI in your browser navigation bar and hit enter, and by far the most common request method. A GET request [small]#typically# has no message body. A POST request method, on the contrary, typically has a message body. It asks the server to perform resource-specific processing on the message body. It is typically used to post new data to a server, for example, to post a new image of your cat for it to become accessible at some URI.
 
 == Servlets in Java EE
 
@@ -72,18 +59,7 @@ The container will then instanciate your class and execute your code, under the 
 Observe that the container makes your life as web developer much simpler: you do not have to listen to ports, spawn threads to process incoming requests, decode and encode requests and responses on the wire, manage sockets, parse HTTP headers, and so on. The container does this for you. This is an example of the services that Java EE application servers provide to the developers. [small]#(Of course, other frameworks than Java EE provide this kind of services to developers in Java or other languages.)#
 
 == Test servlets from command line
-Once you have written your servlet, you want to easily test it. GET requests may be sent by simply directing your browser to the right adress. POST requests (and other request methods) can’t be tested so easily with a browser. I recommend to use https://en.wikipedia.org/wiki/cURL[`curl`]: a command line tool that sends HTTP requests and displays the response sent by the server.
-
-Quick help:
-
-* `curl +++http://example.com/MyContextRoot/sayHelloServlet+++` curl will send a GET request to the given URI and print out the response received in return from the server
-* `curl --include +++http://example.com/MyContextRoot/sayHelloServlet+++` The `--include` option tells curl to include the received HTTP headers in the output
-* `curl --data "name=daniel&skill=lousy" +++http://example.com/MyContextRoot/sayHelloServlet+++` curl will send a POST request to the given URI, passing the data to the server using the content-type `application/x-www-form-urlencoded` (in the same way that a browser does when a user has filled in an HTML form and presses the submit button)
-
-Other notes:
-
-* Official https://curl.haxx.se/docs/tooldocs.html[doc] for curl. curl is available in your favorite linux distribution. Other OSes: try https://curl.haxx.se/download.html[here] (untested by this author), write to me if you know more.
-* https://en.wikipedia.org/wiki/wget[Wget] is an alternative to curl. It is available in your favorite linux distribution. Other OSes: try http://wget.addictivecode.org/Faq.html#download[here] (untested by this author).
+Once you have written your servlet, you want to easily test it. See link:HTTP.adoc#curl[HTTP].
 
 == Refs
 * Servlet 3.1 (JSR 340) specification: http://download.oracle.com/otn-pub/jcp/servlet-3_1-fr-eval-spec/servlet-3_1-final.pdf[PDF]
@@ -91,6 +67,4 @@ Other notes:
 == Supplementary details
 
 *Inversion of control* Instead of you providing a `main` method as a starting point of your application, in Java EE, your code gets embedded into a container provided by the application server, and the container calls your code when adequate. This is an example of the https://martinfowler.com/bliki/InversionOfControl.html[pattern] “Inversion of control”. The pattern is also called the Hollywood principle: “Don’t call us, we’ll call you”.
-
-*Request methods* https://tools.ietf.org/html/rfc7231#section-4.3.1[RFC 7231] lists the request methods available in HTTP, and defines properties of request methods. Of special importance are safe methods (essentially read-only) and idempotent methods (repeated identical requests have the same effect as a single request). Safe implies idempotent. GET is both, POST is neither.
 

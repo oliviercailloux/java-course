@@ -1,0 +1,85 @@
+= HTTP in brief
+:toc:
+:toc-placement: preamble
+:sectanchors:
+
+This document gives a (rough and incomplete) overview of the HTTP protocol, focusing mainly on usage of web services.
+
+== Introduction
+HTTP, Hypertext Transfer Protocol, is a W3C / IETF https://www.w3.org/Protocols/[standard] that describes a way of exchanging information between a client and a server. It is ubiquitous on the internet. In an HTTP exchange, a client sends an HTTP request to a server, then the server sends an HTTP response back to the client. An HTTP message is either an HTTP request or an HTTP response. The client is typically a browser (such as your browser you use when you browse the internet).
+
+.An HTTP exchange
+====
+. A client sends an HTTP request, targeted to `+http://example.com/mycat+`, specifying that the chosen HTTP method is HTTP GET.
+. The server replies with an HTTP response with a header “content-type = image/jpeg” and a message body containing an image of a cat.
+====
+
+An HTTP message contains headers and possibly a message body [small]#(this document considers pseudo-headers or start-line data as headers, for simplicity)#. The headers for an HTTP request specify the URI that the request targets, the request method to be used for the exchange, and possibly other information such as the encodings used in the message body, … The headers for an HTTP response specify the status code (three digits that indicate whether something went wrong), and possibly other information such as the content-type of the message body, …
+
+HTTP requests target _resources_, identified by URIs (Uniform Resource Identifiers). For example, the URI `+http://example.com/mycat+` might identify the resource describing someone’s cat.
+
+== URIs
+Some example URIs:
+
+* https://www.google.com/maps?saddr=Tour+Eiffel&daddr=Paris-Dauphine
+* https://github.com/oliviercailloux/java-course/search?q=hello
+* http://www.pagesjaunes.fr/annuaire/chercherlespros?quoiqui=restaurant&ou=colombes-92
+
+URIs are composed as follows (parenthesis refer to some of the examples above):
+
+* scheme (`http`, `https`)
+* authority (`www.google.com`, `github.com`)
+* path (`oliviercailloux/java-course/search`)
+* possibly a question mark followed by a query string (`saddr=Tour+Eiffel&daddr=Paris-Dauphine`)
+* possibly a dash followed by a fragment (not illustrated here)
+
+Furthermore, HTTP conventions dictate that the query string be composed of pairs of parameter and values separated by equal signs, each pair being separated by an ampersand.
+
+== Content negotiation
+Resources may be representable in different formats. For example, `+http://example.com/mycat+` may be available as a JPEG image, a BMP image, an HTML description, or a plain text description. Standards define “link:https://tools.ietf.org/html/rfc7231#section-3.1.1.1[media types]” (also called https://www.w3.org/TR/html5/infrastructure.html#mime-type[mime types]) to represent these formats. Examples: `image/jpeg`, `image/bmp`, `text/html;charset=utf-8`, `text/plain;charset=utf-8` (official https://www.iana.org/assignments/media-types/[list]).
+
+An HTTP request may include an `Accept` header that indicates the client’s preference regarding content types to be received. Similarly, the HTTP response may include a `Content-Type` header that indicates the format of the message body it is serving.
+
+== Request methods
+Request methods indicate the request semantics: what the client wishes to do in relation with the targeted resource. 
+
+A GET request method asks the server for a current representation of the target resource. This is the method your browser uses when you type a URI in your browser navigation bar and hit enter, and by far the most common request method. A GET request [small]#typically# has no message body. 
+
+A POST request method, on the contrary, typically has a message body. It asks the server to perform resource-specific processing on the message body. It is typically used to post new data to a server, for example, to post a new image of your cat for it to become accessible at some URI.
+
+https://tools.ietf.org/html/rfc7231#section-4.3.1[RFC 7231] lists the request methods available in HTTP, and defines properties of request methods. Of special importance are safe methods (essentially read-only) and idempotent methods (repeated identical requests have the same effect as a single request). Safe implies idempotent. GET is both, POST is neither.
+
+== Status code
+https://tools.ietf.org/html/rfc7231#section-6[RFC 7231] defines status codes: each HTTP response must specify exactly one, which can be e.g. 200 OK, 404 Not Found, or may indicate that the request has not been understood, that the resource has moved, …
+
+== APIs
+Supplementary to “manual” surfing, that mostly involve HTML pages and images being displayed in your browser, many major websites nowadays permit automated usage of their content. This is made possible through an API of theirs. For example, https://www.mediawiki.org/wiki/API:Main_page documents how to query data stored on a media wiki powered web site (such as Wikipedia). https://www.programmableweb.com/[ProgrammableWeb] lists many such APIs.
+
+Such APIs generally rely on content negotiation and use appropriate request methods and status codes, as explained above.
+
+[[curl]]
+== Test using the command line
+GET requests may be sent by simply directing your browser to the right adress. POST requests (and other request methods, and messages requiring specific header values) can’t be sent so easily with a browser. I recommend to use https://en.wikipedia.org/wiki/cURL[`curl`]: a command line tool that sends HTTP requests and displays the response sent by the server.
+
+Quick help:
+
+* `curl +http://example.com/page+` curl will send a GET request to the given URI and print out the response received in return from the server
+* `curl --include +http://example.com/page+` The `--include` option tells curl to include the received HTTP headers in the output
+* `curl --data "name=daniel&skill=lousy" +http://example.com/page+` curl will send a POST request to the given URI, passing the data to the server using the content-type `application/x-www-form-urlencoded` (in the same way that a browser does when a user has filled in an HTML form and presses the submit button)
+
+Other notes:
+
+* Official https://curl.haxx.se/docs/tooldocs.html[doc] for curl. curl is available in your favorite linux distribution. Other OSes: try https://curl.haxx.se/download.html[here] (untested by this author), write to me if you know more.
+* https://en.wikipedia.org/wiki/wget[Wget] is an alternative to curl. It is available in your favorite linux distribution. Other OSes: try http://wget.addictivecode.org/Faq.html#download[here] (untested by this author).
+
+== Appendices
+=== Various
+* HTTP/2 is standardized by W3C as https://tools.ietf.org/html/rfc7540[RFC 7540] (HTTP/1.1 was previously defined under https://tools.ietf.org/html/rfc2616[RFC 2616], now obsolete).
+* A https://www.youtube.com/watch?v=aHxv_2BMJfw[presentation] (in French) about Open Data: L’Open Data à la loupe.
+* Some web sites voluntarily do not make their data automatically extractable: https://www.pagesjaunes.fr/infoslegales/mentionslegales[example]. Check legal conditions before collecting data.
+
+=== URIs
+* https://tools.ietf.org/html/rfc3986[RFC 3986]: Uniform Resource Identifier (URI) Generic Syntax, 2005 (obsoletes RFC 2396).
+* A URI with authority has the https://tools.ietf.org/html/rfc3986#section-3[form] scheme://authority path [?query][#fragment] (URIs also exist with different forms such as `mailto:John.Doe@example.com`, `tel:+1-816-555-1212`, ``urn:oasis:names:specification:docbook:dtd:xml:4.1.2``…)
+* Characters outside [letters of the basic latin alphabet, digits, and “unreserved characters” `-._~`] must be percent-encoded, except “reserved characters” `:$&'()*+,;=` that are explicitly allowed for in the specification of the chosen scheme when used accordingly (thus including `&` and `+` in a query string in the http scheme).
+
