@@ -44,7 +44,7 @@ include::https://github.com/oliviercailloux/samples/raw/master/JavaEE-Servlets/s
 (You may define more than one servlet. [small]#The constraints described above are not the only way to define a Java EE compliant servlet.#)
 
 === Packaging and deploying the application
-You then package your application as a WAR (Web ARchive format), and deploy it to your application server. (Exact procedures to do this depend on your IDE for the WAR and on your application server for the deployment, see link:App%20servers%20from%20Eclipse[here] for Eclipse.)
+You then package your application as a WAR (Web ARchive format), and deploy it to your application server. (Exact procedures to do this depend on your IDE for the WAR and on your application server for the deployment, see link:App%20servers%20from%20Eclipse.adoc[here] for Eclipse.)
 
 Each Java EE application has a context root, the root URI at which your application is reachable on the server. If your application context root is `MyContextRoot` and your application is deployed on a server reachable at `+http://example.com+`, then your application is reachable at the `+http://example.com/MyContextRoot+` root URI. (The context root can be configured on your application server, by default it is typically the name of your WAR file without the extension.)
 
