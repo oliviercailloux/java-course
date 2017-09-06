@@ -5,7 +5,7 @@
 
 This document gives a _rough_ and _incomplete_ overview of WSDL 1.1. (WSDL 2.0 being not much supported at the moment.)
 
-NOTE: The reader supposedly has basic knowledge of HTTP, XML and SOAP.
+NOTE: The reader supposedly has basic knowledge of link:HTTP.adoc[HTTP], XML and link:SOAP.adoc[SOAP].
 
 NOTE: The parts marked BP are complements to the spec given by WS-I BP (all versions from 1.0 to 2.0) (see <<refs>>).
 

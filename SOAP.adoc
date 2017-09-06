@@ -5,7 +5,7 @@
 
 This document gives a _rough_ and _incomplete_ overview of SOAP 1.2.
 
-NOTE: The reader supposedly has basic knowledge of HTTP and XML.
+NOTE: The reader supposedly has basic knowledge of link:HTTP.adoc[HTTP] and XML.
 
 ////
 :toc: macro
