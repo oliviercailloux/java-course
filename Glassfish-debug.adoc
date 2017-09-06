@@ -1,6 +1,7 @@
 = Debug under Glassfish
 
-Here is a useful trick for beginners. When you can’t reach your servlet, check whether Glassfish sees it.
+== Does Glassfish see my servlets?
+When you can’t reach your servlet, check whether Glassfish sees it. (Tested under Glassfish 4.1.2.)
 
 * Start your domain
 * Run `asadmin`
@@ -8,4 +9,7 @@ Here is a useful trick for beginners. When you can’t reach your servlet, check
 * `list-sub-components` <app-name> ⇒ check that your servlet appears.
 
 If your application deploys but your servlet isn’t seen, you may have forgotten an annotation. Do check the server log, it probably contains useful information.
+
+== Clear log
+Run `asadmin rotate-log` to clear the log.
 
