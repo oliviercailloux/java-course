@@ -11,6 +11,7 @@
 \input{preamble/uml}
 
 \setbeamertemplate{headline}[singleline]
+\setbeamertemplate{footline}[onlypage]
 
 \title{Git}
 \subject{Git}
@@ -61,6 +62,7 @@
 			\item Contient : structure de répertoires ; \emph{blobs} ; auteur…
 		\end{itemize}
 		\item Histoire : un DAG de \og{}commits\fg{}
+		\item Conservée dans un \emph{dépôt} (repository)
 	\end{itemize}
 	{
 		\centering
@@ -129,7 +131,7 @@
 	\begin{itemize}
 		\item \emph{Index} : changements à apporter au prochain commit
 		\item \emph{HEAD} : commit d’où le work dir actuel est issu
-		\item Initialisation nouveau répertoire ? \pause Index et HEAD vide \pause
+		\item Initialisation nouveau dépôt ? \pause Index et HEAD vide \pause
 		\item Juste après un commit ? \pause Index vide
 	\end{itemize}
 \end{frame}
@@ -169,16 +171,13 @@
 			\item[] \texttt{/fich2'}
 		\end{itemize}
 	\end{minipage}
-	\begin{block}{Définitions (étant donné un fichier)}
-	%nb on devrait peut-être appliquer modified et unmodified seulement pour les \emph{tracked}. Auquel cas on peut aussi définir :\item[\emph{modified}] [{∈} index ⇒ ≠ index] ; [{∉} index ⇒ {∈} HEAD ∧ ≠ HEAD]. Donc modified implique tracked.
-		\begin{description}[\emph{unmodified}]
-			\item[{∈} index] blob ds index, peut être ≠ WD
-			\item[∈ HEAD] blob ds HEAD, peut être ≠ WD
-			\item[\emph{untracked}] [{∉} index] et [{∉} HEAD]
-			\item[\emph{tracked}] [{∈} index] ou [{∈} HEAD] {\tiny (ou les deux)}
-			\item[\emph{modified}] [{∈} index ⇒ ≠ index] ; [{∉} index ⇒ ≠ HEAD]
-			\item[\emph{unmodified}] [{∈} index ⇒ = index] ; [{∉} index ⇒ = HEAD]
-		\end{description}
+	\begin{block}{Vocabulaire}
+		\begin{itemize}
+			\item blob ∈ index, blob ∈ HEAD, fichier ∈ WD : peuvent être ≠
+			\item un fichier peut être \emph{tracked} : dans index ou HEAD
+			\item un fichier peut être \emph{modified} : par rapport à index si ∈ index (sinon p/r HEAD)
+			\item \emph{clean} WD : tous {\tiny (sauf fichiers dans gitignore)} tracked et unmodified
+		\end{itemize}
 	\end{block}
 \end{frame}
 
@@ -187,7 +186,6 @@
 %	\begin{block}{Commandes}
 		\begin{itemize}\setlength{\itemindent}{-1em}
 			\item \texttt{git add fichier} : blob mis dans index (\og{}staged\fg{})
-			\item \emph{clean} WD : tous {\tiny (sauf fichiers dans gitignore)} tracked et unmodified
 			\item \texttt{git status} : liste untracked, {\tiny tracked-}modified, staged
 			\item \texttt{git status -{}-short} {\tiny (sauf merge conflict)} : idx VS HEAD ; WD VS idx.
 			\item \texttt{git diff} : WD VS index
@@ -249,16 +247,16 @@
 \section{Serveurs distants}
 \begin{frame}
 	\frametitle{Serveurs distants}
-	\vspace{-1pt}
 	\begin{itemize}
-		\item Réf. distante (\og{}remote ref\fg{}) : pointeurs vers branches {\tiny et tags} sur dépots distants
-		\item \og{}Remote-tracking branch\fg{} : branche locale correspondant à une branche distante et qui connait l’état de la branche distante correspondante la dernière fois qu’on l’a vue
-		\item Remote \og{}origin\fg{} supposé configuré ici
-		\item \texttt{git branch -vv} : voir branches et correspondants distants
-		\item \texttt{git fetch} : récupère les commits distants ; met à jour (ou crée) les références distantes
+		\item \texttt{git remote -v} : montrer les correspondants distants
+		\item \texttt{git push} : envoyer historique au dépôt distant origin
+		\item \texttt{git fetch} : récupère les commits distants (met à jour (ou crée) les références distantes)
+		\item Réf. distante (\og{}remote ref\fg{}) : branche \texttt{origin/branch} {\tiny ou tag} qui reflète branche sur dépot distant
+		\item \og{}Remote-tracking branch\fg{} : branche locale qui connait son correspondant distant
+		\item \texttt{git branch -vv} : branches et leurs correspondants distants
 		\item \texttt{git push origin mabranche} : sinon, nouvelles branches restent locales
 		\item \texttt{git remote show origin} : voir les réf. distantes
-		\item Suivre une branche distante : checkout \texttt{origin/branche} ; créer et basculer sur branche locale ; \texttt{git branch -{}-set-upstream-to origin/branch}
+		\item Suivre une branche distante \texttt{origin/branche} : \texttt{checkout branche}
 	\end{itemize}
 \end{frame}
 
@@ -278,7 +276,6 @@
 		\item Indiquez propriété \texttt{user.name} (et \texttt{user.email})
 		\item Déterminer des \href{https://git-scm.com/book/en/v2/Git-Tools-Revision-Selection}{révisions} {\tiny exemple : HEAD\textasciicircum 1 pour parent de HEAD}
 		\item \href{https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases}{Alias}
-		\item \href{https://git-scm.com/book/en/v2}{Documentation}
 		\item GUI pour diff : \texttt{git difftool}
 		\item GUI pour merge : \texttt{git mergetool}
 	\end{itemize}
@@ -292,16 +289,21 @@
 \begin{frame}
 	\frametitle{Références}
 	\begin{itemize}
-		\item \href{https://git-scm.com/downloads}{Téléchargement} officiel
-		\item \href{https://git-scm.com/book/}{Livre} Pro Git
-		\item \href{https://try.github.io/}{tryGit}
+		\item \href{https://git-scm.com/}{Git-SCM} : Téléchargement officiel ; Cheat Sheets ! ; Livre Pro Git ; tryGit
 	\end{itemize}
 \end{frame}
+
+\appendix
+\AtBeginSection{
+}
 
 \section{Exercices}
 \begin{frame}[allowframebreaks]
 	\small
 	\frametitle{Exercices : Git}
+	\begin{itemize}
+		\item Astuce : utilisez les Cheat sheets !
+	\end{itemize}
 	Git en local
 	\begin{itemize}
 		\item Définir globalement (au moins) \texttt{user.name}. Vérifier avec \texttt{git config -{}-list}.
@@ -354,7 +356,7 @@
 				\path (master.north) ++ (0, 2mm) node[anchor=south, /Git/head] (head) {HEAD} edge[->] (master);
 			\end{tikzpicture}\par
 		}
-		\item Tout bien réfléchi vous aimez également votre deuxième idée. L’intégrer à son tour dans \texttt{master} et obtenir cet historique. Quel problème allez-vous rencontrer, ce faisant ?\par
+		\item Tout bien réfléchi vous aimez également votre deuxième idée. L’intégrer à son tour dans \texttt{master} et obtenir cet historique. Rencontrerez-vous un problème ?\par
 		{
 			\centering
 			\begin{tikzpicture}
@@ -371,17 +373,15 @@
 	\framebreak
 	Git distant
 	\begin{itemize}
-		\item Cloner votre dépôt central pour le projet de ce cours (ou votre dépôt local).
-		\item Le clonage vous a créé un pointeur vers un serveur distant \texttt{origin}, et une \og{}remote-tracking branch\fg{} \texttt{master}. Voir où pointent \texttt{origin}, \texttt{master} et \texttt{origin/master}.
-		\item Ajouter un fichier \texttt{"macontrib.txt"} contenant votre prénom à votre index local. Commettre dans votre dépôt git local. L’envoyer au dépôt distant. Vérifier (via l’interface web) qu’il s’y trouve et que le commit est associé à votre nom.
-		\item Quand un collègue a fait de même, vous pouvez rapatrier sa modification en local. Après l’avoir fait, prédire où vont pointer \texttt{master} et \texttt{origin/master} et vérifier.
-		\item Si un collègue a publié sa modification avant la vôtre, quel va être votre problème ? Comment le résoudre ? Si vous êtes le premier à publier la modification, allez aider vos collègues à publier la leur !
+		\item Cloner votre dépôt local dans un autre répertoire sur votre même ordinateur, pour créer un deuxième dépôt. Nous les appellerons WD1, WD2, dépôt1 et dépôt2.
+		\item Le clonage vous a créé un pointeur vers un serveur distant \texttt{origin}, et une \og{}remote-tracking branch\fg{} \texttt{master}. Voir où pointent \texttt{origin}, \texttt{master} et \texttt{origin/master}. (Dans notre cas le terme serveur distant est impropre, puisque c’est votre même machine, mais généralement il s’agit effectivement d’une autre machine telle qu’un serveur GitHub.)
+		\item Ajouter un fichier \texttt{"macontrib.txt"} contenant votre prénom à WD1. Commettre dans dépôt1. Rapatrier les nouvelles informations dans dépôt2 (fetch). Vérifier que votre dernier commit dans dépôt1 existe bien dans l’historique de dépôt2 (et en profiter pour observer la différence entre git log et git log --all). Prédire où vont pointer \texttt{master} et \texttt{origin/master} et vérifier. Que contient le fichier macontrib.txt ? Pourquoi ?
+		\item Fusionner dans dépôt2 vos dernières modifications venant de dépôt1.
+		\item Créer un nouveau dépôt distant, dépôtGH, sur le site de GitHub. Connecter dépôt1 à dépôtGH (suivre et adapter les instructions fournies par GitHub). Envoyer vos informations locales à dépôtGH. Vérifier que vos informations locales sont bien parvenues (avec votre navigateur web).
+		\item Cloner dépôtGH dans un nouveau répertoire, WDlocalclone et dépôtlocalclone. Modifier le fichier macontrib.txt (ajouter "coucou"), commettre dans dépôtlocalclone, envoyer à dépôtGH. Vérifier en ligne.
+		\item Modifier macontrib.txt dans WD1 (ajouter "salut"), commettre dans dépôt1, envoyer à dépôtGH. Pourquoi l’envoi est-il refusé ? Que faire pour résoudre le problème et effectivement envoyer votre fichier modifié au dépôt en ligne ?
 	\end{itemize}
 \end{frame}
-
-\appendix
-\AtBeginSection{
-}
 
 \section{Licence}
 \begin{frame}
