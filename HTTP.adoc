@@ -6,7 +6,13 @@
 This document gives a (rough and incomplete) overview of the HTTP protocol, focusing mainly on usage of web services.
 
 == Introduction
-HTTP, Hypertext Transfer Protocol, is a W3C / IETF https://www.w3.org/Protocols/[standard] that describes a way of exchanging information between a client and a server. It is ubiquitous on the internet. In an HTTP exchange, a client sends an HTTP request to a server, then the server sends an HTTP response back to the client. An HTTP message is either an HTTP request or an HTTP response. The client is typically a browser (such as your browser you use when you browse the internet).
+HTTP, Hypertext Transfer Protocol, is a W3C / IETF https://www.w3.org/Protocols/[standard] that describes a way of exchanging information between a client and a server. It is ubiquitous on the internet. 
+
+In an HTTP exchange:
+. a client sends an HTTP request to a server
+. the server sends an HTTP response back to the client
+
+An HTTP message is either an HTTP request or an HTTP response. The client is typically a browser (such as the one you use when you browse the internet).
 
 .An HTTP exchange
 ====
@@ -14,7 +20,10 @@ HTTP, Hypertext Transfer Protocol, is a W3C / IETF https://www.w3.org/Protocols/
 . The server replies with an HTTP response with a header “content-type = image/jpeg” and a message body containing an image of a cat.
 ====
 
-An HTTP message contains headers and possibly a message body [small]#(this document considers pseudo-headers or start-line data as headers, for simplicity)#. The headers for an HTTP request specify the URI that the request targets, the request method to be used for the exchange, and possibly other information such as the encodings used in the message body, … The headers for an HTTP response specify the status code (three digits that indicate whether something went wrong), and possibly other information such as the content-type of the message body, …
+An HTTP message contains headers and possibly a message body [small]#(this document considers pseudo-headers or start-line data as headers, for simplicity)#. 
+
+* The headers for an HTTP request specify the URI that the request targets, the request method to be used for the exchange, and possibly other information such as the encodings used in the message body, … 
+* The headers for an HTTP response specify the status code (three digits that indicate whether something went wrong), and possibly other information such as the content-type of the message body, …
 
 HTTP requests target _resources_, identified by URIs (Uniform Resource Identifiers). For example, the URI `+http://example.com/mycat+` might identify the resource describing someone’s cat.
 
@@ -53,13 +62,13 @@ https://tools.ietf.org/html/rfc7231#section-4.3.1[RFC 7231] lists the request me
 https://tools.ietf.org/html/rfc7231#section-6[RFC 7231] defines status codes: each HTTP response must specify exactly one, which can be e.g. 200 OK, 404 Not Found, or may indicate that the request has not been understood, that the resource has moved, …
 
 == APIs
-Supplementary to “manual” surfing, that mostly involve HTML pages and images being displayed in your browser, many major websites nowadays permit automated usage of their content. This is made possible through an API of theirs. For example, https://www.mediawiki.org/wiki/API:Main_page documents how to query data stored on a media wiki powered web site (such as Wikipedia). https://www.programmableweb.com/[ProgrammableWeb] lists many such APIs.
+Supplementary to “manual” surfing, that mostly involve HTML pages and images being displayed in your browser, many major websites nowadays permit automated usage of their content. This is made possible through an https://www.programmableweb.com/api-university/what-are-apis-and-how-do-they-work[API] of theirs. For example, https://www.mediawiki.org/wiki/API:Main_page documents how to query data stored on a media wiki powered web site (such as Wikipedia). https://www.programmableweb.com/[ProgrammableWeb] lists many such APIs.
 
 Such APIs generally rely on content negotiation and use appropriate request methods and status codes, as explained above.
 
 [[curl]]
 == Test using the command line
-GET requests may be sent by simply directing your browser to the right adress. POST requests (and other request methods, and messages requiring specific header values) can’t be sent so easily with a browser. I recommend to use https://en.wikipedia.org/wiki/cURL[`curl`]: a command line tool that sends HTTP requests and displays the response sent by the server.
+GET requests may be sent by simply directing your browser to the right adress. Other request methods (and messages requiring specific header values) can’t be sent so easily with a browser. I recommend to use https://en.wikipedia.org/wiki/cURL[`curl`]: a command line tool that sends HTTP requests and displays the response sent by the server.
 
 Quick help:
 
@@ -77,9 +86,12 @@ Other notes:
 * HTTP/2 is standardized by W3C as https://tools.ietf.org/html/rfc7540[RFC 7540] (HTTP/1.1 was previously defined under https://tools.ietf.org/html/rfc2616[RFC 2616], now obsolete).
 * A https://www.youtube.com/watch?v=aHxv_2BMJfw[presentation] (in French) about Open Data: L’Open Data à la loupe.
 * Some web sites voluntarily do not make their data automatically extractable: https://www.pagesjaunes.fr/infoslegales/mentionslegales[example]. Check legal conditions before collecting data.
+* HTTP conventions for the representation in query strings as &-separated pairs relate to the HTML form element when used as a GET method.
 
 === URIs
 * https://tools.ietf.org/html/rfc3986[RFC 3986]: Uniform Resource Identifier (URI) Generic Syntax, 2005 (obsoletes RFC 2396).
 * A URI with authority has the https://tools.ietf.org/html/rfc3986#section-3[form] scheme://authority path [?query][#fragment] (URIs also exist with different forms such as `mailto:John.Doe@example.com`, `tel:+1-816-555-1212`, ``urn:oasis:names:specification:docbook:dtd:xml:4.1.2``…)
-* Characters outside [letters of the basic latin alphabet, digits, and “unreserved characters” `-._~`] must be percent-encoded, except “reserved characters” `:$&'()*+,;=` that are explicitly allowed for in the specification of the chosen scheme when used accordingly (thus including `&` and `+` in a query string in the http scheme).
+* Characters in [letters of the basic latin alphabet, digits, and “unreserved characters” `-._~`] must not be percent-encoded
+* “Reserved characters” `:$&'()*+,;=` that are explicitly allowed for in the specification of the chosen scheme when used accordingly (thus including `&` and `+` in a query string in the http scheme) must not be percent-encoded
+* Other characters must be percent-encoded
 
