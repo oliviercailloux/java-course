@@ -181,9 +181,12 @@ Git in practice
 == S16 (16th June)
 
 * Work on project
-//* (présentations dernière séance, remise dimanche 18 juin, ne pas utiliser de blanco)
+* About presentations: 20 min. Slides on GitHub.
 
 == S17 (27th June)
 
 * Presentations
+* votes
+* Evals and License
+* https://www.youtube.com/watch?v=aHxv_2BMJfw
 
