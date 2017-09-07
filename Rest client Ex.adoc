@@ -1,0 +1,110 @@
+= REST client: Exercices
+:toc:
+:toc-placement: preamble
+:sectanchors:
+
+It is important to understand how web services that you develop will be used by your clients. Here we will adopt the role of the client and get some training at using web services. It will also be useful when you will want to test your own web services.
+
+== curl
+=== Set up
+* Read link:HTTP.adoc[HTTP] and in particular the section about curl
+* Install curl on your machine
+
+=== Using curl
+Warm up. We download an HTML page.
+
+* Choose your favorite Wikipedia article. Obtain its URI using your normal web browser.
+* Use curl in a command line to retrieve the HTML page you have chosen.
+* Open that local HTML page in your browser. What do you observe? What do you deduce your browser does when surfing to a normal HTML page, as compared to the use you just did of curl?
+
+Simple API use. We use JSONPlaceholder, a simple web service that delivers fake data.
+
+* Read the JSONPlaceholder https://jsonplaceholder.typicode.com/[front page] (do not worry if you do not understand javascript)
+* Use curl to get the “comments” resource number 2. You should receive the following. What is the return code? What is the content type?
+
+.Return from JSONPlaceholder
+[source, json]
+----
+{
+  "postId": 1,
+  "id": 2,
+  "name": "quo vero reiciendis velit similique earum",
+  "email": "Jayne_Kuhic@sydney.com",
+  "body": "est natus enim nihil est dolore omnis voluptatem numquam\net omnis occaecati quod ullam at\nvoluptatem error expedita pariatur\nnihil sint nostrum voluptatem reiciendis et"
+}
+----
+
+Real-life API use. We get some data from Wikipedia.
+
+Our goal is to programmatically retrieve all the modifications (revisions) that have occurred at the  Bertrand Russel https://en.wikipedia.org/wiki/Bertrand_russel[page] in between 29th of July and 1st of August, 2017.
+
+This can be seen https://en.wikipedia.org/w/index.php?title=Bertrand_Russell&action=history[here]. We could of course retrieve this exact page using curl, and parse the resulting HTML. But this is very impractical and inefficient, as that page is made for humans and not for machines, and it is fragile, as nothing guarantees that the HTML code in that page will not change.
+
+* Read Wikipedia’s API https://www.mediawiki.org/wiki/API:Main_page[doc] to find out how to retrieve the data we want in json format.
+* Retrieve this data using curl.
+* More specifically, we want the return to contain, for each revision, the revision id, parent id, user name (who made the revision), and timestamp.
+
+You should obtain the following result.
+
+.Return from Wikipedia
+[source, json]
+----
+{
+    "batchcomplete": "",
+    "query": {
+        "pages": {
+            "4163": {
+                "pageid": 4163,
+                "ns": 0,
+                "title": "Bertrand Russell",
+                "revisions": [
+                    {
+                        "revid": 793293850,
+                        "parentid": 793250564,
+                        "user": "Worldbruce",
+                        "timestamp": "2017-07-31T21:20:40Z"
+                    },
+                    {
+                        "revid": 793250564,
+                        "parentid": 793247860,
+                        "user": "Rjwilmsi",
+                        "timestamp": "2017-07-31T15:53:12Z"
+                    },
+                    {
+                        "revid": 793247860,
+                        "parentid": 793063433,
+                        "user": "Rjwilmsi",
+                        "timestamp": "2017-07-31T15:32:40Z"
+                    },
+                    {
+                        "revid": 793063433,
+                        "parentid": 792753782,
+                        "user": "Str1977",
+                        "timestamp": "2017-07-30T11:19:45Z"
+                    }
+                ]
+            }
+        }
+    }
+}
+----
+
+=== Supplements
+If desired, you may also get trained at using curl for POSTing data and making HTTP requests using other verbs. Use the JSONPlaceholder web service, or choose one of the numerous APIs from https://www.programmableweb.com/[ProgrammableWeb] (but be aware that many require registration and may be non free).
+I suggest to leave curl for now, and switch to Java.
+
+== From Java
+We will now access those same web services using Java, and more specifically the JAX-RS standard.
+
+=== Set up
+* Read link:JAX-RS%20client.adoc[JAX-RS client].
+* If you do not know Maven, you may simply clone https://github.com/oliviercailloux/empty-rest-client[this] to get started quickly. The project already includes the right dependency to a Java JAX-RS client library.
+* Using Eclipse, use `File` / `Import…` / `Existing Maven Projects`, give it the name of the folder where you cloned the project.
+
+=== Access WS from Java
+* Replace the right method in your project with the skeleton code from the JAX-RS client page (above).
+* Replace the skeleton code with the right calls so that you access JSONPlaceholder as requested in the exercice above. Check that you obtain the expected result. Use appropriate “URI templates” (`{path}`) for nicer code.
+* Add a method that retrieves the Wikipedia page as requested per the second exercice, above.
+
+A solution is https://github.com/oliviercailloux/empty-rest-client/tree/example[here]. Do not cheat! Look at the solution only after you solved it by yourself.
+
