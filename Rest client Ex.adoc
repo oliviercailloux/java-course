@@ -7,17 +7,17 @@ It is important to understand how web services that you develop will be used by 
 
 == curl
 === Set up
-* Read link:HTTP.adoc[HTTP] and in particular the section about curl
+* Read https://github.com/oliviercailloux/java-course/HTTP.adoc[HTTP] and in particular the section about curl
 * Install curl on your machine
 
 === Using curl
-Warm up. We download an HTML page.
+First: Warm up. We download an HTML page.
 
 * Choose your favorite Wikipedia article. Obtain its URI using your normal web browser.
 * Use curl in a command line to retrieve the HTML page you have chosen.
 * Open that local HTML page in your browser. What do you observe? What do you deduce your browser does when surfing to a normal HTML page, as compared to the use you just did of curl?
 
-Simple API use. We use JSONPlaceholder, a simple web service that delivers fake data.
+Second: Simple API use. We use JSONPlaceholder, a simple web service that delivers fake data.
 
 * Read the JSONPlaceholder https://jsonplaceholder.typicode.com/[front page] (do not worry if you do not understand javascript)
 * Use curl to get the “comments” resource number 2. You should receive the following. What is the return code? What is the content type?
@@ -34,7 +34,7 @@ Simple API use. We use JSONPlaceholder, a simple web service that delivers fake 
 }
 ----
 
-Real-life API use. We get some data from Wikipedia.
+Third: Real-life API use. We get some data from Wikipedia.
 
 Our goal is to programmatically retrieve all the modifications (revisions) that have occurred at the  Bertrand Russel https://en.wikipedia.org/wiki/Bertrand_russel[page] in between 29th of July and 1st of August, 2017.
 
