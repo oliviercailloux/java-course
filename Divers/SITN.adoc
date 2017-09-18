@@ -1,4 +1,6 @@
 = Cours SITN
+:toc:
+:sectanchors:
 
 == Références générales
 * https://github.com/oliviercailloux/projets/tree/master/EE[Projets] (sur GitHub)
@@ -30,7 +32,8 @@ Les commentaires utilisent les abréviations E1, E2, etc, pour se référer aux 
 
 == Plan
 === S1
-* https://github.com/oliviercailloux/java-course/tree/master/Git[Git & exercices]
+* https://github.com/oliviercailloux/java-course/raw/master/Pr%C3%A9sentation%20du%20cours%20EE/presentation.pdf[Présentation] du cours
+* https://github.com/oliviercailloux/java-course/raw/master/Git/presentation.pdf[Git & exercices]
 * Affectation en projets
 * Client WS, https://github.com/oliviercailloux/java-course/tree/master/Rest%20client%20Ex.adoc[exercices]
 
