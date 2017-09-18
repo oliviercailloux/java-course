@@ -1,0 +1,84 @@
+= Cours SITN
+
+== Plan
+. S1
+** Git, exercices : cf. diapos
+*** Se créer un compte
+*** Me fournir le nom d’utilisateur, si nécessaire : devoir MyCourse
+** Affectation en projets
+** Client WS, https://github.com/oliviercailloux/java-course/Rest%20client%20Ex.adoc[exercices]
+** https://github.com/oliviercailloux/java-course/Tools.adoc[Tools.adoc]
+. S2
+// exercices Maven
+** Maven, exercices : cf. racine
+** Familiarisation avec GlassFish
+** https://github.com/oliviercailloux/java-course/Servlets.adoc[Servlets.adoc]
+*** Compilation avec Maven et déploiement manuel
+*** Compilation et déploiement via Eclipse : voir App servers from Eclipse à la racine
+** Fail-fast, exceptions, Optional
+. S3
+** Postman ?
+** Tests unitaires et classpath ?
+** Travis CI
+** Servlets multi-formats
+** JAX-B ?
+. S4
+** Cookies
+** REST
+** App online
+. S5
+** ORM exercices niveau serveur
+. S6
+** Suite ORM
+** SOAP ?
+. S7
+** Message beans ?
+. S8
+** Présentation des projets
+** Votes
+
+== Références générales
+* https://github.com/oliviercailloux/projets/EE[Projets] (sur GitHub)
+* https://github.com/oliviercailloux/samples[Échantillons] (sur GitHub)
+* « racine » désigne la https://github.com/oliviercailloux/java-course[racine] de ce dépôt GitHub
+* Goncalves - Beginning Java EE 7 : http://doi.org/10.1007/978-1-4302-4627-5[Springer], https://proxy.bu.dauphine.fr/http/doi.org/10.1007/978-1-4302-4627-5[BU] 
+* XML in a nutshell : https://portail.bu.dauphine.fr/bibliodata.html?record_id=ALEPH000026526&rtype=book[BU 1], https://portail.bu.dauphine.fr/bibliodata.html?record_id=ALEPH000013764&rtype=book[BU 2], https://portail.bu.dauphine.fr/bibliodata.html?record_id=ALEPH000035938&rtype=book[BU (en français)]
+
+Voir aussi la section références de chaque ensemble de diapositives, par sujet.
+
+== Exigences relatives aux projets
+* Approche par contrat
+** Gestion appropriée des exceptions
+** Avec Javadoc pour documenter le contrat lorsque nécessaire
+** Sans commentaires auto-générés (ne servent à rien et masquent les commentaires importants)
+* Avec tests unitaires ou fonctionnels (_au moins_ un test par servlet)
+* Utilisation appropriée des classes de la JRE et de bibliothèques tierces
+* Coder en anglais
+* Dépôt clair
+** Pas de produits transformés (.class par exemple)
+** Pas de fichiers propres à l’IDE (.project, .classpath, .settings pour Eclipse)
+** Projet Java (donc pom.xml) à la racine du dépôt
+** POM correct (responsabilité de _tous_ les membres)
+* Je dois voir vos contributions dans la branche `master` : fusionnez avant la séance. (Idée : https://fr.wikipedia.org/wiki/Int%C3%A9gration_continue[Intégration continue])
+* Répondre aux attentes du client : vérifier la compréhension !
+* Respecter les https://github.com/oliviercailloux/java-course/tree/master/Best%20practices[bonnes pratiques]
+
+== Commentaires lors évaluations des fonctionnalités
+Les commentaires utilisent les abréviations E1, E2, etc, pour se référer aux exigences ci-dessus ; S2.1 pour le point indiqué en 1 sous S2 ci-dessous ; BP Maven (par exemple) pour les Bonnes Pratiques Maven (voir lien ci-dessus).
+
+== Séances
+.S1
+.* Rediriger vos e-mails @ Dauphine si nécessaire pour vous assurer de recevoir les annonces
+.* Conseil : prendre de l’avance sur les fonctionnalités à implémenter (un point de difficulté par séance requis en moyenne)
+
+.S2
+.* À partir de cette séance vous êtes obligé d’avoir effectué x-2 points de difficultés avant la séance x. Donc par exemple, au moins un point de difficulté _entièrement accompli_ avant S3. Les points sont payables d’avance, autrement dit, les fonctions à moitié implémentées ne rapportent rien : si une fonction fournit 3 points de difficulté, elle ne vous rapporte rien tant que vous ne l’avez pas implémentée.
+.** Pour chaque fonctionnalité dont vous vous occupez : créer une issue sur votre projet GitHub. Son nom _doit_ être strictement égal au nom dans l’énoncé du projet. Vous enregistrer à deux (un binôme) dessus. Lorsque vous l’estimez terminée (je peux corriger), et que vous avez envoyé votre code sur la branche master, vous fermez l’issue.
+.** Je vous donne une note (la même pour les deux membres du binôme) pour cette issue. Je commente l’issue sur GitHub.
+.** Il est obligatoire pour l’ensemble des membres du projet de tenir compte de ces remarques (vous pouvez ré-ouvrir l’issue si vous le jugez nécessaire). Sinon, vous serez pénalisé en fin de projet ou pour d’autres issues si elles pâtissent du manque de qualité de l’issue précédente.
+.** Je ne fournis cependant pas de nouvelle note pour une issue déjà notée.
+.* Démarrage du projet
+.** Vous pouvez utiliser le `groupId` `io.github.oliviercailloux.y2017`
+.** Utilisez obligatoirement comme `artifactId` le nom de votre projet (avec espaces transformés en traits d’union)
+.** Lire les bonnes pratiques Maven
+
