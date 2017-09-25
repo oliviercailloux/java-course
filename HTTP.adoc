@@ -9,6 +9,7 @@ This document gives a (rough and incomplete) overview of the HTTP protocol, focu
 HTTP, Hypertext Transfer Protocol, is a W3C / IETF https://www.w3.org/Protocols/[standard] that describes a way of exchanging information between a client and a server. It is ubiquitous on the internet. 
 
 In an HTTP exchange:
+
 . a client sends an HTTP request to a server
 . the server sends an HTTP response back to the client
 
