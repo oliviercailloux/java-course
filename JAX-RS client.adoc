@@ -2,6 +2,7 @@
 
 JAX-RS Client API permits to easily access RESTful web services. This page provides a simple example use.
 
+== Dependency
 If you use Java SE, you need to add the JAX-RS API and a JAX-RS implementation to your dependencies.
 
 .Specify dependencies in your `pom.xml`
@@ -22,6 +23,7 @@ If you use Java SE, you need to add the JAX-RS API and a JAX-RS implementation t
 
 If you use Java EE, this is already provided by your application server.
 
+== Example use
 You may now use the JAX-RS Client API.
 
 [source,java]
