@@ -99,10 +99,10 @@ We will now access those same web services using Java, and more specifically the
 === Set up
 * Read link:JAX-RS%20client.adoc[JAX-RS client].
 * If you do not know Maven, you may simply clone https://github.com/oliviercailloux/empty-rest-client[this] to get started quickly. The project already includes the right dependency to a Java JAX-RS client library.
-* Using Eclipse, use `File` / `Import…` / `Existing Maven Projects`, give it the name of the folder where you cloned the project.
+** In Eclipse, use `File` / `Import…` / `Existing Maven Projects`, give it the name of the folder where you cloned the project.
 
 === Access WS from Java
-* Replace the right method in your project with the skeleton code from the JAX-RS client page (above).
+* Use the skeleton code from the JAX-RS client page (link above) and modify it to programmatically retrieve a simple web page.
 * Replace the skeleton code with the right calls so that you access JSONPlaceholder as requested in the exercice above. Check that you obtain the expected result. Use appropriate “URI templates” (`{path}`) for nicer code.
 * Add a method that retrieves the Wikipedia page as requested per the second exercice, above.
 
