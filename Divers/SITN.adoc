@@ -3,7 +3,7 @@
 :sectanchors:
 
 == Références générales
-* https://github.com/oliviercailloux/projets/tree/master/EE[Projets] (sur GitHub)
+* https://github.com/oliviercailloux/projets/tree/master/EE[Projets] Java EE (sur GitHub)
 * https://github.com/oliviercailloux/samples[Échantillons] (sur GitHub)
 * Goncalves - Beginning Java EE 7 : http://doi.org/10.1007/978-1-4302-4627-5[Springer], https://proxy.bu.dauphine.fr/http/doi.org/10.1007/978-1-4302-4627-5[BU] 
 * XML in a nutshell : https://portail.bu.dauphine.fr/bibliodata.html?record_id=ALEPH000026526&rtype=book[BU 1], https://portail.bu.dauphine.fr/bibliodata.html?record_id=ALEPH000013764&rtype=book[BU 2], https://portail.bu.dauphine.fr/bibliodata.html?record_id=ALEPH000035938&rtype=book[BU (en français)]
@@ -11,6 +11,13 @@
 Voir aussi la section références de chaque ensemble de diapositives, par sujet.
 
 == Exigences relatives aux projets
+* Pour chaque fonctionnalité dont vous vous occupez : créer une issue sur votre projet GitHub. Son nom _doit_ être strictement égal au nom dans l’énoncé du projet. Vous enregistrer à deux (un binôme) dessus. Lorsque vous l’estimez terminée (je peux corriger), et que vous avez fusionné votre code sur la branche master, vous fermez l’issue.
+* Je vous donne une note temporaire (la même pour les deux membres du binôme) pour cette issue. Je commente l’issue sur GitHub pour vous aider à améliorer votre code (et vos points) si nécessaire.
+* Vous pouvez ré-ouvrir l’issue si vous le jugez nécessaire, pour corriger les faiblesses soulignées dans mon commentaire, ou en créer une autre.
+* Un travail régulier est attendu. Je serai aussi exigeant lors de l’évaluation, voire plus exigeant, avec ceux qui n’ont pas travaillé régulièrement qu’avec ceux qui ont fourni des issues régulièrement. En outre, si vous attendez la fin du cours pour travailler sur votre projet, vous ratez l’opportunité de bénéficier des remarques.
+* Attendu : 9 heures de travail par personne entre chaque séance en moyenne ; un point de difficulté par binôme par séance en moyenne.
+* Conseil : changez partiellement les binômes à chaque issue pour faire tourner les connaissances et varier les plaisirs (et augmenter les points).
+
 . Approche par contrat
 .. Gestion appropriée des exceptions
 .. Avec Javadoc pour documenter le contrat lorsque nécessaire
@@ -35,58 +42,53 @@ Les commentaires utilisent les abréviations E1, E2, etc, pour se référer aux 
 * https://github.com/oliviercailloux/java-course/raw/master/Pr%C3%A9sentation%20du%20cours%20EE/presentation.pdf[Présentation] du cours
 * https://github.com/oliviercailloux/java-course/raw/master/Git/presentation.pdf[Git & exercices]
 * Affectation en projets
+* L’Open Data https://www.youtube.com/watch?v=aHxv_2BMJfw[à la loupe]
 * Client WS, https://github.com/oliviercailloux/java-course/tree/master/Rest%20client%20Ex.adoc[exercices]
 
 À faire
 
 . https://github.com/oliviercailloux/java-course/tree/master/Tools.adoc[Tools.adoc]
 . Se créer un compte sur GitHub
-. Me fournir le nom d’utilisateur, si nécessaire : devoir MyCourse
+. Me fournir le nom d’utilisateur, si nécessaire : via devoir https://mycourse.dauphine.fr/webapps/blackboard/execute/launcher?type=Course&id=_38082_1[MyCourse]
 . Rediriger vos e-mails @ Dauphine si nécessaire pour vous assurer de recevoir les annonces
-. Conseil : prendre de l’avance sur les fonctionnalités à implémenter (un point de difficulté par séance requis en moyenne)
+. Commencer à implémenter les fonctionnalités requises dans le projet
 
 === S2
 // exercices Maven
-** Maven, exercices
-** Familiarisation avec GlassFish
-** https://github.com/oliviercailloux/java-course/tree/master/Servlets.adoc[Servlets.adoc]
-*** Compilation avec Maven et déploiement manuel
-*** Compilation et déploiement via Eclipse : voir https://github.com/oliviercailloux/java-course/tree/master/App%20servers%20from%20Eclipse.adoc[App servers from Eclipse]
-** Fail-fast, exceptions, Optional
-** À partir de cette séance vous êtes obligé d’avoir effectué x-2 points de difficultés avant la séance x. Donc par exemple, au moins un point de difficulté _entièrement accompli_ avant S3. Seules les issues _fermées_ comptent.
-*** Pour chaque fonctionnalité dont vous vous occupez : créer une issue sur votre projet GitHub. Son nom _doit_ être strictement égal au nom dans l’énoncé du projet. Vous enregistrer à deux (un binôme) dessus. Lorsque vous l’estimez terminée (je peux corriger), et que vous avez envoyé votre code sur la branche master, vous fermez l’issue. Votre note dépendra uniquement du code au moment de cette fermeture initiale.
-*** Je vous donne une note (la même pour les deux membres du binôme) pour cette issue. Je commente l’issue sur GitHub.
-*** Il est obligatoire pour l’ensemble des membres du projet de tenir compte de ces remarques (vous pouvez ré-ouvrir l’issue si vous le jugez nécessaire). Sinon, vous serez pénalisé en fin de projet ou pour d’autres issues si elles pâtissent du manque de qualité de l’issue précédente.
-*** Je ne fournis cependant pas de nouvelle note pour une issue déjà notée.
-** Démarrage du projet
-*** Vous pouvez utiliser le `groupId` `io.github.oliviercailloux.y2017`
-*** Utilisez obligatoirement comme `artifactId` le nom de votre projet (avec espaces transformés en traits d’union)
-*** Lire les bonnes pratiques Maven
+* Maven & exercices
+* Familiarisation avec GlassFish
+* https://github.com/oliviercailloux/java-course/tree/master/Servlets.adoc[Servlets.adoc]
+** Compilation avec Maven et déploiement manuel
+** Compilation et déploiement via Eclipse : voir https://github.com/oliviercailloux/java-course/tree/master/App%20servers%20from%20Eclipse.adoc[App servers from Eclipse]
+* Fail-fast, exceptions, Optional
+* Démarrage du projet
+** Vous pouvez utiliser le `groupId` `io.github.oliviercailloux.y2017`
+** Utilisez _obligatoirement_ comme `artifactId` le nom de votre projet (avec espaces transformés en traits d’union)
+** Lire les bonnes pratiques Maven
 
 === S3
-** Postman ?
-** Tests unitaires et classpath ?
-** Travis CI
-** Servlets multi-formats
-** JAX-B ?
+* Postman ?
+* Tests unitaires et classpath ?
+* Travis CI
+* Servlets multi-formats
+* JAX-B ?
 
 === S4
-** Cookies
-** REST
-** App online
+* Cookies
+* REST
+* App online
 
 === S5
-** ORM exercices niveau serveur
+* ORM exercices niveau serveur
 
 === S6
-** Suite ORM
-** SOAP ?
+* Suite ORM
+* SOAP ?
 
 === S7
-** Message beans ?
+* Message beans ?
 
 === S8
-** Présentation des projets
-** Votes
-
+* Présentation des projets
+* Votes
 
