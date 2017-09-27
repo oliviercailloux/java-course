@@ -48,9 +48,10 @@ Les commentaires utilisent les abréviations E1, E2, etc, pour se référer aux 
 
 . https://github.com/oliviercailloux/java-course/tree/master/Tools.adoc[Tools.adoc]
 . Se créer un compte sur GitHub
+. Terminer exercices git (voir diapositives git)
+. Exercices curl (voir exercices client WS)
 . Me fournir le nom d’utilisateur, si nécessaire : via devoir https://mycourse.dauphine.fr/webapps/blackboard/execute/launcher?type=Course&id=_38082_1[MyCourse]
 . Rediriger vos e-mails @ Dauphine si nécessaire pour vous assurer de recevoir les annonces
-. Commencer à implémenter les fonctionnalités requises dans le projet
 
 === S2
 // exercices Maven
@@ -65,6 +66,10 @@ Les commentaires utilisent les abréviations E1, E2, etc, pour se référer aux 
 ** Vous pouvez utiliser le `groupId` `io.github.oliviercailloux.y2017`
 ** Utilisez _obligatoirement_ comme `artifactId` le nom de votre projet (avec espaces transformés en traits d’union)
 ** Lire les bonnes pratiques Maven
+
+À faire
+
+. Commencer à implémenter les fonctionnalités requises dans le projet
 
 === S3
 * Postman ?
