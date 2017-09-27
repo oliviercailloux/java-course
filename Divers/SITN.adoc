@@ -69,7 +69,7 @@ Les commentaires utilisent les abréviations E1, E2, etc, pour se référer aux 
 
 À faire
 
-. Commencer à implémenter les fonctionnalités requises dans le projet
+. Commencer le projet
 
 === S3
 * Postman ?
