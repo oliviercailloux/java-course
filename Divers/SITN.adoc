@@ -42,7 +42,6 @@ Les commentaires utilisent les abréviations E1, E2, etc, pour se référer aux 
 * https://github.com/oliviercailloux/java-course/raw/master/Pr%C3%A9sentation%20du%20cours%20EE/presentation.pdf[Présentation] du cours
 * https://github.com/oliviercailloux/java-course/raw/master/Git/presentation.pdf[Git & exercices]
 * Affectation en projets
-* L’Open Data https://www.youtube.com/watch?v=aHxv_2BMJfw[à la loupe]
 * Client WS, https://github.com/oliviercailloux/java-course/tree/master/Rest%20client%20Ex.adoc[exercices]
 
 À faire
@@ -55,6 +54,7 @@ Les commentaires utilisent les abréviations E1, E2, etc, pour se référer aux 
 
 === S2
 // exercices Maven
+* L’Open Data https://www.youtube.com/watch?v=aHxv_2BMJfw[à la loupe]
 * Maven & exercices
 * Familiarisation avec GlassFish
 * https://github.com/oliviercailloux/java-course/tree/master/Servlets.adoc[Servlets.adoc]
