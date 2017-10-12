@@ -1,0 +1,47 @@
+= Maven
+:sectanchors:
+
+Simple exercices for Maven. The reader is supposed to know already the basics of how Maven works (see slides in this course).
+
+== Default sample project
+* Open a terminal. Move into a folder where you want to put your new project (which will be created as a sub-folder).
+* Type `mvn archetype:generate`. 
+
+The command `mvn` followed by a goal runs Maven with this goal.
+This command simply executes the plugin goal `archetype:generate`. This is because `archetype:generate` is the name of a plugin goal and not the name of a phase of a lifecycle. This goal is defined in the `archetype` Maven plugin.
+
+The command displays a long list of archetypes included in your installation. We’ll start by using the `maven-archetype-quickstart` archetype (that’s its artifactId).
+
+* Find this one by using the filter in the command line, then select it using its number.
+* Answer the remaining questions. You can simply hit ENTER when a default answer is proposed, if it suits you.
+
+Your project gets created in a sub-folder of your current position.
+
+* Browse the files using a file explorer. Which files has maven created? What are their purpose?
+* In the terminal, move into the newly created project.
+* Type `mvn compile`. What does it do, and why (how does it work)? Is `compile` a phase, or a plugin goal?
+* What has changed on your hard disk?
+* Run the compiled application in the command line. (How to do this?) What does it do?
+
+== Modern project
+Let’s now use a different archetype to generate a project better suited for our future use.
+
+* Move into the folder of your choice to prepare for the new project creation.
+* Use the appopriate command to trigger the `archetype:generate` goal again.
+* This time, use the `io.github.oliviercailloux:java-se-1.8-archetype` archetype.
+* Answer the required questions.
+
+Your project gets created in a sub-folder of your current position.
+
+* What changed, compared to the previous project? Compare in particular both `pom.xml` files: what changed? What will be the effect of those changes?
+* Compare your answer to the https://github.com/oliviercailloux/java-se-1.8-archetype[documentation].
+
+== Eclipse
+Let’s now import the project into Eclipse.
+
+* Run Eclipse
+* Import using: `File` / `Import` / `Existing Maven Projects`
+
+//== Refs
+//* http://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_jar_packaging
+
