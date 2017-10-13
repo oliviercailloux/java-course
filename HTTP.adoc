@@ -57,7 +57,7 @@ A GET request method asks the server for a current representation of the target 
 
 A POST request method, on the contrary, typically has a message body. It asks the server to perform resource-specific processing on the message body. It is typically used to post new data to a server, for example, to post a new image of your cat for it to become accessible at some URI.
 
-https://tools.ietf.org/html/rfc7231#section-4.3.1[RFC 7231] lists the request methods available in HTTP, and defines properties of request methods. Of special importance are safe methods (essentially read-only) and idempotent methods (repeated identical requests have the same effect as a single request). Safe implies idempotent. GET is both, POST is neither.
+https://tools.ietf.org/html/rfc7231#section-4.3.1[RFC 7231] lists the request methods available in HTTP, and defines properties of request methods. Of special importance are safe methods (essentially read-only) and idempotent methods (repeated identical requests have the same effect as a single request). Safe implies idempotent. GET is both, POST is neither. (That’s important for https://www.mnot.net/cache_docs/[caching], for example.)
 
 == Status code
 https://tools.ietf.org/html/rfc7231#section-6[RFC 7231] defines status codes: each HTTP response must specify exactly one, which can be e.g. 200 OK, 404 Not Found, or may indicate that the request has not been understood, that the resource has moved, …
