@@ -18,7 +18,7 @@ For Java EE, add:
 
 * https://www.eclipse.org/downloads/[Eclipse IDE] “for Java EE Developers”
 * `GlassFish Tools` plug-in: from Eclipse, Help / Eclipse Marketplace…
-* https://javaee.github.io/glassfish/download[GlassFish] 4.1.2 (Full Platform)
+* https://javaee.github.io/glassfish/download[GlassFish] (Full Platform)
 
 == Git
 
