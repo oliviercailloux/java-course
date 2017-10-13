@@ -1,6 +1,5 @@
 = Servlets in brief
 :toc:
-:toc-placement: preamble
 :sectanchors:
 
 This document gives a (rough and incomplete) overview of Servlets in Java EE application servers. This document may serve as an introduction to application servers in Java EE.
