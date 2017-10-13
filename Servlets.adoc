@@ -44,7 +44,7 @@ You then package your application as a WAR (Web ARchive format), and deploy it t
 * Do it first with no help from your IDE: use `mvn package`, then move the resulting WAR file into the appropriate deployment folder.
 * See link:App%20servers%20from%20Eclipse.adoc[here] for automatic deployment using Eclipse.
 
-Each Java EE application has a context root, the root URI at which your application is reachable on the server. If your application context root is `MyContextRoot` and your application is deployed on a server reachable at `+http://example.com+`, then your application is reachable at the `+http://example.com/MyContextRoot+` root URI. (The context root can be configured on your application server, by default it is usually the name of your WAR file without the extension.)
+Each Java EE application has a context root, the root URI at which your application is reachable on the server. If your application context root is `MyContextRoot` and your application is deployed on a server reachable at `+http://example.com+`, then your application is reachable at the `+http://example.com/MyContextRoot+` root URI. (The context root can be configured on your application server, by default it is usually the name of your WAR file without the extension. You will usually use `localhost` as a host name while developing.)
 
 The web container will recognize your servlets at deployment time. When the server will receive an HTTP request targeted at your application (meaning: targeted at the corresponding context root), it will examine its target URI and dispatch it to the appropriate servlet, according to the values in the `@WebServlet` annotations. For example, a request targeted at `+++http://example.com/MyContextRoot/sayHelloServlet+++` will be sent to the application corresponding to the `MyContextRoot` context root, and inside this application, to the servlet annotated with `@WebServlet("/sayHelloServlet")`.
 
@@ -62,9 +62,14 @@ Once you have written your servlet, you want to easily test it. See link:HTTP.ad
 If you use Glassfish, some useful debugging tips are link:Glassfish.adoc[there].
 
 == Your turn
-* Write (and test) a servlet that says: “Hello, world” in plain text, as response to a GET request.
+* Write (and test) a servlet that says: “Hello world” in plain text, as response to a GET request.
+* Log what you do in your servlet code; check that it appears indeed in the log.
+* Return “Hello world” in HTML instead of text: `<html><body><p>Hello world</p></body></html>`. How can you make sure this will be interpreted as HTML and not plain text? What would be the difference for the user?
+* Make sure that special characters are shown correctly. Test by sending rather “Éh salut !”.
 * A servlet that is able to add two numbers given in parameters of the GET request. (Hint: check the javadoc of `HttpServletRequest`.)
-* 
+* If one of the parameters is missing or is not a number or if multiple values are associated to a given parameter, return an error message. (Hint: check the javadoc of `HttpServletResponse`.)
+* Add a static HTML `index.html` file to your project, in the folder `src/main/webapp`. Maven will package it correctly in the WAR file (it will put it in the root of the archive) so that it is visible by your users. Browse to `+http://localhost/MyContextRoot/index.html+` to test it.
+
 == Refs
 * Servlet 4.0 (JSR 369) specification: http://download.oracle.com/otn-pub/jcp/servlet-4-final-spec/servlet-4_0_FINAL.pdf[PDF]
 * https://javaee.github.io/tutorial/servlets.html[Java Servlet Technology] in the Java EE 8 Tutorial
