@@ -1,5 +1,5 @@
 = An overview of the Glassfish Java EE application server
-:toc:
+:toc: preamble
 :sectanchors:
 
 This document gives a (rough and incomplete) overview of Glassfish, a Java EE application server. This document may serve as an introduction to application servers in Java EE.
