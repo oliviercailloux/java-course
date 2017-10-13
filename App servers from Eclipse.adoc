@@ -1,6 +1,5 @@
 = Configure Application Servers in Eclipse
-:toc:
-:toc-placement: preamble
+:toc: preamble
 :sectanchors:
 
 This document briefly explains how to configure Java EE Application Servers from Eclipse. We illustrate with GlassFish.

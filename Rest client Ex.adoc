@@ -1,6 +1,5 @@
 = REST client: Exercices
-:toc:
-:toc-placement: preamble
+:toc: preamble
 :sectanchors:
 
 It is important to understand how web services that you develop will be used by your clients. Here we will adopt the role of the client and get some training at using web services. It will also be useful when you will want to test your own web services.

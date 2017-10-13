@@ -1,0 +1,37 @@
+= HTML in brief
+:toc: preamble
+:sectanchors:
+
+This document gives a _rough_ and _incomplete_ overview of the link:https://www.w3.org/TR/html5/[HTML 5 specification] (W3C Recommendation, 28 October 2014).
+
+NOTE: The reader supposedly has basic knowledge of XML. This document is conceived as a refresher about some of the terms covered in the HTML specification (HTML syntax, XHTML…) and how those related terms compare. It is not conceived as an introduction to HTML for an audience who knows nothing about HTML.
+
+== Introduction
+* HTML is a language.
+* This language is used to define documents, called HTML documents.
+* An in-memory representation of an HTML document is called a Document Object Model (DOM).
+
+The HTML spec defines:
+* the HTML language (an abstract language);
+* APIs to interact with the DOM;
+* two concrete syntaxes for such documents: the HTML syntax (version 5) and the XHTML syntax (version 5).
+
+The XHTML syntax is a kind of XML.
+
+A document sent with the `text/html` MIME type is to be processed as a document in HTML syntax. On the contrary, the `application/xhtml+xml` MIME type announces a document in XHTML syntax.
+
+Different syntaxes allow for somewhat different contents. For example, the HTML syntax does not allow for namespace content.
+
+A DOM (representing an HTML document) is a tree of nodes. It may contain a DocumentType node, Element nodes, Text nodes, and more. A DOM represents either an HTML document object or an XML document object. (DOMs are used also outside of the HTML spec, for example to represent other kinds of XML documents than XHTML documents.)
+
+A document written in XHTML syntax can be thought of as an XML document represented as an XML Infoset; as a serialized XML document; or as a DOM representing an XML document object. The elements contained in a document written in XHTML syntax are typically (though not necessarily exclusively) in the HTML namespace. Elements in the HTML namespace are called HTML elements.
+
+== The HTML syntax
+A DOCTYPE is a required preamble. `<!DOCTYPE html>` is recommended.
+
+== The XHTML syntax
+XML documents may contain a DOCTYPE.
+
+== TODO
+Clarify. XHTML syntax is a serialization? Then, not a DOM representation. HTML document objects contain elements that are considered, from the DOM POV, to be in the HTML namespace as well.
+

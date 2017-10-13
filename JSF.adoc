@@ -1,6 +1,5 @@
 = JSF in brief
-:toc:
-:toc-placement: preamble
+:toc: preamble
 :sectanchors:
 
 This document gives a _rough_ and _incomplete_ overview of JavaServer Faces (JSF, 2.2, https://jcp.org/en/jsr/detail?id=344[JSR 344]).

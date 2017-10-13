@@ -1,6 +1,5 @@
 = WSDL in brief
-:toc:
-:toc-placement: preamble
+:toc: preamble
 :sectanchors:
 
 This document gives a _rough_ and _incomplete_ overview of WSDL 1.1. (WSDL 2.0 being not much supported at the moment.)

@@ -1,6 +1,5 @@
 = HTTP in brief
-:toc:
-:toc-placement: preamble
+:toc: preamble
 :sectanchors:
 
 This document gives a (rough and incomplete) overview of the HTTP protocol, focusing mainly on usage of web services.

@@ -1,6 +1,5 @@
 = SOAP in brief
-:toc:
-:toc-placement: preamble
+:toc: preamble
 :sectanchors:
 
 This document gives a _rough_ and _incomplete_ overview of SOAP 1.2.

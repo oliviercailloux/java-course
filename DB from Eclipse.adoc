@@ -1,6 +1,5 @@
 = Access databases from Eclipse
-:toc:
-:toc-placement: preamble
+:toc: preamble
 :sectanchors:
 
 This document briefly explains how to access SQL databases from Eclipse. We illustrate with a PostgreSQL DB.
