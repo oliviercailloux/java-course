@@ -2,26 +2,26 @@
 :toc: preamble
 :sectanchors:
 
-This document briefly explains how to configure Java EE Application Servers from Eclipse. We illustrate with GlassFish.
+This document briefly explains how to configure Java EE Application Servers from Eclipse. We illustrate with GlassFish 4.
 
 == Runtime environment
 
 * First, you need a Runtime Environment (RE). This contains the various libraries that implement (part of) the Java EE specifications.
 * You must have already installed the `GlassFish Tools` plugin for Eclipse (see link:Tools.adoc[Tools]). If you want another server, you probably need another plugin.
-* Within Eclipse: `Preferences / Server / Runtime Environments`. Add your local GlassFish installation there. Note that you need to point Eclipse to the `glassfish` subfolder inside your GlassFish installation (e.g. `/usr/local/share/glassfish5/glassfish`). Name it `My GlassFish 5 RE`. (You should not mix up Runtime Environments and servers!)
+* Within Eclipse: `Preferences / Server / Runtime Environments`. Add your local GlassFish installation there. Note that you need to point Eclipse to the `glassfish` subfolder inside your GlassFish installation (e.g. `/usr/local/share/glassfish5/glassfish`). Name it `My GlassFish 4 RE`. (You should not mix up Runtime Environments and servers!)
 
 Now you may add this RE to any of your existing Eclipse Java EE projects. This will add the corresponding libraries in the classpath.
 
-* Go to the project properties and `Targeted Runtime`, select `My GlassFish 5 RE`.
+* Go to the project properties and `Targeted Runtime`, select `My GlassFish 4 RE`.
 
 You should now be able to deploy your project to your application server manually.
-From Eclipse, export your project as an archive. Note that Eclipse is clever enough not to include the Runtime Environments libraries in your archive. (You can see that by uncompressing the produced archive.) Put the archive inside the relevant folder in your application server (e.g. `/usr/local/share/glassfish5/glassfish/domains/domain1/autodeploy`). Check that your application is reachable.
+From Eclipse, export your project as an archive. Note that Eclipse is clever enough not to include the Runtime Environments libraries in your archive. (You can see that by uncompressing the produced archive.) Put the archive inside the relevant folder in your application server (e.g. `/usr/local/share/glassfish4/glassfish/domains/domain1/autodeploy`). Check that your application is reachable.
 
 == Servers
 In order to deploy your application from within Eclipse, Eclipse must “see” your server.
 
 * Show the Servers view in Eclipse. It lists the servers known to Eclipse.
-* Use the context menus: `New` (name your server `My GlassFish 5 server`), then use `Add and Remove`, `Publish`, and other options as needed.
+* Use the context menus: `New` (name your server `My GlassFish 4 server`), then use `Add and Remove`, `Publish`, and other options as needed.
 
 WARNING: You should check “Use JAR archives for deployment” in your GlassFish server properties (reachable from the context menu from your server in the server view). (Otherwise, after a failed deployment, a bug makes your application appear as being deployed in Eclipse, when it is in fact unknown to your application server. In this case, any further attempt of deployment from Eclipse will fail. You must then remove your application from the server (from within Eclipse server view) so that Eclipse realizes that the application is not there.)
 
