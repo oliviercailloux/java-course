@@ -1,0 +1,51 @@
+= JSON
+
+A short document about simple manipulation of JSON using the Java API for JSON Processing (javax.json-api 1.1)
+
+== Dependency
+If you use Java SE, you need to add the http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22javax.json%22[javax JSON API] to your dependencies.
+
+.Specify dependencies in your `pom.xml`
+[source,xml]
+----
+<dependency>
+	<groupId>javax.json</groupId>
+	<artifactId>javax.json-api</artifactId>
+	<version>1.1</version>
+</dependency>
+----
+
+If you use Java EE, this is already provided by your application server.
+
+== Example use
+You may now use the API. Check https://javaee.github.io/tutorial/jsonp.html[here] for a tutorial.
+
+.Obtain a json object from a String
+[source,java]
+----
+public JsonObject asJson(String data) {
+	JsonObject json;
+	try (JsonReader jr = Json.createReader(new StringReader(data))) {
+		json = jr.readObject();
+	}
+}
+----
+
+.Pretty print a json value
+[source,java]
+----
+public String asPrettyString(JsonValue json) {
+	StringWriter stringWriter = new StringWriter();
+	JsonWriterFactory writerFactory = Json.createWriterFactory(ImmutableMap.of(JsonGenerator.PRETTY_PRINTING, true));
+	try (JsonWriter jsonWriter = writerFactory.createWriter(stringWriter)) {
+		jsonWriter.write(json);
+	}
+	return stringWriter.toString();
+}
+----
+
+This example uses https://github.com/google/guava[Guava] to create the `Map` object. (Inspiration: https://stackoverflow.com/a/32500882[SO].)
+
+== References
+* https://jcp.org/en/jsr/detail?id=374[JSR 374]: Java API for JSON Processing 1.1 (the specs are exclusively the javadoc of the API)
+
