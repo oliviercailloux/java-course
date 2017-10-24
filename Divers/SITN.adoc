@@ -11,12 +11,12 @@
 Voir aussi la section références de chaque ensemble de diapositives, par sujet.
 
 == Exigences relatives aux projets
-* Pour chaque fonctionnalité dont vous vous occupez : créer une issue sur votre projet GitHub. Son nom _doit_ être strictement égal au nom dans l’énoncé du projet. Vous enregistrer à deux (un binôme) dessus. Lorsque vous l’estimez terminée (je peux corriger), et que vous avez fusionné votre code sur la branche master, vous fermez l’issue.
+* Pour chaque fonctionnalité dont vous vous occupez : créer une issue sur votre projet GitHub. Son nom _doit_ être strictement égal au nom dans l’énoncé du projet. Vous enregistrer à deux (un binôme) dessus. Lorsque vous l’estimez terminée (je peux corriger), et que vous avez fusionné votre code sur la branche master, vous fermez l’issue. (Idée : https://fr.wikipedia.org/wiki/Int%C3%A9gration_continue[Intégration continue])
 * Je vous donne une note temporaire (la même pour les deux membres du binôme) pour cette issue. Je commente l’issue sur GitHub pour vous aider à améliorer votre code (et vos points) si nécessaire.
 * Vous pouvez ré-ouvrir l’issue si vous le jugez nécessaire, pour corriger les faiblesses soulignées dans mon commentaire, ou en créer une autre.
-* Un travail régulier est attendu. Je serai aussi exigeant lors de l’évaluation, voire plus exigeant, avec ceux qui n’ont pas travaillé régulièrement qu’avec ceux qui ont fourni des issues régulièrement. En outre, si vous attendez la fin du cours pour travailler sur votre projet, vous ratez l’opportunité de bénéficier des remarques.
+* Un travail régulier est attendu (et la note le prendra en compte). En outre, si vous attendez la fin du cours pour travailler sur votre projet, vous ne bénéficiez pas du suivi.
 * Attendu : 9 heures de travail par personne entre chaque séance en moyenne ; un point de difficulté par binôme par séance en moyenne.
-* Conseil : changez partiellement les binômes à chaque issue pour faire tourner les connaissances et varier les plaisirs (et augmenter les points).
+* Conseil : changez partiellement chaque binômes à chaque issue pour faire tourner les connaissances et varier les plaisirs (et augmenter les points).
 
 . Approche par contrat
 .. Gestion appropriée des exceptions
@@ -25,12 +25,11 @@ Voir aussi la section références de chaque ensemble de diapositives, par sujet
 . Avec tests unitaires ou fonctionnels (_au moins_ un test par servlet)
 . Utilisation appropriée des classes de la JRE et de bibliothèques tierces
 . Coder en anglais
-. Dépôt clair
+. Dépôt clair (responsabilité de _tous_ les membres)
 .. Pas de produits transformés (.class par exemple)
 .. Pas de fichiers propres à l’IDE (.project, .classpath, .settings pour Eclipse)
 .. Projet Java (donc pom.xml) à la racine du dépôt
-.. POM correct (responsabilité de _tous_ les membres)
-. Je dois voir vos contributions dans la branche `master` : fusionnez avant la séance. (Idée : https://fr.wikipedia.org/wiki/Int%C3%A9gration_continue[Intégration continue])
+.. POM correct
 . Répondre aux attentes du client : vérifier la compréhension !
 . Respecter les https://github.com/oliviercailloux/java-course/tree/master/Best%20practices[bonnes pratiques]
 
@@ -54,24 +53,24 @@ Les commentaires utilisent les abréviations E1, E2, etc, pour se référer aux 
 . Rediriger vos e-mails @ Dauphine si nécessaire pour vous assurer de recevoir les annonces
 
 === S2
-// exercices Maven
 * L’Open Data https://www.youtube.com/watch?v=aHxv_2BMJfw[à la loupe]
-* Maven & exercices
-* Familiarisation avec GlassFish
+* Note : Optimisations en HTTP GET
+* https://github.com/oliviercailloux/java-course/raw/master/Maven/presentation.pdf[Maven] & https://github.com/oliviercailloux/java-course/raw/master/Maven.adoc[exercices]
+* Exercices client REST (lien ci-dessus)
+* https://github.com/oliviercailloux/java-course/raw/master/Java%20EE/presentation.pdf[Intro] Java EE, Familiarisation avec GlassFish
 * https://github.com/oliviercailloux/java-course/tree/master/Servlets.adoc[Servlets.adoc]
 ** Compilation avec Maven et déploiement manuel
 ** Compilation et déploiement via Eclipse : voir https://github.com/oliviercailloux/java-course/tree/master/App%20servers%20from%20Eclipse.adoc[App servers from Eclipse]
-* Fail-fast, exceptions, Optional
+
+À faire
+
 * Démarrage du projet
 ** Vous pouvez utiliser le `groupId` `io.github.oliviercailloux.y2017`
 ** Utilisez _obligatoirement_ comme `artifactId` le nom de votre projet (avec espaces transformés en traits d’union)
 ** Lire les bonnes pratiques Maven
 
-À faire
-
-. Commencer le projet
-
 === S3
+* Fail-fast, exceptions, Optional
 * Postman ?
 * Tests unitaires et classpath ?
 * Travis CI
@@ -95,5 +94,5 @@ Les commentaires utilisent les abréviations E1, E2, etc, pour se référer aux 
 
 === S8
 * Présentation des projets
-* Votes
+* Vote
 
