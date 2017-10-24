@@ -2,7 +2,7 @@
 :toc: preamble
 :sectanchors:
 
-This document gives a (rough and incomplete) overview of Servlets in Java EE application servers. This document may serve as an introduction to application servers in Java EE.
+This document gives a (rough and incomplete) overview of Servlets in Java EE application servers.
 
 NOTE: The reader supposedly has basic knowledge of link:HTTP.adoc[HTTP], link:Maven.adoc[Maven] and link:Glassfish.adoc[application servers]. (You are not obliged to use Glassfish, though.)
 
@@ -18,7 +18,13 @@ In this document, web requests are considered to be HTTP requests. [small]#(The 
 == Servlets in Java EE
 
 === My first web project
-To start a Maven compatible web project, create a new folder, use https://github.com/oliviercailloux/samples/blob/master/JavaEE-Servlets/pom.xml[this] sample pom, then import the project into Eclipse.
+To start a Maven compatible web project:
+
+* create a new folder,
+* use https://github.com/oliviercailloux/samples/blob/master/JavaEE-Servlets/pom.xml[this] sample pom,
+* change the groupId and artifactId to name your new project,
+* create the default folders that Maven expects: `/src/main/java` and (optionally) `/src/main/resources`, `/src/test/java`, `/src/test/resources`
+* import the project into Eclipse.
 
 === My first servlet
 For you to define a new servlet that will be recognized as such by the container, you must define a new class that represents your servlet, and:

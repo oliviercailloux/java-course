@@ -17,7 +17,7 @@ The command displays a long list of archetypes included in your installation. We
 
 Your project gets created in a sub-folder of your current position.
 
-* Browse the files using a file explorer. Which files has maven created? What are their purpose?
+* Which files has maven created? What are their purpose?
 * In the terminal, move into the newly created project.
 * Type `mvn compile`. What does it do, and why (how does it work)? Is `compile` a phase, or a plugin goal?
 * What has changed on your hard disk?
