@@ -39,38 +39,6 @@
 \addtocounter{framenumber}{-1}
 
 \section{Vue d’ensemble}
-\subsection{Java}
-\begin{frame}[fragile]
-	\frametitle{Le terme Java}
-	
-	Terme \emph{Java} adopté en 1995 (“as an example of yet another name that would never work”) \source{(source: \href{http://www.javaworld.com/article/2077265/core-java/so-why-did-they-decide-to-call-it-java-.html}{Java World})}
-	\hfill
-	\vfill
-	\begin{minipage}[b]{3cm}
-		\includegraphics[height=5.5cm]{Java_beans.jpg}
-	\end{minipage}%
-	\begin{minipage}[b]{(\columnwidth - 3cm)}
-		\centering{\includegraphics[height=9mm]{java-icon.png}}
-		\pause
-		\href{https://en.wikipedia.org/wiki/Java}{\includegraphics[width=\columnwidth]{Java_Locator.svg.png}}
-%		\mbox{} \raggedleft \source{Gunawan Kartapranata - \href{https://en.wikipedia.org/wiki/Java}{wikipedia}}
-	\end{minipage}
-\end{frame}
-
-\begin{frame}
-	\frametitle{A jar full of Java beans, please}
-	\begin{itemize}
-		\item JAR File : introduits à la version 1.1. Une collection de fichiers \texttt{.class}.
-		\item Java Bean (aussi version 1.1). (\href{http://www.oracle.com/technetwork/java/javase/documentation/spec-136004.html}{specs}) : un composant logiciel pour assemblage (par exemple, un bouton AWT, une feuille de calcul à placer dans un document).
-	\end{itemize}
-	\centering{
-		\href{http://houseofjava.ca/}{\includegraphics[height=3cm]{bean-jar.png}}
-	}
-	\begin{block}{Fun fact}
-		Voyons le nombre magique des fichiers \texttt{.class}…
-	\end{block}
-\end{frame}
-
 \subsection{Java EE}
 \begin{frame}
 	\frametitle{Java EE}
@@ -84,7 +52,6 @@
 			\item \href{http://www.oracle.com/technetwork/java/javaee/tech/index.html}{technologies}
 			\item Spécifications, dont API
 			\item Implémentation de référence
-			\item Version actuelle : 7
 		\end{itemize}
 	\end{block}
 \end{frame}
@@ -215,7 +182,7 @@
 			\item Fichier \texttt{.war}
 			\item Fichiers \texttt{.class} servlets et autres dans WEB-INF/lib ou WEB-INF/classes
 			\item Fichiers web statiques (.html, images, …) dans root
-			\item \texttt{WEB-INF/web.xml} : descripteur pour conteneur Web (JNDI)
+			\item \texttt{WEB-INF/web.xml} : descripteur pour conteneur Web
 			\item \texttt{META-INF/glassfish-web.xml} : descripteur pour glassfish
 			\item \texttt{META-INF/MANIFEST.MF}
 		\end{itemize}
@@ -284,65 +251,39 @@
 	\end{block}
 \end{frame}
 
-\section{Exercices}
+\section{Autres}
+\subsection{Java}
+\begin{frame}[fragile]
+	\frametitle{Le terme Java}
+	
+	Terme \emph{Java} adopté en 1995 (“as an example of yet another name that would never work”) \source{(source: \href{http://www.javaworld.com/article/2077265/core-java/so-why-did-they-decide-to-call-it-java-.html}{Java World})}
+	\hfill
+	\vfill
+	\begin{minipage}[b]{3cm}
+		\includegraphics[height=5.5cm]{Java_beans.jpg}
+	\end{minipage}%
+	\begin{minipage}[b]{(\columnwidth - 3cm)}
+		\centering{\includegraphics[height=9mm]{java-icon.png}}
+		\pause
+		\href{https://en.wikipedia.org/wiki/Java}{\includegraphics[width=\columnwidth]{Java_Locator.svg.png}}
+%		\mbox{} \raggedleft \source{Gunawan Kartapranata - \href{https://en.wikipedia.org/wiki/Java}{wikipedia}}
+	\end{minipage}
+\end{frame}
+
 \begin{frame}
-	\frametitle{À vous : calculons sur le web}
+	\frametitle{A jar full of Java beans, please}
 	\begin{itemize}
-		\item Installer GlassFish Tools (depuis Eclipse Marketplace)
-		\item Créer un module web (dynamique ou statique ?)
-		\item Créer un servlet
-		\item Programmer réponse : "ça fait 0"
-		\item Exporter le module dans une archive déployable (extension ?)
-		\item Déployer le module sur le serveur à la main
-		\item Envoyer une requête GET (comment ?) et voir "ça fait 0"
-		\item Se féliciter
+		\item JAR File : introduits à la version 1.1. Une collection de fichiers \texttt{.class}.
+		\item Java Bean (aussi version 1.1). (\href{http://www.oracle.com/technetwork/java/javase/documentation/spec-136004.html}{specs}) : un composant logiciel pour assemblage (par exemple, un bouton AWT, une feuille de calcul à placer dans un document).
 	\end{itemize}
-	\begin{block}{En plus}
-		\begin{itemize}
-			\item Configurer un Serveur GlassFish dans Eclipse
-			\item Accepter deux paramètres \texttt{add1} et \texttt{add2}
-			\item Renvoyer "ça fait " et l’addition des paramètres
-%			\item Renvoyer une erreur s’il manque un paramètre
-		\end{itemize}
+	\centering{
+		\href{http://houseofjava.ca/}{\includegraphics[height=3cm]{bean-jar.png}}
+	}
+	\begin{block}{Fun fact}
+		Voyons le nombre magique des fichiers \texttt{.class}…
 	\end{block}
 \end{frame}
 
-\begin{frame}[allowframebreaks]
-	\small
-	\frametitle{Exercices : servlets}
-	Ces exercices ont pour but de vous familiariser avec l’environnement de développement et vous permettre de vérifier que vous avez compris les concepts de base. Le but n’est atteint que si vous jouez le jeu : évitez de chercher comment faire sur internet ! Utilisez de l’aide seulement si vous êtes bloqués.
-	\begin{itemize}
-		\item \og{}Installer\fg{} GlassFish (copier \texttt{/usr/local/glassfish-4.1})
-		\item Démarrer votre serveur (cf. \texttt{bin/}, \url{http://localhost:8080}, \url{http://localhost:4848})
-		\item Désactiver l’écoute extérieure
-		\item Lire les logs du serveur
-		\item Installer Glassfish Tools depuis Eclipse Marketplace
-		\item Ajouter dans Eclipse un environnement d’exécution Java EE, \og{}GlassFish 4\fg{} (pointant vers votre installation de GlassFish)
-		\item Créer un projet web dynamique sans environnement d’exécution puis le modifier pour qu’il vise cet environnement d’exécution. Vérifier que Eclipse ajoute les bibliothèques en dépendances (lesquelles ?)
-		\item Créer un servlet
-		\item Vérifier que vous avez accès à la javadoc (par exemple sur \texttt{javax.servlet.annotation.WebServlet} et \texttt{javax.servlet.http.HttpServlet}).
-		\item Programmer réponse : "ça fait 0"
-		\item Exporter le module dans une archive déployable (extension ?)
-		\item Vérifier si les bibliothèques ajoutées automatiquement par eclipse ont été incluses dans l’archive exportée. Expliquer pourquoi (pas).
-		\item Déployer le module sur le serveur à la main
-		\item Envoyer une requête GET et observer "ça fait 0"
-		\item Se féliciter\footnote{Cette étape importante est à répéter à l’issue de chaque exercice qui vous a posé une difficulté.}
-		\item Créer un nouveau serveur de type GlassFish dans Eclipse. Déployer votre servlet depuis eclipse vers ce nouveau serveur. Vérifier que votre servlet fonctionne depuis votre navigateur, ansi que depuis eclipse (\menuit{Run} / \menuit{Run}).
-		\item Déployer vers GlassFish et vérifier que le servlet fonctionne toujours
-		\item Envoyer une information de log indiquant le résultat du calcul avant son renvoi à l’expéditeur
-		\item Renvoyer une réponse HTML bien formée : <html><body><p>Ça fait…</p></body></html>. Comment s’assurer que le client web va bien interpréter de l’HTML ?
-		\item Renvoyer ce même contenu mais en texte pur, de façon à ce que ces balises s’affichent sur le client web. Comment s’assurer de l’affichage correct des caractères non ascii, Ç par exemple ?
-		\item[*\footnote{Les astérisques indiquent des exercices plus difficiles, à essayer de faire pour gagner des points de prestige.}] Est-il possible de déployer votre module web comme une archive \texttt{.ear} ? Si oui, essayer de le faire, si non, expliquer pourquoi.
-		\item Accepter deux paramètres dans le servlet : \texttt{add1} et \texttt{add2}. Renvoyer "ça fait " et l’addition des paramètres
-		\item Renvoyer une erreur s’il manque un paramètre (indice : voir la javadoc de \href{http://docs.oracle.com/javaee/7/api/javax/servlet/http/HttpServletResponse.html}{\texttt{HttpServletResponse}}).
-		\item[*] Comment être sûr du type d’erreur à renvoyer ?
-%		\item Faire appel à une bibliothèque tierce ? (Vérifier où eclipse la met dans l’archive.)
-		\item Ajouter au module une page HTML statique \texttt{index.html} qui dit \og{}Hello !\fg{} lorsqu’on la visite. Où sera-t-elle placée dans l’archive ?
-		\item (Commencer à) développer un servlet qui a sa place dans votre projet
-	\end{itemize}
-\end{frame}
-
-\section{Autres}
 \subsection{Logging}
 \begin{frame}
 	\frametitle{Logging}
