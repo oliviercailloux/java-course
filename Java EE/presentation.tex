@@ -10,7 +10,7 @@
 \input{preamble/acronyms}
 \input{preamble/uml}
 
-%\setbeamertemplate{headline}[singleline]
+\setbeamertemplate{headline}[singleline]
 
 \title{Introduction à Java EE}
 \subject{Java EE}
@@ -38,8 +38,7 @@
 \end{frame}
 \addtocounter{framenumber}{-1}
 
-\section{Vue d’ensemble}
-\subsection{Java EE}
+\section{Java EE}
 \begin{frame}
 	\frametitle{Java EE}
 	\begin{itemize}
@@ -70,7 +69,7 @@
 	\end{itemize}
 \end{frame}
 
-\subsection{Conteneurs}
+\section{Conteneurs}
 \begin{frame}
 	\frametitle{Conteneurs}
 	\begin{itemize}
@@ -90,7 +89,7 @@
 	\href{https://docs.oracle.com/javaee/7/tutorial/overview007.htm}{\includegraphics[width=\columnwidth]{containers.png}}
 \end{frame}
 
-\subsection{Composants}
+\section{Composants}
 \begin{frame}
 	\frametitle{Composants}
 	\begin{itemize}
@@ -126,7 +125,7 @@
 	\end{itemize}
 \end{frame}
 
-\subsection{Couches}
+\section{Couches}
 \begin{frame}
 	\frametitle{Couches (\og{}tier\fg{})}
 	\begin{minipage}{\columnwidth*\real{0.6}}
@@ -163,7 +162,7 @@
 	Options pour client non-java ?
 \end{frame}
 
-\subsection{Assemblage et déploiement}
+\section{Assemblage et déploiement}
 \begin{frame}
 	\frametitle{Modules}
 	\begin{itemize}
@@ -218,7 +217,7 @@
 	\end{block}
 \end{frame}
 
-\subsection{Services}
+\section{Services}
 \begin{frame}
 	\frametitle{Services}
 	Exemples :
@@ -232,7 +231,7 @@
 	\end{itemize}
 \end{frame}
 
-\subsection{GlassFish}
+\section{GlassFish}
 \begin{frame}
 	\frametitle{GlassFish Server Tools}
 	\begin{itemize}
@@ -251,8 +250,15 @@
 	\end{block}
 \end{frame}
 
-\section{Autres}
-\subsection{Java}
+\appendix
+\section{Licence}
+\begin{frame}
+	\frametitle{Licence}
+	Cette présentation, et le code LaTeX associé, sont sous \href{http://opensource.org/licenses/MIT}{licence MIT}. Vous êtes libres de réutiliser des éléments de cette présentation, sous réserve de citer l’auteur.
+	
+	Le travail réutilisé est à attribuer à \href{http://www.lamsade.dauphine.fr/~ocailloux/}{Olivier Cailloux}, Université Paris-Dauphine.
+\end{frame}
+\section{Java}
 \begin{frame}[fragile]
 	\frametitle{Le terme Java}
 	
@@ -284,37 +290,7 @@
 	\end{block}
 \end{frame}
 
-\subsection{Logging}
-\begin{frame}
-	\frametitle{Logging}
-	\begin{itemize}
-		\item \texttt{System.out.println} ? \pause Le conteneur redirige\pause
-		\item \alert{mieux} : \texttt{LOGGER.warn("Missing parameter here!")}
-		\item En Java EE comme en Java SE : cf. standard \href{http://docs.oracle.com/javase/8/docs/technotes/guides/logging/index.html}{logging}
-	\end{itemize}
-\end{frame}
-
-\subsection{Servlets et plus !}
-\begin{frame}
-	\frametitle{Avant-première}
-	Comment faciliter le développement de servlets ?\pause
-	\begin{itemize}
-		\item Décodage facile de paramètres
-		\item Réponse HTML
-		\item Réponse XML
-	\end{itemize}
-	\pause
-	\begin{block}{Et plus !}
-		\begin{itemize}
-			\item Injection de références
-			\item Accès à des classes (distantes) pour service (EJB)
-			\item Définition de services web Restful, Soap
-			\item Accès aux données, transactions
-		\end{itemize}
-	\end{block}
-\end{frame}
-
-\subsection{Session HTTP}
+\section{Session HTTP}
 \begin{frame}
 	\frametitle{Servlet et session HTTP}
 	\begin{itemize}
@@ -340,14 +316,6 @@
 %	\end{itemize}
 %\end{frame}
 
-\appendix
-\section{Licence}
-\begin{frame}
-	\frametitle{Licence}
-	Cette présentation, et le code LaTeX associé, sont sous \href{http://opensource.org/licenses/MIT}{licence MIT}. Vous êtes libres de réutiliser des éléments de cette présentation, sous réserve de citer l’auteur.
-	
-	Le travail réutilisé est à attribuer à \href{http://www.lamsade.dauphine.fr/~ocailloux/}{Olivier Cailloux}, Université Paris-Dauphine.
-\end{frame}
 \end{document}
 
 \begin{frame}
