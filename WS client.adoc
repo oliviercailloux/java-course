@@ -1,4 +1,4 @@
-= REST client: Exercices
+= WS client: Exercices
 :toc: preamble
 :sectanchors:
 
