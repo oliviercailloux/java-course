@@ -1,7 +1,7 @@
 = Maven
 :sectanchors:
 
-Simple exercices for Maven. The reader is supposed to know already the basics of how Maven works (see slides in this course).
+Simple exercices for Maven. The reader is supposed to know already the basics of Maven (see slides in this course).
 
 == Default sample project
 * Open a terminal. Move into a folder where you want to put your new project (which will be created as a sub-folder).
