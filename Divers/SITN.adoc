@@ -60,7 +60,7 @@ Les commentaires utilisent les abréviations E1, E2, etc, pour se référer aux 
 * https://github.com/oliviercailloux/java-course/raw/master/Java%20EE/presentation.pdf[Intro] Java EE, https://github.com/oliviercailloux/java-course/tree/master/GlassFish.adoc[Familiarisation] avec GlassFish
 * https://github.com/oliviercailloux/java-course/tree/master/Servlets.adoc[Servlets.adoc]
 ** Compilation avec Maven et déploiement manuel
-** Compilation et déploiement via Eclipse : voir https://github.com/oliviercailloux/java-course/tree/master/App%20servers%20from%20Eclipse.adoc[App servers from Eclipse]
+** Compilation et déploiement via Eclipse
 
 À faire
 
