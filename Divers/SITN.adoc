@@ -56,7 +56,7 @@ Les commentaires utilisent les abréviations E1, E2, etc, pour se référer aux 
 * L’Open Data https://www.youtube.com/watch?v=aHxv_2BMJfw[à la loupe]
 * Note : Optimisations en HTTP GET
 * https://github.com/oliviercailloux/java-course/raw/master/Maven/presentation.pdf[Maven] & https://github.com/oliviercailloux/java-course/tree/master/Maven.adoc[exercices]
-* Exercices client REST (lien ci-dessus)
+* Exercices client WS (lien ci-dessus)
 * https://github.com/oliviercailloux/java-course/raw/master/Java%20EE/presentation.pdf[Intro] Java EE, https://github.com/oliviercailloux/java-course/tree/master/GlassFish.adoc[Familiarisation] avec GlassFish
 * https://github.com/oliviercailloux/java-course/tree/master/Servlets.adoc[Servlets.adoc]
 ** Compilation avec Maven et déploiement manuel
