@@ -67,7 +67,7 @@ https://tools.ietf.org/html/rfc7231#section-6[RFC 7231] defines status codes: ea
 Such APIs generally rely on content negotiation and use appropriate request methods and status codes, as explained above.
 
 [[curl]]
-== Test using the command line
+== curl: Test using the command line
 GET requests may be sent by simply directing your browser to the right adress. Other request methods (and messages requiring specific header values) can’t be sent so easily with a browser. I recommend to use https://en.wikipedia.org/wiki/cURL[`curl`]: a command line tool that sends HTTP requests and displays the response sent by the server.
 
 Quick help:
