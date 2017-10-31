@@ -6,7 +6,7 @@ It is important to understand how web services that you develop will be used by 
 
 == curl
 === Set up
-* Read https://github.com/oliviercailloux/java-course/blob/master/HTTP.adoc[HTTP] and in particular the section about curl
+* Read https://github.com/oliviercailloux/java-course/blob/master/HTTP.adoc[HTTP] and in particular the https://github.com/oliviercailloux/java-course/blob/master/HTTP.adoc#curl[section] about curl
 * Install curl on your machine
 
 === Using curl
