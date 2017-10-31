@@ -37,7 +37,7 @@ Voir aussi la section références de chaque ensemble de diapositives, par sujet
 Les commentaires utilisent les abréviations E1, E2, etc, pour se référer aux exigences ci-dessus ; S2.1 pour le point indiqué en 1 sous S2 ci-dessous ; BP Maven (par exemple) pour les Bonnes Pratiques Maven (voir lien ci-dessus).
 
 == Plan
-=== S1
+=== S1 (mercredi 27 septembre 2017)
 * https://github.com/oliviercailloux/java-course/raw/master/Pr%C3%A9sentation%20du%20cours%20EE/presentation.pdf[Présentation] du cours
 * https://github.com/oliviercailloux/java-course/raw/master/Git/presentation.pdf[Git & exercices]
 * Affectation en projets
@@ -52,11 +52,11 @@ Les commentaires utilisent les abréviations E1, E2, etc, pour se référer aux 
 . Me fournir le nom d’utilisateur, si nécessaire : via devoir https://mycourse.dauphine.fr/webapps/blackboard/execute/launcher?type=Course&id=_38082_1[MyCourse]
 . Rediriger vos e-mails @ Dauphine si nécessaire pour vous assurer de recevoir les annonces
 
-=== S2
+=== S2 (mardi 31 octobre)
 * L’Open Data https://www.youtube.com/watch?v=aHxv_2BMJfw[à la loupe]
 * Note : Optimisations en HTTP GET
 * https://github.com/oliviercailloux/java-course/raw/master/Maven/presentation.pdf[Maven] & https://github.com/oliviercailloux/java-course/tree/master/Maven.adoc[exercices]
-* Exercices client WS (lien ci-dessus)
+* Exercices client WS (lien ci-dessus) (et https://dauphine.onthehub.com/)
 * https://github.com/oliviercailloux/java-course/raw/master/Java%20EE/presentation.pdf[Intro] Java EE, https://github.com/oliviercailloux/java-course/tree/master/GlassFish.adoc[Familiarisation] avec GlassFish
 * https://github.com/oliviercailloux/java-course/tree/master/Servlets.adoc[Servlets.adoc]
 ** Compilation avec Maven et déploiement manuel
@@ -69,7 +69,7 @@ Les commentaires utilisent les abréviations E1, E2, etc, pour se référer aux 
 ** Utilisez _obligatoirement_ comme `artifactId` le nom de votre projet (avec espaces transformés en traits d’union)
 ** Lire les bonnes pratiques Maven
 
-=== S3
+=== S3 (mardi 7 novembre)
 * Fail-fast, exceptions, Optional
 * Postman ?
 * Tests unitaires et classpath ?
