@@ -50,9 +50,6 @@ When you can’t reach your servlet, check whether GlassFish sees it. (Tested un
 
 If your application deploys but your servlet isn’t seen, you may have forgotten an annotation. Do check the server log, it probably contains useful information.
 
-=== Clear log
-Run `asadmin rotate-log` to clear the log.
-
 === Log
 If you use `System.out.println`, the container will by default redirect the output to the log file. However, this is not the cleanest way to log:
 
@@ -70,6 +67,9 @@ private static final Logger LOGGER = Logger.getLogger(MyClassName.class.getCanon
 You can then write logging statements such as `LOGGER.info("Hello, world.");`.
 
 See the Oracle http://docs.oracle.com/javase/8/docs/technotes/guides/logging/index.html[tutorial].
+
+=== Clear log
+Run `asadmin rotate-log` to clear the log.
 
 == References
 * https://javaee.github.io/glassfish/documentation4[Doc] GlassFish 4
