@@ -20,18 +20,6 @@ Second: Simple API use. We use https://httpbin.org/[httpbin], a test web service
 
 * Use curl to get an image at the URL https://httpbin.org/image in JPEG format, then, in PNG. httpbin expects you to send an `Accept` header, for example `Accept: image/jpeg`. What is the return code? What is the content type?
 
-.Return from JSONPlaceholder
-[source, json]
-----
-{
-  "postId": 1,
-  "id": 2,
-  "name": "quo vero reiciendis velit similique earum",
-  "email": "Jayne_Kuhic@sydney.com",
-  "body": "est natus enim nihil est dolore omnis voluptatem numquam\net omnis occaecati quod ullam at\nvoluptatem error expedita pariatur\nnihil sint nostrum voluptatem reiciendis et"
-}
-----
-
 Third: Real-life API use. We get some data from Wikipedia.
 
 Our goal is to programmatically retrieve all the modifications (revisions) that have occurred at the  Bertrand Russel https://en.wikipedia.org/wiki/Bertrand_russel[page] in between 29th of July and 1st of August, 2017.
