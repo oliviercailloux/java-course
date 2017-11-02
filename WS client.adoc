@@ -16,10 +16,9 @@ First: Warm up. We download an HTML page.
 * Use curl in a command line to retrieve the HTML page you have chosen.
 * Open that local HTML page in your browser. What do you observe? What do you deduce your browser does when surfing to a normal HTML page, as compared to the use you just did of curl?
 
-Second: Simple API use. We use JSONPlaceholder, a simple web service that delivers fake data.
+Second: Simple API use. We use https://httpbin.org/[httpbin], a test web service.
 
-* Read the JSONPlaceholder https://jsonplaceholder.typicode.com/[front page] (do not worry if you do not understand javascript)
-* Use curl to get the “comments” resource number 2. You should receive the following. What is the return code? What is the content type?
+* Use curl to get an image at the URL https://httpbin.org/image in JPEG format, then, in PNG. httpbin expects you to send an `Accept` header, for example `Accept: image/jpeg`. What is the return code? What is the content type?
 
 .Return from JSONPlaceholder
 [source, json]
@@ -89,7 +88,7 @@ You should obtain the following result.
 ----
 
 === Supplements
-If desired, you may also get trained at using curl for POSTing data and making HTTP requests using other verbs. Use the JSONPlaceholder web service, or choose one of the numerous APIs from https://www.programmableweb.com/[ProgrammableWeb] (but be aware that many require registration and may be non free).
+If desired, you may also get trained at using curl for POSTing data and making HTTP requests using other verbs. Use the https://jsonplaceholder.typicode.com/[JSONPlaceholder] or https://httpbin.org/[httpbin] web service, or choose one of the numerous APIs from https://www.programmableweb.com/[ProgrammableWeb] (but be aware that many require registration and may be non free).
 I suggest to leave curl for now, and switch to Java.
 
 == From Java
