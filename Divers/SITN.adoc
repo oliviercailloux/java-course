@@ -71,11 +71,13 @@ Les commentaires utilisent les abréviations E1, E2, etc, pour se référer aux 
 
 === S3 (mardi 7 novembre)
 * Fail-fast, exceptions, Optional
-* Postman ? (et https://dauphine.onthehub.com/)
-* Tests unitaires et classpath ?
-* Travis CI
-* Servlets multi-formats
-* JAX-B ?
+* https://www.getpostman.com/[Postman] (et https://dauphine.onthehub.com/)
+* Tests unitaires
+* Travis https://github.com/oliviercailloux/java-course/blob/master/CI.adoc[CI]
+* https://github.com/oliviercailloux/java-course/tree/master/GlassFish.adoc#log[Logs] dans GlassFish
+* Servlets multi-formats (https://en.wikipedia.org/wiki/JSON[JSON], XML voir références générales ci-dessus)
+* Discussion projets
+* JAX-B : exemple https://github.com/oliviercailloux/XMCDA-2.2.1-JAXB[classique], https://github.com/xmcda-modular/jaxb[avancé] (http://pyxb.sourceforge.net/[PyXB], https://docs.microsoft.com/en-us/dotnet/standard/serialization/xml-schema-definition-tool-xsd-exe[.NET], …)
 
 === S4
 * Cookies
