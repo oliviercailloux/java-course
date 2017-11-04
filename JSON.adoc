@@ -1,6 +1,6 @@
 = JSON
 
-A short document about simple manipulation of JSON using the Java API for JSON Processing (javax.json-api 1.1)
+A short document about simple manipulation of JSON using the Java API for JSON Processing 1.1. (See also JSON on https://en.wikipedia.org/wiki/JSON[Wikipedia] for a good introduction, https://github.com/oliviercailloux/java-course/blob/master/JSON-B.adoc[JSON-B] for (de-)serialization.)
 
 == Dependency
 If you use Java SE, you need to add the http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22javax.json%22[javax JSON API] to your dependencies.
