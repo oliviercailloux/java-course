@@ -40,4 +40,5 @@ include::https://github.com/oliviercailloux/jsonb-sample/raw/master/src/test/jav
 == References
 * https://javaee.github.io/javaee-spec/javadocs/javax/json/bind/package-summary.html[API]
 * https://javaee.github.io/tutorial/jsonb.html[tutorial]
+* A simple working https://github.com/oliviercailloux/jsonb-sample[project] using Java SE and JSON-B
 
