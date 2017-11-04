@@ -8,7 +8,7 @@ This document briefly explains how to configure Java EE Application Servers from
 
 * First, you need a Runtime Environment (RE). This contains the various libraries that implement (part of) the Java EE specifications.
 * You must have already installed the `GlassFish Tools` plugin for Eclipse (see link:Tools.adoc[Tools]). If you want another server, you probably need another plugin.
-* Within Eclipse: `Preferences / Server / Runtime Environments`. Add your local GlassFish installation there. Note that you need to point Eclipse to the `glassfish` subfolder inside your GlassFish installation (e.g. `/usr/local/share/glassfish5/glassfish`). Name it `My GlassFish 4 RE`. (You should not mix up Runtime Environments and servers!)
+* Within Eclipse: `Preferences / Server / Runtime Environments`. Add your local GlassFish installation there. Note that you need to point Eclipse to the `glassfish` subfolder inside your GlassFish installation (e.g. `/usr/local/share/glassfish4/glassfish`). Name it `My GlassFish 4 RE`. (You should not mix up Runtime Environments and servers!)
 
 Now you may add this RE to any of your existing Eclipse Java EE projects. This will add the corresponding libraries in the classpath.
 
