@@ -64,7 +64,7 @@ Observe that the container makes your life as web developer much simpler: you do
 == Test servlets from command line
 Once you have written your servlet, you want to easily test it. See link:HTTP.adoc#curl[HTTP].
 
-If you use GlassFish, some useful debugging tips are link:Glassfish.adoc[there].
+If you use GlassFish, some useful debugging tips are link:GlassFish.adoc[there].
 
 == Your turn
 * Write (and test) a servlet that says: “Hello world” in plain text, as response to a GET request.
