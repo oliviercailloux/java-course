@@ -47,5 +47,5 @@ public String asPrettyString(JsonValue json) {
 This example uses https://github.com/google/guava[Guava] to create the `Map` object. (Inspiration: https://stackoverflow.com/a/32500882[SO].)
 
 == References
-* Java API for JSON Processing 1.1 (the specs, https://jcp.org/en/jsr/detail?id=374[JSR 374], are exclusively the https://docs.oracle.com/javaee/7/api/javax/json/package-summary.html[javadoc] of the API)
+* Java API for JSON Processing 1.1 https://docs.oracle.com/javaee/7/api/javax/json/package-summary.html[javadoc] (specs: https://jcp.org/en/jsr/detail?id=374[JSR 374], but nothing more than the javadoc here)
 
