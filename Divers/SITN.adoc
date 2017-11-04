@@ -4,7 +4,7 @@
 
 == Références générales
 * https://github.com/oliviercailloux/projets/tree/master/EE[Projets] Java EE (sur GitHub)
-* https://github.com/oliviercailloux/samples[Échantillons] (sur GitHub)
+* https://github.com/oliviercailloux/samples[Échantillons] ; https://github.com/javaee-samples/javaee8-samples[javaee8-samples]
 * Goncalves - Beginning Java EE 7 : http://doi.org/10.1007/978-1-4302-4627-5[Springer], https://proxy.bu.dauphine.fr/http/doi.org/10.1007/978-1-4302-4627-5[BU] 
 * XML in a nutshell : https://portail.bu.dauphine.fr/bibliodata.html?record_id=ALEPH000026526&rtype=book[BU 1], https://portail.bu.dauphine.fr/bibliodata.html?record_id=ALEPH000013764&rtype=book[BU 2], https://portail.bu.dauphine.fr/bibliodata.html?record_id=ALEPH000035938&rtype=book[BU (en français)]
 
@@ -75,9 +75,13 @@ Les commentaires utilisent les abréviations E1, E2, etc, pour se référer aux 
 * Tests unitaires
 * Travis https://github.com/oliviercailloux/java-course/blob/master/CI.adoc[CI]
 * https://github.com/oliviercailloux/java-course/tree/master/GlassFish.adoc#log[Logs] dans GlassFish
-* Servlets multi-formats (https://en.wikipedia.org/wiki/JSON[JSON], XML voir références générales ci-dessus)
+* Usage de git en équipe : dépôt propre ; ignore ; formattage & imports
 * Discussion projets
-* JAX-B : exemple https://github.com/oliviercailloux/XMCDA-2.2.1-JAXB[classique], https://github.com/xmcda-modular/jaxb[avancé] (http://pyxb.sourceforge.net/[PyXB], https://docs.microsoft.com/en-us/dotnet/standard/serialization/xml-schema-definition-tool-xsd-exe[.NET], …)
+* https://github.com/oliviercailloux/java-course/raw/master/Annotations/presentation.pdf[Annotations]
+* Servlets multi-formats
+** JSON https://github.com/oliviercailloux/java-course/blob/master/JSON.adoc[Processing], https://github.com/oliviercailloux/java-course/blob/master/JSON-B.adoc[JSON-B]
+** XML : voir références générales ci-dessus
+** JAXB : exemple https://github.com/oliviercailloux/XMCDA-2.2.1-JAXB[classique], https://github.com/xmcda-modular/jaxb[avancé] (http://pyxb.sourceforge.net/[PyXB], https://docs.microsoft.com/en-us/dotnet/standard/serialization/xml-schema-definition-tool-xsd-exe[.NET], …)
 
 === S4
 * Cookies
