@@ -3,19 +3,22 @@
 :sectanchors:
 
 == Références générales
-* https://github.com/oliviercailloux/projets/tree/master/EE[Projets] Java EE (sur GitHub)
+* 
 * https://github.com/oliviercailloux/samples[Échantillons] ; https://github.com/javaee-samples/javaee8-samples[javaee8-samples]
 * Goncalves - Beginning Java EE 7 : http://doi.org/10.1007/978-1-4302-4627-5[Springer], https://proxy.bu.dauphine.fr/http/doi.org/10.1007/978-1-4302-4627-5[BU] 
 * XML in a nutshell : https://portail.bu.dauphine.fr/bibliodata.html?record_id=ALEPH000026526&rtype=book[BU 1], https://portail.bu.dauphine.fr/bibliodata.html?record_id=ALEPH000013764&rtype=book[BU 2], https://portail.bu.dauphine.fr/bibliodata.html?record_id=ALEPH000035938&rtype=book[BU (en français)]
 
 Voir aussi la section références de chaque ensemble de diapositives, par sujet.
 
-== Exigences relatives aux projets
+== Projets
+Énoncés : voir https://github.com/oliviercailloux/projets/tree/master/EE[Projets] Java EE (sur GitHub)
+
+=== Exigences
 * Pour chaque fonctionnalité dont vous vous occupez : créer une issue sur votre projet GitHub. Son nom _doit_ être strictement égal au nom dans l’énoncé du projet. Vous enregistrer à deux (un binôme) dessus. Lorsque vous l’estimez terminée (je peux corriger), et que vous avez fusionné votre code sur la branche master, vous fermez l’issue. (Idée : https://fr.wikipedia.org/wiki/Int%C3%A9gration_continue[Intégration continue])
 * Je vous donne une note temporaire (la même pour les deux membres du binôme) pour cette issue. Je commente l’issue sur GitHub pour vous aider à améliorer votre code (et vos points) si nécessaire.
 * Vous pouvez ré-ouvrir l’issue si vous le jugez nécessaire, pour corriger les faiblesses soulignées dans mon commentaire, ou en créer une autre.
 * Un travail régulier est attendu (et la note le prendra en compte). En outre, si vous attendez la fin du cours pour travailler sur votre projet, vous ne bénéficiez pas du suivi.
-* Attendu : 9 heures de travail par personne entre chaque séance en moyenne ; un point de difficulté par binôme par séance en moyenne.
+* Attendu : 5 heures de travail par personne entre chaque séance en moyenne ; un demi point de difficulté par binôme par séance en moyenne.
 * Conseil : changez partiellement chaque binômes à chaque issue pour faire tourner les connaissances et varier les plaisirs (et augmenter les points).
 
 . Approche par contrat
@@ -33,7 +36,15 @@ Voir aussi la section références de chaque ensemble de diapositives, par sujet
 . Répondre aux attentes du client : vérifier la compréhension !
 . Respecter les https://github.com/oliviercailloux/java-course/tree/master/Best%20practices[bonnes pratiques]
 
-== Commentaires lors évaluations des fonctionnalités
+=== Évaluation de la régularité
+* Je donnerai au groupe trois notes durant l’année sur l’aspect régularité.
+** Note 1 : deux jours avant S4. Exigence : au moins trois points de difficulté accomplis avec une qualité au moins moyenne. (Selon exigences ci-dessus.)
+** Note 2 : deux jours avant S6 (≥ 7 points de difficulté)
+** Note 2 : deux jours avant S8 (≥ 11 points de difficulté)
+* La moyenne de ces trois notes constitue la note régularité.
+* La note régularité compte comme un MAX, donc un plafond, sur votre note CC, qui elle compte pour 50% de la note finale.
+
+=== Commentaires lors évaluations des fonctionnalités
 Les commentaires utilisent les abréviations E1, E2, etc, pour se référer aux exigences ci-dessus ; S2.1 pour le point indiqué en 1 sous S2 ci-dessous ; BP Maven (par exemple) pour les Bonnes Pratiques Maven (voir lien ci-dessus).
 
 == Plan
@@ -70,6 +81,7 @@ Les commentaires utilisent les abréviations E1, E2, etc, pour se référer aux 
 ** Lire les bonnes pratiques Maven
 
 === S3 (mardi 7 novembre)
+* Note concernant l’attendu et l’évaluation de la régularité
 * Fail-fast, exceptions, Optional
 * https://www.getpostman.com/[Postman] (et https://dauphine.onthehub.com/)
 * Tests unitaires
