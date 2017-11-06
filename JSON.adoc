@@ -28,6 +28,7 @@ public JsonObject asJson(String data) {
 	try (JsonReader jr = Json.createReader(new StringReader(data))) {
 		json = jr.readObject();
 	}
+	return json;
 }
 ----
 
