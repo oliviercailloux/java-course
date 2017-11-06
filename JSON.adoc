@@ -32,6 +32,8 @@ public JsonObject asJson(String data) {
 }
 ----
 
+This example uses the https://docs.oracle.com/javase/tutorial/essential/exceptions/tryResourceClose.html[try-with-resources] syntax.
+
 .Pretty print a json value
 [source,java]
 ----
