@@ -3,7 +3,7 @@
 :sectanchors:
 
 == Références générales
-* 
+* http://math.hws.edu/eck/cs124/javanotes7/[Eck]’s book (free): Introduction to Programming Using Java, Seventh Edition
 * https://github.com/oliviercailloux/samples[Échantillons] ; https://github.com/javaee-samples/javaee8-samples[javaee8-samples]
 * Goncalves - Beginning Java EE 7 : http://doi.org/10.1007/978-1-4302-4627-5[Springer], https://proxy.bu.dauphine.fr/http/doi.org/10.1007/978-1-4302-4627-5[BU] 
 * XML in a nutshell : https://portail.bu.dauphine.fr/bibliodata.html?record_id=ALEPH000026526&rtype=book[BU 1], https://portail.bu.dauphine.fr/bibliodata.html?record_id=ALEPH000013764&rtype=book[BU 2], https://portail.bu.dauphine.fr/bibliodata.html?record_id=ALEPH000035938&rtype=book[BU (en français)]
