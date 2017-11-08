@@ -110,6 +110,7 @@ Les commentaires utilisent les abréviations E1, E2, etc, pour se référer aux 
 * https://www.getpostman.com/[Postman]
 
 === S4
+* Note sur la réutilisation intelligente (recompensée !) et le droit d’utilisation, ainsi que les licenses
 * Cookies
 * REST
 * App online
