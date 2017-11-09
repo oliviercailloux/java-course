@@ -38,7 +38,7 @@ Voir aussi la section références de chaque ensemble de diapositives, par sujet
 
 === Évaluation de la régularité
 * Je donnerai au groupe trois notes durant l’année sur l’aspect régularité.
-** Note 1 : deux jours avant S4. Exigence : au moins trois points de difficulté accomplis avec une qualité au moins moyenne. (Selon exigences ci-dessus.)
+** Note 1 : deux jours avant S4. Exigence : au moins trois points de difficulté accomplis avec une qualité au moins moyenne (selon exigences ci-dessus) ; Travis CI en place.
 ** Note 2 : deux jours avant S6 (≥ 7 points de difficulté)
 ** Note 2 : deux jours avant S8 (≥ 11 points de difficulté)
 * La moyenne de ces trois notes constitue la note régularité.
@@ -109,7 +109,11 @@ Les commentaires utilisent les abréviations E1, E2, etc, pour se référer aux 
 * Fail-fast, exceptions, Optional
 * https://www.getpostman.com/[Postman]
 
-=== S4
+À faire
+
+* Mettre en place le système d’intégration continue Travis sur votre dépôt de groupe. (Voir document ci-dessus.) Ajouter le badge au fichier README. Également à rendre pour deux jours avant S4. Vérifier que votre projet compile, d’après Travis, au moment de la remise. (Les tests fonctionnels de vos servlets ne doivent pas nécessairement passer.)
+
+=== S4 (5 décembre)
 * Note sur la réutilisation intelligente (recompensée !) et le droit d’utilisation, ainsi que les licenses
 * Cookies
 * REST
