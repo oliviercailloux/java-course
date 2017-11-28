@@ -42,7 +42,7 @@ Voir aussi la section références de chaque ensemble de diapositives, par sujet
 ** Note 2 : deux jours avant S6 (≥ 7 points de difficulté)
 ** Note 2 : deux jours avant S8 (≥ 11 points de difficulté)
 * La moyenne de ces trois notes constitue la note régularité.
-* La note régularité compte comme un MAX, donc un plafond, sur votre note CC, qui elle compte pour 50% de la note finale.
+* La note régularité compte comme plafond sur votre note CC, qui elle compte pour 50% de la note finale.
 
 Deux jours avant Sx signifie : au plus tard deux jours avant le jour de la séance x, à 23h59 + 1 min. (Exemple : si S4 a lieu lundi 3 octobre, deux jours avant S4 signifie : au plus tard samedi 1 octobre, 23h59 + 1 min.)
 
