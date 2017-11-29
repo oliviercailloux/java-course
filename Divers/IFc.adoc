@@ -51,7 +51,7 @@ Deux jours avant Sx signifie : au plus tard deux jours avant le jour de la séan
 Les commentaires utilisent les abréviations E1, E2, etc, pour se référer aux exigences ci-dessus ; S2.1 pour le point indiqué en 1 sous S2 ci-dessous ; BP Maven (par exemple) pour les Bonnes Pratiques Maven (voir lien ci-dessus).
 
 == Plan
-=== S1 (mercredi 27 septembre 2017)
+=== S1 (jeudi 30 novembre 2017)
 * https://github.com/oliviercailloux/java-course/raw/master/Pr%C3%A9sentation%20du%20cours%20EE/presentation.pdf[Présentation] du cours
 * https://github.com/oliviercailloux/java-course/raw/master/Git/presentation.pdf[Git & exercices]
 * Affectation en projets
@@ -66,7 +66,7 @@ Les commentaires utilisent les abréviations E1, E2, etc, pour se référer aux 
 . Me fournir le nom d’utilisateur, si nécessaire : via devoir https://mycourse.dauphine.fr/webapps/blackboard/execute/launcher?type=Course&id=_38078_1[MyCourse]
 . Rediriger vos e-mails @ Dauphine si nécessaire pour vous assurer de recevoir les annonces
 
-=== S2 (mardi 31 octobre)
+=== S2
 // 13h45
 // vidéo
 // 13h55 (env.)
@@ -95,8 +95,7 @@ Les commentaires utilisent les abréviations E1, E2, etc, pour se référer aux 
 ** Utilisez _obligatoirement_ comme `artifactId` le nom de votre projet (avec espaces transformés en traits d’union)
 ** Lire les bonnes pratiques Maven
 
-=== S3 (mardi 7 novembre)
-* Note concernant l’attendu et l’évaluation de la régularité
+=== S3
 * Tests unitaires (et https://dauphine.onthehub.com/)
 * Travis https://github.com/oliviercailloux/java-course/blob/master/CI.adoc[CI]
 * https://github.com/oliviercailloux/java-course/tree/master/GlassFish.adoc#log[Logs] dans GlassFish
@@ -114,7 +113,7 @@ Les commentaires utilisent les abréviations E1, E2, etc, pour se référer aux 
 
 * Mettre en place le système d’intégration continue Travis sur votre dépôt de groupe. (Voir document ci-dessus.) Ajouter le badge au fichier README. Également à rendre pour deux jours avant S4. Vérifier que votre projet compile, d’après Travis, au moment de la remise. (Les tests fonctionnels de vos servlets ne doivent pas nécessairement passer.)
 
-=== S4 (5 décembre)
+=== S4
 * Note sur la réutilisation intelligente (recompensée !) et le droit d’utilisation, ainsi que les licenses
 * Cookies
 * REST
