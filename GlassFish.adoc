@@ -19,7 +19,7 @@ Examples of Java EE compliant application servers: GlassFish (Oracle, open sourc
 * Stop the server by typing `asadmin` then `stop-domain`. (Equivalently: `asadmin stop-domain`.)
 
 == Embedded database
-Any compliant Java EE server comes with an embedded SQL database, that will be used by default if none other is configured.
+Any compliant Java EE server comes with an embedded SQL database management system, that will be used as a default for deployed applications if none other is configured.
 
 * Start the database with `asadmin start-database`. Guess how to stop it?
 
@@ -34,6 +34,8 @@ Browse to http://localhost:8080/ and check that you see the “Your server is no
 
 For increased security, in the Administration Console, change the address field and indicate there `localhost`. Click `Save`. Check that your server is no more reachable (on port 8080) from your external IP address, but is still reachable from the localhost address.
 
+Run `asadmin set server-config.network-config.network-listeners.network-listener.admin-listener.address=localhost` and `asadmin set server-config.network-config.network-listeners.network-listener.http-listener-2.enabled=false` to finish (minimally) securing your server. Guess what these commands do and check your intuition. (Changes to the admin-listener port only take effect after a reboot of the server, though changes to the normal http listeners are immediately effective.)
+
 Open the server log file in a text editor and check that you see the logs related to what you just did.
 
 == Deploying applications
@@ -44,9 +46,8 @@ The autodeploy directory is used to deploy your application, once it is packaged
 When you can’t reach your servlet, check whether GlassFish sees it. (Tested under GlassFish 4.1.2.)
 
 * Start your domain
-* Run `asadmin`
-* `list-applications` ⇒ check that your application appears, otherwise, it is most probably not deployed correctly
-* `list-sub-components` <app-name> ⇒ check that your servlet appears.
+* Look in the Administration console, Applications (or run `asadmin list-applications`) ⇒ check that your application appears, otherwise, it is not deployed correctly
+* Click on your application to see the `Modules and Components` table (or run `asadmin list-sub-components` <app-name>) ⇒ check that your servlet class appears as a component of type Servlet.
 
 If your application deploys but your servlet isn’t seen, you may have forgotten an annotation. Do check the server log, it probably contains useful information.
 
