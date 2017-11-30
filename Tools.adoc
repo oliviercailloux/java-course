@@ -45,3 +45,10 @@ I recommend configuring Eclipse to show more errors and warnings in order to hel
 * Check in your project properties, `Java Compiler / Errors/Warnings` that the project uses your global Eclipse compiler settings.
 * Clean and recompile your project to see the effect.
 
+== VM (beta)
+http://www.lamsade.dauphine.fr/~ocailloux/MyDebian.ova[Here] is a Virtual Machine (VM) file that contains all the tools above. It features https://www.debian.org/doc/user-manuals[Debian] stretch (9.2), a GNU/Linux system. The VM file is in a standard format (OVA). You can import it in https://www.virtualbox.org/[Virtual Box] for example.
+
+The file is in beta version, please report any issues.
+
+Note that you will get (much) better performance by installing the tools directly on your machine rather than using them through a VM.
+
