@@ -46,7 +46,7 @@ I recommend configuring Eclipse to show more errors and warnings in order to hel
 * Clean and recompile your project to see the effect.
 
 == VM (beta)
-https://universitedauphine-my.sharepoint.com/personal/olivier_cailloux_lamsade_dauphine_fr/_layouts/15/guestaccess.aspx?docid=03887190377294e79a8a63c8f063ffe9b&authkey=AdV4WjBgnfjLa2IRffbav5s&e=10400376c63043138b324257b2c8c6a6[Here] is a Virtual Machine (VM) file that contains all the tools above (SHA-1: f4c13d7426a2e4a2f68a22b6b4db13da90fdb988). It features https://www.debian.org/doc/user-manuals[Debian] stretch (9.2), a GNU/Linux system. The VM file is in a standard format (OVA). You can import it in https://www.virtualbox.org/[Virtual Box] for example.
+https://universitedauphine-my.sharepoint.com/personal/olivier_cailloux_lamsade_dauphine_fr/_layouts/15/guestaccess.aspx?docid=03887190377294e79a8a63c8f063ffe9b&authkey=AdV4WjBgnfjLa2IRffbav5s&e=10400376c63043138b324257b2c8c6a6[Here] is a Virtual Machine (VM) file that contains all the tools above. It features https://www.debian.org/doc/user-manuals[Debian] stretch (9.2), a GNU/Linux system. The VM file is in a standard format (OVA). You can import it in https://www.virtualbox.org/[Virtual Box] for example.
 
 The file is in beta version, please report any issues https://github.com/oliviercailloux/Deb-9-VM[here].
 
