@@ -114,7 +114,7 @@ Les commentaires utilisent les abréviations E1, E2, etc, pour se référer aux 
 * Mettre en place le système d’intégration continue Travis sur votre dépôt de groupe. (Voir document ci-dessus.) Ajouter le badge au fichier README. Également à rendre pour deux jours avant S4. Vérifier que votre projet compile, d’après Travis, au moment de la remise. (Les tests fonctionnels de vos servlets ne doivent pas nécessairement passer.)
 
 === S4 (5 décembre)
-* Note sur la réutilisation intelligente (recompensée !) et le droit d’utilisation, ainsi que les licenses
+* Note sur la réutilisation intelligente (recompensée !) et le droit d’utilisation, ainsi que les licences
 * Cookies
 * REST
 * App online
