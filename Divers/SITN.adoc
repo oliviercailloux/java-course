@@ -105,7 +105,7 @@ Les commentaires utilisent les abréviations E1, E2, etc, pour se référer aux 
 * Servlets multi-formats
 ** JSON https://github.com/oliviercailloux/java-course/blob/master/JSON.adoc[Processing], https://github.com/oliviercailloux/java-course/blob/master/JSON-B.adoc[JSON-B]
 ** XML : voir références générales ci-dessus
-** JAXB : exemple https://github.com/oliviercailloux/XMCDA-2.2.1-JAXB[classique], https://github.com/xmcda-modular/jaxb[avancé] (http://pyxb.sourceforge.net/[PyXB], https://docs.microsoft.com/en-us/dotnet/standard/serialization/xml-schema-definition-tool-xsd-exe[.NET], …)
+** JAXB : exemple https://github.com/oliviercailloux/XMCDA-2.2.1-JAXB[classique], https://github.com/xmcda-modular/jaxb[avancé] (http://pyxb.sourceforge.net/[PyXB], https://docs.microsoft.com/en-us/dotnet/standard/serialization/xml-schema-definition-tool-xsd-exe[.NET], …). Voir https://docs.oracle.com/javase/tutorial/jaxb/index.html[Tutoriel Oracle], http://docs.oracle.com/javase/8/docs/technotes/guides/xml/jaxb/[Docs Oracle]. Dans Eclipse, désactiver le validateur est probablement nécessaire, cf. https://bugs.eclipse.org/bugs/show_bug.cgi?id=437635[bug].
 * Fail-fast, exceptions, Optional
 * https://www.getpostman.com/[Postman]
 
@@ -116,7 +116,7 @@ Les commentaires utilisent les abréviations E1, E2, etc, pour se référer aux 
 === S4 (5 décembre)
 * Note sur la réutilisation intelligente (recompensée !) et le droit d’utilisation, ainsi que les https://github.com/oliviercailloux/projets/blob/master/Licence.adoc[licences]
 * https://tools.ietf.org/html/rfc6265[Cookies]
-* REST
+* https://github.com/oliviercailloux/java-course/raw/master/REST/presentation.pdf[REST] : https://github.com/oliviercailloux/sample-jax-rs[exemple]
 * App online : https://dauphine.onthehub.com/
 
 === S5
