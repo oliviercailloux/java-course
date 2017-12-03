@@ -46,7 +46,7 @@
 	\begin{itemize}
 		\item SOAP (Simple Object Access Protocol) : standard W3C
 		\item Définit SOAP enveloppe pour transmission (basée sur XML), architecture de liaison avec protocoles sous-jacents, liaison HTTP, compression de messages…
-		\item REST (Representational State Transfer) : contraintes architecturales
+		\item \href{https://en.wikipedia.org/wiki/Representational_state_transfer}{REST} (Representational State Transfer) : contraintes architecturales
 	\end{itemize}
 	Cf. \href{http://www.w3.org/2005/Talks/1115-hh-k-ecows/}{présentation} : Reconciling Web Services and REST Services
 \end{frame}
@@ -179,48 +179,17 @@
 	\end{itemize}
 \end{frame}
 
-\section{Exercices}
-\begin{frame}[allowframebreaks]
-	\frametitle{Exercices}
-	\begin{itemize}
-		\item Implémenter un GET qui renvoie une description d’un objet métier quelconque de votre projet (ou un objet jouet) comme type \texttt{text/plain}. La méthode doit renvoyer un \texttt{String}. Tester.
-		\item Simuler un traitement long dans la méthode ressource (Thread sleep). Avec deux navigateurs différents, envoyer deux GET simultanés. Vérifier qu’elles sont bien traitées en parallèle (la deuxième n’attend pas la fin de la première avant de s’exécuter).
-		\item Modifier la méthode ressource pour qu’elle renvoie l’objet lui-même. Implémenter un provider qui fournit sa description.
-		\item Observer si les requêtes sont traitées en parallèle dans votre provider (simuler un traitement long dans le provider, envoyer deux GET simultanés avec deux navigateurs différents). Modifier la portée CDI du provider et observer l’impact.
-		\item Insérer un état dans le provider. Le provider possède maintenant un compteur \texttt{i}. Il incrémente \texttt{i} en entrée d’appel, puis il indique la valeur de \texttt{i} dans la description renvoyée, puis il décrémente \texttt{i}. Le provider renverra-t-il toujours la valeur d’initialisation de \texttt{i} + 1, lors d’appels parallèles de clients web différents ? Prédire son comportement en fonction de la portée CDI qui vous lui affectez. Réfléchir aux avantages de différents choix.
-	\end{itemize}
-\end{frame}
-
-\section{JAXB}
-\begin{frame}
-	\frametitle{Objectifs}
-	\begin{itemize}
-		\item Java Architecture for XML Binding
-		\item Schema XML ⇔ Classes Java ({}⇒ xjc ; ⇐ schemagen)
-		\item Instances XML ⇔ Instances Java (JAXB binding runtime)
-		\item JAXB object : annotés
-		\item JAX-RS fournit entity providers pour objets JAXB
-%		\item http://www.xmlvalidation.com/test.xsd
-	\end{itemize}
-%	\begin{block}{}
-%		ContextResolver<JAXBContext> annotated with @Provider. Context providers MAY return null from the getContext method if they do not wish to provide their context for a particular Java type. E.g. a JAXB context provider may wish to only provide the context for certain JAXB classes.%TODO 
-%	\end{block}
-\end{frame}
-
-\begin{frame}
-	\frametitle{Références JAXB}
-	\begin{block}{Références}
-		\begin{itemize}
-			\item \href{https://docs.oracle.com/javase/tutorial/jaxb/index.html}{Tutoriel Oracle}
-			\item \href{http://docs.oracle.com/javase/8/docs/technotes/guides/xml/jaxb/}{Docs Oracle}
-		\end{itemize}
-	\end{block}
-	Dans eclipse :
-	\begin{itemize}
-		\item Désactiver le validateur est probablement nécessaire
-		\item[⇒] cf. \href{https://bugs.eclipse.org/bugs/show_bug.cgi?id=437635}{bug} eclipse%ça fonctionne avec eclipse mars malgré le bug, en tous cas après désactivation du validateur
-	\end{itemize}
-\end{frame}
+%\section{Exercices}
+%\begin{frame}[allowframebreaks]
+%	\frametitle{Exercices}
+%	\begin{itemize}
+%		\item Implémenter un GET qui renvoie une description d’un objet métier quelconque de votre projet (ou un objet jouet) comme type \texttt{text/plain}. La méthode doit renvoyer un \texttt{String}. Tester.
+%		\item Simuler un traitement long dans la méthode ressource (Thread sleep). Avec deux navigateurs différents, envoyer deux GET simultanés. Vérifier qu’elles sont bien traitées en parallèle (la deuxième n’attend pas la fin de la première avant de s’exécuter).
+%		\item Modifier la méthode ressource pour qu’elle renvoie l’objet lui-même. Implémenter un provider qui fournit sa description.
+%		\item Observer si les requêtes sont traitées en parallèle dans votre provider (simuler un traitement long dans le provider, envoyer deux GET simultanés avec deux navigateurs différents). Modifier la portée CDI du provider et observer l’impact.
+%		\item Insérer un état dans le provider. Le provider possède maintenant un compteur \texttt{i}. Il incrémente \texttt{i} en entrée d’appel, puis il indique la valeur de \texttt{i} dans la description renvoyée, puis il décrémente \texttt{i}. Le provider renverra-t-il toujours la valeur d’initialisation de \texttt{i} + 1, lors d’appels parallèles de clients web différents ? Prédire son comportement en fonction de la portée CDI qui vous lui affectez. Réfléchir aux avantages de différents choix.
+%	\end{itemize}
+%\end{frame}
 
 \appendix
 
