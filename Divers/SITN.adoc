@@ -96,7 +96,7 @@ Les commentaires utilisent les abréviations E1, E2, etc, pour se référer aux 
 
 === S3 (mardi 7 novembre)
 * Note concernant l’attendu et l’évaluation de la régularité
-* Tests unitaires (et https://dauphine.onthehub.com/)
+* Tests unitaires
 * Travis https://github.com/oliviercailloux/java-course/blob/master/CI.adoc[CI]
 * https://github.com/oliviercailloux/java-course/tree/master/GlassFish.adoc#log[Logs] dans GlassFish
 * Usage de git en équipe : dépôt propre ; ignore ; formattage & imports
@@ -115,9 +115,9 @@ Les commentaires utilisent les abréviations E1, E2, etc, pour se référer aux 
 
 === S4 (5 décembre)
 * Note sur la réutilisation intelligente (recompensée !) et le droit d’utilisation, ainsi que les https://github.com/oliviercailloux/projets/blob/master/Licence.adoc[licences]
-* Cookies
+* https://tools.ietf.org/html/rfc6265[Cookies]
 * REST
-* App online
+* App online : https://dauphine.onthehub.com/
 
 === S5
 * ORM exercices niveau serveur
