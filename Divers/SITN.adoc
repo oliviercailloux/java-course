@@ -117,6 +117,7 @@ Les commentaires utilisent les abréviations E1, E2, etc, pour se référer aux 
 * Note sur la réutilisation intelligente (recompensée !) et le droit d’utilisation, ainsi que les https://github.com/oliviercailloux/projets/blob/master/Licence.adoc[licences]
 * https://tools.ietf.org/html/rfc6265[Cookies]
 * https://github.com/oliviercailloux/java-course/raw/master/REST/presentation.pdf[REST] : https://github.com/oliviercailloux/sample-jax-rs[exemple]
+* http://arquillian.org/[Arquillian]
 * App online : https://dauphine.onthehub.com/
 
 === S5
