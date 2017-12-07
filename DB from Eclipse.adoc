@@ -2,7 +2,7 @@
 :toc: preamble
 :sectanchors:
 
-This document briefly explains how to access SQL databases from Eclipse. We illustrate with a PostgreSQL DB.
+This document briefly explains how to access SQL databases from Eclipse. We illustrate with a PostgreSQL DB, then with a Derby database hosted in a GlassFish server.
 
 NOTE: The reader supposedly has basic knowledge of JDBC and Eclipse.
 
