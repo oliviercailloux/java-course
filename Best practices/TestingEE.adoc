@@ -4,6 +4,12 @@
 == JUnit
 Unit testing objects that heavily rely on CDI (or other container services) is not recommended: if you really wish to test properly in isolation, you need to mock up injected services, which is a pain (see The https://antoniogoncalves.org/2012/11/27/launching-the-nomock-movement/[NoMock] Movement and this https://antoniogoncalves.org/2012/01/16/wytiwyr-what-you-test-is-what-you-run/[opinion] for further details).
 
+== Arquillian
+The most classical and probably simplest solution is to use Arquillian, as illustrated https://github.com/oliviercailloux/sample-jax-rs[here].
+
+== Live server
+See also: testing a https://antoniogoncalves.org/2012/10/24/no-you-dont-need-to-mock-your-soap-web-service-to-test-it/[SOAP] / https://antoniogoncalves.org/2012/12/19/test-your-jax-rs-2-0-web-service-uris-without-mocks/[JAX-RS] WS in a live HTTP Server.
+
 [[Weld-SE]]
 == Weld SE
 Relaxing the isolation requirement, a possible approach involves using a standalone Weld instance (using Weld SE) responsible for injecting the CDI managed beans. My https://github.com/oliviercailloux/samples/tree/master/JavaEE-JPA-Inject-Servlets-JUnit[JavaEE-JPA-Inject-Servlets-JUnit] sample illustrates it.
@@ -14,8 +20,5 @@ Observing how difficult and not clean it is, however, *I’d rather recommend us
 * Weld SE has apparently a http://stackoverflow.com/a/30325614/859604[bug] that makes it fail to discover beans that are in different subtrees than the `beans.xml` file. Following best practices, the test files (including the `beans.xml` file, required only for Weld SE) should be in the `/src/test/` subfolders. But this would trigger the bug, Weld SE throwing exceptions of the kind `org.jboss.weld.exceptions.UnsatisfiedResolutionException: WELD-001334: Unsatisfied dependencies for type (…) with qualifiers (…)`. In `weld-se-wrong-annotated-build-discovery-mode`, I worked around the bug by moving a https://github.com/oliviercailloux/samples/tree/weld-se-wrong-annotated-build-discovery-mode/JavaEE-JPA-Inject-Servlets-JUnit/src/main/java/io/github/oliviercailloux/javaee_jpa_inject_servlets_junit/utils/ManagedReqScopeTester.java[class] and the https://github.com/oliviercailloux/samples/tree/weld-se-wrong-annotated-build-discovery-mode/JavaEE-JPA-Inject-Servlets-JUnit/src/main/resources/META-INF/beans.xml[`beans.xml`] file in `/src/main/`. This has another problem however: Weld SE is now a compile-time dependency (and can’t be restricted to `<scope>test</scope>`), thus, should be upgraded to a compilation-scoped dependency in the https://github.com/oliviercailloux/samples/tree/weld-se-wrong-annotated-build-discovery-mode/JavaEE-JPA-Inject-Servlets-JUnit/pom.xml[`pom`]. That would be asking for trouble when deploying the app.
 * Thus I gave up on `annotated` bean discovery mode, removed the `beans.xml` file, and used dynamic http://docs.jboss.org/weld/reference/latest-master/en-US/html/environments.html#_bootstrapping_cdi_se[explicit] bean declaration when link:JavaEE-JPA-Inject-Servlets-JUnit/src/test/java/io/github/oliviercailloux/javaee_jpa_inject_servlets_junit/utils/TestReqScopeInjection.java[instantiating] the container.
 * If you really want to go for testing using Weld SE, there’s ways to clean up the code a bit compared to this sample (I don’t believe this would be enough to really bring a satisfactory solution to the whole testing requirements, thus I stopped investigating, but I’m willing to hear from you if you manage to make it work in a clean way). Check out https://developer.jboss.org/wiki/CreatingUnitTestsWithWeldAndJunit4[Creating unit tests with Weld and Junit 4]. Also, other (better?) ways to manage the contexts exist, see http://docs.jboss.org/weld/reference/latest-master/en-US/html/contexts.html#_managing_the_built_in_contexts[Managing the built in contexts] in Weld doc; http://stackoverflow.com/questions/26631093/no-active-contexts-for-scope-type-javax-enterprise-context-requestscoped-when-in[SO].
-
-== Live server
-See also: testing a https://antoniogoncalves.org/2012/10/24/no-you-dont-need-to-mock-your-soap-web-service-to-test-it/[SOAP] / https://antoniogoncalves.org/2012/12/19/test-your-jax-rs-2-0-web-service-uris-without-mocks/[JAX-RS] WS in a live HTTP Server.
 
 
