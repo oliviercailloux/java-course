@@ -1,0 +1,48 @@
+= JPA
+
+This document gets you started with using JPA. (You are supposed to have already some theoretical understanding of JPA.)
+
+NOTE: The reader supposedly has basic knowledge of JDBC and Eclipse. The reader knows how to deploy a servlet on an application server (see https://github.com/oliviercailloux/java-course/blob/master/Servlets.adoc[here] otherwise). The reader has connected Eclipse to the Java EE database (see https://github.com/oliviercailloux/java-course/blob/master/DB%20from%20Eclipse.adoc[here] otherwise).
+
+== Your first entity
+
+* Create an entity in your Java EE project. See this https://github.com/oliviercailloux/javaee-jpa-resource-local-servlets/blob/master/src/main/java/io/github/oliviercailloux/javaee_jpa_resource_local_servlets/model/Item.java[example].
+* Add a persistence.xml file in `src/main/resources/META-INF`. https://github.com/oliviercailloux/javaee-jpa-resource-local-servlets/blob/master/src/main/resources/META-INF/persistence.xml[Example].
+* Deploy on your server.
+* Check in the server logs and in the server database that the database now contains a table corresponding to your entity.
+
+== Your first query
+
+We will now write a servlet that will list your entities. Although the Java EE container may do a good deal of the following for you, as we will later see, we do it “manually” for the moment to make sure we understand what’s going on.
+
+* Import this https://github.com/oliviercailloux/javaee-jpa-resource-local-servlets[sample] in Eclipse to serve as inspiration.
+* Declare a new servlet as usual, that will answer to a GET HTTP request.
+* In the servlet method, obtain an EntityManagerFactory. See how to do this https://github.com/oliviercailloux/javaee-jpa-resource-local-servlets/blob/master/src/main/java/io/github/oliviercailloux/javaee_jpa_resource_local_servlets/servlets/GetItemsServlet.java[here].
+* From the EntityManagerFactory, obtain an EntityManager. (See same example code above.)
+* From the EntityManager, you can access the (resource-local) transaction manager. Begin a transaction thanks to this object. (See same example code above.)
+* Create a TypedQuery using the code: `em.createQuery("SELECT i FROM Item i", Item.class);`, if Item is your entity. This is a query in JPQL. You can also create a query using the Criteria API as in the example code above.
+* Obtain the result of the query as a list of entities.
+* Commit the transaction to get done with it.
+* Iterate over the results to print them to the caller of your servlet.
+* Close the EntityManager instance.
+
+== An INSERT query
+
+Write a second servlet, responding to POST, which inserts a new entity in the database.
+
+== Using the container services
+
+Much of the work above is repetitive and can be managed by the container instead of you, and even made more efficient.
+
+First, creating an instance of an EntityManagerFactory is a costly operation. We’d better not create a new one each time a servlet is called as done above. Let’s rather ask the container to provide us with one when necessary. The container can then keep one in memory and inject always the same, or optimize this operation as it sees fit. We could do this by asking to container to inject an instance of an EntityManagerFactory in our servlet.
+
+But we can do better by asking the container directly for an instance of an EntityManager, thereby skipping one more line of redundant code. Do this by creating a field in your servlet: `@PersistenceContext private EntityManager em;`. This annotation lets the container know that an injection of an EntityManager instance is expected here. (This only works together with the improvement in the next paragraph however, as the container expects JTA to be used.)
+
+Next, you will soon realize that starting and ending transactions manually is cumbersome. Observe that for correctness we would also need, in the code above, to check for exceptions and make sure the transaction is closed when exitting the servlet method. This repetitive code can also be avoided by using Java Transactions API (JTA). Under JTA, if a transaction is open, it is always associated to the current thread. Any entity manager can join the currently running transaction, which is particularly handy when your transaction code spans multiple methods, and removes the need to pass transaction objects around. To use JTA in your project, proceed as follows. (I assume here that you know the basics of CDI.)
+
+* In `persistence.xml`, remove `transaction-type="RESOURCE_LOCAL"` (this is equivalent to setting `transaction-type="JTA"`). Remove the XML elements `non-jta-data-source` (by default, the jta-data-source will be `java:comp/DefaultDataSource` so no need to define it explicitly) and `exclude-unlisted-classes` (by default under JTA, it is false).
+* Instead of opening, executing, closing the transaction directly in the servlet, let the servlet call a CDI managed bean method which will take care of that job. Annotate this (transactional) method with `@Transactional`. The container will make sure, when executing the method, that a transaction is ongoing. If no transaction is ongoing when the method starts executing, the container automatically starts a transaction, and closes it at the end of the method. Furthermore, by default, any injected entity manager automatically join the currently executing transaction, if there is one, thus there is no need to explicitly deal with transactions in this mode (for simple cases at least). This strategy is illustrated in the https://github.com/oliviercailloux/samples/tree/master/JavaEE-JPA-Inject-Servlets[JavaEE-JPA-Inject-Servlets] sample (see 
+* You need to execute your transactions in CDI managed beans in order to benefit from the container managed transactions (or EJBs, not detailed here). (You can also inject a `UserTransaction` object into a managed object such as a servlet, by annotating it `@Resource`, and use it to manage JTA transaction boundaries explicitly. This is illustrated https://github.com/oliviercailloux/samples/blob/master/JavaEE-JPA-Inject-Servlets/src/main/java/io/github/oliviercailloux/javaee_jpa_inject_servlets/servlets/advanced/GetItemsManualTransactionServletJTAEntityManager.java[here].)
+
+Note that a simple SELECT query as used here for illustration will also work with no explicit transaction (in which case the JDBC driver will take care of creating one just for this specific query).
+
