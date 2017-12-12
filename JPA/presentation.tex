@@ -11,6 +11,7 @@
 \input{preamble/uml}
 
 %\setbeamertemplate{headline}[singleline]
+\setbeamertemplate{footline}[onlypage]
 
 \title{JPA}
 \subject{ORM}
@@ -60,13 +61,13 @@
 	Problème : non concordance (\emph{Mismatch}) Objet / Relationnel
 	\begin{itemize}
 		\item Modèle de données : objets
+		\item Cohérence à maintenir entre BD et objets : types, colonnes, contraintes not null ou autres…
+		\item Répétition lors écriture des requêtes de base
 		\item Références directionnelles
 		\item Modèle Entité / Relationnel : sans comportement
 		\item Pas de notion de navigation
 		\item Chargement automatique ? \pause Éviter de charger tout le graphe !\pause
 		\item Problème classique : n+1 select
-		\item Cohérence à maintenir entre BD et objets : types, colonnes, contraintes not null ou autres…
-		\item Répétition lors écriture des requêtes de base
 		\item Difficultés particulières : héritage et autres concepts objet
 	\end{itemize}
 \end{frame}
