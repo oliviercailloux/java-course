@@ -1,6 +1,6 @@
 = JPA
 
-This document gets you started with using JPA. (You are supposed to have already some theoretical understanding of JPA.)
+This document helps you get started with JPA. (You are supposed to have already some theoretical understanding of JPA.)
 
 NOTE: The reader supposedly has basic knowledge of JDBC and Eclipse. The reader knows how to deploy a servlet on an application server (see https://github.com/oliviercailloux/java-course/blob/master/Servlets.adoc[here] otherwise). The reader has connected Eclipse to the Java EE database (see https://github.com/oliviercailloux/java-course/blob/master/DB%20from%20Eclipse.adoc[here] otherwise).
 
@@ -44,5 +44,5 @@ Next, you will soon realize that starting and ending transactions manually is cu
 * Instead of opening, executing, closing the transaction directly in the servlet, let the servlet call a CDI managed bean method which will take care of that job. Annotate this (transactional) method with `@Transactional`. The container will make sure, when executing the method, that a transaction is ongoing. If no transaction is ongoing when the method starts executing, the container automatically starts a transaction, and closes it at the end of the method. Furthermore, by default, any injected entity manager automatically join the currently executing transaction, if there is one, thus there is no need to explicitly deal with transactions in this mode (for simple cases at least). This strategy is illustrated in the https://github.com/oliviercailloux/samples/tree/master/JavaEE-JPA-Inject-Servlets[JavaEE-JPA-Inject-Servlets] sample (see 
 * You need to execute your transactions in CDI managed beans in order to benefit from the container managed transactions (or EJBs, not detailed here). (You can also inject a `UserTransaction` object into a managed object such as a servlet, by annotating it `@Resource`, and use it to manage JTA transaction boundaries explicitly. This is illustrated https://github.com/oliviercailloux/samples/blob/master/JavaEE-JPA-Inject-Servlets/src/main/java/io/github/oliviercailloux/javaee_jpa_inject_servlets/servlets/advanced/GetItemsManualTransactionServletJTAEntityManager.java[here].)
 
-Note that a simple SELECT query as used here for illustration will also work with no explicit transaction (in which case the JDBC driver will take care of creating one just for this specific query).
+Note that a simple SELECT query, as in the first query exercice above, will work even without explicit JTA transaction opened (in which case the JDBC driver will take care of creating one just for this specific query). However, the second query exercice (INSERT) does require a (JTA or “resource-local”) transaction.
 
