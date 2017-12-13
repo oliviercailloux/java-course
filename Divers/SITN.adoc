@@ -119,7 +119,7 @@ Les commentaires utilisent les abréviations E1, E2, etc, pour se référer aux 
 * https://github.com/oliviercailloux/java-course/raw/master/REST/presentation.pdf[REST] : https://github.com/oliviercailloux/sample-jax-rs[exemple]
 * http://arquillian.org/[Arquillian]
 
-=== S5
+=== S5 (13 décembre)
 //* App online : https://dauphine.onthehub.com/
 * https://github.com/oliviercailloux/java-course/raw/master/CDI/presentation.pdf[CDI]
 * https://github.com/oliviercailloux/java-course/raw/master/JPA/presentation.pdf[JPA]
