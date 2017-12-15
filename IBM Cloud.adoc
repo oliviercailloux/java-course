@@ -34,7 +34,7 @@ You can find your organization, space and region by looking at your https://cons
 
 Go to https://travis-ci.org/[Travis CI]: in your application, `More options` / `Settings`, you will find a way to add environment variables. Add one named `BLUEMIX_PASSWORD` with your password as value. Make sure “Display value in build log” is off.
 
-In your `pom.xml`, in the `build` element, add `<finalName>${project.artifactId}</finalName>`, so that maven will produce an artifact with no version number in it. Otherwise, the `path` we have indicated in the `manifest.yml` needs also to reflect the version.
+In your `pom.xml`, in the `build` element, add `<finalName>${project.artifactId}</finalName>`, so that maven will produce an artifact with no version number in it. (Check this https://github.com/oliviercailloux/sample-jax-rs/blob/master/pom.xml[sample].) Otherwise, the `path` we have indicated in the `manifest.yml` needs also to reflect the version.
 
 Push your changes. Watch in the Travis log your application getting built, then deployed to IBM Cloud (isn’t it beautiful?). If all went well, the log indicates the url where your application is reachable, probably `https://MyAppName.eu-gb.mybluemix.net` (this is its context root). Refresh your https://console.bluemix.net/dashboard/apps/[deployed apps] page, you should see it there. Its servlets should now be reachable.
 
