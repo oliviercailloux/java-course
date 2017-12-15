@@ -120,9 +120,7 @@ Les commentaires utilisent les abréviations E1, E2, etc, pour se référer aux 
 * http://arquillian.org/[Arquillian]
 
 === S5 (13 décembre)
-//* App online : https://dauphine.onthehub.com/
-* https://github.com/oliviercailloux/java-course/raw/master/CDI/presentation.pdf[CDI]
-* https://github.com/oliviercailloux/java-course/raw/master/JPA/presentation.pdf[JPA]
+* https://github.com/oliviercailloux/java-course/raw/master/JPA/presentation.pdf[JPA] : création d’une entité et création automatique BD
 ** https://github.com/oliviercailloux/java-course/blob/master/DB%20from%20Eclipse.adoc[DB from Eclipse]
 ** https://github.com/oliviercailloux/java-course/blob/master/JPA.adoc[Exercices]
 
@@ -130,12 +128,13 @@ Les commentaires utilisent les abréviations E1, E2, etc, pour se référer aux 
 
 * Faire passer vos tests sur Travis CI
 
-=== S6
+=== S6 (9 janvier)
+* https://github.com/oliviercailloux/java-course/blob/master/IBM%20Cloud.adoc[IBM Cloud]
 * Suite ORM
-* SOAP ?
+* https://github.com/oliviercailloux/java-course/raw/master/CDI/presentation.pdf[CDI]
 
-=== S7
-* Message beans ?
+=== S7 (16 janvier)
+* Projets
 
 === S8
 * Présentation des projets
