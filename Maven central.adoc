@@ -43,5 +43,5 @@ If successful, this deploys your release to a temporary area in OSSRH. Follow th
 
 As soon as you have successfully published a release, commit it to your SCM, tag the commit with the corresponding version number, then increase the version number in the POM and put the `-SNAPSHOT` suffix back, and commit again, in order to start a new development cycle.
 
-You can automate some of these steps even more, see the http://central.sonatype.org/pages/ossrh-guide.html[[OSSRH guide]. However it may not be a good idea: keeping some manual verification steps may be useful for important milestones in a project.
+You can automate some of these steps even more, see the http://central.sonatype.org/pages/ossrh-guide.html[OSSRH guide]. However it may not be a good idea: keeping some manual verification steps may be useful for important milestones in a project.
 
