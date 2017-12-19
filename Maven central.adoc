@@ -39,9 +39,9 @@ You can deploy several times using the same version number, provided it is a sna
 == Deploy a release
 When you are ready to release, remove the `-SNAPSHOT` suffix from your Maven coordinates version number. Run `mvn deploy`.
 
-If successful, this deploys your release to a temporary area in OSSRH. Follow these http://central.sonatype.org/pages/releasing-the-deployment.html[instructions] to verify your artifacts and transfer them to the public release section of OSSRH, from where they will automatically transfer to Maven central (after the release through OSSRH interface, your artifacts should appear in the https://search.maven.org/[search] interface within http://central.sonatype.org/pages/ossrh-guide.html#releasing-to-central[two hours]). Remember that you may only publish once a given release version (no overwrite is allowed), contrary to snapshots.
+If successful, this deploys your release to a temporary area in OSSRH. Follow these http://central.sonatype.org/pages/releasing-the-deployment.html[instructions] to verify your artifacts and transfer them to the public release section of OSSRH, from where they will automatically transfer to Maven central (after the close and release through OSSRH interface, your artifacts should appear immediately in the OSSRH groups url here above, and in the https://search.maven.org/[search] interface within http://central.sonatype.org/pages/ossrh-guide.html#releasing-to-central[two hours]). Remember that you may only publish once a given release version (no overwrite is allowed), contrary to snapshots.
 
 As soon as you have successfully published a release, commit it to your SCM, tag the commit with the corresponding version number, then increase the version number in the POM and put the `-SNAPSHOT` suffix back, and commit again, in order to start a new development cycle.
 
-You can automate some of these steps even more, see the http://central.sonatype.org/pages/ossrh-guide.html[OSSRH guide]. However it may not be a good idea: keeping some manual verification steps may be useful for important milestones in a project.
+You can automate some of these steps even more, see the http://central.sonatype.org/pages/ossrh-guide.html[OSSRH guide]. However it may not be a good idea: I think it’s good to keep some manual verification steps for important milestones in a project.
 
