@@ -16,14 +16,13 @@ Voir aussi la section références de chaque ensemble de diapositives, par sujet
 === Exigences
 * Pour chaque fonctionnalité dont vous vous occupez : créer une issue sur votre projet GitHub. Son nom _doit_ être strictement égal au nom dans l’énoncé du projet. Vous enregistrer à deux (un binôme) dessus. Lorsque vous l’estimez terminée (je peux corriger), et que vous avez fusionné votre code sur la branche master, vous fermez l’issue. (Idée : https://fr.wikipedia.org/wiki/Int%C3%A9gration_continue[Intégration continue])
 * Vous pouvez implémenter les fonctionnalités dans l’ordre de votre choix, mais tenez compte des contraintes de précédence (non explicitement indiquées dans l’énoncé, à vous d’y réfléchir ou de m’interroger).
-* Je vous donne une note qualité temporaire (la même pour les deux membres du binôme) pour cette issue. Je commente l’issue sur GitHub pour vous aider à améliorer votre code (et vos points) si nécessaire.
-* Vous pouvez ré-ouvrir l’issue si vous le jugez nécessaire, pour corriger les faiblesses soulignées dans mon commentaire, ou en créer une autre.
-* Conseil : changez partiellement chaque binômes à chaque issue pour faire tourner les connaissances et varier les plaisirs (et augmenter les points).
+* Je vous donne une note qualité (la même pour les deux membres du binôme) pour cette issue. Je commente l’issue sur GitHub pour vous aider à améliorer votre code (et vos points) si nécessaire. Cette note qualité est temporaire jusqu’à la livraison suivante.
+* Conseil : changez partiellement chaque binôme à chaque issue pour faire tourner les connaissances et varier les plaisirs (et augmenter les points).
 
 . Approche par contrat
 .. Gestion appropriée des exceptions
 .. Avec Javadoc pour documenter le contrat lorsque nécessaire
-.. Sans commentaires auto-générés (ne servent à rien et masquent les commentaires importants)
+.. Sans commentaires auto-générés (ne servent à rien et noient les commentaires importants)
 . Avec tests unitaires ou fonctionnels (_au moins_ un test fonctionnel par servlet)
 . Utilisation appropriée des classes de la JRE et de bibliothèques tierces
 . Coder en anglais
@@ -35,13 +34,15 @@ Voir aussi la section références de chaque ensemble de diapositives, par sujet
 . Répondre aux attentes du client : vérifier la compréhension !
 . Respecter les https://github.com/oliviercailloux/java-course/tree/master/Best%20practices[bonnes pratiques]
 
+=== Livraisons
+* Livraison 1 : deux jours avant S4. Exigence : au moins 5 points de difficulté accomplis avec une qualité au moins moyenne (selon exigences ci-dessus) ; Travis CI en place.
+* Livraison 2 : deux jours avant S6 (≥ 12 points de difficulté)
+* Livraison 3 : deux jours avant S8 (≥ 18 ou 20 points de difficulté)
+
 === Évaluation de la régularité
 * Un travail régulier est attendu (et la note le prendra en compte). En outre, si vous attendez la fin du cours pour travailler sur votre projet, vous ne bénéficiez pas du suivi.
 * Attendu : 9 heures de travail par personne entre chaque séance en moyenne ; 18 points de difficulté en tout pour les groupes de 6 personnes (20 points pour 7 personnes).
 * Je donnerai au groupe trois notes durant l’année sur l’aspect régularité.
-** Note 1 : deux jours avant S4. Exigence : au moins 5 points de difficulté accomplis avec une qualité au moins moyenne (selon exigences ci-dessus) ; Travis CI en place.
-** Note 2 : deux jours avant S6 (≥ 12 points de difficulté)
-** Note 2 : deux jours avant S8 (≥ 18 ou 20 points de difficulté)
 * La moyenne de ces trois notes constitue la note régularité.
 * La note régularité compte comme un _plafond_ sur votre note CC, qui elle compte pour 50% de la note finale.
 
