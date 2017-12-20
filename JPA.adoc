@@ -8,19 +8,20 @@ NOTE: The reader supposedly has basic knowledge of JDBC and Eclipse. The reader 
 
 * Create an entity in your Java EE project. See this https://github.com/oliviercailloux/javaee-jpa-resource-local-servlets/blob/master/src/main/java/io/github/oliviercailloux/javaee_jpa_resource_local_servlets/model/Item.java[example].
 * Add a persistence.xml file in `src/main/resources/META-INF`. https://github.com/oliviercailloux/javaee-jpa-resource-local-servlets/blob/master/src/main/resources/META-INF/persistence.xml[Example].
+* Declare a new servlet as usual, that will answer to a GET HTTP request.
+* In the servlet method, obtain an EntityManagerFactory. See how to do this https://github.com/oliviercailloux/javaee-jpa-resource-local-servlets/blob/master/src/main/java/io/github/oliviercailloux/javaee_jpa_resource_local_servlets/servlets/GetItemsServlet.java[here]. (You do not need to do anything with that factory, but it is necessary to instanciate it in order to trigger the database automatic deployment.)
 * Deploy on your server.
+* Access your servlet.
 * Check in the server logs and in the server database that the database now contains a table corresponding to your entity.
 
 == Your first query
 
-We will now write a servlet that will list your entities. Although the Java EE container may do a good deal of the following for you, as we will later see, we do it “manually” for the moment to make sure we understand what’s going on.
+We will now expand the servlet and make it list your entities. Although the Java EE container may do a good deal of the following for you, as we will later see, we do it “manually” for the moment to make sure we understand what’s going on.
 
 * Import this https://github.com/oliviercailloux/javaee-jpa-resource-local-servlets[sample] in Eclipse to serve as inspiration.
-* Declare a new servlet as usual, that will answer to a GET HTTP request.
-* In the servlet method, obtain an EntityManagerFactory. See how to do this https://github.com/oliviercailloux/javaee-jpa-resource-local-servlets/blob/master/src/main/java/io/github/oliviercailloux/javaee_jpa_resource_local_servlets/servlets/GetItemsServlet.java[here].
-* From the EntityManagerFactory, obtain an EntityManager. (See same example code above.)
-* From the EntityManager, you can access the (resource-local) transaction manager. Begin a transaction thanks to this object. (See same example code above.)
-* Create a TypedQuery using the code: `em.createQuery("SELECT i FROM Item i", Item.class);`, if Item is your entity. This is a query in JPQL. You can also create a query using the Criteria API as in the example code above.
+* In your servlet (created previously), from the EntityManagerFactory, obtain an EntityManager. (See sample code.)
+* From the EntityManager, you can access the (resource-local) transaction manager. Begin a transaction thanks to this object. (See sample code.)
+* Create a TypedQuery using the code: `em.createQuery("SELECT i FROM Item i", Item.class);`, if Item is your entity. This is a query in JPQL. You can also create a query using the Criteria API as in the sample code.
 * Obtain the result of the query as a list of entities.
 * Commit the transaction to get done with it.
 * Iterate over the results to print them to the caller of your servlet.
