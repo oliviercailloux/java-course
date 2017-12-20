@@ -40,7 +40,7 @@ Voir aussi la section références de chaque ensemble de diapositives, par sujet
 * Je donnerai au groupe trois notes durant l’année sur l’aspect régularité.
 ** Note 1 : deux jours avant S4. Exigence : au moins trois points de difficulté accomplis avec une qualité au moins moyenne (selon exigences ci-dessus) (− 3 / 10 par point non accompli) ; Travis CI en place (− 2 / 10 sinon).
 ** Note 2 : deux jours avant S6 (≥ 7 points de difficulté ; Tests doivent passer sur Travis CI)
-** Note 2 : deux jours avant S8 (≥ 11 points de difficulté)
+** Note 3 : deux jours avant S8 (≥ 11 points de difficulté)
 * La moyenne de ces trois notes constitue la note régularité.
 * La note régularité compte comme un _plafond_ sur votre note CC, qui elle compte pour 50% de la note finale.
 
