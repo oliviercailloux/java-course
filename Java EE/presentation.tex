@@ -11,6 +11,7 @@
 \input{preamble/uml}
 
 \setbeamertemplate{headline}[singleline]
+\setbeamertemplate{footline}[onlypage]
 
 \title{Introduction à Java EE}
 \subject{Java EE}
@@ -141,25 +142,15 @@
 \end{frame}
 
 \begin{frame}
-	\frametitle{Deux applications Java EE}
-	\begin{block}{BDD $⇔$ EJB $⇔$ client}
-		\begin{itemize}
-			\item entreprise A : niveau de stock calculable d’après BDD
-			\item EJB : requête pour obtenir le niveau de stock
-			\item composant client (fournisseur de A) : contacte l’EJB
-		\end{itemize}		
-	\end{block}
-	
-	\begin{block}{BDD $⇔$ EJB $⇔$ Servlet}
-		\begin{itemize}
-			\item entreprise A : niveau de stock calculable d’après BDD
-			\item EJB : requête pour obtenir le niveau de stock
-			\item Web : servlet répondant à HTTP GET (client léger)
-			\item Et puis ? Quel client final ?
-		\end{itemize}		
-	\end{block}
-	
-	Options pour client non-java ?
+	\frametitle{Exemple d’application Java EE}
+	\begin{itemize}
+		\item Entreprise A : niveau de stock calculable d’après BDD
+		\item Lib : requête pour obtenir le niveau de stock
+		\item Web : servlet répondant à HTTP GET (client léger)
+		\item Client Javascript (entreprise A)
+		\item Client Java (entreprise B)
+		\item Client Python (entreprise C)
+	\end{itemize}		
 \end{frame}
 
 \section{Assemblage et déploiement}
