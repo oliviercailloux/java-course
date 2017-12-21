@@ -39,7 +39,7 @@ Run `asadmin set server-config.network-config.network-listeners.network-listener
 Open the server log file in a text editor and check that you see the logs related to what you just did.
 
 == Deploying applications
-The autodeploy directory is used to deploy your application, once it is packaged appropriately (e.g. as a WAR file). Simply drop the file there. GlassFish will then create a file in the same folder to tell you whether the application was deployed successfully. (Check the link:Servlets.adoc[Servlets] document to learn how to create an adequate file.)
+The `autodeploy` directory is used to deploy your application, once it is packaged appropriately (e.g. as a WAR file). Simply drop the file there. GlassFish will then create a file in the same folder to tell you whether the application was deployed successfully. (Check the link:Servlets.adoc[Servlets] document to learn how to create an adequate file.)
 
 == Technical tips
 === Does GlassFish see my servlets?
