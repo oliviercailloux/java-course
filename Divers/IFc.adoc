@@ -13,14 +13,18 @@ Voir aussi la section références de chaque ensemble de diapositives, par sujet
 == Projets
 Énoncés : voir https://github.com/oliviercailloux/projets/tree/master/EE[Projets] Java EE (sur GitHub)
 
-=== Exigences
+=== Consignes générales
 * Pour chaque fonctionnalité dont vous vous occupez : créer une issue sur votre projet GitHub. Son nom _doit_ être strictement égal au nom dans l’énoncé du projet. Vous enregistrer à deux (un binôme) dessus. Lorsque vous l’estimez terminée (je peux corriger), et que vous avez fusionné votre code sur la branche master, vous fermez l’issue. (Idée : https://fr.wikipedia.org/wiki/Int%C3%A9gration_continue[Intégration continue])
 * Vous pouvez implémenter les fonctionnalités dans l’ordre de votre choix, mais tenez compte des contraintes de précédence (non explicitement indiquées dans l’énoncé, à vous d’y réfléchir ou de m’interroger).
 * Je vous donne une note qualité (la même pour les deux membres du binôme) pour cette issue. Je commente l’issue sur GitHub pour vous aider à améliorer votre code (et vos points) si nécessaire. Cette note qualité est temporaire (au moins) jusqu’à la livraison suivante.
 * Conseil : changez partiellement chaque binôme à chaque issue pour faire tourner les connaissances et varier les plaisirs (et augmenter les points).
 * Un travail régulier est attendu (et la note le prendra en compte).
 * Attendu : 9 heures de travail par personne entre chaque séance en moyenne ; 18 points de difficulté en tout pour les groupes de 6 personnes (20 points pour 7 personnes).
+* La note CC est la moyenne de vos notes qualité.
+* La note projet est une évaluation finale de la qualité de votre projet, avec une composante individuelle (ce sur quoi vous avez travaillé) et une composante de groupe (le résultat final du projet entier). Elle prend en compte vos fonctionnalités accomplies et leurs corrections, la diversité des fonctionnalités, la cohérence du tout, la présentation finale. Notez que toute amélioration des fonctionnalités déjà notées pour la note CC vous rapportera pour la note projet.
+* Les commentaires utilisent les abréviations E1, E2, etc, pour se référer aux exigences ci-dessus ; S2.1 pour le point indiqué en 1 sous S2 ci-dessous ; BP Maven (par exemple) pour les Bonnes Pratiques Maven (voir lien ci-dessus).
 
+=== Exigences
 . Approche par contrat
 .. Gestion appropriée des exceptions
 .. Avec Javadoc pour documenter le contrat lorsque nécessaire
@@ -37,22 +41,13 @@ Voir aussi la section références de chaque ensemble de diapositives, par sujet
 . Respecter les https://github.com/oliviercailloux/java-course/tree/master/Best%20practices[bonnes pratiques]
 
 === Livraisons
-* Livraison 1 : deux jours avant S4. Exigence : au moins 5 points de difficulté accomplis avec une qualité au moins moyenne (selon exigences ci-dessus) ; Travis CI en place.
+* Livraison 1 : deux jours avant S4. Exigence : au moins 5 points de difficulté accomplis (selon exigences ci-dessus) ; Travis CI en place.
 * Livraison 2 : deux jours avant S6 (≥ 12 points de difficulté)
 * Livraison 3 : deux jours avant S8 (≥ 18 ou 20 points de difficulté)
 
 À chaque livraison, certaines notes qualités deviennent définitivement part de la note CC (à hauteur du nombre de points de difficulté requis). Si vous avez fait plus que votre quota, ce sont les meilleures notes qui deviennent définitivement part de la note CC.
 
-=== Évaluation de la régularité
-* Je donnerai au groupe trois notes durant l’année sur l’aspect régularité (voir exigences livraisons).
-* La moyenne de ces trois notes constitue la note régularité.
-* La note CC est le minimum de la note régularité et de la moyenne de vos notes qualité.
-* La note projet est une évaluation finale de la qualité de votre projet, avec une composante individuelle (ce sur quoi vous avez travaillé) et une composante de groupe (le résultat final du projet entier). Elle prend en compte vos fonctionnalités accomplies et leurs corrections, la diversité des fonctionnalités, la cohérence du tout, la présentation finale. Notez que toute amélioration des fonctionnalités déjà notées pour la note CC vous rapportera pour la note projet.
-
 Deux jours avant Sx signifie : au plus tard deux jours avant le jour de la séance x, à 23h59 + 1 min. (Exemple : si S4 a lieu lundi 3 octobre, deux jours avant S4 signifie : au plus tard samedi 1 octobre, 23h59 + 1 min.)
-
-=== Commentaires lors évaluations des fonctionnalités
-Les commentaires utilisent les abréviations E1, E2, etc, pour se référer aux exigences ci-dessus ; S2.1 pour le point indiqué en 1 sous S2 ci-dessous ; BP Maven (par exemple) pour les Bonnes Pratiques Maven (voir lien ci-dessus).
 
 == Plan
 === S1 (jeudi 30 novembre 2017)
