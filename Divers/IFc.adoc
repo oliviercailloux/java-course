@@ -16,8 +16,10 @@ Voir aussi la section références de chaque ensemble de diapositives, par sujet
 === Exigences
 * Pour chaque fonctionnalité dont vous vous occupez : créer une issue sur votre projet GitHub. Son nom _doit_ être strictement égal au nom dans l’énoncé du projet. Vous enregistrer à deux (un binôme) dessus. Lorsque vous l’estimez terminée (je peux corriger), et que vous avez fusionné votre code sur la branche master, vous fermez l’issue. (Idée : https://fr.wikipedia.org/wiki/Int%C3%A9gration_continue[Intégration continue])
 * Vous pouvez implémenter les fonctionnalités dans l’ordre de votre choix, mais tenez compte des contraintes de précédence (non explicitement indiquées dans l’énoncé, à vous d’y réfléchir ou de m’interroger).
-* Je vous donne une note qualité (la même pour les deux membres du binôme) pour cette issue. Je commente l’issue sur GitHub pour vous aider à améliorer votre code (et vos points) si nécessaire. Cette note qualité est temporaire jusqu’à la livraison suivante.
+* Je vous donne une note qualité (la même pour les deux membres du binôme) pour cette issue. Je commente l’issue sur GitHub pour vous aider à améliorer votre code (et vos points) si nécessaire. Cette note qualité est temporaire (au moins) jusqu’à la livraison suivante.
 * Conseil : changez partiellement chaque binôme à chaque issue pour faire tourner les connaissances et varier les plaisirs (et augmenter les points).
+* Un travail régulier est attendu (et la note le prendra en compte).
+* Attendu : 9 heures de travail par personne entre chaque séance en moyenne ; 18 points de difficulté en tout pour les groupes de 6 personnes (20 points pour 7 personnes).
 
 . Approche par contrat
 .. Gestion appropriée des exceptions
@@ -39,12 +41,13 @@ Voir aussi la section références de chaque ensemble de diapositives, par sujet
 * Livraison 2 : deux jours avant S6 (≥ 12 points de difficulté)
 * Livraison 3 : deux jours avant S8 (≥ 18 ou 20 points de difficulté)
 
+À chaque livraison, certaines notes qualités deviennent définitivement part de la note CC (à hauteur du nombre de points de difficulté requis). Si vous avez fait plus que votre quota, ce sont les meilleures notes qui deviennent définitivement part de la note CC.
+
 === Évaluation de la régularité
-* Un travail régulier est attendu (et la note le prendra en compte). En outre, si vous attendez la fin du cours pour travailler sur votre projet, vous ne bénéficiez pas du suivi.
-* Attendu : 9 heures de travail par personne entre chaque séance en moyenne ; 18 points de difficulté en tout pour les groupes de 6 personnes (20 points pour 7 personnes).
-* Je donnerai au groupe trois notes durant l’année sur l’aspect régularité.
+* Je donnerai au groupe trois notes durant l’année sur l’aspect régularité (voir exigences livraisons).
 * La moyenne de ces trois notes constitue la note régularité.
-* La note régularité compte comme un _plafond_ sur votre note CC, qui elle compte pour 50% de la note finale.
+* La note CC est le minimum de la note régularité et de la moyenne de vos notes qualité.
+* La note projet est une évaluation finale de la qualité de votre projet, avec une composante individuelle (ce sur quoi vous avez travaillé) et une composante de groupe (le résultat final du projet entier). Elle prend en compte vos fonctionnalités accomplies et leurs corrections, la diversité des fonctionnalités, la cohérence du tout, la présentation finale. Notez que toute amélioration des fonctionnalités déjà notées pour la note CC vous rapportera pour la note projet.
 
 Deux jours avant Sx signifie : au plus tard deux jours avant le jour de la séance x, à 23h59 + 1 min. (Exemple : si S4 a lieu lundi 3 octobre, deux jours avant S4 signifie : au plus tard samedi 1 octobre, 23h59 + 1 min.)
 
@@ -67,7 +70,7 @@ Les commentaires utilisent les abréviations E1, E2, etc, pour se référer aux 
 . Me fournir le nom d’utilisateur, si nécessaire : via devoir https://mycourse.dauphine.fr/webapps/blackboard/execute/launcher?type=Course&id=_38078_1[MyCourse]
 . Rediriger vos e-mails @ Dauphine si nécessaire pour vous assurer de recevoir les annonces
 
-=== S2
+=== S2 (jeudi 21 décembre 2017)
 // 13h45
 // vidéo
 // 13h55 (env.)
@@ -81,7 +84,6 @@ Les commentaires utilisent les abréviations E1, E2, etc, pour se référer aux 
 // 15h30
 
 * L’Open Data https://www.youtube.com/watch?v=aHxv_2BMJfw[à la loupe]
-* Note : Optimisations en HTTP GET
 * https://github.com/oliviercailloux/java-course/raw/master/Maven/presentation.pdf[Maven] & https://github.com/oliviercailloux/java-course/tree/master/Maven.adoc[exercices]
 * Exercices client WS (lien ci-dessus)
 * https://github.com/oliviercailloux/java-course/raw/master/Java%20EE/presentation.pdf[Intro] Java EE, https://github.com/oliviercailloux/java-course/tree/master/GlassFish.adoc[Familiarisation] avec GlassFish
