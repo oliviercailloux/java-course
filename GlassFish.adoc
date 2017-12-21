@@ -28,7 +28,7 @@ Supplementary to the somewhat austere `asadmin` command line utility, it is poss
 
 When the server starts, it tells you (on the terminal) its admin port (usually 4848); and the place it logs to (usually `…/glassfish/domains/domain1/logs/server.log`).
 
-Browse to http://localhost:4848/ to open the Administration console. Open `Configurations / server-config / Network Config / Network Listeners / http-listener-1`. Check where the server is listening for normal operation (usually 8080).
+Browse to http://localhost:4848/ to open the Administration console. Open `Configurations / server-config / Network Config / Network Listeners / http-listener-1`. Look at the address and port the server is listening on for normal operation (usually 8080).
 
 Browse to http://localhost:8080/ and check that you see the “Your server is now running” page. Browse to your external IP address on the port 8080 (for example, http://192.168.0.1:8080) and check that you see the same thing. That’s because `http-listener-1` is listening to the address `0.0.0.0`, meaning every address.
 
