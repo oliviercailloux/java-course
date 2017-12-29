@@ -10,7 +10,7 @@ Simple exercices for Maven. The reader is supposed to know already the basics of
 The command `mvn` followed by a goal runs Maven with this goal.
 This command simply executes the plugin goal `archetype:generate`. This is because `archetype:generate` is the name of a plugin goal and not the name of a phase of a lifecycle. This goal is defined in the `archetype` Maven plugin.
 
-The command displays a long list of archetypes included in your installation. We’ll start by using the `maven-archetype-quickstart` archetype (that’s its artifactId).
+The command displays a long list of archetypes available to you. We’ll start by using the `maven-archetype-quickstart` archetype (that’s its artifactId).
 
 * Find this one by using the filter in the command line, then select it using its number.
 * Answer the remaining questions. You can simply hit ENTER when a default answer is proposed, if it suits you.
@@ -21,7 +21,7 @@ Your project gets created in a sub-folder of your current position.
 * In the terminal, move into the newly created project.
 * Type `mvn compile`. What does it do, and why (how does it work)? Is `compile` a phase, or a plugin goal?
 * What has changed on your hard disk?
-* Run the compiled application in the command line. (How to do this?) What does it do?
+* Run the compiled application in the command line (if necessary, see Eck’s http://math.hws.edu/eck/cs124/javanotes7/c2/s6.html#basics.6.6[book]). What does it do?
 
 == Modern project
 Let’s now use a different archetype to generate a project better suited for our future use.
