@@ -29,19 +29,31 @@ You know algorithmics and the basic (non object-oriented) programming concepts i
 
 // Object: 10 ; Project: 7
 
+== Exercices
+
+* Create a personal repository named `Java-L3-Eck-Ex`. You deposit the book exercices (EE) there. All related classes must be prefixed with EExx, for example EE34MyClass.
+* Create a group repository (once for the group). The exercices about the project go there.
+* All mandatory exercices must be in the appropriate repository, merged in the branch `master`, 3 days before the lecture, 23:59 + 1min (e.g., lecture Saturday 23rd means a deadline on the end of Wednesday 20th).
+* You will be graded for your project exercices. Those grades count for the CC grade. You can modify the code afterwards for a better Project grade.
+* For the book exercices, you receive either 1 (exercice is done, even imperfectly) or 0 (exercice not done). This counts for 10% of the CC grade.
+* The final grade is a mix of 50% CC grade, 50% Project grade.
+
 == S1 (11th Jan)
 
-* https://github.com/oliviercailloux/java-course/blob/1580d14b95224ac5e5fd66c84fe440ff84a98246/Pr%C3%A9sentation%20du%20cours%20Objet/presentation.pdf[Pres course]
+* https://github.com/oliviercailloux/java-course/blob/master/Pr%C3%A9sentation%20du%20cours%20Objet/presentation.pdf[Pres course]
 * Basic concepts and structures of Java: variables; types; subroutines; control structures; identifiers… [SK]
 ** http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours1.pdf[Airiau C1], http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours2.pdf[Airiau C2] (compil, p. 15 to 19)
-* https://github.com/oliviercailloux/java-course/blob/3d297d81b8e5bf6dcc825b2b3b7634c18282fc24/Git/presentation.pdf[Git]
-* https://github.com/oliviercailloux/java-course/blob/3d297d81b8e5bf6dcc825b2b3b7634c18282fc24/Notions%20objets/presentation.pdf[Basics of objects]
+* https://github.com/oliviercailloux/java-course/blob/master/Git/presentation.pdf[Git] #(w/o merge?)
+* https://github.com/oliviercailloux/java-course/blob/master/Notions%20objets/presentation.pdf[Basics of objects]
+* Choose your project
 * http://math.hws.edu/eck/cs124/javanotes7/c1/[ES1.1], 1.2, 1.3, 1.4, 2 intro, 2.1, 2.2, 2.3.3, 2.4.1, 2.5, 2.6.6 [SK]
 * For beginners in Java: ES3 intro to 3.6 [SK]
 * ES1.5
 * ES2.2.1, 2.3.1, 2.3.2, 2.4.6 [I]
 * ES1.6, 1.7 [O]
 * Read link:../Tools.adoc#eclipse[parts] of Eclipse doc [I]
+
+// Prés du cours : 45 min. Git => 65. Ex git => 70. Airiau C1 => 90.
 
 Approximatively: 10p. (+ 30p. [SK])
 
@@ -72,6 +84,7 @@ Approximatively: 48p.
 * EE4.5, 4.6 [O]
 * EE4.7 [M]
 * http://math.hws.edu/eck/cs124/javanotes7/c4/quiz.html[EQ4]
+* Project: Contract [M]
 
 == S3 (7th Feb)
 
@@ -80,6 +93,10 @@ Approximatively: 48p.
 * Interfaces: design; use as type; replaceability.
 * http://math.hws.edu/eck/cs124/javanotes7/c5/[ES5] intro to 5.4
 * ES5.3.4 [I]
+* Améliorer pour des points (et du prestige)
+** Correction acceptée : +1
+** Correction impressionnante : +1 point de prestige
+* Clean repository
 
 Approximatively: 50p.
 
@@ -110,6 +127,8 @@ Approximatively: 50p.
 
 == S5 (23rd Feb)
 
+* Files and flows (from https://docs.oracle.com/javase/tutorial/essential/io/index.html[Basic I/O] in the Java Tutorials)
+* Use dependencies
 * Exceptions in Java: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours5.pdf[Airiau C5]
 * Maps, Comparable, Comparator: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours6.pdf[Airiau C6]
 * Unit testing: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours8.pdf[Airiau C8]
@@ -117,10 +136,13 @@ Approximatively: 50p.
 * http://math.hws.edu/eck/cs124/javanotes7/c8/[ES8] intro to 8.4
 
 * http://math.hws.edu/eck/cs124/javanotes7/c10/exercises.html[EE10]
+* Project: File
 
 == S6 (7th Mar)
 
 Git in practice
+
+* Project: Resources
 
 == S7 (9th Mar)
 
@@ -138,7 +160,6 @@ Git in practice
 
 == S9 (27th March)
 
-* Files and flows (from https://docs.oracle.com/javase/tutorial/essential/io/index.html[Basic I/O] in the Java Tutorials)
 * link:../SWT.adoc[SWT]
 
 == S10 (28th March)
