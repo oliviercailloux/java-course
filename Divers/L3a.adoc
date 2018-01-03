@@ -39,7 +39,7 @@ You know algorithmics and the basic (non object-oriented) programming concepts i
 * The final grade is a mix of 50% CC grade, 50% Project grade.
 
 == Planning
-=== S1 (11th Jan)
+=== S1
 
 * https://github.com/oliviercailloux/java-course/blob/master/Pr%C3%A9sentation%20du%20cours%20Objet/presentation.pdf[Pres course]
 * Basic concepts and structures of Java: variables; types; subroutines; control structures; identifiers… [SK]
@@ -66,7 +66,7 @@ Approximatively: 10p. (+ 30p. [SK])
 * EE3.4, 3.6 [M]
 * EE3.8, 3.9 [O]
 
-=== S2 (25th Jan)
+=== S2
 
 * Design: exceptions, contract, black-box, preconditions.
 * Assertions in Java.
@@ -87,7 +87,7 @@ Approximatively: 48p.
 * http://math.hws.edu/eck/cs124/javanotes7/c4/quiz.html[EQ4]
 * Project: Contract [M]
 
-=== S3 (7th Feb)
+=== S3
 
 * Packages, classes and directories.
 * Objects.
@@ -111,7 +111,7 @@ Approximatively: 50p.
 ** implement those interfaces in another Eclipse project, exported as a Java archive (JAR file) (will you need the previous JAR file? Why / why not?);
 ** solve the exercices in a third Eclipse project (will you need the previous JAR files? Which ones and why?).
 
-=== S4 (10th Feb)
+=== S4
 
 * Inheritance: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours3.pdf[Airiau C3]
 * Generics and collections: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours6.pdf[Airiau C6]
@@ -126,7 +126,7 @@ Approximatively: 50p.
 * EE5.5
 * EE10.4 (except you use the https://docs.oracle.com/javase/8/docs/api/java/util/function/Predicate.html[Predicate] interface from the JRE instead of writing your own)
 
-=== S5 (23rd Feb)
+=== S5
 
 * Files and flows (from https://docs.oracle.com/javase/tutorial/essential/io/index.html[Basic I/O] in the Java Tutorials)
 * Use dependencies
@@ -139,18 +139,18 @@ Approximatively: 50p.
 * http://math.hws.edu/eck/cs124/javanotes7/c10/exercises.html[EE10]
 * Project: File
 
-=== S6 (7th Mar)
+=== S6
 
 Git in practice
 
 * Project: Resources
 
-=== S7 (9th Mar)
+=== S7
 
 * Maven
 * Logging (SLF4J)
 
-=== S8 (21st Mar)
+=== S8
 
 * Annotations
 * Tracking projects
@@ -159,22 +159,22 @@ Git in practice
 ** Clean repo
 ** Close resources
 
-=== S9 (27th March)
+=== S9
 
 * link:../SWT.adoc[SWT]
 
-=== S10 (28th March)
+=== S10
 
 * Projects
 * Rev: API, …
 
-=== S11 (2nd May)
+=== S11
 
 * Parsing HTML: link:../HTML%20to%20DOM.adoc[DOM]
 * Accessing REST web services: link:../JAX-RS%20client.adoc[JAX-RS client]
 * equals, hashCode
 
-=== S12 (15th May)
+=== S12
 
 * Remarques
 ** code inutilisé à effacer
@@ -185,27 +185,27 @@ Git in practice
 ** Hashcode in Java: consistency
 ** Implementation
 
-=== S13 (16th May)
+=== S13
 
 * CI
 
-=== S14 (31st May)
+=== S14
 
 * link:++../Course Object++[QCM test]
 
-=== S15 (13th June)
+=== S15
 
 * Results QCM
 * Licenses
 * Classpath (bis)
 * Reminder: exceptions; naming conventions; config Eclipse
 
-=== S16 (16th June)
+=== S16
 
 * Work on project
 * About presentations: 20 min. Slides on GitHub.
 
-=== S17 (27th June)
+=== S17
 
 * Presentations
 * votes
