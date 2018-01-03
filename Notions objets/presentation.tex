@@ -1,6 +1,5 @@
 \RequirePackage[l2tabu, orthodox]{nag}
 \RequirePackage{silence}
-\WarningFilter{fmtcount}{\ordinal already defined use \FCordinal instead}
 \documentclass[english, french]{beamer}
 \input{preamble/packages}
 \input{preamble/math_basics}
@@ -9,8 +8,10 @@
 \input{preamble/draw}
 \input{preamble/acronyms}
 \input{preamble/uml}
+\input{preamble/refAPIcmds}
 
 \setbeamertemplate{headline}[singleline]
+\setbeamertemplate{footline}[onlypage]
 
 \title{Notions d’objet en Java}
 \subtitle{}
@@ -46,8 +47,8 @@
 		\item Sous-routine : entrée (facultative), ensemble d’instructions, sortie (facultative)
 		\item Fait qqch
 		\item On peut l’appeler sans savoir comment elle procède (boîte noire)
-		\item \texttt{Math.random();} \texttt{Math.sqrt(4);}
-		\item Sous-routine sqrt statique se trouvant dans classe \texttt{Math}
+		\item \jseref{java.lang/Math\#random--}\texttt{();} \jseref{java.lang/Math\#abs-int-}\texttt{(-4);}
+		\item Sous-routine \texttt{random} statique se trouvant dans classe \texttt{Math}
 		\item Classes regroupent des variables et sous-routines statiques
 		\item \texttt{System.out} : variable statique \texttt{out} dans classe \texttt{System}
 		\item Permet d’\emph{organiser} et de \emph{nommer}
@@ -60,9 +61,9 @@
 		\item Création d’un int ? \pause
 		\begin{itemize}
 			\item \texttt{2}
-			\item \texttt{int zeRoot = Math.sqrt(4);} \pause
+			\item \texttt{int pos = Math.abs(-4);} \pause
 		\end{itemize}
-		\item Parfois possible de créer une instance avec la classe elle-même
+		\item Ou utiliser la classe \jseref{java.lang/Integer}
 		\item \texttt{int i = Integer.parseInt("10");}
 	\end{itemize}
 \end{frame}
@@ -85,10 +86,10 @@
 	\begin{itemize}
 		\item Classe : moule à objets, appelée type de l’objet
 		\item Objet : instance de classe
-		\item Exemple : classe \texttt{V} modélise une voiture
-		\item Objet correspondant est une voiture donnée (de type \texttt{V})
-		\item Classe \texttt{String}, Objet : \texttt{"blah"}
-		\item Classe \texttt{Scanner}, Objet \texttt{scanner} utilisé pour récupérer le texte entré par l’utilisateur
+		\item Exemple : classe \texttt{Car} modélise une voiture
+		\item Objet correspondant est une voiture donnée (de type \texttt{Car})
+		\item Classe \jseref{java.lang/String}, Objet : \texttt{"blah"}
+		\item Classe \jseref{java.util/Scanner}, Objet \texttt{scanner} utilisé pour récupérer le texte entré par l’utilisateur
 	\end{itemize}
 \end{frame}
 
@@ -96,9 +97,9 @@
 \begin{frame}
 	\frametitle{Opérations sur String}
 	\begin{itemize}
-		\item \texttt{"Hello".toUpperCase();}
-		\item \texttt{"Hello".indexOf("l");} ⇒ \pause \texttt{2}
-		\item \texttt{"Hello".substring(1, 3);} ⇒ \pause \texttt{"el"}
+		\item \texttt{"Hello".\jseref[omitfqname=true]{java.lang/String\#toUpperCase--}();}
+		\item \texttt{"Hello".\jseref[omitfqname]{java.lang/String\#indexOf-java.lang.String-}("l");} ⇒ \pause \texttt{2}
+		\item \texttt{"Hello".\jseref[omitfqname]{java.lang/String\#substring-int-int-}(1, 3);} ⇒ \pause \texttt{"el"}
 	\end{itemize}
 	Attention au test d’égalité :
 	\begin{itemize}
@@ -112,8 +113,8 @@
 	\frametitle{Scanner}
 	\begin{itemize}
 		\item Objet créé par \texttt{new}
-		\item \texttt{Scanner stdin = new Scanner(System.in);}
-		\item \texttt{String usersName = stdin.nextLine();}
+		\item \texttt{Scanner stdin = new \jseref[omitfqname]{java.util/Scanner\#Scanner-java.io.InputStream-}(\jseref{java.lang/System\#in});}
+		\item \texttt{String usersName = stdin.\jseref[omitfqname]{java.util/Scanner\#nextLine--}();}
 	\end{itemize}
 \end{frame}
 
