@@ -35,6 +35,8 @@ You know algorithmics and the basic (non object-oriented) programming concepts i
 
 === S1
 
+*Lecture*
+
 * https://github.com/oliviercailloux/java-course/raw/master/Pr%C3%A9sentation%20du%20cours%20Objet/presentation.pdf[Pres course]
 * Basic concepts and structures of Java: variables; types; subroutines; control structures; identifiers… [SK]
 ** http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours1.pdf[Airiau C1], http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours2.pdf[Airiau C2] (compil, p. 15 to 19)
@@ -46,7 +48,7 @@ You know algorithmics and the basic (non object-oriented) programming concepts i
 // Present all theory, 90 min. Choose project during break. Then 30 min ex. Then 30 min git theory (local only!), 30 min ex.
 //TODO ex git
 
-Material and going beyond:
+*Material and going beyond*
 
 * http://math.hws.edu/eck/cs124/javanotes7/c1/[ES1.1], 1.2, 1.3, 1.4, 2 intro, 2.1, 2.2, 2.3.3, 2.4.1, 2.5, 2.6.6 [SK]
 * For beginners in Java: ES3 intro to 3.6 [SK]
@@ -54,23 +56,27 @@ Material and going beyond:
 * http://math.hws.edu/eck/cs124/javanotes7/c2/[ES2.2.1], 2.3.1, 2.3.2, 2.4.6 [I]
 * ES1.6, 1.7 [O]
 
-Todo:
+*Exercices*
 
-* Read parts of https://github.com/oliviercailloux/java-course/blob/master/Tools.adoc#eclipse[Eclipse] doc [I]
-* Read the Important part, above
-* Finish git exercices, local repository part
-* http://math.hws.edu/eck/cs124/javanotes7/c1/quiz.html[EQ1.3] to 1.9
-* http://math.hws.edu/eck/cs124/javanotes7/c2/quiz.html[EQ2.1] to 2.4; 2.6 to 2.9; 2.11
 * (link:http://math.hws.edu/eck/cs124/javanotes7/c2/exercises.html[EE2.1] to 2.6, only if you lack some prerequisites)
-* EE2.7: you may use user input (Scanner) instead of file input; do not use TextIO
+* EE2.7: use user input (Scanner) instead of file input; do not use TextIO
 * http://math.hws.edu/eck/cs124/javanotes7/c3/exercises.html[EE3.1] to 3.3
 * EE3.4, 3.6 [M]
 * EE3.8, 3.9 [O]
 
+*Todo*
+
+* Read the Workbench User Guide, in https://github.com/oliviercailloux/java-course/blob/master/Tools.adoc#eclipse[Eclipse] doc [I]
+* Read the Important part, above
+* Finish git exercices, local repository part
+* http://math.hws.edu/eck/cs124/javanotes7/c1/quiz.html[EQ1.3] to 1.9
+* http://math.hws.edu/eck/cs124/javanotes7/c2/quiz.html[EQ2.1] to 2.4; 2.6 to 2.9; 2.11
+* Commit the mandatory exercices
+
 === S2
 
-* Design: exceptions, contract, black-box, preconditions.
-* Assertions in Java.
+* Design: https://github.com/oliviercailloux/java-course/raw/master/Exception/presentation.pdf[exceptions], https://github.com/oliviercailloux/java-course/raw/master/Contrat/presentation.pdf[contract], black-box, preconditions.
+* https://github.com/oliviercailloux/java-course/raw/master/Assert/presentation.pdf[Assertions] in Java.
 * Javadoc: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours4.pdf[Airiau C4], p. 14 to 21.
 * (Use of Javadoc in Eclipse.)
 * http://math.hws.edu/eck/cs124/javanotes7/c3/[ES3.7] (except 3.7.3), http://math.hws.edu/eck/cs124/javanotes7/c4/[4 intro] to 4.7.
@@ -90,8 +96,9 @@ Approximatively: 48p.
 
 === S3
 
-* Packages, classes and directories.
-* Objects.
+* https://github.com/oliviercailloux/java-course/raw/master/Classpath/presentation.pdf[Classpath]
+** Packages, classes and directories.
+* https://github.com/oliviercailloux/java-course/raw/master/Objets/presentation.pdf[Objects].
 * Interfaces: design; use as type; replaceability.
 * http://math.hws.edu/eck/cs124/javanotes7/c5/[ES5] intro to 5.4
 * ES5.3.4 [I]
