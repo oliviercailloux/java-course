@@ -1,0 +1,16 @@
+digraph {
+	bgcolor="transparent";
+	HEAD [shape=ellipse, style=filled, fillcolor=yellow];
+	node [shape=ellipse, style=filled, fillcolor=white, fontcolor=red];
+	master; dev;
+	node [shape=rectangle, style=filled, fillcolor=white];
+	C1; C2;
+	edge [style=dashed];
+	HEAD -> master -> C1;
+	dev -> C2;
+	subgraph {
+		rank=same;
+		C1 -> C2 [style=solid, dir=back];
+	}
+} 
+

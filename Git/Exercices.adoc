@@ -5,41 +5,48 @@
 
 Some exercices for git starters. The reader is supposed to know already the basics of git (see slides in this course).
 
-Hint: use the git Cheat sheets!
+Hint: use the git Cheat sheets.
 
 // https://graphviz.gitlab.io/_pages/doc/info/command.html
 // file:///home/olivier/Professions/Enseignement/java-course/Git/out.svg
 
 == Local repository
 
+=== Configure git
 * Define globally (at least) `user.name`. Check with `git config --list`.
 ** Hint: type `git config` and read the doc; use the option `--global`.
+
+=== First commit
 * Create a new folder `project` and put there a file `start.txt` with content `hello`.
 * Initialize a new git repository in your folder.
-** Hint: check in the courses slide, or in the Cheat sheets, how to do this.
-* Put `start.txt` in the index. Modify its content so that it it contains `hello2`. Observe (using a git command) the difference between the version of this file in the workdir, in the index, and in the repository (all three should be different). Now place your new version of `start.txt` in the index.
-* Send your first commit. (Where is it sent?) Check that you obtain the history graph in <<C1>>.
+** Hint: check in the slides, or in the Cheat sheets, how to do this.
+* Put `start.txt` in the index. Modify its content so that it contains `hello2`. Observe (using a git command) the difference between the version of this file in the workdir, in the index, and in the repository (all three should be different). Now place your new version of `start.txt` in the index.
+* Send your first commit. (Where is it sent?) Check that your current situation conforms to <<C1>>.
+** Hint: it’s time to use this big `git log` command suggested in the slides.
 
 [[C1]]
 .Right after the first commit
 image::C1.svg[Sunset, opts="inline"]
 
-	\begin{itemize}
-		\item Définir globalement (au moins) \texttt{user.name}. Vérifier avec \texttt{git config -{}-list}.
-		\item Créer un répertoire projet et dedans un fichier \texttt{début.txt} contenant \texttt{"coucou"}.
-		\item Initialiser un dépôt git dans ce projet.
-		\item Placer \texttt{début.txt} dans l’index. Modifier \texttt{début.txt} pour qu’il contienne \texttt{"coucou2"}. Visualiser la différence sur ce fichier entre la version WD, index, et dépôt. Faire en sorte que le blob dans l’index contienne bien \texttt{"coucou2"}.
-		\item Effectuer un premier commit, qui contiendra uniquement \texttt{début.txt}. À l’issue de ce commit, vérifier que vous obtenez l’historique suivant.\par
-		{
-			\centering
-			\begin{tikzpicture}
-				\path node[/Git/commit] (c1) {C1};
-				\path (c1.north) ++ (0, 3mm) node[anchor=south, /Git/branch] (master) {master} edge[->] (c1);
-				\path (master.north) ++ (0, 3mm) node[anchor=south, /Git/head] (head) {HEAD} edge[->] (master);
-			\end{tikzpicture}\par
-		}
-		\item Vous avez maintenant une idée audacieuse pour résoudre un problème dans votre projet. Comme vous n’êtes pas sûr de sa pertinence, vous désirez placer vos changements dans une nouvelle branche en attendant d’y réfléchir. Créer une branche \texttt{"dev"} ; y commettre un fichier \texttt{audacieux.txt} (en plus de \texttt{début.txt}, inchangé) contenant \texttt{"approche 1"}. Votre historique doit maintenant être celui-ci (vérifier !).\par
-		{
+=== First branch
+You have got a bold idea to solve some problem in your project. But you’re not so sure it will work. You want to create a branch and modify things there in the meantime.
+
+* Create a branch `dev`. Commit in this branch a file `bold.txt` containing `try 1`. Thus, your new commit contains two files (`bold.txt` and `start.txt`). Check that your current situation conforms to <<C2>>.
+
+[[C2]]
+.A commit and another commit in a branch
+image::C2.svg[Sunset, opts="inline"]
+
+=== Second branch
+Now that this (huge) work is done, you want to try an alternative approach. You’re also not sure, so you’ll do it in a different branch.
+
+* Starting back from `master`, create a branch `dev2`. Commit in this branch a file `bold.txt` containing `alternative approach` and a file named `supplement.txt` containing `hello suppl`. Check that your current situation conforms to <<C3>>.
+
+[[C3]]
+.Two branches plus master
+image::C3.svg[Sunset, opts="inline"]
+
+
 			\centering
 			\begin{tikzpicture}
 				\path node[/Git/commit] (c1) {C1};
