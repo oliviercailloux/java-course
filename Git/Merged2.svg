@@ -178,8 +178,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="3.5937984"
-     inkscape:cx="21.432288"
-     inkscape:cy="123.70612"
+     inkscape:cx="158.56476"
+     inkscape:cy="126.4887"
      inkscape:document-units="mm"
      inkscape:current-layer="main"
      showgrid="false"
@@ -226,7 +226,7 @@
      transform="translate(-109.33066,80.096364)">
     <g
        id="HEAD-grp"
-       transform="translate(105.08483,-102.52941)"
+       transform="translate(158.56092,-102.52941)"
        inkscape:label="#g10087">
       <ellipse
          ry="3.9667959"
@@ -251,7 +251,7 @@
     </g>
     <g
        id="master-grp"
-       transform="translate(105.08483,-116.07491)"
+       transform="translate(158.56092,-116.07491)"
        inkscape:label="#g10082">
       <ellipse
          inkscape:label="#master-ell"
@@ -276,7 +276,7 @@
     </g>
     <path
        style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.30000001;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:1.2, 1.2;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Arrow1Mend)"
-       d="m 128.32401,-71.779873 0,10.269545"
+       d="m 181.8001,-71.779873 0,10.269545"
        id="HEAD-master"
        inkscape:connector-type="polyline"
        inkscape:connector-curvature="0"
@@ -491,12 +491,12 @@
        inkscape:label="#path806" />
     <path
        style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.26499999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:1.05999995, 1.05999995;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker4645)"
-       d="m 134.97845,-54.358962 10.2649,5.072502"
+       d="M 181.8001,-53.784313 V -40.83763"
        id="path4038"
        inkscape:connector-type="polyline"
        inkscape:connector-curvature="0"
-       inkscape:connection-end="#C2-grp"
        sodipodi:nodetypes="cc"
-       inkscape:connection-start="#master-grp" />
+       inkscape:connection-start="#master-grp"
+       inkscape:connection-end="#C4-grp" />
   </g>
 </svg>
