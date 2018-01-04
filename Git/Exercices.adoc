@@ -1,6 +1,7 @@
 = git: exercices
 :toc: preamble
 :sectanchors:
+:xrefstyle: full
 
 Some exercices for git starters. The reader is supposed to know already the basics of git (see slides in this course).
 
@@ -17,8 +18,9 @@ Hint: use the git Cheat sheets!
 * Initialize a new git repository in your folder.
 ** Hint: check in the courses slide, or in the Cheat sheets, how to do this.
 * Put `start.txt` in the index. Modify its content so that it it contains `hello2`. Observe (using a git command) the difference between the version of this file in the workdir, in the index, and in the repository (all three should be different). Now place your new version of `start.txt` in the index.
-* Send your first commit. (Where is it sent?) Check that you obtain the history graph in Fig. 1.
+* Send your first commit. (Where is it sent?) Check that you obtain the history graph in <<C1>>.
 
+[[C1]]
 .Right after the first commit
 image::C1.svg[Sunset, opts="inline"]
 
