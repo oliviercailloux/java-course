@@ -1,0 +1,8 @@
+digraph {
+	bgcolor="transparent";
+	HEAD [shape=ellipse, style=filled, fillcolor=yellow];
+	master [shape=ellipse, style=filled, fillcolor=white, fontcolor=red];
+	C1 [shape=rectangle, style=filled, fillcolor=white];
+	HEAD -> master -> C1;
+} 
+
