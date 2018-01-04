@@ -1,7 +1,7 @@
 = git: exercices
 :toc: preamble
 :sectanchors:
-:xrefstyle: full
+:xrefstyle: short
 
 Some exercices for git starters. The reader is supposed to know already the basics of git (see slides in this course).
 
