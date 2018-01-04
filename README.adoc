@@ -12,24 +12,12 @@ Look into the various `.adoc` files and sub-folders, depending on your interest!
 * https://github.com/oliviercailloux/samples[Samples]
 * https://drive.google.com/drive/folders/0BzAfb5IHjkJsOHpPdFBPQUYzVDg[Slides] Dan Dimcea
 
-[ditaa]
+[blockdiag]
 ....
-                   +-------------+
-                   | Asciidoctor |-------+
-                   |   diagram   |       |
-                   +-------------+       | PNG out
-                       ^                 |
-                       | ditaa in        |
-                       |                 v
- +--------+   +--------+----+    /---------------\
- |        | --+ Asciidoctor +--> |               |
- |  Text  |   +-------------+    |   Beautiful   |
- |Document|   |   !magic!   |    |    Output     |
- |     {d}|   |             |    |               |
- +---+----+   +-------------+    \---------------/
-     :                                   ^
-     |          Lots of work             |
-     +-----------------------------------+
+blockdiag {
+   A -> B -> C -> D;
+   A -> E -> F -> G;
+}
 ....
 
 
