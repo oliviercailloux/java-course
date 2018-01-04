@@ -96,7 +96,7 @@ Approximatively: 48p.
 
 === S3
 
-* https://github.com/oliviercailloux/java-course/raw/master/Classpath/presentation.pdf[Classpath]
+* https://github.com/oliviercailloux/java-course/raw/master/Class%20path/presentation.pdf[Classpath]
 ** Packages, classes and directories.
 * https://github.com/oliviercailloux/java-course/raw/master/Objets/presentation.pdf[Objects].
 * Interfaces: design; use as type; replaceability.
