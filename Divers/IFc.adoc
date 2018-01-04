@@ -58,7 +58,7 @@ Deux jours avant Sx signifie : au plus tard deux jours avant le jour de la séan
 == Plan
 === S1 (jeudi 30 novembre 2017)
 * https://github.com/oliviercailloux/java-course/raw/master/Pr%C3%A9sentation%20du%20cours%20EE/presentation.pdf[Présentation] du cours
-* https://github.com/oliviercailloux/java-course/raw/master/Git/presentation.pdf[Git & exercices]
+* https://github.com/oliviercailloux/java-course/tree/4fbf56d4a8f2a2501c679783c5c582b1ea151347/Git/presentation.pdf[Git & exercices]
 * Affectation en projets
 * Client WS, https://github.com/oliviercailloux/java-course/tree/master/WS%20client.adoc[exercices]
 
