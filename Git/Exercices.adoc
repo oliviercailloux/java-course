@@ -46,65 +46,29 @@ Now that this (huge) work is done, you want to try an alternative approach. You�
 .Two branches plus master
 image::C3.svg[opts="inline"]
 
+=== Merge
+Thinking about it, you decide to merge both your ideas into `master`.
 
-			\centering
-			\begin{tikzpicture}
-				\path node[/Git/commit] (c1) {C1};
-				\path (c1.north) ++ (0, 3mm) node[anchor=south, /Git/branch] (master) {master} edge[->] (c1);
-				\path (c1.east) ++ (\GitCommitSep, 0) node[anchor=west, /Git/commit] (c2) {C2} edge[->] (c1);
-				\path (c2.north) ++ (0, 3mm) node[anchor=south, /Git/branch] (dev) {dev} edge[->] (c2);
-				\path (dev.north) ++ (0, 3mm) node[anchor=south, /Git/head] (head) {HEAD} edge[->] (dev);
-			\end{tikzpicture}\par
-		}
-		\item À l’issue de ce travail harrassant, il vous vient une idée alternative. N’étant toujours pas sûr de la valeur de votre première idée (dans \texttt{dev}), vous repartirez de \texttt{master} pour l’implémenter. Depuis \texttt{master}, créer une branche \texttt{dev2}, et y commettre (en plus de \texttt{début.txt}, inchangé) un fichier \texttt{audacieux.txt} contenant \texttt{"approche alternative"}. Vérifier ensuite votre historique.\par
-		{
-			\centering
-			\begin{tikzpicture}
-				\path node[/Git/commit] (c1) {C1};
-				\path (c1.north) ++ (0, 3mm) node[anchor=south, /Git/branch] (master) {master} edge[->] (c1);
-				\path (c1.east) ++ (\GitCommitSep, 4mm) node[anchor=west, /Git/commit] (c2) {C2} edge[->] (c1);
-				\path (c2.north) ++ (0, 2mm) node[anchor=south, /Git/branch] (dev) {dev} edge[->] (c2);
-				\path (c1.east) ++ (\GitCommitSep, -4mm) node[anchor=west, /Git/commit] (c3) {C3} edge[->] (c1);
-				\path (c3.south) ++ (0, -2mm) node[anchor=north, /Git/branch] (dev2) {dev2} edge[->] (c3);
-				\path (dev2.south) ++ (0, -2mm) node[anchor=north, /Git/head] (head) {HEAD} edge[->] (dev2);
-			\end{tikzpicture}\par
-		}
-		\item À la réflexion, votre première idée est bonne. L’intégrer dans \texttt{master} pour obtenir l’historique suivant. Prédire si vous obtiendrez un fast-forward et vérifier.\par
-		{
-			\centering
-			\begin{tikzpicture}
-				\path node[/Git/commit] (c1) {C1};
-				\path (c1.east) ++ (\GitCommitSep, 4mm) node[anchor=west, /Git/commit] (c2) {C2} edge[->] (c1);
-				\path (c2.north) ++ (0, 3mm) node[anchor=south, /Git/branch] (master) {master} edge[->] (c2);
-				\path (master.west) ++ (-5mm, 0) node[anchor=east, /Git/branch] (dev) {dev} edge[->] (c2);
-				\path (c1.east) ++ (\GitCommitSep, -4mm) node[anchor=west, /Git/commit] (c3) {C3} edge[->] (c1);
-				\path (c3.south) ++ (0, -2mm) node[anchor=north, /Git/branch] (dev2) {dev2} edge[->] (c3);
-				\path (master.north) ++ (0, 2mm) node[anchor=south, /Git/head] (head) {HEAD} edge[->] (master);
-			\end{tikzpicture}\par
-		}
-		\item Tout bien réfléchi vous aimez également votre deuxième idée. L’intégrer à son tour dans \texttt{master} et obtenir cet historique. Rencontrerez-vous un problème ?\par
-		{
-			\centering
-			\begin{tikzpicture}
-				\path node[/Git/commit] (c1) {C1};
-				\path (c1.east) ++ (\GitCommitSep, 4mm) node[anchor=west, /Git/commit] (c2) {C2} edge[->] (c1);
-				\path (c1.east) ++ (\GitCommitSep, -4mm) node[anchor=west, /Git/commit] (c3) {C3} edge[->] (c1);
-				\path (c1 -| c2.east) ++ (\GitCommitSep, 0) node[anchor=west, /Git/commit] (c4) {C4} edge[->] (c2) edge[->] (c3);
-				\path (c4.north) ++ (0, 3mm) node[anchor=south, /Git/branch] (master) {master} edge[->] (c4);
-				\path (master.north) ++ (0, 2mm) node[anchor=south, /Git/head] (head) {HEAD} edge[->] (master);
-			\end{tikzpicture}\par
-		}
-		\item Imaginons qu’on aurait d’abord intégré \texttt{dev2} à \texttt{master} (ceci aurait-il produit un fast-forward ?) puis \texttt{dev} au résultat. Quel aurait été le résultat final ?
-	\end{itemize}
-	\framebreak
-	Git distant
-	\begin{itemize}
-		\item Cloner votre dépôt local dans un autre répertoire sur votre même ordinateur, pour créer un deuxième dépôt. Nous les appellerons WD1, WD2, dépôt1 et dépôt2.
-		\item Le clonage vous a créé un pointeur vers un serveur distant \texttt{origin}, et une \og{}remote-tracking branch\fg{} \texttt{master}. Voir où pointent \texttt{origin}, \texttt{master} et \texttt{origin/master}. (Dans notre cas le terme serveur distant est impropre, puisque c’est votre même machine, mais généralement il s’agit effectivement d’une autre machine telle qu’un serveur GitHub.)
-		\item Ajouter un fichier \texttt{"macontrib.txt"} contenant votre prénom à WD1. Commettre dans dépôt1. Rapatrier les nouvelles informations dans dépôt2 (fetch). Vérifier que votre dernier commit dans dépôt1 existe bien dans l’historique de dépôt2 (et en profiter pour observer la différence entre git log et git log --all). Prédire où vont pointer \texttt{master} et \texttt{origin/master} et vérifier. Que contient le fichier macontrib.txt ? Pourquoi ?
-		\item Fusionner dans dépôt2 vos dernières modifications venant de dépôt1.
-		\item Créer un nouveau dépôt distant, dépôtGH, sur le site de GitHub. Connecter dépôt1 à dépôtGH (suivre et adapter les instructions fournies par GitHub). Envoyer vos informations locales à dépôtGH. Vérifier que vos informations locales sont bien parvenues (avec votre navigateur web).
-		\item Cloner dépôtGH dans un nouveau répertoire, WDlocalclone et dépôtlocalclone. Modifier le fichier macontrib.txt (ajouter "coucou"), commettre dans dépôtlocalclone, envoyer à dépôtGH. Vérifier en ligne.
-		\item Modifier macontrib.txt dans WD1 (ajouter "salut"), commettre dans dépôt1, envoyer à dépôtGH. Pourquoi l’envoi est-il refusé ? Que faire pour résoudre le problème et effectivement envoyer votre fichier modifié au dépôt en ligne ?
-	\end{itemize}
+* Go back to branch `master` and merge `dev` into it. Before doing it, try to predict the resulting situation, and whether it will produce a fast-forward.
+* Now let’s merge `dev2` into `master` (now containing the changes from `dev`). First predict what situation will result. Try it and obtain a final result with everything merged into the `master` branch.
+
+(Solutions diagrams are here: https://github.com/oliviercailloux/java-course/blob/master/Git/Merged1.svg[Merged1], https://github.com/oliviercailloux/java-course/blob/master/Git/Merged2.svg[Merged2]. Don’t cheat! Solve the exercice before looking.)
+
+== Remote repository
+
+* Clone your local repository into another folder of your same computer, in order to create another repository. Let’s call your original repository R1, your new one (cloned) R2, and the respective work directories WD1 and WD2. This way we simulate multiple users, using only your computer.
+** Hint: proceed as if cloning from an url, but give it instead your local path to your repository.
+* Now R2 should have remote repository named `origin` pointing to R1, and a remote-tracking branch `master`. (The term “remote” is ill-suited here, generally your remote would effectively be located on another computer.) Use git commands to see what `origin` refers to, as well as `master` and `origin/master`.
+* Change the content of the file `bold.txt` into WD1 (add your first name). Commit into R1.
+* Fetch the new informations from R1 into R2. Check that the last commit from R1 exists in the history of R2. Observe the difference between `git log` and `git log --all`.
+* Predict what `master` and `origin/master` refer to in R2, and check. What is in the file `bold.txt` in R2? Why?
+* Merge into R2 your last changes from R1.
+
+== Remote repository on GitHub
+
+* Create a new remote remository, RG, on https://www.github.com/[GitHub]. Connect R1 to RG.
+** Hint: follow and adapt the instructions given by GitHub.
+* Send your local informations to RG. Check with a browser that they have reached GitHub.
+* Clone RG into a new folder, R3. Modify a file and commit into R3. Send it to RG. Check online.
+* Modify something in R1, commit. Try to send it to RG. Why is it refused? How can you effectively send your last modification online?
 
