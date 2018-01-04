@@ -9,13 +9,13 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="84.054436mm"
+   width="85.354431mm"
    height="66.933601mm"
-   viewBox="0 0 84.054441 66.933598"
+   viewBox="0 0 85.354437 66.933598"
    version="1.1"
    id="svg8"
    inkscape:version="0.92.1 r15371"
-   sodipodi:docname="C5.svg">
+   sodipodi:docname="Merged2.svg">
   <defs
      id="defs2">
     <marker
@@ -178,8 +178,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="3.5937984"
-     inkscape:cx="158.56476"
-     inkscape:cy="126.4887"
+     inkscape:cx="174.49905"
+     inkscape:cy="125.37566"
      inkscape:document-units="mm"
      inkscape:current-layer="main"
      showgrid="false"
@@ -214,7 +214,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
