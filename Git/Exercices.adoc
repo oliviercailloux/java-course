@@ -26,7 +26,7 @@ Hint: use the git Cheat sheets.
 
 [[C1]]
 .Right after the first commit
-image::C1.svg[Sunset, opts="inline"]
+image::C1.svg[opts="inline"]
 
 === First branch
 You have got a bold idea to solve some problem in your project. But you’re not so sure it will work. You want to create a branch and modify things there in the meantime.
@@ -35,7 +35,7 @@ You have got a bold idea to solve some problem in your project. But you’re not
 
 [[C2]]
 .A commit and another commit in a branch
-image::C2.svg[Sunset, opts="inline"]
+image::C2.svg[opts="inline"]
 
 === Second branch
 Now that this (huge) work is done, you want to try an alternative approach. You’re also not sure, so you’ll do it in a different branch.
@@ -44,7 +44,7 @@ Now that this (huge) work is done, you want to try an alternative approach. You�
 
 [[C3]]
 .Two branches plus master
-image::C3.svg[Sunset, opts="inline"]
+image::C3.svg[opts="inline"]
 
 
 			\centering
