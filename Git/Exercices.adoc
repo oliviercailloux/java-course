@@ -1,7 +1,6 @@
 = git: exercices
 :toc: preamble
 :sectanchors:
-:imagesdir: Git
 
 Some exercices for git starters. The reader is supposed to know already the basics of git (see slides in this course).
 
@@ -12,8 +11,16 @@ Hint: use the git Cheat sheets!
 
 == Local repository
 
-.A mountain sunset
-image::out.svg[Sunset, opts="inline"]
+* Define globally (at least) `user.name`. Check with `git config --list`.
+** Hint: type `git config` and read the doc; use the option `--global`.
+* Create a new folder `project` and put there a file `start.txt` with content `hello`.
+* Initialize a new git repository in your folder.
+** Hint: check in the courses slide, or in the Cheat sheets, how to do this.
+* Put `start.txt` in the index. Modify its content so that it it contains `hello2`. Observe (using a git command) the difference between the version of this file in the workdir, in the index, and in the repository (all three should be different). Now place your new version of `start.txt` in the index.
+* Send your first commit. (Where is it sent?) Check that you obtain the history graph in Fig. 1.
+
+.Right after the first commit
+image::C1.svg[Sunset, opts="inline"]
 
 	\begin{itemize}
 		\item Définir globalement (au moins) \texttt{user.name}. Vérifier avec \texttt{git config -{}-list}.
