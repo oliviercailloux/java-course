@@ -1,0 +1,94 @@
+= git: exercices
+:toc: preamble
+:sectanchors:
+:imagesdir: Git
+
+Some exercices for git starters. The reader is supposed to know already the basics of git (see slides in this course).
+
+Hint: use the git Cheat sheets!
+
+// https://graphviz.gitlab.io/_pages/doc/info/command.html
+// file:///home/olivier/Professions/Enseignement/java-course/Git/out.svg
+
+== Local repository
+
+.A mountain sunset
+image::out.svg[Sunset, opts="inline"]
+
+	\begin{itemize}
+		\item Définir globalement (au moins) \texttt{user.name}. Vérifier avec \texttt{git config -{}-list}.
+		\item Créer un répertoire projet et dedans un fichier \texttt{début.txt} contenant \texttt{"coucou"}.
+		\item Initialiser un dépôt git dans ce projet.
+		\item Placer \texttt{début.txt} dans l’index. Modifier \texttt{début.txt} pour qu’il contienne \texttt{"coucou2"}. Visualiser la différence sur ce fichier entre la version WD, index, et dépôt. Faire en sorte que le blob dans l’index contienne bien \texttt{"coucou2"}.
+		\item Effectuer un premier commit, qui contiendra uniquement \texttt{début.txt}. À l’issue de ce commit, vérifier que vous obtenez l’historique suivant.\par
+		{
+			\centering
+			\begin{tikzpicture}
+				\path node[/Git/commit] (c1) {C1};
+				\path (c1.north) ++ (0, 3mm) node[anchor=south, /Git/branch] (master) {master} edge[->] (c1);
+				\path (master.north) ++ (0, 3mm) node[anchor=south, /Git/head] (head) {HEAD} edge[->] (master);
+			\end{tikzpicture}\par
+		}
+		\item Vous avez maintenant une idée audacieuse pour résoudre un problème dans votre projet. Comme vous n’êtes pas sûr de sa pertinence, vous désirez placer vos changements dans une nouvelle branche en attendant d’y réfléchir. Créer une branche \texttt{"dev"} ; y commettre un fichier \texttt{audacieux.txt} (en plus de \texttt{début.txt}, inchangé) contenant \texttt{"approche 1"}. Votre historique doit maintenant être celui-ci (vérifier !).\par
+		{
+			\centering
+			\begin{tikzpicture}
+				\path node[/Git/commit] (c1) {C1};
+				\path (c1.north) ++ (0, 3mm) node[anchor=south, /Git/branch] (master) {master} edge[->] (c1);
+				\path (c1.east) ++ (\GitCommitSep, 0) node[anchor=west, /Git/commit] (c2) {C2} edge[->] (c1);
+				\path (c2.north) ++ (0, 3mm) node[anchor=south, /Git/branch] (dev) {dev} edge[->] (c2);
+				\path (dev.north) ++ (0, 3mm) node[anchor=south, /Git/head] (head) {HEAD} edge[->] (dev);
+			\end{tikzpicture}\par
+		}
+		\item À l’issue de ce travail harrassant, il vous vient une idée alternative. N’étant toujours pas sûr de la valeur de votre première idée (dans \texttt{dev}), vous repartirez de \texttt{master} pour l’implémenter. Depuis \texttt{master}, créer une branche \texttt{dev2}, et y commettre (en plus de \texttt{début.txt}, inchangé) un fichier \texttt{audacieux.txt} contenant \texttt{"approche alternative"}. Vérifier ensuite votre historique.\par
+		{
+			\centering
+			\begin{tikzpicture}
+				\path node[/Git/commit] (c1) {C1};
+				\path (c1.north) ++ (0, 3mm) node[anchor=south, /Git/branch] (master) {master} edge[->] (c1);
+				\path (c1.east) ++ (\GitCommitSep, 4mm) node[anchor=west, /Git/commit] (c2) {C2} edge[->] (c1);
+				\path (c2.north) ++ (0, 2mm) node[anchor=south, /Git/branch] (dev) {dev} edge[->] (c2);
+				\path (c1.east) ++ (\GitCommitSep, -4mm) node[anchor=west, /Git/commit] (c3) {C3} edge[->] (c1);
+				\path (c3.south) ++ (0, -2mm) node[anchor=north, /Git/branch] (dev2) {dev2} edge[->] (c3);
+				\path (dev2.south) ++ (0, -2mm) node[anchor=north, /Git/head] (head) {HEAD} edge[->] (dev2);
+			\end{tikzpicture}\par
+		}
+		\item À la réflexion, votre première idée est bonne. L’intégrer dans \texttt{master} pour obtenir l’historique suivant. Prédire si vous obtiendrez un fast-forward et vérifier.\par
+		{
+			\centering
+			\begin{tikzpicture}
+				\path node[/Git/commit] (c1) {C1};
+				\path (c1.east) ++ (\GitCommitSep, 4mm) node[anchor=west, /Git/commit] (c2) {C2} edge[->] (c1);
+				\path (c2.north) ++ (0, 3mm) node[anchor=south, /Git/branch] (master) {master} edge[->] (c2);
+				\path (master.west) ++ (-5mm, 0) node[anchor=east, /Git/branch] (dev) {dev} edge[->] (c2);
+				\path (c1.east) ++ (\GitCommitSep, -4mm) node[anchor=west, /Git/commit] (c3) {C3} edge[->] (c1);
+				\path (c3.south) ++ (0, -2mm) node[anchor=north, /Git/branch] (dev2) {dev2} edge[->] (c3);
+				\path (master.north) ++ (0, 2mm) node[anchor=south, /Git/head] (head) {HEAD} edge[->] (master);
+			\end{tikzpicture}\par
+		}
+		\item Tout bien réfléchi vous aimez également votre deuxième idée. L’intégrer à son tour dans \texttt{master} et obtenir cet historique. Rencontrerez-vous un problème ?\par
+		{
+			\centering
+			\begin{tikzpicture}
+				\path node[/Git/commit] (c1) {C1};
+				\path (c1.east) ++ (\GitCommitSep, 4mm) node[anchor=west, /Git/commit] (c2) {C2} edge[->] (c1);
+				\path (c1.east) ++ (\GitCommitSep, -4mm) node[anchor=west, /Git/commit] (c3) {C3} edge[->] (c1);
+				\path (c1 -| c2.east) ++ (\GitCommitSep, 0) node[anchor=west, /Git/commit] (c4) {C4} edge[->] (c2) edge[->] (c3);
+				\path (c4.north) ++ (0, 3mm) node[anchor=south, /Git/branch] (master) {master} edge[->] (c4);
+				\path (master.north) ++ (0, 2mm) node[anchor=south, /Git/head] (head) {HEAD} edge[->] (master);
+			\end{tikzpicture}\par
+		}
+		\item Imaginons qu’on aurait d’abord intégré \texttt{dev2} à \texttt{master} (ceci aurait-il produit un fast-forward ?) puis \texttt{dev} au résultat. Quel aurait été le résultat final ?
+	\end{itemize}
+	\framebreak
+	Git distant
+	\begin{itemize}
+		\item Cloner votre dépôt local dans un autre répertoire sur votre même ordinateur, pour créer un deuxième dépôt. Nous les appellerons WD1, WD2, dépôt1 et dépôt2.
+		\item Le clonage vous a créé un pointeur vers un serveur distant \texttt{origin}, et une \og{}remote-tracking branch\fg{} \texttt{master}. Voir où pointent \texttt{origin}, \texttt{master} et \texttt{origin/master}. (Dans notre cas le terme serveur distant est impropre, puisque c’est votre même machine, mais généralement il s’agit effectivement d’une autre machine telle qu’un serveur GitHub.)
+		\item Ajouter un fichier \texttt{"macontrib.txt"} contenant votre prénom à WD1. Commettre dans dépôt1. Rapatrier les nouvelles informations dans dépôt2 (fetch). Vérifier que votre dernier commit dans dépôt1 existe bien dans l’historique de dépôt2 (et en profiter pour observer la différence entre git log et git log --all). Prédire où vont pointer \texttt{master} et \texttt{origin/master} et vérifier. Que contient le fichier macontrib.txt ? Pourquoi ?
+		\item Fusionner dans dépôt2 vos dernières modifications venant de dépôt1.
+		\item Créer un nouveau dépôt distant, dépôtGH, sur le site de GitHub. Connecter dépôt1 à dépôtGH (suivre et adapter les instructions fournies par GitHub). Envoyer vos informations locales à dépôtGH. Vérifier que vos informations locales sont bien parvenues (avec votre navigateur web).
+		\item Cloner dépôtGH dans un nouveau répertoire, WDlocalclone et dépôtlocalclone. Modifier le fichier macontrib.txt (ajouter "coucou"), commettre dans dépôtlocalclone, envoyer à dépôtGH. Vérifier en ligne.
+		\item Modifier macontrib.txt dans WD1 (ajouter "salut"), commettre dans dépôt1, envoyer à dépôtGH. Pourquoi l’envoi est-il refusé ? Que faire pour résoudre le problème et effectivement envoyer votre fichier modifié au dépôt en ligne ?
+	\end{itemize}
+
