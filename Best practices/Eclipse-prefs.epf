@@ -39,6 +39,9 @@ file_export_version=3.0
 /instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.possibleAccidentalBooleanAssignment=error
 /instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.potentiallyUnclosedCloseable=warning
 /instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.unusedObjectAllocation=warning
+/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.unlikelyCollectionMethodArgumentType=error
+/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.unlikelyCollectionMethodArgumentTypeStrict=enabled
+/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.unlikelyEqualsArgumentType=error
 #→→Name shadowing and conflicts
 /instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.fieldHiding=error
 /instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.localVariableHiding=warning
