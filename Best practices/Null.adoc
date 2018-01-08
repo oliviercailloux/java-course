@@ -1,0 +1,201 @@
+= Protect against nulls
+
+Read and apply https://github.com/google/guava/wiki/UsingAndAvoidingNullExplained[Using and avoiding null explained].
+
+Here is a concrete illustration (inspired from real code seen in the wild).
+
+.First implementation
+[source, Java]
+----
+public class Person {
+
+	/**
+	 * A person may have multiple, or no, email addresses.
+	 */
+	private List<String> emails;
+
+	/**
+	 * A Person may have a known address.
+	 */
+	private String address;
+
+	/**
+	 * The gender of a Person may be known or unknown.
+	 */
+	private Gender gender;
+
+	/**
+	 * A Person must have a known work department.
+	 */
+	private Department department;
+
+	public Person() {
+	}
+
+	public List<String> getEmails() {
+		return emails;
+	}
+
+	public Gender getGender() {
+		return gender;
+	}
+
+	public void setEmails(List<String> emails) {
+		this.emails = emails;
+	}
+
+	public void setGender(Gender gender) {
+		this.gender = gender;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public Department getDepartment() {
+		return department;
+	}
+
+	public void setDepartment(Department department) {
+		this.department = department;
+	}
+}
+----
+
+The above code presents several deficiencies.
+
+. The javadoc mentions that a person must have a known work department, therefore, it would be nice if the class would guarantee this. (Assume that `Department` is some other class in the model.) With the provided code, a user may well receive `null` when calling `getDepartment()`, depending on how the class has been used before.
+** Someone could just initialize a new Person and forget to set the department.
+** Someone could call `setDepartment` and give it a `null` pointer (by mistake, or thinking that this is permitted). The code would accept it and the problem would be difficult to trace back to its origin (this is an example of a failure to “fail fast”).
+. The javadoc mentions that the address may be absent. There are at least two ways of representing that an address is absent: an empty string, or a `null` pointer. As this is not specified, users of the class should consider both possibilities, which makes the class unpleasant to use.
+** Even worst: the javadoc is private, meaning that only reading the source code will make this information visible. Users of the class should, on the contrary, be aware that an address may be absent, especially if it means possibly `null`.
+** Users might write things like `p.getAddress().toUpperCase()` (forgetting to check about the `null` case, or even thinking that it is impossible), which will fail when first name is `null`.
+. The javadoc mentions that gender may be unknown. (Assume that `Gender` is an enum with two values.) This creates similar problems as the case of address, but with different possible solutions, as we will see, as we deal here with an enum type instead of a String.
+. A person may have no email address. Here again, there are two ways of representing this: an empty list or a `null` pointer instead of a list. This code seems to adopt the `null` approach, but we don’t know whether this is willingly, as it is not documented, and the user has the same problems as mentioned previously (with again a different solution as in the case of String or enum type).
+** Another problem (not related to `null`) is that the user does not know whether it is permitted to write to the list returned by `getEmails()`, and whether writing to it would modify the emails of the person.
+
+Here is a possible solution to those problems.
+
+----
+public class Person {
+
+	/**
+	 * Not <code>null</code>, empty if unknown.
+	 */
+	private String address;
+
+	/**
+	 * Not <code>null</code>.
+	 */
+	private Department department;
+
+	/**
+	 * Not <code>null</code>, may be empty.
+	 */
+	private final List<String> emails;
+
+	/**
+	 * Not <code>null</code>.
+	 */
+	private Optional<Gender> gender;
+
+	/**
+	 * Returns a new person.
+	 *
+	 * @param department
+	 *            not <code>null</code>.
+	 */
+	public Person(Department department) {
+		this.address = "";
+		this.department = Objects.requireNonNull(department);
+		this.emails = new ArrayList<>();
+		this.gender = Optional.empty();
+	}
+
+	/**
+	 * Returns the person’s address, or an empty string if unknown.
+	 *
+	 * @return not <code>null</code>.
+	 */
+	public String getAddress() {
+		return address;
+	}
+
+	/**
+	 * Returns the person’s work department.
+	 *
+	 * @return not <code>null</code>.
+	 */
+	public Department getDepartment() {
+		return department;
+	}
+
+	/**
+	 * Retrieves the list of emails of the person (which may be empty). Writing to
+	 * the list modifies the emails of this person.
+	 *
+	 * @return not <code>null</code>.
+	 */
+	public List<String> getEmails() {
+		return emails;
+	}
+
+	/**
+	 * Returns this person’s gender, if known, otherwise, an empty optional.
+	 *
+	 * @return not <code>null</code>.
+	 */
+	public Optional<Gender> getGender() {
+		return gender;
+	}
+
+	/**
+	 * Removes this person’s gender. Calling {@link #getGender()} after this method
+	 * will return an empty optional.
+	 */
+	public void removeGender() {
+		this.gender = Optional.empty();
+	}
+
+	/**
+	 * Sets the person’s address.
+	 *
+	 * @param address
+	 *            if <code>null</code>, will be converted to an empty string.
+	 */
+	public void setAddress(String address) {
+		this.address = Strings.nullToEmpty(address);
+	}
+
+	/**
+	 * Sets the person’s work department.
+	 *
+	 * @param department
+	 *            not <code>null</code>.
+	 */
+	public void setDepartment(Department department) {
+		this.department = Objects.requireNonNull(department);
+	}
+
+	/**
+	 * Sets this person’s gender, or removes this information if the provided gender
+	 * is <code>null</code>.
+	 *
+	 * @param gender
+	 *            may be <code>null</code>.
+	 */
+	public void setGender(Gender gender) {
+		this.gender = Optional.ofNullable(gender);
+	}
+}
+----
+
+. This implementation guarantees that the department is never null. It advertises clearly to the user that it may not set a null department, and will throw an exception if someone erroneously tries to set a null department, therefore implementing the fail-fast principle. It also advertises clearly that it will not send `null` when asking for the department, so that the user knows that this information can be relied on.
+. This implementation chooses to represent an absent address with an empty string, and advertises this choice. The user may fearlessly type: `p.getAddress().toUpperCase()`.
+. This implementation chooses to represent “no email addresses” with an empty list, and advertises this choice. The user may fearlessly loop over all email addresses in the list returned by `getEmails()` without having to check that it is not `null`. Furthermore, the setter has been removed, as the returned list is indicated as being writeable.
+. This implementation chooses to indicate clearly that the gender information may be missing. The returned `Optional` is therefore never `null`, but it may be empty. The risk that a user forgets to check for the case of absence of information is therefore greatly reduced.
+
