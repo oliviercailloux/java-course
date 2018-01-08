@@ -69,17 +69,19 @@ public class Person {
 The above code presents several deficiencies.
 
 . The javadoc mentions that a person must have a known work department, therefore, it would be nice if the class would guarantee this. (Assume that `Department` is some other class in the model.) With the provided code, a user may well receive `null` when calling `getDepartment()`, depending on how the class has been used before.
-** Someone could just initialize a new Person and forget to set the department.
+** Someone could just initialize a new `Person` and forget to set the department.
 ** Someone could call `setDepartment` and give it a `null` pointer (by mistake, or thinking that this is permitted). The code would accept it and the problem would be difficult to trace back to its origin (this is an example of a failure to “fail fast”).
 . The javadoc mentions that the address may be absent. There are at least two ways of representing that an address is absent: an empty string, or a `null` pointer. As this is not specified, users of the class should consider both possibilities, which makes the class unpleasant to use.
 ** Even worst: the javadoc is private, meaning that only reading the source code will make this information visible. Users of the class should, on the contrary, be aware that an address may be absent, especially if it means possibly `null`.
-** Users might write things like `p.getAddress().toUpperCase()` (forgetting to check about the `null` case, or even thinking that it is impossible), which will fail when first name is `null`.
+** Users might write things like `p.getAddress().toUpperCase()` (forgetting to check about the `null` case, or even thinking that the `null` case is impossible), which will fail when the address is `null`.
 . The javadoc mentions that gender may be unknown. (Assume that `Gender` is an enum with two values.) This creates similar problems as the case of address, but with different possible solutions, as we will see, as we deal here with an enum type instead of a String.
-. A person may have no email address. Here again, there are two ways of representing this: an empty list or a `null` pointer instead of a list. This code seems to adopt the `null` approach, but we don’t know whether this is willingly, as it is not documented, and the user has the same problems as mentioned previously (with again a different solution as in the case of String or enum type).
+. A person may have no email address. Here again, there are two ways of representing this: an empty list or a `null` reference instead of a list. This code seems to adopt the `null` approach, but we don’t know whether this is willingly, as it is not documented, and the user has the same problems as mentioned previously (with again a different solution than in the case of String or enum type).
 ** Another problem (not related to `null`) is that the user does not know whether it is permitted to write to the list returned by `getEmails()`, and whether writing to it would modify the emails of the person.
 
 Here is a possible solution to those problems.
 
+.A better implementation
+[source, Java]
 ----
 public class Person {
 
@@ -117,7 +119,7 @@ public class Person {
 	}
 
 	/**
-	 * Returns the person’s address, or an empty string if unknown.
+	 * Returns this person’s address, or an empty string if unknown.
 	 *
 	 * @return not <code>null</code>.
 	 */
@@ -126,7 +128,7 @@ public class Person {
 	}
 
 	/**
-	 * Returns the person’s work department.
+	 * Returns this person’s work department.
 	 *
 	 * @return not <code>null</code>.
 	 */
@@ -135,7 +137,7 @@ public class Person {
 	}
 
 	/**
-	 * Retrieves the list of emails of the person (which may be empty). Writing to
+	 * Returns the list of emails of this person (which may be empty). Writing to
 	 * the list modifies the emails of this person.
 	 *
 	 * @return not <code>null</code>.
@@ -162,7 +164,7 @@ public class Person {
 	}
 
 	/**
-	 * Sets the person’s address.
+	 * Sets this person’s address.
 	 *
 	 * @param address
 	 *            if <code>null</code>, will be converted to an empty string.
@@ -172,7 +174,7 @@ public class Person {
 	}
 
 	/**
-	 * Sets the person’s work department.
+	 * Sets this person’s work department.
 	 *
 	 * @param department
 	 *            not <code>null</code>.
