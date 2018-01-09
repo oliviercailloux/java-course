@@ -136,7 +136,7 @@ Les commentaires utilisent les abréviations E1, E2, etc, pour se référer aux 
 === S6 (9 janvier)
 * https://github.com/oliviercailloux/java-course/blob/master/IBM%20Cloud.adoc[IBM Cloud]
 * Suite ORM
-* https://github.com/oliviercailloux/java-course/raw/master/CDI/presentation.pdf[CDI]
+* https://github.com/oliviercailloux/java-course/tree/master/CDI[CDI]
 
 === S7 (16 janvier)
 * Projets
