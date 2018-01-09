@@ -87,7 +87,7 @@
 \end{frame}
 
 \begin{frame}
-	\frametitle{Exemple portée Application - Programmé}
+	\frametitle{Exemple portée Application : Programmation}
 	\begin{itemize}
 		\item Bean géré \texttt{ASMB}, annoté \texttt{@ApplicationScoped}
 		\item Servlet \texttt{MyServlet}
@@ -96,7 +96,7 @@
 \end{frame}
 
 \begin{frame}
-	\frametitle{Exemple portée Application - Comportement}
+	\frametitle{Exemple portée Application : Comportement}
 	Supposé : application vient d’être déployée
 	\begin{itemize}
 		\item Première requête R1 entrante, vers \texttt{MyServlet}
@@ -111,7 +111,7 @@
 \end{frame}
 
 \begin{frame}
-	\frametitle{Exemple portée Requête - Programmé}
+	\frametitle{Exemple portée Requête : Programmation}
 	\begin{itemize}
 		\item Bean géré \texttt{RSMB}, annoté \texttt{@RequestScoped}
 		\item Servlet \texttt{MyServlet}
@@ -120,7 +120,7 @@
 \end{frame}
 
 \begin{frame}
-	\frametitle{Exemple portée Requête - Comportement}
+	\frametitle{Exemple portée Requête : Comportement}
 	Supposé : application vient d’être déployée
 	\begin{itemize}
 		\item Première requête R1 entrante, vers \texttt{MyServlet}
@@ -135,6 +135,25 @@
 	\end{itemize}
 \end{frame}
 
+\section{Divers}
+\begin{frame}
+	\frametitle{Divers}
+	\begin{itemize}
+		\item \jeeref[@]{javax.transaction/Transactional} démarcation automatique de transaction
+		\item On peut injecter : managed beans et Java EE Resources
+		\item Ressource : bean représentant référence vers environnement composant (\jeeref[@]{javax.ejb/EJB}, \jeeref[@]{javax.annotation/Resource}, {\tiny @WebServiceRef, slmt scope \texttt{@Dependent} standard})
+	\end{itemize}
+	\begin{block}{Tests}
+		\begin{itemize}
+			\item Comment faciliter les tests unitaires (par exemple) ? \pause
+			\item Ajouter des méthodes \texttt{setTruc(Truc)}, visibilité package
+			\item Test sans CDI : initialiser la classe avec \texttt{new}
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\appendix
+\section{Suppléments techniques}
 \begin{frame}
 	\frametitle{Objets gestionnaires de contexte}
 	\begin{itemize}
@@ -176,7 +195,6 @@
 	\end{itemize}
 \end{frame}
 
-\section{Divers}
 \begin{frame}
 	\frametitle{Désambiguation et production}
 	Comment préciser quelle classe injecter ?
@@ -192,36 +210,6 @@
 			\item Méthode peut aussi être annotée d’un scope et de qualifieurs (s’appliquent au produit)
 		\end{itemize}
 	\end{block}
-\end{frame}
-
-\begin{frame}
-	\frametitle{Divers}
-	\begin{itemize}
-		\item \jeeref[@]{javax.transaction/Transactional} démarcation automatique de transaction
-		\item On peut injecter : managed beans et Java EE Resources
-		\item Ressource : bean représentant référence vers environnement composant (\jeeref[@]{javax.ejb/EJB}, \jeeref[@]{javax.annotation/Resource}, {\tiny @WebServiceRef, slmt scope \texttt{@Dependent} standard})
-	\end{itemize}
-	\begin{block}{Tests}
-		\begin{itemize}
-			\item Comment faciliter les tests unitaires (par exemple) ? \pause
-			\item Ajouter des méthodes \texttt{setTruc(Truc)}, visibilité package
-			\item Test sans CDI : initialiser la classe avec \texttt{new}
-		\end{itemize}
-	\end{block}
-\end{frame}
-
-\section{Références}
-\begin{frame}
-	\frametitle{Références}
-	\begin{itemize}
-		\item The Java EE Tutorial: \href{http://docs.oracle.com/javaee/7/tutorial/partcdi.htm}{Contexts and Dependency Injection}
-		\item Goncalves - Beginning Java EE 7 (2013)
-		\item \href{https://jcp.org/en/jsr/detail?id=346}{JSR 346} (Context and Dependency Injection 1.1 et 1.2) (\href{http://download.oracle.com/otn-pub/jcp/cdi-1_2-mrel-eval-spec/cdi-1.2.pdf}{direct}).
-		\item \href{https://jcp.org/en/jsr/detail?id=330}{JSR 330} (Dependency Injection) (\href{http://download.oracle.com/otn-pub/jcp/dependency_injection-1.0-final-oth-JSpec/dependency_injection-1_0-final-spec.zip}{direct}) : simplement \href{http://docs.oracle.com/javaee/7/api/javax/inject/Inject.html}{\texttt{@Inject}} et cie
-		\item JSR 330, \href{https://jcp.org/en/jsr/detail?id=330\#4}{section 4} : description courte de l’intérêt du DI
-		\item \href{https://jcp.org/en/jsr/detail?id=342}{JSR 342} (Java EE 7) (\href{http://download.oracle.com/otn-pub/jcp/java_ee-7-mrel-eval-spec/JavaEE_Platform_Spec.pdf}{direct})
-		\item \href{https://jcp.org/en/jsr/detail?id=345}{JSR 345} (EJB 3.2) (\href{http://download.oracle.com/otn-pub/jcp/ejb-3_2-fr-eval-spec/ejb-3_2-core-fr-spec.pdf}{direct})
-	\end{itemize}
 \end{frame}
 
 \section{Exercices}
@@ -240,7 +228,6 @@
 	\end{itemize}
 \end{frame}
 
-\appendix
 \section{Licence}
 \begin{frame}
 	\frametitle{Licence}
