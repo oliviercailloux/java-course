@@ -1,32 +1,40 @@
 
 \newbool{refAPIIsAnnotation}
 \newbool{refAPIDisplayFull}
+\newbool{refAPIOmitFQName}
 \pgfkeys{
 	/refAPI/.is family,
 	/refAPI/.cd,
 	base url/.estore in = \refAPIBaseUrl,
 	@/.is if = refAPIIsAnnotation,
 	full/.is if = refAPIDisplayFull,
+	omitfqname/.is if = refAPIOmitFQName,
 	prefix/.store in = \refAPIPrefix,
 	suffix/.estore in = \refAPISuffix,
 	default/.style = {
 		base url = ,
 		@ = false,
 		full = false,
+		omitfqname = false,
 		prefix = \texttt,
 		suffix = ,
 	},
 }
 
 %Usage: \refAPIParseRef{javax.persistence/EntityManager} ; \refAPIParseRef{javax.persistence/PersistenceContextType\#EXTENDED}
-%Defines: \refAPIFQName (before #) ; \refAPIField (after #) ; \refAPIPackageSlashes (FQName before / with slashes instead of dots) ; \refAPIClass (FQName after /)
+%Defines: \refAPIFQName (before #) ; \refAPIFieldFull (after #) ; \refAPIFieldShort (after # and before -) ; \refAPIPackageSlashes (FQName before / with slashes instead of dots) ; \refAPIClass (FQName after /)
 \newcommand{\refAPIParseRef}[1]{%
 	\IfSubStr{#1}{\#}{%
 		\StrBefore{#1}{\#}[\refAPIFQName]%
-		\StrBehind{#1}{\#}[\refAPIField]%
+		\StrBehind{#1}{\#}[\refAPIFieldFull]%
 	}{%
 		\edef\refAPIFQName{#1}%
-		\edef\refAPIField{}%
+		\edef\refAPIFieldFull{}%
+	}%
+	\IfSubStr{\refAPIFieldFull}{-}{%
+		\StrBefore{\refAPIFieldFull}{-}[\refAPIFieldShort]%
+	}{%
+		\edef\refAPIFieldShort{\refAPIFieldFull}%
 	}%
 	\StrBefore{\refAPIFQName}{/}[\refAPIPackage]%
 	\StrBehind{\refAPIFQName}{/}[\refAPIClass]%
@@ -40,6 +48,7 @@
 %Standard HTML RenderKit : https://docs.oracle.com/javaee/7/javaserver-faces-2-2/renderkitdocs/HTML_BASIC/javax.faces.Inputjavax.faces.Text.html
 
 %Accepts keys: @, prefix, suffix. Requires key: base url. Expects defined: \refAPIField ; \refAPIPackageSlashes ; \refAPIClass
+%Usage: \texttt{"Hello".\jseref[omitfqname]{java.lang/String\#substring-int-int-}(1, 3);}
 \newcommand{\jrefAPI}[1]{%
 	\pgfkeys{/refAPI/.cd, default, #1}%
 	\ifbool{refAPIIsAnnotation}{%
@@ -47,7 +56,7 @@
 	}{%
 		\edef\refAPIAnnot{}%
 	}%
-	\IfEq{\refAPIField}{}{%
+	\IfEq{\refAPIFieldFull}{}{%
 		{%
 			\ifbool{refAPIDisplayFull}{%
 				\refAPIPackage%
@@ -55,18 +64,21 @@
 			}%
 			\refAPIPrefix{%
 			\href{%
-				\refAPIBaseUrl\refAPIPackageSlashes/\refAPIClass.html\#\refAPIField%
+				\refAPIBaseUrl\refAPIPackageSlashes/\refAPIClass.html%
 			}{%
 				\refAPIAnnot\refAPIClass%
 			}%
 		}\refAPISuffix}%
 	}{%
 		{\refAPIPrefix{%
-			\refAPIAnnot\refAPIClass.%
-			\href{%
-				\refAPIBaseUrl\refAPIPackageSlashes/\refAPIClass.html%
+			\ifbool{refAPIOmitFQName}{%
 			}{%
-				\refAPIField%
+				\refAPIAnnot\refAPIClass.%
+			}%
+			\href{%
+				\refAPIBaseUrl\refAPIPackageSlashes/\refAPIClass.html\#\refAPIFieldFull%
+			}{%
+				\refAPIFieldShort%
 			}%
 		}\refAPISuffix}%
 	}%

@@ -9,8 +9,10 @@
 \input{preamble/draw}
 \input{preamble/acronyms}
 \input{preamble/uml}
+\input{preamble/refAPIcmds}
 
 \setbeamertemplate{headline}[singleline]
+\setbeamertemplate{footline}[onlypage]
 
 \title{CDI}
 \subtitle{}
@@ -44,15 +46,18 @@
 	\frametitle{Utilité de l’injection}
 	CDI ? \pause Context Dependency \emph{Injection}\pause
 	\begin{itemize}
-		\item Dépendance envers un service
-		\item Pourquoi éviter de la coder en dur ? \pause
-		\item Tests : indépendance et robustesse ; câbler une alternative \pause
-		\item Comment éviter de la coder en dur ? \pause
-		\item L’appelant indique la dépendance (référence dans constructeur…) \pause
-		\item MAIS crée une dépendance encombrante
-		\item Et si classe créée automatiquement ? (exemple ? \pause Servlet !)
-		\item Solution Java EE : CDI
-		\item Requiert gestion du cycle de vie
+		\item Votre classe dépend d’une autre classe
+		\item L’autre classe lui rend un service
+		\begin{itemize}
+			\item Exemple : fournit l’accès à une BD
+			\item Autres exemples ? \pause
+			\item Fournit sérialisation en JSON
+			\item Effectue des calculs
+		\end{itemize}
+		\item CDI permet d’éviter de coder la dépendance en dur
+		\item Permet remplacement facile de la dépendance
+		\item Permet d’y accéder même si instance créée automatiquement (exemple ? \pause Servlet !)
+		\item Permet (et requiert) gestion du cycle de vie par le conteneur
 	\end{itemize}
 \end{frame}
 
