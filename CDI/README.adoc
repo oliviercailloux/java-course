@@ -1,6 +1,6 @@
 = CDI
 
-See: https://github.com/oliviercailloux/java-course/raw/master/Git/Pr%C3%A9sentation/presentation.pdf[Présentation].
+See: https://github.com/oliviercailloux/java-course/raw/master/CDI/Pr%C3%A9sentation/presentation.pdf[Présentation].
 
 Here are some references about CDI (Context Dependency Injection).
 
