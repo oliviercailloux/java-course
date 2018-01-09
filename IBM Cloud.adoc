@@ -14,7 +14,7 @@ We will use only one thing from the vast offering of IBM Cloud: its “Liberty�
 
 The IBM Cloud https://console.bluemix.net/[console] is used to monitor and configure your applications running on the cloud. (We will not use OnTheHub anymore, it serves only to provide initial access.)
 
-You can use the command-line tool https://console.bluemix.net/docs/cli/index.html[CloudFoundry], `cf`, together with the IBM Cloud console, to manually deploy your applications or do a lot of other things. This is useful for debugging and going further with IBM products, but in this introduction, we will automate the deployment thanks to Travis, so we will not need it. (Travis actually uses `cf` behind the scenes.)
+You can use the command-line tool https://console.bluemix.net/docs/cli/index.html[CloudFoundry], `cf`, together with the IBM Cloud console, to manually deploy your applications or do a lot of other things. This is useful for debugging and going further with IBM products, but in this introduction, we will automate the deployment thanks to Travis, so we will not need `cf`. (Travis actually uses `cf` behind the scenes.)
 
 == Set-up
 Add a file `manifest.yml` to the root of your repository, with the content below. This indicates to IBM Cloud how your application should be deployed to their server. (See https://console.bluemix.net/docs/manageapps/depapps.html#appmanifest[doc] for details.) Replace `MyAppName` appropriately.
@@ -34,7 +34,7 @@ You can find your organization, space and region by looking at your https://cons
 
 Go to https://travis-ci.org/[Travis CI]: in your application, `More options` / `Settings`, you will find a way to add environment variables. Add one named `BLUEMIX_PASSWORD` with your password as value. Make sure “Display value in build log” is off.
 
-In your `pom.xml`, in the `build` element, add `<finalName>${project.artifactId}</finalName>`, so that maven will produce an artifact with no version number in it. (Check this https://github.com/oliviercailloux/sample-jax-rs/blob/master/pom.xml[sample].) Otherwise, the `path` we have indicated in the `manifest.yml` needs also to reflect the version.
+In your `pom.xml`, in the `build` element, add `<finalName>${project.artifactId}</finalName>`, so that maven will produce an artifact with no version number in it. (Check this https://github.com/oliviercailloux/sample-jax-rs/blob/master/pom.xml[sample].) Otherwise, the `path` we have indicated in the `manifest.yml` must be changed to reflect the version.
 
 Push your changes. Watch in the Travis log your application getting built, then deployed to IBM Cloud (isn’t it beautiful?). If all went well, the log indicates the url where your application is reachable, probably `https://MyAppName.eu-gb.mybluemix.net` (this is its context root). Refresh your https://console.bluemix.net/dashboard/apps/[deployed apps] page, you should see it there. Its servlets should now be reachable.
 
