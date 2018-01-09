@@ -14,7 +14,7 @@ Voir aussi la section références de chaque ensemble de diapositives, par sujet
 Énoncés : voir https://github.com/oliviercailloux/projets/tree/master/EE[Projets] Java EE (sur GitHub)
 
 === Démarrage du projet
-* Vous pouvez utiliser le `groupId` `io.github.oliviercailloux.y2017`
+* Vous pouvez utiliser le `groupId` `io.github.oliviercailloux.y2018`
 * Utilisez _obligatoirement_ comme `artifactId` le nom de votre projet (avec espaces transformés en traits d’union)
 * Lire les bonnes pratiques Maven
 * Placez votre projet sur un dépôt sur GitHub (un seul pour tout le groupe) qui s’appelle _exactement_ comme votre artifactId
@@ -92,9 +92,9 @@ Deux jours avant Sx signifie : au plus tard deux jours avant le jour de la séan
 ** Compilation avec Maven et déploiement manuel
 ** Compilation et déploiement via Eclipse
 
-À faire : Démarrage du projet
+À faire : Démarrage du projet.
 
-=== S3
+=== S3 (jeudi 11 janvier 2018)
 * Tests unitaires (et https://dauphine.onthehub.com/)
 * Travis https://github.com/oliviercailloux/java-course/blob/master/CI.adoc[CI]
 * https://github.com/oliviercailloux/java-course/tree/master/GlassFish.adoc#log[Logs] dans GlassFish
@@ -107,26 +107,40 @@ Deux jours avant Sx signifie : au plus tard deux jours avant le jour de la séan
 ** JAXB : exemple https://github.com/oliviercailloux/XMCDA-2.2.1-JAXB[classique], https://github.com/xmcda-modular/jaxb[avancé] (http://pyxb.sourceforge.net/[PyXB], https://docs.microsoft.com/en-us/dotnet/standard/serialization/xml-schema-definition-tool-xsd-exe[.NET], …)
 * Fail-fast, exceptions, Optional
 * https://www.getpostman.com/[Postman]
+* NB machine virtuelle
+* Fusionner à temps
 
 À faire
 
 * Mettre en place le système d’intégration continue Travis sur votre dépôt de groupe. (Voir document ci-dessus.) Ajouter le badge au fichier README. Également à rendre pour deux jours avant S4. Vérifier que votre projet compile, d’après Travis, au moment de la remise. (Les tests fonctionnels de vos servlets ne doivent pas nécessairement passer.)
 
-=== S4
+=== S4 (jeudi 25 janvier 2018)
 * Note sur la réutilisation intelligente (recompensée !) et le droit d’utilisation, ainsi que les licences
-* Cookies
-* REST
-* App online
+* https://tools.ietf.org/html/rfc6265[Cookies]
+* https://github.com/oliviercailloux/java-course/raw/master/REST/presentation.pdf[REST] : https://github.com/oliviercailloux/sample-jax-rs[exemple]
+* http://arquillian.org/[Arquillian]
 
-=== S5
-* ORM exercices niveau serveur
+=== S5 (vendredi 23 février 2018)
+* https://github.com/oliviercailloux/java-course/raw/master/JPA/presentation.pdf[JPA] : création d’une entité et création automatique BD
+** https://github.com/oliviercailloux/java-course/blob/master/DB%20from%20Eclipse.adoc[DB from Eclipse]
+** https://github.com/oliviercailloux/java-course/blob/master/JPA.adoc[Exercices]
+
+À faire
+
+* Faire passer vos tests sur Travis CI
 
 === S6
 * Suite ORM
-* SOAP ?
+** Start JPA & EMF
+** ex: deploy
+** transactions & EM
+** ex: deux requêtes
+** https://github.com/oliviercailloux/java-course/tree/master/CDI[CDI]
+** ex: transactions gérées (facultatif)
+* https://github.com/oliviercailloux/java-course/blob/master/IBM%20Cloud.adoc[IBM Cloud]
 
 === S7
-* Message beans ?
+* Projets
 
 === S8
 * Présentation des projets
