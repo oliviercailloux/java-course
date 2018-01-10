@@ -7,6 +7,11 @@
 * https://github.com/oliviercailloux/samples[Échantillons] ; https://github.com/javaee-samples/javaee8-samples[javaee8-samples]
 * Goncalves - Beginning Java EE 7 : http://doi.org/10.1007/978-1-4302-4627-5[Springer], https://proxy.bu.dauphine.fr/http/doi.org/10.1007/978-1-4302-4627-5[BU] 
 * XML in a nutshell : https://portail.bu.dauphine.fr/bibliodata.html?record_id=ALEPH000026526&rtype=book[BU 1], https://portail.bu.dauphine.fr/bibliodata.html?record_id=ALEPH000013764&rtype=book[BU 2], https://portail.bu.dauphine.fr/bibliodata.html?record_id=ALEPH000035938&rtype=book[BU (en français)]
+* https://www.getpostman.com/[Postman]
+* Servlets multi-formats
+** JSON https://github.com/oliviercailloux/java-course/blob/master/JSON.adoc[Processing], https://github.com/oliviercailloux/java-course/blob/master/JSON-B.adoc[JSON-B]
+** XML : voir références générales ci-dessus
+** JAXB : exemple https://github.com/oliviercailloux/XMCDA-2.2.1-JAXB[classique], https://github.com/xmcda-modular/jaxb[avancé] (http://pyxb.sourceforge.net/[PyXB], https://docs.microsoft.com/en-us/dotnet/standard/serialization/xml-schema-definition-tool-xsd-exe[.NET], …)
 
 Voir aussi la section références de chaque ensemble de diapositives, par sujet.
 
@@ -35,8 +40,10 @@ Voir aussi la section références de chaque ensemble de diapositives, par sujet
 .. Gestion appropriée des exceptions
 .. Avec Javadoc pour documenter le contrat lorsque nécessaire
 .. Sans commentaires auto-générés (ne servent à rien et noient les commentaires importants)
-. Avec tests unitaires ou fonctionnels (_au moins_ un test fonctionnel par servlet)
+. Avec tests unitaires ou fonctionnels appropriés (_au moins_ un test fonctionnel par servlet)
 . Utilisation appropriée des classes de la JRE et de bibliothèques tierces
+. Utilisation privilégiée des standards (exemple : JSON) (déviation permise mais il faut m’en parler et apporter des arguments)
+. Suivi des consignes de style données au cours (exemple : pom Maven)
 . Coder en anglais
 . Dépôt clair (responsabilité de _tous_ les membres)
 .. Pas de produits transformés (.class par exemple)
@@ -47,9 +54,9 @@ Voir aussi la section références de chaque ensemble de diapositives, par sujet
 . Respecter les https://github.com/oliviercailloux/java-course/tree/master/Best%20practices[bonnes pratiques]
 
 === Livraisons
-* Livraison 1 : deux jours avant S4. Exigence : au moins 5 points de difficulté accomplis (selon exigences ci-dessus) ; Travis CI en place.
-* Livraison 2 : deux jours avant S6 (≥ 12 points de difficulté)
-* Livraison 3 : deux jours avant S8 (≥ 18 ou 20 points de difficulté)
+* Livraison 1 : trois jours avant S4. Exigence : au moins 5 points de difficulté accomplis (selon exigences ci-dessus) ; Travis CI en place. Note : 1/6 pour chaque fonctionnalité et 1/6 pour Travis.
+* Livraison 2 : trois jours avant S6 (≥ 12 points de difficulté)
+* Livraison 3 : trois jours avant S8 (≥ 18 ou 20 points de difficulté)
 
 À chaque livraison, certaines notes qualités deviennent définitivement part de la note CC (à hauteur du nombre de points de difficulté requis). Si vous avez fait plus que votre quota, ce sont les meilleures notes qui deviennent définitivement part de la note CC.
 
@@ -95,24 +102,21 @@ Deux jours avant Sx signifie : au plus tard deux jours avant le jour de la séan
 À faire : Démarrage du projet.
 
 === S3 (jeudi 11 janvier 2018)
-* Tests unitaires (et https://dauphine.onthehub.com/)
+* Tests unitaires (ou fonctionnels !) : http://www.vogella.com/tutorials/JUnit/article.html[Tutoriel] Vogella
 * Travis https://github.com/oliviercailloux/java-course/blob/master/CI.adoc[CI]
 * https://github.com/oliviercailloux/java-course/tree/master/GlassFish.adoc#log[Logs] dans GlassFish
 * Usage de git en équipe : dépôt propre ; ignore ; formattage & imports
+** Fusionner à temps
 * Discussion projets
+* https://github.com/oliviercailloux/java-course/blob/master/CDI[CDI]
 * https://github.com/oliviercailloux/java-course/raw/master/Annotations/presentation.pdf[Annotations]
-* Servlets multi-formats
-** JSON https://github.com/oliviercailloux/java-course/blob/master/JSON.adoc[Processing], https://github.com/oliviercailloux/java-course/blob/master/JSON-B.adoc[JSON-B]
-** XML : voir références générales ci-dessus
-** JAXB : exemple https://github.com/oliviercailloux/XMCDA-2.2.1-JAXB[classique], https://github.com/xmcda-modular/jaxb[avancé] (http://pyxb.sourceforge.net/[PyXB], https://docs.microsoft.com/en-us/dotnet/standard/serialization/xml-schema-definition-tool-xsd-exe[.NET], …)
-* Fail-fast, exceptions, Optional
-* https://www.getpostman.com/[Postman]
+* Fail-fast, exceptions, protection contre `null` : cf. Best practices
+* Servlets multi-formats : cf. refs générales
 * NB machine virtuelle
-* Fusionner à temps
 
 À faire
 
-* Mettre en place le système d’intégration continue Travis sur votre dépôt de groupe. (Voir document ci-dessus.) Ajouter le badge au fichier README. Également à rendre pour deux jours avant S4. Vérifier que votre projet compile, d’après Travis, au moment de la remise. (Les tests fonctionnels de vos servlets ne doivent pas nécessairement passer.)
+* Mettre en place le système d’intégration continue Travis sur votre dépôt de groupe. (Voir document ci-dessus.) Ajouter le badge au fichier README. Également à rendre pour deux jours avant S4. Vérifier que votre projet est ok, d’après Travis, au moment de la remise. (Les tests fonctionnels de vos servlets ne doivent pas nécessairement passer.)
 
 === S4 (jeudi 25 janvier 2018)
 * Note sur la réutilisation intelligente (recompensée !) et le droit d’utilisation, ainsi que les licences
