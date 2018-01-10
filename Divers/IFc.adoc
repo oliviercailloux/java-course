@@ -42,6 +42,7 @@ Voir aussi la section références de chaque ensemble de diapositives, par sujet
 .. Sans commentaires auto-générés (ne servent à rien et noient les commentaires importants)
 . Avec tests unitaires ou fonctionnels appropriés (_au moins_ un test fonctionnel par servlet)
 . Utilisation appropriée des classes de la JRE et de bibliothèques tierces
+. Logs de l’application via JUL
 . Utilisation privilégiée des standards (exemple : JSON) (déviation permise mais il faut m’en parler et apporter des arguments)
 . Suivi des consignes de style données au cours (exemple : pom Maven)
 . Coder en anglais
