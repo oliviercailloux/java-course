@@ -61,7 +61,7 @@ Voir aussi la section références de chaque ensemble de diapositives, par sujet
 
 À chaque livraison, certaines notes qualités deviennent définitivement part de la note CC (à hauteur du nombre de points de difficulté requis). Si vous avez fait plus que votre quota, ce sont les meilleures notes qui deviennent définitivement part de la note CC.
 
-Deux jours avant Sx signifie : au plus tard deux jours avant le jour de la séance x, à 23h59 + 1 min. (Exemple : si S4 a lieu lundi 3 octobre, deux jours avant S4 signifie : au plus tard samedi 1 octobre, 23h59 + 1 min.)
+Trois jours avant Sx signifie : au plus tard trois jours avant le jour de la séance x, à 23h59 + 1 min. (Exemple : si S4 a lieu vendredi 4 octobre, trois jours avant S4 signifie : au plus tard mardi 1 octobre, 23h59 + 1 min.)
 
 == Plan
 === S1 (jeudi 30 novembre 2017)
@@ -117,7 +117,7 @@ Deux jours avant Sx signifie : au plus tard deux jours avant le jour de la séan
 
 À faire
 
-* Mettre en place le système d’intégration continue Travis sur votre dépôt de groupe. (Voir document ci-dessus.) Ajouter le badge au fichier README. Également à rendre pour deux jours avant S4. Vérifier que votre projet est ok, d’après Travis, au moment de la remise. (Les tests fonctionnels de vos servlets ne doivent pas nécessairement passer.)
+* Mettre en place le système d’intégration continue Travis sur votre dépôt de groupe. (Voir document ci-dessus.) Ajouter le badge au fichier README. Également à rendre pour trois jours avant S4. Vérifier que votre projet est ok, d’après Travis, au moment de la remise. (Les tests fonctionnels de vos servlets ne doivent pas nécessairement passer.)
 
 === S4 (jeudi 25 janvier 2018)
 * Note sur la réutilisation intelligente (recompensée !) et le droit d’utilisation, ainsi que les licences
