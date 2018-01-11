@@ -56,8 +56,8 @@ Voir aussi la section références de chaque ensemble de diapositives, par sujet
 
 === Livraisons
 * Livraison 1 : trois jours avant S4. Exigence : au moins 5 points de difficulté accomplis (selon exigences ci-dessus) ; Travis CI en place. Note : 1/6 pour chaque fonctionnalité et 1/6 pour Travis.
-* Livraison 2 : trois jours avant S6 (≥ 12 points de difficulté)
-* Livraison 3 : trois jours avant S8 (≥ 18 ou 20 points de difficulté)
+* Livraison 2 : trois jours avant S6 (≥ 10 points de difficulté)
+* Livraison 3 : trois jours avant S8 (≥ 15 points de difficulté)
 
 À chaque livraison, certaines notes qualités deviennent définitivement part de la note CC (à hauteur du nombre de points de difficulté requis). Si vous avez fait plus que votre quota, ce sont les meilleures notes qui deviennent définitivement part de la note CC.
 
@@ -103,7 +103,7 @@ Trois jours avant Sx signifie : au plus tard trois jours avant le jour de la sé
 À faire : Démarrage du projet.
 
 === S3 (jeudi 11 janvier 2018)
-* Tests unitaires (ou fonctionnels !) : http://www.vogella.com/tutorials/JUnit/article.html[Tutoriel] Vogella
+* Tests unitaires (ou fonctionnels !) : http://www.vogella.com/tutorials/JUnit/article.html[Tutoriel] Vogella ; https://github.com/oliviercailloux/jsonb-sample[sample]
 * Travis https://github.com/oliviercailloux/java-course/blob/master/CI.adoc[CI]
 * https://github.com/oliviercailloux/java-course/tree/master/GlassFish.adoc#log[Logs] dans GlassFish
 * Usage de git en équipe : dépôt propre ; ignore ; formattage & imports
