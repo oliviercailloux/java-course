@@ -4,9 +4,11 @@
 Beginner programmers sometimes catch an exception just to get rid of the problem, and do not do anything in the catch block. This is very bad style as it contradicts the fail-fast principle. Consider rather to re-throw the exception, or to wrap it in an unchecked exception.
 
 == Throw `NullPointerException` when receiving an incorrect `null` argument
-There’s some debate about whether `NullPointerException` or `IllegalArgumentException` should be thrown when receiving an incorrect `null` argument in a method. The argument in favor of the latter is that it is clear to the caller that a fault occurred because of an incorrect argument, rather than because of the designer of the API having by mistake tried to access some `null` value.
+There’s some debate about whether `NullPointerException` or `IllegalArgumentException` should be thrown when receiving an incorrect `null` argument in a method. 
 
-I admit this is a good argument but there’s also good arguments against. Thus, I consider it sensible to follow the standard. And the standard is to throw `NullPointerException`.
+The argument in favor of the latter is that it is clear to the caller that a fault occurred because of an incorrect argument, rather than because of the designer of the API having by mistake tried to access some `null` value. I admit this is a good argument but there’s also good arguments against. 
+
+Thus, I consider it sensible to follow the standard. And the standard is to throw `NullPointerException`.
 
 * Many APIs in the JDK pro-actively throws NullPointerException, e.g. https://docs.oracle.com/javase/8/docs/api/java/util/Map.html#containsKey-java.lang.Object-[`Map.containsKey`], https://docs.oracle.com/javase/8/docs/api/java/util/Objects.html#requireNonNull-T-[`Objects.requireNonNull`] (I got the argument from http://stackoverflow.com/questions/3881/illegalargumentexception-or-nullpointerexception-for-a-null-parameter/6358#6358[SO].)
 * http://google.github.io/guava/releases/snapshot/api/docs/com/google/common/base/Preconditions.html#checkNotNull-T-[Guava] also favors `NullPointerException` over `IllegalArgumentException`.
