@@ -478,14 +478,11 @@ public class Phone {
 	\frametitle{Usage mapping \texttt{ManyToOne}}
 	\begin{itemize}
 		\item Deux entités aux cycles de vie indépendants
-		\item Par défaut : nécessaire persister \emph{\texttt{Phone} et} \texttt{Person}
+		\item Par défaut : nécessaire persister \texttt{Phone} \emph{et} \texttt{Person}
 		\item \texttt{phone.setPerson(person)}
 		\item \texttt{em.persist(phone)}
 		\item \texttt{em.persist(person)}
-		\item De même, nécessaire effacer \texttt{Phone} en plus de \texttt{Person}
-		\item Pour éviter ceci : \texttt{cascade=ALL} sur annotation \texttt{ManyToOne}
-		\item Dès lors persister, effacer, etc. \texttt{person} s’applique également à \texttt{phone}s liés
-		\item NB cascade va toujours du parent (\texttt{person}) vers ses enfants (\texttt{phone}s)
+		\item De même, nécessaire {\tiny sauf \texttt{cascade=ALL} sur annotation} effacer \texttt{Phone} en plus de \texttt{Person}
 	\end{itemize}
 \end{frame}
 
@@ -504,7 +501,7 @@ public class Phone {
 	\frametitle{Mapping \texttt{OneToMany} unidirectionnel}
 	\begin{itemize}
 		\item Mapping inverse : ref \jeeref[@]{javax.persistence/OneToMany} unidirectionnelle
-		\item Hibernate utilise une table intermédiaire \texttt{Person\_Phone}%TODO pourquoi ?
+		\item JPA utilise une table intermédiaire \texttt{Person\_Phone}%TODO pourquoi ?
 	\end{itemize}
 	\begin{lstlisting}[language=Java]
 @Entity
@@ -531,7 +528,7 @@ public class Person {
 		\item \texttt{person.getPhones().remove(phone)}
 		\item \texttt{em.remove(phone)}
 		\item Ou effacement automatique avec \texttt{orphanRemoval} sur annotation \texttt{OneToMany}
-		\item Différence avec cascade ? \pause Avec cascade : \texttt{em.remove(person)} ⇒ efface également ses téléphones
+		\item Avec \texttt{cascade} sur annotation : \texttt{em.remove(person)} ⇒ efface également ses téléphones
 	\end{itemize}
 \end{frame}
 
@@ -637,7 +634,7 @@ public class Person {
 \begin{frame}
 	\frametitle{Implémentation}
 	\begin{itemize}
-		\item Déclarer entité PersonPhone {\tiny autres possibilités existent}
+		\item Définir entité PersonPhone {\tiny (conseil ; autres possibilités existent)}
 		\item Associations JPA \texttt{ManyToOne}, \texttt{OneToMany} selon contraintes de navigabilité
 		\item Exemple : deux associations bidirectionnelles Phone – PersonPhone et Person – PersonPhone
 	\end{itemize}
@@ -754,7 +751,7 @@ public class Person {
 		\item Définir requête sur entité via \jeeref{javax.persistence/NamedQuery} {\tiny ou  \jeeref{javax.persistence/NamedQueries}}
 		\item Lui donner un nom
 	\end{itemize}
-	\begin{lstlisting}
+	\begin{lstlisting}[basicstyle=\small]
 @NamedQuery(
   name = "getUserByName",
   query = "SELECT u FROM User u WHERE name = :name"
@@ -859,7 +856,7 @@ em2.getTransaction().commit(); // $\textsf{mise à jour BD}$
 		\item Entités transversales (couche web et business)
 		\item Qqs classes service business
 		\item Qqs classes persistence visibles du business
-		\item Ou pattern DAO…
+		\item Pattern DAO \emph{seulement si justifié}
 	\end{itemize}
 \end{frame}
 
@@ -872,14 +869,6 @@ em2.getTransaction().commit(); // $\textsf{mise à jour BD}$
 		\item Voir aussi \texttt{em.clear()}
 	\end{itemize}
 \end{frame}
-
-%\begin{frame}
-%	\frametitle{Usages plus avancés et divers}
-%	\begin{itemize}
-%		\item Contexte peut persister au-delà de la transaction ; peut être non synchronisé (\jeeref[@]{javax.persistence/PersistenceContext})
-%		\item Explorer : SFSB et \jeeref[@]{javax.persistence/PersistenceContext}()
-%	\end{itemize}
-%\end{frame}
 
 \subsection{Références}
 \begin{frame}
@@ -939,6 +928,15 @@ em2.getTransaction().commit(); // $\textsf{mise à jour BD}$
 		\item JTA EM peut être synchronisé ou non synchronisé
 		\item Si synchronisé (par défaut) :
 		\item Joint automatiquement transaction JTA en cours
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Usages plus avancés et divers}
+	\begin{itemize}
+		\item Contexte peut persister au-delà de la transaction
+		\item peut être non synchronisé
+		\item Voir \jeeref[@]{javax.persistence/PersistenceContext}
 	\end{itemize}
 \end{frame}
 
