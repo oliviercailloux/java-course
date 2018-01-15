@@ -9,6 +9,7 @@
 \input{preamble/draw}
 \input{preamble/acronyms}
 \input{preamble/uml}
+\input{preamble/refAPIcmds}
 
 %\setbeamertemplate{headline}[singleline]
 \setbeamertemplate{footline}[onlypage]
@@ -146,9 +147,9 @@
 <persistence version="2.1"
  xmlns="http://xmlns.jcp.org/xml/ns/persistence"
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"	
- xsi:schemaLocation="…">
+ xsi:schemaLocation="...">
   <persistence-unit name="MyPersistenceUnit">
-    <properties><property … /></properties>
+    <properties><property ... /></properties>
   </persistence-unit>
 </persistence>
 \end{lstlisting}
@@ -259,51 +260,6 @@ Exemple, Hibernate :
 	\end{itemize}
 \end{frame}
 
-\begin{frame}
-	\frametitle{JTA}
-	\begin{itemize}
-		\item Unité de persistance est gérée à l’aide de JTA {\tiny par défaut en Java EE (sinon \og{}resource-local\fg{})}
-		\item JTA : Java Transaction API
-		\item Transaction associée à thread courante
-	\end{itemize}
-\end{frame}
-
-\begin{frame}
-	\frametitle{Gestion démarcation transactions}
-	\begin{itemize}
-		\item Conteneur peut également gérer les transactions : CMT
-		\item CDI managed beans : utiliser \jeeref[@]{javax.transaction/Transactional}
-		\item Chaque méthode participe alors par défaut à une transaction
-		\item Si transaction en cours, la méthode y participe
-		\item Si pas de transaction en cours lors de l’appel : le conteneur démarre puis termine automatiquement une transaction (commit si ok, rollback si exception {\tiny sauf exception application})
-		\item EJB : CMT par défaut {\tiny (ou utiliser \jeeref[@]{javax.ejb/TransactionManagement} pour BMT)}
-		\item Ou annoter la méthode \jeeref[@]{javax.ejb/TransactionAttribute} sur EJBs
-	\end{itemize}
-\end{frame}
-
-\begin{frame}
-	\frametitle{Portée du contexte de persistance}
-	\begin{itemize}
-		\item Contexte de persistance peut être géré par conteneur
-		\item \jeeref[@]{javax.persistence/PersistenceContext} \texttt{private EntityManager em;}
-		\item Injection ⇒ Portée gérée par conteneur
-		\item Portée par défaut : transaction JTA
-		\item Invoquer \texttt{em} \emph{après} ouverture transaction JTA
-		\item Conteneur crée le contexte lors première invocation \texttt{em} {\tiny si aucun contexte associé à transaction}
-		\item Conteneur ferme le contexte après fermeture transaction JTA
-	\end{itemize}
-\end{frame}
-
-\begin{frame}
-	\frametitle{Synchronisation du contexte de persistance}
-	\begin{itemize}
-		\item JTA EM peut être synchronisé ou non synchronisé
-		\item Si synchronisé (par défaut) :
-		\item Joint automatiquement transaction JTA en cours
-	\end{itemize}
-\end{frame}
-
-\subsection{Java EE}
 \subsection{Gestion des entités}
 \begin{frame}
 	\frametitle{Mise à jour état entités}
@@ -413,7 +369,7 @@ EntityManager em2 = emfactory.createEntityManager();
 \begin{frame}[fragile]
 	\frametitle{Exemple d’utilisation}
 	\begin{minipage}{6.3cm}
-		\begin{lstlisting}[language=Java]
+		\begin{lstlisting}[language=Java, basicstyle=\small]
 @Embeddable
 public class Zip {
   private String postalCode;
@@ -431,7 +387,7 @@ public class User {
   @Embedded
   private Address address;
 }
-		\end{lstlisting}
+\end{lstlisting}
 	\end{minipage}%
 	\begin{minipage}{\columnwidth - 6.3cm}
 		\begin{tikzpicture}
@@ -510,7 +466,7 @@ public class User {
 	\begin{lstlisting}[language=Java]
 @Entity
 public class Phone {
-  @Id …
+  @Id ...
   
   @ManyToOne
   private Person person;
@@ -553,12 +509,12 @@ public class Phone {
 	\begin{lstlisting}[language=Java]
 @Entity
 public class Phone {
-  @Id …
+  @Id ...
 
 }
 @Entity
 public class Person {
-  @Id …
+  @Id ...
   
   @OneToMany
   private List<Phone> phones;
@@ -599,7 +555,7 @@ public class Person {
   @OneToMany(mappedBy = "person")
   private List<Phone> phones;
 }
-	\end{lstlisting}
+\end{lstlisting}
 \end{frame}
 
 \begin{frame}
@@ -638,7 +594,7 @@ public class Person {
 \end{frame}
 
 \subsubsection{Many-to-many}
-\begin{frame}
+\begin{frame}[fragile]
 	\frametitle{Association many-to-many}
 	\begin{itemize}
 		\item Deux personnes peuvent partager un téléphone {\tiny par ex.\ co-habitants partageant un fixe}
@@ -941,6 +897,51 @@ em2.getTransaction().commit(); // $\textsf{mise à jour BD}$
 
 \appendix
 
+\section{Conteneur}
+\begin{frame}
+	\frametitle{JTA}
+	\begin{itemize}
+		\item Unité de persistance est gérée à l’aide de JTA {\tiny par défaut en Java EE (sinon \og{}resource-local\fg{})}
+		\item JTA : Java Transaction API
+		\item Transaction associée à thread courante
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Gestion démarcation transactions}
+	\begin{itemize}
+		\item Conteneur peut également gérer les transactions : CMT
+		\item CDI managed beans : utiliser \jeeref[@]{javax.transaction/Transactional}
+		\item Chaque méthode participe alors par défaut à une transaction
+		\item Si transaction en cours, la méthode y participe
+		\item Si pas de transaction en cours lors de l’appel : le conteneur démarre puis termine automatiquement une transaction (commit si ok, rollback si exception {\tiny sauf exception application})
+		\item EJB : CMT par défaut {\tiny (ou utiliser \jeeref[@]{javax.ejb/TransactionManagement} pour BMT)}
+		\item Ou annoter la méthode \jeeref[@]{javax.ejb/TransactionAttribute} sur EJBs
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Portée du contexte de persistance}
+	\begin{itemize}
+		\item Contexte de persistance peut être géré par conteneur
+		\item \jeeref[@]{javax.persistence/PersistenceContext} \texttt{private EntityManager em;}
+		\item Injection ⇒ Portée gérée par conteneur
+		\item Portée par défaut : transaction JTA
+		\item Invoquer \texttt{em} \emph{après} ouverture transaction JTA
+		\item Conteneur crée le contexte lors première invocation \texttt{em} {\tiny si aucun contexte associé à transaction}
+		\item Conteneur ferme le contexte après fermeture transaction JTA
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Synchronisation du contexte de persistance}
+	\begin{itemize}
+		\item JTA EM peut être synchronisé ou non synchronisé
+		\item Si synchronisé (par défaut) :
+		\item Joint automatiquement transaction JTA en cours
+	\end{itemize}
+\end{frame}
+
 \section{Java SE}
 \begin{frame}
 	\frametitle{Fournisseur JPA en Java SE}
@@ -1014,7 +1015,7 @@ em2.getTransaction().commit(); // $\textsf{mise à jour BD}$
 	\begin{minipage}[t]{\columnwidth-4.5cm-7mm}
 		\begin{tikzpicture}[baseline={([yshift=-1em] current bounding box.north)}]
 			\path node[/uml/class3] (GenericDAO) {%
-				\nodepart[font=\itshape\bfseries]{one}
+				\nodepart[font=\slshape\bfseries]{one}
 				GenericDAO
 				\nodepart{three}
 				findById(id: I)\\
@@ -1024,7 +1025,7 @@ em2.getTransaction().commit(); // $\textsf{mise à jour BD}$
 				flush()\\
 				close()
 			};
-			\path (GenericDAO.north east) node[dashed, draw, fill=white, node font=\fontspec{Latin Modern Mono Light}] {T, I};
+			\path (GenericDAO.north east) node[dashed, draw, fill=white, node font=\ttfamily] {T, I};
 			\path (GenericDAO.south) ++ (-15.6mm, -1cm) node[anchor=north, /uml/class3] (ItemDAO) {
 				\nodepart{one}
 				ItemDAO
@@ -1032,7 +1033,7 @@ em2.getTransaction().commit(); // $\textsf{mise à jour BD}$
 				getMaxBid(id)
 			};
 			\path (GenericDAO.south) ++ (15.6mm, -1cm) node[/uml/class, anchor=north] (OtherDAO) {OtherDAO};
-			\path (ItemDAO) edge[/uml/extends] node[align=left] {\tiny <<bind>>\\\fontspec{Latin Modern Mono Light}T: Item, I: Long} (GenericDAO);
+			\path (ItemDAO) edge[/uml/extends] node[align=left] {\tiny <<bind>>\\\ttfamily{}T: Item, I: Long} (GenericDAO);
 			\path[/uml/extends] (OtherDAO) -- (GenericDAO);
 		\end{tikzpicture}
 		
