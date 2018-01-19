@@ -123,8 +123,12 @@
 
 \setbeamercolor{definition text}{parent=normal text, fg=red!80!black, bg=red}
 \BeforeBeginEnvironment{definition}{%
-%    \setbeamercolor{block title}{fg=black,bg=pink!50!white}
-%    \setbeamercolor{block body}{fg=pink, bg=pink!30!white}
+	% Avoids the word "Definition" then parenthesis
+	\setbeamertemplate{theorem begin}{%
+		\begin{\inserttheoremblockenv}{%
+			\ifx\inserttheoremaddition\@empty\else\inserttheoremaddition\fi%
+		}%
+	}
 	\setbeamercolor{block title}{use=definition text, fg=definition text.fg, bg=definition text.fg!20!bg}
 	\setbeamercolor{block body}{parent=normal text, use=block title, bg=block title.bg!50!bg}
 }

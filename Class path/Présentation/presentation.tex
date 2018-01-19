@@ -45,12 +45,12 @@
 	\frametitle{Packages : principe}
 	\begin{itemize}
 		\item Chaque classe principale Java : dans son fichier
-		\item Classe \texttt{MyClass} dans fichier ? \pause \texttt{MyClass.java}
-		\item Compilée dans fichier ? \pause \texttt{MyClass.class}
+		\item Classe \texttt{MyClass} dans fichier ? \onslide<2->{\texttt{MyClass.java}}
+		\item Compilée dans fichier ? \onslide<3->{\texttt{MyClass.class}}
 		\item Chaque fichier déclaré dans un \emph{package} {\tiny Sauf si package par défaut, non recommandé.}
 		\item Packages structurés hiérarchiquement, comme un arbre
 		\item Structure indiquée par des points
-		\item Exemples dans la JRE : \texttt{java.nio.file}, \texttt{java.util.logging}
+		\item Exemples dans l’API Java : \texttt{java.nio.file}, \texttt{java.util.logging}
 		\item Quand utilisation d’une classe, il faut l’importer en indiquant son package
 	\end{itemize}
 \end{frame}
@@ -58,13 +58,10 @@
 \begin{frame}
 	\frametitle{Utilité des packages}
 	\begin{itemize}
-		\item Recommandé : créez vos packages !
+		\item Plusieurs classes de même nom peuvent exister (\texttt{MathUtils})
+		\item Nom complet d’une classe doit être unique
+		\item Nom complet = nom du package point nom de la classe
 		\item Organiser par thème
-		\item Unicité de nom
-		\item Vous utilisez des classes créées par d’autres
-		\item L’une d’elle s’appelle \texttt{MathUtils}
-		\item Vous avez aussi une classe \texttt{MathUtils}
-		\item Pas de problème si dans packages différents
 	\end{itemize}
 \end{frame}
 
@@ -73,20 +70,20 @@
 	\begin{itemize}
 		\item Fichier dans un package \texttt{nom1.nom2.nom3}
 		\item Se trouve dans sous-répertoire \texttt{nom1/nom2/nom3}
-		\item Utilité de cette séparation en répertoires ? \pause Organisation ; Unicité de nom
+		\item Utilité de cette séparation en répertoires ? \onslide<2->{Organisation ; Unicité de nom}
 		\item Chemin considéré à partir du répertoire source
-		\item Dans Eclipse par défaut : \texttt{myproject/src/nom1/nom2/nom3}
+		\item Dans Eclipse par défaut : \texttt{MyProject/src/nom1/nom2/nom3}
 	\end{itemize}
 \end{frame}
 
 \begin{frame}
 	\frametitle{Compilation}
 	\begin{itemize}
-		\item Classes compilées : où ? \pause
-		\item Souvent : dans répertoire \texttt{bin} ou \texttt{target}
+		\item Classes compilées : où ?
+		\item<2-> Souvent : dans répertoire \texttt{bin} ou \texttt{target}
 		\item Structure des sources conservée !
-		\item Exemple : classe dans \texttt{src/myutils/draft/MathUtils.java} compilée dans \texttt{bin/myutils/draft/MathUtils.class}
-		\item Package ? \pause \texttt{myutils.draft}
+		\item<2-> Exemple : classe dans \texttt{src/myutils/draft/MathUtils.java} compilée dans \texttt{bin/myutils/draft/MathUtils.class}
+		\item Package ? \onslide<3->{\texttt{myutils.draft}}
 	\end{itemize}
 \end{frame}
 
@@ -96,12 +93,12 @@
 	\begin{itemize}
 		\item Pour distribuer vos classes
 		\item Ou partager entre vos propres projets
-		\item JAR ? \pause Java ARchive
+		\item JAR ? \onslide<2->{Java ARchive}
 		\item Fichier compressé
-		\item Contenu ? \pause Collection de classes compilées (\texttt{.class}) et leur package
-		\item Facultatif : code source
-		\item Facultatif : \texttt{Main-Class} {\tiny dans META-INF/MANIFEST.MF}
-		\item Et autres méta-données facultatives
+		\item Contenu ? \onslide<3->{Collection de classes compilées (\texttt{.class}) et leur package}
+		\item<3-> Facultatif : code source
+		\item<3-> Facultatif : \texttt{Main-Class} {\tiny dans META-INF/MANIFEST.MF}
+		\item<3-> Et autres méta-données facultatives
 	\end{itemize}
 \end{frame}
 
@@ -111,9 +108,9 @@
 	\begin{itemize}
 		\item Objectif du système de packages et de classes : assurer l’unicité de nom
 		\item Pour éviter conflits lors utilisation d’un jar tiers (par exemple)
-		\item Problème ? \pause Il faut packages uniques !
+		\item Problème ? \onslide<2->{Il faut packages uniques !}
 		\item Convention : base = votre domaine internet inversé
-		\item Exemple : \href{https://github.com/google/guava/blob/master/guava/src/com/google/common/io/ByteSource.java}{\texttt{com.google.common.io.ByteSource}}
+		\item Exemple : \href{https://github.com/google/guava/blob/master/guava/src/com/google/common/math/Quantiles.java}{\texttt{com.google.common.math.Quantiles}}, \href{https://crunch.apache.org/apidocs/0.15.0/org/apache/crunch/lib/Quantiles.html}{\texttt{org.apache.crunch.lib.Quantiles}}
 	\end{itemize}
 \end{frame}
 
@@ -124,11 +121,11 @@
 		\item Comment lancer une application ?
 		\item Il faut indiquer où aller chercher toutes les classes requises
 		\item Dans de multiples répertoires ou fichiers JAR
-		\item Class path : les chemins que la JVM utilise pendant son exécution pour charger les classes (sauf celles de la JRE)
-		\item Class path fourni à la JVM au démarrage, exemple \texttt{java -cp path1:path2:path3 name1.name2.myclass}
+		\item Class path : les chemins que la JVM utilise pendant son exécution pour charger les classes {\tiny (sauf celles de l’API Java)}
+		\item Class path fourni à la JVM au démarrage, exemple \texttt{java -cp path1:path2:path3 name1.name2.MyClass}
 		\item NB il doit contenir des classes compilées
-		\item Classes dans la JRE : rien à préciser
-		\item Class path par défaut ? \pause “\texttt{.}”
+		\item Classes dans l’API Java : rien à préciser
+		\item Class path par défaut ? \onslide<2->{"\texttt{.}"}
 		\item Dans Eclipse : voir Java Build Path
 	\end{itemize}
 \end{frame}
