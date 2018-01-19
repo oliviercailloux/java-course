@@ -11,6 +11,7 @@
 \input{preamble/uml}
 
 \setbeamertemplate{headline}[singleline]
+\setbeamertemplate{footline}[onlypage]
 
 \title{Découpe et contrats en génie logiciel}
 \subtitle{}
@@ -42,62 +43,30 @@
 \section{Découpe en sous-routines}
 \subsection{Sous-routines}
 \begin{frame}
-	\frametitle{\subsecname}
+	\frametitle{Découpe}
 	\begin{itemize}
-		\item Sous-routine : entrée (facultative), ensemble d’instructions, sortie (facultative)
-		\item Fait qqch
-		\item On peut l’appeler sans savoir comment elle procède (boite noire)
-		\item \texttt{Math.random();} \texttt{Math.sqrt(4);}
-		\item Sous-routine sqrt statique se trouvant dans classe \texttt{Math}
-		\item Classes regroupent des variables et sous-routines statiques
-		\item \texttt{System.out} : variable statique \texttt{out} dans classe \texttt{System}
-		\item Permet d’\emph{organiser} et de \emph{nommer}
+		\item Problèmes résolus par découpe en sous-problèmes
+		\item Logiciels : pouvoir s’appuyer sur des blocs dont on oublie les détails
+		\item Exemple : calcul d’une racine carrée
+		\item Organisation d’une entreprise commerciale ? \pause
+		\item Découpe en services
+		\item Exemple : secrétariat fournit des accessoires
+		\item Organisation d’une société humaine ? \pause
+		\item Système judiciaire, exécutif, législatif
+		\item Découpe parfois peu étanche !
+		\item Raisonnement mathématique
 	\end{itemize}
 \end{frame}
 
-\subsection{Exemple}
 \begin{frame}
-	\frametitle{\subsecname}
+	\frametitle{Découpe en informatique}
 	\begin{itemize}
-		\item Dans méthode main
-		\item Manipulation donnée d’une chaine
-		\item À plusieurs endroits
-	\end{itemize}
-	\begin{block}{Réusinage}
-		\begin{itemize}
-			\item Pour éviter duplication du code:
-			\item En faire une sous-routine
-			\item Appelée à plusieurs endroits
-		\end{itemize}
-	\end{block}
-\end{frame}
-
-\subsection{Intérêt}
-\begin{frame}
-	\frametitle{\subsecname}
-	Pourquoi créer une sous-routine ?
-	\begin{itemize}
-		\item Éviter la duplication de code. Pourquoi ? \pause
-		\begin{itemize}
-			\item Bugs : correction à un seul endroit
-			\item Factorisation : application conçue comme assemblage de blocs élémentaires
-			\item Clarté du code
-			\item Réusinage peut être facilité (trouver tous les endroits où routine est appelée)
-		\end{itemize}\pause
-		\item Clarté du code : auto-documentation ; boite noire
-		\item Partage du travail entre développeurs
-		\item Estimation quantité de travail
-	\end{itemize}
-\end{frame}
-
-\subsection{Factorisation}
-\begin{frame}
-	\frametitle{\subsecname}
-	\begin{itemize}
-		\item Code peut se ressembler sans être identique
-		\item Modifier pour qu’il soit identique mais paramétré
-		\item Exemple : Échecs, dessin du plateau vu du côté noir ou blanc
-		\item[⇒] Une seule routine de dessin, paramétré selon couleur
+		\item En fait, que se passe-t-il lors du calcul d’une racine carrée ? \pause
+		\item Appel au processeur
+		\item Lui-même un solveur de sous-problèmes
+		\item Votre environnement d’exécution fait également appel au système d’exploitation
+		\item Exemples de gros sous-problèmes déjà résolus pour vous ? \pause
+		\item Structures de données : listes, etc.
 	\end{itemize}
 \end{frame}
 
@@ -106,11 +75,42 @@
 	\frametitle{\subsecname}
 	\begin{itemize}
 		\item Interface entre l’implémentation et le monde extérieur
-		\item Analogue à une entreprise : interface Service achats ; Réclamations ; …
+		\item Penser à l’inter-face entre une cellule et le monde (sa membrane)
+		\item Analogue à une entreprise : interface secrétariat
 		\item GUI ? \pause Graphical User Interface
+		\item Multiples interfaces possibles pour un même service
+		\item Exemple entreprise ? \pause Formulaire, demande simple, …
+		\item Exemple radiateur ? \pause Boutons différents, à différents endroits, commande vocale, …
+		\item Exemple voiture ? \pause Boite automatique VS boite manuelle
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Interfaces pour différents utilisateurs}
+	\begin{itemize}
+		\item Une même entité peut avoir différents niveaux d’interface
+		\item Interface plus simple, interface plus complète
+		\item Exemples ? \pause 
+		\item Accès difficiles (réservés aux parents) sur jouet pour enfant
+		\item Deux systèmes sur lave-vaisselles
+		\item Menu de configuration de votre télévision
+		\item Interface pour utilisateur final, interface pour assembleur
+		\item Exemples ? \pause Voiture (conduire VS entretenir) ; Système d’exploitation (utiliser VS installer des logiciels)
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Interfaces pour le programmeur}
+	\begin{itemize}
+		\item Vous développez des sous-routines
+		\item Ces sous-routines sont accessibles à des programmeurs
+		\item Y compris vous-même !
+		\item Elles peuvent être combinées pour créer différents programmes pour utilisateur final
+		\item Elles peuvent être inspectées en cas de bug
 		\item API ? \pause Application Programming Interface
-		\item Ensemble d’interfaces, représentant une (plus grosse) interface
 		\item Accessible par programme (API ≠ End-user Interface)
+		\item Une interface peut aussi être un ensemble d’interfaces !
+		\item Exemple ? \pause API de Java
 	\end{itemize}
 \end{frame}
 
@@ -119,8 +119,9 @@
 \begin{frame}
 	\frametitle{\subsecname}
 	\begin{itemize}
-		\item Clarification des responsabilités nécessaires
-		\item Sous-routine fonctionnant sous certaines conditions
+		\item Découpe en sous-problèmes résolus par des services
+		\item Service fonctionne sous certaines conditions
+		\item Contrat : clarification des devoirs de l’utilisateur et du fournisseur de service
 		\item Exemple : entier fourni en paramètre > 0
 		\item Appelées \emph{préconditions}
 		\item \emph{Contrat} entre appelant et programmeur de la sous-routine
@@ -144,14 +145,92 @@
 \section{Programmation défensive}
 \subsection{Programmation défensive}
 \begin{frame}
-	\frametitle{\subsecname}
+	\frametitle{Échec rapide}
+	\begin{itemize}
+		\item Principe de l’\emph{échec rapide} (\emph{fail-fast})
+		\item Mieux vaut une erreur immédiate qu’une action inattendue (cf. exemple)
+		\item Évite les conséquences catastrophiques
+		\item Évite que l’erreur passe inaperçue
+		\item Facilite les corrections de bug
+		\item Deux mises en œuvre : programmation défensive (erreur de l’utilisateur) ; programmation prudente et explicite (erreur du programmeur)
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Programmation défensive}
 	\begin{itemize}
 		\item Aider les utilisateurs imprudents
-		\item Si précondition non satisfaite : le dire
-		\item Principe de l’\emph{échec rapide} (\emph{fail-fast})
-		\item Mieux vaut une erreur immédiate qu’une action inattendue
-		\item Facilite les corrections de bug
+		\item Si précondition non satisfaite : le faire savoir
 		\item En pratique : tester les préconditions en entrée de sous-routine {\tiny (sauf si très couteux en temps)}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Programmation prudente}
+	\begin{itemize}
+		\item Tester vos déductions à des endroits cruciaux 
+		\item Échec si non valide
+		\item Exemple : je sais qu’ici telle valeur devrait être positive
+	\end{itemize}
+\end{frame}
+
+\section{En pratique}
+\begin{frame}
+	\frametitle{Sous-routines}
+	\begin{itemize}
+		\item Sous-routine : entrée (facultative), ensemble d’instructions, sortie (facultative)
+		\item Fait qqch
+		\item On peut l’appeler sans savoir comment elle procède (boite noire)
+		\item \texttt{Math.random();} \texttt{Math.sqrt(4);}
+		\item Sous-routine sqrt statique se trouvant dans classe \texttt{Math}
+		\item Classes regroupent des variables et sous-routines statiques
+		\item \texttt{System.out} : variable statique \texttt{out} dans classe \texttt{System}
+		\item Permet d’\emph{organiser} et de \emph{nommer}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Intérêt}
+	Découper en sous-routines !
+	\begin{itemize}
+		\item Clarté du code : auto-documentation ; boite noire
+		\item Factorisation : application conçue comme assemblage de blocs élémentaires
+		\item Éviter la duplication de code (DRY)
+		\item Bugs : correction à un seul endroit
+		\item Partage du travail entre développeurs
+		\item Estimation quantité de travail
+		\item Réusinage facilité (trouver tous les endroits où routine est appelée)
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{À faire}
+	\begin{itemize}
+		\item Découper en sous-routines
+		\item Documenter vos contrats
+		\item Échouer rapidement (avertir l’utilisateur de vos sous-routines) s’il y a un problème
+	\end{itemize}
+\end{frame}
+
+\subsection{Factorisation}
+\begin{frame}
+	\frametitle{\subsecname}
+	\begin{itemize}
+		\item Code peut se ressembler sans être identique
+		\item Modifier pour qu’il soit identique mais paramétré
+		\item Exemple : Échecs, dessin du plateau vu du côté noir ou blanc
+		\item[⇒] Une seule routine de dessin, paramétrée selon couleur
+	\end{itemize}
+\end{frame}
+
+\section{Calculateur}
+\begin{frame}
+	\frametitle{Illustration}
+	\begin{itemize}
+		\item Calculateur qui additionne
+		\item Deux interfaces pour un même service (plusieurs étapes ou une étape)
+		\item Deux implémentations pour l’interface en plusieurs étapes
+		\item Et si addition seulement de nombres positifs ?
 	\end{itemize}
 \end{frame}
 
