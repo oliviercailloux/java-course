@@ -41,7 +41,7 @@
 \addtocounter{framenumber}{-1}
 
 \section{Découpe en sous-routines}
-\subsection{Sous-routines}
+\subsection{Découpe}
 \begin{frame}
 	\frametitle{Découpe}
 	\begin{itemize}
@@ -70,7 +70,7 @@
 	\end{itemize}
 \end{frame}
 
-\subsection{Interface}
+\subsection{Interfaces}
 \begin{frame}
 	\frametitle{\subsecname}
 	\begin{itemize}
@@ -115,19 +115,19 @@
 \end{frame}
 
 \section{Contrat}
-\subsection{Contrat}
 \begin{frame}
-	\frametitle{\subsecname}
+	\frametitle{Contrat}
 	\begin{itemize}
 		\item Découpe en sous-problèmes résolus par des services
 		\item Service fonctionne sous certaines conditions
 		\item Contrat : clarification des devoirs de l’utilisateur et du fournisseur de service
 		\item Exemple : entier fourni en paramètre > 0
-		\item Appelées \emph{préconditions}
+		\item Devoirs appelés \emph{préconditions}
 		\item \emph{Contrat} entre appelant et programmeur de la sous-routine
 		\item Sous ces conditions, méthode fournit un service
 		\item Exemple : renvoie un nombre aléatoire entre 0 et l’entier fourni, exclu
 		\item Si conditions non remplies : pas de garanties offertes !
+		\item \emph{Postconditions} : garanties offertes en retour
 	\end{itemize}
 \end{frame}
 
@@ -142,8 +142,7 @@
 	\end{itemize}
 \end{frame}
 
-\section{Programmation défensive}
-\subsection{Programmation défensive}
+\section{Échec rapide}
 \begin{frame}
 	\frametitle{Échec rapide}
 	\begin{itemize}
@@ -212,7 +211,6 @@
 	\end{itemize}
 \end{frame}
 
-\subsection{Factorisation}
 \begin{frame}
 	\frametitle{\subsecname}
 	\begin{itemize}
