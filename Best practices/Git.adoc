@@ -12,6 +12,7 @@ Some files are automatically deductible (translatable) from others. For example,
 Tell git to ignore those files: create a `.gitignore` file with content (for example): `*.class`. (See Vogella’s http://www.vogella.com/tutorials/Git/article.html#ignoring-files-and-directories-with-a-.gitignore-file[tutorial], official https://git-scm.com/docs/gitignore[doc].)
 
 Why?
+
 * These files clutter your repository, making it less readable.
 * These files are usually binary files, opaque to the git diff mechanism. When they conflict, git is unable to merge them automatically or tell you what happened with those files.
 * These files double your conflicts: whenever a source code file will conflict, you will have a corresponding conflict with the compiled version.
