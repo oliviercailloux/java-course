@@ -68,7 +68,7 @@ public class Person {
 
 The above code presents several deficiencies.
 
-. The javadoc mentions that a person must have a known work department, therefore, it would be nice if the class would guarantee this. (Assume that `Department` is some other class in the model.) With the provided code, a user may well receive `null` when calling `getDepartment()`, depending on how the class has been used before.
+. The javadoc mentions that a person must have a known work department, therefore, it would be nice if the class would guarantee this. (Assume that `Department` is some other class in the model.) With the provided code, a user may receive `null` when calling `getDepartment()`, depending on how the class has been used before.
 ** Someone could just initialize a new `Person` and forget to set the department.
 ** Someone could call `setDepartment` and give it a `null` pointer (by mistake, or thinking that this is permitted). The code would accept it and the problem would be difficult to trace back to its origin (this is an example of a failure to “fail fast”).
 . The javadoc mentions that the address may be absent. There are at least two ways of representing that an address is absent: an empty string, or a `null` pointer. As this is not specified, users of the class should consider both possibilities, which makes the class unpleasant to use.
