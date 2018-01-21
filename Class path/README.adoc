@@ -6,6 +6,5 @@ See: https://github.com/oliviercailloux/java-course/raw/master/Class%20path/Pr%C
 
 == References
 
-* Oracle https://docs.oracle.com/javase/8/docs/technotes/tools/[tools]
-* Windows https://docs.microsoft.com/powershell/scripting/setup/installing-windows-powershell[PowerShell] (for command-line operations)
+Oracle https://docs.oracle.com/javase/8/docs/technotes/tools/[tools]
 
