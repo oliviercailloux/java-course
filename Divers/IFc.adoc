@@ -47,7 +47,6 @@ Voir aussi la section références de chaque ensemble de diapositives, par sujet
 . Suivi des consignes de style données au cours (exemple : pom Maven)
 . Coder en anglais
 . Dépôt https://github.com/oliviercailloux/java-course/tree/master/Best%20practices/Git.adoc[clair] (responsabilité de _tous_ les membres)
-. POM correct
 . Répondre aux attentes du client : vérifier la compréhension !
 . Respecter les https://github.com/oliviercailloux/java-course/tree/master/Best%20practices[bonnes pratiques]
 
