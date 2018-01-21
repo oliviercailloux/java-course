@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+
+#The Hello project
+cd Hello
+cd src
+# We compile mypackage.one.MyClass, using its file name (and path): mypackage/one/MyClass.java.
+javac mypackage/one/MyClass.java
+# We move the result to a new target folder, to keep everything clean.
+cd ..
+mkdir -p target/mypackage/one
+mv src/mypackage/one/MyClass.class target/mypackage/one/
+# We run mypackage.one.MyClass. This prints "Hello".
+cd target
+java mypackage.one.MyClass
+# We create a JAR archive.
+jar cf ../hello.jar mypackage/one/MyClass.class
+cd ..
+# Back to starting point.
+cd ..
+
+#The Use Hello project
+# We compile userpackage.MyClass, using its file name (and path): userpackage/MyClass.java, and using hello.jar.
+javac -cp "Hello/hello.jar" "Use Hello/src/userpackage/MyClass.java"
+# We move the result to a new target folder, to keep everything clean.
+cd "Use Hello"
+mkdir -p target/userpackage
+mv src/userpackage/MyClass.class target/userpackage/
+# Back to starting point.
+cd ..
+# We run userpackage.MyClass (together with hello.jar). This prints "Hello". Note that under Windows, the separator is the ; sign instead of the : sign.
+java -cp "Hello/hello.jar:target/" mypackage.one.MyClass
+
+#We clean Hello
+cd Hello
+rm target/mypackage/one/MyClass.class
+rmdir -p target/mypackage/one/
+rm hello.jar
+cd ..
+#We clean Use Hello
+cd "Use Hello"
+rm target/userpackage/MyClass.class
+rmdir -p target/userpackage/
+cd ..
+
