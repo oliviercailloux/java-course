@@ -46,11 +46,8 @@ Voir aussi la section références de chaque ensemble de diapositives, par sujet
 . Utilisation privilégiée des standards (exemple : JSON) (déviation permise mais il faut m’en parler et apporter des arguments)
 . Suivi des consignes de style données au cours (exemple : pom Maven)
 . Coder en anglais
-. Dépôt clair (responsabilité de _tous_ les membres)
-.. Pas de produits transformés (.class par exemple)
-.. Pas de fichiers propres à l’IDE (.project, .classpath, .settings pour Eclipse)
-.. Projet Java (donc pom.xml) à la racine du dépôt
-.. POM correct
+. Dépôt https://github.com/oliviercailloux/java-course/tree/master/Best%20practices/Git.adoc[clair] (responsabilité de _tous_ les membres)
+. POM correct
 . Répondre aux attentes du client : vérifier la compréhension !
 . Respecter les https://github.com/oliviercailloux/java-course/tree/master/Best%20practices[bonnes pratiques]
 

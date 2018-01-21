@@ -2,7 +2,26 @@
 :sectanchors:
 
 == Your project at the root of your repository
-Put your project immediately at the root of your repository (e.g., the `pom.xml` file).
+Put your project immediately at the root of your repository (e.g., the `pom.xml` file for a Maven project).
 
 https://github.com/oliviercailloux/test-call-xmcda-ws[Example]
+
+== No transformed products
+Some files are automatically deductible (translatable) from others. For example, compiled versions of source code. Do not put the transformed versions in your repository.
+
+Tell git to ignore those files: create a `.gitignore` file with content (for example): `*.class`. (See Vogella’s http://www.vogella.com/tutorials/Git/article.html#ignoring-files-and-directories-with-a-.gitignore-file[tutorial], official https://git-scm.com/docs/gitignore[doc].)
+
+Why?
+* These files clutter your repository, making it less readable.
+* These files are usually binary files, opaque to the git diff mechanism. When they conflict, git is unable to merge them automatically or tell you what happened with those files.
+* These files double your conflicts: whenever a source code file will conflict, you will have a corresponding conflict with the compiled version.
+
+== No files specific to your IDE
+Your IDE might store your project configuration settings in files in a language only your IDE understand. (For example, Eclipse creates the hidden `.project` and `.classpath` files and a `.settings` folder in your project root directory.) Do not store those files in your repository, if you use Maven. 
+
+This is because your project configuration should be entirely contained in your Maven Project description (the `pom.xml` file), making the IDE specific files redundant. Thus, this practice is an instanciation of the “No transformed products” practice.
+
+Actually, it is easy to misconfigure something in your IDE by mistake, leading to (possibly subtle) problems later. Thus, the IDE configuration files are not exactly redundant with your project configuration, but rather represent a possibly noisy version of it. Make it clear to the outside world that the right configuration is the one dictated by Maven (in `pom.xml`), by not having the IDE specific files in your repository. This also makes sure that other users of your repository start with the appropriate (`pom.xml`) project configuration.
+
+Finally, it lets developers use the IDE of their choice without being bothered by irrelevant files, and while making sure that everybody uses the same (`pom.xml`) project configuration.
 
