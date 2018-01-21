@@ -1,0 +1,11 @@
+= Class path
+
+The class path is the set of places where the JRE will look for your classes and other resources.
+
+See: https://github.com/oliviercailloux/java-course/raw/master/Class%20path/Pr%C3%A9sentation/presentation.pdf[Présentation], https://github.com/oliviercailloux/java-course/blob/master/Class%20path/Class%20path.adoc[Exercices].
+
+== References
+
+* Oracle https://docs.oracle.com/javase/8/docs/technotes/tools/[tools]
+* Windows https://docs.microsoft.com/powershell/scripting/setup/installing-windows-powershell[PowerShell] (for command-line operations)
+
