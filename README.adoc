@@ -10,5 +10,4 @@ Look into the various `.adoc` files and sub-folders, depending on your interest!
 
 == See also
 * https://github.com/oliviercailloux/samples[Samples]
-* https://drive.google.com/drive/folders/0BzAfb5IHjkJsOHpPdFBPQUYzVDg[Slides] Dan Dimcea
 
