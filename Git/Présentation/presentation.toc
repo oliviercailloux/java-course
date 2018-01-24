@@ -1,8 +1,0 @@
-\select@language {french}
-\beamer@sectionintoc {1}{Pr\IeC {\'e}sentation}{2}{0}{1}
-\beamer@sectionintoc {2}{Commits}{4}{0}{2}
-\beamer@sectionintoc {3}{Branches}{12}{0}{3}
-\beamer@sectionintoc {4}{Serveurs distants}{14}{0}{4}
-\beamer@sectionintoc {5}{Divers}{15}{0}{5}
-\beamer@sectionintoc {6}{Exercices}{17}{1}{6}
-\beamer@sectionintoc {7}{Licence}{26}{1}{7}
