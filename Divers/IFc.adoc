@@ -20,9 +20,9 @@ Voir aussi la section références de chaque ensemble de diapositives, par sujet
 
 === Démarrage du projet
 * Vous pouvez utiliser le `groupId` `io.github.oliviercailloux.y2018`
-* Utilisez _obligatoirement_ comme `artifactId` le nom de votre projet (avec espaces transformés en traits d’union), en minuscules
+* Utilisez _obligatoirement_ comme `artifactId` le nom de votre projet, avec espaces transformés en traits d’union, en minuscules (exemple : my-project)
 * Lire les bonnes pratiques Maven
-* Placez votre projet sur un dépôt sur GitHub (un seul pour tout le groupe) qui s’appelle _exactement_ comme le nom de votre projet (avec espaces transformés en traits d’union)
+* Placez votre projet sur un dépôt sur GitHub (un seul pour tout le groupe) qui s’appelle _exactement_ comme le nom de votre projet, avec espaces transformés en traits d’union (exemple : My-Project)
 
 === Consignes générales
 * Pour chaque fonctionnalité dont vous vous occupez : créer une issue sur votre projet GitHub. Son nom _doit_ être strictement égal au nom dans l’énoncé du projet. Vous enregistrer à deux (un binôme) dessus. Lorsque vous l’estimez terminée (je peux corriger), et que vous avez fusionné votre code sur la branche master, vous fermez l’issue. (Idée : https://fr.wikipedia.org/wiki/Int%C3%A9gration_continue[Intégration continue])
