@@ -118,7 +118,8 @@ Trois jours avant Sx signifie : au plus tard trois jours avant le jour de la sé
 
 === S4 (jeudi 25 janvier 2018)
 //* https://tools.ietf.org/html/rfc6265[Cookies]
-* https://github.com/oliviercailloux/java-course/raw/master/JAX-RS/Pr%C3%A9sentation/presentation.pdf[JAX-RS]. Exemple : https://github.com/oliviercailloux/sample-jax-rs[sample-jax-rs]
+* https://github.com/oliviercailloux/java-course/blob/master/JAX-RS[JAX-RS]
+//https://github.com/oliviercailloux/java-course/raw/master/JAX-RS/Pr%C3%A9sentation/presentation.pdf[JAX-RS]. Exemple : https://github.com/oliviercailloux/sample-jax-rs[sample-jax-rs]
 * http://arquillian.org/[Arquillian] (exemple, voir également sample-jax-rs)
 
 === S5 (vendredi 23 février 2018)
