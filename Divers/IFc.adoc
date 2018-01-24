@@ -31,8 +31,8 @@ Voir aussi la section références de chaque ensemble de diapositives, par sujet
 * Je vous donne une note qualité (la même pour les deux membres du binôme) pour cette issue. Je commente l’issue sur GitHub pour vous aider à améliorer votre code (et vos points) si nécessaire. Cette note qualité est temporaire (au moins) jusqu’à la livraison suivante.
 * Conseil : changez partiellement chaque binôme à chaque issue pour faire tourner les connaissances et varier les plaisirs (et augmenter les points).
 * Un travail régulier est attendu (et la note le prendra en compte).
-* Attendu : 9 heures de travail par personne entre chaque séance en moyenne ; 18 points de difficulté en tout pour les groupes de 6 personnes (20 points pour 7 personnes).
-* La note CC est la moyenne de vos notes qualité.
+* Attendu : 9 heures de travail par personne entre chaque séance en moyenne ; 18 points de difficulté en tout pour les groupes de 6 personnes (15 points pour 5 personnes, 20 points pour 7 personnes) ; 6 points de difficulté en tout par personne (sachant que les fonctionnalités accomplies à deux comptent pour les deux personnes) ; base : un binôme accomplit environ un point de difficulté par inter-séance en moyenne.
+* La note CC aggrège vos notes qualité.
 * La note projet est une évaluation finale de la qualité de votre projet, avec une composante individuelle (ce sur quoi vous avez travaillé) et une composante de groupe (le résultat final du projet entier). Elle prend en compte vos fonctionnalités accomplies et leurs corrections, la diversité des fonctionnalités, la cohérence du tout, la présentation finale. Notez que toute amélioration des fonctionnalités déjà notées pour la note CC vous rapportera pour la note projet.
 * Les commentaires utilisent les abréviations E1, E2, etc, pour se référer aux exigences ci-dessus ; S2.1 pour le point indiqué en 1 sous S2 ci-dessous ; BP Maven (par exemple) pour les Bonnes Pratiques Maven (voir lien ci-dessus).
 
