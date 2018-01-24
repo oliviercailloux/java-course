@@ -5,7 +5,7 @@
 Summary:
 
 * As Maven `groupId`, use a domain name you control and invert it (example: `io.github.oliviercailloux`), to make sure it is unique
-* As Maven `artifactId`, use your project name, with spaces replaced by hyphens (example: `my-project-name`)
+* As Maven `artifactId`, use your project name, with spaces replaced by hyphens, in lowercase (example: `my-project-name`)
 * In Maven identifiers, avoid Java keywords and “words” starting with a digit
 * As Java base package name, use your Maven coordinates, to ensure uniqueness, with hyphens replaced by underscores (example: `io.github.oliviercailloux.my_project_name`)
 
@@ -34,4 +34,7 @@ Web applications do not require a web descriptor (the `web.xml` file that goes i
 
 * [Note 1: As of Release 3.0.0 of the Apache Maven WAR Plugin, this is no more necessary: “The default value for failOnMissingWebXml has been changed from true to false.” (https://maven.apache.org/plugins/maven-war-plugin/index.html[source]). However including the property anyway improves your project compatibility. See also http://svn.apache.org/viewvc/maven/plugins/trunk/maven-war-plugin/src/main/java/org/apache/maven/plugins/war/WarMojo.java?view=log[source code history], http://svn.apache.org/viewvc/maven/plugins/tags/[releases].] 
 * [Note 2: Web applications do not require a web descriptor any more since Servlet 2.5 MR 5, more than 10 years ago (see JSR 340 Servlet 3.1 http://download.oracle.com/otn-pub/jcp/servlet-3_1-fr-eval-spec/servlet-3_1-final.pdf[spec], A.7.6 and 10.13).]
+
+== Do not refer to someone else’s project
+The POM may include a https://maven.apache.org/pom.html#More_Project_Information[`<url>`] element. If you use it, make sure it refers to your project. Do not copy templates without understanding it (I often see `<url>` pointing to http://maven.apache.org!)
 
