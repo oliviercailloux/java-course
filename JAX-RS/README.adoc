@@ -1,0 +1,12 @@
+= JAX-RS
+
+JAX-RS is a Java standard that allow to build REST web services.
+
+See: https://github.com/oliviercailloux/java-course/raw/master/JAX-RS/Pr%C3%A9sentation/presentation.pdf[Présentation], https://github.com/oliviercailloux/sample-jax-rs[sample-jax-rs].
+
+== References
+
+* The Java EE Tutorial: http://docs.oracle.com/javaee/7/tutorial/partcdi.htm[Contexts and Dependency Injection]
+* Goncalves - Beginning Java EE 7 (2013)
+* https://jcp.org/en/jsr/detail?id=346[JSR 346] (Context and Dependency Injection 1.1 and 1.2) (http://download.oracle.com/otn-pub/jcp/cdi-1_2-mrel-eval-spec/cdi-1.2.pdf[PDF])
+
