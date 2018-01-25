@@ -121,10 +121,10 @@ Trois jours avant Sx signifie : au plus tard trois jours avant le jour de la sé
 === S4 (jeudi 25 janvier 2018)
 * Découpe et https://github.com/oliviercailloux/java-course/raw/master/Contrat/presentation.pdf[contrats] en génie logiciel
 * https://github.com/oliviercailloux/java-course/blob/master/JAX-RS[JAX-RS]
-* http://arquillian.org/[Arquillian] (exemple, voir également https://github.com/oliviercailloux/sample-jax-rs[sample-jax-rs])
 
 === S5 (vendredi 23 février 2018)
 * Note sur la réutilisation intelligente (recompensée !) et le droit d’utilisation, ainsi que les licences
+* http://arquillian.org/[Arquillian] (exemple, voir également https://github.com/oliviercailloux/sample-jax-rs[sample-jax-rs])
 * https://github.com/oliviercailloux/java-course/raw/master/JPA/presentation.pdf[JPA] : création d’une entité et création automatique BD
 ** https://github.com/oliviercailloux/java-course/blob/master/DB%20from%20Eclipse.adoc[DB from Eclipse]
 ** https://github.com/oliviercailloux/java-course/blob/master/JPA.adoc[Exercices]
