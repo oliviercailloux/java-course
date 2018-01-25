@@ -12,6 +12,7 @@
 ** JSON https://github.com/oliviercailloux/java-course/blob/master/JSON.adoc[Processing], https://github.com/oliviercailloux/java-course/blob/master/JSON-B.adoc[JSON-B]
 ** XML : voir références générales ci-dessus
 ** JAXB : exemple https://github.com/oliviercailloux/XMCDA-2.2.1-JAXB[classique], https://github.com/xmcda-modular/jaxb[avancé] (http://pyxb.sourceforge.net/[PyXB], https://docs.microsoft.com/en-us/dotnet/standard/serialization/xml-schema-definition-tool-xsd-exe[.NET], …)
+* https://tools.ietf.org/html/rfc6265[Cookies]
 
 Voir aussi la section références de chaque ensemble de diapositives, par sujet.
 
@@ -53,7 +54,8 @@ Voir aussi la section références de chaque ensemble de diapositives, par sujet
 
 === Livraisons
 * Livraison 1 : trois jours avant S4. Exigence : au moins 5 points de difficulté accomplis (selon exigences ci-dessus) ; Travis CI en place. Note : 1/6 pour chaque fonctionnalité et 1/6 pour Travis.
-* Livraison 2 : trois jours avant S6 (≥ 10 points de difficulté)
+//better: Travis as a fct, half point.
+* Livraison 2 : trois jours avant S6 (≥ 10 points de difficulté). Écrire « Re-check » qqpart dans votre issue (comme un commentaire) si vous avez tenu compte de mes commentaires dans une issue déjà corrigée précédemment, afin que je re-corrige (vous aurez une nouvelle note en plus pour la même issue).
 * Livraison 3 : trois jours avant S8 (≥ 15 points de difficulté)
 
 À chaque livraison, certaines notes qualités deviennent définitivement part de la note CC (à hauteur du nombre de points de difficulté requis). Si vous avez fait plus que votre quota, ce sont les meilleures notes qui deviennent définitivement part de la note CC.
@@ -117,10 +119,9 @@ Trois jours avant Sx signifie : au plus tard trois jours avant le jour de la sé
 * Mettre en place le système d’intégration continue Travis sur votre dépôt de groupe. (Voir document ci-dessus.) Ajouter le badge au fichier README. Également à rendre pour trois jours avant S4. Vérifier que votre projet est ok, d’après Travis, au moment de la remise. (Les tests fonctionnels de vos servlets ne doivent pas nécessairement passer.)
 
 === S4 (jeudi 25 janvier 2018)
-//* https://tools.ietf.org/html/rfc6265[Cookies]
+* Découpe et https://github.com/oliviercailloux/java-course/raw/master/Contrat/presentation.pdf[contrats] en génie logiciel
 * https://github.com/oliviercailloux/java-course/blob/master/JAX-RS[JAX-RS]
-//https://github.com/oliviercailloux/java-course/raw/master/JAX-RS/Pr%C3%A9sentation/presentation.pdf[JAX-RS]. Exemple : https://github.com/oliviercailloux/sample-jax-rs[sample-jax-rs]
-* http://arquillian.org/[Arquillian] (exemple, voir également sample-jax-rs)
+* http://arquillian.org/[Arquillian] (exemple, voir également https://github.com/oliviercailloux/sample-jax-rs[sample-jax-rs])
 
 === S5 (vendredi 23 février 2018)
 * Note sur la réutilisation intelligente (recompensée !) et le droit d’utilisation, ainsi que les licences
