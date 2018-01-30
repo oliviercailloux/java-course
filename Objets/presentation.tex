@@ -89,12 +89,14 @@
 \begin{frame}
 	\frametitle{Conception}
 	\begin{itemize}
-		\item Réfléchir à l’interface (implicite) de votre classe
+		\item Réfléchir à l’interface \emph{publique} de votre classe
 		\item C-à-d la façon dont les programmeurs (vous ou d’autres) vont l’utiliser
+		\item À distinguer de son implémentation, détail inutile pour l’utilisateur
+		\item Votre objet doit être une boite noire pour l’utilisateur, sauf concernant son interface publique
 		\item Exemple : ajouter \texttt{getPower()} ? Ou utile seulement en interne ?
+		\item Plus grande interface : plus de documentation à apporter, plus de méthodes à maintenir, plus de complexité
 		\item Bonne pratique : interdire aux utilisateurs de changer l’état de votre objet directement
 		\item Exemple : dire d’utiliser \texttt{heater.powerOn()} plutôt que \texttt{heater.on ← true}
-		\item Plus grande interface : plus de documentation à apporter, plus de méthodes à maintenir, plus de complexité
 	\end{itemize}
 \end{frame}
 
@@ -104,15 +106,26 @@
 	\begin{itemize}
 		\item Distinguer méthodes \texttt{private} et \texttt{public} {\tiny et package}
 		\item Champs (propriétés) : privilégier \texttt{private}
-		\item Initialiser : utiliser \texttt{new}
-		\item Variable contient une référence vers un objet (sur le tas)
-		\item Deux variables réfèrent à un même objet ≠ deux variables réfèrent à deux objets dans le même état
-		\item Destruction : par GC (? \pause Garbage Collector)
-		\item Quand plus aucune référence vers l’objet
-		\item Méthodes \texttt{toString()}, \texttt{equals()}, \texttt{hashcode()}
+		\item Initialiser : utiliser \texttt{new} avec un constructeur (\texttt{new Heater(true);})
+		\item Implémenter méthode \texttt{toString(): String}
 	\end{itemize}
 \end{frame}
 
+\begin{frame}
+	\frametitle{Variables}
+	\begin{itemize}
+		\item 4 attributs d’une variable ? \onslide<2->{Nom, type, espace mémoire sur la pile, valeur}
+		\item Si variable réfère à un type primitif (\texttt{int}, \texttt{double}, …) : valeur dans sa case mémoire
+		\item Si variable réfère à un type objet : valeur est une référence vers un objet (sur le tas)
+		\item Deux variables réfèrent à un même objet ≠ deux variables réfèrent à deux objets dans le même état
+		\item Destruction : par GC (? \onslide<3->{Garbage Collector})
+		\item<3-> Quand plus aucune référence vers l’objet
+	\end{itemize}
+\end{frame}
+
+\appendix
+
+\section{Interfaces explicites}
 \begin{frame}
 	\frametitle{Interfaces explicites}
 	\begin{itemize}
@@ -129,8 +142,6 @@
 		\item Interfaces explicites : cas avancés (pas pour classes simples)
 	\end{itemize}
 \end{frame}
-
-\appendix
 
 \section{Licence}
 \begin{frame}
