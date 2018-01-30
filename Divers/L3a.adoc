@@ -11,15 +11,15 @@ You know algorithmics and the basic (non object-oriented) programming concepts i
 == Abbreviations
 
 * [SK]: Supposedly Known
-* [I]: Important (some parts may be both SK and I)
+* [I]: Important
 * [O]: Optional (do it if you are specifically interested in the related aspect)
 * [M]: Mandatory exercices
-* Markers apply to the whole line. Example: "4.3 intro to 4.3.2, 4.6.1 [I]" means that everything in between 4.3 and 4.3.2 plus 4.6.1 are important.
 * ESx.y(.z): designates section x.y (or x.y.z) in Eck’s http://math.hws.edu/eck/cs124/javanotes7/[book] (in chapter x)
-* EQx.y: question number y in Eck’s book, from quiz chapter x
 * EQx: quiz chapter x
+* EQx.y: question number y in Eck’s book, from quiz chapter x
 * EEx.y: exercice number y in Eck’s book, from exercices chapter x
 * Ranges are always given with ends included (EQ1.3 to 1.9 means 3 and 9 included)
+* Markers apply to the whole line. Example: "4.3 intro to 4.3.2, 4.6.1 [I]" means that everything in between 4.3 and 4.3.2 plus 4.6.1 are important.
 
 == Instructions & grading
 
@@ -27,11 +27,21 @@ You know algorithmics and the basic (non object-oriented) programming concepts i
 * Create a group repository (once for the group). The exercices about the project go there.
 * All mandatory exercices must be in the appropriate repository, merged in the branch `master`, 3 days before the lecture, 23:59 + 1min (e.g., lecture Saturday 23rd means a deadline on the end of Wednesday 20th).
 * You will be graded for your project exercices. Those grades count for the CC grade. You can modify the code afterwards for a better Project grade.
-* For the book exercices, you receive either 1 (exercice is done, even imperfectly, committed under your name) or 0 (exercice not done). This counts for 10% of the CC grade.
+* For the book exercices, you receive either 1 (exercice is done, even imperfectly, committed under your name) or 0 (exercice not done). This counts for 10% of the CC grade. (Once graded, you can remove the book exercices in your repository, or leave them there.)
 * The final grade is a mix of 50% CC grade, 50% Project grade.
+* Your GitHub username and git “User Name” must be identical.
+
+Don’t hesitate to send me your question by e-mail if you’re blocked in your project, instead of wasting hours. However, I do expect that you make some research before you ask, and that your question be clear. See these https://codeblog.jonskeet.uk/2012/11/24/stack-overflow-question-checklist/[guidelines].
+
+== Take notes
+* 5 ways of taking notes https://www.youtube.com/watch?v=AffuwyJZTQQ[video]
+* http://pss.sagepub.com/content/25/6/1159[Research] shows that taking notes, and especially writing what is said in your own words after some mental processing, permits more effective study
+
+Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017/course/[course] “Introduction to Biology - The Secret of Life”, MITx
 
 == Planning
 // Object: 10 ; Project: 7
+// TODO say: one or two persons per issue; not a better grade for a given issue if one, but better grades overall if fewer persons effectively working in a project
 
 === S1
 
@@ -41,12 +51,10 @@ You know algorithmics and the basic (non object-oriented) programming concepts i
 * Basic concepts and structures of Java: variables; types; subroutines; control structures; identifiers… [SK]
 ** http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours1.pdf[Airiau C1], http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours2.pdf[Airiau C2] (compil, p. 15 to 19)
 * https://github.com/oliviercailloux/java-course/raw/master/Notions%20objets/presentation.pdf[Basics of objects]
-* Choose your project
 * https://github.com/oliviercailloux/java-course/tree/master/Git[Git]: local repo, start ex
 
 // Prés du cours : 45 min. Git => 65. Ex git => 70. Airiau C1 => 90.
 // Present all theory, 90 min. Choose project during break. Then 30 min ex. Then 30 min git theory (local only!), 30 min ex.
-//TODO ex git
 
 *Material and going beyond*
 
@@ -66,97 +74,146 @@ You know algorithmics and the basic (non object-oriented) programming concepts i
 
 *Todo*
 
-* Read the Workbench User Guide, in https://github.com/oliviercailloux/java-course/blob/master/Tools.adoc#eclipse[Eclipse] doc [I]
+* Read half of the Workbench User Guide, Basic Tutorial, see https://github.com/oliviercailloux/java-course/blob/master/Tools.adoc#eclipse[Eclipse] doc [I]
 * Read the Important part, above
 * Finish git exercices, local repository part
 * http://math.hws.edu/eck/cs124/javanotes7/c1/quiz.html[EQ1.3] to 1.9
 * http://math.hws.edu/eck/cs124/javanotes7/c2/quiz.html[EQ2.1] to 2.4; 2.6 to 2.9; 2.11
 * Commit the mandatory exercices
+* Indicate your GitHub username on https://mycourse.dauphine.fr/webapps/blackboard/execute/launcher?type=Course&id=_38274_1[MyCourse].
 
 === S2
 
-* Design: https://github.com/oliviercailloux/java-course/raw/master/Exception/presentation.pdf[exceptions], https://github.com/oliviercailloux/java-course/raw/master/Contrat/presentation.pdf[contract], black-box, preconditions.
-* https://github.com/oliviercailloux/java-course/raw/master/Assert/presentation.pdf[Assertions] in Java.
-* Javadoc: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours4.pdf[Airiau C4], p. 14 to 21.
-* (Use of Javadoc in Eclipse.)
-* http://math.hws.edu/eck/cs124/javanotes7/c3/[ES3.7] (except 3.7.3), http://math.hws.edu/eck/cs124/javanotes7/c4/[4 intro] to 4.7.
-* ES4.3 intro to 4.3.2, 4.6.1 [I]
+*Lecture*
+
+* Git, remote
+* Choose your project
+* Two major principles of software engineering: https://github.com/oliviercailloux/java-course/raw/master/Contrat/presentation.pdf[contract] and fail-fast.
+* Mechanisms: interface; black box; preconditions and postconditions; javadoc; https://github.com/oliviercailloux/java-course/raw/master/Exception/presentation.pdf[exceptions] (advanced: https://github.com/oliviercailloux/java-course/raw/master/Assert/presentation.pdf[assertions]).
+** Javadoc: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours4.pdf[Airiau C4], p. 18 to 25.
+** (Use of Javadoc in Eclipse.)
+* Finish git exercices, local repository part
 * http://www-users.math.umn.edu/~arnold/disasters/ariane.html, https://www.youtube.com/watch?v=gp_D8r-2hwk
 // https://www.youtube.com/embed/fCnO-UYF3co
-Approximatively: 48p. 
 
+*Material and going beyond*
+
+* http://math.hws.edu/eck/cs124/javanotes7/c3/[ES3.7] (except 3.7.3), http://math.hws.edu/eck/cs124/javanotes7/c4/[4 intro] to 4.7.
+* ES4.3 intro to 4.3.2, 4.6.1 [I]
+
+*Exercices*
+
+* Git exercices
 * You are expected to comment all your code appropriately with Javadoc, for all exercices from now on [M]
 * http://math.hws.edu/eck/cs124/javanotes7/c4/exercises.html[EE4.1], 4.2
 * EE4.3 [M]
 * EE4.4
 * EE4.5, 4.6 [O]
 * EE4.7 [M]
+
+*Todo*
+
+* Finish git exercices, remote part
+* Read all the Workbench User Guide, Basic Tutorial, see https://github.com/oliviercailloux/java-course/blob/master/Tools.adoc#eclipse[Eclipse] doc [I]
+* Read the Important part, above
 * http://math.hws.edu/eck/cs124/javanotes7/c4/quiz.html[EQ4]
-* Project: Contract [M]
+* Commit the mandatory exercices (using `git`)
 
 === S3
 
-* https://github.com/oliviercailloux/java-course/raw/master/Class%20path/presentation.pdf[Classpath]
-** Packages, classes and directories.
+*Lecture*
+
+* https://github.com/oliviercailloux/java-course/blob/master/Class%20path[Classpath] (packages, classes and directories).
 * https://github.com/oliviercailloux/java-course/raw/master/Objets/presentation.pdf[Objects].
-* Interfaces: design; use as type; replaceability.
-* http://math.hws.edu/eck/cs124/javanotes7/c5/[ES5] intro to 5.4
-* ES5.3.4 [I]
-* Améliorer pour des points (et du prestige)
-** Correction acceptée : +1
-** Correction impressionnante : +1 point de prestige
 * Clean repository
 
-Approximatively: 50p.
+* Improve course for points (and prestige)
+** Accepted improvement (or three spelling mistakes or typos): +1
+** Impressive correction: 1 prestige point (in supplement)
 
-* You are expected to not use the default package, for all exercices from now on [M]
-* http://math.hws.edu/eck/cs124/javanotes7/c5/exercises.html[EE5]
+*Material and going beyond*
+
+* http://math.hws.edu/eck/cs124/javanotes7/c5/[ES5] intro to 5.4
+* ES5.3.4 [I]
+
+*Exercices*
+
+* You must use correct (implying, non-default) packages, for all exercices from now on [M]
+* http://math.hws.edu/eck/cs124/javanotes7/c5/exercises.html[EE5.1], 5.2
 * EE5.3 [M]
+** Supplementary requirement: you will archive `PairOfDice` and `StatCalc` into a JAR file and use this in a new Eclipse project where only one class is defined, which uses `PairOfDice` and `StatCalc`.
+* Project: Contract [M]
+
+*Todo*
+
+* Read half of the Java development user guide, Basic Tutorial (until “Navigate to a Java element's declaration” included), see https://github.com/oliviercailloux/java-course/blob/master/Tools.adoc#eclipse[Eclipse] doc [I]
+* Read the Important part, above
+* Commit the mandatory exercices (using `git`)
+
+=== S4
+
+*Lecture*
+
+* Java Interfaces and the Calculator example: replaceability and use as type.
+* Inheritance: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours3.pdf[Airiau C3]
+
+*Material and going beyond*
+
+* http://math.hws.edu/eck/cs124/javanotes7/c5/[ES5.5] to 5.8
+* http://math.hws.edu/eck/cs124/javanotes7/c10/[ES10] to 10.2
+
+*Exercices*
+
+* EE10.4 (except you use the https://docs.oracle.com/javase/8/docs/api/java/util/function/Predicate.html[Predicate] interface from the Java API instead of writing your own)
+// play bj
+* EE5.5
+// implements but no inheritance
 * EE5.7 [M] (the part about anonymous classes is optional)
 ** Supplementary requirements: your code must lie in at least two packages;
 ** The idea of this exercice is that you simulate that three different people work on this exercice: one provides some interfaces; another implements the interfaces; a third one uses the interfaces and their implementations to solve the exercice (except you represent all these persons).
 ** Declare at least one interface in another Eclipse project, exported as a Java archive (JAR file);
 ** implement those interfaces in another Eclipse project, exported as a Java archive (JAR file) (will you need the previous JAR file? Why / why not?);
 ** solve the exercices in a third Eclipse project (will you need the previous JAR files? Which ones and why?).
-
-=== S4
-
-* Inheritance: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours3.pdf[Airiau C3]
-* Generics and collections: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours6.pdf[Airiau C6]
-* http://math.hws.edu/eck/cs124/javanotes7/c5/[ES5.5] to 5.8
-* http://math.hws.edu/eck/cs124/javanotes7/c10/[ES10] to 10.2
-
-* EE5.7 modified, from above [M]
+// simple inheritance (no TextIO depended on, actually)
 * http://math.hws.edu/eck/cs124/javanotes7/c5/exercises.html[EE5.4] [M]
-* http://math.hws.edu/eck/cs124/javanotes7/c7/exercises.html[EE7.1], 7.5
-* EE7.7 [M] (you may use standard input instead of file input)
-* http://math.hws.edu/eck/cs124/javanotes7/c10/exercises.html[EE10.2] [M]
-* EE5.5
-* EE10.4 (except you use the https://docs.oracle.com/javase/8/docs/api/java/util/function/Predicate.html[Predicate] interface from the JRE instead of writing your own)
+
+*Todo*
+
+* Read all the Java development user guide, Basic Tutorial, see https://github.com/oliviercailloux/java-course/blob/master/Tools.adoc#eclipse[Eclipse] doc [I]
 
 === S5
 
-* Files and flows (from https://docs.oracle.com/javase/tutorial/essential/io/index.html[Basic I/O] in the Java Tutorials)
-* Use dependencies
-* Exceptions in Java: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours5.pdf[Airiau C5]
-* Maps, Comparable, Comparator: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours6.pdf[Airiau C6]
 * Unit testing: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours8.pdf[Airiau C8]
+* Generics and collections: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours6.pdf[Airiau C6]
+
+* Use dependencies; one unit test per exercice (must be green)
 * http://math.hws.edu/eck/cs124/javanotes7/c10/[ES10.3] to 10.5
 * http://math.hws.edu/eck/cs124/javanotes7/c8/[ES8] intro to 8.4
 
+// read, sort a list
+* http://math.hws.edu/eck/cs124/javanotes7/c7/exercises.html[EE7.1], 7.5
+// list of words
+* EE7.7 [M] (you may use standard input instead of file input)
+// set
+* http://math.hws.edu/eck/cs124/javanotes7/c10/exercises.html[EE10.2] [M]
 * http://math.hws.edu/eck/cs124/javanotes7/c10/exercises.html[EE10]
-* Project: File
 
 === S6
 
-Git in practice
+* Files and https://github.com/oliviercailloux/java-course/blob/master/Flows.adoc[flows]
+* Exceptions in Java: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours5.pdf[Airiau C5] (and see slides Contrat, appendix)
+* Maps, Comparable, Comparator: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours6.pdf[Airiau C6]
 
+* Project: File
 * Project: Resources
 
 === S7
 
 * Maven
+* Git in practice
 * Logging (SLF4J)
+* Project: Interfaces
+* CI
 
 === S8
 
@@ -169,7 +226,7 @@ Git in practice
 
 === S9
 
-* link:../SWT.adoc[SWT]
+* https://github.com/oliviercailloux/java-course/blob/master/SWT.adoc[SWT]
 
 === S10
 
@@ -178,14 +235,12 @@ Git in practice
 
 === S11
 
-* Parsing HTML: link:../HTML%20to%20DOM.adoc[DOM]
-* Accessing REST web services: link:../JAX-RS%20client.adoc[JAX-RS client]
+* Parsing HTML: https://github.com/oliviercailloux/java-course/blob/master/HTML%20to%20DOM.adoc[DOM]
+* Accessing REST web services: https://github.com/oliviercailloux/java-course/blob/master/JAX-RS%20client.adoc[JAX-RS client]
 * equals, hashCode
 
 === S12
 
-* Remarques
-** code inutilisé à effacer
 * Equals, Hashcode
 ** Hash function
 ** Uses
@@ -199,12 +254,11 @@ Git in practice
 
 === S14
 
-* link:++../Course Object++[QCM test]
+* Licenses
 
 === S15
 
 * Results QCM
-* Licenses
 * Classpath (bis)
 * Reminder: exceptions; naming conventions; config Eclipse
 
