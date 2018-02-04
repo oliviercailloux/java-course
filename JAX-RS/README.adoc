@@ -6,7 +6,7 @@ See: https://github.com/oliviercailloux/java-course/raw/master/JAX-RS/Pr%C3%A9se
 
 == References
 
-* The Java EE Tutorial: http://docs.oracle.com/javaee/7/tutorial/partcdi.htm[Contexts and Dependency Injection]
+* The Java EE Tutorial: https://docs.oracle.com/javaee/7/tutorial/jaxrs.htm[Building RESTful Web Services with JAX-RS]
 * Goncalves - Beginning Java EE 7 (2013)
 * https://jcp.org/en/jsr/detail?id=346[JSR 346] (Context and Dependency Injection 1.1 and 1.2) (http://download.oracle.com/otn-pub/jcp/cdi-1_2-mrel-eval-spec/cdi-1.2.pdf[PDF])
 
