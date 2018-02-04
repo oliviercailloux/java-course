@@ -1,0 +1,23 @@
+= Java EE
+
+Best practices about Java EE
+
+== Maven and Java EE
+
+When working with a Java EE 7 server, you might want to include this dependency, to get all Java EE 7 specs at once.
+
+----
+<dependency>
+	<groupId>javax</groupId>
+	<artifactId>javaee-api</artifactId>
+	<version>7.0</version>
+	<scope>provided</scope>
+</dependency>
+----
+
+Be cautious however. This (unfortunately) includes directly http://www.javadoc.io/doc/javax/javaee-api/7.0[many classes] which also are available as separate packages. And sometimes those classes are older versions that those provided by recent packages. Hence, you might end up with different classes in your classpath that have the exact same name. And problems might follow.
+
+For example, https://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22javax%22%20AND%20a%3A%22javaee-api%22[`javax:javaee-api`] includes a version of https://docs.oracle.com/javaee/7/api/javax/ws/rs/core/Response.html[`javax.ws.rs.core.Response`] that does not implement AutoCloseable. Your project might also depend on https://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22javax.ws.rs%22%20AND%20a%3A%22javax.ws.rs-api%22[`javax.ws.rs:javax.ws.rs-api:2.1`], in which case you also have a http://static.javadoc.io/javax.ws.rs/javax.ws.rs-api/2.1/javax/ws/rs/core/Response.html[version] of that class that implements `AutoCloseable`. A similar problem exists for `javax.json.JsonValue`.
+
+If your dependency graph is subtle so that you risk to run into such issues, you might prefer to selectively depend on the exact specifications you need. Looking at the Java EE 7 https://search.maven.org/remotecontent?filepath=javax/javaee-api/7.0/javaee-api-7.0.pom[POM] may help for this.
+
