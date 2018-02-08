@@ -75,6 +75,7 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 
 *Todo*
 
+* Install Java, Eclipse IDE “for Java Developers” and Git. See https://github.com/oliviercailloux/java-course/blob/master/Tools.adoc[Tools.adoc]
 * Redirect your e-mails @ Dauphine if necessary to ensure you receive announcements posted on MyCourse
 * Read the Important part, above
 * Read half of the Workbench User Guide, Basic Tutorial, see https://github.com/oliviercailloux/java-course/blob/master/Tools.adoc#eclipse[Eclipse] doc [I]
@@ -95,7 +96,6 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 * Mechanisms: interface; black box; preconditions and postconditions; javadoc; https://github.com/oliviercailloux/java-course/raw/master/Exception/presentation.pdf[exceptions] (advanced: https://github.com/oliviercailloux/java-course/raw/master/Assert/presentation.pdf[assertions]).
 ** Javadoc: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours4.pdf[Airiau C4], p. 18 to 25.
 ** (Use of Javadoc in Eclipse.)
-* Finish git exercices, local repository part
 * http://www-users.math.umn.edu/~arnold/disasters/ariane.html, https://www.youtube.com/watch?v=gp_D8r-2hwk
 // https://www.youtube.com/embed/fCnO-UYF3co
 
