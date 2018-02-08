@@ -15,6 +15,7 @@
 \ExplSyntaxOff
 
 \setbeamertemplate{headline}[singleline]
+\setbeamertemplate{footline}[onlypage]
 
 \title{Java Objet}
 \subtitle{Présentation du cours}
@@ -47,7 +48,7 @@
 	\begin{itemize}
 		\item Olivier Cailloux
 		\item \href{mailto:olivier.cailloux@dauphine.fr}{olivier.cailloux@dauphine.fr}
-		\item Coordonnées : cf. \href{https://www.ent.dauphine.fr/Annuaire/index.php?param0=fiche&param1=ocailloux}{annuaire} de Dauphine
+		\item Coordonnées : cf. \href{https://www.ent.dauphine.fr/annuaire/index.php?param0=fiche&param1=ocailloux}{annuaire} de Dauphine
 	\end{itemize}
 \end{frame}
 
@@ -64,7 +65,7 @@
 		\begin{itemize}
 			\item Eclipse ;
 			\item Maven ;
-			\item Git…
+			\item Git (livraisons exclusivement via Git)
 		\end{itemize}
 	\end{itemize}
 \end{frame}
@@ -103,55 +104,25 @@
 \begin{frame}
 	\frametitle{Prérequis}
 	\begin{itemize}
-		\item Programmation élémentaire en Java, manipulation d’un environnement de développement, compréhension des notions algorithmiques élémentaires.
-		\item Capacité à comprendre des textes en anglais liés à l’informatique.
+		\item Programmation élémentaire en Java, manipulation d’un environnement de développement, compréhension des notions algorithmiques élémentaires
+		\item Capacité à comprendre des textes en anglais liés à l’informatique
+		\item Manipulation de votre système d’exploitation : installation de logiciels, navigation dans le système de fichiers, démarrage de programmes
 	\end{itemize}
 \end{frame}
 
 \section{Mise en œuvre}
-\subsection{Mise en œuvre}
-\begin{frame}
-	\frametitle{Approche}
-	\begin{itemize}
-		\item Pédagogie par projet et \emph{partiellement} inversée
-		\item Central : travail sur projet
-		\item Objectif : un projet utile
-		\item Un projet ≠ par groupe
-	\end{itemize}
-\end{frame}
-
-\begin{frame}
-	\frametitle{Mise en œuvre}
-	\begin{itemize}
-		\item Durant séance $x$ : constituez un binôme ≠ du précédent
-		\item Programmation en binôme, équipes tournantes : diversification, pas spécialisation
-		\item Travaillez sur une fonctionnalité de votre projet \emph{ou} des exercices
-		\item À remettre avant le jour de la séance $x + 1$
-		\item Livraisons exclusivement via Git
-	\end{itemize}
-\end{frame}
-
-\begin{frame}
-	\frametitle{Agilité}
-	\begin{itemize}
-		\item À gérer de façon agile car fonctionnalités ajoutées au fil du cours : cycles courts, réusinage…
-		\item Je joue le rôle du client : détail des fonctionnalités à implémenter
-		\item Fonctionnalités de l’application décrites de manière vague : à vous de m’interroger
-	\end{itemize}
-\end{frame}
-
 \subsection{Évaluation}
 \begin{frame}
 	\frametitle{Évaluation}
-	L’évaluation se fait par contrôle continu (100\% pour Projet, 70\% pour Java Objet)
+	50\% CC, 50\% État final du projet
 	\begin{itemize}
-		\item Durant chaque séance : je tire des personnes au hasard
-		\item J’évalue, avec le binôme, le travail fourni depuis la dernière évaluation
-		\item Note finale : agrégation des notes reçues au long de l’année (nombre de notes : aléatoire)
-		\item \emph{Vous êtes toujours censés comprendre votre code}
-		\item Si ≠ niveaux : l’avancé aide le débutant
+		\item Exercices du livre en devoirs : évaluation binaire
+		\item QCMs réguliers
+		\item Fonctionnalités à développer dans le projet évaluées (note pour le binôme)
+		\item Note CC : aggrégation des notes reçues au long de l’année
 		\item Fin d’année : présentation collective de vos projets
 		\item Vote pour la meilleure application
+		\item Note projet final prend en compte améliorations des fonctionnalités durant l’année, qualité de la présentation finale…
 	\end{itemize}
 \end{frame}
 
@@ -159,29 +130,28 @@
 	\frametitle{Aspects pris en compte}
 	\begin{itemize}
 		\item Qualité du code 
-		\item Respect des demandes de l’utilisateur
+		\item Respect des demandes de l’utilisateur (moi !)
 		\item Mise en œuvre adéquate des technologies dans l’application
 		\item Livraisons régulières
-		\item Ampleur des fonctionnalités
 		\item Qualité générale de l’application
-		\item Qualité de la présentation finale…
+		\item (Ampleur des fonctionnalités)
 	\end{itemize}
 \end{frame}
 
 \begin{frame}
 	\frametitle{Travail attendu}
 	\begin{itemize}
-		\item \{[(25 à 30h / ECTS) × 5 ECTS] − 51 h\} / 16 inter-séances
+		\item \{[(29 h / ECTS) × 5 ECTS] − 51 h\} / 16 inter-séances
 		\pgfmathsetmacro{\mycalcMin}{(25*5-51)/16}
 		\pgfmathsetmacro{\mycalcMax}{(30*5-51)/16}
-		\item \numrange[round-mode=places, round-precision=0, mode=text]{\mycalcMin}{\mycalcMax} heures de travail entre chaque séance
+		\pgfmathsetmacro{\mycalcEff}{(29*5-51)/16}
+		\item \num[round-mode=places, round-precision=0, mode=text]{\mycalcEff} heures de travail entre chaque séance en moyenne
 	\end{itemize}
 \end{frame}
 
 \subsection{Plan}
 \begin{frame}
 	\frametitle{Plan}
-	
 	\begin{itemize}
 		\item Git, Maven
 		\item Programmation objets : responsabilités ; techniques
@@ -198,8 +168,7 @@
 \begin{frame}
 	\frametitle{Attendu}
 	\begin{itemize}
-		\item Rediriger vos e-mails @ Dauphine si nécessaire pour vous assurer de recevoir les annonces
-		\item Vous êtes supposé lire les annonces publiées sur MyCourse
+		\item Effectuer vos devoirs après \emph{chaque} séance, cf. \href{https://github.com/oliviercailloux/java-course/blob/master/Divers/L3a.adoc}{page} du cours
 		\item Suivre \emph{scrupuleusement} les instructions qui s’y trouvent SVP
 	\end{itemize}
 \end{frame}
