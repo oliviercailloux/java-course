@@ -52,6 +52,7 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 ** http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours1.pdf[Airiau C1], http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours2.pdf[Airiau C2] (compil, p. 15 to 19)
 * https://github.com/oliviercailloux/java-course/raw/master/Notions%20objets/presentation.pdf[Basics of objects]
 * https://github.com/oliviercailloux/java-course/tree/master/Git[Git]: local repo, start ex
+* https://www.wooclap.com/JL[Quizz]
 
 // Present all theory, 90 min. Then 30 min ex. Then 30 min git theory (local only!), 30 min ex.
 
@@ -74,10 +75,9 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 
 *Todo*
 
-		\item Rediriger vos e-mails @ Dauphine si nécessaire pour vous assurer de recevoir les annonces
-		\item Vous êtes supposé lire les annonces publiées sur MyCourse
-* Read half of the Workbench User Guide, Basic Tutorial, see https://github.com/oliviercailloux/java-course/blob/master/Tools.adoc#eclipse[Eclipse] doc [I]
+* Redirect your e-mails @ Dauphine if necessary to ensure you receive announcements posted on MyCourse
 * Read the Important part, above
+* Read half of the Workbench User Guide, Basic Tutorial, see https://github.com/oliviercailloux/java-course/blob/master/Tools.adoc#eclipse[Eclipse] doc [I]
 * Finish git exercices, local repository part
 * http://math.hws.edu/eck/cs124/javanotes7/c1/quiz.html[EQ1.3] to 1.9
 * http://math.hws.edu/eck/cs124/javanotes7/c2/quiz.html[EQ2.1] to 2.4; 2.6 to 2.9; 2.11
