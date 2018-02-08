@@ -78,7 +78,13 @@
 
 \begin{frame}
 	\frametitle{La trahison des images}
-	\centering\includegraphics[height=\textheight-15mm]{pipe.jpg}
+	\centering
+	\begin{overprint}
+		\onslide<1>
+			\includegraphics[trim=0 5 0 0, clip, width=\textwidth]{pipe.jpg}
+		\onslide<2>
+			\includegraphics[width=\textwidth]{pipe.jpg}
+	\end{overprint}
 \end{frame}
 
 \begin{frame}
