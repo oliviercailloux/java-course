@@ -82,7 +82,7 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 * http://math.hws.edu/eck/cs124/javanotes7/c2/quiz.html[EQ2.1] to 2.4; 2.6 to 2.9; 2.11
 * Create a personal repository named `Java-L3-Eck-Ex`. Deposit the mandatory (suffixed with [M]) book exercices (prefixed with EE) there, 3 days before the next session. All related classes must be prefixed with EExx, for example EE34MyClass.
 
-=== S2
+=== S2 (Thursday 22nd of February, 2018)
 
 *Lecture*
 
