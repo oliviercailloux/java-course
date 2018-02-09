@@ -80,9 +80,9 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 * Read half of the Workbench User Guide, Basic Tutorial, see https://github.com/oliviercailloux/java-course/blob/master/Tools.adoc#eclipse[Eclipse] doc [I]
 * http://math.hws.edu/eck/cs124/javanotes7/c1/quiz.html[EQ1.3] to 1.9
 * http://math.hws.edu/eck/cs124/javanotes7/c2/quiz.html[EQ2.1] to 2.4; 2.6 to 2.9; 2.11
-* Create a personal repository named `Java-L3-Eck-Ex`. Deposit the mandatory (suffixed with [M]) book exercices (prefixed with EE) there, 3 days before the next session. All related classes must be prefixed with EExx, for example EE34MyClass.
+* Create a personal repository named `Java-L3-Eck-Ex` on https://github.com[GitHub]. Deposit the mandatory (suffixed with [M]) book exercices (prefixed with EE) there, 3 days before the next session. All related classes must be prefixed with EExx, for example EE34MyClass.
 
-=== S2 (Thursday 22nd of February, 2018)
+=== S2 (Tuesday 20th of February, 2018)
 
 *Lecture*
 
@@ -121,7 +121,7 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 * http://math.hws.edu/eck/cs124/javanotes7/c4/quiz.html[EQ4]
 * Commit the mandatory exercices (using `git`)
 
-=== S3
+=== S3(Thursday 22nd of February, 2018)
 
 *Lecture*
 
