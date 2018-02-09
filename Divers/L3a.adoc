@@ -67,7 +67,7 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 *Exercices*
 
 * (link:http://math.hws.edu/eck/cs124/javanotes7/c2/exercises.html[EE2.1] to 2.6, only if you lack some prerequisites)
-* EE2.7: use user input (Scanner) instead of file input; do not use TextIO
+* http://math.hws.edu/eck/cs124/javanotes7/c2/exercises.html[EE2.7]: use user input (Scanner) instead of file input; do not use TextIO
 * http://math.hws.edu/eck/cs124/javanotes7/c3/exercises.html[EE3.1] to 3.3
 * EE3.4, 3.6 [M]
 * EE3.8, 3.9 [O]
