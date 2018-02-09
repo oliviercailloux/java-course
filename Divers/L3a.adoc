@@ -43,7 +43,7 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 // Object: 10 ; Project: 7
 // TODO say: one or two persons per issue; not a better grade for a given issue if one, but better grades overall if fewer persons effectively working in a project
 
-=== S1
+=== S1 (Friday 9th of February, 2018)
 
 *Lecture*
 
@@ -51,7 +51,6 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 * Basic concepts and structures of Java: variables; types; subroutines; control structures; identifiers… [SK]
 ** http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours1.pdf[Airiau C1], http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours2.pdf[Airiau C2] (compil, p. 15 to 19)
 * https://github.com/oliviercailloux/java-course/raw/master/Notions%20objets/presentation.pdf[Basics of objects]
-* https://github.com/oliviercailloux/java-course/tree/master/Git[Git]: local repo, start ex
 * https://www.wooclap.com/JL[Quizz]
 
 // Present all theory, 90 min. Then 30 min ex. Then 30 min git theory (local only!), 30 min ex.
@@ -79,17 +78,15 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 * Redirect your e-mails @ Dauphine if necessary to ensure you receive announcements posted on MyCourse
 * Read the Important part, above
 * Read half of the Workbench User Guide, Basic Tutorial, see https://github.com/oliviercailloux/java-course/blob/master/Tools.adoc#eclipse[Eclipse] doc [I]
-* Finish git exercices, local repository part
 * http://math.hws.edu/eck/cs124/javanotes7/c1/quiz.html[EQ1.3] to 1.9
 * http://math.hws.edu/eck/cs124/javanotes7/c2/quiz.html[EQ2.1] to 2.4; 2.6 to 2.9; 2.11
-* Create a personal repository named `Java-L3-Eck-Ex`. Deposit the mandatory (suffixed with [M]) book exercices (prefixed with EE) there. All related classes must be prefixed with EExx, for example EE34MyClass.
-* Your GitHub username and git “User Name” must be identical.
-* Indicate your GitHub username on https://mycourse.dauphine.fr/webapps/blackboard/execute/launcher?type=Course&id=_38274_1[MyCourse].
+* Create a personal repository named `Java-L3-Eck-Ex`. Deposit the mandatory (suffixed with [M]) book exercices (prefixed with EE) there, 3 days before the next session. All related classes must be prefixed with EExx, for example EE34MyClass.
 
 === S2
 
 *Lecture*
 
+* https://github.com/oliviercailloux/java-course/tree/master/Git[Git]: local repo, start ex
 * Git, remote
 * Choose your project
 * Two major principles of software engineering: https://github.com/oliviercailloux/java-course/raw/master/Contrat/presentation.pdf[contract] and fail-fast.
@@ -98,6 +95,8 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 ** (Use of Javadoc in Eclipse.)
 * http://www-users.math.umn.edu/~arnold/disasters/ariane.html, https://www.youtube.com/watch?v=gp_D8r-2hwk
 // https://www.youtube.com/embed/fCnO-UYF3co
+* Your GitHub username and git “User Name” must be identical.
+* Indicate your GitHub username on https://mycourse.dauphine.fr/webapps/blackboard/execute/launcher?type=Course&id=_38274_1[MyCourse].
 
 *Material and going beyond*
 
