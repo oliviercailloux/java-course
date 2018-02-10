@@ -157,4 +157,6 @@ Les commentaires utilisent les abréviations E1, E2, etc, pour se référer aux 
 * Présentation des projets
 ** 20 minutes par groupe max
 * Vote
+* Appréciation du cours
+* https://github.com/oliviercailloux/projets/blob/master/Licence.adoc[Licences]
 
