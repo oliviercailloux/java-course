@@ -87,7 +87,7 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 * http://math.hws.edu/eck/cs124/javanotes7/c1/quiz.html[EQ1.3] to 1.9
 * http://math.hws.edu/eck/cs124/javanotes7/c2/quiz.html[EQ2.1] to 2.4; 2.6 to 2.9; 2.11
 * Commit the mandatory exercices above: see https://github.com/oliviercailloux/java-course/blob/master/Divers/L3a.adoc#book-exercices[Instructions]
-** Do /not/ send me an e-mail to give me your username, or your repository URL. I’ll find it out.
+** Do _not_ send me an e-mail to give me your username, or your repository URL. I’ll find it out.
 ** You are not obliged to use the command `git` to send your files on GitHub for now, you may do it “manually” with your web browser. Here is how. (Or watch this http://www.youtube.com/watch?v=pgzOiH1kmnI&t=1m20s[video], from 1min 20s to 4min.)
 *. When creating your repository, check the box “Initialize this repository with a README” (the goal is simply to make your repository non-empty)
 *. You can use the `Upload files` button or directly drag and drop your Java files on your resulting repository
