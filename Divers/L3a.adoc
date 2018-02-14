@@ -89,9 +89,9 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 * Commit the mandatory exercices above: see https://github.com/oliviercailloux/java-course/blob/master/Divers/L3a.adoc#book-exercices[Instructions]
 ** Do _not_ send me an e-mail to give me your username, or your repository URL. I’ll find it out.
 ** You are not obliged to use the command `git` to send your files on GitHub for now, you may do it “manually” with your web browser. Here is how. (Or watch this http://www.youtube.com/watch?v=pgzOiH1kmnI&t=1m20s[video], from 1min 20s to 4min.)
-*. When creating your repository, check the box “Initialize this repository with a README” (the goal is simply to make your repository non-empty)
-*. You can use the `Upload files` button or directly drag and drop your Java files on your resulting repository
-*. Keep the default option: “Commit directly to the `master` branch”, click `Commit changes`.
+.. When creating your repository, check the box “Initialize this repository with a README” (the goal is simply to make your repository non-empty)
+.. You can use the `Upload files` button or directly drag and drop your Java files on your resulting repository
+.. Keep the default option: “Commit directly to the `master` branch”, click `Commit changes`.
 * Indicate your GitHub username on https://mycourse.dauphine.fr/webapps/blackboard/execute/launcher?type=Course&id=_38274_1[MyCourse].
 
 === S2 (Tuesday 20th of February, 2018)
