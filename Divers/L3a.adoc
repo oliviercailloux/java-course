@@ -25,8 +25,8 @@ You know algorithmics and the basic (non object-oriented) programming concepts i
 
 === Book exercices
 * Create a personal repository named `Java-L3-Eck-Ex`. You deposit the book exercices (EE) there. All related classes must be prefixed with `EExx`, for example `EE34MyClass`.
-* All mandatory exercices must be in the appropriate repository, merged in the branch `master`, 3 days before the lecture, 23:59 + 1min (e.g., lecture Saturday 23rd means a deadline on the end of Wednesday 20th).
-* For the book exercices, you receive either 1 (exercice is done, even imperfectly, committed under your name) or 0 (exercice not done). This counts for 10% of the CC grade. (Once graded, you can remove the book exercices in your repository, or leave them there.)
+* All mandatory (suffixed with [M]) book exercices (prefixed with EE) must be in that repository (in the branch `master`), 3 days before the lecture, 23:59 + 1min (e.g., lecture Saturday 23rd means a deadline on the end of Wednesday 20th).
+* For the book exercices, you receive either 1 (exercices are done on time, even imperfectly, committed under your name) or 0 (exercices are not done on time). This counts for 10% of the CC grade. (Once graded, you can remove the book exercices from your repository, or leave them there.)
 
 === Project
 * Create a group repository (once for the group).
@@ -86,7 +86,13 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 * Read half of the Workbench User Guide, Basic Tutorial, see https://github.com/oliviercailloux/java-course/blob/master/Tools.adoc#eclipse[Eclipse] doc [I]
 * http://math.hws.edu/eck/cs124/javanotes7/c1/quiz.html[EQ1.3] to 1.9
 * http://math.hws.edu/eck/cs124/javanotes7/c2/quiz.html[EQ2.1] to 2.4; 2.6 to 2.9; 2.11
-* Create a personal repository named `Java-L3-Eck-Ex` on https://github.com[GitHub]. Deposit the mandatory (suffixed with [M]) book exercices (prefixed with EE) there, 3 days before the next session. All related classes must be prefixed with EExx, for example EE34MyClass.
+* Commit the mandatory exercices above: see https://github.com/oliviercailloux/java-course/blob/master/Divers/L3a.adoc#book-exercices[Instructions]
+** Do /not/ send me an e-mail to give me your username, or your repository URL. I’ll find it out.
+** You are not obliged to use the command `git` to send your files on GitHub for now, you may do it “manually” with your web browser. Here is how. (Or watch this http://www.youtube.com/watch?v=pgzOiH1kmnI&t=1m20s[video], from 1min 20s to 4min.)
+*. When creating your repository, check the box “Initialize this repository with a README” (the goal is simply to make your repository non-empty)
+*. You can use the `Upload files` button or directly drag and drop your Java files on your resulting repository
+*. Keep the default option: “Commit directly to the `master` branch”, click `Commit changes`.
+* Indicate your GitHub username on https://mycourse.dauphine.fr/webapps/blackboard/execute/launcher?type=Course&id=_38274_1[MyCourse].
 
 === S2 (Tuesday 20th of February, 2018)
 
@@ -102,7 +108,6 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 * http://www-users.math.umn.edu/~arnold/disasters/ariane.html, https://www.youtube.com/watch?v=gp_D8r-2hwk
 // https://www.youtube.com/embed/fCnO-UYF3co
 * Your GitHub username and git “User Name” must be identical.
-* Indicate your GitHub username on https://mycourse.dauphine.fr/webapps/blackboard/execute/launcher?type=Course&id=_38274_1[MyCourse].
 
 *Material and going beyond*
 
