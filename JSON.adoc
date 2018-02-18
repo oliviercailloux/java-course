@@ -18,7 +18,7 @@ If you use Java SE, you need to add the http://search.maven.org/#search%7Cga%7C1
 If you use Java EE, this is already provided by your application server.
 
 == Example use
-You may now use the API. Check https://javaee.github.io/tutorial/jsonp.html[here] for a good tutorial and introduction to JSON.
+You may now use the API. Check http://json.org/[json.org] for a good explanation of JSON notation, and https://javaee.github.io/tutorial/jsonp.html[here] for a good tutorial and introduction to JSON manipulation in Java.
 
 .Obtain a json object from a String
 [source,java]
