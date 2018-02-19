@@ -76,6 +76,29 @@
 \end{frame}
 
 \begin{frame}
+	\frametitle{Circuler dans l’historique}
+	\begin{itemize}
+		\item Branches pointent vers des commits
+		\item Pointeur HEAD vers la branche actuelle
+		\item Indique le commit d’où est issu la version actuelle
+		\item Circuler en utilisant la commande \emph{checkout} (commit ou branche)
+	\end{itemize}
+	{
+		\centering
+		\begin{tikzpicture}
+			\path node[/Git/commit] (c1) {98C49C};
+			\path (c1.east) ++ (\GitCommitSep, 0) node[anchor=west, /Git/commit] (c2) {34AC2} edge[->] (c1);
+			\path (c2.east) ++ (\GitCommitSep, 6mm) node[anchor=west, /Git/commit] (c3N) {F30AB} edge[->] (c2);
+			\path (c2.east) ++ (\GitCommitSep, -6mm) node[anchor=west, /Git/commit] (c3S) {C32AC} edge[->] (c2);
+			\path (c2 -| c3N.east) ++ (\GitCommitSep, 0) node[anchor=west, /Git/commit] (c4) {175E3A} edge[->] (c3N) edge[->] (c3S);
+			\path (c4.north) ++ (0, 3mm) node[anchor=south, /Git/branch] (master) {master} edge[->] (c4);
+			\path (c2.north) ++ (0, 3mm) node[anchor=south, /Git/branch] (dev) {dev} edge[->] (c2);
+			\path (master.north) ++ (0, 3mm) node[anchor=south, /Git/head] (head) {HEAD} edge[->] (master);
+		\end{tikzpicture}\par
+	}
+\end{frame}
+
+\begin{frame}
 	\frametitle{Work dir (WD)}
 	\begin{itemize}
 		\item Histoire conservée \emph{localement} dans \texttt{.git} à la racine du projet
@@ -133,51 +156,6 @@
 		\item Initialisation nouveau dépôt ? \pause Index et HEAD vide \pause
 		\item Juste après un commit ? \pause Index vide
 	\end{itemize}
-\end{frame}
-
-\begin{frame}
-	\frametitle{Préparer un commit : définitions}
-%	\small
-	\begin{minipage}[t]{0.33 \columnwidth}
-		\textbf{Work dir}
-		\begin{itemize}
-%			\item[] \texttt{/.git}
-			\item[] \texttt{/rép1}
-			\begin{itemize}
-				\item[] \texttt{/fich1}
-			\end{itemize}\vspace{-0.8ex}
-			\item[] \texttt{/fich2}
-%			\item[] \texttt{/fich3}
-		\end{itemize}
-	\end{minipage}%
-	\begin{minipage}[t]{0.33 \columnwidth}
-		\textbf{Index}
-		\begin{itemize}
-			\item[] \texttt{/rép1}
-			\begin{itemize}
-				\item[] \texttt{/fich1'}
-			\end{itemize}\vspace{-0.8ex}
-			\item[] \texttt{/fich2}
-		\end{itemize}
-	\end{minipage}%
-	\begin{minipage}[t]{0.33 \columnwidth}
-		\textbf{HEAD}
-		\begin{itemize}
-			\item[] \texttt{/rép1}
-			\begin{itemize}
-				\item[] %\texttt{/fich1}
-			\end{itemize}\vspace{-0.8ex}
-			\item[] \texttt{/fich2'}
-		\end{itemize}
-	\end{minipage}
-	\begin{block}{Vocabulaire}
-		\begin{itemize}
-			\item blob ∈ index, blob ∈ HEAD, fichier ∈ WD : peuvent être ≠
-			\item un fichier peut être \emph{tracked} : dans index ou HEAD
-			\item un fichier peut être \emph{modified} : par rapport à index si ∈ index (sinon p/r HEAD)
-			\item \emph{clean} WD : tous {\tiny (sauf fichiers dans gitignore)} tracked et unmodified
-		\end{itemize}
-	\end{block}
 \end{frame}
 
 \begin{frame}
