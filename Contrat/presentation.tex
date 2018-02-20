@@ -235,22 +235,18 @@
 
 \section{En pratique}
 \begin{frame}
-	\frametitle{Sous-routines}
+	\frametitle{À faire}
 	\begin{itemize}
-		\item Sous-routine : entrée (facultative), ensemble d’instructions, sortie (facultative)
-		\item Fait qqch
-		\item On peut l’appeler sans savoir comment elle procède (boite noire)
-		\item \texttt{Math.random();} \texttt{Math.sqrt(4);}
-		\item Sous-routine sqrt statique se trouvant dans classe \texttt{Math}
-		\item Classes regroupent des variables et sous-routines statiques
-		\item \texttt{System.out} : variable statique \texttt{out} dans classe \texttt{System}
-		\item Permet d’\emph{organiser} et de \emph{nommer}
+		\item Découper en sous-routines
+		\item Documenter vos contrats
+		\item Échouer rapidement (avertir l’utilisateur de vos sous-routines) s’il y a un problème
 	\end{itemize}
 \end{frame}
 
+\appendix
+\section{Suppléments}
 \begin{frame}
-	\frametitle{Intérêt}
-	Découper en sous-routines !
+	\frametitle{Intérêt de la découpe en sous-routines}
 	\begin{itemize}
 		\item Clarté du code : auto-documentation ; boite noire
 		\item Factorisation : application conçue comme assemblage de blocs élémentaires
@@ -262,28 +258,6 @@
 	\end{itemize}
 \end{frame}
 
-\begin{frame}
-	\frametitle{À faire}
-	\begin{itemize}
-		\item Découper en sous-routines
-		\item Documenter vos contrats
-		\item Échouer rapidement (avertir l’utilisateur de vos sous-routines) s’il y a un problème
-	\end{itemize}
-\end{frame}
-
-\section{Calculateur}
-\begin{frame}
-	\frametitle{Illustration}
-	\begin{itemize}
-		\item Calculateur qui additionne
-		\item Deux interfaces pour un même service (plusieurs étapes ou une étape)
-		\item Deux implémentations pour l’interface en plusieurs étapes
-		\item Et si addition seulement de nombres positifs ?
-	\end{itemize}
-\end{frame}
-
-\appendix
-\section{Suppléments}
 \begin{frame}
 	\frametitle{Factorisation}
 	\begin{itemize}
