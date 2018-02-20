@@ -101,11 +101,6 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 * https://github.com/oliviercailloux/java-course/tree/master/Git[Git]: local repo, start ex
 * Two major principles of software engineering: https://github.com/oliviercailloux/java-course/raw/master/Contrat/presentation.pdf[contract] and fail-fast.
 * Mechanisms: interface; black box; preconditions and postconditions; javadoc; exceptions
-** Javadoc: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours4.pdf[Airiau C4], p. 18 to 25.
-** (Use of Javadoc in Eclipse.)
-* http://www-users.math.umn.edu/~arnold/disasters/ariane.html, https://www.youtube.com/watch?v=gp_D8r-2hwk
-// https://www.youtube.com/embed/fCnO-UYF3co
-* Your GitHub username and git “User Name” must be identical.
 
 *Material and going beyond*
 
@@ -117,12 +112,6 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 *Exercices*
 
 * Git exercices (local part only)
-* You are expected to comment all your code appropriately with Javadoc, for all exercices from now on [M]
-* http://math.hws.edu/eck/cs124/javanotes7/c4/exercises.html[EE4.1], 4.2
-* EE4.3 [M]
-* EE4.4
-* EE4.5, 4.6 [O]
-* EE4.7 [M]
 
 *Todo*
 
@@ -130,21 +119,18 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 * Read all the Workbench User Guide, Basic Tutorial, see https://github.com/oliviercailloux/java-course/blob/master/Tools.adoc#eclipse[Eclipse] doc [I]
 * Read the Important part, above
 * http://math.hws.edu/eck/cs124/javanotes7/c4/quiz.html[EQ4]
-* Mandatory exercices
 
-=== S3(Thursday 22nd of February, 2018)
+=== S3 (Thursday 22nd of February, 2018)
 
 *Lecture*
 
 * Git, remote
-* Choose your project
-* https://github.com/oliviercailloux/java-course/blob/master/Class%20path[Classpath] (packages, classes and directories).
-* https://github.com/oliviercailloux/java-course/raw/master/Objets/presentation.pdf[Objects].
-* Clean repository
-
-* Improve course for points (and prestige)
-** Accepted improvement (or three spelling mistakes or typos): +1
-** Impressive correction: 1 prestige point (in supplement)
+* Two major principles of software engineering: https://github.com/oliviercailloux/java-course/raw/master/Contrat/presentation.pdf[contract] and fail-fast (second part).
+** Javadoc: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours4.pdf[Airiau C4], p. 18 to 25.
+** (Use of Javadoc in Eclipse.)
+* http://www-users.math.umn.edu/~arnold/disasters/ariane.html, https://www.youtube.com/watch?v=gp_D8r-2hwk
+// https://www.youtube.com/embed/fCnO-UYF3co
+* Your GitHub username and git “User Name” must be identical.
 
 *Material and going beyond*
 
@@ -153,11 +139,12 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 
 *Exercices*
 
-* You must use correct (implying, non-default) packages, for all exercices from now on [M]
-* http://math.hws.edu/eck/cs124/javanotes7/c5/exercises.html[EE5.1], 5.2
-* EE5.3 [M]
-** Supplementary requirement: you will archive `PairOfDice` and `StatCalc` into a JAR file and use this in a new Eclipse project where only one class is defined, which uses `PairOfDice` and `StatCalc`.
-* Project: Contract [M]
+* You are expected to comment all your code appropriately with Javadoc, for all exercices from now on [M]
+* http://math.hws.edu/eck/cs124/javanotes7/c4/exercises.html[EE4.1], 4.2
+* EE4.3 [M]
+* EE4.4
+* EE4.5, 4.6 [O]
+* EE4.7 [M]
 
 *Todo*
 
@@ -170,8 +157,16 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 
 *Lecture*
 
+* Choose your project
 * Java Interfaces and the Calculator example: replaceability and use as type.
 * Inheritance: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours3.pdf[Airiau C3]
+* https://github.com/oliviercailloux/java-course/blob/master/Class%20path[Classpath] (packages, classes and directories).
+* https://github.com/oliviercailloux/java-course/raw/master/Objets/presentation.pdf[Objects].
+* Clean repository
+
+* Improve course for points (and prestige)
+** Accepted improvement (or three spelling mistakes or typos): +1
+** Impressive correction: 1 prestige point (in supplement)
 
 *Material and going beyond*
 
@@ -179,6 +174,12 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 * http://math.hws.edu/eck/cs124/javanotes7/c10/[ES10] to 10.2
 
 *Exercices*
+
+* You must use correct (implying, non-default) packages, for all exercices from now on [M]
+* http://math.hws.edu/eck/cs124/javanotes7/c5/exercises.html[EE5.1], 5.2
+* EE5.3 [M]
+** Supplementary requirement: you will archive `PairOfDice` and `StatCalc` into a JAR file and use this in a new Eclipse project where only one class is defined, which uses `PairOfDice` and `StatCalc`.
+* Project: Contract [M]
 
 * EE10.4 (except you use the https://docs.oracle.com/javase/8/docs/api/java/util/function/Predicate.html[Predicate] interface from the Java API instead of writing your own)
 // play bj
