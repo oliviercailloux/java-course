@@ -109,10 +109,6 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 * ES4.3 intro to 4.3.2, 4.6.1 [I]
 * https://github.com/oliviercailloux/java-course/raw/master/Assert/presentation.pdf[assertions] (advanced)
 
-*Exercices*
-
-* Git exercices (local part only)
-
 *Todo*
 
 * Git exercices (local part only)
