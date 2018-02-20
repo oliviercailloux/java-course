@@ -129,11 +129,6 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 * Your GitHub username and git “User Name” must be identical.
 * https://github.com/oliviercailloux/java-course/blob/master/Class%20path[Classpath] (packages, classes and directories).
 
-*Material and going beyond*
-
-* http://math.hws.edu/eck/cs124/javanotes7/c5/[ES5] intro to 5.4
-* ES5.3.4 [I]
-
 *Exercices*
 
 * You are expected to comment all your code appropriately with Javadoc, for all exercices from now on [M]
@@ -166,6 +161,9 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 ** Impressive correction: 1 prestige point (in supplement)
 
 *Material and going beyond*
+
+* http://math.hws.edu/eck/cs124/javanotes7/c5/[ES5] intro to 5.4
+* ES5.3.4 [I]
 
 * http://math.hws.edu/eck/cs124/javanotes7/c5/[ES5.5] to 5.8
 * http://math.hws.edu/eck/cs124/javanotes7/c10/[ES10] to 10.2
