@@ -123,10 +123,11 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 * Git, remote
 * Two major principles of software engineering: https://github.com/oliviercailloux/java-course/raw/master/Contrat/presentation.pdf[contract] and fail-fast (second part).
 ** Javadoc: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours4.pdf[Airiau C4], p. 18 to 25.
-** (Use of Javadoc in Eclipse.)
+** Illustration: http://math.hws.edu/eck/cs124/javanotes7/c4/s6.html#subroutines.6.2[Mosaic]
 * http://www-users.math.umn.edu/~arnold/disasters/ariane.html, https://www.youtube.com/watch?v=gp_D8r-2hwk
 // https://www.youtube.com/embed/fCnO-UYF3co
 * Your GitHub username and git “User Name” must be identical.
+* https://github.com/oliviercailloux/java-course/blob/master/Class%20path[Classpath] (packages, classes and directories).
 
 *Material and going beyond*
 
@@ -136,6 +137,7 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 *Exercices*
 
 * You are expected to comment all your code appropriately with Javadoc, for all exercices from now on [M]
+* You must use correct (implying, non-default) packages, for all exercices from now on [M]
 * http://math.hws.edu/eck/cs124/javanotes7/c4/exercises.html[EE4.1], 4.2
 * EE4.3 [M]
 * EE4.4
@@ -156,7 +158,6 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 * Choose your project
 * Java Interfaces and the Calculator example: replaceability and use as type.
 * Inheritance: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours3.pdf[Airiau C3]
-* https://github.com/oliviercailloux/java-course/blob/master/Class%20path[Classpath] (packages, classes and directories).
 * https://github.com/oliviercailloux/java-course/raw/master/Objets/presentation.pdf[Objects].
 * Clean repository
 
@@ -171,7 +172,6 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 
 *Exercices*
 
-* You must use correct (implying, non-default) packages, for all exercices from now on [M]
 * http://math.hws.edu/eck/cs124/javanotes7/c5/exercises.html[EE5.1], 5.2
 * EE5.3 [M]
 ** Supplementary requirement: you will archive `PairOfDice` and `StatCalc` into a JAR file and use this in a new Eclipse project where only one class is defined, which uses `PairOfDice` and `StatCalc`.
