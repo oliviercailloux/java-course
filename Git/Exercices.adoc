@@ -49,7 +49,7 @@ image::C3.svg[opts="inline"]
 === Merge
 Thinking about it, you decide to merge both your ideas into `master`.
 
-* Go back to branch `master` and merge `dev` into it. Before doing it, try to predict the resulting situation, and whether it will produce a fast-forward.
+* Go back to branch `dev` and merge `master` into it. Before doing it, try to predict the resulting situation, and whether it will produce a fast-forward.
 * Now let’s merge `dev2` into `master` (now containing the changes from `dev`). First predict what situation will result. Try it and obtain a final result with everything merged into the `master` branch.
 
 (Solutions diagrams are here: https://github.com/oliviercailloux/java-course/blob/master/Git/Merged1.svg[Merged1], https://github.com/oliviercailloux/java-course/blob/master/Git/Merged2.svg[Merged2]. Don’t cheat! Solve the exercice before looking.)
