@@ -49,6 +49,7 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 // Object: 10 ; Project: 7
 // TODO say: one or two persons per issue; not a better grade for a given issue if one, but better grades overall if fewer persons effectively working in a project
 
+[[S1]]
 === S1 (Friday 9th of February, 2018)
 
 *Lecture*
@@ -93,6 +94,7 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 .. Keep the default option: “Commit directly to the `master` branch”, click `Commit changes`.
 * Indicate your GitHub username on https://mycourse.dauphine.fr/webapps/blackboard/execute/launcher?type=Course&id=_38274_1[MyCourse].
 
+[[S2]]
 === S2 (Tuesday 20th of February, 2018)
 
 *Lecture*
@@ -116,6 +118,7 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 * Read the Important part, above
 * http://math.hws.edu/eck/cs124/javanotes7/c4/quiz.html[EQ4]
 
+[[S3]]
 === S3 (Thursday 22nd of February, 2018)
 
 *Lecture*
@@ -146,6 +149,7 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 * Read the Important part, above
 * Commit the mandatory exercices (using `git`)
 
+[[S4]]
 === S4
 
 *Lecture*
@@ -192,6 +196,7 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 
 * Read all the Java development user guide, Basic Tutorial, see https://github.com/oliviercailloux/java-course/blob/master/Tools.adoc#eclipse[Eclipse] doc [I]
 
+[[S5]]
 === S5
 
 * Unit testing: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours8.pdf[Airiau C8]
@@ -209,6 +214,7 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 * http://math.hws.edu/eck/cs124/javanotes7/c10/exercises.html[EE10.2] [M]
 * http://math.hws.edu/eck/cs124/javanotes7/c10/exercises.html[EE10]
 
+[[S6]]
 === S6
 
 * Files and https://github.com/oliviercailloux/java-course/blob/master/Flows.adoc[flows]
@@ -218,6 +224,7 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 * Project: File
 * Project: Resources
 
+[[S7]]
 === S7
 
 * Maven
@@ -226,6 +233,7 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 * Project: Interfaces
 * CI
 
+[[S8]]
 === S8
 
 * Annotations
@@ -235,21 +243,25 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 ** Clean repo
 ** Close resources
 
+[[S9]]
 === S9
 
 * https://github.com/oliviercailloux/java-course/blob/master/SWT.adoc[SWT]
 
+[[S10]]
 === S10
 
 * Projects
 * Rev: API, …
 
+[[S11]]
 === S11
 
 * Parsing HTML: https://github.com/oliviercailloux/java-course/blob/master/HTML%20to%20DOM.adoc[DOM]
 * Accessing REST web services: https://github.com/oliviercailloux/java-course/blob/master/JAX-RS%20client.adoc[JAX-RS client]
 * equals, hashCode
 
+[[S12]]
 === S12
 
 * Equals, Hashcode
@@ -259,25 +271,30 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 ** Hashcode in Java: consistency
 ** Implementation
 
+[[S13]]
 === S13
 
 * CI
 
+[[S14]]
 === S14
 
 * Licenses
 
+[[S15]]
 === S15
 
 * Results QCM
 * Classpath (bis)
 * Reminder: exceptions; naming conventions; config Eclipse
 
+[[S16]]
 === S16
 
 * Work on project
 * About presentations: 20 min. Slides on GitHub.
 
+[[S17]]
 === S17
 
 * Presentations
