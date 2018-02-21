@@ -149,6 +149,7 @@ Trois jours avant Sx signifie : au plus tard trois jours avant le jour de la sé
 === S7 (vendredi 23 mars 2018)
 * Projets
 
+[[S8]]
 === S8 (vendredi 30 mars 2018)
 * Présentation des projets
 * Vote
