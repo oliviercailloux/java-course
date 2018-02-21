@@ -32,7 +32,7 @@ Voir aussi la section références de chaque ensemble de diapositives, par sujet
 * Je vous donne une note qualité (la même pour les deux membres du binôme) pour cette issue. Je commente l’issue sur GitHub pour vous aider à améliorer votre code (et vos points) si nécessaire. Cette note qualité est temporaire (au moins) jusqu’à la livraison suivante.
 * Conseil : changez partiellement chaque binôme à chaque issue pour faire tourner les connaissances et varier les plaisirs (et augmenter les points).
 * Un travail régulier est attendu (et la note le prendra en compte).
-* Attendu : 9 heures de travail par personne entre chaque séance en moyenne ; 18 points de difficulté en tout pour les groupes de 6 personnes (15 points pour 5 personnes, 20 points pour 7 personnes) ; 6 points de difficulté en tout par personne (sachant que les fonctionnalités accomplies à deux comptent pour les deux personnes) ; base : un binôme accomplit environ un point de difficulté par inter-séance en moyenne.
+* Attendu : 9 heures de travail par personne entre chaque séance en moyenne ; 12 points de difficulté en tout pour les groupes de 6 personnes (10 points pour 5 personnes, 5 points pour un groupe de 2) ; 4 points de difficulté en tout par personne (sachant que les fonctionnalités accomplies à deux comptent pour les deux personnes) ; base : un binôme accomplit environ 2/3 de point de difficulté par inter-séance en moyenne.
 * La note CC aggrège vos notes qualité.
 * La note projet est une évaluation finale de la qualité de votre projet, avec une composante individuelle (ce sur quoi vous avez travaillé) et une composante de groupe (le résultat final du projet entier). Elle prend en compte vos fonctionnalités accomplies et leurs corrections, la diversité des fonctionnalités, la cohérence du tout, la présentation finale. Notez que toute amélioration des fonctionnalités déjà notées pour la note CC vous rapportera pour la note projet.
 * Les commentaires utilisent les abréviations E1, E2, etc, pour se référer aux exigences ci-dessus ; S2.1 pour le point indiqué en 1 sous S2 ci-dessous ; BP Maven (par exemple) pour les Bonnes Pratiques Maven (voir lien ci-dessus).
@@ -56,7 +56,7 @@ Voir aussi la section références de chaque ensemble de diapositives, par sujet
 * Livraison 1 : trois jours avant S4. Exigence : au moins 5 points de difficulté accomplis (selon exigences ci-dessus) ; Travis CI en place. Note : 1/6 pour chaque fonctionnalité et 1/6 pour Travis.
 //better: Travis as a fct, half point.
 * Livraison 2 : trois jours avant S6 (≥ 10 points de difficulté). Écrire « Re-check » qqpart dans votre issue (comme un commentaire) si vous avez tenu compte de mes commentaires dans une issue déjà corrigée précédemment, afin que je re-corrige (vous aurez une nouvelle note en plus pour la même issue).
-* Livraison 3 : trois jours avant S8 (≥ 15 points de difficulté)
+* Livraison 3 : trois jours avant S8 (≥ 12 points de difficulté, 4 points par binôme)
 
 À chaque livraison, certaines notes qualités deviennent définitivement part de la note CC (à hauteur du nombre de points de difficulté requis). Si vous avez fait plus que votre quota, ce sont les meilleures notes qui deviennent définitivement part de la note CC.
 
@@ -92,7 +92,7 @@ Trois jours avant Sx signifie : au plus tard trois jours avant le jour de la sé
 // 15h30
 
 * L’Open Data https://www.youtube.com/watch?v=aHxv_2BMJfw[à la loupe]
-* https://github.com/oliviercailloux/java-course/raw/master/Maven/presentation.pdf[Maven] & https://github.com/oliviercailloux/java-course/tree/master/Maven.adoc[exercices]
+* https://github.com/oliviercailloux/java-course/tree/master/Maven[Maven] & exercices
 * Exercices client WS (lien ci-dessus)
 * https://github.com/oliviercailloux/java-course/raw/master/Java%20EE/presentation.pdf[Intro] Java EE, https://github.com/oliviercailloux/java-course/tree/master/GlassFish.adoc[Familiarisation] avec GlassFish
 * https://github.com/oliviercailloux/java-course/tree/master/Servlets.adoc[Servlets.adoc]
@@ -123,30 +123,33 @@ Trois jours avant Sx signifie : au plus tard trois jours avant le jour de la sé
 * https://github.com/oliviercailloux/java-course/blob/master/JAX-RS[JAX-RS]
 
 === S5 (vendredi 23 février 2018)
-* Note sur la réutilisation intelligente (recompensée !) et le droit d’utilisation, ainsi que les licences
+* Désigner un responsable fusion : autorise les fusions ; revient en arrière quand fusion incorrecte; pratique les exercices https://github.com/oliviercailloux/java-course/blob/master/Git[git]
+* Création d’un servlet : https://github.com/oliviercailloux/java-course/tree/master/Tools.adoc[Tools] ; https://github.com/oliviercailloux/java-course/blob/master/Maven[Maven] ; https://github.com/oliviercailloux/java-course/tree/master/GlassFish.adoc[GlassFish] ; https://github.com/oliviercailloux/java-course/tree/master/Servlets.adoc[Servlets]
+* Tests : https://github.com/oliviercailloux/java-course/blob/master/HTTP.adoc[HTTP] ; https://github.com/oliviercailloux/java-course/tree/master/WS%20client.adoc[Client WS] ; JUnit (S3)
+* Qualité : assertions ; program logs (GlassFish) ; Contrat (BP) ; Maven (BP) ; autres exigences
+* CI : Travis.
+* Multi-format : HTTP
+* Jax-RS
+
 * http://arquillian.org/[Arquillian] (exemple, voir également https://github.com/oliviercailloux/sample-jax-rs[sample-jax-rs])
+
+==== JPA (facultatif)
 * https://github.com/oliviercailloux/java-course/raw/master/JPA/presentation.pdf[JPA] : création d’une entité et création automatique BD
 ** https://github.com/oliviercailloux/java-course/blob/master/DB%20from%20Eclipse.adoc[DB from Eclipse]
 ** https://github.com/oliviercailloux/java-course/blob/master/JPA.adoc[Exercices]
+** https://github.com/oliviercailloux/java-course/tree/master/CDI[CDI]
 
-À faire
-
+==== À faire
 * Faire passer vos tests sur Travis CI
 
-=== S6
-* Suite ORM
-** Start JPA & EMF
-** ex: deploy
-** transactions & EM
-** ex: deux requêtes
-** https://github.com/oliviercailloux/java-course/tree/master/CDI[CDI]
-** ex: transactions gérées (facultatif)
+=== S6 (vendredi 2 mars 2018)
+* Note sur la réutilisation intelligente (recompensée !) et le droit d’utilisation, ainsi que les licences
 * https://github.com/oliviercailloux/java-course/blob/master/IBM%20Cloud.adoc[IBM Cloud]
 
-=== S7
+=== S7 (vendredi 23 mars 2018)
 * Projets
 
-=== S8
+=== S8 (vendredi 30 mars 2018)
 * Présentation des projets
 * Vote
 
