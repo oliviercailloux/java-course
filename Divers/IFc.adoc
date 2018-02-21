@@ -63,6 +63,7 @@ Voir aussi la section références de chaque ensemble de diapositives, par sujet
 Trois jours avant Sx signifie : au plus tard trois jours avant le jour de la séance x, à 23h59 + 1 min. (Exemple : si S4 a lieu vendredi 4 octobre, trois jours avant S4 signifie : au plus tard mardi 1 octobre, 23h59 + 1 min.)
 
 == Plan
+[[S1]]
 === S1 (jeudi 30 novembre 2017)
 * https://github.com/oliviercailloux/java-course/raw/master/Pr%C3%A9sentation%20du%20cours%20EE/presentation.pdf[Présentation] du cours
 * https://github.com/oliviercailloux/java-course/tree/4fbf56d4a8f2a2501c679783c5c582b1ea151347/Git/presentation.pdf[Git & exercices]
@@ -78,6 +79,7 @@ Trois jours avant Sx signifie : au plus tard trois jours avant le jour de la sé
 . Me fournir le nom d’utilisateur, si nécessaire : via devoir https://mycourse.dauphine.fr/webapps/blackboard/execute/launcher?type=Course&id=_38078_1[MyCourse]
 . Rediriger vos e-mails @ Dauphine si nécessaire pour vous assurer de recevoir les annonces
 
+[[S2]]
 === S2 (jeudi 21 décembre 2017)
 // 13h45
 // vidéo
@@ -101,6 +103,7 @@ Trois jours avant Sx signifie : au plus tard trois jours avant le jour de la sé
 
 À faire : Démarrage du projet.
 
+[[S3]]
 === S3 (jeudi 11 janvier 2018)
 * Tests unitaires (ou fonctionnels !) : http://www.vogella.com/tutorials/JUnit/article.html[Tutoriel] Vogella ; https://github.com/oliviercailloux/jsonb-sample[sample]
 * Travis https://github.com/oliviercailloux/java-course/blob/master/CI.adoc[CI]
@@ -118,10 +121,12 @@ Trois jours avant Sx signifie : au plus tard trois jours avant le jour de la sé
 
 * Mettre en place le système d’intégration continue Travis sur votre dépôt de groupe. (Voir document ci-dessus.) Ajouter le badge au fichier README. Également à rendre pour trois jours avant S4. Vérifier que votre projet est ok, d’après Travis, au moment de la remise. (Les tests fonctionnels de vos servlets ne doivent pas nécessairement passer.)
 
+[[S4]]
 === S4 (jeudi 25 janvier 2018)
 * Découpe et https://github.com/oliviercailloux/java-course/raw/master/Contrat/presentation.pdf[contrats] en génie logiciel
 * https://github.com/oliviercailloux/java-course/blob/master/JAX-RS[JAX-RS]
 
+[[S5]]
 === S5 (vendredi 23 février 2018)
 * Désigner un responsable fusion : autorise les fusions ; revient en arrière quand fusion incorrecte; pratique les exercices https://github.com/oliviercailloux/java-course/blob/master/Git[git]
 * Création d’un servlet : https://github.com/oliviercailloux/java-course/tree/master/Tools.adoc[Tools] ; https://github.com/oliviercailloux/java-course/blob/master/Maven[Maven] ; https://github.com/oliviercailloux/java-course/tree/master/GlassFish.adoc[GlassFish] ; https://github.com/oliviercailloux/java-course/tree/master/Servlets.adoc[Servlets]
@@ -142,10 +147,12 @@ Trois jours avant Sx signifie : au plus tard trois jours avant le jour de la sé
 ==== À faire
 * Faire passer vos tests sur Travis CI
 
+[[S6]]
 === S6 (vendredi 2 mars 2018)
 * Note sur la réutilisation intelligente (recompensée !) et le droit d’utilisation, ainsi que les licences
 * https://github.com/oliviercailloux/java-course/blob/master/IBM%20Cloud.adoc[IBM Cloud]
 
+[[S7]]
 === S7 (vendredi 23 mars 2018)
 * Projets
 
