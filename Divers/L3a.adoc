@@ -120,15 +120,12 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 
 [[S3]]
 === S3 (Thursday 22nd of February, 2018)
-
 *Lecture*
 
 * Git, remote
-* Two major principles of software engineering: https://github.com/oliviercailloux/java-course/raw/master/Contrat/presentation.pdf[contract] and fail-fast (second part).
+* Contract and fail-fast (second part).
 ** Javadoc: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours4.pdf[Airiau C4], p. 18 to 25.
 ** Illustration: http://math.hws.edu/eck/cs124/javanotes7/c4/s6.html#subroutines.6.2[Mosaic]
-* http://www-users.math.umn.edu/~arnold/disasters/ariane.html, https://www.youtube.com/watch?v=gp_D8r-2hwk
-// https://www.youtube.com/embed/fCnO-UYF3co
 * Your GitHub username and git “User Name” must be identical.
 * https://github.com/oliviercailloux/java-course/blob/master/Class%20path[Classpath] (packages, classes and directories).
 
@@ -144,16 +141,18 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 
 *Todo*
 
-* Finish git exercices, remote part
+* Finish git exercices, remote part ; and classpath exercices
 * Read half of the Java development user guide, Basic Tutorial (until “Navigate to a Java element's declaration” included), see https://github.com/oliviercailloux/java-course/blob/master/Tools.adoc#eclipse[Eclipse] doc [I]
 * Read the Important part, above
 * Commit the mandatory exercices (using `git`)
 
 [[S4]]
-=== S4
+=== S4 (Tuesday 6th of March, 2018)
 
 *Lecture*
 
+* http://www-users.math.umn.edu/~arnold/disasters/ariane.html, https://www.youtube.com/watch?v=gp_D8r-2hwk
+// https://www.youtube.com/embed/fCnO-UYF3co
 * Choose your project
 * Java Interfaces and the Calculator example: replaceability and use as type.
 * Inheritance: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours3.pdf[Airiau C3]
@@ -197,7 +196,7 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 * Read all the Java development user guide, Basic Tutorial, see https://github.com/oliviercailloux/java-course/blob/master/Tools.adoc#eclipse[Eclipse] doc [I]
 
 [[S5]]
-=== S5
+=== S5 (Thursday 8th of March, 2018)
 
 * Unit testing: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours8.pdf[Airiau C8]
 * Generics and collections: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours6.pdf[Airiau C6]
