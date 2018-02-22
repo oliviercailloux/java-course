@@ -27,8 +27,8 @@ mkdir -p target/userpackage
 mv src/userpackage/MyClass.class target/userpackage/
 # Back to starting point.
 cd ..
-# We run userpackage.MyClass (together with hello.jar). This prints "Hello". Note that under Windows, the separator is the ; sign instead of the : sign.
-java -cp "Hello/hello.jar:target/" mypackage.one.MyClass
+# We run userpackage.MyClass (together with hello.jar). This prints "Hello" twice. Note that under Windows, the separator is the ; sign instead of the : sign.
+java -cp "Hello/hello.jar:Use Hello/target/" userpackage.MyClass
 
 #We clean Hello
 cd Hello
