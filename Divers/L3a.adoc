@@ -131,6 +131,7 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 
 * https://github.com/oliviercailloux/java-course/raw/master/Assert/presentation.pdf[assertions] (advanced)
 * Illustration: http://math.hws.edu/eck/cs124/javanotes7/c4/s6.html#subroutines.6.2[Mosaic]
+* http://math.hws.edu/eck/cs124/javanotes7/c4/s2.html#subroutines.2.4[EE4.2.4] [I]
 
 *Exercices*
 
@@ -146,6 +147,7 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 
 * Finish git exercices, remote part ; and classpath exercices
 * Read half of the Java development user guide, Basic Tutorial (until “Navigate to a Java element's declaration” included), see https://github.com/oliviercailloux/java-course/blob/master/Tools.adoc#eclipse[Eclipse] doc [I]
+* Read the Important part, above
 * Commit the mandatory exercices (using `git`)
 
 [[S4]]
