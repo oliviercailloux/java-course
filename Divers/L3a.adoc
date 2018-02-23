@@ -109,7 +109,6 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 * https://tutorial.djangogirls.org/en/intro_to_command_line/[Introduction] to the terminal
 * http://math.hws.edu/eck/cs124/javanotes7/c3/[ES3.7] (except 3.7.3), http://math.hws.edu/eck/cs124/javanotes7/c4/[4 intro] to 4.7.
 * ES4.3 intro to 4.3.2, 4.6.1 [I]
-* https://github.com/oliviercailloux/java-course/raw/master/Assert/presentation.pdf[assertions] (advanced)
 
 *Todo*
 
@@ -125,9 +124,13 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 * Git, remote
 * Contract and fail-fast (second part).
 ** Javadoc: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours4.pdf[Airiau C4], p. 18 to 25.
-** Illustration: http://math.hws.edu/eck/cs124/javanotes7/c4/s6.html#subroutines.6.2[Mosaic]
 * Your GitHub username and git “User Name” must be identical.
 * https://github.com/oliviercailloux/java-course/blob/master/Class%20path[Classpath] (packages, classes and directories).
+
+*Material and going beyond*
+
+* https://github.com/oliviercailloux/java-course/raw/master/Assert/presentation.pdf[assertions] (advanced)
+* Illustration: http://math.hws.edu/eck/cs124/javanotes7/c4/s6.html#subroutines.6.2[Mosaic]
 
 *Exercices*
 
@@ -143,7 +146,6 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 
 * Finish git exercices, remote part ; and classpath exercices
 * Read half of the Java development user guide, Basic Tutorial (until “Navigate to a Java element's declaration” included), see https://github.com/oliviercailloux/java-course/blob/master/Tools.adoc#eclipse[Eclipse] doc [I]
-* Read the Important part, above
 * Commit the mandatory exercices (using `git`)
 
 [[S4]]
