@@ -1,0 +1,63 @@
+= JAXB
+
+A short introduction and references about the “Java Architecture for XML Binding” (JAXB).
+
+JAXB is a Java standard and a tool that permit to generate, from an XML schema, a set of Java classes. Those classes represent the XML types defined in the schema. These classes can then be used to easily convert data from and to XML documents conforming to the schema.
+
+(JAXB also permits to go the other way around: generate, from Java classes, an XML schema, but this document does not focus on this aspect.)
+
+== Class generation
+Here we will generate Java classes corresponding to https://github.com/choweiyuan/schemaexample/blob/master/src/main/resources/c.xsd[this] simple example schema.
+
+This is done using the https://docs.oracle.com/javase/9/tools/xjc.htm[xjc] tool (XML to Java compiler, bundled with the JDK).
+
+Exercice: apply `xjc` to the schema to generate Java classes (do it manually in a terminal, for now).
+
+== Use of the generated classes
+We can now use the generated classes to easily write XML instances conforming to the schema, a process known as marshalling.
+
+Exercice: marshal a simple XML document using the generated classes. See https://github.com/choweiyuan/schemaexample/blob/master/src/main/java/Main.java[this] example code.
+
+You can also use the jaxb context object to go the other way around: create an unmarshaller, and obtain instances of the Java classes from an XML instance.
+
+== Customize generation
+You can customize the class generation with an XML file with extension `xjb`.
+
+.An example customization that changes the name of the package
+----
+<jaxb:bindings xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+	xmlns:jaxbnp="http://jaxb2-commons.dev.java.net/namespace-prefix"
+	xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/jaxb http://java.sun.com/xml/ns/jaxb/bindingschema_2_0.xsd http://jaxb2-commons.dev.java.net/namespace-prefix https://raw.githubusercontent.com/javaee/jaxb2-commons/master/namespace-prefix/src/main/resources/prefix-namespace-schema.xsd"
+	version="2.0" schemaLocation="example-shema.xsd">
+	<jaxb:schemaBindings>
+		<jaxb:package name="my.packg.name" />
+	</jaxb:schemaBindings>
+</jaxb:bindings>
+----
+
+Exercice: use `xjc` again, this time specifying that the customization file (containing the above content) must be used. You need to specify as `schemaLocation` the example schema that you apply `xjc` to.
+
+Exercice: change your code for generation of an XML instance (what do you need to change)? Test that it still works.
+
+== Automatic generation
+Maven can generate the classes for you from the schema. See for example https://github.com/oliviercailloux/XMCDA-2.2.1-JAXB[this] sample POM (only the `build` element is involved in the classes generation). When configured in this manner, Maven will call `xjc` for you as part of the build process.
+
+Exercice: integrate automatic generation to your own project.
+
+== Nice prefixes
+To generate nice prefixes for better readability of the generated XML instances, add this to your customization.
+
+.Further customization that specifies which prefix to use
+----
+	<jaxb:bindings>
+		<jaxbnp:prefix name="myprefix" />
+	</jaxb:bindings>
+----
+
+This is what the dependency to https://github.com/Siggen/jaxb2-namespace-prefix[org.jvnet.jaxb2_commons:jaxb2-namespace-prefix] is for in the sample POM above. (If you do not use the “nice prefix” functionality, you can remove this dependency.)
+
+== References
+Full working examples: https://github.com/choweiyuan/schemaexample[simplest], https://github.com/oliviercailloux/XMCDA-2.2.1-JAXB[with customization] (and biggest schema), https://github.com/xmcda-modular/jaxb[with more complex schema].
+
