@@ -52,3 +52,6 @@ To solve those problems, simply declare the plugins and `distributionManagement`
 
 Now to deploy you need to run `mvn -Prelease deploy`.
 
+== See also
+Rule of Tech’s http://ruleoftech.com/2014/distribute-projects-artifacts-in-maven-central-with-ossrh[tutorial] might be useful (I haven’t looked at it in detail yet), maybe the part about Bintray is worth having a look at!
+
