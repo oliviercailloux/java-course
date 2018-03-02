@@ -149,7 +149,7 @@ Trois jours avant Sx signifie : au plus tard trois jours avant le jour de la sé
 
 [[S6]]
 === S6 (vendredi 2 mars 2018)
-* Note sur la réutilisation intelligente (recompensée !) et le droit d’utilisation, ainsi que les licences
+* Note sur la réutilisation intelligente (recompensée !) et le droit d’utilisation, ainsi que les https://github.com/oliviercailloux/projets/blob/master/Licence.adoc[licences]
 * https://github.com/oliviercailloux/java-course/blob/master/JAXB.adoc[JAXB]
 * https://github.com/oliviercailloux/java-course/blob/master/IBM%20Cloud.adoc[IBM Cloud]
 
