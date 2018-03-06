@@ -155,7 +155,7 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 
 *Lecture*
 
-* http://www-users.math.umn.edu/~arnold/disasters/ariane.html, https://www.youtube.com/watch?v=gp_D8r-2hwk
+* http://www-users.math.umn.edu/~arnold/disasters/ariane.html[Ariane 5]: https://www.youtube.com/watch?v=gp_D8r-2hwk[video]
 // https://www.youtube.com/embed/fCnO-UYF3co
 * Questions about questions
 * https://github.com/oliviercailloux/java-course/raw/master/Objets/presentation.pdf[Objects]
