@@ -1,0 +1,61 @@
+= Class path: Overview
+
+A short document that recalls the main points about the class path in Java.
+
+== Source code
+* A class in package `a.b` and named `MyClass` has a full name `a.b.MyClass`: this is the non-ambiguous name by which you can access it (you rather usually use the short form `MyClass` and use an `import` statement in your code).
+* Your source code is stored in files with extension `.java`.
+* The example class above would be stored in the _file_ `a/b/MyClass.java`.
+* Do not mix up class name and source file name: the class name is the name by which the language knows your class; the source file name is the file where your code is stored.
+
+== Compiled code
+* From your source code, corresponding compiled code is created.
+* For this, a “Java compiler” is used.
+* It transforms your source code in bytecode.
+* This bytecode is understood by Java virtual machines (VMs).
+
+* The Java compiler starts from your source code files, for example, `a/b/MyClass.java`.
+* The Java compiler stores compiled files in files with extension `.class`.
+* The compiled files have names corresponding to the source files, for example, `a/b/MyClass.class`.
+
+* To compile, use `javac` (see Oracle https://docs.oracle.com/javase/8/docs/technotes/tools/#basic[tools]).
+* Give it the names of the files to compile.
+* To compile a single class whose source code is in `a/b/MyClass.java`, you simply run: `javac "a/b/MyClass.java"`.
+
+== Class path
+* Sometimes, your class depends on other classes.
+* For example, `c.d.e.MySecondClass` depends on `a.b.MyFirstClass`.
+* The compiler must know where to find the referenced classes when it compiles the referencing class.
+
+The *class path* is the path where the compiled classes can be found.
+
+* To give the class path to the java compiler, use the parameter `-cp`.
+* Actually, giving `cp "."` is the same as not specifying the class path at all: by default, it equals `"."`.
+* The compiler knows that if a class is named `a.b.SomeName`, it is supposed to look into the subfolder `a/b/`. Do not repeat this in the class path!
+
+First example: `javac -cp "." "a/b/MyFirstClass.java"`. The compiler will look for classes in `.` (the current folder). In fact, if `a.b.MyFirstClass` does not depend on anything, which class path we give does not matter at all.
+
+Second example: `javac -cp "." "c/d/e/MySecondClass.java"`. Now the class path matters, because `MySecondClass` depends on `MyFirstClass`. In this example, the compiler will:
+
+. see in the file `c/d/e/MySecondClass.java` that it depends on another class `a.b.MyFirstClass`;
+. look for that class in the class path;
+. and thus look into the current folder (`.`) and inside that folder, look for `a/b/MyFirstClass.class`. 
+In this example, the compilation will succeed if, and only if, both `c/d/e/MySecondClass.java` and `a/b/MyFirstClass.class` are found, starting from the current folder. (Actually, it also works if `a/b/MyFirstClass.java` is found, in which case it is compiled as well.)
+
+Third example: `javac -cp "src:bin" "c/d/e/MySecondClass.java"`. The compilation will succeed if, and only if, `MySecondClass.java` can be found in `src/c/d/e/` or `bin/c/d/e/` and `MyFirstClass.class` (or `MyFirstClass.java`) can be found in `src/a/b/` or `bin/a/b/`.
+
+== Running the project
+* To run a program, use `java` (see Oracle https://docs.oracle.com/javase/8/docs/technotes/tools/#basic[tools]).
+* Give it the _full name_ of the class containing the `main()` method you want to run.
+* Give it the class path that permits it to find the required class files, with the `-cp` argument.
+* The `java` command runs the Java VM. The Java VM understands bytecode only, thus, compiled files.
+
+Example: `java -cp "bin1:bin2" "c.d.e.MySecondClass"` will run `main()` in the class `MySecondClass`, provided the class can be found in `bin1/c/d/e/MySecondClass.class` or in `bin2/c/d/e/MySecondClass.class`, and provided all of its dependencies can also be found in `bin1` or `bin2`.
+
+== The case of .jar archives
+Instead of folders containing classes, you can also use Java Archives : files with extension `.jar` that contain collections of compiled classes (and possibly also sources).
+
+You may give a jar file as an element of a class path.
+
+Example: `java -cp "bin1:bin2:myjar.jar" "c.d.e.MySecondClass"` will run `main()` in the class `MySecondClass`, provided the class can be found in `bin1/c/d/e/MySecondClass.class` or in `bin2/c/d/e/MySecondClass.class` or in the `myjar.jar` archive, and provided all of its dependencies can also be found in `bin1` or `bin2` or `myjar.jar`.
+
