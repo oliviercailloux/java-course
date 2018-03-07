@@ -17,8 +17,8 @@
 * Create a new project "Use Hello".
 * In your project properties in Eclipse, in the build path, add your JAR archive `hello.jar`. 
 * Create a single class in your new project, having full name `userpackage.MyClass`, containing a method `main()`, that calls `sayHello()` *twice* from your `mypackage.one.MyClass` class.
-* Check that when run from Eclipse, your program says Hello.
-* Run the program using a terminal, with `java`. Check that it says Hello.
+* Check that when run from Eclipse, your program says Hello twice.
+* Run the program using a terminal, with `java`. Check that it says Hello twice.
 
 == Solution
 The https://github.com/oliviercailloux/java-course/tree/master/Class%20path/Solution/[solution] is available as a bash script and two folders containing the source code.
