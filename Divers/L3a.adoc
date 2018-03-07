@@ -29,14 +29,15 @@ You know algorithmics and the basic (non object-oriented) programming concepts i
 * For the book exercices, you receive either 1 (exercices are done on time, even imperfectly, committed under your name) or 0 (exercices are not done on time). This counts for 10% of the CC grade. (Once graded, you can remove the book exercices from your repository, or leave them there.)
 
 === Project
-* Create a group repository (once for the group).
-* For each functionality: open a new Issue, named exactly according to the functionality. Do not rename the issue (only the original name counts).
+* Create a group repository (once for the group). It must have _exactly_ the name given in the title of your project description: do not change case, add spaces, change - for \_, …
+* For each functionality: open a new Issue on GitHub, named exactly according to the functionality. Do not rename the issue (only the original name counts).
+* Assign the (one or two) persons who worked on the issue so that they are visible in GitHub.
 * You will be graded for your project functionalities. Those grades count for the CC grade. You can modify the code afterwards for a better Project grade.
 
 Don’t hesitate to send me your question by e-mail if you’re blocked in your project, instead of wasting hours. However, I do expect that you make some research before you ask, and that your question be clear. See these https://codeblog.jonskeet.uk/2012/11/24/stack-overflow-question-checklist/[guidelines].
 
 === General
-* The final grade is a mix of 50% CC grade, 50% Project grade.
+* The final grade is a mix of 50% CC grade, 50% (final) Project grade.
 * Your GitHub username and git “User Name” must be identical.
 
 == Take notes
@@ -159,11 +160,7 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 // https://www.youtube.com/embed/fCnO-UYF3co
 * Questions about questions
 * https://github.com/oliviercailloux/java-course/raw/master/Objets/presentation.pdf[Objects]
-* Clean repository: no derived artifacts; format your source code
-* Improve course for points (and prestige)
-** Accepted improvement (or three spelling mistakes or typos): +1
-** Impressive correction: 1 prestige point (in supplement)
-* Java Interfaces and the Calculator example: replaceability and use as type.
+* Choose your project
 
 *Material and going beyond*
 
@@ -184,44 +181,58 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 [[S5]]
 === S5 (Thursday 8th of March, 2018)
 
+*Lecture*
+
+* Clean repository: no derived artifacts; format your source code
+* Improve course for points (and prestige)
+** Accepted improvement (or three spelling mistakes or typos): +1
+** Impressive correction: 1 prestige point (in supplement)
+* Java Interfaces and the Calculator example: replaceability and use as type.
 * Inheritance: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours3.pdf[Airiau C3]
-* Unit testing: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours8.pdf[Airiau C8]
 * Generics and collections: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours6.pdf[Airiau C6]
-* Choose your project
 
-* Use dependencies; one unit test per exercice (must be green)
-* http://math.hws.edu/eck/cs124/javanotes7/c10/[ES10.3] to 10.5
-* http://math.hws.edu/eck/cs124/javanotes7/c8/[ES8] intro to 8.4
+*Material and going beyond*
 
-//interfaces
+* http://math.hws.edu/eck/cs124/javanotes7/c5/[ES5.5] to 5.8
+* http://math.hws.edu/eck/cs124/javanotes7/c10/[ES10] to 10.2
+
+*Exercices*
+
+// simple inheritance (no TextIO depended on, actually)
+* http://math.hws.edu/eck/cs124/javanotes7/c5/exercises.html[EE5.4] (use `Scanner` instead of `TextIO`)
+//interfaces with generics
 * EE10.4 (except you use the https://docs.oracle.com/javase/8/docs/api/java/util/function/Predicate.html[Predicate] interface from the Java API instead of writing your own)
 // implements but no inheritance
-* EE5.7 [M] (the part about anonymous classes is optional)
-** Supplementary requirements: your code must lie in at least two packages;
-** The idea of this exercice is that you simulate that three different people work on this exercice: one provides some interfaces; another implements the interfaces; a third one uses the interfaces and their implementations to solve the exercice (except you represent all these persons).
-** Declare at least one interface in another Eclipse project, exported as a Java archive (JAR file);
-** implement those interfaces in another Eclipse project, exported as a Java archive (JAR file) (will you need the previous JAR file? Why / why not?);
-** solve the exercices in a third Eclipse project (will you need the previous JAR files? Which ones and why?).
-// simple inheritance (no TextIO depended on, actually)
-* http://math.hws.edu/eck/cs124/javanotes7/c5/exercises.html[EE5.4] [M]
+* http://math.hws.edu/eck/cs124/javanotes7/c5/exercises.html[EE5.7] [M] (the part about anonymous classes is optional)
+//** Supplementary requirements: your code must lie in at least two packages;
+//** The idea of this exercice is that you simulate that three different people work on this exercice: one provides some interfaces; another implements the interfaces; a third one uses the interfaces and their implementations to solve the exercice (except you represent all these persons).
+//** Declare at least one interface in another Eclipse project, exported as a Java archive (JAR file);
+//** implement those interfaces in another Eclipse project, exported as a Java archive (JAR file) (will you need the previous JAR file? Why / why not?);
+//** solve the exercices in a third Eclipse project (will you need the previous JAR files? Which ones and why?).
 // read, sort a list
 * http://math.hws.edu/eck/cs124/javanotes7/c7/exercises.html[EE7.1], 7.5
 // list of words
 * EE7.7 [M] (you may use standard input instead of file input)
-// set
-* http://math.hws.edu/eck/cs124/javanotes7/c10/exercises.html[EE10.2] [M]
-* http://math.hws.edu/eck/cs124/javanotes7/c10/exercises.html[EE10]
-
-* http://math.hws.edu/eck/cs124/javanotes7/c5/[ES5.5] to 5.8
-* http://math.hws.edu/eck/cs124/javanotes7/c10/[ES10] to 10.2
+* Ask the end-user for a set of integer values. The user enters 0 to stop entering values. Store these values in a Set of Integer values (discarding duplicates). Do it again, obtaining a second set. Then print each set of values entered, then the union of both sets. For example, if the user enters 3, 4, 2, 0, then 1, 1, 2, 5, 0, it prints: 3, 4, 2, then 1, 2, 5, then 3, 4, 2, 1, 5. [M]
+// set (long)
+* http://math.hws.edu/eck/cs124/javanotes7/c10/exercises.html[EE10.2]
 * Project: Contract [M]
+
+*Todo*
+
+* Read half of the Java development user guide, Tips and Tricks (until Navigation included), see https://github.com/oliviercailloux/java-course/blob/master/Tools.adoc#eclipse[Eclipse] doc [I]
+* Remember to respect the quality requirements in your design: contract, fail-fast, clear interface; and to respect the technical requirements for submitting your project code. (See above.)
 
 [[S6]]
 === S6
 
+* http://math.hws.edu/eck/cs124/javanotes7/c10/[ES10.3] to 10.5
+* http://math.hws.edu/eck/cs124/javanotes7/c8/[ES8] intro to 8.4
+* Unit testing: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours8.pdf[Airiau C8]
 * Files and https://github.com/oliviercailloux/java-course/blob/master/Flows.adoc[flows]
 * Exceptions in Java: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours5.pdf[Airiau C5] (and see slides Contrat, appendix)
 * Maps, Comparable, Comparator: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours6.pdf[Airiau C6]
+* http://math.hws.edu/eck/cs124/javanotes7/c10/exercises.html[EE10]
 
 * Project: File
 * Project: Resources
