@@ -199,10 +199,10 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 
 *Exercices*
 
-// simple inheritance (no TextIO depended on, actually)
-* http://math.hws.edu/eck/cs124/javanotes7/c5/exercises.html[EE5.4] (use `Scanner` instead of `TextIO`)
+// simple inheritance (no TextIO depended on, actually), but complex set up
+//* http://math.hws.edu/eck/cs124/javanotes7/c5/exercises.html[EE5.4] (use `Scanner` instead of `TextIO`)
 //interfaces with generics
-* EE10.4 (except you use the https://docs.oracle.com/javase/8/docs/api/java/util/function/Predicate.html[Predicate] interface from the Java API instead of writing your own)
+* http://math.hws.edu/eck/cs124/javanotes7/c10/exercises.html[EE10.4] (except you use the https://docs.oracle.com/javase/8/docs/api/java/util/function/Predicate.html[Predicate] interface from the Java API instead of writing your own)
 // implements but no inheritance
 * http://math.hws.edu/eck/cs124/javanotes7/c5/exercises.html[EE5.7] [M] (the part about anonymous classes is optional)
 //** Supplementary requirements: your code must lie in at least two packages;
@@ -213,7 +213,7 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 // read, sort a list
 * http://math.hws.edu/eck/cs124/javanotes7/c7/exercises.html[EE7.1], 7.5
 // list of words
-* EE7.7 [M] (you may use standard input instead of file input)
+* EE7.7 (you may use standard input instead of file input)
 * Ask the end-user for a set of integer values. The user enters 0 to stop entering values. Store these values in a Set of Integer values (discarding duplicates). Do it again, obtaining a second set. Then print each set of values entered, then the union of both sets. For example, if the user enters 3, 4, 2, 0, then 1, 1, 2, 5, 0, it prints: 3, 4, 2, then 1, 2, 5, then 3, 4, 2, 1, 5. [M]
 // set (long)
 * http://math.hws.edu/eck/cs124/javanotes7/c10/exercises.html[EE10.2]
