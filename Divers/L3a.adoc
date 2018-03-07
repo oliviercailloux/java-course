@@ -24,15 +24,16 @@ You know algorithmics and the basic (non object-oriented) programming concepts i
 == Instructions & grading
 
 === Book exercices
-* Create a personal repository named `Java-L3-Eck-Ex`. You deposit the book exercices (EE) there. All related classes must be prefixed with `EExx`, for example `EE34MyClass`.
+* Create a personal repository named `Java-L3-Eck-Ex`. You deposit the book exercices (EE) there. All related classes must be prefixed with `EExx`, for example `EE34MyClass`. You are free to choose the folder structure.
 * All mandatory (suffixed with [M]) book exercices (prefixed with EE) must be in that repository (in the branch `master`), 3 days before the lecture, 23:59 + 1min (e.g., lecture Saturday 23rd means a deadline on the end of Wednesday 20th).
 * For the book exercices, you receive either 1 (exercices are done on time, even imperfectly, committed under your name) or 0 (exercices are not done on time). This counts for 10% of the CC grade. (Once graded, you can remove the book exercices from your repository, or leave them there.)
 
 === Project
 * Create a group repository (once for the group). It must have _exactly_ the name given in the title of your project description: do not change case, add spaces, change - for \_, …
 * For each functionality: open a new Issue on GitHub, named exactly according to the functionality. Do not rename the issue (only the original name counts).
-* Assign the (one or two) persons who worked on the issue so that they are visible in GitHub.
+* You are supposed to use pair-programming. Assign the (one or two) persons who worked on the issue so that they are visible in GitHub.
 * You will be graded for your project functionalities. Those grades count for the CC grade. You can modify the code afterwards for a better Project grade.
+* If you are late by less than 24h, your grade is halved. If you are more than 24h late, you get 0.
 
 Don’t hesitate to send me your question by e-mail if you’re blocked in your project, instead of wasting hours. However, I do expect that you make some research before you ask, and that your question be clear. See these https://codeblog.jonskeet.uk/2012/11/24/stack-overflow-question-checklist/[guidelines].
 
@@ -224,7 +225,7 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 * Remember to respect the quality requirements in your design: contract, fail-fast, clear interface; and to respect the technical requirements for submitting your project code. (See above.)
 
 [[S6]]
-=== S6
+=== S6 (Thursday 22nd of March, 2018)
 
 * http://math.hws.edu/eck/cs124/javanotes7/c10/[ES10.3] to 10.5
 * http://math.hws.edu/eck/cs124/javanotes7/c8/[ES8] intro to 8.4
@@ -238,7 +239,7 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 * Project: Resources
 
 [[S7]]
-=== S7
+=== S7 (Thursday 29th of March, 2018)
 
 * Maven
 * Git in practice
