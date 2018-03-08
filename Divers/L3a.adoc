@@ -29,6 +29,7 @@ You know algorithmics and the basic (non object-oriented) programming concepts i
 * For the book exercices, you receive either 1 (exercices are done on time, even imperfectly, committed under your name) or 0 (exercices are not done on time). This counts for 10% of the CC grade. (Once graded, you can remove the book exercices from your repository, or leave them there.)
 
 === Project
+* Descriptions are https://github.com/oliviercailloux/projets/tree/master/SE[here].
 * Create a group repository (once for the group). It must have _exactly_ the name given in the title of your project description: do not change case, add spaces, change - for \_, …
 * For each functionality: open a new Issue on GitHub, named exactly according to the functionality. Do not rename the issue (only the original name counts).
 * You are supposed to use pair-programming. Assign the (one or two) persons who worked on the issue so that they are visible in GitHub.
@@ -127,7 +128,7 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 * Contract and fail-fast (second part).
 ** Javadoc: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours4.pdf[Airiau C4], p. 18 to 25.
 * Your GitHub username and git “User Name” must be identical.
-* https://github.com/oliviercailloux/java-course/blob/master/Class%20path[Classpath] (packages, classes and directories).
+* https://github.com/oliviercailloux/java-course/blob/master/Class%20path[Class path] (packages, classes and directories).
 
 *Material and going beyond*
 
@@ -147,7 +148,7 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 
 *Todo*
 
-* Finish git exercices, remote part ; and classpath exercices
+* Finish git exercices, remote part ; and class path exercices
 * Read half of the Java development user guide, Basic Tutorial (until “Navigate to a Java element's declaration” included), see https://github.com/oliviercailloux/java-course/blob/master/Tools.adoc#eclipse[Eclipse] doc [I]
 * Read the Important part, above
 * Commit the mandatory exercices (using `git`)
@@ -188,7 +189,8 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 * Improve course for points (and prestige)
 ** Accepted improvement (or three spelling mistakes or typos): +1
 ** Impressive correction: 1 prestige point (in supplement)
-* Java Interfaces and the Calculator example: replaceability and use as type.
+* A word about the https://github.com/oliviercailloux/java-course/blob/master/Class%20path[Class path]
+* Java Interfaces and the Calculator example: replaceability and use as type
 * Inheritance: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours3.pdf[Airiau C3]
 * Generics and collections: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours6.pdf[Airiau C6]
 
@@ -303,7 +305,7 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 === S15
 
 * Results QCM
-* Classpath (bis)
+//* Classpath (bis)
 * Reminder: exceptions; naming conventions; config Eclipse
 
 [[S16]]
