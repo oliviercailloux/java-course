@@ -222,12 +222,12 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 //** solve the exercices in a third Eclipse project (will you need the previous JAR files? Which ones and why?).
 // read, sort a list
 * http://math.hws.edu/eck/cs124/javanotes7/c7/exercises.html[EE7.1], 7.5 (except that you can use built-sorting functions from the Java API).
-* Ask the end-user for a set of integer values. The user enters 0 to stop entering values. Store these values in a Set of Integer values (discarding duplicates). Do it again, obtaining a second set. Then print each set of values entered, then the union of both sets. For example, if the user enters 3, 4, 2, 0, then 1, 1, 2, 5, 0, it prints: 3, 4, 2, then 1, 2, 5, then 3, 4, 2, 1, 5. [M]
+* A class E1 that asks the end-user for a set of integer values. The user enters 0 to stop entering values. Store these values in a Set of Integer values (discarding duplicates). Do it again, obtaining a second set. Then print each set of values entered, then the union of both sets. For example, if the user enters 3, 4, 2, 0, then 1, 1, 2, 5, 0, it prints: 3, 4, 2, then 1, 2, 5, then 3, 4, 2, 1, 5. [M]
 * Project: Contract [M]
 
 *Todo*
 
-* Read half of the Java development user guide, Tips and Tricks (until Navigation included), see https://github.com/oliviercailloux/java-course/blob/master/Tools.adoc#eclipse[Eclipse] doc [I]
+* All mandatory exercices, including from S4.
 * Remember to respect the quality requirements in your design: contract, fail-fast, clear interface; and to respect the technical requirements for submitting your project code. (See above.)
 
 [[S6]]
@@ -243,6 +243,7 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 
 * Project: File
 * Project: Resources
+* Read half of the Java development user guide, Tips and Tricks (until Navigation included), see https://github.com/oliviercailloux/java-course/blob/master/Tools.adoc#eclipse[Eclipse] doc [I]
 
 [[S7]]
 === S7 (Thursday 29th of March, 2018)
