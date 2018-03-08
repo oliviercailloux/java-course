@@ -128,7 +128,7 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 * Contract and fail-fast (second part).
 ** Javadoc: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours4.pdf[Airiau C4], p. 18 to 25.
 * Your GitHub username and git “User Name” must be identical.
-* https://github.com/oliviercailloux/java-course/blob/master/Class%20path[Class path] (packages, classes and directories).
+* https://github.com/oliviercailloux/java-course/blob/master/Class%20path[class path] (packages, classes and directories).
 
 *Material and going beyond*
 
@@ -189,7 +189,7 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 * Improve course for points (and prestige)
 ** Accepted improvement (or three spelling mistakes or typos): +1
 ** Impressive correction: 1 prestige point (in supplement)
-* A word about the https://github.com/oliviercailloux/java-course/blob/master/Class%20path[Class path]
+* A word about the https://github.com/oliviercailloux/java-course/blob/master/Class%20path[class path]
 * Java Interfaces and the Calculator example: replaceability and use as type
 * Inheritance: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours3.pdf[Airiau C3]
 * Generics and collections: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours6.pdf[Airiau C6]
