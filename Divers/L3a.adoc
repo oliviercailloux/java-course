@@ -30,7 +30,7 @@ You know algorithmics and the basic (non object-oriented) programming concepts i
 
 === Project
 * Descriptions are https://github.com/oliviercailloux/projets/tree/master/SE[here].
-* Create a group repository (once for the group). It must have _exactly_ the name given in the title of your project description: do not change case, add spaces, change - for \_, …
+* Create a group repository (once for the group). It must have _exactly_ the name given in the title of your project description, except using - instead of spaces: do not change case, add spaces, use \_ instead of -, …
 * For each functionality: open a new Issue on GitHub, named exactly according to the functionality. Do not rename the issue (only the original name counts).
 * You are supposed to use pair-programming. Assign the (one or two) persons who worked on the issue so that they are visible in GitHub.
 * You will be graded for your project functionalities. Those grades count for the CC grade. You can modify the code afterwards for a better Project grade.
