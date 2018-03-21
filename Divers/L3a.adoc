@@ -38,6 +38,19 @@ You know algorithmics and the basic (non object-oriented) programming concepts i
 * You will be graded for your project functionalities. Those grades count for the CC grade. You can modify the code afterwards for a better Project grade.
 * If you are late by less than 24h, your grade is halved. If you are more than 24h late, you get 0.
 
+Abreviations for corrections are as follows.
+
+|===
+| Abbrv | Pratique à respecter | Informations | Sanction
+| IN | Respect des instructions concernant la remise (création issues, etc.) | Instructions / project | −1
+| UNIK	| noms des classes est unique et respecte les bonnes pratiques	| Class path ; S3	| 0
+| CASING	| respect des conventions de nommage	| https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Style.adoc[BP Style]	| −0,5
+| FORMAT	| le code est mis en forme systématiquement	| https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Style.adoc[BP Style]	| 0
+| WEB	| commit effectué via git	| Git	| −1
+| DER	| le dépôt ne contient pas de produits dérivés	| https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Git.adoc[BP Git]	| −0,5
+| FOLDER	| la racine du dépôt est la racine du projet	| https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Git.adoc[BP Git]	| 0
+|===
+
 Don’t hesitate to send me your question by e-mail if you’re blocked in your project, instead of wasting hours. However, I do expect that you make some research before you ask, and that your question be clear. See these https://codeblog.jonskeet.uk/2012/11/24/stack-overflow-question-checklist/[guidelines].
 
 === General
