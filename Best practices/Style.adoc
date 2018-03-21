@@ -13,6 +13,8 @@ I disagree with the following in GJSG.
 
 http://google.github.io/styleguide/javaguide.html#s2.3.1-whitespace-characters[2.3.1], “the ASCII horizontal space character (0x20) is the only whitespace character that appears anywhere in a source file”. I rather use tab characters to indent. Tabs for indentation encode intent rather than forcing a specific display behavior. The reader of my source code can then choose (by configuring its editor) to make tabs appear as x number of white spaces, with x its preferred number. (GJSG use whitespace, I believe, because it suggests using a different number of whitespace characters for different types of indent, which I do not do.)
 
+http://google.github.io/styleguide/javaguide.html#s5.2.1-package-names[5.2.1], “Package names are all lowercase, with consecutive words simply concatenated together (no underscores)”. I use underscores to separate words in packages (see https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Maven.adoc[Maven]).
+
 == Compiler settings
 Ask your compiler to enable strict checks of possible errors. See link:../Tools.adoc#Eclipse-strict[Eclipse configuration].
 
