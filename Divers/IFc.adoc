@@ -155,10 +155,13 @@ Trois jours avant Sx signifie : au plus tard trois jours avant le jour de la sé
 
 [[S7]]
 === S7 (vendredi 23 mars 2018)
+* https://github.com/oliviercailloux/java-course/blob/master/SOAP.adoc[SOAP]; https://github.com/oliviercailloux/java-course/blob/master/WSDL.adoc[WSDL]; https://docs.oracle.com/javaee/7/tutorial/jaxws001.htm[tutorial]
 * Projets
 
 [[S8]]
 === S8 (vendredi 30 mars 2018)
-* Présentation des projets
+* Présentation des projets : sur mon ordinateur ; présentation en PDF sur votre dépôt.
 * Vote
+* https://github.com/oliviercailloux/projets/blob/master/Licence.adoc[Licences] : https://github.com/oliviercailloux/projets/blob/master/Declaration%20of%20licensing.odt?raw=true[Decl]
+* Remise finale du projet : fin dimanche 8 avril.
 
