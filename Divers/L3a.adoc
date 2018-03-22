@@ -32,6 +32,7 @@ You know algorithmics and the basic (non object-oriented) programming concepts i
 * Descriptions are https://github.com/oliviercailloux/projets/tree/master/SE[here].
 * Create a public group repository (once for the group). It must have _exactly_ the name given in the title of your project description, except using - instead of spaces: do not change case, add spaces, use \_ instead of -, … Please do _not_ send me an e-mail to tell me your project url: I’ll find it; and do not add me to your project.
 * For each functionality: open a new Issue on GitHub, named exactly according to the functionality. Do not rename the issue (only the original name counts).
+** For a new issue about an existing functionality (continuing the implementation): open a new Issue whose name is the name of the functionality with a hyphen and a number, starting with 2. For example, Contract1-2 for continuing the functionality Contract1. (Then, Contract1-3, and so on.)
 * https://help.github.com/articles/assigning-issues-and-pull-requests-to-other-github-users/[Assign] the persons who worked on the issue so that they are visible in GitHub. Must be one or two persons (you are encouraged to use pair-programming). Close the issue.
 * An issue is _freezed_ at the earliest time such that one or two persons are assigned on it, it is closed, and the issue has not changed for 3 minutes (the delay permits to assign the correct persons before I consider this specific issue freezed, in case you closed before assigning).
 * A functionality is _done_ if, and only if, there exists a _freezed_ issue whose original name is the name of the functionality. The persons assigned to it are those assigned at the freeze time, and may not be changed afterwards.
@@ -248,43 +249,58 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 [[S6]]
 === S6 (Thursday 22nd of March, 2018)
 
+*Lecture*
+
 * Primitive types; null; protect
 * Correct E1
-.. découpé en sous..routines ?
+.. découpé en sous-routines ?
 .. contrat général (Collection au lieu de LinkedList) ?
 .. noms complets de classes uniques ?
 .. structures appropriées ? (Set)
 .. réutilisation si on demande les nombres différemment ? (Lus depuis fichiers)
-.. documentation javadoc lorsque nécessaire ?
 .. nommage approprié ? (searchNumber renvoie boolean, non, devrait poser une question: isIn)
+.. documentation javadoc lorsque nécessaire ?
 .. utilisation adéquate des structures ? (ne pas rechercher un nombre dans une liste)
-.. conventions respectées ? (noms de variables et méthodes en camelCase, de classes en FirstCap, de packages avec première lettre minuscule, …)
+.. conventions respectées ? (noms de variables et méthodes en camelCase, de classes en PascalCase, de packages en minuscules, …)
 .. méthodes d’instance (et pas statiques) ?
-.. pas de commentaires inutiles (tq auto..générés //TODO, @author vide, …)
+.. pas de commentaires inutiles (tq auto-générés //TODO, @author vide, …)
 .. (micro) pas de comparaison à des booléens (if(isBig == true))
 .. vous arrivez à voir le résultat de votre code javadoc (exemple: @param truc of type String inutile)
-
-* Tools: use correct Eclipse config. (Check warnings, compile errors, instructions!)
-* http://math.hws.edu/eck/cs124/javanotes7/c10/[ES10.3] to 10.5
-* http://math.hws.edu/eck/cs124/javanotes7/c8/[ES8] intro to 8.4
-* Unit testing: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours8.pdf[Airiau C8]
-* Files and https://github.com/oliviercailloux/java-course/blob/master/Flows.adoc[flows]
+* https://github.com/oliviercailloux/java-course/blob/master/Tools.adoc#configuration[Tools]: use correct Eclipse config. (Check warnings, compile errors, instructions!)
 * Exceptions in Java: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours5.pdf[Airiau C5] (and see slides Contrat, appendix)
 * Maps, Comparable, Comparator: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours6.pdf[Airiau C6]
-* http://math.hws.edu/eck/cs124/javanotes7/c10/exercises.html[EE10]
+* Files and https://github.com/oliviercailloux/java-course/blob/master/Flows.adoc[flows]
+* https://docs.oracle.com/javase/tutorial/java/javaOO/arguments.html[Varargs]
 
-* Project: File
-* Project: Resources
+*Material and going beyond*
+
+* http://math.hws.edu/eck/cs124/javanotes7/c10/[ES10.3] to 10.5
+* http://math.hws.edu/eck/cs124/javanotes7/c8/[ES8] intro to 8.4
+
+*Exercices*
+
+* http://math.hws.edu/eck/cs124/javanotes7/c10/exercises.html[EE10.1]
+//interfaces with generics and collections
+* http://math.hws.edu/eck/cs124/javanotes7/c10/exercises.html[EE10.4] (except you use the https://docs.oracle.com/javase/8/docs/api/java/util/function/Predicate.html[Predicate] interface from the Java API instead of writing your own)
+// list of words
+* EE7.7 (you may use standard input instead of file input)
+* Create (manually) a text file containing “Hé !” and (programmatically) open it and print its content. Your method should also work when the file is too big to fit in memory.
+
+*Todo*
+
+* Project: File or finish Contract
 * Read half of the Java development user guide, Tips and Tricks (until Navigation included), see https://github.com/oliviercailloux/java-course/blob/master/Tools.adoc#eclipse[Eclipse] doc [I]
 
 [[S7]]
 === S7 (Tuesday 27th of March, 2018)
 
+* Unit testing: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours8.pdf[Airiau C8]
 * Maven
 * Git in practice
 * Logging (SLF4J)
 * Project: Interfaces
 * CI
+* Project: Resources
 
 [[S8]]
 === S8 (Thursday 29th of March, 2018)
