@@ -31,6 +31,7 @@ You know algorithmics and the basic (non object-oriented) programming concepts i
 === Project
 * Descriptions are https://github.com/oliviercailloux/projets/tree/master/SE[here].
 * Create a public group repository (once for the group). It must have _exactly_ the name given in the title of your project description, except using - instead of spaces: do not change case, add spaces, use \_ instead of -, … Please do _not_ send me an e-mail to tell me your project url: I’ll find it; and do not add me to your project.
+** For unique complete class names, use as basis the package `io.github.oliviercailloux.y2018` suffixed with your project name (converted to a package name) and possibly suffixed with whatever you want to organize the code as desired (for example, `io.github.oliviercailloux.y2018.our_great_project.utils`).
 * For each functionality: open a new Issue on GitHub, named exactly according to the functionality. Do not rename the issue (only the original name counts).
 ** For a new issue about an existing functionality (continuing the implementation): open a new Issue whose name is the name of the functionality with a hyphen and a number, starting with 2. For example, Contract1-2 for continuing the functionality Contract1. (Then, Contract1-3, and so on.)
 * https://help.github.com/articles/assigning-issues-and-pull-requests-to-other-github-users/[Assign] the persons who worked on the issue so that they are visible in GitHub. Must be one or two persons (you are encouraged to use pair-programming). Close the issue.
@@ -267,10 +268,6 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 .. pas de commentaires inutiles (tq auto-générés //TODO, @author vide, …)
 .. (micro) pas de comparaison à des booléens (if(isBig == true))
 .. vous arrivez à voir le résultat de votre code javadoc (exemple: @param truc of type String inutile)
-* Exceptions in Java: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours5.pdf[Airiau C5] (and see slides Contrat, appendix)
-* Maps, Comparable, Comparator: Airiau http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours7.pdf[C7], http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours8.pdf[C8]
-* https://docs.oracle.com/javase/tutorial/java/javaOO/arguments.html[Varargs]
-* Files and https://github.com/oliviercailloux/java-course/blob/master/Flows.adoc[flows]
 
 *Material and going beyond*
 
@@ -294,13 +291,18 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 [[S7]]
 === S7 (Tuesday 27th of March, 2018)
 
+* Exceptions in Java: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours5.pdf[Airiau C5] (and see slides Contrat, appendix)
+* Maps, Comparable, Comparator: Airiau http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours7.pdf[C7], http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours8.pdf[C8]
+* https://docs.oracle.com/javase/tutorial/java/javaOO/arguments.html[Varargs]
+* Files and https://github.com/oliviercailloux/java-course/blob/master/Flows.adoc[flows]
 * Unit testing: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours8.pdf[Airiau C8]
 * Maven
 * Git in practice
 * Logging (SLF4J)
+* Project: Files
+* Project: Resources
 * Project: Interfaces
 * CI
-* Project: Resources
 
 [[S8]]
 === S8 (Thursday 29th of March, 2018)
