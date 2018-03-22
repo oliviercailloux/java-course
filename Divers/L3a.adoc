@@ -251,7 +251,8 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 
 *Lecture*
 
-* Primitive types; null; protect
+* Primitive types (autoboxing); null; optional; give guarantees: https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Null.adoc[Best practices]
+* https://github.com/oliviercailloux/java-course/blob/master/Tools.adoc#configuration[Tools]: use correct Eclipse config. (Check warnings, compile errors, instructions!)
 * Correct E1
 .. découpé en sous-routines ?
 .. contrat général (Collection au lieu de LinkedList) ?
@@ -266,11 +267,10 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 .. pas de commentaires inutiles (tq auto-générés //TODO, @author vide, …)
 .. (micro) pas de comparaison à des booléens (if(isBig == true))
 .. vous arrivez à voir le résultat de votre code javadoc (exemple: @param truc of type String inutile)
-* https://github.com/oliviercailloux/java-course/blob/master/Tools.adoc#configuration[Tools]: use correct Eclipse config. (Check warnings, compile errors, instructions!)
 * Exceptions in Java: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours5.pdf[Airiau C5] (and see slides Contrat, appendix)
-* Maps, Comparable, Comparator: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours6.pdf[Airiau C6]
-* Files and https://github.com/oliviercailloux/java-course/blob/master/Flows.adoc[flows]
+* Maps, Comparable, Comparator: Airiau http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours7.pdf[C7], http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours8.pdf[C8]
 * https://docs.oracle.com/javase/tutorial/java/javaOO/arguments.html[Varargs]
+* Files and https://github.com/oliviercailloux/java-course/blob/master/Flows.adoc[flows]
 
 *Material and going beyond*
 
@@ -289,7 +289,7 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 *Todo*
 
 * Project: File or finish Contract
-* Read half of the Java development user guide, Tips and Tricks (until Navigation included), see https://github.com/oliviercailloux/java-course/blob/master/Tools.adoc#eclipse[Eclipse] doc [I]
+* Read half of the Java development user guide, Tips and Tricks (until Navigation included), see https://github.com/oliviercailloux/java-course/blob/master/Tools.adoc#eclipse[Eclipse] doc
 
 [[S7]]
 === S7 (Tuesday 27th of March, 2018)
