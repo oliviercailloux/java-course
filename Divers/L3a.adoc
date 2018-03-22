@@ -274,15 +274,6 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 * http://math.hws.edu/eck/cs124/javanotes7/c10/[ES10.3] to 10.5
 * http://math.hws.edu/eck/cs124/javanotes7/c8/[ES8] intro to 8.4
 
-*Exercices*
-
-* http://math.hws.edu/eck/cs124/javanotes7/c10/exercises.html[EE10.1]
-//interfaces with generics and collections
-* http://math.hws.edu/eck/cs124/javanotes7/c10/exercises.html[EE10.4] (except you use the https://docs.oracle.com/javase/8/docs/api/java/util/function/Predicate.html[Predicate] interface from the Java API instead of writing your own)
-// list of words
-* EE7.7 (you may use standard input instead of file input)
-* Create (manually) a text file containing “Hé !” and (programmatically) open it and print its content. Your method should also work when the file is too big to fit in memory.
-
 *Todo*
 
 * Project: Finish Contract
@@ -296,17 +287,26 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 * https://docs.oracle.com/javase/tutorial/java/javaOO/arguments.html[Varargs]
 * Files and https://github.com/oliviercailloux/java-course/blob/master/Flows.adoc[flows]
 * Unit testing: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours8.pdf[Airiau C8]
-* Maven
-* Git in practice
-* Logging (SLF4J)
 * Project: Files
-* Project: Resources
-* Project: Interfaces
-* CI
+
+*Exercices*
+
+* http://math.hws.edu/eck/cs124/javanotes7/c10/exercises.html[EE10.1]
+//interfaces with generics and collections
+* http://math.hws.edu/eck/cs124/javanotes7/c10/exercises.html[EE10.4] (except you use the https://docs.oracle.com/javase/8/docs/api/java/util/function/Predicate.html[Predicate] interface from the Java API instead of writing your own)
+// list of words
+* EE7.7 (you may use standard input instead of file input)
+* Create (manually) a text file containing “Hé !” and (programmatically) open it and print its content. Your method should also work when the file is too big to fit in memory.
 
 [[S8]]
 === S8 (Thursday 29th of March, 2018)
 
+* Maven
+* Git in practice
+* Project: Resources
+* Project: Interfaces
+* CI
+* Logging (SLF4J)
 * Annotations
 * Tracking projects
 * Notes
