@@ -288,7 +288,7 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 
 *Todo*
 
-* Project: File or finish Contract
+* Project: Finish Contract
 * Read half of the Java development user guide, Tips and Tricks (until Navigation included), see https://github.com/oliviercailloux/java-course/blob/master/Tools.adoc#eclipse[Eclipse] doc
 
 [[S7]]
