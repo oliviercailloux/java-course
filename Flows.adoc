@@ -13,9 +13,11 @@ There are four essential kinds of objects that represent flows of information in
 It is typical for a flow of character to be encoded in a flow of bytes, for example, a text file stored on your hard disk contain character data but also byte data.
 Character flows should be used preferably to byte flows in that case, as they represent higher level information. 
 
-Readers (and writers) are generally obtained from a byte source (or sink). In that case they *must* be accompanied by a character encoding, which specifies how bytes and characters relate. (Java permits to omit this information in some cases, but not doing so makes your program fragile as some default will be used implicitly.)
+Readers are generally obtained from a byte source (and writers, from a byte sink). In that case they *must* be accompanied by a character encoding, which specifies how bytes and characters relate. (Java permits to omit this information in some cases, but not doing so makes your program fragile as some default will be used implicitly.)
 
 Two essential classes help you deal with files: https://docs.oracle.com/javase/8/docs/api/java/nio/file/Path.html[Path] and https://docs.oracle.com/javase/8/docs/api/java/nio/file/Files.html[Files]. For example, use `Files#newBufferedWriter()` to obtain a `Writer` that writes to a file.
+
+Always close your streams after use. Use the https://docs.oracle.com/javase/tutorial/essential/exceptions/tryResourceClose.html[try-with-resources] statement for this.
 
 == References
 See Oracle’s https://docs.oracle.com/javase/tutorial/essential/io/index.html[Basic I/O] tutorial.
