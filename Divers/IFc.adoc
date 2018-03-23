@@ -56,7 +56,7 @@ Voir aussi la section références de chaque ensemble de diapositives, par sujet
 * Livraison 1 : trois jours avant S4. Exigence : au moins 5 points de difficulté accomplis (selon exigences ci-dessus) ; Travis CI en place. Note : 1/6 pour chaque fonctionnalité et 1/6 pour Travis.
 //better: Travis as a fct, half point.
 * Livraison 2 : trois jours avant S6 (≥ 10 points de difficulté). Je passerai toutes vos issues en revue si elles satisfont les consignes générales.
-* Livraison 3 : trois jours avant S8 (≥ 12 points de difficulté, 4 points par binôme)
+* Livraison 3 : trois jours avant S8 (nb points de difficulté : voir ci-dessus)
 
 À chaque livraison, certaines notes qualités deviennent définitivement part de la note CC (à hauteur du nombre de points de difficulté requis). Si vous avez fait plus que votre quota, ce sont les meilleures notes qui deviennent définitivement part de la note CC.
 

@@ -35,9 +35,9 @@ You know algorithmics and the basic (non object-oriented) programming concepts i
 * For each functionality: open a new Issue on GitHub, named exactly according to the functionality. Do not rename the issue (only the original name counts).
 ** For a new issue about an existing functionality (continuing the implementation): open a new Issue whose name is the name of the functionality with a hyphen and a number, starting with 2. For example, Contract1-2 for continuing the functionality Contract1. (Then, Contract1-3, and so on.)
 * https://help.github.com/articles/assigning-issues-and-pull-requests-to-other-github-users/[Assign] the persons who worked on the issue so that they are visible in GitHub. Must be one or two persons (you are encouraged to use pair-programming). Close the issue.
-* An issue is _freezed_ at the earliest time such that one or two persons are assigned on it, it is closed, and the issue has not changed for 3 minutes (the delay permits to assign the correct persons before I consider this specific issue freezed, in case you closed before assigning).
-* A functionality is _done_ if, and only if, there exists a _freezed_ issue whose original name is the name of the functionality. The persons assigned to it are those assigned at the freeze time, and may not be changed afterwards.
-* You will be graded for your project functionalities. Those grades count for the CC grade. You can modify the code afterwards for a better Project grade.
+* You will be graded for the functionalities which are _done_ (as defined below). Those grades count for the CC grade. You can modify the code afterwards for a better Project grade.
+** An issue is _freezed_ at the earliest time such that one or two persons are assigned on it, it is closed, and the issue has not changed for 3 minutes (the delay permits to assign the correct persons before I consider this specific issue freezed, in case you closed before assigning).
+** A functionality is _done_ if, and only if, there exists a _freezed_ issue whose original name is the name of the functionality. The persons assigned to it are those assigned at the freeze time, and may not be changed afterwards.
 * If you are late by less than 24h, your grade is halved. If you are more than 24h late, you get 0.
 
 Abreviations for corrections are as follows.
@@ -282,6 +282,7 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 [[S7]]
 === S7 (Tuesday 27th of March, 2018)
 
+//TODO query about JD
 * Exceptions in Java: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours5.pdf[Airiau C5] (and see slides Contrat, appendix)
 * Maps, Comparable, Comparator: Airiau http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours7.pdf[C7], http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours8.pdf[C8]
 * https://docs.oracle.com/javase/tutorial/java/javaOO/arguments.html[Varargs]
