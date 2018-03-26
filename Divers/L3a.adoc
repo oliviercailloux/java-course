@@ -45,12 +45,16 @@ Abreviations for corrections are as follows.
 |===
 | Abbrv | Pratique à respecter | Informations | Sanction
 | IN | Respect des instructions concernant la remise (création issues, etc.) | Instructions / project | −1
-| UNIK	| noms des classes est unique et respecte les bonnes pratiques	| Class path ; S3	| 0
+| UNIK	| noms des classes est unique et respecte les bonnes pratiques	| Class path ; S3	| −1
 | CASING	| respect des conventions de nommage	| https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Style.adoc[BP Style]	| −0,5
-| FORMAT	| le code est mis en forme systématiquement	| https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Style.adoc[BP Style]	| 0
+| FORMAT	| le code est mis en forme systématiquement	| https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Style.adoc[BP Style]	| −1
 | WEB	| commit effectué via git	| Git	| −1
 | DER	| le dépôt ne contient pas de produits dérivés	| https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Git.adoc[BP Git]	| −0,5
-| FOLDER	| la racine du dépôt est la racine du projet	| https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Git.adoc[BP Git]	| 0
+| FOLDER	| la racine du dépôt est la racine du projet	| https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Git.adoc[BP Git]	| −0,5
+| HIST	| Ne pas écraser l’historique	| Git	| 0
+| PLAG	| Citer la source quand on inclut du code d’autrui	| https://fr.wikipedia.org/wiki/Plagiat	| -1
+| ECL	| Le code est correct d’après Eclipse : pas d’erreurs ni de warnings (ceci n’échoue que si COMP réussit)	| https://github.com/oliviercailloux/java-course/blob/master/Tools.adoc#configuration[Tools]	| -1
+| COMP	| Le code est du Java correct.	| https://github.com/oliviercailloux/java-course/blob/master/Tools.adoc#eclipse[Vues Eclipse]	| -1,5
 |===
 
 Don’t hesitate to send me your question by e-mail if you’re blocked in your project, instead of wasting hours. However, I do expect that you make some research before you ask, and that your question be clear. See these https://codeblog.jonskeet.uk/2012/11/24/stack-overflow-question-checklist/[guidelines].
@@ -282,13 +286,18 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 [[S7]]
 === S7 (Tuesday 27th of March, 2018)
 
+* Comments: Read them all; no plagiarism (but reuse!); use https://mvnrepository.com/artifact/com.google.guava/guava/24.1-jre[Guava] `https://github.com/google/guava/wiki/PreconditionsExplained[Preconditions]#checkArgument`
+* Static factory method
+** A static method
+** Produces the type of the class it belongs to
+** Serves as a factory
+** Examples: `String.valueOf(true);`, `Integer.valueOf(3);`, `ImmutableList.of();`
+
 //TODO query about JD
 * Exceptions in Java: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours5.pdf[Airiau C5] (and see slides Contrat, appendix)
 * Maps, Comparable, Comparator: Airiau http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours7.pdf[C7], http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours8.pdf[C8]
 * https://docs.oracle.com/javase/tutorial/java/javaOO/arguments.html[Varargs]
 * Files and https://github.com/oliviercailloux/java-course/blob/master/Flows.adoc[flows]
-* Unit testing: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours8.pdf[Airiau C8]
-* Project: Files
 
 *Exercices*
 
@@ -299,9 +308,15 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 * EE7.7 (you may use standard input instead of file input)
 * Create (manually) a text file containing “Hé !” and (programmatically) open it and print its content. Your method should also work when the file is too big to fit in memory.
 
+*Todo*
+
+* Project: Files
+* Read the rest of the Java development user guide, Tips and Tricks, see https://github.com/oliviercailloux/java-course/blob/master/Tools.adoc#eclipse[Eclipse] doc
+
 [[S8]]
 === S8 (Thursday 29th of March, 2018)
 
+* Unit testing: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours8.pdf[Airiau C8]
 * Maven
 * Git in practice
 * Project: Resources
