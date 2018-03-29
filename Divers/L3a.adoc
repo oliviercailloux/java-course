@@ -319,7 +319,7 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 * QCMs constitute 20 to 30% of the CC grade.
 * A better String Comparator.
 * Unit testing: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours8.pdf[Airiau C8]
-* Project: Resources
+* Project: Resources (cf. Best Practices, https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Resources.adoc[Resources])
 
 * Implement a class `EasyMap` with two methods: a method that puts a pair of key and value of your choice into a map, and a method that returns an Optional containing the value corresponding to the given key (parameter of the method) or that returns an empty Optional if there is no such value.
 * Define MyComparator, a class that implements a comparator over your values. Add a third method to EasyMap, that returns a list of values ordered by that comparator.
