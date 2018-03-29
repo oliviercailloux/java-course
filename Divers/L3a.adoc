@@ -305,7 +305,7 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 //interfaces with generics and collections
 * http://math.hws.edu/eck/cs124/javanotes7/c10/exercises.html[EE10.4] (except you use the https://docs.oracle.com/javase/8/docs/api/java/util/function/Predicate.html[Predicate] interface from the Java API instead of writing your own)
 // list of words
-* EE7.7 (you may use standard input instead of file input)
+* http://math.hws.edu/eck/cs124/javanotes7/c7/exercises.html[EE7.7] (you may use standard input instead of file input)
 * Create (manually) a text file containing “Hé !” and (programmatically) open it and print its content. Your method should also work when the file is too big to fit in memory.
 
 *Todo*
@@ -316,28 +316,28 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 [[S8]]
 === S8 (Thursday 29th of March, 2018)
 
+* QCMs constitute 20 to 30% of the CC grade.
+* A better String Comparator.
 * Unit testing: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours8.pdf[Airiau C8]
-* Maven
-* Git in practice
 * Project: Resources
-* Project: Interfaces
-* CI
-* Logging (SLF4J)
-* Annotations
-* Tracking projects
-* Notes
-** Overload `toString()`
-** Clean repo
-** Close resources
+
+* Implement a class `EasyMap` with two methods: a method that puts a pair of key and value of your choice into a map, and a method that returns an Optional containing the value corresponding to the given key (parameter of the method) or that returns an empty Optional if there is no such value.
+* Define MyComparator, a class that implements a comparator over your values. Add a third method to EasyMap, that returns a list of values ordered by that comparator.
 
 [[S9]]
-=== S9
+=== S9 (Tuesday 10th of April, 2018)
 
-* https://github.com/oliviercailloux/java-course/blob/master/SWT.adoc[SWT]
+* Maven
+* Overload `toString()`
+* Project: Interfaces
 
 [[S10]]
 === S10
 
+* CI
+* Logging (SLF4J)
+* Annotations
+* https://github.com/oliviercailloux/java-course/blob/master/SWT.adoc[SWT]
 * Projects
 * Rev: API, …
 
