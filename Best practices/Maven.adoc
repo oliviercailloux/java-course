@@ -36,5 +36,5 @@ Web applications do not require a web descriptor (the `web.xml` file that goes i
 * [Note 2: Web applications do not require a web descriptor any more since Servlet 2.5 MR 5, more than 10 years ago (see JSR 340 Servlet 3.1 http://download.oracle.com/otn-pub/jcp/servlet-3_1-fr-eval-spec/servlet-3_1-final.pdf[spec], A.7.6 and 10.13).]
 
 == Do not refer to someone else’s project
-The POM may include a https://maven.apache.org/pom.html#More_Project_Information[`<url>`] element. If you use it, make sure it refers to your project. Do not copy templates without understanding it (I often see `<url>` pointing to +++http://maven.apache.org+++!).
+The POM may include a https://maven.apache.org/pom.html#More_Project_Information[`<url>`] element. If you use it, make sure it refers to your project. Do not copy templates without understanding it (I often see `<url>` pointing to \http://maven.apache.org!).
 
