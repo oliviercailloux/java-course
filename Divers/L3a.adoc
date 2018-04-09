@@ -23,6 +23,8 @@ You know algorithmics and the basic (non object-oriented) programming concepts i
 
 == Instructions & grading
 
+* Your GitHub username and git “User Name” must be identical.
+
 === Book exercices
 * Create a personal repository named `Java-L3-Eck-Ex`. You deposit the book exercices (EE) there. All related classes must be prefixed with `EExx`, for example `EE34MyClass`. You are free to choose the folder structure.
 * All mandatory (suffixed with [M]) book exercices (prefixed with EE) must be in that repository (in the branch `master`), 3 days before the lecture, 23:59 + 1min (e.g., lecture Saturday 23rd means a deadline on the end of Wednesday 20th).
@@ -44,24 +46,38 @@ Abreviations for corrections are as follows.
 
 |===
 | Abbrv | Pratique à respecter | Informations | Sanction
-| IN | Respect des instructions concernant la remise (création issues, etc.) | Instructions / project | −1
-| UNIK	| noms des classes est unique et respecte les bonnes pratiques	| Class path ; S3	| −1
+| IN | Respect des instructions concernant la remise (création issues, etc.) | Instructions / project | −2
+| UNIK	| noms des ressources est unique et respecte les bonnes pratiques	| https://github.com/oliviercailloux/java-course/tree/master/Class%20path[Class path] ; S3 ; BP https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Resources.adoc[resources]	| −1
 | CASING	| respect des conventions de nommage	| https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Style.adoc[BP Style]	| −0,5
 | FORMAT	| le code est mis en forme systématiquement	| https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Style.adoc[BP Style]	| −1
 | WEB	| commit effectué via git	| Git	| −1
 | DER	| le dépôt ne contient pas de produits dérivés	| https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Git.adoc[BP Git]	| −0,5
 | FOLDER	| la racine du dépôt est la racine du projet	| https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Git.adoc[BP Git]	| −0,5
 | HIST	| Ne pas écraser l’historique	| Git	| 0
-| PLAG	| Citer la source quand on inclut du code d’autrui	| https://fr.wikipedia.org/wiki/Plagiat	| -1
+| PLAG	| Citer la source quand on inclut du code d’autrui	| https://fr.wikipedia.org/wiki/Plagiat	| -3
 | ECL	| Le code est correct d’après Eclipse : pas d’erreurs ni de warnings (ceci n’échoue que si COMP réussit)	| https://github.com/oliviercailloux/java-course/blob/master/Tools.adoc#configuration[Tools]	| -1
 | COMP	| Le code est du Java correct.	| https://github.com/oliviercailloux/java-course/blob/master/Tools.adoc#eclipse[Vues Eclipse]	| -1,5
+| CP	| Le code est séparé des autres ressources du class path	| https://github.com/oliviercailloux/java-course/tree/master/Class%20path[Class path]	| −1
+| EXC	| Le code échoue rapidement et envoie des exceptions si approprié	| https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Exceptions.adoc#cath-exceptions-only-if-you-have-a-good-reason-to-do-so[BP Exc]	| −2
+| REUSE	| Les bibliothèques existantes sont utilisées à bon escient plutôt que réinventer la roue	| 	| −2
+| ARRAY	| Privilégier des collections (List, Set, etc.) plutôt que des tableaux de types primitifs	|	| −1
+| TEST	| Des tests unitaires ou fonctionnels couvrent les fonctionnalités demandées	| http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours9.pdf[Airiau C9]	| −2
+| ENC	| Préciser l’encodage des flux lus ou écrits	| https://github.com/oliviercailloux/java-course/blob/master/Flows.adoc[Flows]	| −1
+| EN	| Coder et commenter en anglais	|	| −1
+| FORE	| Privilégier boucles for each	| https://docs.oracle.com/javase/tutorial/java/nutsandbolts/for.html[Tutorial]	| −0,5
 |===
 
 Don’t hesitate to send me your question by e-mail if you’re blocked in your project, instead of wasting hours. However, I do expect that you make some research before you ask, and that your question be clear. See these https://codeblog.jonskeet.uk/2012/11/24/stack-overflow-question-checklist/[guidelines].
 
+* If you work several times on the same aspect of a functionality (and get it wrong the first times), you might get more difficulty points achieved in total than initially planned for that functionality.
+* You should each total 6 points of difficulty (the target difficulty) by the end of the year (6 hours work per project inter-session, 9 project inter-sessions, 9 hours per point of difficulty).
+* You will receive a Regularity grade at the end of the year, taking into account your total difficulty achieved (the grade adjusts approximately linearly), with a bonus if the work density leans towards the early sessions (reduced penalty) and a malus if it leans towards the late sessions (for about three points). The “middle” date is the midpoint between 10th of April and last session.
+* You will receive a Quality grade at the end of the year: a sum, weighted by achieved difficulty, of your quality marks obtained during the year, considering only the best grades if you go beyond 6 points of difficulty.
+* Your CC-Project grade is the minimum of the Regularity grade and the Quality grade.
+
 === General
 * The final grade is a mix of 50% CC grade, 50% (final) Project grade.
-* Your GitHub username and git “User Name” must be identical.
+* The CC grade is composed of 50% CC-Project grade, 20% EE grade (with compensation) and 30% MCQ grade.
 
 == Take notes
 * 5 ways of taking notes https://www.youtube.com/watch?v=AffuwyJZTQQ[video]
@@ -70,8 +86,6 @@ Don’t hesitate to send me your question by e-mail if you’re blocked in your 
 Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017/course/[course] “Introduction to Biology - The Secret of Life”, MITx
 
 == Planning
-// Object: 10 ; Project: 7
-// TODO say: one or two persons per issue; not a better grade for a given issue if one, but better grades overall if fewer persons effectively working in a project
 
 [[S1]]
 === S1 (Friday 9th of February, 2018)
@@ -293,7 +307,6 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 ** Serves as a factory
 ** Examples: `String.valueOf(true);`, `Integer.valueOf(3);`, `ImmutableList.of();`
 
-//TODO query about JD
 * Exceptions in Java: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours5.pdf[Airiau C5] (and see slides Contrat, appendix)
 * Maps, Comparable, Comparator: Airiau http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours7.pdf[C7], http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours8.pdf[C8]
 * https://docs.oracle.com/javase/tutorial/java/javaOO/arguments.html[Varargs]
@@ -316,9 +329,9 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 [[S8]]
 === S8 (Thursday 29th of March, 2018)
 
-* QCMs constitute 20 to 30% of the CC grade.
+* MCQs constitute 20 to 30% of the CC grade.
 * A better String Comparator.
-* Unit testing: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours8.pdf[Airiau C8]
+* Unit testing: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours9.pdf[Airiau C9]
 * Project: Resources (cf. Best Practices, https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Resources.adoc[Resources])
 
 * Implement a class `EasyMap` with two methods: a method that puts a pair of key and value of your choice into a map, and a method that returns an Optional containing the value corresponding to the given key (parameter of the method) or that returns an empty Optional if there is no such value.
@@ -327,23 +340,23 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 [[S9]]
 === S9 (Tuesday 10th of April, 2018)
 
-* Maven
-* Overload `toString()`
-* Project: Interfaces
+* Generality: cut into blocks (read then do); choose the right Collection
+* In class path: unique names; access through class path; read-only
+* Use `Reader`s and `Writer`s as parameters
+* https://github.com/oliviercailloux/java-course/tree/master/Maven[Maven]
+* Overload `toString()`: use Guava http://google.github.io/guava/releases/snapshot/api/docs/com/google/common/base/MoreObjects.html#toStringHelper-java.lang.Object-[`MoreObjects`]
 
 [[S10]]
-=== S10
+=== S10 (Thursday 12th of April, 2018)
 
 * CI
 * Logging (SLF4J)
-* Annotations
-* https://github.com/oliviercailloux/java-course/blob/master/SWT.adoc[SWT]
-* Projects
-* Rev: API, …
 
 [[S11]]
-=== S11
+=== S11 (Thursday 3rd of May, 2018)
 
+* Annotations
+* https://github.com/oliviercailloux/java-course/blob/master/SWT.adoc[SWT]
 * Parsing HTML: https://github.com/oliviercailloux/java-course/blob/master/HTML%20to%20DOM.adoc[DOM]
 * Accessing REST web services: https://github.com/oliviercailloux/java-course/blob/master/JAX-RS%20client.adoc[JAX-RS client]
 * equals, hashCode
@@ -371,8 +384,7 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 [[S15]]
 === S15
 
-* Results QCM
-//* Classpath (bis)
+* Classpath (bis)
 * Reminder: exceptions; naming conventions; config Eclipse
 
 [[S16]]
