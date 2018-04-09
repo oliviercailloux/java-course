@@ -342,7 +342,7 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 
 * Generality: cut into blocks (read then do); choose the right Collection
 * In class path: unique names; access through class path; read-only
-* Use `Reader`s and `Writer`s as parameters
+* Use Readers and Writers as parameters
 * https://github.com/oliviercailloux/java-course/tree/master/Maven[Maven]
 * Overload `toString()`: use Guava http://google.github.io/guava/releases/snapshot/api/docs/com/google/common/base/MoreObjects.html#toStringHelper-java.lang.Object-[`MoreObjects`]
 
