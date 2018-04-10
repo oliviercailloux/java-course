@@ -1,6 +1,6 @@
 = Maven
 
-See https://github.com/oliviercailloux/java-course/raw/master/Maven/Pr%C3%A9sentation/presentation.pdf[présentation], https://github.com/oliviercailloux/java-course/blob/master/Maven/Exercices.adoc[exercices].
+See https://github.com/oliviercailloux/java-course/raw/master/Maven/Pr%C3%A9sentation/presentation.pdf[présentation], https://github.com/oliviercailloux/java-course/blob/master/Maven/Exercices.adoc[exercices], https://github.com/oliviercailloux/java-course/blob/master/Tools.adoc[Tools] for installation.
 
 == References
 * https://maven.apache.org/guides/getting-started/index.html[Tutorial] Apache Maven
