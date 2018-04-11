@@ -55,8 +55,9 @@
 			\item statements that stay in the code
 			\item and that follow a systematic strategy
 		\end{itemize}
-		\item Write to temporary output: ?\pause standard output stream (or standard error stream)
-		\item Or write to persistent output: ?\pause file
+		\item Write to temporary output: \only<1>{?}\onslide<2->{standard output stream (or standard error stream)}
+		\item Or write to persistent output: \only<1-2>{?}\onslide<3->{file}
+		\item Why log?
 	\end{itemize}
 \end{frame}
 
@@ -66,7 +67,7 @@
 		\item Debug information for the programmer
 		\item Document your code
 		\item Keep the statements in your code but disable output on demand
-		\item Usually: save time comparing to step-by-step debugging
+		\item Save time comparing to step-by-step debugging
 		\item Debug hard to reproduce problems
 		\item See what the libraries you use do
 		\item Permit fine selection of what to show
@@ -111,7 +112,7 @@
 		\item Logger for a given class is in field \texttt{private static final Logger LOGGER}
 		\item Because: no need to distinguish loggers per instance
 		\item Obtain the logger using \texttt{LoggerFactory.getLogger(MyClass.class);}
-		\item Advantage wrt \texttt{LoggerFactory.getLogger("app.pack1.MyClass")}? \pause Refactoring: explicit link to class \pause
+		\item Advantage wrt \texttt{LoggerFactory.getLogger("mypackage.MyClass")}? \only<2>{Refactoring: explicit link to class}
 	\end{itemize}
 	\begin{lstlisting}
 @SuppressWarnings("unused")
@@ -130,11 +131,12 @@ LOGGER.debug("Temperature set to {}.
 	\vspace{1em}
 	Log an exception:
 	\begin{lstlisting}
-String s = "Hello world";
+int i;
 try {
-  Integer i = Integer.valueOf(s);
+  i = Integer.parseInt(s);// s is a String
 } catch (NumberFormatException e) {
-  logger.error("Failed to format {}", s, e);
+  LOGGER.error("Failed to format {}", s, e);
+  i = -1;
 }
 	\end{lstlisting}
 \end{frame}
