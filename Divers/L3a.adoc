@@ -349,8 +349,8 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 [[S10]]
 === S10 (Thursday 12th of April, 2018)
 
-* CI
-* Logging (SLF4J)
+* http://www.yamllint.com/[CI]
+* Logging: https://github.com/oliviercailloux/java-course/raw/master/SLF4J/presentation.pdf[SLF4J]
 
 [[S11]]
 === S11 (Thursday 3rd of May, 2018)
