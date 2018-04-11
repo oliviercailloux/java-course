@@ -27,7 +27,7 @@ CI tools can be used to automatically run a build (and trigger your tests) when 
 . Tell Travis-CI which of your GitHub repository you want Travis to take care of.
 . Add a file `.travis.yml` to your repository, with the contents indicated here below, and push it to GitHub.
 . Refresh your page on the Travis-CI web site, and watch your project being built.
-. (Optional, but cool.) Add the relevant https://docs.travis-ci.com/user/status-images/[badge] to your `README.adoc` in your project repository.
+. Add the relevant https://docs.travis-ci.com/user/status-images/[badge] to your `README.adoc` in your project repository.
 
 .Sample `.travis.yml` configuration file
 [source,yaml]
@@ -45,7 +45,7 @@ cache:
 
 Travis will start a new build each time you send a commit to your GitHub repository.
 
-The configuration file is written in http://yaml.org/[YAML], a human friendly format. I recommend https://docs.travis-ci.com/user/travis-lint[validating] your configuration file whenever you change it.
+The configuration file is written in http://yaml.org/[YAML], a human friendly format. I recommend http://www.yamllint.com/[validating] your configuration file whenever you change it.
 
 The sample configuration file suggested here tells Travis to:
 
