@@ -42,6 +42,13 @@ Let’s now import the project into Eclipse.
 * Run Eclipse
 * Import using: `File` / `Import` / `Existing Maven Projects`
 
+=== Hint
+If Eclipse is lost:
+
+* Delete the project from Eclipse
+* Using a file navigator, manually delete the Eclipse configuration from within your project: `.project`, `.classpath` and the folder `.settings`.
+* Re-import the project into Eclipse. This forces Eclipse to re-create the configuration from scratch (based on Maven).
+
 //== Refs
 //* http://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_jar_packaging
 
