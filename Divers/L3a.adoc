@@ -351,8 +351,7 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 
 * Logging: https://github.com/oliviercailloux/java-course/raw/master/SLF4J/presentation.pdf[SLF4J]
 * https://github.com/oliviercailloux/java-course/blob/master/CI.adoc[CI]
-* Everybody is supposed to know the tools used in the project
-// Maven and Travis must be known by all
+* Everybody is supposed to master the tools used in the project (for example, check the https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Maven.adoc[Maven Best Practices])
 
 [[S11]]
 === S11 (Thursday 3rd of May, 2018)
