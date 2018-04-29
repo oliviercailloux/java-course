@@ -254,11 +254,11 @@
 	\end{minipage}\hfill
 	\begin{minipage}[t]{\textwidth-35mm}
 		\begin{itemize}
-			\item \href{http://help.eclipse.org/neon/advanced/content.jsp?topic=/org.eclipse.platform.doc.isv/reference/api/org/eclipse/swt/widgets/Widget.html}{\texttt{Widget}}: GUI component; can send events; must be disposed
-			\item \href{http://help.eclipse.org/neon/advanced/content.jsp?topic=/org.eclipse.platform.doc.isv/reference/api/org/eclipse/swt/widgets/Control.html}{\texttt{Control}}: may be put into a composite; has bounds
-			\item \href{http://help.eclipse.org/neon/advanced/content.jsp?topic=/org.eclipse.platform.doc.isv/reference/api/org/eclipse/swt/widgets/Composite.html}{\texttt{Composite}}: can contain child controls
-			\item \href{http://help.eclipse.org/neon/advanced/content.jsp?topic=/org.eclipse.platform.doc.isv/reference/api/org/eclipse/swt/widgets/Shell.html}{\texttt{Shell}}: top-level window connected to a display
-			\item \href{http://help.eclipse.org/neon/advanced/content.jsp?topic=/org.eclipse.platform.doc.isv/reference/api/org/eclipse/swt/widgets/Display.html}{\texttt{Display}}: represents the connection to the native display
+			\item \href{http://help.eclipse.org/oxygen/advanced/content.jsp?topic=/org.eclipse.platform.doc.isv/reference/api/org/eclipse/swt/widgets/Widget.html}{\texttt{Widget}}: GUI component; can send events; must be disposed
+			\item \href{http://help.eclipse.org/oxygen/advanced/content.jsp?topic=/org.eclipse.platform.doc.isv/reference/api/org/eclipse/swt/widgets/Control.html}{\texttt{Control}}: may be put into a composite; has bounds
+			\item \href{http://help.eclipse.org/oxygen/advanced/content.jsp?topic=/org.eclipse.platform.doc.isv/reference/api/org/eclipse/swt/widgets/Composite.html}{\texttt{Composite}}: can contain child controls
+			\item \href{http://help.eclipse.org/oxygen/advanced/content.jsp?topic=/org.eclipse.platform.doc.isv/reference/api/org/eclipse/swt/widgets/Shell.html}{\texttt{Shell}}: top-level window connected to a display
+			\item \href{http://help.eclipse.org/oxygen/advanced/content.jsp?topic=/org.eclipse.platform.doc.isv/reference/api/org/eclipse/swt/widgets/Display.html}{\texttt{Display}}: represents the connection to the native display
 		\end{itemize}
 	\end{minipage}
 \end{frame}
@@ -304,7 +304,7 @@ display.dispose();
 	\frametitle{Listen to widgets}
 	\begin{itemize}
 		\item Implement the right *Listener interface
-		\item Example: \href{http://help.eclipse.org/neon/advanced/content.jsp?topic=/org.eclipse.platform.doc.isv/reference/api/org/eclipse/swt/events/SelectionListener.html}{\texttt{SelectionListener}}
+		\item Example: \href{http://help.eclipse.org/oxygen/advanced/content.jsp?topic=/org.eclipse.platform.doc.isv/reference/api/org/eclipse/swt/events/SelectionListener.html}{\texttt{SelectionListener}}
 		\item Add your implementer to the observers of the widget
 		\item \texttt{button.addSelectionListener(myListener);}
 		\item When the widget fires the corresponding event, your listener will be called
@@ -325,8 +325,8 @@ display.dispose();
 	\frametitle{Items in controls}
 	\begin{itemize}
 		\item Some controls must be populated with items
-		\item Example: \href{http://help.eclipse.org/neon/advanced/content.jsp?topic=/org.eclipse.platform.doc.isv/reference/api/org/eclipse/swt/widgets/TableItem.html}{\texttt{TableItem}} represents a row of a \href{http://help.eclipse.org/neon/advanced/content.jsp?topic=/org.eclipse.platform.doc.isv/reference/api/org/eclipse/swt/widgets/Table.html}{\texttt{Table}}
-		\item \href{http://help.eclipse.org/neon/advanced/content.jsp?topic=/org.eclipse.platform.doc.isv/reference/api/org/eclipse/swt/widgets/Item.html}{\texttt{Item}}s are widgets but not controls: their position is {\tiny partly} controlled by their parent
+		\item Example: \href{http://help.eclipse.org/oxygen/advanced/content.jsp?topic=/org.eclipse.platform.doc.isv/reference/api/org/eclipse/swt/widgets/TableItem.html}{\texttt{TableItem}} represents a row of a \href{http://help.eclipse.org/oxygen/advanced/content.jsp?topic=/org.eclipse.platform.doc.isv/reference/api/org/eclipse/swt/widgets/Table.html}{\texttt{Table}}
+		\item \href{http://help.eclipse.org/oxygen/advanced/content.jsp?topic=/org.eclipse.platform.doc.isv/reference/api/org/eclipse/swt/widgets/Item.html}{\texttt{Item}}s are widgets but not controls: their position is {\tiny partly} controlled by their parent
 	\end{itemize}
 \end{frame}
 
