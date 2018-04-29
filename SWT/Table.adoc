@@ -1,13 +1,13 @@
 = SWT Table widget
 :sectanchors:
 
-This document present various poosibilities of using SWT table widget and JFace table helpers.
+This document present various possibilities of using SWT table widget and JFace table helpers.
 
 == Raw Table widget
 
 “Raw” http://help.eclipse.org/oxygen/nftopic/org.eclipse.platform.doc.isv/reference/api/org/eclipse/swt/widgets/Table.html[Table] widgets (that is, without using JFace additions to it) work as follows. You add `http://help.eclipse.org/oxygen/nftopic/org.eclipse.platform.doc.isv/reference/api/org/eclipse/swt/widgets/TableItem.html[TableItem]` s to it (one per line); and `http://help.eclipse.org/oxygen/nftopic/org.eclipse.platform.doc.isv/reference/api/org/eclipse/swt/widgets/TableColumn.html[TableColumn]` s (one per, well, column). You set text on the table items by column index using `setText(int, String)`. You need to manually keep the table items synced to your model. You may insert and remove table items by index.
 
-To support edition, add `http://help.eclipse.org/oxygen/nftopic/org.eclipse.platform.doc.isv/reference/api/org/eclipse/swt/custom/TableEditor.html[TableEditor]` s to cells in the table. A table editor has a cell editor control (of type control and not `CellEditor`) and is bound to a cell in the table (actually, to a table item and a column). The cell editor control appears on top of (that is, instead of) the normal cell of the table. You need to register manually for events to detect when the user has validated some new input, and update your model accordingly. You probably also need to manually toggle between the normal table view and the table editor view. For example, if a specific column requires a combo box for edition, you probably want to display a combo box only when the user has focussed on a cell in that column, and otherwise just display a string with no combo box.
+To support edition, add `http://help.eclipse.org/oxygen/nftopic/org.eclipse.platform.doc.isv/reference/api/org/eclipse/swt/custom/TableEditor.html[TableEditor]` s to cells in the table. A table editor has a cell editor control (of type control and not `CellEditor`) and is bound to a cell in the table (actually, to a table item and a column). The cell editor control appears on top of (that is, instead of) the normal cell of the table. You need to register manually for events to detect when the user has validated some new input, and update your model accordingly. You probably also need to manually toggle between the normal table view and the table editor view. For example, if a specific column requires a combo box for edition, you probably want to display a combo box only when the focus is on a cell in that column, and otherwise just display a string with no combo box.
 
 == JFace TableViewer
 
@@ -53,7 +53,7 @@ I recommend to use the more flexible and more recent API that involves table col
 
 As an alternative way of supporting edition, use a cell modifier. It uses column properties, text strings that identifies columns and that also are set on the viewer itself.
 
-== References
+== See also
 * Vogella’s http://www.vogella.com/tutorials/EclipseJFaceTable/article.html[introduction] to JFace and Table
 * Vogella’s http://www.vogella.com/tutorials/EclipseJFaceTableAdvanced/article.html[tricks] for JFace and Table
 
