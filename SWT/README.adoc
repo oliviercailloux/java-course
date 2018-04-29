@@ -1,0 +1,91 @@
+= SWT
+
+See https://github.com/oliviercailloux/java-course/raw/master/SWT/Pr%C3%A9sentation/presentation.pdf[présentation], https://github.com/oliviercailloux/java-course/blob/master/SWT/SWT.adoc[references].
+
+== Maven
+
+Eclipse recently (and finally!) started publishing its artifacts to Maven Central. It is still to be polished somewhat, but it can be made to work.
+
+.Include SWT as a dependency in your `pom.xml`
+[source,xml]
+----
+<dependency>
+	<groupId>org.eclipse.platform</groupId>
+	<artifactId>org.eclipse.swt.gtk.linux.x86_64</artifactId>
+	<version>3.105.3</version>
+	<optional>true</optional>
+</dependency>
+----
+
+You need to replace the artifactId with the one corresponding to your platform (see official link below).
+
+.Include JFace as a dependency in your `pom.xml`
+[source,xml]
+----
+<dependency>
+	<groupId>org.eclipse.platform</groupId>
+	<artifactId>org.eclipse.jface</artifactId>
+	<version>3.12.2</version>
+</dependency>
+----
+
+When depending on SWT, you also need to add the following in your dependencyManagement section (to specify the versions and hence avoid relying on the versions ranges provided in the pom of SWT).
+
+.Specify version of dependencies in your `pom.xml`
+[source,xml]
+----
+<dependencyManagement>
+	<dependencies>
+		<dependency>
+			<groupId>org.eclipse.platform</groupId>
+			<artifactId>org.eclipse.swt</artifactId>
+			<version>3.105.3</version>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.platform</groupId>
+			<artifactId>org.eclipse.core.commands</artifactId>
+			<version>3.8.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.platform</groupId>
+			<artifactId>org.eclipse.equinox.common</artifactId>
+			<version>3.8.0</version>
+		</dependency>
+	</dependencies>
+</dependencyManagement>
+----
+
+Further notes:
+
+* Official link:++http://search.maven.org/#search|ga|1|g:%22org.eclipse.platform%22 org.eclipse.swt++[SWT], link:++http://search.maven.org/#search|ga|1|g:%22org.eclipse.platform%22 a:%22org.eclipse.jface%22++[JFace] artifacts in Central
+* Some non-official SWT artifacts misleadingly seem more recent than the official ones (e.g., 4.6.1 instead of 3.105.0), because they use the version of the Eclipse release in which the SWT artifact is found rather than the version of the artifact itself. (You can easily check this. In Eclipse oxygen, check Eclipse Installation Details, Plug-ins, Plug-in Id `org.eclipse.swt`: it has version 3.105…) (https://bugs.eclipse.org/bugs/show_bug.cgi?id=484004#c90[Source].)
+* Bug https://bugs.eclipse.org/bugs/show_bug.cgi?id=484004[484004] - Start publishing Eclipse platform artifacts to Maven central 
+* Current https://bugs.eclipse.org/bugs/show_bug.cgi?id=510186[discussion] about correctly releasing SWT to Maven Central (and https://bugs.eclipse.org/bugs/show_bug.cgi?id=510072[related])
+
+== References
+
+=== Overview links
+* Platform Plug-in Developer Guide > Programmer's Guide > http://help.eclipse.org/oxygen/index.jsp?topic=/org.eclipse.platform.doc.isv/guide/swt.htm[The Standard Widget Toolkit]
+* Platform Plug-in Developer Guide > Programmer's Guide > http://help.eclipse.org/oxygen/index.jsp?topic=/org.eclipse.platform.doc.isv/guide/jface.htm[The JFace UI framework]
+* Vogella’s http://www.vogella.com/tutorials/SWT/article.html[SWT] and http://www.vogella.com/tutorials/EclipseJFace/article.html[JFace] overview articles (and http://www.vogella.com/tutorials/eclipse.html[more])
+* General http://news.sys-con.com/node/37463[introduction] to SWT
+* Understanding Layouts in SWT http://www.eclipse.org/articles/article.php?file=Article-Understanding-Layouts/index.html[article]
+
+=== Links by topic
+* http://www.eclipse.org/swt/snippets/[SWT snippets]
+* http://wiki.eclipse.org/JFaceSnippets[JFace snippets]
+* SWT Widget http://wiki.eclipse.org/SWT_Widget_Style_Bits[Style Bits]
+* SWT Widgets http://www.eclipse.org/swt/widgets/[by screenshot]
+* Javadoc: Package http://help.eclipse.org/oxygen/nftopic/org.eclipse.platform.doc.isv/reference/api/org/eclipse/swt/widgets/package-summary.html[org.eclipse.swt.widgets]
+* http://wiki.eclipse.org/JFace_Data_Binding[JFace Data Binding]
+
+=== SWT Table
+* Vogella’s http://www.vogella.com/tutorials/EclipseJFaceTable/article.html[introduction] to JFace Table
+* Vogella’s http://www.vogella.com/tutorials/EclipseJFaceTableAdvanced/article.html[tricks] for JFace Table
+
+=== Further references
+References here are possibly less useful (more specialized, somewhat outdated, …).
+
+* The Official Eclipse FAQs: http://wiki.eclipse.org/The_Official_Eclipse_FAQs#Standard_Widget_Toolkit_.28SWT.29[SWT], http://wiki.eclipse.org/The_Official_Eclipse_FAQs#JFace[JFace]
+* https://wiki.eclipse.org/Eclipse_Corner[Eclipse Corner]: various articles (the http://www.eclipse.org/articles/Article-Table-viewer/table_viewer.html[article] about building a table editor is outdated)
+
