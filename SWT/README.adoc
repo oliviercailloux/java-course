@@ -12,8 +12,14 @@ Eclipse recently (and finally!) started publishing its artifacts to Maven Centra
 <dependency>
 	<groupId>org.eclipse.platform</groupId>
 	<artifactId>org.eclipse.swt.gtk.linux.x86_64</artifactId>
-	<version>3.105.3</version>
+	<version>3.106.3</version>
 	<optional>true</optional>
+	<exclusions>
+		<exclusion>
+			<groupId>org.eclipse.platform</groupId>
+			<artifactId>org.eclipse.swt</artifactId>
+		</exclusion>
+	</exclusions>
 </dependency>
 ----
 
@@ -25,11 +31,17 @@ You need to replace the artifactId with the one corresponding to your platform (
 <dependency>
 	<groupId>org.eclipse.platform</groupId>
 	<artifactId>org.eclipse.jface</artifactId>
-	<version>3.12.2</version>
+	<version>3.13.2</version>
+	<exclusions>
+		<exclusion>
+			<groupId>org.eclipse.platform</groupId>
+			<artifactId>org.eclipse.swt</artifactId>
+		</exclusion>
+	</exclusions>
 </dependency>
 ----
 
-When depending on SWT, you also need to add the following in your dependencyManagement section (to specify the versions and hence avoid relying on the versions ranges provided in the pom of SWT).
+When depending on JFace, you also need to add the following in your dependencyManagement section (to specify the versions and hence avoid relying on the versions ranges provided in the pom of JFace).
 
 .Specify version of dependencies in your `pom.xml`
 [source,xml]
@@ -38,18 +50,13 @@ When depending on SWT, you also need to add the following in your dependencyMana
 	<dependencies>
 		<dependency>
 			<groupId>org.eclipse.platform</groupId>
-			<artifactId>org.eclipse.swt</artifactId>
-			<version>3.105.3</version>
-		</dependency>
-		<dependency>
-			<groupId>org.eclipse.platform</groupId>
 			<artifactId>org.eclipse.core.commands</artifactId>
-			<version>3.8.1</version>
+			<version>3.9.0</version>
 		</dependency>
 		<dependency>
 			<groupId>org.eclipse.platform</groupId>
 			<artifactId>org.eclipse.equinox.common</artifactId>
-			<version>3.8.0</version>
+			<version>3.9.0</version>
 		</dependency>
 	</dependencies>
 </dependencyManagement>
@@ -59,11 +66,12 @@ Further notes:
 
 * Official http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.eclipse.platform%22%20org.eclipse.swt[SWT], http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.eclipse.platform%22%20a%3A%22org.eclipse.jface%22[JFace] artifacts in Central
 * Some non-official SWT artifacts misleadingly seem more recent than the official ones (e.g., 4.6.1 instead of 3.105.0), because they use the version of the Eclipse release in which the SWT artifact is found rather than the version of the artifact itself. (You can easily check this. In Eclipse oxygen, check Eclipse Installation Details, Plug-ins, Plug-in Id `org.eclipse.swt`: it has version 3.x) (https://bugs.eclipse.org/bugs/show_bug.cgi?id=484004#c90[Source].)
+* https://bugs.eclipse.org/bugs/show_bug.cgi?id=510072[Discussion] https://bugs.eclipse.org/bugs/show_bug.cgi?id=520337[about] usage of SWT in Maven
 
 //* Bug https://bugs.eclipse.org/bugs/show_bug.cgi?id=484004[484004] - Start publishing Eclipse platform artifacts to Maven central - Only historical interest here
 // https://bugs.eclipse.org/bugs/show_bug.cgi?id=510186 - Improve mavenization of fragments - Initial (messy) discussion of Maven and SWT (comment 12 for usage of our solution).
-// 510072 - Scripts & tool for publishing to Maven Central should migrate to releng git - maven and SWT
-// 520337 - My suggestion
+// https://bugs.eclipse.org/bugs/show_bug.cgi?id=510072 - Scripts & tool for publishing to Maven Central should migrate to releng git - maven and SWT
+// https://bugs.eclipse.org/bugs/show_bug.cgi?id=520337 - My suggestion
 
 // 515137 - publish a pom as a kind of target platform definition for maven consumers
 
