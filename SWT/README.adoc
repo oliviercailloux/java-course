@@ -79,10 +79,6 @@ Further notes:
 * Javadoc: Package http://help.eclipse.org/oxygen/nftopic/org.eclipse.platform.doc.isv/reference/api/org/eclipse/swt/widgets/package-summary.html[org.eclipse.swt.widgets]
 * http://wiki.eclipse.org/JFace_Data_Binding[JFace Data Binding]
 
-=== SWT Table
-* Vogella’s http://www.vogella.com/tutorials/EclipseJFaceTable/article.html[introduction] to JFace Table
-* Vogella’s http://www.vogella.com/tutorials/EclipseJFaceTableAdvanced/article.html[tricks] for JFace Table
-
 === Further references
 References here are possibly less useful (more specialized, somewhat outdated, …).
 
