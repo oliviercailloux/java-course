@@ -57,10 +57,15 @@ When depending on SWT, you also need to add the following in your dependencyMana
 
 Further notes:
 
-* Official link:++http://search.maven.org/#search|ga|1|g:%22org.eclipse.platform%22 org.eclipse.swt++[SWT], link:++http://search.maven.org/#search|ga|1|g:%22org.eclipse.platform%22 a:%22org.eclipse.jface%22++[JFace] artifacts in Central
-* Some non-official SWT artifacts misleadingly seem more recent than the official ones (e.g., 4.6.1 instead of 3.105.0), because they use the version of the Eclipse release in which the SWT artifact is found rather than the version of the artifact itself. (You can easily check this. In Eclipse oxygen, check Eclipse Installation Details, Plug-ins, Plug-in Id `org.eclipse.swt`: it has version 3.105…) (https://bugs.eclipse.org/bugs/show_bug.cgi?id=484004#c90[Source].)
-* Bug https://bugs.eclipse.org/bugs/show_bug.cgi?id=484004[484004] - Start publishing Eclipse platform artifacts to Maven central 
-* Current https://bugs.eclipse.org/bugs/show_bug.cgi?id=510186[discussion] about correctly releasing SWT to Maven Central (and https://bugs.eclipse.org/bugs/show_bug.cgi?id=510072[related])
+* Official http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.eclipse.platform%22%20org.eclipse.swt[SWT], http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.eclipse.platform%22%20a%3A%22org.eclipse.jface%22[JFace] artifacts in Central
+* Some non-official SWT artifacts misleadingly seem more recent than the official ones (e.g., 4.6.1 instead of 3.105.0), because they use the version of the Eclipse release in which the SWT artifact is found rather than the version of the artifact itself. (You can easily check this. In Eclipse oxygen, check Eclipse Installation Details, Plug-ins, Plug-in Id `org.eclipse.swt`: it has version 3.x) (https://bugs.eclipse.org/bugs/show_bug.cgi?id=484004#c90[Source].)
+
+//* Bug https://bugs.eclipse.org/bugs/show_bug.cgi?id=484004[484004] - Start publishing Eclipse platform artifacts to Maven central - Only historical interest here
+// https://bugs.eclipse.org/bugs/show_bug.cgi?id=510186 - Improve mavenization of fragments - Initial (messy) discussion of Maven and SWT (comment 12 for usage of our solution).
+// 510072 - Scripts & tool for publishing to Maven Central should migrate to releng git - maven and SWT
+// 520337 - My suggestion
+
+// 515137 - publish a pom as a kind of target platform definition for maven consumers
 
 == References
 
