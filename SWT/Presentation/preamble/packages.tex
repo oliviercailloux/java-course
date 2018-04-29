@@ -1,10 +1,21 @@
 %INSTALL
+\pdfgentounicode=1 %permits (with package glyphtounicode) to copy eg x ⪰ y iff v(x) ≥ v(y) from pdf to unicode data. 
+\input{glyphtounicode}%TODO avoid warning when redefining → (and others) ; make it work for ℝ (U+211D) as well
+\usepackage[T1]{fontenc}%encode resulting accented characters correctly in resulting PDF, permits copy-paste
+\usepackage[utf8]{inputenc}
+\usepackage{newunicodechar}%able to use e.g. → or ≤ in source
+\usepackage{lmodern}%has more characters such as ligatures, permit copy from resulting PDF.
+\usepackage{textcomp}%useful for redefining → and ¬ and … (otherwise seems to attempt to use \textrightarrow and the like but are not defined)
+% solves bug in lmodern, https://tex.stackexchange.com/a/261188/
+\DeclareFontShape{OMX}{cmex}{m}{n}{
+  <-7.5> cmex7
+  <7.5-8.5> cmex8
+  <8.5-9.5> cmex9
+  <9.5-> cmex10
+}{}
 
-%avoids a warning
-\usepackage[log-declarations=false]{xparse}
-\usepackage{fontspec} %font selecting commands
-\usepackage{xunicode}
-\usepackage{ucharclasses}
+\SetSymbolFont{largesymbols}{normal}{OMX}{cmex}{m}{n}
+\SetSymbolFont{largesymbols}{bold}  {OMX}{cmex}{m}{n}
 %warn about missing characters
 \tracinglostchars=2
 
@@ -20,20 +31,22 @@
 \usepackage{mathtools} %load this before babel!
 	\mathtoolsset{showonlyrefs,showmanualtags}
 
-\usepackage[french, english]{babel}
+\usepackage{natbib}%Package frenchb asks to load natbib before babel/frenchb
+\usepackage{babel}%[french, english]: language options should be on the document level
 %suppresses the warning about frenchb not modifying the captions (“—” to “:” in “Figure 1 – Legend”).
 %	\frenchbsetup{AutoSpacePunctuation=false,SuppressWarning=true}% test with false?
 	\frenchbsetup{AutoSpacePunctuation=false,SuppressWarning=false}
 
 %\usepackage[super]{nth}%better use fmtcount! (loaded by datetime anyway; see below about pbl with warnings and package silence)
 \usepackage{listings} %typeset source code listings
-	\lstset{language=XML,tabsize=2,captionpos=b,basicstyle=\NoAutoSpacing}%NoAutoSpacing avoids space before colon or ?}%,literate={"}{{\tt"}}1, keywordstyle=\fontspec{Latin Modern Mono Light}\textbf, emph={String, PreparedStatement}, emphstyle=\fontspec{Latin Modern Mono Light}\textbf, language=Java, basicstyle=\small\NoAutoSpacing\ttfamily, aboveskip=0pt, belowskip=0pt, showstringspaces=false
+	\lstset{language=XML,tabsize=2,captionpos=b,basicstyle=\NoAutoSpacing}%NoAutoSpacing avoids space before colon or ?}%,literate={"}{{\tt"}}1, keywordstyle=\fontspec{Latin Modern Mono Light}\textbf, emph={String, PreparedStatement}, emphstyle=\fontspec{Latin Modern Mono Light}\textbf, language=Java, basicstyle=\small\NoAutoSpacing\ttfamily, frame=single, aboveskip=0pt, belowskip=0pt, showstringspaces=false
 \usepackage[nolist,smaller,printonlyused]{acronym}%,smaller option produces warnings from relsize in some cases, it seems.% Note silence and acronym and hyperref make (xe)latex crash when ac used in section (http://tex.stackexchange.com/questions/103483/strange-packages-interaction-acronyms-silence-hyperref), rather use \section{\texorpdfstring{\acs{UE}}{UE}}.
 \usepackage{fmtcount}
 \usepackage[nodayofweek]{datetime}%must be loaded after the babel package. However, loading it after {nth} generates a warning from fmtcount about ordinal being already defined. Better load it before nth? (then we can remove the silence package which creates possible crashes, see above.) Or remove nth?
 %\usepackage{xspace}%do we need this?
 \nottoggle{LCpres}{
 	\usepackage[textsize=small]{todonotes}
+}{
 }
 \iftoggle{LCpres}{
 	%remove pdfusetitle (implied by beamer)
@@ -42,15 +55,24 @@
 % option pdfusetitle must be introduced here, not in hypersetup.
 	\usepackage[pdfusetitle]{hyperref}
 }
+\nottoggle{LCpres}{
+%seems like authblk wants to be later than hyperref, but sooner than silence
+\usepackage{authblk}
+\renewcommand\Affilfont{\small}
+}{
+}
+\usepackage{silence}
+\WarningFilter{newunicodechar}{Redefining Unicode character}
 %breaklinks makes links on multiple lines into different PDF links to the same target.
 %colorlinks (false): Colors the text of links and anchors. The colors chosen depend on the the type of link. In spite of colored boxes, the colored text remains when printing.
 %linkcolor=black: this leaves other links in colors, e.g. refs in green, don't print well.
 %pdfborder (0 0 1, set to 0 0 0 if colorlinks): width of PDF link border
-%hidelinks
+%hidelinks or: colorlinks, linkcolor=black, citecolor=black, urlcolor={blue!80!black}
 \hypersetup{breaklinks, bookmarksopen}
 %add hyperfigures=true in hypersetup (already defined in article mode)
 \iftoggle{LCpres}{
 	\hypersetup{hyperfigures}
+}{
 }
 
 %in Beamer, sets url colored links but does not change the rest of the colors (http://tex.stackexchange.com/questions/13423/how-to-change-the-color-of-href-links-for-real)
@@ -65,80 +87,37 @@
 % \makeatother
 \nottoggle{LCpres}{
 	\usepackage{enumitem} %follow enumerate by a string saying how to display enumeration
+}{
 }
 \usepackage{ragged2e} %new com­mands \Cen­ter­ing, \RaggedLeft, and \RaggedRight and new en­vi­ron­ments Cen­ter, FlushLeft, and FlushRight, which set ragged text and are eas­ily con­fig­urable to al­low hy­phen­ation (the cor­re­spond­ing com­mands in LaTeX, all of whose names are lower-case, pre­vent hy­phen­ation al­to­gether). 
 \usepackage{siunitx} %[expproduct=tighttimes, decimalsymbol=comma] ou (plus récent ?) [round-mode=figures, round-precision=2, scientific-notation = engineering]
 \sisetup{detect-all, locale = FR, strict}% to detect e.g. when in math mode (use a math font) - check whether this makes sense with strict
 \usepackage{braket} %for \Set
-\usepackage{natbib}
 \usepackage{doi}
 
 \usepackage{amsmath,amsthm}
+\usepackage{amssymb}% for \mathbb{R}
+\usepackage{bm}%“The \boldsymbol command is obtained preferably by using the bm package, which provides a newer, more powerful version than the one provided by the amsmath package. Generally speaking, it is ill-advised to apply \boldsymbol to more than one symbol at a time.” — AMS Short math guide. “If no bold font appears to be available for a particular symbol, \bm will use ‘poor man’s bold’” — bm
 % \usepackage{amsfonts} %not required?
 % \usepackage{dsfont} %for what?
-%unicode-math overwrites the following commands from the mathtools package: \dblcolon, \coloneqq, \Coloneqq, \eqqcolon. Using the other colon-like commands from mathtools will lead to inconsistencies. Plus, Using \overbracket and \underbracke from mathtools package. Use \Uoverbracket and \Uunderbracke for original unicode-math definition.
-%use exclusively \mathbf and choose math bold style below.
-\usepackage[warnings-off={mathtools-colon, mathtools-overbracket}, bold-style=ISO]{unicode-math}
 
-\defaultfontfeatures{
-	Fractions=On,
-	Mapping=tex-text% to turn "--" into dashes, useful for bibtex%%
-}
-%\defaultfontfeatures[\rmfamily, \sffamily]{
-%\defaultfontfeatures[\rmfamily]{
-%	Fractions=On,
-%	Mapping=% to leave " alone (disable the default mapping tex-text; requires loading the font afterwards?)
-%}
-\newfontfamily\xitsfamily{XITS}
-\newfontfamily\texgyretermesfamily{TeX Gyre Termes}
-\newfontfamily\texgyreherosfamily{TeX Gyre Heros}
-\newfontfamily\lmfamily{Latin Modern Roman}
-\iftoggle{LCpres}{
-	\setmainfont{Latin Modern Roman}
-	\setsansfont{Latin Modern Sans}
-	\setmonofont{Latin Modern Mono}
-}{
-	\setmainfont{TeX Gyre Termes}
-	\setsansfont{TeX Gyre Heros}
-	\setmonofont{TeX Gyre Cursor}
-}
-\defaultfontfeatures{}%disable default font features to avoid warnings with math fonts.
-\setmathfont{XITS Math}
-\setmathfont[range={\mathcal,\mathbfcal},StylisticSet=1]{XITS Math}
-%silently delays restoring normal font when using e.g. “≠)” or “≠ other word”.
-%\setTransitionTo{Arrows}{\xitsfamily}
-%\setTransitionTo{MathematicalOperators}{\xitsfamily}
-%this solution explicitly fails on “≠)” and works for “≠ other word.”
-\setTransitionsFor{MathematicalOperators}{\begingroup\xitsfamily}{\endgroup}
-\setTransitionsFor{Arrows}{\begingroup\xitsfamily}{\endgroup}
-%texgyretermes does not have ✓, XITS does.
-\setTransitionsFor{Dingbats}{\begingroup\xitsfamily}{\endgroup}
-%this also works, but it is more complex
-%\def\ResetTransitionTo#1{%
-%  \XeTeXinterchartoks 255 \csname#1Class\endcsname{\relax}}
-%\setTransitionsFor{MathematicalOperators}
-%  {\begingroup\ResetTransitionTo{MathematicalOperators}\xitsfamily}
-%  {\endgroup}
-
+\usepackage{environ}%for xdescwd command
+%BUT see https://tex.stackexchange.com/questions/83798/cleveref-varioref-missing-endcsname-inserted for cleveref with french
 \usepackage{cleveref}% cleveref should go "laster" than hyperref
 %GRAPHICS
 \usepackage{pgf}
 \usepackage{pgfplots}
 	\usetikzlibrary{babel, matrix, fit, plotmarks, calc, trees, shapes.geometric, positioning, plothandlers, arrows, shapes.multipart, graphs}
-\pgfplotsset{compat=1.11}
+\pgfplotsset{compat=1.14}
 \usepackage{graphicx}
+
+\DeclareMathAlphabet\mathbfcal{OMS}{cmsy}{b}{n}
 
 \graphicspath{{graphics/},{graphics-dm/}}
 \DeclareGraphicsExtensions{.pdf}
-\LetLtxMacro\SavedIncludeGraphics\includegraphics
-\AtBeginDocument{
-	\def\includegraphics#1#{% #1 catches optional stuff (star/opt. arg.)
-		\IncludeGraphicsAux{#1}%
-	}%
-}
 \newcommand*{\IncludeGraphicsAux}[2]{%
 	\XeTeXLinkBox{%
-		\SavedIncludeGraphics#1{#2}%
+		\includegraphics#1{#2}%
 	}%
 }%
 
@@ -149,7 +128,7 @@
 % 	\setlength{\templ}{6 pt}
 % 	\printlength{\templ}
 \usepackage{scrhack}% load at end. Corrects a bug in float package, which is outdated but might be used by other packages
-\usepackage{xltxtra} %somebody said that this is loaded by fontspec, but does not seem correct: if not loaded explicitly, does not appear in the log and \showhyphens is not corrected.
+\usepackage{mathrsfs}% for \mathscr
 
 %Beamer-specific
 %do not remove babel, which beamer uses (beamer uses the \translate command for the appendix); but french can be removed.
@@ -160,6 +139,7 @@
 	\usefonttheme{professionalfonts}
 	\setcounter{tocdepth}{10}
 	\input{preamble/beamer-patch.tex}
+}{
 }
 % \newcommand{\citep}{\cite}%Better: leave natbib.
 % \setbeamersize{text margin left=0.1cm, text margin right=0.1cm} 
