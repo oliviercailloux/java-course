@@ -1,6 +1,6 @@
 = SWT
 
-See https://github.com/oliviercailloux/java-course/raw/master/SWT/Pr%C3%A9sentation/presentation.pdf[présentation]. Instructions for using Maven are below; and further below, some references.
+See https://github.com/oliviercailloux/java-course/raw/master/SWT/Pr%C3%A9sentation/presentation.pdf[présentation]. Instructions for using SWT with Maven are below; and further below, some references.
 
 == Maven
 
