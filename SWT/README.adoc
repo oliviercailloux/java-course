@@ -1,6 +1,6 @@
 = SWT
 
-See https://github.com/oliviercailloux/java-course/raw/master/SWT/Pr%C3%A9sentation/presentation.pdf[présentation], https://github.com/oliviercailloux/java-course/blob/master/SWT/SWT.adoc[references].
+See https://github.com/oliviercailloux/java-course/raw/master/SWT/Pr%C3%A9sentation/presentation.pdf[présentation]. Instructions for using Maven are below; and further below, some references.
 
 == Maven
 
@@ -77,6 +77,7 @@ Further notes:
 * SWT Widget http://wiki.eclipse.org/SWT_Widget_Style_Bits[Style Bits]
 * SWT Widgets http://www.eclipse.org/swt/widgets/[by screenshot]
 * Javadoc: Package http://help.eclipse.org/oxygen/nftopic/org.eclipse.platform.doc.isv/reference/api/org/eclipse/swt/widgets/package-summary.html[org.eclipse.swt.widgets]
+* Using an SWT/JFace https://github.com/oliviercailloux/java-course/blob/master/SWT/Table.adoc[Table]
 * http://wiki.eclipse.org/JFace_Data_Binding[JFace Data Binding]
 
 === Further references
