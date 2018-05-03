@@ -65,6 +65,8 @@ Abreviations for corrections are as follows.
 | ENC	| Préciser l’encodage des flux lus ou écrits	| https://github.com/oliviercailloux/java-course/blob/master/Flows.adoc[Flows]	| −1
 | EN	| Coder et commenter en anglais	|	| −1
 | FORE	| Privilégier boucles for each	| https://docs.oracle.com/javase/tutorial/java/nutsandbolts/for.html[Tutorial]	| −0,5
+| LOG	| Utiliser des loggers	| https://github.com/oliviercailloux/java-course/raw/master/SLF4J/presentation.pdf[SLF4J]	| −1
+| STREAMS	| Utiliser des streams pour plus de généralité quand approprié	| https://github.com/oliviercailloux/java-course/blob/master/Flows.adoc	| −1
 |===
 
 Don’t hesitate to send me your question by e-mail if you’re blocked in your project, instead of wasting hours. However, I do expect that you make some research before you ask, and that your question be clear. See these https://codeblog.jonskeet.uk/2012/11/24/stack-overflow-question-checklist/[guidelines].
@@ -357,17 +359,20 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 === S11 (Thursday 3rd of May, 2018)
 
 * https://github.com/oliviercailloux/java-course/tree/master/SWT[SWT]
-* https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html[Lambda Expressions]
+* Next delivery date: end of the 14th
 
 [[S12]]
 === S12 (Tuesday 15th of May, 2018)
 
+* NB: possible to go beyond initial diff; 1/3 diff pts for everybody (at end) for each of Log, Travis, Maven
+* Change pairs of programmers
 * Equals, Hashcode
 ** Hash function
 ** Uses
 ** Equals in Java
 ** Hashcode in Java: consistency
 ** Implementation
+* https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html[Lambda Expressions]
 
 [[S13]]
 === S13
