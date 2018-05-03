@@ -4,10 +4,10 @@
 
 Summary:
 
-* As Maven `groupId`, use a domain name you control and invert it (example: `io.github.oliviercailloux`), to make sure it is unique
-* As Maven `artifactId`, use your project name, with spaces replaced by hyphens, in lowercase (example: `my-project-name`)
-* In Maven identifiers, avoid Java keywords and “words” starting with a digit
-* As Java base package name, use your Maven coordinates, to ensure uniqueness, with hyphens replaced by underscores (example: `io.github.oliviercailloux.my_project_name`)
+* Make sure your Maven `groupId` is unique. For this, prefix it with a domain name you control, inverted. Example: `io.github.oliviercailloux.something`.
+* As Maven `artifactId`, use your project name, with spaces replaced by hyphens, in lowercase. Example: `my-project-name`.
+* In Maven identifiers, avoid Java keywords and “words” starting with a digit.
+* As Java base package name, use your Maven coordinates, to ensure uniqueness, with hyphens replaced by underscores (example: `io.github.oliviercailloux.something.my_project_name`).
 
 Details:
 
