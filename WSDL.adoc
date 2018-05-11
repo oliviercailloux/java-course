@@ -34,10 +34,10 @@ image:WSDL_11.png[Under a WSDL 1.1 document: an abstract description (types, mes
 ** The elements used inside the `binding` and `service` elements depend on the underlying exchange protocol adopted by the web service being described, thus, depend on the chosen link-type.
 * WSDL defines three link-types to make abstract descriptions concrete: SOAP, HTTP GET/POST and MIME. [small]#(It also defines an extension mechanism permitting to define more such link-types.)# This document only describes the SOAP link-type.
 
-See https://www.w3.org/TR/wsdl#_wsdl[Example 1] (W3C).
+See https://www.w3.org/TR/2001/NOTE-wsdl-20010315#_wsdl[Example 1] (W3C).
 
 == Internal references
-Many WSDL elements admit an optional `name` attribute. XML Elements which admit a name may be referred to using a Qualified Name (QName). For example, the element `<portType name="StockQuotePortType">` defined in a namespace recognized under the prefix `tns` can be referred to by the QName `tns:StockQuotePortType` (see https://www.w3.org/TR/wsdl#_soap-e[Example 3]).
+Many WSDL elements admit an optional `name` attribute. XML Elements which admit a name may be referred to using a Qualified Name (QName). For example, the element `<portType name="StockQuotePortType">` defined in a namespace recognized under the prefix `tns` can be referred to by the QName `tns:StockQuotePortType` (see https://www.w3.org/TR/2001/NOTE-wsdl-20010315#_soap-e[Example 3]).
 
 == Types and messages
 XML schema are typically used to define types. The types to be used can be defined under `types`, using the `xsd:schema` element (thus XSD import mechanisms may be used in the usual manner). [small]#(WSDL also allows for other type systems.)#
@@ -77,7 +77,7 @@ A sub-element of `port` gives the SOAP HTTP address to use to call the SOAP web 
 
 [[refs]]
 == Refs
-* W3C https://www.w3.org/TR/wsdl[WSDL 1.1] note; https://www.w3.org/Submission/2006/SUBM-wsdl11soap12-20060405/[WSDL 1.1 to SOAP 1.2] link-type
+* W3C https://www.w3.org/TR/2001/NOTE-wsdl-20010315[WSDL 1.1] note; https://www.w3.org/Submission/2006/SUBM-wsdl11soap12-20060405/[WSDL 1.1 to SOAP 1.2] link-type
 * WSDL https://www.w3.org/standards/techs/wsdl[Current Status] on W3C
 * Web Services Interoperability (WS-I) http://www.ws-i.org/deliverables/workinggroup.aspx?wg=basicprofile[Basic Profile] (BP) clarifies and modifies WSDL and related specifications to promote interoperability.
 * BP 2.0 corrected http://ws-i.org/profiles/basic/1.1/wsdl-2004-08-24.xsd[WSDL schema]
