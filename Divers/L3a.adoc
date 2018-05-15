@@ -365,7 +365,6 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 === S12 (Tuesday 15th of May, 2018)
 
 * NB: possible to go beyond initial diff; 1/3 diff pts for everybody (at end) for each of Log, Travis, Maven
-* Change pairs of programmers
 * Equals, Hashcode
 ** Hash function
 ** Uses
@@ -375,7 +374,7 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 * https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html[Lambda Expressions]
 
 [[S13]]
-=== S13
+=== S13 (Thursday 17th of May, 2018)
 
 * Annotations
 * Parsing HTML: https://github.com/oliviercailloux/java-course/blob/master/HTML%20to%20DOM.adoc[DOM]
