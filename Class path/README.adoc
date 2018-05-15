@@ -2,7 +2,7 @@
 
 The class path is the set of places where the JRE will look for your classes and other resources.
 
-See: https://github.com/oliviercailloux/java-course/raw/master/Class%20path/Pr%C3%A9sentation/presentation.pdf[Présentation], https://github.com/oliviercailloux/java-course/blob/master/Class%20path/Overview.adoc[Overview], https://github.com/oliviercailloux/java-course/blob/master/Class%20path/Exercices.adoc[Exercices].
+See: https://github.com/oliviercailloux/java-course/raw/master/Class%20path/Pr%C3%A9sentation/presentation.pdf[Présentation], https://github.com/oliviercailloux/java-course/blob/master/Class%20path/Overview.adoc[Overview], https://github.com/oliviercailloux/java-course/blob/master/Class%20path/Exercices.adoc[Exercices], BP https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Resources.adoc[resources].
 
 == References
 
