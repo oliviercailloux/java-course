@@ -371,11 +371,11 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 ** Equals in Java
 ** Hashcode in Java: consistency
 ** Implementation
-* https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html[Lambda Expressions]
 
 [[S13]]
 === S13 (Thursday 17th of May, 2018)
 
+* https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html[Lambda Expressions]
 * Annotations
 * Parsing HTML: https://github.com/oliviercailloux/java-course/blob/master/HTML%20to%20DOM.adoc[DOM]
 * Accessing REST web services: https://github.com/oliviercailloux/java-course/blob/master/JAX-RS%20client.adoc[JAX-RS client]
