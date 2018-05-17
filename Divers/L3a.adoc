@@ -47,11 +47,11 @@ Abreviations for corrections are as follows.
 |===
 | Abbrv | Pratique à respecter | Informations | Sanction
 | IN | Respect des instructions concernant la remise (création issues, etc.) | Instructions / project | −2
-| UNIK	| noms des ressources est unique et respecte les bonnes pratiques	| https://github.com/oliviercailloux/java-course/tree/master/Class%20path[Class path] ; S3	| −1
+| UNIK	| noms des ressources est unique et respecte les bonnes pratiques	| https://github.com/oliviercailloux/java-course/tree/master/Class%20path[Class path] ; S3		| −1
 | CASING	| respect des conventions de nommage	| https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Style.adoc[BP Style]	| −0,5
 | FORMAT	| le code est mis en forme systématiquement	| https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Style.adoc[BP Style]	| −1
 | WEB	| commit effectué via git	| Git	| −1
-| DER	| le dépôt ne contient pas de produits dérivés	| https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Git.adoc[BP Git]	| −0,5
+| DER	| le dépôt ne contient pas de produits dérivés	| https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Git.adoc[BP Git]	| −1
 | FOLDER	| la racine du dépôt est la racine du projet	| https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Git.adoc[BP Git]	| −0,5
 | HIST	| Ne pas écraser l’historique	| Git	| 0
 | PLAG	| Citer la source quand on inclut du code d’autrui	| https://fr.wikipedia.org/wiki/Plagiat[Plagiat]	| -3
@@ -376,29 +376,30 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 [[S13]]
 === S13 (Thursday 17th of May, 2018)
 
+* Aide demandée / aide proposée
 * https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html[Lambda Expressions]
 * Annotations
 * Parsing HTML: https://github.com/oliviercailloux/java-course/blob/master/HTML%20to%20DOM.adoc[DOM]
 * Accessing REST web services: https://github.com/oliviercailloux/java-course/blob/master/JAX-RS%20client.adoc[JAX-RS client]
 
 [[S14]]
-=== S14
+=== S14 (Monday 28th of May, 2018)
 
 * Licenses
 
 [[S15]]
-=== S15
+=== S15 (Tuesday 29th of May, 2018)
 
 * Work on project
 
 [[S16]]
-=== S16
+=== S16 (Thursday 31st of May, 2018)
 
 * Work on project
 * About presentations: 20 min. Slides on GitHub.
 
 [[S17]]
-=== S17
+=== S17 (Monday 25th of May, 2018)
 
 * Presentations
 * votes
