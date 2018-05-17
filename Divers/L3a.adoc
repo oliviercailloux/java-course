@@ -400,7 +400,7 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 * About presentations: 20 min. Slides on GitHub.
 
 [[S17]]
-=== S17 (Monday 25th of May, 2018)
+=== S17 (Monday 25th of June, 2018)
 
 * Presentations
 * votes
