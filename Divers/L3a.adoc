@@ -376,9 +376,9 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 [[S13]]
 === S13 (Thursday 17th of May, 2018)
 
-* Accès depuis un objet
+* Accès privé depuis un autre objet de même type
+* https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html[Lambda Expressions] (facultatif)
 * Aide demandée / aide proposée
-* https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html[Lambda Expressions]
 
 [[S14]]
 === S14 (Monday 28th of May, 2018)
