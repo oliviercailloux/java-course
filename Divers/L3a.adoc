@@ -401,12 +401,12 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 * Work on project
 * Next delivery: end of 14th.
 * End of 22nd: final code on GitHub.
-* End of 24th: final slides on GitHub.
+* End of 24th: final slides on GitHub (format: PDF).
 
 [[S17]]
 === S17 (Monday 25th of June, 2018)
 
-* Presentations
+* Presentations: using the code and the slides on my computer
 * votes
 * Evals, and https://github.com/oliviercailloux/projets/blob/master/Licence.adoc[Licences]: https://github.com/oliviercailloux/projets/blob/master/Declaration%20of%20licensing.odt?raw=true[Decl]
 * https://www.youtube.com/watch?v=aHxv_2BMJfw
