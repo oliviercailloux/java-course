@@ -408,6 +408,6 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 
 * Presentations: using the code and the slides on my computer
 * votes
-* Evals, and https://github.com/oliviercailloux/projets/blob/master/Licence.adoc[Licences]: https://github.com/oliviercailloux/projets/blob/master/Declaration%20of%20licensing.odt?raw=true[Decl]
+* Evals, and https://github.com/oliviercailloux/projets/blob/master/Licence.adoc[Licences]: https://github.com/oliviercailloux/projets/raw/master/Declaration%20of%20licensing.odt[Decl]
 * https://www.youtube.com/watch?v=aHxv_2BMJfw
 
