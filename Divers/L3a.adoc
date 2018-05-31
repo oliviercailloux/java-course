@@ -392,19 +392,22 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 [[S15]]
 === S15 (Tuesday 29th of May, 2018)
 
+* Back to: SWT; Logging; Resources (in JAR)
 * Work on project
 
 [[S16]]
 === S16 (Thursday 31st of May, 2018)
 
 * Work on project
-* About presentations: 20 min. Slides on GitHub.
+* Next delivery: end of 14th.
+* End of 22nd: final code on GitHub.
+* End of 24th: final slides on GitHub.
 
 [[S17]]
 === S17 (Monday 25th of June, 2018)
 
 * Presentations
 * votes
-* Evals and License
+* Evals, and https://github.com/oliviercailloux/projets/blob/master/Licence.adoc[Licences]: https://github.com/oliviercailloux/projets/blob/master/Declaration%20of%20licensing.odt?raw=true[Decl]
 * https://www.youtube.com/watch?v=aHxv_2BMJfw
 
