@@ -406,7 +406,7 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 [[S17]]
 === S17 (Monday 25th of June, 2018)
 
-* Presentations: using the code and the slides on my computer
+* Presentations: https://github.com/LibraryGroup/2D-Library/raw/master/Presentation/JAVA%202D-LIBRARY%20PROJECT%20PRESENTATION.pdf[2D Library], https://github.com/Deeplygends/Apartments/raw/master/Apartments%20-%20Presentation.pdf[Apartments], https://github.com/J-Conf-Team/J-Confs/raw/master/Pr%C3%A9sentation/Pr%C3%A9sentation.pdf[J-Confs], https://github.com/Perciii/J-Voting/raw/master/Presentation/presentation.pdf[J-Voting], https://github.com/LosProfesoresDeDauphine/Teach-spreadsheets/raw/master/Presentation/Java_Presentation.pdf[Teach spreadsheets], https://github.com/Raphaaal/XM-GUI/raw/master/XM-GUI%20-%20Presentation.pdf[XM-GUI] (using the code and the slides on my computer)
 * votes
 * Evals, and https://github.com/oliviercailloux/projets/blob/master/Licence.adoc[Licences]: https://github.com/oliviercailloux/projets/raw/master/Declaration%20of%20licensing.odt[Decl]
 * https://www.youtube.com/watch?v=aHxv_2BMJfw
