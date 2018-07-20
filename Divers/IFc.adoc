@@ -183,7 +183,7 @@ Si vous repartez du projet effectué durant l’année, seules vos contributions
 Il sera important de respecter les attentes et les bonnes pratiques décrites dans le cours.
 
 === Rendus
-Vous devez créer un nouveau dépôt GitHub, dédié à ce travail. (Donc, ne pas réutiliser celui de votre projet de groupe.) La date limite exacte de rendu est fixée au 31 aout 23h59 ++ 1 minute). Vous perdrez un demi point sur vingt par heure de retard (toute heure entamée est comptée). Je vous conseille de considérer que la date limite est 24h plus tôt, pour éviter les imprévus, et de commettre du code sur votre dépôt au fur et à mesure de votre avancement.
+Vous devez créer un nouveau dépôt GitHub, dédié à ce travail. (Donc, ne pas réutiliser celui de votre projet de groupe.) La date limite exacte de rendu est fixée au 31 aout 23h59 ++ 1 minute. Vous perdrez un demi point sur vingt par heure de retard (toute heure entamée est comptée). Je vous conseille de considérer que la date limite est 24h plus tôt, pour éviter les imprévus, et de commettre du code sur votre dépôt au fur et à mesure de votre avancement.
 
 Le rendu doit se faire exclusivement par envoi sur GitHub, sur la branche master (comme pendant l’année).
 
