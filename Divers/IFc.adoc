@@ -169,11 +169,11 @@ Trois jours avant Sx signifie : au plus tard trois jours avant le jour de la sé
 Voici mes instructions concernant le rattrapage.
 
 Vous devez choisir un projet et le développer en y intégrant les technologies vues au cours ; le rendre via GitHub ; et soutenir vos contributions.
-Choix du projet
 
+=== Choix du projet
 Vous pouvez soit continuer à développer le projet sur lequel vous aviez travaillé pendant l’année avec votre groupe, soit repartir de zéro avec un autre énoncé de projet. Pour rappel, les projets disponibles sont : Collaborative exams, Dauphine Open Data, J-XMCDA. (Voir site GitHub pour les énoncés.)
-Contenu et contributions
 
+=== Contenu et contributions
 Les technologies importantes pour intégration dans le projet sont : Maven ; Servlets ; CDI ; JPA. Il vous faudra fournir une contribution significative impliquant chacune de ces quatre technologies.
 
 Il n’est pas attendu que vous couvriez une partie importante de l’énoncé des projets (puisque ces énoncés sont prévus pour tout un groupe). Il suffira de mettre en œuvre les technologies en question sur une ou deux fonctionnalités clés, de façon à montrer que vous maitrisez le fonctionnement des technologies choisies et de façon à former un projet qui présente un tout cohérent et qui fonctionne (quitte à ce qu’il ne fasse pas grand-chose).
@@ -181,15 +181,16 @@ Il n’est pas attendu que vous couvriez une partie importante de l’énoncé d
 Si vous repartez du projet effectué durant l’année, seules vos contributions additionnelles seront évaluées, bien sûr, pas le code existant. Cependant il vous faudra également comprendre le code existant aux endroits où il s’interface avec votre code.
 
 Il sera important de respecter les attentes et les bonnes pratiques décrites dans le cours.
-Rendus
 
-Vous devez créer un nouveau dépôt GitHub, dédié à ce travail. (Donc, ne pas réutiliser celui de votre projet de groupe.) Vous rendrez la version finale pour fin de la semaine du 3 septembre (date limite exacte 9 septembre 23h59 + 1 minute). Vous perdrez un demi point sur vingt par heure de retard (toute heure entamée est comptée). Je vous conseille de considérer que la date limite est 24h plus tôt, pour éviter les imprévus, et de commettre du code sur votre dépôt au fur et à mesure de votre avancement.
+=== Rendus
+Vous devez créer un nouveau dépôt GitHub, dédié à ce travail. (Donc, ne pas réutiliser celui de votre projet de groupe.) Vous rendrez la version finale pour fin de la semaine du 3 septembre (date limite exacte 9 septembre 23h59 ++ 1 minute). Vous perdrez un demi point sur vingt par heure de retard (toute heure entamée est comptée). Je vous conseille de considérer que la date limite est 24h plus tôt, pour éviter les imprévus, et de commettre du code sur votre dépôt au fur et à mesure de votre avancement.
 
 Le rendu doit se faire exclusivement par envoi sur GitHub, sur la branche master (comme pendant l’année).
 
 Si vous avez choisi de repartir de votre projet de groupe, vous devrez en plus déposer (au même endroit) un petit rapport indiquant vos contributions additionnelles par rapport à la version déposée par votre groupe.
-Évaluation
 
+=== Évaluation
 Un quart des points sera alloué à chaque technologie (parmi Maven ; Servlets ; CDI ; JPA). Le jour de la soutenance, j’interrogerai sur vos contributions. Il vous faudra être capable d’expliquer et de justifier vos contributions. Votre note finale dépendra de la qualité de votre projet, modifiée par cette épreuve orale : tout code que vous n’êtes pas capable d’expliquer et de justifier ne comptera pas et les points seront déduits en fonction.
 
 Je suis à votre disposition pour toute question concernant les modalités du rattrapage ou les énoncés des projets.
+
