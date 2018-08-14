@@ -11,21 +11,11 @@ Various useful tools for Java and Java EE developers.
 ** On Windows: install the JDK (which itself comes with a private JRE). Do not install the public JRE (uncheck the box). Set the environment variables: JAVA_HOME to where you installed the JDK and https://docs.oracle.com/javase/9/install/installation-jdk-and-jre-microsoft-windows-platforms.htm#JSJIG-GUID-96EB3876-8C7A-4A25-9F3A-A2983FEC016A[PATH] to "%JAVA_HOME%\bin" (for details, see http://maven.apache.org/install.html[Maven] and http://wiki.eclipse.org/FAQ_How_do_I_run_Eclipse%3F#Find_the_JVM[Eclipse], https://java.com/en/download/help/manual_regedit.xml[help] with removing traces of previous install). 
 //** Note: some https://www.java.com/en/download/help/path.xml[doc] indicates that setting the PATH is not necessary to run Java programs. However, http://wiki.eclipse.org/FAQ_How_do_I_run_Eclipse%3F#Find_the_JVM[Eclipse] (for example) will apparently not start if it does not find Java in the path (unless specifically configured). Perhaps the https://msdn.microsoft.com/en-us/library/windows/desktop/ee872121(v=vs.85).aspx[App Paths] mechanism could be used instead? (See also https://parsiya.net/blog/2017-10-23-run-line-vs.-cmd-vs.-powershell/[here].) Setting JAVA_HOME might be unnecessary, as under https://sources.debian.org/src/openjdk-8/8u151-b12-1/debian/JAVA_HOME/[Linux]. TODO: check whether .jar start; check whether Maven requires JAVA_HOME.
 * https://maven.apache.org/download.cgi[Maven]
-
-For Java SE, add:
-
 * https://www.eclipse.org/downloads/[Eclipse IDE] “for Java Developers”
-
-For Java EE, add:
-
-* https://www.eclipse.org/downloads/[Eclipse IDE] “for Java EE Developers”
-* `GlassFish Tools` plug-in: from Eclipse, Help / Eclipse Marketplace…
-* https://javaee.github.io/glassfish/download[GlassFish] (Full Platform)
-** `GlassFish Tools` (hence Eclipse) does not yet (as of October 2017) work with GlassFish 5. Therefore I suggest to download and install GlassFish 4.x (that implements Java EE 7). The differences with Java EE 8 are small, for what concerns this course.
 
 == Git
 
-* Git https://git-scm.com/downloads[client]
+* Git https://git-scm.com/downloads[client] (I recommend the command line for learning; I’ve been told https://www.gitkraken.com/[GitKraken] is a great GUI complement)
 * https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup[Configure] your git identity: `user.name` and `user.email`. (Specific for GitHub: https://help.github.com/articles/setting-your-username-in-git/[user.name], https://help.github.com/articles/setting-your-email-in-git/[user.email].)
 
 == Command line
