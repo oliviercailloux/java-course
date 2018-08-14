@@ -8,8 +8,6 @@
 * Goncalves - Beginning Java EE 7 : http://doi.org/10.1007/978-1-4302-4627-5[Springer], https://proxy.bu.dauphine.fr/http/doi.org/10.1007/978-1-4302-4627-5[BU] 
 * XML in a nutshell : https://portail.bu.dauphine.fr/bibliodata.html?record_id=ALEPH000026526&rtype=book[BU 1], https://portail.bu.dauphine.fr/bibliodata.html?record_id=ALEPH000013764&rtype=book[BU 2], https://portail.bu.dauphine.fr/bibliodata.html?record_id=ALEPH000035938&rtype=book[BU (en français)]
 
-Voir aussi la section références de chaque ensemble de diapositives, par sujet.
-
 == Projets
 Énoncés : voir https://github.com/oliviercailloux/projets/tree/master/EE[Projets] Java EE (sur GitHub)
 
@@ -59,6 +57,7 @@ Les commentaires utilisent les abréviations E1, E2, etc, pour se référer aux 
 * https://github.com/oliviercailloux/java-course/raw/master/Pr%C3%A9sentation%20du%20cours%20EE/presentation.pdf[Présentation] du cours
 * https://github.com/oliviercailloux/java-course/tree/4fbf56d4a8f2a2501c679783c5c582b1ea151347/Git/presentation.pdf[Git & exercices]
 * Affectation en projets
+* https://github.com/oliviercailloux/java-course/blob/master/HTTP.adoc[HTTP]
 * Client WS, https://github.com/oliviercailloux/java-course/tree/master/WS%20client.adoc[exercices]
 
 À faire
@@ -84,13 +83,13 @@ Les commentaires utilisent les abréviations E1, E2, etc, pour se référer aux 
 // 15h30
 
 * L’Open Data https://www.youtube.com/watch?v=aHxv_2BMJfw[à la loupe]
-* Note : Optimisations en HTTP GET
 * https://github.com/oliviercailloux/java-course/raw/master/Maven/presentation.pdf[Maven] & https://github.com/oliviercailloux/java-course/tree/master/Maven.adoc[exercices]
 * Exercices client WS (lien ci-dessus)
 * https://github.com/oliviercailloux/java-course/raw/master/Java%20EE/presentation.pdf[Intro] Java EE, https://github.com/oliviercailloux/java-course/tree/master/GlassFish.adoc[Familiarisation] avec GlassFish
 * https://github.com/oliviercailloux/java-course/tree/master/Servlets.adoc[Servlets.adoc]
 ** Compilation avec Maven et déploiement manuel
 ** Compilation et déploiement via Eclipse
+* Log
 
 À faire
 
