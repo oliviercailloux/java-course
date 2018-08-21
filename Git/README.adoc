@@ -5,4 +5,5 @@ See https://github.com/oliviercailloux/java-course/raw/master/Git/Pr%C3%A9sentat
 == References
 * https://git-scm.com/[Git-SCM]: official download; Cheat Sheets; Book Pro Git (free, as in speech and beer); tryGit
 * A quick and useful https://guides.github.com/introduction/flow/[guide] about workflow on GitHub
+* https://try.github.io/[Resources to learn Git]
 
