@@ -1,0 +1,20 @@
+= SonarCloud
+
+https://sonarcloud.io/about[SonarCloud] is an online service running a https://www.sonarqube.org/[SonarQube] instance. SonarQube is a software and server that checks your project and suggest improvements for higher code quality.
+
+This doc indicates how to set up SonarCloud, for a Java project using https://github.com/oliviercailloux/java-course/tree/master/Maven[Maven] and Travis-CI and hosted on GitHub.
+
+== Set-up
+
+The instructions below are a slightly modified version of https://docs.travis-ci.com/user/sonarcloud/[these] ones.
+
+. Register and log-in to https://sonarcloud.io[SonarCloud].
+. Create a user authentication https://sonarcloud.io/account/security[token] on SonarCloud.
+. Define `SONAR_TOKEN` in your Repository Settings in Travis-CI.
+. https://sonarcloud.io/account/organizations[Find] which SonarCloud.io organization you want to push your project on and get its key.
+. Modify your `.travis.yml` configuration file to reflect the example https://github.com/oliviercailloux/JLP/blob/master/.travis.yml[here].
+
+SonarCloud will now start an analysis each time Travis build is triggered. Check in the Travis logs that everything went correctly, then check the result of the analysis on your SonarCloud project page.
+
+Note that you need to set the git `depth` key in your yml file to `false` to ensure that the full git history is available to SonarCloud (otherwise it complains about missing git blame information).
+
