@@ -4,7 +4,7 @@ Continuous Integration (CI) refers to the process of frequently integrating chan
 
 CI makes especially sense when you are able to control automatically that your software still runs successfully after the merge. This you normally do by having a sufficient coverage of (unit or functional or integration) tests.
 
-This doc indicates how to set up CI with Travis-CI, for a Java project using Maven and hosted on GitHub.
+This doc indicates how to set up CI with Travis-CI, for a Java project using https://github.com/oliviercailloux/java-course/tree/master/Maven[Maven] and hosted on GitHub.
 
 == Motivation
 
