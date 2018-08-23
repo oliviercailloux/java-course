@@ -2,6 +2,8 @@
 :toc-placement: preamble
 :sectanchors:
 
+image:https://travis-ci.org/oliviercailloux/java-course.svg?branch=master["Link Status", link="https://travis-ci.org/oliviercailloux/java-course"]
+
 Course about Java SE and Java EE.
 
 == Main content
