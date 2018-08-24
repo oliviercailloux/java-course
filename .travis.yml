@@ -4,4 +4,6 @@ git:
 rvm: 2.4.1
 before_script: gem install awesome_bot
 script: find -name "*.adoc" -print0 | xargs -0 awesome_bot
+notifications:
+  email: false
 
