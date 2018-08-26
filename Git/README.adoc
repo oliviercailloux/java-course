@@ -4,7 +4,7 @@ See https://github.com/oliviercailloux/java-course/raw/master/Git/Pr%C3%A9sentat
 
 == References
 * https://git-scm.com/[Git-SCM]: official download; Cheat Sheets; Book Pro Git (free, as in speech and beer); tryGit
-* A quick and useful https://guides.github.com/introduction/flow/[guide] about workflow on GitHub
 * https://try.github.io/[Resources to learn Git]
+* A quick and useful https://guides.github.com/introduction/flow/[guide] about workflow on GitHub; a branching https://nvie.com/posts/a-successful-git-branching-model/[model]
 * Git http://stevelosh.com/blog/2013/04/git-koans/[Koans]
 
