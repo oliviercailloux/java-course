@@ -5,7 +5,7 @@
 == Références générales
 * http://math.hws.edu/eck/cs124/javanotes7/[Eck]’s book (free): Introduction to Programming Using Java, Seventh Edition
 * https://github.com/oliviercailloux/samples[Échantillons] ; https://github.com/javaee-samples/javaee8-samples[javaee8-samples]
-* Goncalves - Beginning Java EE 7 : http://doi.org/10.1007/978-1-4302-4627-5[Springer], https://proxy.bu.dauphine.fr/http/doi.org/10.1007/978-1-4302-4627-5[BU] 
+* Goncalves - Beginning Java EE 7 : http://doi.org/10.1007/978-1-4302-4627-5[Springer], https://doi-org.proxy.bu.dauphine.fr/10.1007/978-1-4302-4627-5[BU] 
 * XML in a nutshell : https://portail.bu.dauphine.fr/bibliodata.html?record_id=ALEPH000026526&rtype=book[BU 1], https://portail.bu.dauphine.fr/bibliodata.html?record_id=ALEPH000013764&rtype=book[BU 2], https://portail.bu.dauphine.fr/bibliodata.html?record_id=ALEPH000035938&rtype=book[BU (en français)]
 * https://www.getpostman.com/[Postman]
 * Servlets multi-formats
@@ -48,7 +48,7 @@ Voir aussi la section références de chaque ensemble de diapositives, par sujet
 . Utilisation privilégiée des standards (exemple : JSON) (déviation permise mais il faut m’en parler et apporter des arguments)
 . Suivi des consignes de style données au cours (exemple : pom Maven)
 . Coder en anglais
-. Dépôt https://github.com/oliviercailloux/java-course/tree/master/Best%20practices/Git.adoc[clair] (responsabilité de _tous_ les membres)
+. Dépôt https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Git.adoc[clair] (responsabilité de _tous_ les membres)
 . Répondre aux attentes du client : vérifier la compréhension !
 . Respecter les https://github.com/oliviercailloux/java-course/tree/master/Best%20practices[bonnes pratiques]
 
@@ -65,18 +65,18 @@ Trois jours avant Sx signifie : au plus tard trois jours avant le jour de la sé
 == Plan
 [[S1]]
 === S1 (jeudi 30 novembre 2017)
-* https://github.com/oliviercailloux/java-course/raw/master/Pr%C3%A9sentation%20du%20cours%20EE/presentation.pdf[Présentation] du cours
+* https://raw.githubusercontent.com/oliviercailloux/java-course/master/Pr%C3%A9sentation%20du%20cours%20EE/presentation.pdf[Présentation] du cours
 * https://github.com/oliviercailloux/java-course/tree/4fbf56d4a8f2a2501c679783c5c582b1ea151347/Git/presentation.pdf[Git & exercices]
 * Affectation en projets
-* Client WS, https://github.com/oliviercailloux/java-course/tree/master/WS%20client.adoc[exercices]
+* Client WS, https://github.com/oliviercailloux/java-course/blob/master/WS%20client.adoc[exercices]
 
 À faire
 
-. https://github.com/oliviercailloux/java-course/tree/master/Tools.adoc[Tools.adoc]
+. https://github.com/oliviercailloux/java-course/blob/master/Tools.adoc[Tools.adoc]
 . Se créer un compte sur GitHub
 . Terminer exercices git (voir diapositives git)
 . Exercices curl (voir exercices client WS)
-. Me fournir le nom d’utilisateur, si nécessaire : via devoir https://mycourse.dauphine.fr/webapps/blackboard/execute/launcher?type=Course&id=_38078_1[MyCourse]
+. Me fournir le nom d’utilisateur, si nécessaire : via devoir https://mycourse.dauphine.fr/webapps/blackboard/execute/courseMain?course_id=_38078_1[MyCourse]
 . Rediriger vos e-mails @ Dauphine si nécessaire pour vous assurer de recevoir les annonces
 
 [[S2]]
@@ -96,8 +96,8 @@ Trois jours avant Sx signifie : au plus tard trois jours avant le jour de la sé
 * L’Open Data https://www.youtube.com/watch?v=aHxv_2BMJfw[à la loupe]
 * https://github.com/oliviercailloux/java-course/tree/master/Maven[Maven] & exercices
 * Exercices client WS (lien ci-dessus)
-* https://github.com/oliviercailloux/java-course/raw/master/Java%20EE/presentation.pdf[Intro] Java EE, https://github.com/oliviercailloux/java-course/tree/master/GlassFish.adoc[Familiarisation] avec GlassFish
-* https://github.com/oliviercailloux/java-course/tree/master/Servlets.adoc[Servlets.adoc]
+* https://raw.githubusercontent.com/oliviercailloux/java-course/master/Java%20EE/presentation.pdf[Intro] Java EE, https://github.com/oliviercailloux/java-course/blob/master/GlassFish.adoc[Familiarisation] avec GlassFish
+* https://github.com/oliviercailloux/java-course/blob/master/Servlets.adoc[Servlets.adoc]
 ** Compilation avec Maven et déploiement manuel
 ** Compilation et déploiement via Eclipse
 
@@ -107,12 +107,12 @@ Trois jours avant Sx signifie : au plus tard trois jours avant le jour de la sé
 === S3 (jeudi 11 janvier 2018)
 * Tests unitaires (ou fonctionnels !) : http://www.vogella.com/tutorials/JUnit/article.html[Tutoriel] Vogella ; https://github.com/oliviercailloux/jsonb-sample[sample]
 * Travis https://github.com/oliviercailloux/java-course/blob/master/CI.adoc[CI]
-* https://github.com/oliviercailloux/java-course/tree/master/GlassFish.adoc#log[Logs] dans GlassFish
+* https://github.com/oliviercailloux/java-course/blob/master/GlassFish.adoc#log[Logs] dans GlassFish
 * Usage de git en équipe : dépôt propre ; ignore ; formattage & imports
 ** Fusionner à temps
 * Discussion projets
 * https://github.com/oliviercailloux/java-course/blob/master/CDI[CDI]
-* https://github.com/oliviercailloux/java-course/raw/master/Annotations/presentation.pdf[Annotations]
+* https://raw.githubusercontent.com/oliviercailloux/java-course/master/Annotations/presentation.pdf[Annotations]
 * Fail-fast, exceptions, protection contre `null` : cf. Best practices
 * Servlets multi-formats : cf. refs générales
 * NB machine virtuelle
@@ -123,14 +123,14 @@ Trois jours avant Sx signifie : au plus tard trois jours avant le jour de la sé
 
 [[S4]]
 === S4 (jeudi 25 janvier 2018)
-* Découpe et https://github.com/oliviercailloux/java-course/raw/master/Contrat/presentation.pdf[contrats] en génie logiciel
+* Découpe et https://raw.githubusercontent.com/oliviercailloux/java-course/master/Contrat/presentation.pdf[contrats] en génie logiciel
 * https://github.com/oliviercailloux/java-course/blob/master/JAX-RS[JAX-RS]
 
 [[S5]]
 === S5 (vendredi 23 février 2018)
 * Désigner un responsable fusion : autorise les fusions ; revient en arrière quand fusion incorrecte; pratique les exercices https://github.com/oliviercailloux/java-course/blob/master/Git[git]
-* Création d’un servlet : https://github.com/oliviercailloux/java-course/tree/master/Tools.adoc[Tools] ; https://github.com/oliviercailloux/java-course/blob/master/Maven[Maven] ; https://github.com/oliviercailloux/java-course/tree/master/GlassFish.adoc[GlassFish] ; https://github.com/oliviercailloux/java-course/tree/master/Servlets.adoc[Servlets]
-* Tests : https://github.com/oliviercailloux/java-course/blob/master/HTTP.adoc[HTTP] ; https://github.com/oliviercailloux/java-course/tree/master/WS%20client.adoc[Client WS] ; JUnit (S3)
+* Création d’un servlet : https://github.com/oliviercailloux/java-course/blob/master/Tools.adoc[Tools] ; https://github.com/oliviercailloux/java-course/blob/master/Maven[Maven] ; https://github.com/oliviercailloux/java-course/blob/master/GlassFish.adoc[GlassFish] ; https://github.com/oliviercailloux/java-course/blob/master/Servlets.adoc[Servlets]
+* Tests : https://github.com/oliviercailloux/java-course/blob/master/HTTP.adoc[HTTP] ; https://github.com/oliviercailloux/java-course/blob/master/WS%20client.adoc[Client WS] ; JUnit (S3)
 * Qualité : assertions ; program logs (GlassFish) ; Contrat (BP) ; Maven (BP) ; autres exigences
 * CI : Travis.
 * Multi-format : HTTP
@@ -139,7 +139,7 @@ Trois jours avant Sx signifie : au plus tard trois jours avant le jour de la sé
 * http://arquillian.org/[Arquillian] (exemple, voir également https://github.com/oliviercailloux/sample-jax-rs[sample-jax-rs])
 
 ==== JPA (facultatif)
-* https://github.com/oliviercailloux/java-course/raw/master/JPA/presentation.pdf[JPA] : création d’une entité et création automatique BD
+* https://raw.githubusercontent.com/oliviercailloux/java-course/master/JPA/presentation.pdf[JPA] : création d’une entité et création automatique BD
 ** https://github.com/oliviercailloux/java-course/blob/master/DB%20from%20Eclipse.adoc[DB from Eclipse]
 ** https://github.com/oliviercailloux/java-course/blob/master/JPA.adoc[Exercices]
 ** https://github.com/oliviercailloux/java-course/tree/master/CDI[CDI]

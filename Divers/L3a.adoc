@@ -65,7 +65,7 @@ Abreviations for corrections are as follows.
 | ENC	| Préciser l’encodage des flux lus ou écrits	| https://github.com/oliviercailloux/java-course/blob/master/Flows.adoc[Flows]	| −1
 | EN	| Coder et commenter en anglais	|	| −1
 | FORE	| Privilégier boucles for each	| https://docs.oracle.com/javase/tutorial/java/nutsandbolts/for.html[Tutorial]	| −0,5
-| LOG	| Utiliser des loggers	| https://github.com/oliviercailloux/java-course/raw/master/SLF4J/presentation.pdf[SLF4J]	| −1
+| LOG	| Utiliser des loggers	| https://raw.githubusercontent.com/oliviercailloux/java-course/master/SLF4J/presentation.pdf[SLF4J]	| −1
 | STREAMS	| Utiliser des streams pour plus de généralité quand approprié	| https://github.com/oliviercailloux/java-course/blob/master/Flows.adoc[Flows]	| −1
 | POM	| Respecter les conventions de nommage et autres bonnes pratiques Maven, simplifier le POM autant que possible	| https://github.com/oliviercailloux/java-course/tree/master/Maven[Maven]	| −1
 |===
@@ -95,10 +95,10 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 
 *Lecture*
 
-* https://github.com/oliviercailloux/java-course/raw/master/Pr%C3%A9sentation%20du%20cours%20Objet/presentation.pdf[Pres course]
+* https://raw.githubusercontent.com/oliviercailloux/java-course/master/Pr%C3%A9sentation%20du%20cours%20Objet/presentation.pdf[Pres course]
 * Basic concepts and structures of Java: variables; types; subroutines; control structures; identifiers… [SK]
 ** http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours1.pdf[Airiau C1], http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours2.pdf[Airiau C2] (compil, p. 15 to 19)
-* https://github.com/oliviercailloux/java-course/raw/master/Notions%20objets/presentation.pdf[Basics of objects]
+* https://raw.githubusercontent.com/oliviercailloux/java-course/master/Notions%20objets/presentation.pdf[Basics of objects]
 * https://www.wooclap.com/JL[Quizz]
 
 // Present all theory, 90 min. Then 30 min ex. Then 30 min git theory (local only!), 30 min ex.
@@ -142,7 +142,7 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 
 * Marks; two methods for EE36
 * https://github.com/oliviercailloux/java-course/tree/master/Git[Git]: local repo, start ex
-* Two major principles of software engineering: https://github.com/oliviercailloux/java-course/raw/master/Contrat/presentation.pdf[contract] and fail-fast.
+* Two major principles of software engineering: https://raw.githubusercontent.com/oliviercailloux/java-course/master/Contrat/presentation.pdf[contract] and fail-fast.
 * Mechanisms: interface; black box; preconditions and postconditions; javadoc; exceptions
 
 *Material and going beyond*
@@ -170,7 +170,7 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 
 *Material and going beyond*
 
-* https://github.com/oliviercailloux/java-course/raw/master/Assert/presentation.pdf[assertions] (advanced)
+* https://raw.githubusercontent.com/oliviercailloux/java-course/master/Assert/presentation.pdf[assertions] (advanced)
 * Illustration: http://math.hws.edu/eck/cs124/javanotes7/c4/s6.html#subroutines.6.2[Mosaic]
 * http://math.hws.edu/eck/cs124/javanotes7/c4/s2.html#subroutines.2.4[EE4.2.4] [I]
 
@@ -199,7 +199,7 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 * http://www-users.math.umn.edu/~arnold/disasters/ariane.html[Ariane 5]: https://www.youtube.com/watch?v=gp_D8r-2hwk[video]
 // https://www.youtube.com/embed/fCnO-UYF3co
 * Questions about questions
-* https://github.com/oliviercailloux/java-course/raw/master/Objets/presentation.pdf[Objects]
+* https://raw.githubusercontent.com/oliviercailloux/java-course/master/Objets/presentation.pdf[Objects]
 * Choose your project
 
 *Material and going beyond*
@@ -352,7 +352,7 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 [[S10]]
 === S10 (Thursday 12th of April, 2018)
 
-* Logging: https://github.com/oliviercailloux/java-course/raw/master/SLF4J/presentation.pdf[SLF4J]
+* Logging: https://raw.githubusercontent.com/oliviercailloux/java-course/master/SLF4J/presentation.pdf[SLF4J]
 * https://github.com/oliviercailloux/java-course/blob/master/CI.adoc[CI]
 * Everybody is supposed to master the tools used in the project (for example, check the https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Maven.adoc[Maven Best Practices])
 
@@ -385,7 +385,7 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 
 * Back to Lambdas
 * Licenses and philosophy: https://www.gnu.org/philosophy/philosophy.html[GNU]; https://opensource.org/[OSI]; Copyleft (GNU https://opensource.org/licenses/GPL-3.0[GPL]); Non-copyleft (https://opensource.org/licenses/MIT[MIT])
-* https://github.com/oliviercailloux/java-course/raw/master/Annotations/presentation.pdf[Annotations]
+* https://raw.githubusercontent.com/oliviercailloux/java-course/master/Annotations/presentation.pdf[Annotations]
 * Parsing HTML: https://github.com/oliviercailloux/java-course/blob/master/HTML%20to%20DOM.adoc[DOM]
 * Accessing REST web services: https://github.com/oliviercailloux/java-course/blob/master/JAX-RS%20client.adoc[JAX-RS client]
 

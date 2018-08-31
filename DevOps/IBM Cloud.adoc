@@ -2,7 +2,7 @@
 
 This document explains how to host your Java EE application on an IBM server.
 
-NOTE: The reader supposedly has read https://github.com/oliviercailloux/java-course/blob/master/CI.adoc[CI] and has configured Travis CI for her project, and has at least one working https://github.com/oliviercailloux/java-course/blob/master/Servlets.adoc[Servlet] in the project.
+NOTE: The reader supposedly has read https://github.com/oliviercailloux/java-course/blob/master/DevOps/CI.adoc[CI] and has configured Travis CI for her project, and has at least one working https://github.com/oliviercailloux/java-course/blob/master/Servlets.adoc[Servlet] in the project.
 
 == Access
 IBM offers time-limited access to its Cloud offering to academic partners. Check at https://onthehub.com/[OnTheHub] whether your institution is listed. (Students who follow the course: register at https://dauphine.onthehub.com/[Dauphine OnTheHub] using your @dauphine.eu address.) 

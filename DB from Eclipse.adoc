@@ -13,7 +13,7 @@ NOTE: The reader supposedly has basic knowledge of JDBC and Eclipse.
 * Register there your driver for PostgreSQL (or the DB type you need)
 ** This does _not_ create a connexion: it only declares a new driver definition, that is, a _kind_ of connexion (that you will use in the next step)
 ** Eclipse asks that you start with a template. Eclipse uses it to provide particular features for your DB type. (Unfortunately, JDBC is not a good enough abstraction and Eclipse has to know which flavor of SQL and protocol your DB implements.)
-** Choose the Eclipse template version that is the highest possible, but lower than or equal to your JDBC driver version (http://stackoverflow.com/a/39304224/859604[SO])
+** Choose the Eclipse template version that is the highest possible, but lower than or equal to your JDBC driver version (https://stackoverflow.com/a/39304224/859604[SO])
 * From the `Data Source Explorer` view, create a connexion to your DB (using the driver definition created previously)
 * You can now view and edit data from the `Data Source Explorer` view
 * You can write and send SQL commands from the `SQL Scrapbook` (with completion!)
