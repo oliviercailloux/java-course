@@ -2,18 +2,18 @@
 
 Context Dependency Injection (CDI) is useful when a class A depends on some class B, that provides a service to A. For example, B provides persistency services; conversion services (serialization or deserialization); computation services (solving a system of equation). With CDI, you can inject the reference of B into A by letting your container deal with the lifecycle of B.
 
-See: https://github.com/oliviercailloux/java-course/raw/master/CDI/Pr%C3%A9sentation/presentation.pdf[Présentation], https://github.com/oliviercailloux/sample-cdi-fake-db[Sample-CDI-Fake-DB].
+See: https://raw.githubusercontent.com/oliviercailloux/java-course/master/CDI/Pr%C3%A9sentation/presentation.pdf[Présentation], https://github.com/oliviercailloux/sample-cdi-fake-db[Sample-CDI-Fake-DB].
 
 == References
 
-* https://jcp.org/en/jsr/detail?id=330[JSR 330]: Dependency Injection (http://download.oracle.com/otn-pub/jcp/dependency_injection-1.0-final-oth-JSpec/dependency_injection-1_0-final-spec.zip[zip], only doc about http://docs.oracle.com/javaee/7/api/javax/inject/Inject.html[`@Inject`] and similar)
+* https://jcp.org/en/jsr/detail?id=330[JSR 330]: Dependency Injection (http://download.oracle.com/otn-pub/jcp/dependency_injection-1.0-final-oth-JSpec/dependency_injection-1_0-final-spec.zip[zip], only doc about https://docs.oracle.com/javaee/7/api/javax/inject/Inject.html[`@Inject`] and similar)
 * https://jcp.org/en/jsr/detail?id=299[JSR 299]: CDI 1.0 (Java EE 6)
 ** Historical note: the CDI specification (initially called Web Beans) http://blog.ippon.fr/2010/03/30/les-rendez-vous-manques-de-spring/[has been split] (following intervention of Spring and Google) into JSR 330 (minimal and also used by Spring and https://github.com/google/guice/wiki/JSR330[Guice]) and JSR 299 (which draws on JSR 330)
 * https://jcp.org/en/jsr/detail?id=346[JSR 346]: CDI 1.1 (Java EE 7), then 1.2 (http://download.oracle.com/otn-pub/jcp/cdi-1_2-mrel-eval-spec/cdi-1.2.pdf[PDF])
 * https://jcp.org/en/jsr/detail?id=365[JSR 365]: CDI 2.0 (Java EE 8)
 * Martin Fowler’s https://martinfowler.com/articles/injection.html[article] about dependency injection
 * JSR 330, https://jcp.org/en/jsr/detail?id=330#4[section 4]: short description of the utility of DI
-* The Java EE Tutorial: http://docs.oracle.com/javaee/7/tutorial/partcdi.htm[Contexts and Dependency Injection]
+* The Java EE Tutorial: https://docs.oracle.com/javaee/7/tutorial/partcdi.htm[Contexts and Dependency Injection]
 * Goncalves - Beginning Java EE 7 (2013)
 * https://jcp.org/en/jsr/detail?id=342[JSR 342] (Java EE 7) (http://download.oracle.com/otn-pub/jcp/java_ee-7-mrel-eval-spec/JavaEE_Platform_Spec.pdf[PDF])
 * https://jcp.org/en/jsr/detail?id=345[JSR 345] (EJB 3.2) (http://download.oracle.com/otn-pub/jcp/ejb-3_2-fr-eval-spec/ejb-3_2-core-fr-spec.pdf[PDF])
