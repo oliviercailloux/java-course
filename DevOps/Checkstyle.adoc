@@ -9,7 +9,7 @@ When working in a team, it is important that every team member respects the same
 Checkstyle provides code that checks your style. It integrates in the Maven build cycle and will fail the build if it detects incorrect style.
 
 == Configuration
-Add this to your POM, in the `build/plugins` element.
+Add this to your POM, in the `build/plugins` element (see https://github.com/oliviercailloux/JLP/blob/master/pom.xml[this] example POM).
 
 .The checkstyle plugin configuration
 [source,xml]
