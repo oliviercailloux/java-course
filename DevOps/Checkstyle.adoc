@@ -1,0 +1,76 @@
+= Checkstyle
+
+A brief document for including automated style checks for your source code.
+I assume your project uses https://github.com/oliviercailloux/java-course/tree/master/Maven[Maven].
+
+== Motivation
+When working in a team, it is important that every team member respects the same formatting and naming conventions. It improves clarity, and importantly, it ensures that differences found by `git` are due to real code change, not just differences in how different team members configured their editors. Otherwise, many differences spring in source code just because of formatting differences. And thus merge operations become a nightmare, and more generally reviewing history of what changed in your code is made difficult.
+
+Checkstyle provides code that checks your style. It integrates in the Maven build cycle and will fail the build if it detects incorrect style.
+
+== Configuration
+Add this to your POM, in the `build/plugins` element.
+
+.The checkstyle plugin configuration
+[source,xml]
+----
+<plugin>
+	<groupId>org.apache.maven.plugins</groupId>
+	<artifactId>maven-checkstyle-plugin</artifactId>
+	<version>3.0.0</version>
+	<dependencies>
+		<dependency>
+			<groupId>com.puppycrawl.tools</groupId>
+			<artifactId>checkstyle</artifactId>
+			<version>8.12</version>
+		</dependency>
+	</dependencies>
+	<configuration>
+		<configLocation>checkstyle.xml</configLocation>
+	</configuration>
+	<executions>
+		<execution>
+			<id>checkstyle</id>
+			<phase>validate</phase>
+			<goals>
+				<goal>check</goal>
+			</goals>
+		</execution>
+	</executions>
+</plugin>
+----
+
+And add this to your POM in order to configure jxr, which permits to have links to your code in the reports checkstyle produces.
+
+.The jxr plugin configuration
+[source,xml]
+----
+<reporting>
+	<plugins>
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-jxr-plugin</artifactId>
+			<version>2.5</version>
+		</plugin>
+	</plugins>
+</reporting>
+----
+
+Download https://github.com/oliviercailloux/JLP/blob/master/checkstyle.xml[this] example checkstyle configuration file and put in in your project directory.
+
+* You might want to remove the modules named `JavadocPackage` and `JavadocMethod` from `checkstyle.xml` to authorize missing javadoc comments.
+* Alternatively, do not include any `checkstyle.xml` file and change in your POM the `configLocation` https://maven.apache.org/plugins/maven-checkstyle-plugin/check-mojo.html#configLocation[parameter] to `google_checks.xml` to use the checkstyle http://checkstyle.sourceforge.net/google_style.html[configuration] based on Google Style (you do not need a `google_checks.xml` file, it is included in the plugin).
+
+Eclipse will rant that it does not know what to do with checkstyle as applied to the validate phase. Just auto-fix it by letting Eclipse configure itself and ignore this plugin.
+
+Configure https://github.com/oliviercailloux/java-course/blob/master/DevOps/CI.adoc[Travis] (if not done already) so that your project is built automatically after each push. If someone mistakenly commits code that fails the checkstyle tests, it will be visible immediately as the build will now fail, and the erroneous commits can be dealt with.
+
+In case of build failing for style issues, you can see what is wrong in the Maven output, but it’s better to run `mvn jxr:jxr checkstyle:checkstyle`, which creates a readable html report in the `target/site/` folder.
+
+== Refs
+
+* https://maven.apache.org/plugins/maven-checkstyle-plugin/index.html[Apache Maven Checkstyle Plugin]
+* checkstyle http://checkstyle.sourceforge.net/config.html[configuration] documentation
+* https://search.maven.org/search?q=g:com.puppycrawl.tools%20AND%20a:checkstyle&core=gav[checkstyle] and https://search.maven.org/search?q=g:org.apache.maven.plugins%20AND%20a:maven-checkstyle-plugin&core=gav[maven-checkstyle-plugin] on Maven Central
+* https://stackoverflow.com/questions/184563/checkstyle-vs-pmd[Checkstyle vs. PMD] on Stack Overflow. (From a cursory examination I think Checkstyle is more oriented towards style checking than PMD, for example PMD does not seem to have a configuration for http://google.github.io/styleguide/javaguide.html[Google Java style].)
+
