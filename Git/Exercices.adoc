@@ -66,7 +66,7 @@ Thinking about it, you decide to merge both your ideas into `master`.
 
 == Remote repository on GitHub
 
-* Create a new remote remository, RG, on https://www.github.com/[GitHub]. Connect R1 to RG.
+* Create a new remote remository, RG, on https://github.com/[GitHub]. Connect R1 to RG.
 ** Hint: follow and adapt the instructions given by GitHub.
 * Send your local informations to RG. Check with a browser that they have reached GitHub.
 * Clone RG into a new folder, R3. Modify a file and commit into R3. Send it to RG. Check online.

@@ -67,7 +67,7 @@ private static final Logger LOGGER = Logger.getLogger(MyClassName.class.getCanon
 
 You can then write logging statements such as `LOGGER.info("Hello, world.");`.
 
-See the Oracle http://docs.oracle.com/javase/8/docs/technotes/guides/logging/index.html[tutorial].
+See the Oracle https://docs.oracle.com/javase/8/docs/technotes/guides/logging/index.html[tutorial].
 
 === Enable assertions
 Run `/usr/local/bin/asadmin create-jvm-options -ea` (then restart the server) to enable Java assertions. (This can also be done through the Administration console, Configurations, JVM Settings, JVM Options.)

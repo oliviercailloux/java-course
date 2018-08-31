@@ -43,7 +43,7 @@ client.close();
 * https://docs.oracle.com/javaee/7/api/javax/ws/rs/client/WebTarget.html[WebTarget] to manipulate URLs
 * http://doi.org/10.1145/337180.337228[Article] REST : Fielding & Taylor, Principled Design of the Modern Web Architecture (https://www.ics.uci.edu/~fielding/pubs/webarch_icse2000.pdf[PDF])
 * http://www.w3.org/Protocols/[RFC 7231]: HTTP/1.1, part 2: Semantics and Content
-* http://docs.oracle.com/javaee/7/tutorial/jaxrs-client.htm[Accessing REST Resources with the JAX-RS Client API] in The Java EE Tutorial
+* https://docs.oracle.com/javaee/7/tutorial/jaxrs-client.htm[Accessing REST Resources with the JAX-RS Client API] in The Java EE Tutorial
 * https://jcp.org/en/jsr/detail?id=339[JSR 339]: JAX-RS 2.0 (http://download.oracle.com/otn-pub/jcp/jaxrs-2_0_rev_A-mrel-eval-spec/jsr339-jaxrs-2.0-final-spec.pdf[PDF])
 * https://jcp.org/en/jsr/detail?id=370[JSR 370]: JAX-RS 2.1 (http://download.oracle.com/otn-pub/jcp/jaxrs-2_1-final-eval-spec/jaxrs-2_1-final-spec.pdf[PDF])
 

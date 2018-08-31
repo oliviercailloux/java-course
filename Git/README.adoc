@@ -1,6 +1,6 @@
 = Git
 
-See https://github.com/oliviercailloux/java-course/raw/master/Git/Pr%C3%A9sentation/presentation.pdf[présentation], https://github.com/oliviercailloux/java-course/blob/master/Git/Exercices.adoc[exercices].
+See https://raw.githubusercontent.com/oliviercailloux/java-course/master/Git/Pr%C3%A9sentation/presentation.pdf[présentation], https://github.com/oliviercailloux/java-course/blob/master/Git/Exercices.adoc[exercices].
 
 == References
 * https://git-scm.com/[Git-SCM]: official download; Cheat Sheets; Book Pro Git (free, as in speech and beer); tryGit

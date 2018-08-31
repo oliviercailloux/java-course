@@ -61,7 +61,7 @@ This is what the dependency to https://github.com/Siggen/jaxb2-namespace-prefix[
 == References
 * Full working examples: https://github.com/choweiyuan/schemaexample[simplest], https://github.com/oliviercailloux/XMCDA-2.2.1-JAXB[with customization] (and biggest schema), https://github.com/xmcda-modular/jaxb[with more complex schema].
 * Similar technologies in other languages: http://pyxb.sourceforge.net/[PyXB], https://docs.microsoft.com/en-us/dotnet/standard/serialization/xml-schema-definition-tool-xsd-exe[.NET].
-* See https://docs.oracle.com/javase/tutorial/jaxb/index.html[Oracle Tutorial], http://docs.oracle.com/javase/8/docs/technotes/guides/xml/jaxb/[Oracle Docs], https://docs.oracle.com/javase/8/docs/api/index.html?javax/xml/bind/package-summary.html[API].
+* See https://docs.oracle.com/javase/tutorial/jaxb/index.html[Oracle Tutorial], https://docs.oracle.com/javase/8/docs/technotes/guides/xml/jaxb/[Oracle Docs], https://docs.oracle.com/javase/8/docs/api/index.html?javax/xml/bind/package-summary.html[API].
 * In Eclipse, you should probably disable the validator (see https://bugs.eclipse.org/bugs/show_bug.cgi?id=437635[bug]).
 * https://javaee.github.io/jaxb-v2/doc/user-guide/index.html
 

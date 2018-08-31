@@ -2,7 +2,7 @@
 
 JAX-RS is a Java standard that allow to build REST web services.
 
-See: https://github.com/oliviercailloux/java-course/raw/master/JAX-RS/Pr%C3%A9sentation/presentation.pdf[Présentation], https://github.com/oliviercailloux/sample-jax-rs[sample-jax-rs].
+See: https://raw.githubusercontent.com/oliviercailloux/java-course/master/JAX-RS/Pr%C3%A9sentation/presentation.pdf[Présentation], https://github.com/oliviercailloux/sample-jax-rs[sample-jax-rs].
 
 == References
 

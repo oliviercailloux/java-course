@@ -29,8 +29,8 @@ To start a Maven compatible web project:
 === My first servlet
 For you to define a new servlet that will be recognized as such by the container, you must define a new class that represents your servlet, and:
 
-* your class must extend http://docs.oracle.com/javaee/7/api/javax/servlet/http/HttpServlet.html[`HttpServlet`] (a class provided by Java EE);
-* your class must be annotated with http://docs.oracle.com/javaee/7/api/javax/servlet/annotation/WebServlet.html[`@WebServlet`];
+* your class must extend https://docs.oracle.com/javaee/7/api/javax/servlet/http/HttpServlet.html[`HttpServlet`] (a class provided by Java EE);
+* your class must be annotated with https://docs.oracle.com/javaee/7/api/javax/servlet/annotation/WebServlet.html[`@WebServlet`];
 * your class overrides one method, depending on the request method you want it to handle.
 
 The value of the `@WebServlet` annotation is the URI at which your servlet must be reached.
