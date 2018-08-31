@@ -7,67 +7,36 @@
 * https://github.com/oliviercailloux/samples[Échantillons] ; https://github.com/javaee-samples/javaee8-samples[javaee8-samples]
 * Goncalves - Beginning Java EE 7 : http://doi.org/10.1007/978-1-4302-4627-5[Springer], https://proxy.bu.dauphine.fr/http/doi.org/10.1007/978-1-4302-4627-5[BU] 
 * XML in a nutshell : https://portail.bu.dauphine.fr/bibliodata.html?record_id=ALEPH000026526&rtype=book[BU 1], https://portail.bu.dauphine.fr/bibliodata.html?record_id=ALEPH000013764&rtype=book[BU 2], https://portail.bu.dauphine.fr/bibliodata.html?record_id=ALEPH000035938&rtype=book[BU (en français)]
+* https://tools.ietf.org/html/rfc6265[Cookies]
+* https://github.com/advanced-js/syllabus
 
 == Projets
-Énoncés : voir https://github.com/oliviercailloux/projets/tree/master/EE[Projets] Java EE (sur GitHub)
-
-=== Exigences
-* Pour chaque fonctionnalité dont vous vous occupez : créer une issue sur votre projet GitHub. Son nom _doit_ être strictement égal au nom dans l’énoncé du projet. Vous enregistrer à deux (un binôme) dessus. Lorsque vous l’estimez terminée (je peux corriger), et que vous avez fusionné votre code sur la branche master, vous fermez l’issue. (Idée : https://fr.wikipedia.org/wiki/Int%C3%A9gration_continue[Intégration continue])
-* Je vous donne une note temporaire (la même pour les deux membres du binôme) pour cette issue. Je commente l’issue sur GitHub pour vous aider à améliorer votre code (et vos points) si nécessaire.
-* Vous pouvez ré-ouvrir l’issue si vous le jugez nécessaire, pour corriger les faiblesses soulignées dans mon commentaire, ou en créer une autre.
-* Un travail régulier est attendu (et la note le prendra en compte). En outre, si vous attendez la fin du cours pour travailler sur votre projet, vous ne bénéficiez pas du suivi.
-* Attendu : 5 heures de travail par personne entre chaque séance en moyenne ; un demi point de difficulté par binôme par séance en moyenne.
-* Conseil : changez partiellement chaque binômes à chaque issue pour faire tourner les connaissances et varier les plaisirs (et augmenter les points).
-
-. Approche par contrat
-.. Gestion appropriée des exceptions
-.. Avec Javadoc pour documenter le contrat lorsque nécessaire
-.. Sans commentaires auto-générés (ne servent à rien et masquent les commentaires importants)
-. Avec tests unitaires ou fonctionnels (_au moins_ un test fonctionnel par servlet)
-. Utilisation appropriée des classes de la JRE et de bibliothèques tierces
-. Coder en anglais
-. Dépôt clair (responsabilité de _tous_ les membres)
-.. Pas de produits transformés (.class par exemple)
-.. Pas de fichiers propres à l’IDE (.project, .classpath, .settings pour Eclipse)
-.. Projet Java (donc pom.xml) à la racine du dépôt
-.. POM correct
-. Répondre aux attentes du client : vérifier la compréhension !
-. Respecter les https://github.com/oliviercailloux/java-course/tree/master/Best%20practices[bonnes pratiques]
-
-=== Évaluation de la régularité
-* Je donnerai au groupe trois notes durant l’année sur l’aspect régularité.
-** Note 1 : deux jours avant S4. Exigence : au moins trois points de difficulté accomplis avec une qualité au moins moyenne (selon exigences ci-dessus) (− 3 / 10 par point non accompli) ; Travis CI en place (− 2 / 10 sinon).
-** Note 2 : deux jours avant S6 (≥ 7 points de difficulté ; Tests doivent passer sur Travis CI) (2 / 10 par point de difficulté au-delà de 3, 2 / 10 pour Travis)
-** Note 3 : deux jours avant S8 (≥ 11 points de difficulté) (0,9 / 10 par point de difficulté depuis le début)
-* La moyenne de ces trois notes constitue la note régularité.
-* La note régularité compte comme un _plafond_ sur votre note CC, qui elle compte pour 50% de la note finale.
-
-Deux jours avant Sx signifie : au plus tard deux jours avant le jour de la séance x, à 23h59 + 1 min. (Exemple : si S4 a lieu lundi 3 octobre, deux jours avant S4 signifie : au plus tard samedi 1 octobre, 23h59 + 1 min.)
-
-=== Commentaires lors évaluations des fonctionnalités
-Les commentaires utilisent les abréviations E1, E2, etc, pour se référer aux exigences ci-dessus ; S2.1 pour le point indiqué en 1 sous S2 ci-dessous ; BP Maven (par exemple) pour les Bonnes Pratiques Maven (voir lien ci-dessus).
-
-=== Notes finales
-* La note CC et la note régularité seront déterminées par l’état de votre projet deux jours avant S8.
-* La note projet (les autres 50 %) sera déterminée par l’état de votre projet à la fin du dimanche 18 février (23h59 + 1min., sur la branche master sur github).
-* Vous _pouvez_ joindre au projet un rapport, obligatoirement au format asciidoctor, surlignant des difficultés que vous avez rencontrées et dont vous voulez que je tienne compte lors de la note projet.
+* https://github.com/oliviercailloux/projets/tree/master/EE[Énoncés]
+* Attendu : cahiers des charges pour deux ou trois itérations courtes indiquant succinctement les exigences fonctionnelles (EF) ; 3 points de difficulté par membre au total sur l’année
+* Vous créez un dépôt pour votre projet et travaillez tous sur votre dépôt de groupe. Interdiction de commettre sur la branche master sans mon aval. À part ça, organisation interne libre. Suggestion : fusionnez vos fcts sur une branche `dev` dès que possible (https://fr.wikipedia.org/wiki/Int%C3%A9gration_continue[intégration continue]) ; à défaut, commit sur branches par fct et désigner un responsable fusion pour éviter écrasement.
+* Cahiers des charges et fonctions (une par EF) à remettre via pull request vers votre branche master. Je commente votre pull request. Date de livraison initiale précisée dans le programme ci-dessous ; date de livraison finale la séance suivante. Non respect des dates : −0,1/10 par heure de retard (tout retard entamé est compté).
+* Pull request (pour chaque fct) à faire quand vous êtes sûr de vous (mais à temps). Plus je dois commenter, et plus il y a de pull requests avant acceptation du code, plus vous perdez des points (à fct égale). (Ne concerne pas l’aide apportée au cours ou par e-mail.)
+* L’auteur reçoit une note qualité et un nombre de points de difficultés lorsque la fct est acceptée (code fusionné dans master). Voir https://github.com/oliviercailloux/java-course/tree/master/Best%20practices[Bonnes pratiques] et https://github.com/oliviercailloux/java-course/blob/master/Corr.adoc[Corr].
+* Note finale projet : moyenne des notes fcts pondérée par points de difficulté (meilleures notes sont considérées si plus de points de difficulté que requis) et note pour présentation finale. Ajustement possible pour tenir compte des difficultés et de la cohérence globales. (Note finale : 50% Projet, 50% CC.)
+* Conseil : travaillez ensemble et variez les binômes pour faire tourner les connaissances et varier les plaisirs.
 
 == Plan
-=== S1 (mercredi 27 septembre 2017)
+=== S1 (mercredi 26 septembre 2018)
 * https://github.com/oliviercailloux/java-course/raw/master/Pr%C3%A9sentation%20du%20cours%20EE/presentation.pdf[Présentation] du cours
-* https://github.com/oliviercailloux/java-course/tree/4fbf56d4a8f2a2501c679783c5c582b1ea151347/Git/presentation.pdf[Git & exercices]
-* Affectation en projets
+* https://github.com/oliviercailloux/java-course/tree/master/Git[Git] : présentation & exercices
+* Affectation en projets : 3 à 6 / projet (plus gros groupes prioritaires, mais plus difficile !)
 * https://github.com/oliviercailloux/java-course/blob/master/HTTP.adoc[HTTP]
-* Client WS, https://github.com/oliviercailloux/java-course/tree/master/WS%20client.adoc[exercices]
+* https://github.com/oliviercailloux/java-course/tree/master/WS%20client.adoc[Client WS]
 
 À faire
 
 . https://github.com/oliviercailloux/java-course/tree/master/Tools.adoc[Tools.adoc]
 . Se créer un compte sur GitHub
-. Terminer exercices git (voir diapositives git)
-. Exercices curl (voir exercices client WS)
-. Me fournir le nom d’utilisateur, si nécessaire : via devoir https://mycourse.dauphine.fr/webapps/blackboard/execute/launcher?type=Course&id=_38082_1[MyCourse]
+. Me fournir le nom d’utilisateur : via devoir https://mycourse.dauphine.fr/webapps/blackboard/execute/launcher?type=Course&id=_41943_1[MyCourse]
 . Rediriger vos e-mails @ Dauphine si nécessaire pour vous assurer de recevoir les annonces
+. Terminer exercices git
+. https://github.com/oliviercailloux/java-course/tree/master/WS%20client.adoc[Client WS], partie curl (la partie Java sera vue en S2)
+. Effectuer le https://classroom.github.com/a/dvTohDAJ[devoir] (noté) : accepter le devoir, puis, à la dernière étape de l’exercice git ci-dessus, utiliser le dépôt GitHub créé pour le devoir. Utilisez ce dépôt pour aller jusqu’au bout de l’exercice. (Si vous voulez recommencer, effacez le dépôt créé pour le devoir et acceptez-le à nouveau pour repartir avec un nouveau dépôt.) Ensuite, ajoutez un fichier curl.txt au dépôt dans une branche curl, contenant juste une ligne qui récupère l’information depuis Wikipedia demandée dans l’exercice Client WS en invoquant curl.
 
 === S2 (mardi 31 octobre)
 // 13h45
@@ -83,9 +52,9 @@ Les commentaires utilisent les abréviations E1, E2, etc, pour se référer aux 
 // 15h30
 
 * L’Open Data https://www.youtube.com/watch?v=aHxv_2BMJfw[à la loupe]
-* https://github.com/oliviercailloux/java-course/raw/master/Maven/presentation.pdf[Maven] & https://github.com/oliviercailloux/java-course/tree/master/Maven.adoc[exercices]
+* https://github.com/oliviercailloux/java-course/tree/master/Maven[Maven] : présentation & exercices
 * Exercices client WS (lien ci-dessus)
-* https://github.com/oliviercailloux/java-course/raw/master/Java%20EE/presentation.pdf[Intro] Java EE, https://github.com/oliviercailloux/java-course/tree/master/GlassFish.adoc[Familiarisation] avec GlassFish
+* https://github.com/oliviercailloux/java-course/raw/master/Java%20EE/presentation.pdf[Intro] Java EE, https://github.com/oliviercailloux/java-course/tree/master/WildFly.adoc[Familiarisation] avec WildFly
 * https://github.com/oliviercailloux/java-course/tree/master/Servlets.adoc[Servlets.adoc]
 ** Compilation avec Maven et déploiement manuel
 ** Compilation et déploiement via Eclipse
@@ -94,7 +63,7 @@ Les commentaires utilisent les abréviations E1, E2, etc, pour se référer aux 
 À faire
 
 * Démarrage du projet
-** Vous pouvez utiliser le `groupId` `io.github.oliviercailloux.y2017`
+** Vous pouvez utiliser le `groupId` `io.github.oliviercailloux.y2018`
 ** Utilisez _obligatoirement_ comme `artifactId` le nom de votre projet (avec espaces transformés en traits d’union)
 ** Lire les bonnes pratiques Maven
 
@@ -109,7 +78,7 @@ Les commentaires utilisent les abréviations E1, E2, etc, pour se référer aux 
 * Servlets multi-formats
 ** JSON https://github.com/oliviercailloux/java-course/blob/master/JSON.adoc[Processing], https://github.com/oliviercailloux/java-course/blob/master/JSON-B.adoc[JSON-B]
 ** XML : voir références générales ci-dessus
-** JAXB : exemple https://github.com/oliviercailloux/XMCDA-2.2.1-JAXB[classique], https://github.com/xmcda-modular/jaxb[avancé] (http://pyxb.sourceforge.net/[PyXB], https://docs.microsoft.com/en-us/dotnet/standard/serialization/xml-schema-definition-tool-xsd-exe[.NET], …). Voir https://docs.oracle.com/javase/tutorial/jaxb/index.html[Tutoriel Oracle], http://docs.oracle.com/javase/8/docs/technotes/guides/xml/jaxb/[Docs Oracle]. Dans Eclipse, désactiver le validateur est probablement nécessaire, cf. https://bugs.eclipse.org/bugs/show_bug.cgi?id=437635[bug].
+** https://github.com/oliviercailloux/java-course/blob/master/JAXB.adoc[JAXB]
 * Fail-fast, exceptions, Optional
 * https://www.getpostman.com/[Postman]
 
@@ -118,15 +87,14 @@ Les commentaires utilisent les abréviations E1, E2, etc, pour se référer aux 
 * Mettre en place le système d’intégration continue Travis sur votre dépôt de groupe. (Voir document ci-dessus.) Ajouter le badge au fichier README. Également à rendre pour deux jours avant S4. Vérifier que votre projet compile, d’après Travis, au moment de la remise. (Les tests fonctionnels de vos servlets ne doivent pas nécessairement passer.)
 
 === S4 (5 décembre)
-* Note sur la réutilisation intelligente (recompensée !) et le droit d’utilisation, ainsi que les https://github.com/oliviercailloux/projets/blob/master/Licence.adoc[licences]
-* https://tools.ietf.org/html/rfc6265[Cookies]
-* https://github.com/oliviercailloux/java-course/raw/master/REST/presentation.pdf[REST] : https://github.com/oliviercailloux/sample-jax-rs[exemple]
-* http://arquillian.org/[Arquillian]
-
-=== S5 (13 décembre)
 * https://github.com/oliviercailloux/java-course/raw/master/JPA/presentation.pdf[JPA] : création d’une entité et création automatique BD
 ** https://github.com/oliviercailloux/java-course/blob/master/DB%20from%20Eclipse.adoc[DB from Eclipse]
 ** https://github.com/oliviercailloux/java-course/blob/master/JPA.adoc[Exercices]
+
+=== S5 (13 décembre)
+* Note sur la réutilisation intelligente (recompensée !) et le droit d’utilisation, ainsi que les https://github.com/oliviercailloux/projets/blob/master/Licence.adoc[licences]
+* https://github.com/oliviercailloux/java-course/raw/master/REST/presentation.pdf[REST] : https://github.com/oliviercailloux/sample-jax-rs[exemple]
+* http://arquillian.org/[Arquillian]
 
 À faire
 

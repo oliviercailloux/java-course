@@ -17,4 +17,5 @@ See: https://github.com/oliviercailloux/java-course/raw/master/CDI/Pr%C3%A9senta
 * Goncalves - Beginning Java EE 7 (2013)
 * https://jcp.org/en/jsr/detail?id=342[JSR 342] (Java EE 7) (http://download.oracle.com/otn-pub/jcp/java_ee-7-mrel-eval-spec/JavaEE_Platform_Spec.pdf[PDF])
 * https://jcp.org/en/jsr/detail?id=345[JSR 345] (EJB 3.2) (http://download.oracle.com/otn-pub/jcp/ejb-3_2-fr-eval-spec/ejb-3_2-core-fr-spec.pdf[PDF])
+* Weld (CDI Reference Implementation) http://docs.jboss.org/weld/reference/latest/en-US/html/[doc]
 

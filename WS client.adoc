@@ -24,9 +24,9 @@ Third: Real-life API use. We get some data from Wikipedia.
 
 Our goal is to programmatically retrieve all the modifications (revisions) that have occurred at the  Bertrand Russel https://en.wikipedia.org/wiki/Bertrand_russel[page] in between 29th of July and 1st of August, 2017.
 
-This can be seen https://en.wikipedia.org/w/index.php?title=Bertrand_Russell&action=history[here]. We could of course retrieve this exact page using curl, and parse the resulting HTML. But this is very impractical and inefficient, as that page is made for humans and not for machines, and it is fragile, as nothing guarantees that the HTML code in that page will not change.
+The information we search for can be seen in human readable version https://en.wikipedia.org/w/index.php?title=Bertrand_Russell&action=history[here]. We could of course retrieve this exact page using curl, and parse the resulting HTML. But this is very impractical and inefficient, as that page is made for humans and not for machines, and it is fragile, as nothing guarantees that the HTML code in that page will not change.
 
-* Read Wikipedia’s API https://www.mediawiki.org/wiki/API:Main_page[doc] to find out how to retrieve the data we want in json format.
+* Read Wikipedia’s API https://www.mediawiki.org/wiki/API:Main_page[doc] to find out how to retrieve the data we want in json format (Wikipedia has a newer, cleaner https://www.mediawiki.org/wiki/REST_API[API], but it is not complete yet, so we use the old one).
 * Retrieve this data using curl.
 * More specifically, we want the return to contain, for each revision, the revision id, parent id, user name (who made the revision), and timestamp.
 

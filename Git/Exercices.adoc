@@ -70,5 +70,5 @@ Thinking about it, you decide to merge both your ideas into `master`.
 ** Hint: follow and adapt the instructions given by GitHub.
 * Send your local informations to RG. Check with a browser that they have reached GitHub.
 * Clone RG into a new folder, R3. Modify a file and commit into R3. Send it to RG. Check online.
-* Modify something in R1, commit. Try to send it to RG. Why is it refused? How can you effectively send your last modification online?
+* Modify something in R1, commit. Try to send it to RG. Why is it refused? How can you effectively send your last modification online? Send it on your RG repository.
 

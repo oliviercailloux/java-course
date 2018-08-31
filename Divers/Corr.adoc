@@ -1,0 +1,31 @@
+= Correction projets
+
+|===
+| Abbrv | Pratique à respecter | Informations | Sanction (/ 10)
+| IN | Respect des instructions concernant la remise (création issues, etc.) | Instructions / project | −2
+| UNIK	| noms des ressources est unique et respecte les bonnes pratiques	| https://github.com/oliviercailloux/java-course/tree/master/Class%20path[Class path]		| −1
+| CASING	| respect des conventions de nommage	| https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Style.adoc[BP Style]	| −0,5
+| FORMAT	| le code est mis en forme systématiquement	| https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Style.adoc[BP Style]	| −1
+| WEB	| commit effectué via git	| Git	| −1
+| DOC	| Javadoc pour documentation du contrat lorsque utile | | −1
+| NOISE	| Sans commentaires auto-générés | Réduit le bruit | −2
+| DER	| le dépôt ne contient pas de produits dérivés	| https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Git.adoc[BP Git]	| −1
+| FOLDER	| la racine du dépôt est la racine du projet	| https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Git.adoc[BP Git]	| −0,5
+| HIST	| Ne pas écraser l’historique	| Git	| 0
+| PLAG	| Citer la source quand on inclut du code d’autrui	| https://fr.wikipedia.org/wiki/Plagiat[Plagiat]	| -3
+| ECL	| Le code est correct d’après Eclipse : pas d’erreurs ni de warnings (ceci n’échoue que si COMP réussit)	| https://github.com/oliviercailloux/java-course/blob/master/Tools.adoc#configuration[Tools]	| -1
+| COMP	| Le code est du Java correct.	| https://github.com/oliviercailloux/java-course/blob/master/Tools.adoc#eclipse[Vues Eclipse]	| -1,5
+| CP	| Le code est séparé des autres ressources du class path	| https://github.com/oliviercailloux/java-course/tree/master/Class%20path[Class path]	| −1
+| EXC	| Le code échoue rapidement et envoie des exceptions si approprié	| https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Exceptions.adoc#cath-exceptions-only-if-you-have-a-good-reason-to-do-so[BP Exc]	| −2
+| REUSE	| Les bibliothèques existantes sont utilisées à bon escient plutôt que réinventer la roue	| 	| −2
+| ARRAY	| Privilégier des collections (List, Set, etc.) plutôt que des tableaux de types primitifs	|	| −1
+| TEST	| Des tests unitaires ou fonctionnels couvrent les fonctionnalités demandées	| http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours9.pdf[Airiau C9]	| −1
+| ENC	| Préciser l’encodage des flux lus ou écrits	| https://github.com/oliviercailloux/java-course/blob/master/Flows.adoc[Flows]	| −1
+| EN	| Coder et commenter en anglais	|	| −1
+| FORE	| Privilégier boucles for each	| https://docs.oracle.com/javase/tutorial/java/nutsandbolts/for.html[Tutorial]	| −0,5
+| LOG	| Utiliser des loggers	| https://github.com/oliviercailloux/java-course/raw/master/SLF4J/presentation.pdf[SLF4J]	| −1
+| STREAMS	| Utiliser des streams pour plus de généralité quand approprié	| https://github.com/oliviercailloux/java-course/blob/master/Flows.adoc[Flows]	| −1
+| POM	| Respecter les conventions de nommage et autres bonnes pratiques Maven, simplifier le POM autant que possible	| https://github.com/oliviercailloux/java-course/tree/master/Maven[Maven]	| −1
+|===
+
+
