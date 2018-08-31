@@ -3,7 +3,7 @@ git:
   depth: 1
 rvm: 2.4.1
 before_script: gem install awesome_bot
-script: find -name "*.adoc" -print0 | xargs -0 awesome_bot --white-list 'https://stackoverflow.com/a/6358'
+script: find -name "*.adoc" -print0 | xargs -0 awesome_bot --white-list 'https://stackoverflow.com/a/' 'https://doi.org/'
 notifications:
   email: false
 

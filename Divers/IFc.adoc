@@ -66,7 +66,7 @@ Trois jours avant Sx signifie : au plus tard trois jours avant le jour de la sé
 [[S1]]
 === S1 (jeudi 30 novembre 2017)
 * https://raw.githubusercontent.com/oliviercailloux/java-course/master/Pr%C3%A9sentation%20du%20cours%20EE/presentation.pdf[Présentation] du cours
-* https://github.com/oliviercailloux/java-course/tree/4fbf56d4a8f2a2501c679783c5c582b1ea151347/Git/presentation.pdf[Git & exercices]
+* Git pres & exercices
 * Affectation en projets
 * Client WS, https://github.com/oliviercailloux/java-course/blob/master/WS%20client.adoc[exercices]
 
@@ -111,7 +111,7 @@ Trois jours avant Sx signifie : au plus tard trois jours avant le jour de la sé
 * Usage de git en équipe : dépôt propre ; ignore ; formattage & imports
 ** Fusionner à temps
 * Discussion projets
-* https://github.com/oliviercailloux/java-course/blob/master/CDI[CDI]
+* https://github.com/oliviercailloux/java-course/blob/master/CDI/README.adoc[CDI]
 * https://raw.githubusercontent.com/oliviercailloux/java-course/master/Annotations/presentation.pdf[Annotations]
 * Fail-fast, exceptions, protection contre `null` : cf. Best practices
 * Servlets multi-formats : cf. refs générales
@@ -124,12 +124,12 @@ Trois jours avant Sx signifie : au plus tard trois jours avant le jour de la sé
 [[S4]]
 === S4 (jeudi 25 janvier 2018)
 * Découpe et https://raw.githubusercontent.com/oliviercailloux/java-course/master/Contrat/presentation.pdf[contrats] en génie logiciel
-* https://github.com/oliviercailloux/java-course/blob/master/JAX-RS[JAX-RS]
+* https://github.com/oliviercailloux/java-course/blob/master/JAX-RS/README.adoc[JAX-RS]
 
 [[S5]]
 === S5 (vendredi 23 février 2018)
-* Désigner un responsable fusion : autorise les fusions ; revient en arrière quand fusion incorrecte; pratique les exercices https://github.com/oliviercailloux/java-course/blob/master/Git[git]
-* Création d’un servlet : https://github.com/oliviercailloux/java-course/blob/master/Tools.adoc[Tools] ; https://github.com/oliviercailloux/java-course/blob/master/Maven[Maven] ; https://github.com/oliviercailloux/java-course/blob/master/GlassFish.adoc[GlassFish] ; https://github.com/oliviercailloux/java-course/blob/master/Servlets.adoc[Servlets]
+* Désigner un responsable fusion : autorise les fusions ; revient en arrière quand fusion incorrecte; pratique les exercices https://github.com/oliviercailloux/java-course/blob/master/Git/README.adoc[git]
+* Création d’un servlet : https://github.com/oliviercailloux/java-course/blob/master/Tools.adoc[Tools] ; https://github.com/oliviercailloux/java-course/blob/master/Maven/README.adoc[Maven] ; https://github.com/oliviercailloux/java-course/blob/master/GlassFish.adoc[GlassFish] ; https://github.com/oliviercailloux/java-course/blob/master/Servlets.adoc[Servlets]
 * Tests : https://github.com/oliviercailloux/java-course/blob/master/HTTP.adoc[HTTP] ; https://github.com/oliviercailloux/java-course/blob/master/WS%20client.adoc[Client WS] ; JUnit (S3)
 * Qualité : assertions ; program logs (GlassFish) ; Contrat (BP) ; Maven (BP) ; autres exigences
 * CI : Travis.

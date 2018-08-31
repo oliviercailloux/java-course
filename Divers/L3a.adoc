@@ -84,7 +84,7 @@ Don’t hesitate to send me your question by e-mail if you’re blocked in your 
 
 == Take notes
 * 5 ways of taking notes https://www.youtube.com/watch?v=AffuwyJZTQQ[video]
-* http://pss.sagepub.com/content/25/6/1159[Research] shows that taking notes, and especially writing what is said in your own words after some mental processing, permits more effective study
+* https://doi.org/10.1177/0956797614524581[Research] shows that taking notes, and especially writing what is said in your own words after some mental processing, permits more effective study
 
 Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017/course/[course] “Introduction to Biology - The Secret of Life”, MITx
 
@@ -129,7 +129,7 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 * http://math.hws.edu/eck/cs124/javanotes7/c2/quiz.html[EQ2.1] to 2.4; 2.6 to 2.9; 2.11
 * Commit the mandatory exercices above: see https://github.com/oliviercailloux/java-course/blob/master/Divers/L3a.adoc#book-exercices[Instructions]
 ** Do _not_ send me an e-mail to give me your username, or your repository URL.
-** You are not obliged to use the command `git` to send your files on GitHub for now, you may do it “manually” with your web browser. Here is how. (Or watch this http://www.youtube.com/watch?v=pgzOiH1kmnI&t=1m20s[video], from 1min 20s to 4min.)
+** You are not obliged to use the command `git` to send your files on GitHub for now, you may do it “manually” with your web browser. Here is how. (Or watch this https://www.youtube.com/watch?v=pgzOiH1kmnI&t=1m20s[video], from 1min 20s to 4min.)
 .. When creating your repository, check the box “Initialize this repository with a README” (the goal is simply to make your repository non-empty)
 .. You can use the `Upload files` button or directly drag and drop your Java files on your resulting repository
 .. Keep the default option: “Commit directly to the `master` branch”, click `Commit changes`.
