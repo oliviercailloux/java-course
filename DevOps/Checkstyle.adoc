@@ -40,7 +40,7 @@ Add this to your POM, in the `build/plugins` element (see https://github.com/oli
 </plugin>
 ----
 
-And add this to your POM in order to configure jxr, which permits to have links to your code in the reports checkstyle produces.
+And add this to your POM in order to include jxr, which permits to have links to your code in the reports checkstyle produces.
 
 .The jxr plugin configuration
 [source,xml]
