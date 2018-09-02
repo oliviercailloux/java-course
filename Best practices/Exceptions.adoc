@@ -1,4 +1,6 @@
 = Exceptions
+//works around bug https://github.com/dkhamsing/awesome_bot/issues/182
+:emptyattribute:
 
 == Cath exceptions only if you have a good reason to do so
 Beginner programmers sometimes catch an exception just to get rid of the problem, and do not do anything in the catch block (or just log or print the exception). This is very bad style as it contradicts the fail-fast principle. Consider rather to re-throw the exception, or to wrap it in an unchecked exception.
@@ -10,6 +12,6 @@ The argument in favor of the latter is that it is clear to the caller that a fau
 
 Thus, I consider it sensible to follow the standard. And the standard is to throw `NullPointerException`.
 
-* Many APIs in the JDK pro-actively throws `NullPointerException`, e.g. https://docs.oracle.com/javase/10/docs/api/java/util/Map.html#containsKey(java.lang.Object)[`Map.containsKey`], https://docs.oracle.com/javase/10/docs/api/java/util/Objects.html#requireNonNull(T)[`Objects.requireNonNull`] (https://stackoverflow.com/questions/3881/illegalargumentexception-or-nullpointerexception-for-a-null-parameter/6358#6358[thanks].)
+* Many APIs in the JDK pro-actively throws `NullPointerException`, e.g. https://docs.oracle.com/javase/10/docs/api/java/util/Map.html#containsKey(java.lang.Object)[`Map.containsKey`], https://docs.oracle.com/javase/10/docs/api/java/util/Objects.html#requireNonNull(T)[`Objects.requireNonNull`] (https://stackoverflow.com/questions/3881/illegalargumentexception-or-nullpointerexception-for-a-null-parameter/6358#6358[thanks]{emptyattribute}.)
 * https://google.github.io/guava/releases/snapshot/api/docs/com/google/common/base/Preconditions.html#checkNotNull-T-[Guava] also favors `NullPointerException` over `IllegalArgumentException`.
 * “Effective Java” agrees, see https://stackoverflow.com/a/6358[SO].
