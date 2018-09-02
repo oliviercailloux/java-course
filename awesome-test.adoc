@@ -24,3 +24,23 @@ link (“we discourage the usage of <repositories> and <pluginRepositories> and 
 
 link (“we discourage the usage of <repositories> and <pluginRepositories> and instead publish any required components to the Central Repository. This applies for your own components as well as for 3rd party artifacts.”, https://central.sonatype.org/pages/requirements.html#s6ufficient-metadata[requirements])
 
+https://www.wikipedia.org/#two[two words]
+
+https://www.wikipedia.org/#word[word]
+
+https://www.wikipedia.org/#dot[dot].
+
+https://www.wikipedia.org/#dotpar[stuff]).
+
+https://www.wikipedia.org/#par[stuff])
+
+a sentence https://www.wikipedia.org/#sent[stuff]).
+
+a sentence, https://www.wikipedia.org/#comma[comma].
+
+a sentence, https://www.wikipedia.org/#commapar[commapar])
+
+link (“we discourage the usage of <repositories> and <pluginRepositories> and instead publish any required components to the Central Repository. This applies for your own components as well as for 3rd party artifacts.”, https://www.wikipedia.org/#longsentpardot[stuff]).
+
+link (“we discourage the usage of <repositories> and <pluginRepositories> and instead publish any required components to the Central Repository. This applies for your own components as well as for 3rd party artifacts.”, https://www.wikipedia.org/#longsentdot[stuff])
+
