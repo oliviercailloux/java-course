@@ -3,7 +3,8 @@ git:
   depth: 1
 rvm: 2.4.1
 before_script: gem install awesome_bot
-script: find -name "*.adoc" -print0 | xargs -0 awesome_bot --white-list 'https://stackoverflow.com/a/' 'https://doi.org/'
+#script: find -name "*.adoc" -print0 | xargs -0 awesome_bot --white-list 'https://stackoverflow.com/a/,https://doi.org/,http://java.sun.com/xml/ns/jaxb,http://jaxb2-commons.dev.java.net/namespace-prefix,http://xmlns.jcp.org/jsf/html,http://www.w3.org/1999/xhtml,http://search.maven.org/#search'
+script: awesome_bot --white-list 'https://stackoverflow.com/a/,https://doi.org/,http://java.sun.com/xml/ns/jaxb,http://jaxb2-commons.dev.java.net/namespace-prefix,http://xmlns.jcp.org/jsf/html,http://www.w3.org/1999/xhtml,http://search.maven.org/#search' awesome-test.adoc
 notifications:
   email: false
 
