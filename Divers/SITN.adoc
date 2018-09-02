@@ -23,19 +23,19 @@
 == Plan
 === S1 (mercredi 26 septembre 2018)
 * https://github.com/oliviercailloux/java-course/raw/master/Pr%C3%A9sentation%20du%20cours%20EE/presentation.pdf[Présentation] du cours
-* https://github.com/oliviercailloux/java-course/tree/master/Git[Git] : présentation & exercices
+* https://github.com/oliviercailloux/java-course/blob/master/Git/README.adoc[Git] : présentation & exercices
 * Affectation en projets : 3 à 6 / projet (plus gros groupes prioritaires, mais plus difficile !)
 * https://github.com/oliviercailloux/java-course/blob/master/HTTP.adoc[HTTP]
-* https://github.com/oliviercailloux/java-course/tree/master/WS%20client.adoc[Client WS]
+* https://github.com/oliviercailloux/java-course/blob/master/WS%20client.adoc[Client WS]
 
 À faire
 
-. https://github.com/oliviercailloux/java-course/tree/master/Tools.adoc[Tools.adoc]
+. https://github.com/oliviercailloux/java-course/blob/master/Tools.adoc[Tools.adoc]
 . Se créer un compte sur GitHub
 . Me fournir le nom d’utilisateur : via devoir https://mycourse.dauphine.fr/webapps/blackboard/execute/launcher?type=Course&id=_41943_1[MyCourse]
 . Rediriger vos e-mails @ Dauphine si nécessaire pour vous assurer de recevoir les annonces
 . Terminer exercices git
-. https://github.com/oliviercailloux/java-course/tree/master/WS%20client.adoc[Client WS], partie curl (la partie Java sera vue en S2)
+. https://github.com/oliviercailloux/java-course/blob/master/WS%20client.adoc[Client WS], partie curl (la partie Java sera vue en S2)
 . Effectuer le https://classroom.github.com/a/dvTohDAJ[devoir] (noté) : accepter le devoir, puis, à la dernière étape de l’exercice git ci-dessus, utiliser le dépôt GitHub créé pour le devoir. Utilisez ce dépôt pour aller jusqu’au bout de l’exercice. (Si vous voulez recommencer, effacez le dépôt créé pour le devoir et acceptez-le à nouveau pour repartir avec un nouveau dépôt.) Ensuite, ajoutez un fichier curl.txt au dépôt dans une branche curl, contenant juste une ligne qui récupère l’information depuis Wikipedia demandée dans l’exercice Client WS en invoquant curl.
 
 === S2 (mardi 31 octobre)
@@ -54,8 +54,8 @@
 * L’Open Data https://www.youtube.com/watch?v=aHxv_2BMJfw[à la loupe]
 * https://github.com/oliviercailloux/java-course/blob/master/Maven/README.adoc[Maven] : présentation & exercices
 * Exercices client WS (lien ci-dessus)
-* https://github.com/oliviercailloux/java-course/raw/master/Java%20EE/presentation.pdf[Intro] Java EE, https://github.com/oliviercailloux/java-course/tree/master/WildFly.adoc[Familiarisation] avec WildFly
-* https://github.com/oliviercailloux/java-course/tree/master/Servlets.adoc[Servlets.adoc]
+* https://github.com/oliviercailloux/java-course/raw/master/Java%20EE/presentation.pdf[Intro] Java EE, https://github.com/oliviercailloux/java-course/blob/master/WildFly.adoc[Familiarisation] avec WildFly
+* https://github.com/oliviercailloux/java-course/blob/master/Servlets.adoc[Servlets.adoc]
 ** Compilation avec Maven et déploiement manuel
 ** Compilation et déploiement via Eclipse
 * Log
@@ -71,7 +71,7 @@
 * Note concernant l’attendu et l’évaluation de la régularité
 * Tests unitaires
 * Travis CI
-* https://github.com/oliviercailloux/java-course/tree/master/GlassFish.adoc#log[Logs] dans GlassFish
+* https://github.com/oliviercailloux/java-course/blob/master/GlassFish.adoc#log[Logs] dans GlassFish
 * Usage de git en équipe : dépôt propre ; ignore ; formattage & imports
 * Discussion projets
 * https://github.com/oliviercailloux/java-course/raw/master/Annotations/presentation.pdf[Annotations]
@@ -106,7 +106,7 @@
 ** ex: deploy
 ** transactions & EM
 ** ex: deux requêtes
-** https://github.com/oliviercailloux/java-course/tree/master/CDI[CDI]
+** https://github.com/oliviercailloux/java-course/blob/master/CDI/README.adoc[CDI]
 ** ex: transactions gérées (facultatif)
 * https://github.com/oliviercailloux/java-course/blob/master/IBM%20Cloud.adoc[IBM Cloud]
 

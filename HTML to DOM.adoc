@@ -1,6 +1,6 @@
 = HTML to DOM
 
-A short note about parsing HTML documents in Java using W3C’s DOM (Document Object Model). Learning to parse using the DOM is good because the DOM is a widely implemented standard: once you know how it works, you can parse HTML (and XML) documents in Javascript, https://docs.python.org/3/library/xml.dom.html[Python], https://msdn.microsoft.com/en-us/library/hf9hbf87.aspx[.NET], …
+A short note about parsing HTML documents in Java using W3C’s DOM (Document Object Model). Learning to parse using the DOM is good because the DOM is a widely implemented standard: once you know how it works, you can parse HTML (and XML) documents in Javascript, https://docs.python.org/3/library/xml.dom.html[Python], https://docs.microsoft.com/en-us/dotnet/standard/data/xml/xml-document-object-model-dom[.NET], …
 
 == Valid HTML
 
