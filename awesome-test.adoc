@@ -1,28 +1,7 @@
 = awesome-test
+:emptyattribute:
 
 Just a file with links to test awesome_bot.
-
-link https://central.sonatype.org/pages/ossrh-guide.html#create-a-ticket-with-sonatype[create a ticket] with Sonatype. 
-
-link https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Maven.adoc#naming-conventions[right]. 
-
-link (see https://central.sonatype.org/pages/requirements.html#s0ufficient-metadata[metadata requirements]). 
-
-link (“we discourage the usage of <repositories> and <pluginRepositories> and instead publish any required components to the Central Repository. This applies for your own components as well as for 3rd party artifacts.”, https://central.sonatype.org/pages/requirements.html#s1ufficient-metadata[requirements])
-
-link http://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html#Lifecycle_Reference[lifecycle]. 
-
-link https://search.maven.org/[search] interface within https://central.sonatype.org/pages/ossrh-guide.html#releasing-to-central[two hours]). 
-
-link (“we discourage the usage of <repositories> and <pluginRepositories> and instead publish any required components to the Central Repository. This applies for your own components as well as for 3rd party artifacts.”, https://central.sonatype.org/pages/requirements.html#s2ufficient-metadata[requirements]
-
-link ( https://central.sonatype.org/pages/requirements.html#s3ufficient-metadata[requirements])
-
-link https://central.sonatype.org/pages/requirements.html#s4ufficient-metadata[requirements])
-
-link (“we discourage the usage of <repositories> and <pluginRepositories> and instead publish any required components to the Central Repository. This applies for your own components as well as for 3rd party artifacts.”, https://central.sonatype.org/pages/requirements.html#s5ufficient-metadata[requirements]).
-
-link (“we discourage the usage of <repositories> and <pluginRepositories> and instead publish any required components to the Central Repository. This applies for your own components as well as for 3rd party artifacts.”, https://central.sonatype.org/pages/requirements.html#s6ufficient-metadata[requirements])
 
 * good: https://www.wikipedia.org/#two[two words]
 * good: https://www.wikipedia.org/#twopar[two words])
@@ -35,4 +14,13 @@ link (“we discourage the usage of <repositories> and <pluginRepositories> and 
 * bad: a sentence, https://www.wikipedia.org/#commapar[commapar])
 * bad: link (“we discourage the usage of <repositories> and <pluginRepositories> and instead publish any required components to the Central Repository. This applies for your own components as well as for 3rd party artifacts.”, https://www.wikipedia.org/#longsentpardot[stuff]).
 * bad: link (“we discourage the usage of <repositories> and <pluginRepositories> and instead publish any required components to the Central Repository. This applies for your own components as well as for 3rd party artifacts.”, https://www.wikipedia.org/#longsentpar[stuff])
+* test: https://www.wikipedia.org/#spacepar[spacepar] )
+
+A test with an{emptyattribute}empty attribute.
+
+A test with a{emptyattribute} spaced empty attribute.
+
+A test with an (empty attribute {emptyattribute}).
+
+A test with an (empty attribute nospace{emptyattribute}).
 
