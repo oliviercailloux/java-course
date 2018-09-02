@@ -1,4 +1,6 @@
 = Class path: Overview
+//works around bug https://github.com/dkhamsing/awesome_bot/issues/182
+:emptyattribute:
 
 A short document that recalls the main points about the class path in Java.
 
@@ -18,7 +20,7 @@ A short document that recalls the main points about the class path in Java.
 * The Java compiler stores compiled files in files with extension `.class`.
 * The compiled files have names corresponding to the source files, for example, `a/b/MyClass.class`.
 
-* To compile, use `javac` (see Oracle https://docs.oracle.com/javase/8/docs/technotes/tools/#basic[tools]).
+* To compile, use `javac` (see Oracle https://docs.oracle.com/javase/8/docs/technotes/tools/#basic[tools]{emptyattribute}).
 * Give it the names of the files to compile.
 * To compile a single class whose source code is in `a/b/MyClass.java`, you simply run: `javac "a/b/MyClass.java"`.
 
@@ -45,7 +47,7 @@ In this example, the compilation will succeed if, and only if, both `c/d/e/MySec
 Third example: `javac -cp "src:bin" "c/d/e/MySecondClass.java"`. The compilation will succeed if, and only if, `MySecondClass.java` can be found in `src/c/d/e/` or `bin/c/d/e/` and `MyFirstClass.class` (or `MyFirstClass.java`) can be found in `src/a/b/` or `bin/a/b/`.
 
 == Running the project
-* To run a program, use `java` (see Oracle https://docs.oracle.com/javase/8/docs/technotes/tools/#basic[tools]).
+* To run a program, use `java` (see Oracle https://docs.oracle.com/javase/8/docs/technotes/tools/#basic[tools]{emptyattribute}).
 * Give it the _full name_ of the class containing the `main()` method you want to run.
 * Give it the class path that permits it to find the required class files, with the `-cp` argument.
 * The `java` command runs the Java VM. The Java VM understands bytecode only, thus, compiled files.

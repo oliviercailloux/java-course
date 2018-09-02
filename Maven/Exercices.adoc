@@ -1,5 +1,7 @@
 = Maven
 :sectanchors:
+//works around bug https://github.com/dkhamsing/awesome_bot/issues/182
+:emptyattribute:
 
 Simple exercices for Maven. The reader is supposed to know already the basics of Maven (see slides in this course).
 
@@ -21,7 +23,7 @@ Your project gets created in a sub-folder of your current position.
 * In the terminal, move into the newly created project.
 * Type `mvn compile`. What does it do, and why (how does it work)? Is `compile` a phase, or a plugin goal?
 * What has changed on your hard disk?
-* Run the compiled application in the command line (if necessary, see Eck’s http://math.hws.edu/eck/cs124/javanotes7/c2/s6.html#basics.6.6[book]). What does it do?
+* Run the compiled application in the command line (if necessary, see Eck’s http://math.hws.edu/eck/cs124/javanotes7/c2/s6.html#basics.6.6[book]{emptyattribute}). What does it do?
 
 == Modern project
 Let’s now use a different archetype to generate a project better suited for our future use.

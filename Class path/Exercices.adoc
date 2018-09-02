@@ -1,4 +1,6 @@
 = Class path: Exercices
+//works around bug https://github.com/dkhamsing/awesome_bot/issues/182
+:emptyattribute:
 
 == The Hello project
 * Create a new project "Hello" from Eclipse.
@@ -7,7 +9,7 @@
 * Check which file Eclipse has put this code in. Explain its precise location on your hard disk.
 * Check and explain the precise location of the compiled version of `mypackage.one.MyClass` that Eclipse creates automatically.
 * Exit Eclipse, delete the compiled version that Eclipse has created for you.
-* Compile `mypackage.one.MyClass` manually using a terminal, with `javac` (see Oracle https://docs.oracle.com/javase/8/docs/technotes/tools/#basic[tools]).
+* Compile `mypackage.one.MyClass` manually using a terminal, with `javac` (see Oracle https://docs.oracle.com/javase/8/docs/technotes/tools/#basic[tools]{emptyattribute}).
 ** Remember that `javac` requests that you give it /files/ as arguments, not class names.
 * Move the just created compiled version to a new folder called `target` instead of `src` (thus into `target/mypackage/one`), to keep source files separated from compiled files.
 * Run the program using a terminal, with `java` (see Oracle https://docs.oracle.com/javase/8/docs/technotes/tools/#basic[tools]). Check that it says Hello.

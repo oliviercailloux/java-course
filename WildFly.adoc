@@ -1,6 +1,8 @@
 = An overview of the WildFly Java EE application server
 :toc: preamble
 :sectanchors:
+//works around bug https://github.com/dkhamsing/awesome_bot/issues/182
+:emptyattribute:
 
 This document gives a (rough) overview of WildFly, a Java EE application server. This document may serve as an introduction to application servers in Java EE.
 
@@ -32,7 +34,7 @@ The `standalone/deployments` directory is used to deploy your application, once 
 
 == Technical tips
 === Enable assertions
-Add `JAVA_OPTS="$JAVA_OPTS -ea"` at the appropriate place in `bin/standalone.conf` (after the first line that defines `JAVA_OPTS`) to enable Java assertions (http://docs.wildfly.org/13/Admin_Guide.html#JVM_settings[doc]). 
+Add `JAVA_OPTS="$JAVA_OPTS -ea"` at the appropriate place in `bin/standalone.conf` (after the first line that defines `JAVA_OPTS`) to enable Java assertions (http://docs.wildfly.org/13/Admin_Guide.html#JVM_settings[doc]{emptyattribute}). 
 
 //=== Clear log
 //`/subsystem=logging/periodic-rotating-file-handler=FILE:write-attribute(name="append", value=false)`

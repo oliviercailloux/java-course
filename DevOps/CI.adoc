@@ -1,4 +1,6 @@
 = Continuous Integration
+//works around bug https://github.com/dkhamsing/awesome_bot/issues/182
+:emptyattribute:
 
 Continuous Integration (CI) refers to the process of frequently integrating changes created by various developers in your team, in order to have (almost) permanently underhand a current, integrated version of your software containing all the developments so far.
 
@@ -51,7 +53,7 @@ The sample configuration file suggested here tells Travis to:
 
 * fetch only the tip of your git history (`git https://git-scm.com/docs/git-clone#git-clone---depthltdepthgt[depth] 1`);
 * use Open JDK 8 (https://docs.travis-ci.com/user/reference/trusty/#JVM-(Clojure%2C-Groovy%2C-Java%2C-Scala)-images[default] is Oracle JDK 8);
-* run the build in a container-based https://docs.travis-ci.com/user/reference/overview/[environment] using the (Ubuntu 14) https://en.wikipedia.org/wiki/Ubuntu_version_history#Ubuntu_14.04_LTS_.28Trusty_Tahr.29[Trusty] distribution (instead of (Ubuntu 12) https://en.wikipedia.org/wiki/Ubuntu_version_history#Ubuntu_12.04_LTS_.28Precise_Pangolin.29[Precise]);
+* run the build in a container-based https://docs.travis-ci.com/user/reference/overview/[environment] using the (Ubuntu 14) https://en.wikipedia.org/wiki/Ubuntu_version_history#Ubuntu_14.04_LTS_.28Trusty_Tahr.29[Trusty] distribution (instead of (Ubuntu 12) https://en.wikipedia.org/wiki/Ubuntu_version_history#Ubuntu_12.04_LTS_.28Precise_Pangolin.29[Precise]{emptyattribute});
 * cache the directory where Maven downloads its files (http://muelder.blogspot.com/2015/08/building-eclipse-plugins-with-maven.html[thanks]).
 
 Travis allows you to configure automatic deployment, run scripts of your own, and https://docs.travis-ci.com/[much more]. https://github.com/oliviercailloux/PDF-p/blob/97737ee5b628f3f5e9755819059c57b36f99483e/.travis.yml[This] example sets up Travis so that a project dependency is cloned from GitHub and installed locally before the main project is built. (This may be useful in case one of the dependency is not pushed to a public Maven repository.)

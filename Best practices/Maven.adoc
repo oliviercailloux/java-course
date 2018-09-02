@@ -1,4 +1,6 @@
 = Maven best practices
+//works around bug https://github.com/dkhamsing/awesome_bot/issues/182
+:emptyattribute:
 
 == Naming conventions
 
@@ -13,7 +15,7 @@ Details:
 
 * Maven coordinate identifiers (`groupId` and `artifactId`) should contain lowercase letters, digits, and hyphens only (https://maven.apache.org/maven-conventions.html[source]).
 * To make sure they are unique, use a domain name you control as a `groupId`, and invert it (https://maven.apache.org/guides/mini/guide-naming-conventions.html[source]).
-* Java conventions suggest to ensure uniqueness of your package names using the same rule (source: https://docs.oracle.com/javase/tutorial/java/package/namingpkgs.html[tutorial], or see the non-normative note “Package names” in the https://docs.oracle.com/javase/specs/jls/se8/html/jls-6.html#jls-6.1[specs]).
+* Java conventions suggest to ensure uniqueness of your package names using the same rule (source: https://docs.oracle.com/javase/tutorial/java/package/namingpkgs.html[tutorial], or see the non-normative note “Package names” in the https://docs.oracle.com/javase/specs/jls/se8/html/jls-6.html#jls-6.1[specs]{emptyattribute}).
 * Thus, I suggest naming your packages according to your `groupId` followed by a dot followed by your `artifactId`.
 * Hyphens are not allowed in package names, but underscores are:
 ** package names consist in dot-separated identifiers, see https://docs.oracle.com/javase/specs/jls/se8/html/jls-7.html#jls-7.4.1[JLS 7.4.1];

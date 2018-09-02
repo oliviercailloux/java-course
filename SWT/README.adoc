@@ -1,4 +1,6 @@
 = SWT
+//works around bug https://github.com/dkhamsing/awesome_bot/issues/182
+:emptyattribute:
 
 See https://raw.githubusercontent.com/oliviercailloux/java-course/master/SWT/Presentation/presentation.pdf[presentation]. Instructions for using SWT with Maven are below; and further below, some references.
 
@@ -65,7 +67,7 @@ When depending on JFace, you also need to add the following in your dependencyMa
 Further notes:
 
 * Official http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.eclipse.platform%22%20org.eclipse.swt[SWT], http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.eclipse.platform%22%20a%3A%22org.eclipse.jface%22[JFace] artifacts in Central
-* Some non-official SWT artifacts misleadingly seem more recent than the official ones (e.g., 4.6.1 instead of 3.105.0), because they use the version of the Eclipse release in which the SWT artifact is found rather than the version of the artifact itself. (You can easily check this. In Eclipse oxygen, check Eclipse Installation Details, Plug-ins, Plug-in Id `org.eclipse.swt`: it has version 3.x) (https://bugs.eclipse.org/bugs/show_bug.cgi?id=484004#c90[Source].)
+* Some non-official SWT artifacts misleadingly seem more recent than the official ones (e.g., 4.6.1 instead of 3.105.0), because they use the version of the Eclipse release in which the SWT artifact is found rather than the version of the artifact itself. (You can easily check this. In Eclipse oxygen, check Eclipse Installation Details, Plug-ins, Plug-in Id `org.eclipse.swt`: it has version 3.x) (https://bugs.eclipse.org/bugs/show_bug.cgi?id=484004#c90[Source]{emptyattribute}.)
 * https://bugs.eclipse.org/bugs/show_bug.cgi?id=510072[Discussion] https://bugs.eclipse.org/bugs/show_bug.cgi?id=520337[about] usage of SWT in Maven
 
 //* Bug https://bugs.eclipse.org/bugs/show_bug.cgi?id=484004[484004] - Start publishing Eclipse platform artifacts to Maven central - Only historical interest here
