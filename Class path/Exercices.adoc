@@ -12,7 +12,7 @@
 * Compile `mypackage.one.MyClass` manually using a terminal, with `javac` (see Oracle https://docs.oracle.com/javase/8/docs/technotes/tools/#basic[tools]{emptyattribute}).
 ** Remember that `javac` requests that you give it /files/ as arguments, not class names.
 * Move the just created compiled version to a new folder called `target` instead of `src` (thus into `target/mypackage/one`), to keep source files separated from compiled files.
-* Run the program using a terminal, with `java` (see Oracle https://docs.oracle.com/javase/8/docs/technotes/tools/#basic[tools]). Check that it says Hello.
+* Run the program using a terminal, with `java` (see Oracle https://docs.oracle.com/javase/8/docs/technotes/tools/#basic[tools]{emptyattribute}). Check that it says Hello.
 * Restart Eclipse, export your project as a JAR archive in a file named `hello.jar`.
 
 == The Use Hello project
