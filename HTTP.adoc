@@ -32,7 +32,8 @@ Some example URIs:
 
 * https://www.google.com/maps?saddr=Tour+Eiffel&daddr=Paris-Dauphine
 * https://github.com/oliviercailloux/java-course/search?q=hello
-* https://www.pagesjaunes.fr/annuaire/chercherlespros?quoiqui=restaurant&ou=colombes-92
+* https://www.airbnb.fr/s/Paris/all?checkin=2018-09-03&checkout=2018-09-07
+* https://en.wikipedia.org/wiki/John_Rawls#Biography
 
 URIs are composed as follows (parenthesis refer to some of the examples above):
 
@@ -40,7 +41,7 @@ URIs are composed as follows (parenthesis refer to some of the examples above):
 * authority (`www.google.com`, `github.com`)
 * path (`oliviercailloux/java-course/search`)
 * possibly a question mark followed by a query string (`saddr=Tour+Eiffel&daddr=Paris-Dauphine`)
-* possibly a dash followed by a fragment (not illustrated here)
+* possibly a dash followed by a fragment (`#Biography`)
 
 Furthermore, HTTP conventions dictate that the query string be composed of pairs of parameter and values separated by equal signs, each pair being separated by an ampersand.
 
@@ -86,7 +87,7 @@ Other notes:
 === Various
 * HTTP/2 is standardized by W3C as https://tools.ietf.org/html/rfc7540[RFC 7540] (HTTP/1.1 was previously defined under https://tools.ietf.org/html/rfc2616[RFC 2616], now obsolete).
 * A https://www.youtube.com/watch?v=aHxv_2BMJfw[presentation] (in French) about Open Data: L’Open Data à la loupe.
-* Some web sites voluntarily do not make their data automatically extractable: https://info.pagesjaunes.fr/infoslegales/mentionslegales[example]. Check legal conditions before collecting data.
+* Some web sites voluntarily do not make their data automatically extractable: https://info.pagesjaunes.fr/infoslegales/mentionslegales/[example]. Check legal conditions before collecting data.
 * HTTP conventions for the representation in query strings as &-separated pairs relate to the HTML form element when used as a GET method.
 
 === URIs
