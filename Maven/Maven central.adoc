@@ -5,7 +5,7 @@
 How to deploy Maven artifacts to OSSRH and to Maven central.
 
 == Prerequisites
-You know how to build a https://github.com/oliviercailloux/java-course/blob/master/Maven.adoc[Maven] package.
+You know how to build a https://github.com/oliviercailloux/java-course/blob/master/Maven/README.adoc[Maven] package.
 
 == Overview
 Maven artifacts can be deployed to remote repositories, or repository hosting (RH) locations, to make them accessible to other developers. 
@@ -48,7 +48,7 @@ As soon as you have successfully published a release, commit it to your SCM, tag
 You can automate some of these steps even more, see the https://central.sonatype.org/pages/ossrh-guide.html[OSSRH guide]. However it may not be a good idea: I think it’s good to keep some manual verification steps for important milestones in a project.
 
 == Conditional deployments
-With the strategy described so far, the plugins you configured for deployment (sources, javadoc, gpg) activate on each build. This may be a loss of time, and is especially problematic if you configured a https://github.com/oliviercailloux/java-course/blob/master/CI.adoc[CI] server: without special configuration, gpg signature would fail on the server as it does not know your private key.
+With the strategy described so far, the plugins you configured for deployment (sources, javadoc, gpg) activate on each build. This may be a loss of time, and is especially problematic if you configured a https://github.com/oliviercailloux/java-course/blob/master/DevOps/CI.adoc[CI] server: without special configuration, gpg signature would fail on the server as it does not know your private key.
 
 To solve those problems, simply declare the plugins and `distributionManagement` element in a Maven profile, called e.g. `release`. See example https://github.com/oliviercailloux/JLP/blob/with-release-profile/pom.xml[here] (notice that those elements have moved inside a `profile` element).
 

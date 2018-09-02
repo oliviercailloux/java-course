@@ -4,8 +4,8 @@ See https://github.com/oliviercailloux/java-course/raw/master/Maven/Pr%C3%A9sent
 
 == References
 * https://maven.apache.org/guides/getting-started/index.html[Tutorial] Apache Maven
-* http://books.sonatype.com/mvnref-book/reference/index.html[Book] Maven: The Complete Reference
-* http://books.sonatype.com/mvnex-book/reference/index.html[Book] Maven by Example
+* https://books.sonatype.com/mvnref-book/reference/index.html[Book] Maven: The Complete Reference
+* https://books.sonatype.com/mvnex-book/reference/index.html[Book] Maven by Example
 * Apache http://maven.apache.org/guides/[website]
 * Apache Maven Cookbook, Raghuram Bharathan, 2015
 * Archetypes: http://maven.apache.org/archetype/maven-archetype-plugin/usage.html[maven-archetype-plugin]

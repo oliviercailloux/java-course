@@ -106,7 +106,7 @@ Trois jours avant Sx signifie : au plus tard trois jours avant le jour de la sé
 [[S3]]
 === S3 (jeudi 11 janvier 2018)
 * Tests unitaires (ou fonctionnels !) : http://www.vogella.com/tutorials/JUnit/article.html[Tutoriel] Vogella ; https://github.com/oliviercailloux/jsonb-sample[sample]
-* Travis https://github.com/oliviercailloux/java-course/blob/master/CI.adoc[CI]
+* Travis https://github.com/oliviercailloux/java-course/blob/master/DevOps/CI.adoc[CI]
 * https://github.com/oliviercailloux/java-course/blob/master/GlassFish.adoc#log[Logs] dans GlassFish
 * Usage de git en équipe : dépôt propre ; ignore ; formattage & imports
 ** Fusionner à temps
@@ -151,7 +151,7 @@ Trois jours avant Sx signifie : au plus tard trois jours avant le jour de la sé
 === S6 (vendredi 2 mars 2018)
 * Note sur la réutilisation intelligente (recompensée !) et le droit d’utilisation, ainsi que les https://github.com/oliviercailloux/projets/blob/master/Licence.adoc[licences]
 * https://github.com/oliviercailloux/java-course/blob/master/JAXB.adoc[JAXB]
-* https://github.com/oliviercailloux/java-course/blob/master/IBM%20Cloud.adoc[IBM Cloud]
+* https://github.com/oliviercailloux/java-course/blob/master/DevOps/IBM%20Cloud.adoc[IBM Cloud]
 
 [[S7]]
 === S7 (vendredi 23 mars 2018)

@@ -353,7 +353,7 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 === S10 (Thursday 12th of April, 2018)
 
 * Logging: https://raw.githubusercontent.com/oliviercailloux/java-course/master/SLF4J/presentation.pdf[SLF4J]
-* https://github.com/oliviercailloux/java-course/blob/master/CI.adoc[CI]
+* https://github.com/oliviercailloux/java-course/blob/master/DevOps/CI.adoc[CI]
 * Everybody is supposed to master the tools used in the project (for example, check the https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Maven.adoc[Maven Best Practices])
 
 [[S11]]
