@@ -22,3 +22,5 @@ link https://central.sonatype.org/pages/requirements.html#sufficient-metadata[re
 
 link (“we discourage the usage of <repositories> and <pluginRepositories> and instead publish any required components to the Central Repository. This applies for your own components as well as for 3rd party artifacts.”, https://central.sonatype.org/pages/requirements.html#sufficient-metadata[requirements]).
 
+link (“we discourage the usage of <repositories> and <pluginRepositories> and instead publish any required components to the Central Repository. This applies for your own components as well as for 3rd party artifacts.”, https://central.sonatype.org/pages/requirements.html#sufficient-metadata[requirements])
+
