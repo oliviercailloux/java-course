@@ -14,13 +14,7 @@ Just a file with links to test awesome_bot.
 * bad: a sentence, https://www.wikipedia.org/#commapar[commapar])
 * bad: link (“we discourage the usage of <repositories> and <pluginRepositories> and instead publish any required components to the Central Repository. This applies for your own components as well as for 3rd party artifacts.”, https://www.wikipedia.org/#longsentpardot[stuff]).
 * bad: link (“we discourage the usage of <repositories> and <pluginRepositories> and instead publish any required components to the Central Repository. This applies for your own components as well as for 3rd party artifacts.”, https://www.wikipedia.org/#longsentpar[stuff])
-* test: https://www.wikipedia.org/#spacepar[spacepar] )
-
-A test with an{emptyattribute}empty attribute.
-
-A test with a{emptyattribute} spaced empty attribute.
-
-A test with an (empty attribute {emptyattribute}).
-
-A test with an (empty attribute nospace{emptyattribute}).
+* good: https://www.wikipedia.org/#spacepar[spacepar] )
+* test: https://www.wikipedia.org/#emptyattributepar[emptyattributepar]{emptyattribute})
+* test: https://www.wikipedia.org/#emptyattributepardot[emptyattributepardot]{emptyattribute}).
 
