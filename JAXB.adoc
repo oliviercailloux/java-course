@@ -58,10 +58,14 @@ To generate nice prefixes for better readability of the generated XML instances,
 
 This is what the dependency to https://github.com/Siggen/jaxb2-namespace-prefix[org.jvnet.jaxb2_commons:jaxb2-namespace-prefix] is for in the sample POM above. (If you do not use the “nice prefix” functionality, you can remove this dependency.)
 
+== Namespace and schema
+JAXB specification 2.3 defines `http://java.sun.com/xml/ns/jaxb` as the namespace defining the schema for binding declarations (Section 7.1); and gives URL http://java.sun.com/xml/ns/jaxb/bindingschema_2_0.xsd for the online version of the JAXB Binding Schema (appendix C).
+
 == References
 * Full working examples: https://github.com/choweiyuan/schemaexample[simplest], https://github.com/oliviercailloux/XMCDA-2.2.1-JAXB[with customization] (and biggest schema), https://github.com/xmcda-modular/jaxb[with more complex schema].
 * Similar technologies in other languages: http://pyxb.sourceforge.net/[PyXB], https://docs.microsoft.com/en-us/dotnet/standard/serialization/xml-schema-definition-tool-xsd-exe[.NET].
 * See https://docs.oracle.com/javase/tutorial/jaxb/index.html[Oracle Tutorial], https://docs.oracle.com/javase/8/docs/technotes/guides/xml/jaxb/[Oracle Docs], https://docs.oracle.com/javase/8/docs/api/index.html?javax/xml/bind/package-summary.html[API].
 * In Eclipse, you should probably disable the validator (see https://bugs.eclipse.org/bugs/show_bug.cgi?id=437635[bug]).
 * https://javaee.github.io/jaxb-v2/doc/user-guide/index.html
+* https://jcp.org/en/jsr/detail?id=222[JCP 222], http://download.oracle.com/otn-pub/jcp/jaxb-2_3-mrel3-eval-spec/JAXB-2.3-spec.pdf[spec 2.3]
 
