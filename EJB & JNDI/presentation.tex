@@ -58,7 +58,7 @@
 	\frametitle{Sortes d’EJB}
 	\begin{itemize}
 		\item Session bean ; message-driven bean {\tiny (et entity bean, facultatif)} {\tiny (diapos valables pour session beans)}
-		\item Session bean : \href{http://docs.oracle.com/javaee/7/api/javax/ejb/Stateless.html}{\texttt{@Stateless}} (SLSB), \href{http://docs.oracle.com/javaee/7/api/javax/ejb/Stateful.html}{\texttt{@Stateful}} (SFSB) ou \href{http://docs.oracle.com/javaee/7/api/javax/ejb/Singleton.html}{\texttt{@Singleton}}
+		\item Session bean : \href{https://docs.oracle.com/javaee/7/api/javax/ejb/Stateless.html}{\texttt{@Stateless}} (SLSB), \href{https://docs.oracle.com/javaee/7/api/javax/ejb/Stateful.html}{\texttt{@Stateful}} (SFSB) ou \href{https://docs.oracle.com/javaee/7/api/javax/ejb/Singleton.html}{\texttt{@Singleton}}
 		\item Stateless : conteneur instancie et gère un pool de beans
 		\item Stateful et Singleton : ont un état
 		\item Singleton : conteneur instancie et s’assure de l’unicité
@@ -83,7 +83,7 @@
 		\item {\tiny Ou accès via vue décrite en WSDL via endpoint JAX-WS, pour session bean stateless ou singleton}
 		\item Accès local : client et EJB dans même application Java EE {\tiny (peut être relaché hors standard)}
 		\item Inconvénient de l’accès Remote ? \pause Sérialisation !\pause
-		\item Recommandations. No-interface view : marquer le bean \href{http://docs.oracle.com/javaee/7/api/javax/ejb/LocalBean.html}{\texttt{@LocalBean}}. Business interface : l’implémenter et la marquer \href{http://docs.oracle.com/javaee/7/api/javax/ejb/Local.html}{\texttt{@Local}} ou \href{http://docs.oracle.com/javaee/7/api/javax/ejb/Remote.html}{\texttt{@Remote}}.
+		\item Recommandations. No-interface view : marquer le bean \href{https://docs.oracle.com/javaee/7/api/javax/ejb/LocalBean.html}{\texttt{@LocalBean}}. Business interface : l’implémenter et la marquer \href{https://docs.oracle.com/javaee/7/api/javax/ejb/Local.html}{\texttt{@Local}} ou \href{https://docs.oracle.com/javaee/7/api/javax/ejb/Remote.html}{\texttt{@Remote}}.
 	\end{itemize}
 \end{frame}
 
@@ -100,7 +100,7 @@
 	\frametitle{Invocation}
 	\begin{block}{SLSB et Singleton session beans}
 		\begin{itemize}
-			\item Injecter EJB via DI : annoter la référence \href{http://docs.oracle.com/javaee/7/api/javax/ejb/EJB.html}{\texttt{@EJB}} {\tiny (v. aussi @Inject via CDI)}
+			\item Injecter EJB via DI : annoter la référence \href{https://docs.oracle.com/javaee/7/api/javax/ejb/EJB.html}{\texttt{@EJB}} {\tiny (v. aussi @Inject via CDI)}
 			\item À utiliser pour les EJB dont le conteneur gère le cycle de vie !
 		\end{itemize}
 	\end{block}
@@ -108,7 +108,7 @@
 	\begin{block}{SFSB}
 		\begin{itemize}
 			\item Création explicite via JNDI {\tiny (sauf gestion via CDI)}
-			\item Destruction explicite via méthode EJB annotée \href{http://docs.oracle.com/javaee/7/api/javax/ejb/Remove.html}{@Remove}
+			\item Destruction explicite via méthode EJB annotée \href{https://docs.oracle.com/javaee/7/api/javax/ejb/Remove.html}{@Remove}
 		\end{itemize}
 	\end{block}
 \end{frame}
@@ -126,8 +126,8 @@
 	\end{block}
 	\begin{block}{Accès}
 		\begin{itemize}
-			\item Créer un \href{http://docs.oracle.com/javase/8/docs/api/javax/naming/InitialContext.html}{\texttt{InitialContext}}
-			\item Utiliser méthodes de \href{http://docs.oracle.com/javase/8/docs/api/javax/naming/Context.html}{\texttt{Context}} t.q. \texttt{lookup(String name)}
+			\item Créer un \href{https://docs.oracle.com/javase/8/docs/api/javax/naming/InitialContext.html}{\texttt{InitialContext}}
+			\item Utiliser méthodes de \href{https://docs.oracle.com/javase/8/docs/api/javax/naming/Context.html}{\texttt{Context}} t.q. \texttt{lookup(String name)}
 			\item Accès en lecture uniquement dans cas EJB
 		\end{itemize}
 	\end{block}
@@ -142,7 +142,7 @@
 		\item \emph{Ressource} : référence dans env. d’un composant Java EE
 		\item Permet la paramétrisation de l’EJB (exemple : valeur entière)
 		\item Depuis EJB, accéder via JNDI
-		\item Ou utiliser CDI et \href{http://docs.oracle.com/javaee/7/api/javax/annotation/Resource.html}{\texttt{@Resource}}
+		\item Ou utiliser CDI et \href{https://docs.oracle.com/javaee/7/api/javax/annotation/Resource.html}{\texttt{@Resource}}
 		\item Déclaration : où ? \pause Dans descripteur standard EJB.\pause
 		\item Resource non injectée si pas de valeur dans le descripteur : utilise la valeur donnée dans le code
 	\end{itemize}
@@ -175,11 +175,11 @@
 \begin{frame}
 	\frametitle{Références}
 	\begin{itemize}
-		\item The Java EE Tutorial: \href{http://docs.oracle.com/javaee/7/tutorial/partentbeans.htm}{Enterprise Beans}
+		\item The Java EE Tutorial: \href{https://docs.oracle.com/javaee/7/tutorial/partentbeans.htm}{Enterprise Beans}
 		\item \href{https://www.jcp.org/en/jsr/detail?id=345}{JSR 345} (EJB 3.2) (\href{http://download.oracle.com/otn-pub/jcp/ejb-3_2-fr-eval-spec/ejb-3_2-core-fr-spec.pdf}{direct})
 		\item \href{https://www.jcp.org/en/jsr/detail?id=342}{JSR 342} (Java EE 7)
 		\item \href{http://jcp.org/en/jsr/detail?id=346}{JSR 346} (Context and Dependency Injection 1.1 et 1.2) (\href{http://download.oracle.com/otn-pub/jcp/cdi-1_2-mrel-eval-spec/cdi-1.2.pdf}{direct}).
-		\item \href{http://docs.oracle.com/javase/8/docs/technotes/guides/jndi/}{JNDI doc}
+		\item \href{https://docs.oracle.com/javase/8/docs/technotes/guides/jndi/}{JNDI doc}
 	\end{itemize}
 \end{frame}
 
