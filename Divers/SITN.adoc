@@ -24,6 +24,7 @@
 === S1 (mercredi 26 septembre 2018)
 * https://github.com/oliviercailloux/java-course/raw/master/Pr%C3%A9sentation%20du%20cours%20EE/presentation.pdf[Présentation] du cours
 * https://github.com/oliviercailloux/java-course/blob/master/Git/README.adoc[Git] : présentation & exercices
+* Séance prochaine en espace de co-working ?
 * Affectation en projets : 3 à 6 / projet (plus gros groupes prioritaires, mais plus difficile !)
 * https://github.com/oliviercailloux/java-course/blob/master/HTTP.adoc[HTTP]
 * https://github.com/oliviercailloux/java-course/blob/master/WS%20client.adoc[Client WS]
