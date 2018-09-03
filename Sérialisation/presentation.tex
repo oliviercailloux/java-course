@@ -43,10 +43,10 @@
 	\frametitle{Sérialisation}
 	\begin{itemize}
 		\item Permet à un objet d’être écrit sur disque
-		\item Implémenter \href{http://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html}{Serializable}
+		\item Implémenter \href{https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html}{Serializable}
 		\item Interface marqueur. Exemple de quel principe ? \pause Contrat !
 		\item Indique engagement du développeur \pause
-		\item Documenter les champs sérialisés : \href{http://docs.oracle.com/javase/1.5.0/docs/tooldocs/windows/javadoc.html@serial}{\texttt{@serial}} (javadoc tag)
+		\item Documenter les champs sérialisés : \href{https://docs.oracle.com/javase/1.5.0/docs/tooldocs/windows/javadoc.html@serial}{\texttt{@serial}} (javadoc tag)
 		\item Marquer les champs non-sérialisés \texttt{transient} (éphémère)
 		\item Enfants doivent aussi être sérialisables
 		\item {\tiny Cas général : déclarer un \texttt{serialVersionUID} ; peu important pour les objets non transmis t.q. SFSB}

@@ -60,7 +60,7 @@
 	\frametitle{Java EE : Processus}
 	\begin{itemize}
 		\item Java EE fortement appuyée sur standards ouverts
-		\item Standards du W3C / IETF ?\pause{} \href{http://www.w3.org/Protocols/}{HTTP}, \href{http://www.w3.org/html/}{HTML}, \href{http://www.w3.org/XML/}{XML}, \href{http://www.w3.org/TR/wsdl}{WSDL}, …\pause
+		\item Standards du W3C / IETF ?\pause{} \href{http://www.w3.org/Protocols/}{HTTP}, \href{http://www.w3.org/html/}{HTML}, \href{http://www.w3.org/XML/}{XML}, \href{http://www.w3.org/TR/wsdl/}{WSDL}, …\pause
 		\item JCP : implication de \og{}la communauté\fg{} pour standards Java
 		\item JCP définit les JSR : standards utilisés en Java SE ou Java EE
 		\item JSR ? \pause Java Specification Request \pause
@@ -253,7 +253,7 @@
 \begin{frame}[fragile]
 	\frametitle{Le terme Java}
 	
-	Terme \emph{Java} adopté en 1995 (“as an example of yet another name that would never work”) \source{(source: \href{http://www.javaworld.com/article/2077265/core-java/so-why-did-they-decide-to-call-it-java-.html}{Java World})}
+	Terme \emph{Java} adopté en 1995 (“as an example of yet another name that would never work”) \source{(source: \href{https://www.javaworld.com/article/2077265/core-java/so-why-did-they-decide-to-call-it-java-.html}{Java World})}
 	\hfill
 	\vfill
 	\begin{minipage}[b]{3cm}
@@ -287,11 +287,11 @@
 	\begin{itemize}
 		\item Un servlet s’exécute dans un contexte
 		\item Entre autres, une session HTTP
-		\item Objet \href{http://docs.oracle.com/javaee/7/api/javax/servlet/http/HttpSession.html}{\texttt{HttpSession}} rendu disponible par conteneur ({\tiny injection ou } accès via paramètres servlet)
+		\item Objet \href{https://docs.oracle.com/javaee/7/api/javax/servlet/http/HttpSession.html}{\texttt{HttpSession}} rendu disponible par conteneur ({\tiny injection ou } accès via paramètres servlet)
 		\item Le serveur tente de tracker la session via un cookie {\tiny par exemple}
 		\item Le serveur fait expirer le cookie après un temps configurable
 		\item Un bon site fonctionne même sans cookies !
-		\item Classe implémente \href{http://docs.oracle.com/javaee/7/api/javax/servlet/http/HttpSessionListener.html}{\texttt{HttpSessionListener}} pour recevoir notifications \texttt{sessionCreated}, \texttt{sessionDestroyed}.  L’annoter \href{http://docs.oracle.com/javaee/7/api/javax/servlet/annotation/WebListener.html}{\texttt{@WebListener}}. (Pattern ? \pause Observateur !)
+		\item Classe implémente \href{https://docs.oracle.com/javaee/7/api/javax/servlet/http/HttpSessionListener.html}{\texttt{HttpSessionListener}} pour recevoir notifications \texttt{sessionCreated}, \texttt{sessionDestroyed}.  L’annoter \href{https://docs.oracle.com/javaee/7/api/javax/servlet/annotation/WebListener.html}{\texttt{@WebListener}}. (Pattern ? \pause Observateur !)
 	\end{itemize}
 \end{frame}
 
@@ -300,7 +300,7 @@
 %	\frametitle{Servlet (trop de détails)}
 %	\begin{itemize}
 %		\item Le servlet peut accéder à des objets via getAttribute et setAttribute d’une classe représentant un scope : sur ServletContext, HttpSession, ServletRequest. Il faut se protéger contre les accès concurrents !
-%		\item HTTP request URL : http://host:portrequestpath?querystring, with
+%		\item HTTP request URL : http ://host:portrequestpath?querystring, with
 %		\item requestpath=contextpathservletpathpathinfo, with 
 %		\item contextpath=/contextroot (of the servlet’s web app) or "", 
 %		\item servletpath=The path section that corresponds to the component alias that activated this request. This path starts with a forward slash (/) (or is empty), pathinfo = the rest.
