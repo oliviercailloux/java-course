@@ -67,6 +67,7 @@
 ** Vous pouvez utiliser le `groupId` `io.github.oliviercailloux.y2018`
 ** Utilisez _obligatoirement_ comme `artifactId` le nom de votre projet (avec espaces transformés en traits d’union)
 ** Lire les bonnes pratiques Maven
+** Checkstyle
 
 === S3 (mardi 7 novembre)
 * Note concernant l’attendu et l’évaluation de la régularité
