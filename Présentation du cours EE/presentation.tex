@@ -88,10 +88,9 @@
 
 \begin{frame}
 	\frametitle{Objectifs pédagogiques (agilité)}
-	Approche agile ? À moitié !
+	Approche agile ? En partie !
 	\begin{itemize}
 		\item Livraisons fréquentes
-		\item Travail en binôme
 		\item Réusinage fréquent
 	\end{itemize}
 \end{frame}
@@ -164,10 +163,7 @@
 		\item Central : travail sur projet
 		\item Objectif : un projet utile
 		\item Un projet ≠ par groupe
-		\item Programmation en binôme, équipes tournantes : diversification, pas spécialisation
-		\item Si ≠ niveaux : l’avancé aide le débutant
-		\item Durant séance $x$ : constituez un binôme ≠ du précédent
-		\item Travaillez sur une fonctionnalité de votre projet
+		\item Travail par fonctionnalité
 		\item Livraisons exclusivement via git
 	\end{itemize}
 \end{frame}
@@ -212,17 +208,13 @@
 	\begin{itemize}
 		\item 50\% CC
 		\begin{itemize}
-			\item Une note par fonctionnalité
-%			\item Obligation : ≥ 1 point de difficulté par séance pour chacun
-			\item \emph{Vous êtes toujours censés comprendre votre code}
+			\item Devoirs et travaux en séance (via GitHub Classroom)
 		\end{itemize}
 		\item 50\% Projet (fin d’année)
 		\begin{itemize}
-			\item Qualité générale du projet, correction collective des défauts relevés pendant l’année
+			\item Points de difficultés reçus pour fonctionnalité quand qualité atteinte
+			\item Trois points de difficultés exigés sur l’année
 			\item Présentation collective de vos projets
-			\item Soutenance orale : comprenez-vous votre code ?
-			\item Nb points de difficultés
-			\item Diversité des aspects : 3 points sur 10
 		\end{itemize}
 		\item Fin d’année : Vote pour la meilleure application
 	\end{itemize}
@@ -232,7 +224,10 @@
 	\frametitle{Travail attendu}
 	\begin{itemize}
 		\item \{[(25 à 30h / ECTS) × 3 ECTS] − 24 h\} / 7 inter-séances
-		\item 9 heures de travail entre chaque séance
+		\pgfmathsetmacro{\mycalcMin}{(25*3-24)/7}
+		\pgfmathsetmacro{\mycalcMax}{(30*3-24)/7}
+		\pgfmathsetmacro{\mycalcEff}{(27.5*3-24)/7}
+		\item \num[round-mode=places, round-precision=0, mode=text]{\mycalcEff} heures de travail entre chaque séance en moyenne
 		\item Voir exigences sur le site GitHub java-course
 	\end{itemize}
 \end{frame}

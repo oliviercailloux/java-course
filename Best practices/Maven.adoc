@@ -29,7 +29,7 @@ Details:
 Include the property `<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>` in your POM to ensure platform-independent behavior (and get rid of the warning Maven prints otherwise).
 
 == Java version
-Include properties: `<maven.compiler.source>1.8</maven.compiler.source> <maven.compiler.target>1.8</maven.compiler.target>` (or adjust to the desired java version) to indicate which java version you develop in (and for). This is https://maven.apache.org/plugins/maven-compiler-plugin/compile-mojo.html[officially supported] and is thus to be preferred to the more verbose explicit https://maven.apache.org/plugins/maven-compiler-plugin/examples/set-compiler-source-and-target.html[configuration] of the `maven-compiler-plugin`.
+Include properties: `<maven.compiler.source>10</maven.compiler.source> <maven.compiler.target>10</maven.compiler.target>` (or adjust to the desired java version) to indicate which java version you develop in (and for). This is https://maven.apache.org/plugins/maven-compiler-plugin/compile-mojo.html[officially supported] and is thus to be preferred to the more verbose explicit https://maven.apache.org/plugins/maven-compiler-plugin/examples/set-compiler-source-and-target.html[configuration] of the `maven-compiler-plugin`.
 
 == Do not require web descriptor
 Web applications do not require a web descriptor (the `web.xml` file that goes in the `WEB-INF` folder). Maven however required it by default when asked to package a war file. If you do not need a web descriptor, make your project as clean as possible and do not include one! Rather, include the property `<failOnMissingWebXml>false</failOnMissingWebXml>` in your `pom.xml`.

@@ -69,7 +69,7 @@
 ** Lire les bonnes pratiques Maven
 ** Checkstyle
 
-=== S3 (mardi 7 novembre)
+=== S3
 * Note concernant l’attendu et l’évaluation de la régularité
 * Tests unitaires
 * Travis CI
@@ -88,12 +88,12 @@
 
 * Mettre en place le système d’intégration continue Travis sur votre dépôt de groupe. (Voir document ci-dessus.) Ajouter le badge au fichier README. Également à rendre pour deux jours avant S4. Vérifier que votre projet compile, d’après Travis, au moment de la remise. (Les tests fonctionnels de vos servlets ne doivent pas nécessairement passer.)
 
-=== S4 (5 décembre)
+=== S4
 * https://github.com/oliviercailloux/java-course/raw/master/JPA/presentation.pdf[JPA] : création d’une entité et création automatique BD
 ** https://github.com/oliviercailloux/java-course/blob/master/DB%20from%20Eclipse.adoc[DB from Eclipse]
 ** https://github.com/oliviercailloux/java-course/blob/master/JPA.adoc[Exercices]
 
-=== S5 (13 décembre)
+=== S5
 * Note sur la réutilisation intelligente (recompensée !) et le droit d’utilisation, ainsi que les https://github.com/oliviercailloux/projets/blob/master/Licence.adoc[licences]
 * https://github.com/oliviercailloux/java-course/blob/master/JAX-RS/README.adoc[JAX-RS]
 * http://arquillian.org/[Arquillian]
@@ -102,7 +102,7 @@
 
 * Faire passer vos tests sur Travis CI
 
-=== S6 (9 janvier)
+=== S6
 * Suite ORM
 ** Start JPA & EMF
 ** ex: deploy
@@ -112,7 +112,7 @@
 ** ex: transactions gérées (facultatif)
 * https://github.com/oliviercailloux/java-course/blob/master/DevOps/IBM%20Cloud.adoc[IBM Cloud]
 
-=== S7 (16 janvier)
+=== S7
 * Projets
 * Suite ORM
 * Consignes présentation : sur mon ordinateur
@@ -122,7 +122,7 @@
 ** Pas de transferts via clé USB (prés sur le dépôt)
 ** Format PDF, pas MS Office
 
-=== S8 (13 février)
+=== S8
 * Présentation des projets
 ** 20 minutes par groupe max
 * Vote
