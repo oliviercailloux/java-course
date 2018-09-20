@@ -9,8 +9,8 @@ This doc indicates how to set up SonarCloud, for a Java project using https://gi
 The instructions below are a slightly modified version of https://docs.travis-ci.com/user/sonarcloud/[these] ones.
 
 . Register and log-in to https://sonarcloud.io[SonarCloud].
-. Create a user authentication https://sonarcloud.io/account/security[token] on SonarCloud.
-. Define `SONAR_TOKEN` in your Repository Settings in Travis-CI.
+. Create a user authentication https://sonarcloud.io/account/security[token] on SonarCloud, copy its secret value.
+. Define `SONAR_TOKEN` in your Repository Settings in Travis-CI, paste its secret value.
 . https://sonarcloud.io/account/organizations[Find] which SonarCloud.io organization you want to push your project on and get its key.
 . Modify your `.travis.yml` configuration file to reflect the example https://github.com/oliviercailloux/JLP/blob/master/.travis.yml[here].
 
