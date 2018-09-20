@@ -13,6 +13,7 @@ The instructions below are a slightly modified version of https://docs.travis-ci
 . Define `SONAR_TOKEN` in your Repository Settings in Travis-CI.
 . https://sonarcloud.io/account/organizations[Find] which SonarCloud.io organization you want to push your project on and get its key.
 . Modify your `.travis.yml` configuration file to reflect the example https://github.com/oliviercailloux/JLP/blob/master/.travis.yml[here].
+. Add the relevant badge to your `README.adoc` in your project repository: see example https://github.com/oliviercailloux/JLP/blob/master/README.adoc[here] or see the “Get project badges” on your project SonarCloud dashboard (lower right).
 
 SonarCloud will now start an analysis each time Travis build is triggered. Check in the Travis logs that everything went correctly, then check the result of the analysis on your SonarCloud project page.
 
