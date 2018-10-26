@@ -37,9 +37,9 @@
 . Rediriger vos e-mails @ Dauphine si nécessaire pour vous assurer de recevoir les annonces
 . Terminer exercices git
 . https://github.com/oliviercailloux/java-course/blob/master/WS%20client.adoc[Client WS], partie curl (la partie Java sera vue en S2)
-. Effectuer le https://classroom.github.com/a/dvTohDAJ[devoir] (noté) : accepter le devoir, puis, à la dernière étape de l’exercice git ci-dessus, utiliser le dépôt GitHub créé pour le devoir. Utilisez ce dépôt pour aller jusqu’au bout de l’exercice. (Si vous voulez recommencer, effacez le dépôt créé pour le devoir et acceptez-le à nouveau pour repartir avec un nouveau dépôt.) Ensuite, ajoutez un fichier curl.txt au dépôt dans une branche curl, contenant juste une ligne qui récupère l’information depuis Wikipedia demandée dans l’exercice Client WS en invoquant curl. À rendre avant la fin du dimanche 29 octobre (−3/20 par heure de retard).
+. Effectuer le https://classroom.github.com/a/dvTohDAJ[devoir] (noté) : accepter le devoir, puis, à la dernière étape de l’exercice git ci-dessus, utiliser le dépôt GitHub créé pour le devoir. Utilisez ce dépôt pour aller jusqu’au bout de l’exercice. (Si vous voulez recommencer, effacez le dépôt créé pour le devoir et acceptez-le à nouveau pour repartir avec un nouveau dépôt.) Ensuite, ajoutez un fichier curl.txt au dépôt dans une branche curl, contenant juste une ligne qui récupère l’information depuis Wikipedia demandée dans l’exercice Client WS en invoquant curl. À rendre avant la fin du vendredi 30 novembre (−3/20 par heure de retard).
 
-=== S2 (mardi 31 octobre)
+=== S2 (lundi 3 décembre)
 // 13h45
 // vidéo
 // 13h55 (env.)
@@ -52,7 +52,9 @@
 // pause
 // 15h30
 
-* L’Open Data https://www.youtube.com/watch?v=aHxv_2BMJfw[à la loupe]
+// https://stackoverflow.com/questions/60764/how-should-i-load-jars-dynamically-at-runtime
+
+* Open Data explained https://www.youtube.com/watch?v=c42QNa-rccw[in a nutshell] (ou : L’Open Data https://www.youtube.com/watch?v=aHxv_2BMJfw[à la loupe])
 * https://github.com/oliviercailloux/java-course/blob/master/Maven/README.adoc[Maven] : présentation & exercices
 * Exercices client WS (lien ci-dessus)
 * https://github.com/oliviercailloux/java-course/raw/master/Java%20EE/presentation.pdf[Intro] Java EE, https://github.com/oliviercailloux/java-course/blob/master/WildFly.adoc[Familiarisation] avec WildFly
@@ -63,16 +65,19 @@
 
 À faire
 
-* Démarrage du projet
+* Devoir : un projet Maven, bien configuré, dépendant de la dernière version stable de…. Contient un servlet (classe AdditionerServlet) qui écoute sur localhost:…/additioner/add et répond à une requête GET avec param1=2, param2=3 par 5 en text/plain. Si la requête est erronée, la servlet répondra (en text/plain) : "Exécution impossible, paramètre manquant." et renverra un code d’erreur approprié. Répond aussi "ok" à une requête du type adéquat qui indique (en text/plain) la valeur par défaut pour le deuxième nombre si manquant.
+
+Démarrage du projet
 ** Vous pouvez utiliser le `groupId` `io.github.oliviercailloux.y2018`
 ** Utilisez _obligatoirement_ comme `artifactId` le nom de votre projet (avec espaces transformés en traits d’union)
 ** Lire les bonnes pratiques Maven
 ** Checkstyle
 
-=== S3
+=== S3 (jeudi 6 décembre)
 * Note concernant l’attendu et l’évaluation de la régularité
 * Tests unitaires
 * Travis CI
+//https://education.github.community/t/using-travis-on-private-repos-for-student-assignments/24183
 * https://github.com/oliviercailloux/java-course/blob/master/GlassFish.adoc#log[Logs] dans GlassFish
 * Usage de git en équipe : dépôt propre ; ignore ; formattage & imports
 * Discussion projets
@@ -88,7 +93,7 @@
 
 * Mettre en place le système d’intégration continue Travis sur votre dépôt de groupe. (Voir document ci-dessus.) Ajouter le badge au fichier README. Également à rendre pour deux jours avant S4. Vérifier que votre projet compile, d’après Travis, au moment de la remise. (Les tests fonctionnels de vos servlets ne doivent pas nécessairement passer.)
 
-=== S4
+=== S4 (mercredi 12 décembre)
 * https://github.com/oliviercailloux/java-course/raw/master/JPA/presentation.pdf[JPA] : création d’une entité et création automatique BD
 ** https://github.com/oliviercailloux/java-course/blob/master/DB%20from%20Eclipse.adoc[DB from Eclipse]
 ** https://github.com/oliviercailloux/java-course/blob/master/JPA.adoc[Exercices]
