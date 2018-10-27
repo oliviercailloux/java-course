@@ -361,7 +361,7 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 * Licenses and philosophy: https://www.gnu.org/philosophy/philosophy.html[GNU]; https://opensource.org/[OSI]; Copyleft (GNU https://opensource.org/licenses/GPL-3.0[GPL]); Non-copyleft (https://opensource.org/licenses/MIT[MIT])
 * https://raw.githubusercontent.com/oliviercailloux/java-course/master/Annotations/presentation.pdf[Annotations]
 * Parsing HTML: https://github.com/oliviercailloux/java-course/blob/master/HTML%20to%20DOM.adoc[DOM]
-* Accessing REST web services: https://github.com/oliviercailloux/java-course/blob/master/JAX-RS%20client.adoc[JAX-RS client]
+* Accessing REST web services: https://github.com/oliviercailloux/java-course/blob/master/WS%20client/JAX-RS%20client.adoc[JAX-RS client]
 
 [[S15]]
 === S15 (Tuesday 29th of May, 2018)
