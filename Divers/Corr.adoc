@@ -19,7 +19,7 @@
 | EXC	| Le code échoue rapidement et envoie des exceptions si approprié	| https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Exceptions.adoc#cath-exceptions-only-if-you-have-a-good-reason-to-do-so[BP Exc]	| −2
 | REUSE	| Les bibliothèques existantes sont utilisées à bon escient plutôt que réinventer la roue	| 	| −2
 | ARRAY	| Privilégier des collections (List, Set, etc.) plutôt que des tableaux de types primitifs	|	| −1
-| TEST	| Des tests unitaires ou fonctionnels couvrent les fonctionnalités demandées	| http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours9.pdf[Airiau C9]	| −1
+| TEST	| Des tests unitaires ou fonctionnels couvrent les fonctionnalités demandées	| http://www.vogella.com/tutorials/JUnit/article.html[JUnit]	| −1
 | ENC	| Préciser l’encodage des flux lus ou écrits	| https://github.com/oliviercailloux/java-course/blob/master/Flows.adoc[Flows]	| −1
 | EN	| Coder et commenter en anglais	|	| −0,5
 | FORE	| Privilégier boucles for each	| https://docs.oracle.com/javase/tutorial/java/nutsandbolts/for.html[Tutorial]	| −0,5

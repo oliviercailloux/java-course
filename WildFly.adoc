@@ -1,13 +1,13 @@
 = An overview of the WildFly Java EE application server
 :toc: preamble
 :sectanchors:
-//works around bug https://github.com/dkhamsing/awesome_bot/issues/182
+//works around bug (that used to be published at https://github.com/dkhamsing/awesome_bot/issues/182).
 :emptyattribute:
 
 This document gives a (rough) overview of WildFly, a Java EE application server. This document may serve as an introduction to application servers in Java EE.
 
 == Application servers
-Java EE defines a http://www.oracle.com/technetwork/java/javaee/tech/index.html[set] of specifications, known as Java Specification Requests (JSR). Application servers have to implement [small]#(parts of)# these standards in order to be compliant with [small]#(a subset of)# Java EE. An important standard among those is the Servlet API, or https://www.jcp.org/en/jsr/detail?id=369[JSR 369].
+Java EE defines a https://www.oracle.com/technetwork/java/javaee/tech/index.html[set] of specifications, known as Java Specification Requests (JSR). Application servers have to implement [small]#(parts of)# these standards in order to be compliant with [small]#(a subset of)# Java EE. An important standard among those is the Servlet API, or https://www.jcp.org/en/jsr/detail?id=369[JSR 369].
 
 A Java EE application server is a piece of software that ease the development of web applications, by providing services to the Java web developer. Your application server provides containers in which you, the web developer, embed your code. The container calls your code whenever adequate. For example, we use the web container in the https://github.com/oliviercailloux/java-course/blob/master/Servlets.adoc[Servlets] document.
 

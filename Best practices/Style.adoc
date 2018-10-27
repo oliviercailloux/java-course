@@ -26,6 +26,6 @@ As an exception to strict checking, I authorize boxing and unboxing without warn
 Use your IDE mechanisms to format your source code systematically and automatically. Make sure everybody use the same conventions in your team. This reduces the number of conflicts when merging concurrent modifications.
 
 == Outdated references
-* http://www.oracle.com/technetwork/java/namingconventions-139351.html[Oracle J2EE] (I don’t think this should be taken seriously as it is very old, apparently unmaintained, and not included in recent documentation of Oracle).
-* Code http://www.oracle.com/technetwork/java/javase/documentation/codeconvtoc-136057.html[Conventions] for the Java TM Programming Language contains many https://www.javacodegeeks.com/2012/10/java-coding-conventions-considered-harmful.html[incorrect] suggestions
+* https://www.oracle.com/technetwork/java/namingconventions-139351.html[Oracle J2EE] (I don’t think this should be taken seriously as it is very old, apparently unmaintained, and not included in recent documentation of Oracle).
+* Code https://www.oracle.com/technetwork/java/javase/documentation/codeconvtoc-136057.html[Conventions] for the Java TM Programming Language contains many https://www.javacodegeeks.com/2012/10/java-coding-conventions-considered-harmful.html[incorrect] suggestions
 
