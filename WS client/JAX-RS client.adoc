@@ -2,8 +2,10 @@
 
 JAX-RS Client API permits to easily access RESTful web services. This page provides a simple example use.
 
+NOTE: The reader supposedly has basic knowledge of https://github.com/oliviercailloux/java-course/blob/master/HTTP.adoc[HTTP] and (preferrably) https://github.com/oliviercailloux/java-course/blob/master/Maven/README.adoc[Maven].
+
 == Dependency
-If you use Java SE, you need to add the JAX-RS API and a JAX-RS implementation to your dependencies.
+If you use Java SE, you need to add the JAX-RS API and a JAX-RS implementation to your Maven dependencies (see the Appendix for an alternative).
 
 .Specify dependencies in your `pom.xml`
 [source,xml]
@@ -37,4 +39,8 @@ WebTarget t4 = t3.queryParam("prof", "1");
 String result = t4.request(MediaType.TEXT_PLAIN).get(String.class);
 client.close();
 ----
+
+== Appendix
+* If you do not know Maven, you may simply clone https://github.com/oliviercailloux/empty-rest-client[this] to get started quickly. The project already includes the right dependency to a Java JAX-RS client library.
+** In Eclipse, use `File` / `Import…` / `Existing Maven Projects`, give it the name of the folder where you cloned the project.
 
