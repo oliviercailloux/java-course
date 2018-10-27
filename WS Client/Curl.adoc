@@ -1,4 +1,4 @@
-= WS client: Exercices
+= WS client using curl
 :toc: preamble
 :sectanchors:
 
@@ -78,19 +78,4 @@ You should obtain the following result.
 === Supplements
 If desired, you may also get trained at using curl for POSTing data and making HTTP requests using other verbs. Use the https://jsonplaceholder.typicode.com/[JSONPlaceholder] or https://httpbin.org/[httpbin] web service, or choose one of the numerous APIs from https://www.programmableweb.com/[ProgrammableWeb] (but be aware that many require registration and may be non free).
 I suggest to leave curl for now, and switch to Java.
-
-== From Java
-We will now access those same web services using Java, and more specifically the JAX-RS standard.
-
-=== Set up
-* Read link:JAX-RS%20client.adoc[JAX-RS client].
-* If you do not know Maven, you may simply clone https://github.com/oliviercailloux/empty-rest-client[this] to get started quickly. The project already includes the right dependency to a Java JAX-RS client library.
-** In Eclipse, use `File` / `Import…` / `Existing Maven Projects`, give it the name of the folder where you cloned the project.
-
-=== Access WS from Java
-* Use the skeleton code from the JAX-RS client page (link above) and modify it to programmatically retrieve a simple web page.
-* Replace the skeleton code with the right calls so that you access JSONPlaceholder as requested in the exercice above. Check that you obtain the expected result. Use appropriate “URI templates” (`{path}`) for nicer code.
-* Add a method that retrieves the Wikipedia page as requested per the second exercice, above.
-
-A solution is https://github.com/oliviercailloux/empty-rest-client/tree/example[here]. Do not cheat! Look at the solution only after you solved it by yourself.
 
