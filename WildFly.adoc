@@ -1,7 +1,7 @@
 = An overview of the WildFly Java EE application server
 :toc: preamble
 :sectanchors:
-//works around bug (that used to be published at https://github.com/dkhamsing/awesome_bot/issues/182).
+//works around awesome_bot bug (that used to be published at https://github.com/dkhamsing/awesome_bot/issues/182[issue]).
 :emptyattribute:
 
 This document gives a (rough) overview of WildFly, a Java EE application server. This document may serve as an introduction to application servers in Java EE.
