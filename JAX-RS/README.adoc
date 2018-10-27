@@ -1,6 +1,6 @@
 = JAX-RS
 
-JAX-RS is a Java standard that allow to build REST web services.
+JAX-RS is a Java standard that allow to build (and query) REST web services.
 
 See: https://raw.githubusercontent.com/oliviercailloux/java-course/master/JAX-RS/Pr%C3%A9sentation/presentation.pdf[Présentation], https://github.com/oliviercailloux/sample-jax-rs[sample-jax-rs].
 
