@@ -1,5 +1,5 @@
 = Class path: Exercices
-//works around bug https://github.com/dkhamsing/awesome_bot/issues/182
+//works around awesome_bot bug that used to be published at github.com/dkhamsing/awesome_bot/issues/182.
 :emptyattribute:
 
 == The Hello project

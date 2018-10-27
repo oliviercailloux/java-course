@@ -1,5 +1,5 @@
 = Exceptions
-//works around bug https://github.com/dkhamsing/awesome_bot/issues/182
+//works around awesome_bot bug that used to be published at github.com/dkhamsing/awesome_bot/issues/182.
 :emptyattribute:
 
 == Cath exceptions only if you have a good reason to do so
