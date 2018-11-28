@@ -20,7 +20,7 @@ Examples of Java EE compliant application servers: GlassFish (Oracle, open sourc
 * The command line interface (CLI) to the server is invoked with `jboss-cli.sh`. After invoking this command, connect to your server (the tool tells you how to do this), then type `help --commands` and find out how to shut it down.
 
 == Embedded database
-Any compliant Java EE server comes with an embedded SQL database management system, that will be used as a default for deployed applications if none other is configured.
+One of the services an application server gives is to provide an SQL database usable by the applications running on the server. Any compliant Java EE server comes with an embedded SQL database management system, that will be used as a default for deployed applications if none other is configured. If the default is not suitable, it is possible to configure other databases on the server, and thus to switch database with no support for this in the source code of the deployed application. (In this course we will be content with the default database.)
 
 * Restart you server, connect to it with the CLI, type `/subsystem=datasources/:read-children-names(child-type=data-source)` to list the configured data sources. What is the name of the default data source?
 
@@ -30,7 +30,7 @@ Supplementary to the somewhat austere CLI, it is possible to configure many aspe
 Browse to http://localhost:8080/ to reach the server, then `Administration Console`. Follow the instructions to create a user. You can then access the Administration console. Look at the properties of the data-source whose name you have found previously (into `Configuration`, subsytem `Datasource & Drivers`).
 
 == Deploying applications
-The `standalone/deployments` directory is used to deploy your application, once it is packaged appropriately (e.g. as a WAR file). Simply drop the file there. WildFly will then create a file in the same folder to tell you whether the application was deployed successfully. (Check the https://github.com/oliviercailloux/java-course/blob/master/Servlets.adoc[Servlets] document to learn how to create an adequate file.)
+The `standalone/deployments` directory is used to deploy your application, once it is packaged appropriately (e.g., as a WAR file). Simply drop the file there. WildFly will then create a file in the same folder to tell you whether the application was deployed successfully. (Check the https://github.com/oliviercailloux/java-course/blob/master/Servlets.adoc[Servlets] document to learn how to create an adequate file.)
 
 == Technical tips
 === Enable assertions

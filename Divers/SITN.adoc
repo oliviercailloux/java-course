@@ -13,7 +13,7 @@
 == Projets
 * https://github.com/oliviercailloux/projets/tree/master/EE[Énoncés]
 * Attendu : cahiers des charges pour deux ou trois itérations courtes indiquant succinctement les exigences fonctionnelles (EF) ; 3 points de difficulté par membre au total sur l’année
-* Vous créez un dépôt pour votre projet et travaillez tous sur votre dépôt de groupe. Interdiction de commettre sur la branche master sans mon aval. À part ça, organisation interne libre. Suggestion : fusionnez vos fcts sur une branche `dev` dès que possible (https://fr.wikipedia.org/wiki/Int%C3%A9gration_continue[intégration continue]) ; à défaut, commit sur branches par fct et désigner un responsable fusion pour éviter écrasement.
+* Vous créez un dépôt pour votre projet et travaillez tous sur votre dépôt de groupe. Interdiction de commettre sur la branche master sans mon aval (sauf commit initial si nécessaire ou modifications sur `README.adoc`). À part ça, organisation interne libre. Suggestion : fusionnez vos fcts sur une branche `dev` dès que possible (https://fr.wikipedia.org/wiki/Int%C3%A9gration_continue[intégration continue]) ; à défaut, commit sur branches par fct et désigner un responsable fusion pour éviter écrasement.
 * Cahiers des charges et fonctions (une par EF) à remettre via pull request vers votre branche master. Je commente votre pull request. Date de livraison initiale précisée dans le programme ci-dessous ; date de livraison finale la séance suivante. Non respect des dates : −0,2/20 par heure de retard (tout retard entamé est compté).
 * Pull request (pour chaque fonction) à faire quand vous êtes sûr de vous (mais à temps). Plus je dois commenter, et plus il y a de pull requests avant acceptation du code, plus vous perdez de points (à fonctions égale). (Ne concerne pas l’aide apportée au cours ou par e-mail.)
 * L’auteur reçoit une note qualité et un nombre de points de difficultés lorsque la fonction est acceptée (code fusionné dans master). Voir https://github.com/oliviercailloux/java-course/tree/master/Best%20practices[Bonnes pratiques] et https://github.com/oliviercailloux/java-course/blob/master/Divers/Corr.adoc[Corr].
@@ -56,25 +56,24 @@
 
 * Open Data explained https://www.youtube.com/watch?v=c42QNa-rccw[in a nutshell] (ou : L’Open Data https://www.youtube.com/watch?v=aHxv_2BMJfw[à la loupe])
 * https://github.com/oliviercailloux/java-course/blob/master/Maven/README.adoc[Maven] : présentation & exercices
-* Exercices client WS (lien ci-dessus)
+* Exercices https://github.com/oliviercailloux/java-course/blob/master/WS%20client/README.adoc[client WS]
 * https://github.com/oliviercailloux/java-course/raw/master/Java%20EE/presentation.pdf[Intro] Java EE, https://github.com/oliviercailloux/java-course/blob/master/WildFly.adoc[Familiarisation] avec WildFly
 * https://github.com/oliviercailloux/java-course/blob/master/Servlets.adoc[Servlets.adoc]
 ** Compilation avec Maven et déploiement manuel
 ** Compilation et déploiement via Eclipse
 * Log
 
-À faire
+Devoir : un projet Maven, bien configuré, dépendant de la dernière version stable de https://github.com/ical4j/ical4j/[ical4j]. (Cette bibliothèque ne sera pas utilisée dans cet exercice, l’exigence sert simplement à vous habituer à dépendre d’une version récente d’une bibliothèque potentiellement utile.)
 
-* Devoir : un projet Maven, bien configuré, dépendant de la dernière version stable de…. Contient un servlet (classe AdditionerServlet) qui écoute sur localhost:…/additioner/add et répond à une requête GET avec param1=2, param2=3 par 5 en text/plain. Si la requête est erronée, la servlet répondra (en text/plain) : "Exécution impossible, paramètre manquant." et renverra un code d’erreur approprié. Répond aussi "ok" à une requête du type adéquat qui indique (en text/plain) la valeur par défaut pour le deuxième nombre si manquant.
-
-Démarrage du projet
-** Vous pouvez utiliser le `groupId` `io.github.oliviercailloux.y2018`
-** Utilisez _obligatoirement_ comme `artifactId` le nom de votre projet (avec espaces transformés en traits d’union)
-** Lire les bonnes pratiques Maven
-** Checkstyle
+* Contient un servlet dans la classe `AdditionerServlet` simple.
+* Le servlet écoute sur `localhost/additioner/add`
+* Le servlet répond à une requête GET avec deux paramètres, nommés (littéralement) `param1` et `param2`, des entiers. La réponse est simplement l’addition des deux nombres. Par exemple, avec `param1=2` et `param2=3`, le servlet répond 5.
+* Le servlet répond au format `text/plain`.
+* Si la requête est erronée, la servlet répondra (en `text/plain`) : "Exécution impossible, paramètre manquant." et renverra un code d’erreur approprié.
+* Le servlet répond aussi à un autre type de requête, destinée à indiquer la valeur par défaut pour le deuxième nombre (`param2`). À vous de choisir un type correct (un verbe HTTP) pour cette requête. Cette requête indique (en `text/plain`) la valeur par défaut pour le deuxième nombre si manquant. Le servlet répond `ok` en `text/plain` si la requête a été comprise. Après ceci, le servlet doit en tenir compte lors de sa réponse à la requête du premier type décrite ci-dessus.
+* Appliquer les https://github.com/oliviercailloux/java-course/tree/master/Best%20practices[bonnes pratiques] Maven, Exception, Git, Style.
 
 === S3 (jeudi 6 décembre)
-* Note concernant l’attendu et l’évaluation de la régularité
 * Tests unitaires
 * Travis CI
 //https://education.github.community/t/using-travis-on-private-repos-for-student-assignments/24183
@@ -91,12 +90,16 @@ Démarrage du projet
 
 À faire
 
+* Livraison d’une proposition de plan concernant vos fonctionnalités, pour la fin du mardi 11 décembre. 
 * Mettre en place le système d’intégration continue Travis sur votre dépôt de groupe. (Voir document ci-dessus.) Ajouter le badge au fichier README. Également à rendre pour deux jours avant S4. Vérifier que votre projet compile, d’après Travis, au moment de la remise. (Les tests fonctionnels de vos servlets ne doivent pas nécessairement passer.)
 
 === S4 (mercredi 12 décembre)
 * https://github.com/oliviercailloux/java-course/raw/master/JPA/presentation.pdf[JPA] : création d’une entité et création automatique BD
 ** https://github.com/oliviercailloux/java-course/blob/master/DB%20from%20Eclipse.adoc[DB from Eclipse]
 ** https://github.com/oliviercailloux/java-course/blob/master/JPA.adoc[Exercices]
+
+* Le plan doit être accepté avant la fin du 31 décembre. Attention, je réponds dans les 48h, tenez-en compte.
+* Livraison d’une tentative de première réalisation avant la fin du dimanche 13 janvier.
 
 === S5
 * Note sur la réutilisation intelligente (recompensée !) et le droit d’utilisation, ainsi que les https://github.com/oliviercailloux/projets/blob/master/Licence.adoc[licences]
