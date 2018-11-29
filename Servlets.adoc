@@ -4,7 +4,7 @@
 
 This document gives a (rough and incomplete) overview of Servlets in Java EE application servers.
 
-NOTE: The reader supposedly has basic knowledge of https://github.com/oliviercailloux/java-course/blob/master/HTTP.adoc[HTTP], https://github.com/oliviercailloux/java-course/blob/master/Maven/README.adoc[Maven] and https://github.com/oliviercailloux/java-course/blob/master/GlassFish.adoc[application servers]. (You are not obliged to use GlassFish, though.)
+NOTE: The reader supposedly has basic knowledge of https://github.com/oliviercailloux/java-course/blob/master/HTTP.adoc[HTTP], https://github.com/oliviercailloux/java-course/blob/master/Maven/README.adoc[Maven] and https://github.com/oliviercailloux/java-course/blob/master/WildFly.adoc[application servers]. (You are not obliged to use WildFly, though.)
 
 == Overview
 A servlet is a piece of software that, given some web request parameters, returns some response to the request. You, the web application developer, write the code that, given the request parameters, computes the response. That code gets embedded into the “web” container of your application server.
@@ -68,7 +68,7 @@ If you use GlassFish, some useful debugging tips are link:GlassFish.adoc[there].
 
 == Your turn
 * Write (and test) a servlet that says: “Hello world” in plain text, as response to a GET request.
-* Log what you do in your servlet code; check that it appears indeed in the log.
+* Log what you do in your servlet code: just use `System.out.println`, the container will by default redirect the output to the log file. Check that it appears indeed in the log.
 * Return “Hello world” in HTML instead of text: `<html><body><p>Hello world</p></body></html>`. How can you make sure this will be interpreted as HTML and not plain text? What would be the difference for the user?
 * Make sure that special characters are shown correctly. Test by sending rather “Éh salut !”.
 * A servlet that is able to add two numbers given in parameters of the GET request. (Hint: check the javadoc of `HttpServletRequest`.)

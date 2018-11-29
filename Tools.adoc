@@ -20,7 +20,7 @@ For Java EE, add:
 
 * https://www.eclipse.org/downloads/[Eclipse IDE] “for Java EE Developers”
 * Download and install (deflate) http://wildfly.org/downloads/[WildFly] (14.0.1.Final or more recent, Java EE Full & Web Distribution)
-* http://tools.jboss.org/downloads/jbosstools/photon/4.6.0.Final.html[JBoss Tools], a plug-in for easy deployment to Wildfly. Install only JBoss AS Wildfly, EAP & Server Tools (Rationale: I have had stability issues in Eclipse after installing the whole of JBoss Tools.)
+* http://tools.jboss.org/downloads/jbosstools/2018-09/4.9.0.Final.html[JBoss Tools], a plug-in for easy deployment to Wildfly. Install only JBoss AS Wildfly, EAP & Server Tools (Rationale: I have had stability issues in Eclipse after installing the whole of JBoss Tools.)
 
 == Git
 

@@ -29,6 +29,8 @@ Supplementary to the somewhat austere CLI, it is possible to configure many aspe
 
 Browse to http://localhost:8080/ to reach the server, then `Administration Console`. Follow the instructions to create a user. You can then access the Administration console. Look at the properties of the data-source whose name you have found previously (into `Configuration`, subsytem `Datasource & Drivers`).
 
+Open the server log file from the `Administration Console` (look into `Runtime`). Find where it is on the disk. (It is very useful, for debugging, to be able to open that file quickly with your favorite text viewer.)
+
 == Deploying applications
 The `standalone/deployments` directory is used to deploy your application, once it is packaged appropriately (e.g., as a WAR file). Simply drop the file there. WildFly will then create a file in the same folder to tell you whether the application was deployed successfully. (Check the https://github.com/oliviercailloux/java-course/blob/master/Servlets.adoc[Servlets] document to learn how to create an adequate file.)
 
