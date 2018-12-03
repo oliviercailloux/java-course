@@ -1,6 +1,0 @@
-= Logging best practices
-
-[[logging-choice]]
-== Framework
-One of the PITA in Java world is the multiplicity of logging framework (see Antonio Goncalves’ related https://antoniogoncalves.org/2012/09/06/i-need-you-for-logging-api-spec-lead/[blog post]). My personal default choice is to go for JUL for Java EE projects and SLF4J plus logback for Java SE projects.
-

@@ -1,0 +1,33 @@
+= Log
+
+Logging is tracing what your program is doing with statements that indicate which instructions have been executed and the values of important variables.
+
+One of the PITA in the Java world is the multiplicity of logging framework (see Antonio Goncalves’ related https://antoniogoncalves.org/2012/09/06/i-need-you-for-logging-api-spec-lead/[blog post]). My personal default choice is to go for JUL for Java EE projects and SLF4J plus logback for Java SE projects.
+
+See https://github.com/oliviercailloux/java-course/raw/master/Log/SLF4J/presentation.pdf[presentation] about SLF4J.
+
+== Reason for logging frameworks
+It is classical to use `System.out.println` to log. (In an application server, the container will by default redirect the output to the log file; otherwise, the result is simply shown in the terminal.) 
+
+However, this is not the cleanest way to log:
+
+* it is not configurable
+* it does not offer differentiated log levels
+* if you later move the code to a standalone library or application, you will have to refactor all those statements to turn them into proper log statements
+
+== Java Utils Logging
+
+To log using Java Utils Logging (JUL), proceed as follows. First, declare a logger in your class using this code.
+
+----
+@SuppressWarnings("unused")
+private static final Logger LOGGER = Logger.getLogger(MyClassName.class.getCanonicalName());
+----
+
+You can then write logging statements such as `LOGGER.info("Hello, world.");`.
+
+(The suppress warnings is there to make sure the compiler will not nag you if it turns out you do not use the logger anywhere.)
+
+== References
+* Oracle https://docs.oracle.com/javase/8/docs/technotes/guides/logging/index.html[tutorial] about JUL
+
