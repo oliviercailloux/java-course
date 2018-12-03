@@ -20,6 +20,11 @@
 * Note finale projet : moyenne des notes pour vos fonctions, pondérée par points de difficulté (meilleures notes sont considérées si plus de points de difficulté que requis) et note pour présentation finale. Ajustement possible pour tenir compte des difficultés et de la cohérence globales. (Note finale : 50% Projet, 50% CC.)
 * Conseil : travaillez ensemble et variez les binômes pour faire tourner les connaissances et varier les plaisirs.
 
+== Devoirs
+* Cliquez sur le lien indiqué sur le devoir approprié pour que GitHub classroom vous crée un dépôt privé où soumettre votre devoir.
+* Si vous voulez recommencer, effacez le dépôt créé pour le devoir et recommencez avec un nouveau dépôt.
+* Conseil : rendez 24h à l’avance pour être sûr. −3/20 par heure de retard (heure déterminée par la dernière activité sur le dépôt GitHub qui vous est attribué pour le devoir).
+
 == Plan
 === S1 (mercredi 26 septembre 2018)
 * https://github.com/oliviercailloux/java-course/raw/master/Pr%C3%A9sentation%20du%20cours%20EE/presentation.pdf[Présentation] du cours
@@ -37,7 +42,7 @@
 . Rediriger vos e-mails @ Dauphine si nécessaire pour vous assurer de recevoir les annonces
 . Terminer exercices git
 . https://github.com/oliviercailloux/java-course/blob/master/WS%20client/README.adoc[Client WS], partie curl (la partie Java sera vue en S2)
-. Effectuer le https://classroom.github.com/a/dvTohDAJ[devoir] (noté) : accepter le devoir, puis, à la dernière étape de l’exercice git ci-dessus, utiliser le dépôt GitHub créé pour le devoir. Utilisez ce dépôt pour aller jusqu’au bout de l’exercice. (Si vous voulez recommencer, effacez le dépôt créé pour le devoir et acceptez-le à nouveau pour repartir avec un nouveau dépôt.) Ensuite, ajoutez un fichier curl.txt au dépôt dans une branche curl, contenant juste une ligne qui récupère l’information depuis Wikipedia demandée dans l’exercice Client WS en invoquant curl. À rendre avant la fin du vendredi 30 novembre (−3/20 par heure de retard).
+. Effectuer le https://classroom.github.com/a/dvTohDAJ[devoir] (noté) : accepter le devoir, puis, à la dernière étape de l’exercice git ci-dessus, utiliser le dépôt GitHub créé pour le devoir. Utilisez ce dépôt pour aller jusqu’au bout de l’exercice. Ensuite, ajoutez un fichier curl.txt au dépôt dans une branche curl, contenant juste une ligne qui récupère l’information depuis Wikipedia demandée dans l’exercice Client WS en invoquant curl. À rendre avant la fin du vendredi 30 novembre.
 
 === S2 (lundi 3 décembre)
 // 13h45
@@ -63,7 +68,7 @@
 ** Compilation et déploiement via Eclipse
 * https://github.com/oliviercailloux/java-course/blob/master/Log/README.adoc[Log]
 
-Devoir : un projet Maven, bien configuré, dépendant de la dernière version stable de https://github.com/ical4j/ical4j/[ical4j]. (Cette bibliothèque ne sera pas utilisée dans cet exercice, l’exigence sert simplement à vous habituer à dépendre d’une version récente d’une bibliothèque potentiellement utile.)
+https://classroom.github.com/a/ygd_Ydml[Devoir] : un projet Maven, bien configuré, dépendant de la dernière version stable de https://github.com/ical4j/ical4j/[ical4j]. (Cette bibliothèque ne sera pas utilisée dans cet exercice, l’exigence sert simplement à vous habituer à dépendre d’une version récente d’une bibliothèque potentiellement utile.)
 
 * Contient un servlet simple dans une classe nommée `AdditionerServlet`.
 * Le servlet écoute sur `localhost/additioner/add`
