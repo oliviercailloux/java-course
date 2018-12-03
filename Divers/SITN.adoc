@@ -65,12 +65,11 @@
 
 Devoir : un projet Maven, bien configuré, dépendant de la dernière version stable de https://github.com/ical4j/ical4j/[ical4j]. (Cette bibliothèque ne sera pas utilisée dans cet exercice, l’exigence sert simplement à vous habituer à dépendre d’une version récente d’une bibliothèque potentiellement utile.)
 
-* Contient un servlet dans la classe `AdditionerServlet` simple.
+* Contient un servlet simple dans une classe nommée `AdditionerServlet`.
 * Le servlet écoute sur `localhost/additioner/add`
-* Le servlet répond à une requête GET avec deux paramètres, nommés (littéralement) `param1` et `param2`, des entiers. La réponse est simplement l’addition des deux nombres. Par exemple, avec `param1=2` et `param2=3`, le servlet répond 5.
-* Le servlet répond au format `text/plain`.
+* Le servlet répond à une requête GET avec deux paramètres, nommés (littéralement) `param1` et `param2`, des entiers. La réponse est simplement l’addition des deux nombres. Par exemple, avec `param1=2` et `param2=3`, le servlet répond 5. Le servlet répond toujours au format `text/plain`.
 * Si la requête est erronée, la servlet répondra (en `text/plain`) : "Exécution impossible, paramètre manquant." et renverra un code d’erreur approprié.
-* Le servlet répond aussi à un autre type de requête, destinée à indiquer la valeur par défaut pour le deuxième nombre (`param2`). À vous de choisir un type correct (un verbe HTTP) pour cette requête. Cette requête indique (en `text/plain`) la valeur par défaut pour le deuxième nombre si manquant. Le servlet répond `ok` en `text/plain` si la requête a été comprise. Après ceci, le servlet doit en tenir compte lors de sa réponse à la requête du premier type décrite ci-dessus.
+* Le servlet répond aussi à un autre type de requête, destinée à indiquer la valeur par défaut pour le deuxième nombre (`param2`). À vous de choisir un type correct (la méthode HTTP) pour cette requête. Cette requête indique (en `text/plain`) la valeur par défaut pour le deuxième nombre si manquant. Le servlet répond `ok` en `text/plain` si la requête a été comprise. Après ceci, le servlet doit en tenir compte lors de sa réponse à la requête du premier type décrite ci-dessus.
 * Appliquer les https://github.com/oliviercailloux/java-course/tree/master/Best%20practices[bonnes pratiques] Maven, Exception, Git, Style.
 
 === S3 (jeudi 6 décembre)
