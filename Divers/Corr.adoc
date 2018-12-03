@@ -23,7 +23,7 @@
 | ENC	| Préciser l’encodage des flux lus ou écrits	| https://github.com/oliviercailloux/java-course/blob/master/Flows.adoc[Flows]	| −1
 | EN	| Coder et commenter en anglais	|	| −0,5
 | FORE	| Privilégier boucles for each	| https://docs.oracle.com/javase/tutorial/java/nutsandbolts/for.html[Tutorial]	| −0,5
-| LOG	| Utiliser des loggers	| https://github.com/oliviercailloux/java-course/raw/master/SLF4J/presentation.pdf[SLF4J]	| −1
+| LOG	| Utiliser des loggers	| https://github.com/oliviercailloux/java-course/blob/master/Log/README.adoc[Log]	| −1
 | STREAMS	| Utiliser des streams pour plus de généralité quand approprié	| https://github.com/oliviercailloux/java-course/blob/master/Flows.adoc[Flows]	| −1
 | POM	| Respecter les conventions de nommage et autres bonnes pratiques Maven, simplifier le POM autant que possible	| https://github.com/oliviercailloux/java-course/tree/master/Maven[Maven]	| −1
 |===

@@ -40,7 +40,7 @@ Add `JAVA_OPTS="$JAVA_OPTS -ea"` at the appropriate place in `bin/standalone.con
 
 //=== Clear log
 //`/subsystem=logging/periodic-rotating-file-handler=FILE:write-attribute(name="append", value=false)`
-//https://issues.jboss.org/browse/WFLY-10935
+//https://issues.jboss.org/browse/WFCORE-4104
 
 == References
 * http://docs.wildfly.org/

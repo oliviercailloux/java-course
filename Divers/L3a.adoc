@@ -60,7 +60,7 @@ Don’t hesitate to send me your question by e-mail if you’re blocked in your 
 * 5 ways of taking notes https://www.youtube.com/watch?v=AffuwyJZTQQ[video]
 * https://doi.org/10.1177/0956797614524581[Research] shows that taking notes, and especially writing what is said in your own words after some mental processing, permits more effective study
 
-Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017/course/[course] “Introduction to Biology - The Secret of Life”, MITx
+Links taken from the https://www.edx.org/course/introduction-to-biology-the-secret-of-life[course] “Introduction to Biology - The Secret of Life”, MITx
 
 == Planning
 
@@ -326,7 +326,7 @@ Links taken from the https://courses.edx.org/courses/course-v1:MITx+7.00x+1T2017
 [[S10]]
 === S10 (Thursday 12th of April, 2018)
 
-* Logging: https://raw.githubusercontent.com/oliviercailloux/java-course/master/SLF4J/presentation.pdf[SLF4J]
+* https://github.com/oliviercailloux/java-course/blob/master/Log/README.adoc[Logging]
 * https://github.com/oliviercailloux/java-course/blob/master/DevOps/CI.adoc[CI]
 * Everybody is supposed to master the tools used in the project (for example, check the https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Maven.adoc[Maven Best Practices])
 

@@ -3,7 +3,7 @@ git:
   depth: 1
 rvm: 2.4.1
 before_script: gem install awesome_bot
-script: find \( -name "*.adoc" -or -name "presentation.tex" \) -print0 | xargs -0 awesome_bot --allow 302 --allow-dupe --white-list 'http://localhost,http://192.168.0.1:8080,http://example.com,http://your-server,http://java.sun.com/xml/ns/jaxb,http://maven.apache.org/POM/4.0.0,http://jaxb2-commons.dev.java.net/namespace-prefix,http://xmlns.jcp.org/jsf/,http://xmlns.jcp.org/xml/ns/persistence,http://www.w3.org/1999/xhtml,http://www.w3.org/2003/05/soap-envelope,http://schemas.xmlsoap.org/soap/http,https://httpbin.org/image,http://search.maven.org/,https://search.maven.org/,https://docs.microsoft.com/,http://svn.apache.org/viewvc/maven/plugins/,https://fr.wikipedia.org/wiki/'
+script: find \( -name "*.adoc" -or -name "presentation.tex" \) -print0 | xargs -0 awesome_bot --allow 302 --allow-dupe --white-list 'http://localhost,http://192.168.0.1:8080,http://example.com,http://your-server,https://MyAppName.eu-gb.mybluemix.net,http://java.sun.com/xml/ns/jaxb,http://maven.apache.org/POM/4.0.0,http://jaxb2-commons.dev.java.net/namespace-prefix,http://xmlns.jcp.org/jsf/,http://xmlns.jcp.org/xml/ns/persistence,http://www.w3.org/1999/xhtml,http://www.w3.org/2003/05/soap-envelope,http://schemas.xmlsoap.org/soap/http,https://httpbin.org/image,http://search.maven.org/,https://search.maven.org/,https://docs.microsoft.com/,http://svn.apache.org/viewvc/maven/plugins/,https://fr.wikipedia.org/wiki/'
 notifications:
   email: false
 
