@@ -66,7 +66,7 @@
 		\item JSR ? \pause Java Specification Request \pause
 		\item Spécifications tiennent compte de nombreux avis d’horizons divers
 		\item Exemples ? \pause JSR 221 : JDBC 4.0 ; JSR 338 : JPA 2.1 ; JSR 345 : EJB 3.2 ; JSR 342 : Java EE 7 ; JSR 346 : CDI… \pause
-		\item Tentions entre standard ouvert et contrôle ! (2010, Apache \href{https://blogs.apache.org/foundation/entry/the_asf_resigns_from_the}{quitte} le comité JCP ; Doug Lea \href{http://gee.cs.oswego.edu/dl/html/jcp22oct10.html}{également}, en faveur de OpenJDK ; \href{https://www.change.org/p/larry-ellison-tell-oracle-to-move-forward-java-ee-as-a-critical-part-of-the-global-it-industry/u/22463163}{pétition} concernant Java EE…)
+		\item Tentions entre standard ouvert et contrôle ! (2010, Apache \href{https://blogs.apache.org/foundation/entry/the_asf_resigns_from_the}{quitte} le comité JCP ; Doug Lea \href{http://gee.cs.oswego.edu/dl/html/jcp22oct10.html}{également}, en faveur de OpenJDK ; 2018, \href{https://www.change.org/p/larry-ellison-tell-oracle-to-move-forward-java-ee-as-a-critical-part-of-the-global-it-industry/u/22463163}{pétition} concernant Java EE…)
 	\end{itemize}
 \end{frame}
 
@@ -173,7 +173,7 @@
 			\item Fichiers \texttt{.class} servlets et autres dans WEB-INF/lib ou WEB-INF/classes
 			\item Fichiers web statiques (.html, images, …) dans root
 			\item \texttt{WEB-INF/web.xml} : descripteur pour conteneur Web
-			\item \texttt{META-INF/glassfish-web.xml} : descripteur pour glassfish
+			\item \texttt{WEB-INF/jboss-web.xml} : \href{http://docs.wildfly.org/14/Developer_Guide.html\#Deployment_Descriptors_used_In_WildFly}{descripteur} pour WildFly
 			\item \texttt{META-INF/MANIFEST.MF}
 		\end{itemize}
 	\end{block}
@@ -197,7 +197,7 @@
 		\item Application Java EE composée d’un ou plusieurs modules
 		\item On peut déployer un module seul (\texttt{.war}, \texttt{.jar})
 		\item Ou assembler les modules dans un fichier Enterprise Archive (\texttt{.ear})
-		\item EAR : plusieurs modules et év. descripteur d’application (\texttt{META-INF/application.xml}, \texttt{META-INF/glassfish-application.xml})
+		\item EAR : plusieurs modules et év. descripteur d’application (\texttt{META-INF/application.xml}, \texttt{META-INF/jboss-app.xml})
 	\end{itemize}
 	\begin{block}{Déploiement}
 		\begin{itemize}
@@ -222,25 +222,6 @@
 	\end{itemize}
 \end{frame}
 
-\section{GlassFish}
-\begin{frame}
-	\frametitle{GlassFish Server Tools}
-	\begin{itemize}
-		\item Démarrer, arrêter le serveur
-		\item Déployer des paquets
-		\item Application : console d’administration
-		\item Base de données
-	\end{itemize}
-	\begin{block}{À vous}
-		\begin{itemize}
-			\item \og{}Installez\fg{} GlassFish (copie depuis \texttt{/usr/local/glassfish-4.1/glassfish})
-			\item Démarrez votre serveur (cf. \texttt{bin/}, \url{http://localhost:8080}, \url{http://localhost:4848})
-			\item Désactivez l’écoute extérieure
-			\item Lisez les logs
-		\end{itemize}
-	\end{block}
-\end{frame}
-
 \appendix
 \section{Licence}
 \begin{frame}
@@ -253,7 +234,7 @@
 \begin{frame}[fragile]
 	\frametitle{Le terme Java}
 	
-	Terme \emph{Java} adopté en 1995 (“as an example of yet another name that would never work”) \source{(source: \href{https://www.javaworld.com/article/2077265/core-java/so-why-did-they-decide-to-call-it-java-.html}{Java World})}
+	Terme \emph{Java} adopté en 1995 (“as an example of yet another name that would never work”) {\scriptsize{(source: \href{https://www.javaworld.com/article/2077265/core-java/so-why-did-they-decide-to-call-it-java-.html}{Java World})}}
 	\hfill
 	\vfill
 	\begin{minipage}[b]{3cm}
@@ -261,8 +242,8 @@
 	\end{minipage}%
 	\begin{minipage}[b]{(\columnwidth - 3cm)}
 		\centering{\includegraphics[height=9mm]{java-icon.png}}
-		\pause
-		\href{https://en.wikipedia.org/wiki/Java}{\includegraphics[width=\columnwidth]{Java_Locator.svg.png}}
+%		\pause
+		\href{https://en.wikipedia.org/wiki/Java}{\includegraphics[width=\columnwidth]{Java_Locator-svg.png}}
 %		\mbox{} \raggedleft \source{Gunawan Kartapranata - \href{https://en.wikipedia.org/wiki/Java}{wikipedia}}
 	\end{minipage}
 \end{frame}
@@ -277,7 +258,7 @@
 		\href{http://houseofjava.ca/}{\includegraphics[height=3cm]{bean-jar.png}}
 	}
 	\begin{block}{Fun fact}
-		Voyons le nombre magique des fichiers \texttt{.class}…
+		\href{https://en.wikipedia.org/wiki/Java_class_file\#Magic_Number}{Nombre magique} des fichiers \texttt{.class}
 	\end{block}
 \end{frame}
 
@@ -306,6 +287,25 @@
 %		\item servletpath=The path section that corresponds to the component alias that activated this request. This path starts with a forward slash (/) (or is empty), pathinfo = the rest.
 %	\end{itemize}
 %\end{frame}
+
+\section{GlassFish}
+\begin{frame}
+	\frametitle{GlassFish Server Tools}
+	\begin{itemize}
+		\item Démarrer, arrêter le serveur
+		\item Déployer des paquets
+		\item Application : console d’administration
+		\item Base de données
+	\end{itemize}
+	\begin{block}{À vous}
+		\begin{itemize}
+			\item \og{}Installez\fg{} GlassFish (copie depuis \texttt{/usr/local/glassfish-4.1/glassfish})
+			\item Démarrez votre serveur (cf. \texttt{bin/}, \url{http://localhost:8080}, \url{http://localhost:4848})
+			\item Désactivez l’écoute extérieure
+			\item Lisez les logs
+		\end{itemize}
+	\end{block}
+\end{frame}
 
 \end{document}
 
