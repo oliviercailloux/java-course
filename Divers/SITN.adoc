@@ -21,9 +21,10 @@
 * Conseil : travaillez ensemble et variez les binômes pour faire tourner les connaissances et varier les plaisirs.
 
 == Devoirs
-* Cliquez sur le lien indiqué sur le devoir approprié pour que GitHub classroom vous crée un dépôt privé où soumettre votre devoir.
+* Cliquez sur le lien indiqué sur le devoir pour que GitHub classroom vous crée un dépôt privé où soumettre votre devoir.
 * Si vous voulez recommencer, effacez le dépôt créé pour le devoir et recommencez avec un nouveau dépôt.
 * Conseil : rendez 24h à l’avance pour être sûr. −3/20 par heure de retard (heure déterminée par la dernière activité sur le dépôt GitHub qui vous est attribué pour le devoir).
+* Vous pouvez utiliser le `groupId` `io.github.oliviercailloux.y2018.yourgithubusername`.
 
 == Plan
 === S1 (mercredi 26 septembre 2018)
@@ -66,19 +67,20 @@
 * https://github.com/oliviercailloux/java-course/blob/master/Servlets.adoc[Servlets]
 ** Compilation avec Maven et déploiement manuel
 ** Compilation et déploiement via Eclipse
-* https://github.com/oliviercailloux/java-course/blob/master/Log/README.adoc[Log]
 
-https://classroom.github.com/a/ygd_Ydml[Devoir] : un projet Maven, bien configuré, dépendant de la dernière version stable de https://github.com/ical4j/ical4j/[ical4j]. (Cette bibliothèque ne sera pas utilisée dans cet exercice, l’exigence sert simplement à vous habituer à dépendre d’une version récente d’une bibliothèque potentiellement utile.)
+https://classroom.github.com/a/ygd_Ydml[Devoir] : un projet Maven, bien configuré, dépendant de la dernière version stable de https://github.com/ical4j/ical4j/[ical4j]. (Cette bibliothèque ne sera pas utilisée dans cet exercice, l’exigence sert simplement à vous habituer à dépendre d’une version récente d’une bibliothèque potentiellement utile.) À rendre pour la fin du mercredi 5 décembre (23h59).
 
 * Contient un servlet simple dans une classe nommée `AdditionerServlet`.
 * Le servlet écoute sur `localhost/additioner/add`
 * Le servlet répond à une requête GET avec deux paramètres, nommés (littéralement) `param1` et `param2`, des entiers. La réponse est simplement l’addition des deux nombres. Par exemple, avec `param1=2` et `param2=3`, le servlet répond 5. Le servlet répond toujours au format `text/plain`.
 * Si la requête est erronée, le servlet répondra (en `text/plain`) : "Exécution impossible, paramètre manquant." et renverra un code d’erreur approprié.
-* Le servlet utilise JUL pour logger les valeurs des paramètres envoyés en entrée et la valeur de sortie renvoyée.
-* Le servlet répond aussi à un autre type de requête, destinée à indiquer la valeur par défaut pour le deuxième nombre (`param2`). À vous de choisir un type correct (la méthode HTTP) pour cette requête. Cette requête indique (en `text/plain`) la valeur par défaut pour le deuxième nombre si manquant. Le servlet répond `ok` en `text/plain` si la requête a été comprise. Après ceci, le servlet doit en tenir compte lors de sa réponse à la requête du premier type décrite ci-dessus.
+* Le servlet logue les valeurs des paramètres reçus en entrée et la valeur de sortie renvoyée. [NB la consigne mentionnait JUL mais comme on n’a pas vu JUL, vous pouvez logger comme vous voulez.]
+* Le servlet répond aussi à un autre type de requête (envoyée à la même adresse), destinée à indiquer la valeur par défaut pour le deuxième nombre (`param2`). À vous de choisir un type correct (la méthode HTTP) pour cette requête. Cette requête indique (en `text/plain`) la valeur par défaut pour le deuxième nombre si manquant. Le servlet répond `ok` en `text/plain` si la requête a été comprise. Le servlet doit en tenir compte lors de sa réponse à la requête du premier type décrite ci-dessus.
 * Appliquer les https://github.com/oliviercailloux/java-course/tree/master/Best%20practices[bonnes pratiques] Maven, Exception, Git, Style.
+* Appliquer les https://github.com/oliviercailloux/java-course/blob/master/Divers/SITN.adoc#Devoirs[consignes] liées aux devoirs.
 
 === S3 (jeudi 6 décembre)
+* https://github.com/oliviercailloux/java-course/blob/master/Log/README.adoc[Log]
 * Tests unitaires
 * Travis CI
 //https://education.github.community/t/using-travis-on-private-repos-for-student-assignments/24183
