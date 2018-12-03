@@ -63,7 +63,7 @@
 * https://github.com/oliviercailloux/java-course/blob/master/Maven/README.adoc[Maven] : présentation & exercices
 * Exercices https://github.com/oliviercailloux/java-course/blob/master/WS%20client/README.adoc[client WS]
 * https://github.com/oliviercailloux/java-course/raw/master/Java%20EE/presentation.pdf[Intro] Java EE, https://github.com/oliviercailloux/java-course/blob/master/WildFly.adoc[Familiarisation] avec WildFly
-* https://github.com/oliviercailloux/java-course/blob/master/Servlets.adoc[Servlets.adoc]
+* https://github.com/oliviercailloux/java-course/blob/master/Servlets.adoc[Servlets]
 ** Compilation avec Maven et déploiement manuel
 ** Compilation et déploiement via Eclipse
 * https://github.com/oliviercailloux/java-course/blob/master/Log/README.adoc[Log]
