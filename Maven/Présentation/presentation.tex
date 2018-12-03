@@ -163,7 +163,7 @@
 \end{frame}
 
 \begin{frame}{Cycle “default”}
-	Phases {\tiny (non exhaustif)} dans cycle “default” :
+	Phases {\tiny (non exhaustif)} dans cycle \og{}default\fg{} :
 	\begin{description}[process-resources]
 		\item[validate] valide informations du projet
 		\item[process-resources] copie vers destination
@@ -189,7 +189,7 @@
 		Lancement de Maven avec \texttt{mvn phasechoisie} :
 		\begin{itemize}
 			\item Maven détecte de quel cycle il s’agit
-			\item Maven exécute toutes les phases jusqu’à “phasechoisie”
+			\item Maven exécute toutes les phases jusqu’à \og{}phasechoisie\fg{}
 			\item Exemple : exécution systématique de \texttt{test} avant \texttt{package}
 		\end{itemize}
 	\end{block}
@@ -281,7 +281,7 @@
 		\item Utiliser comme groupeId un nom unique : généralement un nom de domaine inversé
 		\item Le paquet de base de toutes les classes doit être ce nom
 		\item Indiquer propriété \texttt{project.build.sourceEncoding} avec valeur \texttt{UTF-8}
-		\item Indiquer propriétés \texttt{maven.compiler.source} et \texttt{maven.compiler.target} avec valeur \texttt{1.8}
+		\item Indiquer propriétés \texttt{maven.compiler.source} et \texttt{maven.compiler.target} avec valeur \texttt{8}
 		\item Canevas simples disponibles \href{https://github.com/oliviercailloux/samples}{ici}
 	\end{itemize}
 \end{frame}
