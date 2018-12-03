@@ -6,7 +6,7 @@
 
 Summary:
 
-* Make sure your Maven `groupId` is unique. For this, prefix it with a domain name you control, inverted, with underscores replaced by hyphens. Example: `io.github.oliviercailloux.something`.
+* Make sure your Maven `groupId` is unique. For this, prefix it with a domain name you control (or you have received the right to use), inverted, with underscores replaced by hyphens. Example, in my case: `io.github.oliviercailloux.something`.
 * As Maven `artifactId`, use your project name, with spaces replaced by hyphens, in lowercase. Example: `my-project-name`.
 * In Maven identifiers (`groupId` and `artifactId`), avoid Java keywords and “words” starting with a digit.
 * As Java base package name, use your Maven coordinates, to ensure uniqueness, with hyphens replaced by underscores (example: `io.github.oliviercailloux.something.my_project_name`).
@@ -29,7 +29,7 @@ Details:
 Include the property `<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>` in your POM to ensure platform-independent behavior (and get rid of the warning Maven prints otherwise).
 
 == Java version
-Include properties: `<maven.compiler.source>10</maven.compiler.source> <maven.compiler.target>10</maven.compiler.target>` (or adjust to the desired java version) to indicate which java version you develop in (and for). This is https://maven.apache.org/plugins/maven-compiler-plugin/compile-mojo.html[officially supported] and is thus to be preferred to the more verbose explicit https://maven.apache.org/plugins/maven-compiler-plugin/examples/set-compiler-source-and-target.html[configuration] of the `maven-compiler-plugin`.
+Include properties: `<maven.compiler.source>8</maven.compiler.source> <maven.compiler.target>8</maven.compiler.target>` (or adjust to the desired java version) to indicate which java version you develop in (and for). This is https://maven.apache.org/plugins/maven-compiler-plugin/compile-mojo.html[officially supported] and is thus to be preferred to the more verbose explicit https://maven.apache.org/plugins/maven-compiler-plugin/examples/set-compiler-source-and-target.html[configuration] of the `maven-compiler-plugin`.
 
 == Do not require web descriptor
 Web applications do not require a web descriptor (the `web.xml` file that goes in the `WEB-INF` folder). Maven however required it by default when asked to package a war file. If you do not need a web descriptor, make your project as clean as possible and do not include one! Rather, include the property `<failOnMissingWebXml>false</failOnMissingWebXml>` in your `pom.xml`.
@@ -38,5 +38,5 @@ Web applications do not require a web descriptor (the `web.xml` file that goes i
 * [Note 2: Web applications do not require a web descriptor any more since Servlet 2.5 MR 5, more than 10 years ago (see JSR 340 Servlet 3.1 https://download.oracle.com/otn-pub/jcp/servlet-3_1-fr-eval-spec/servlet-3_1-final.pdf[spec], A.7.6 and 10.13).]
 
 == Do not refer to someone else’s project
-The POM may include a https://maven.apache.org/pom.html#More_Project_Information[`<url>`] element. If you use it, make sure it refers to your project. Do not copy templates without understanding it (I often see `<url>` pointing to \http://maven.apache.org!).
+The POM may include a https://maven.apache.org/pom.html#More_Project_Information[`<url>`] element. If you use it, make sure it refers to your project. Do not copy templates without understanding their contents (I often see `<url>` pointing to \http://maven.apache.org!).
 
