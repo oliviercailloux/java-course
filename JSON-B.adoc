@@ -32,6 +32,11 @@ If you use Java SE (or Java EE 7), you need to add the required dependencies (ht
 If you use Java EE 8, this is already provided by your application server.
 
 == Example use
+.An https://github.com/oliviercailloux/jsonb-sample/blob/master/src/main/java/io/github/oliviercailloux/jsonb_sample/PdfBookmark.java[example] class with a JSON-B annotation
+--
+include::https://github.com/oliviercailloux/jsonb-sample/raw/master/src/main/java/io/github/oliviercailloux/jsonb_sample/PdfBookmark.java[]
+--
+
 .An https://github.com/oliviercailloux/jsonb-sample/blob/master/src/test/java/io/github/oliviercailloux/jsonb_sample/TestJsonSerialization.java[example] serialization
 --
 include::https://raw.githubusercontent.com/oliviercailloux/jsonb-sample/master/src/test/java/io/github/oliviercailloux/jsonb_sample/TestJsonSerialization.java[]
