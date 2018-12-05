@@ -24,16 +24,6 @@ The properties of the default (H2) DB used by WildFly (such as the default datab
 
 * See the http://h2database.com/html/grammar.html[Reference] about H2’s flavor of SQL (and more)
 
-== Access to the default GlassFish DB from Eclipse
-* The GlassFish application server comes with an embedded https://db.apache.org/derby/[Derby] DB
-* You have to start the DB manually: `asadmin start-database`
-* You’ll find a suitable JDBC driver for Eclipse in `glassfish4/javadb/lib/derbyclient.jar`
-* To find the properties your server uses by default for connexion to the DB: look in the Administration Console, `Resources / JDBC / JDBC Resources`, to find out which pool it uses for `java:comp/DefaultDataSource`, then within `JDBC Connection Pools`, look into `Additional Properties`
-* Adapt the instructions for WildFly with the adequate driver and properties
-** Eclipse asks that you start with a template. Eclipse uses it to provide particular features for your DB type. (Unfortunately, JDBC is not a good enough abstraction and Eclipse has to know which flavor of SQL and protocol your DB implements.) Better choose the Derby type than the Generic JDBC Driver in this case.
-
-* See the https://db.apache.org/derby/docs/10.10/ref/index.html[Manual] about Derby’s flavor of SQL (and more)
-
 == References
 * Hibernate http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html[User guide]
 * https://www.manning.com/books/java-persistence-with-hibernate-second-edition[Book]: Java Persistence with Hibernate, Second Edition
