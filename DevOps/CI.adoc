@@ -28,7 +28,7 @@ CI tools can be used to automatically run a build (and trigger your tests) when 
 . Register and log-in to https://travis-ci.com/[Travis-CI].
 //. Tell Travis-CI which of your GitHub repository you want Travis to take care of.
 . Add a file `.travis.yml` to your repository, with the contents indicated here below, and push it to GitHub.
-. Refresh your page on the Travis-CI web site, and watch your project being built.
+. Look at your page on the Travis-CI web site, and watch your project being built. (You might have to wait for about 30 seconds for Travis to react to your last push.)
 . Add the relevant https://docs.travis-ci.com/user/status-images/[badge] to your `README.adoc` in your project repository.
 
 .Sample `.travis.yml` configuration file

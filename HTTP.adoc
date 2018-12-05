@@ -77,11 +77,11 @@ Quick help:
 * `curl --include +http://example.com/page+` The `--include` option tells curl to include the received HTTP headers in the output
 * `curl --data "name=daniel&skill=lousy" +http://example.com/page+` curl will send a POST request to the given URI, passing the data to the server using the content-type `application/x-www-form-urlencoded` (in the same way that a browser does when a user has filled in an HTML form and presses the submit button)
 
-Other notes:
-
+== References
 * Official https://curl.haxx.se/docs/tooldocs.html[doc] for curl. curl is available in your favorite linux distribution. Other OSes: try https://curl.haxx.se/download.html[here] (untested by this author), write to me if you know more.
 * https://en.wikipedia.org/wiki/Wget[Wget] is an alternative to curl. It is available in your favorite linux distribution. Other OSes: try http://wget.addictivecode.org/Faq.html#download[here] (untested by this author).
 * You might also want to try https://httpie.org/[HTTPie]
+* https://www.getpostman.com/[Postman]
 
 == Appendices
 === Various
