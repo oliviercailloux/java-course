@@ -16,10 +16,10 @@ The properties of the default (H2) DB used by WildFly (such as the default datab
 ** This does _not_ create a connexion: it only declares a new driver definition, that is, a _kind_ of connexion (that you will use in the next step)
 ** As type, choose simply the `Generic JDBC Driver`.
 ** As JAR file, point Eclipse to the `modules/system/layers/base/com/h2database/h2/main/h2-1.4.193.jar` JAR file found in the WildFly folder.
-** As properties, use `Connection URL` = `jdbc:h2:mem:test`, `Database Name` = `test`, for `Driver Class`, use the `Browse` option (there’s only one match, `org.h2.Driver`), as `user`, anything goes.
+** As properties, use `Connection URL` = `jdbc:h2:mem:test`; `Database Name` = `test`; for `Driver Class`, use the `Browse` option (there’s only one match, `org.h2.Driver`); as `user`, anything goes.
 * From the `Data Source Explorer` view, create a connexion to your DB (using the driver definition created previously)
 * You can now view and edit data from the `Data Source Explorer` view
-* The `Tables` folder in the `PUBLIC` schema lists the current tables in this DB. At start, the DB is empty, so if see no tables there, it’s normal!
+* The `Tables` folder in the `PUBLIC` schema lists the current tables in this DB. (At start, you will see no tables there, as the DB is empty.)
 //* You can write and send SQL commands from the `SQL Scrapbook` (with completion!)
 
 * See the http://h2database.com/html/grammar.html[Reference] about H2’s flavor of SQL (and more)
@@ -30,7 +30,7 @@ The properties of the default (H2) DB used by WildFly (such as the default datab
 * You’ll find a suitable JDBC driver for Eclipse in `glassfish4/javadb/lib/derbyclient.jar`
 * To find the properties your server uses by default for connexion to the DB: look in the Administration Console, `Resources / JDBC / JDBC Resources`, to find out which pool it uses for `java:comp/DefaultDataSource`, then within `JDBC Connection Pools`, look into `Additional Properties`
 * Adapt the instructions for WildFly with the adequate driver and properties
-** Eclipse asks that you start with a template. Eclipse uses it to provide particular features for your DB type. (Unfortunately, JDBC is not a good enough abstraction and Eclipse has to know which flavor of SQL and protocol your DB implements.) Better choose the Derby type than the Generic JDBC Driver.
+** Eclipse asks that you start with a template. Eclipse uses it to provide particular features for your DB type. (Unfortunately, JDBC is not a good enough abstraction and Eclipse has to know which flavor of SQL and protocol your DB implements.) Better choose the Derby type than the Generic JDBC Driver in this case.
 
 * See the https://db.apache.org/derby/docs/10.10/ref/index.html[Manual] about Derby’s flavor of SQL (and more)
 
