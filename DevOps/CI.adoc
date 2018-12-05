@@ -25,8 +25,8 @@ CI tools can be used to automatically run a build (and trigger your tests) when 
 
 == Set-up
 
-. Register and log-in to https://travis-ci.org/[Travis-CI].
-. Tell Travis-CI which of your GitHub repository you want Travis to take care of.
+. Register and log-in to https://travis-ci.com/[Travis-CI].
+//. Tell Travis-CI which of your GitHub repository you want Travis to take care of.
 . Add a file `.travis.yml` to your repository, with the contents indicated here below, and push it to GitHub.
 . Refresh your page on the Travis-CI web site, and watch your project being built.
 . Add the relevant https://docs.travis-ci.com/user/status-images/[badge] to your `README.adoc` in your project repository.
@@ -37,9 +37,7 @@ CI tools can be used to automatically run a build (and trigger your tests) when 
 language: java
 git:
   depth: 1
-jdk:
-  - openjdk8
-dist: trusty
+dist: xenial
 cache:  
   directories:  
     - $HOME/.m2  
@@ -52,10 +50,9 @@ The configuration file is written in http://yaml.org/[YAML], a human friendly fo
 The sample configuration file suggested here tells Travis to:
 
 * fetch only the tip of your git history (`git https://git-scm.com/docs/git-clone#git-clone---depthltdepthgt[depth] 1`);
-* use Open JDK 8 (https://docs.travis-ci.com/user/reference/trusty/#JVM-(Clojure%2C-Groovy%2C-Java%2C-Scala)-images[default] is Oracle JDK 8);
-* run the build in a container-based https://docs.travis-ci.com/user/reference/overview/[environment] using the (Ubuntu 14) https://en.wikipedia.org/wiki/Ubuntu_version_history#Ubuntu_14.04_LTS_.28Trusty_Tahr.29[Trusty] distribution (instead of (Ubuntu 12) https://en.wikipedia.org/wiki/Ubuntu_version_history#Ubuntu_12.04_LTS_.28Precise_Pangolin.29[Precise]{emptyattribute});
+* run the build in a container-based https://docs.travis-ci.com/user/reference/overview/[environment] using the (Ubuntu 16) https://en.wikipedia.org/wiki/Ubuntu_version_history#Ubuntu_16.04_LTS_.28Xenial_Xerus.29[Xenial] distribution (instead of (Ubuntu 14) https://en.wikipedia.org/wiki/Ubuntu_version_history#Ubuntu_14.04_LTS_.28Trusty_Tahr.29[Trusty] or (Ubuntu 12) https://en.wikipedia.org/wiki/Ubuntu_version_history#Ubuntu_12.04_LTS_.28Precise_Pangolin.29[Precise]{emptyattribute});
 * cache the directory where Maven downloads its files (http://muelder.blogspot.com/2015/08/building-eclipse-plugins-with-maven.html[thanks]).
 
-Travis allows you to configure automatic deployment, run scripts of your own, and https://docs.travis-ci.com/[much more]. https://github.com/oliviercailloux/PDF-p/blob/97737ee5b628f3f5e9755819059c57b36f99483e/.travis.yml[This] example sets up Travis so that a project dependency is cloned from GitHub and installed locally before the main project is built. (This may be useful in case one of the dependency is not pushed to a public Maven repository.)
+Travis allows you to configure automatic deployment, run scripts of your own, and https://docs.travis-ci.com/[much more]. For example, https://github.com/oliviercailloux/PDF-p/blob/97737ee5b628f3f5e9755819059c57b36f99483e/.travis.yml[this] configuration clones a project dependency from GitHub and installs it locally before the main project is built. (This may be useful in case one of the dependency is not pushed to a public Maven repository.)
 
 
