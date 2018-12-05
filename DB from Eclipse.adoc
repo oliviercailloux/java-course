@@ -22,13 +22,4 @@ NOTE: The reader supposedly has basic knowledge of JDBC and Eclipse.
 
 To open views or editors from within Eclipse, see `Window / Navigation / Quick Access`
 
-== GlassFish and Derby
-
-* If you use a Java EE application server, it comes preconfigured with a default DB (that it will connect to when requested by JPA, for example)
-* If you use a GlassFish application server, it comes with an embedded https://db.apache.org/derby/[Derby] DB
-* You have to start the DB manually: `asadmin start-database`
-* You’ll find a suitable JDBC driver for Eclipse in `glassfish4/javadb/lib/derbyclient.jar`
-* To find the properties your server uses by default for connexion to the DB: look in the Administration Console, `Resources / JDBC / JDBC Resources`, to find out which pool it uses for `java:comp/DefaultDataSource`, then within `JDBC Connection Pools`, look into `Additional Properties`
-
-* See the https://db.apache.org/derby/docs/10.10/ref/index.html[Manual] about Derby’s flavor of SQL (and more)
 

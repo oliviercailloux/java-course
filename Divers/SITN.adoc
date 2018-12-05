@@ -77,9 +77,7 @@ https://classroom.github.com/a/ygd_Ydml[Devoir] : un projet Maven, bien configur
 ** JSON https://github.com/oliviercailloux/java-course/blob/master/JSON.adoc[Processing], https://github.com/oliviercailloux/java-course/blob/master/JSON-B.adoc[JSON-B]
 ** XML : voir références générales ci-dessus
 ** https://github.com/oliviercailloux/java-course/blob/master/JAXB.adoc[JAXB]
-* https://github.com/oliviercailloux/java-course/raw/master/JPA/presentation.pdf[JPA] : création d’une entité et création automatique BD
-** https://github.com/oliviercailloux/java-course/blob/master/DB%20from%20Eclipse.adoc[DB from Eclipse]
-** https://github.com/oliviercailloux/java-course/blob/master/JPA.adoc[Exercices]
+* https://github.com/oliviercailloux/java-course/blob/master/JPA/README.adoc[JPA] : création d’une entité et création automatique BD
 * Discussion projets
 
 À faire

@@ -1,0 +1,43 @@
+= JPA
+
+Java Persistence API (JPA) provides an object-oriented bridge to a Relational Database Management System.
+
+NOTE: The reader supposedly has basic knowledge of JDBC and Eclipse.
+
+See: https://raw.githubusercontent.com/oliviercailloux/java-course/master/JPA/Pr%C3%A9sentation/presentation.pdf[Présentation], https://github.com/oliviercailloux/java-course/blob/master/JPA/Exercices.adoc[Exercices].
+
+If you use a Java EE application server, it comes preconfigured with a default DB (that the server will connect to when requested by JPA, for example). Follow the instructions below for connecting Eclipse to the WildFly or the GlassFish default DB, or adapt the instructions for your use case.
+
+== Access to the default WildFly DB from Eclipse
+The properties of the default (H2) DB used by WildFly (such as the default database name) can be seen by following the instructions https://github.com/oliviercailloux/java-course/blob/master/WildFly.adoc[here]. Using those properties, we will tell Eclipse to connect to the default WildFly DB, so that we can inspect its content easily.
+
+* Within Eclipse: `Preferences / Data Management / Connectivity / Driver Definitions`
+* Eclipse needs a JDBC driver to access your DB. Let’s register the H2 driver that comes with WildFly.
+** This does _not_ create a connexion: it only declares a new driver definition, that is, a _kind_ of connexion (that you will use in the next step)
+** As type, choose simply the `Generic JDBC Driver`.
+** As JAR file, point Eclipse to the `modules/system/layers/base/com/h2database/h2/main/h2-1.4.193.jar` JAR file found in the WildFly folder.
+** As properties, use `Connection URL` = `jdbc:h2:mem:test`, `Database Name` = `test`, for `Driver Class`, use the `Browse` option (there’s only one match, `org.h2.Driver`), as `user`, anything goes.
+* From the `Data Source Explorer` view, create a connexion to your DB (using the driver definition created previously)
+* You can now view and edit data from the `Data Source Explorer` view
+* The `Tables` folder in the `PUBLIC` schema lists the current tables in this DB. At start, the DB is empty, so if see no tables there, it’s normal!
+//* You can write and send SQL commands from the `SQL Scrapbook` (with completion!)
+
+* See the http://h2database.com/html/grammar.html[Reference] about H2’s flavor of SQL (and more)
+
+== Access to the default GlassFish DB from Eclipse
+* The GlassFish application server comes with an embedded https://db.apache.org/derby/[Derby] DB
+* You have to start the DB manually: `asadmin start-database`
+* You’ll find a suitable JDBC driver for Eclipse in `glassfish4/javadb/lib/derbyclient.jar`
+* To find the properties your server uses by default for connexion to the DB: look in the Administration Console, `Resources / JDBC / JDBC Resources`, to find out which pool it uses for `java:comp/DefaultDataSource`, then within `JDBC Connection Pools`, look into `Additional Properties`
+* Adapt the instructions for WildFly with the adequate driver and properties
+** Eclipse asks that you start with a template. Eclipse uses it to provide particular features for your DB type. (Unfortunately, JDBC is not a good enough abstraction and Eclipse has to know which flavor of SQL and protocol your DB implements.) Better choose the Derby type than the Generic JDBC Driver.
+
+* See the https://db.apache.org/derby/docs/10.10/ref/index.html[Manual] about Derby’s flavor of SQL (and more)
+
+== References
+* Hibernate http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html[User guide]
+* https://www.manning.com/books/java-persistence-with-hibernate-second-edition[Book]: Java Persistence with Hibernate, Second Edition
+* https://jcp.org/en/jsr/detail?id=338[JSR 338] (JPA 2.2) (https://download.oracle.com/otn-pub/jcp/persistence-2_2-mrel-eval-spec/JavaPersistence.pdf[direct])
+* https://jcp.org/en/jsr/detail?id=907[JSR 907] (JTA) (not that useful for application developers)
+* Article ENORM: An Essential Notation for Object-Relational Mapping, ACM SIGMOD Record 43(2), June 2014, pp 23–28 (http://dx.doi.org/10.1145/2694413.2694418[doi], https://sigmodrecord.org/publications/sigmodRecord/1406/pdfs/05.articles.Torres.pdf[pdf])
+

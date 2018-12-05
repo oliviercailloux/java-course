@@ -1,4 +1,4 @@
-= JPA
+= JPA: Exercices
 
 This document helps you get started with JPA. (You are supposed to have already some theoretical understanding of JPA.)
 
@@ -9,13 +9,12 @@ NOTE: The reader supposedly has basic knowledge of database management systems, 
 * Create an entity in your Java EE project. See this https://github.com/oliviercailloux/javaee-jpa-resource-local-servlets/blob/master/src/main/java/io/github/oliviercailloux/javaee_jpa_resource_local_servlets/model/Item.java[example].
 * Add a `persistence.xml` file in `src/main/resources/META-INF`. https://github.com/oliviercailloux/javaee-jpa-resource-local-servlets/blob/master/src/main/resources/META-INF/persistence.xml[Example].
 * Declare a new servlet as usual, that will answer to a GET HTTP request.
-* In the servlet method, obtain an `EntityManagerFactory`. See how to do this https://github.com/oliviercailloux/javaee-jpa-resource-local-servlets/blob/master/src/main/java/io/github/oliviercailloux/javaee_jpa_resource_local_servlets/servlets/GetItemsServlet.java[here]. (You do not need to do anything with that factory currently, but it is necessary to instanciate it in order to trigger the database automatic deployment.)
+* In the servlet method, obtain an `EntityManagerFactory`. See how to do this https://github.com/oliviercailloux/javaee-jpa-resource-local-servlets/blob/master/src/main/java/io/github/oliviercailloux/javaee_jpa_resource_local_servlets/servlets/GetItemsServlet.java[here]. (You do not need to do anything with that factory currently, but it is necessary to instantiate it in order to trigger the database automatic deployment.)
 * Deploy on your server.
 * Access your servlet.
 * Check in the server logs and in the server database that the database now contains a table corresponding to your entity.
 
 == Your first query
-
 We will now expand the servlet and make it list your entities. Although the Java EE container may do a good deal of the following for you, as we will later see, we do it “manually” for the moment to make sure we understand what’s going on.
 
 * Import this https://github.com/oliviercailloux/javaee-jpa-resource-local-servlets[sample] in your IDE to serve as inspiration.
