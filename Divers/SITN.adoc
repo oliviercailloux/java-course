@@ -46,20 +46,6 @@
 . Effectuer le https://classroom.github.com/a/dvTohDAJ[devoir] (noté) : accepter le devoir, puis, à la dernière étape de l’exercice git ci-dessus, utiliser le dépôt GitHub créé pour le devoir. Utilisez ce dépôt pour aller jusqu’au bout de l’exercice. Ensuite, ajoutez un fichier curl.txt au dépôt dans une branche curl, contenant juste une ligne qui récupère l’information depuis Wikipedia demandée dans l’exercice Client WS en invoquant curl. À rendre avant la fin du vendredi 30 novembre.
 
 === S2 (lundi 3 décembre)
-// 13h45
-// vidéo
-// 13h55 (env.)
-// Maven
-// 14h20 (exact)
-// exercices Maven
-// 14h50
-// exercices client WS
-// 15h15
-// pause
-// 15h30
-
-// https://stackoverflow.com/questions/60764/how-should-i-load-jars-dynamically-at-runtime
-
 * Open Data explained https://www.youtube.com/watch?v=c42QNa-rccw[in a nutshell] (ou : L’Open Data https://www.youtube.com/watch?v=aHxv_2BMJfw[à la loupe])
 * https://github.com/oliviercailloux/java-course/blob/master/Maven/README.adoc[Maven] : présentation & exercices
 * Exercices https://github.com/oliviercailloux/java-course/blob/master/WS%20client/README.adoc[client WS]
@@ -80,19 +66,19 @@ https://classroom.github.com/a/ygd_Ydml[Devoir] : un projet Maven, bien configur
 * Appliquer les https://github.com/oliviercailloux/java-course/blob/master/Divers/SITN.adoc#Devoirs[consignes] liées aux devoirs.
 
 === S3 (jeudi 6 décembre)
+* Fail-fast, exceptions, Optional
 * https://github.com/oliviercailloux/java-course/blob/master/Log/README.adoc[Log]
-* Tests unitaires
-* Travis CI
-//https://education.github.community/t/using-travis-on-private-repos-for-student-assignments/24183
 * Usage de git en équipe : dépôt propre ; ignore ; formattage & imports
-* Discussion projets
+* http://www.vogella.com/tutorials/JUnit/article.html[Tests unitaires]
+* https://github.com/oliviercailloux/java-course/blob/master/DevOps/CI.adoc[Travis CI]
+//https://education.github.community/t/using-travis-on-private-repos-for-student-assignments/24183
 * https://github.com/oliviercailloux/java-course/raw/master/Annotations/presentation.pdf[Annotations]
 * Servlets multi-formats
 ** JSON https://github.com/oliviercailloux/java-course/blob/master/JSON.adoc[Processing], https://github.com/oliviercailloux/java-course/blob/master/JSON-B.adoc[JSON-B]
 ** XML : voir références générales ci-dessus
 ** https://github.com/oliviercailloux/java-course/blob/master/JAXB.adoc[JAXB]
-* Fail-fast, exceptions, Optional
 * https://www.getpostman.com/[Postman]
+* Discussion projets
 
 À faire
 
