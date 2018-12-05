@@ -7,14 +7,14 @@
 * https://github.com/oliviercailloux/samples[Échantillons] ; https://github.com/javaee-samples/javaee8-samples[javaee8-samples]
 * Goncalves - Beginning Java EE 7 : http://doi.org/10.1007/978-1-4302-4627-5[Springer], https://doi-org.proxy.bu.dauphine.fr/10.1007/978-1-4302-4627-5[BU] 
 * XML in a nutshell : https://portail.bu.dauphine.fr/bibliodata.html?record_id=ALEPH000026526&rtype=book[BU 1], https://portail.bu.dauphine.fr/bibliodata.html?record_id=ALEPH000013764&rtype=book[BU 2], https://portail.bu.dauphine.fr/bibliodata.html?record_id=ALEPH000035938&rtype=book[BU (en français)]
-* https://tools.ietf.org/html/rfc6265[Cookies]
 * https://github.com/advanced-js/syllabus
 
 == Projets
 * https://github.com/oliviercailloux/projets/tree/master/EE[Énoncés]
 * Attendu : cahiers des charges pour deux ou trois itérations courtes indiquant succinctement les exigences fonctionnelles (EF) ; 3 points de difficulté par membre au total sur l’année
+* Vous devez utiliser autant que possible les spécifications Java EE 8 dans votre projet (par exemple, les API de manipulation de JSON indiquées dans ce cours et pas d’autres ; le standard JPA et pas un autre)
 * Vous créez un dépôt pour votre projet et travaillez tous sur votre dépôt de groupe. Interdiction de commettre sur la branche master sans mon aval (sauf commit initial si nécessaire ou modifications sur `README.adoc`). À part ça, organisation interne libre. Suggestion : fusionnez vos fcts sur une branche `dev` dès que possible (https://fr.wikipedia.org/wiki/Int%C3%A9gration_continue[intégration continue]) ; à défaut, commit sur branches par fct et désigner un responsable fusion pour éviter écrasement.
-* Cahiers des charges et fonctions (une par EF) à remettre via pull request vers votre branche master. Je commente votre pull request. Date de livraison initiale précisée dans le programme ci-dessous ; date de livraison finale la séance suivante. Non respect des dates : −0,2/20 par heure de retard (tout retard entamé est compté).
+* Cahiers des charges et fonctions (une par EF) à remettre via pull request vers votre branche master. Je commente votre pull request. Dates de livraison précisées dans le programme ci-dessous. Non respect des dates : −0,2/20 par heure de retard (tout retard entamé est compté).
 * Pull request (pour chaque fonction) à faire quand vous êtes sûr de vous (mais à temps). Plus je dois commenter, et plus il y a de pull requests avant acceptation du code, plus vous perdez de points (à fonctions égale). (Ne concerne pas l’aide apportée au cours ou par e-mail.)
 * L’auteur reçoit une note qualité et un nombre de points de difficultés lorsque la fonction est acceptée (code fusionné dans master). Voir https://github.com/oliviercailloux/java-course/tree/master/Best%20practices[Bonnes pratiques] et https://github.com/oliviercailloux/java-course/blob/master/Divers/Corr.adoc[Corr].
 * Note finale projet : moyenne des notes pour vos fonctions, pondérée par points de difficulté (meilleures notes sont considérées si plus de points de difficulté que requis) et note pour présentation finale. Ajustement possible pour tenir compte des difficultés et de la cohérence globales. (Note finale : 50% Projet, 50% CC.)
@@ -57,7 +57,7 @@
 https://classroom.github.com/a/ygd_Ydml[Devoir] : un projet Maven, bien configuré, dépendant de la dernière version stable de https://github.com/ical4j/ical4j/[ical4j]. (Cette bibliothèque ne sera pas utilisée dans cet exercice, l’exigence sert simplement à vous habituer à dépendre d’une version récente d’une bibliothèque potentiellement utile.) À rendre pour la fin du mercredi 5 décembre (23h59).
 
 * Contient un servlet simple dans une classe nommée `AdditionerServlet`.
-* Le servlet écoute sur `localhost/additioner/add`
+* Le servlet écoute sur `localhost/additioner/add` (port laissé à votre choix)
 * Le servlet répond à une requête GET avec deux paramètres, nommés (littéralement) `param1` et `param2`, des entiers. La réponse est simplement l’addition des deux nombres. Par exemple, avec `param1=2` et `param2=3`, le servlet répond 5. Le servlet répond toujours au format `text/plain`.
 * Si la requête est erronée, le servlet répondra (en `text/plain`) : "Exécution impossible, paramètre manquant." et renverra un code d’erreur approprié.
 * Le servlet logue les valeurs des paramètres reçus en entrée et la valeur de sortie renvoyée. [NB la consigne mentionnait JUL mais comme on n’a pas vu JUL, vous pouvez logger comme vous voulez.]
@@ -66,7 +66,7 @@ https://classroom.github.com/a/ygd_Ydml[Devoir] : un projet Maven, bien configur
 * Appliquer les https://github.com/oliviercailloux/java-course/blob/master/Divers/SITN.adoc#Devoirs[consignes] liées aux devoirs.
 
 === S3 (jeudi 6 décembre)
-* Fail-fast, exceptions, Optional
+* Fail-fast, exceptions, Optional. See https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Null.adoc[illustration].
 * https://github.com/oliviercailloux/java-course/blob/master/Log/README.adoc[Log]
 * Usage de git en équipe : dépôt propre ; ignore ; formattage & imports
 * http://www.vogella.com/tutorials/JUnit/article.html[Tests unitaires]
@@ -77,13 +77,20 @@ https://classroom.github.com/a/ygd_Ydml[Devoir] : un projet Maven, bien configur
 ** JSON https://github.com/oliviercailloux/java-course/blob/master/JSON.adoc[Processing], https://github.com/oliviercailloux/java-course/blob/master/JSON-B.adoc[JSON-B]
 ** XML : voir références générales ci-dessus
 ** https://github.com/oliviercailloux/java-course/blob/master/JAXB.adoc[JAXB]
-* https://www.getpostman.com/[Postman]
+* https://github.com/oliviercailloux/java-course/raw/master/JPA/presentation.pdf[JPA] : création d’une entité et création automatique BD
+** https://github.com/oliviercailloux/java-course/blob/master/DB%20from%20Eclipse.adoc[DB from Eclipse]
+** https://github.com/oliviercailloux/java-course/blob/master/JPA.adoc[Exercices]
 * Discussion projets
 
 À faire
 
 * Livraison d’une proposition de plan concernant vos fonctionnalités, pour la fin du mardi 11 décembre. 
-* Mettre en place le système d’intégration continue Travis sur votre dépôt de groupe. (Voir document ci-dessus.) Ajouter le badge au fichier README. Également à rendre pour deux jours avant S4. Vérifier que votre projet compile, d’après Travis, au moment de la remise. (Les tests fonctionnels de vos servlets ne doivent pas nécessairement passer.)
+
+https://classroom.github.com/a/jOKznGsT[Devoir] : un projet avec intégration continue Travis (et un badge dans le `README.adoc`), un servlet simple `HelloServlet`, et un test unitaire JUnit 5. À rendre avant la fin du mardi 11 décembre.
+
+* Le servlet contient une méthode `sayHello()` qui renvoie `Hello world`.
+* Le servlet répond `Hello world` (en appelant la méthode `sayHello()`) à une requête GET envoyée sur `localhost/myapp/hello`.
+* Le test unitaire vérifie que la méthode `sayHello()` renvoie bien `Hello world`.
 
 === S4 (mercredi 12 décembre)
 * https://github.com/oliviercailloux/java-course/raw/master/JPA/presentation.pdf[JPA] : création d’une entité et création automatique BD
