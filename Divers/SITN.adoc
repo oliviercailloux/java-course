@@ -82,13 +82,12 @@ https://classroom.github.com/a/ygd_Ydml[Devoir] : un projet Maven, bien configur
 
 À faire
 
-* Livraison d’une proposition de plan concernant vos fonctionnalités, pour la fin du mardi 11 décembre. 
-
-https://classroom.github.com/a/jOKznGsT[Devoir] : un projet avec intégration continue Travis (et un badge dans le `README.adoc`), un servlet simple `HelloServlet`, et un test unitaire JUnit 5. À rendre avant la fin du mardi 11 décembre.
-
-* Le servlet contient une méthode `sayHello()` qui renvoie `Hello world`.
-* Le servlet répond `Hello world` (en appelant la méthode `sayHello()`) à une requête GET envoyée sur `localhost/myapp/hello`.
-* Le test unitaire vérifie que la méthode `sayHello()` renvoie bien `Hello world`.
+* Devoir 1 : Livraison d’une proposition de plan concernant vos fonctionnalités, pour la fin du mardi 11 décembre. Au format Asciidoc, dans votre `README.adoc` de groupe. Voir consignes de livraison dans les consignes générales ci-dessus. Envoyez-moi un e-mail avec votre dépôt de groupe. Il doit être public et hébergé sur GitHub, sur un nom d’utilisateur d’un des membres du projet.
+* https://classroom.github.com/a/jOKznGsT[Devoir 2] : un projet avec intégration continue Travis (et un badge dans le `README.adoc`), un servlet simple `HelloServlet`, et un test unitaire JUnit 5. À rendre avant la fin du mardi 11 décembre.
+** Le servlet contient une méthode `sayHello()` qui renvoie `Hello world`.
+** Le servlet répond `Hello world` (en appelant la méthode `sayHello()`) à une requête GET envoyée sur `localhost/myapp/hello`.
+** Le test unitaire vérifie que la méthode `sayHello()` renvoie bien `Hello world`.
+** Voir https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/TestingEE.adoc#junit[JUnit en Java EE]
 
 === S4 (mercredi 12 décembre)
 * https://github.com/oliviercailloux/java-course/raw/master/JPA/presentation.pdf[JPA] : création d’une entité et création automatique BD
