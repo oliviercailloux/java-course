@@ -1,7 +1,12 @@
 = Testing in Java EE
 
-[[JUnit]]
 == JUnit
+A simple and reasonable approach to unit testing a Java EE project is simply to JUnit-test components without using container services. The drawback is that you can’t implement integration tests but can only test separate pieces of logic. But it is very simple.
+
+One problem you might encounter, however, is an `ExceptionInInitializerError` when you initialize a Servlet class in a Java SE environment, caused by a `MissingResourceException: Can't find bundle for base name javax.servlet.LocalStrings`. This is because the `javax:javaee-api:8.0` dependency contains all classes from the Servlet 4.0.0 specification (as required by the Java EE 8 https://www.oracle.com/technetwork/java/javaee/tech/index.html[specification]), except for the `javax.servlet.LocalStrings` bundle (which seems like a bug to me). To work around this, add the `javax.servlet:javax.servlet-api:4.0.0` dependency (with scope `provided`) to your POM. Note that you have to use version 4.0.0 and not a more recent one (https://search.maven.org/search?q=g:javax.servlet%20AND%20a:javax.servlet-api&core=gav[4.0.1] is available on Maven Central) to make sure it matches the version provided by your (Java EE 8 compliant) application server at runtime. See this https://github.com/oliviercailloux/samples/blob/master/JavaEE-Inject-Servlets-Conversation/pom.xml[sample] POM. [https://stackoverflow.com/questions/31561603/java-util-missingresourceexception-cant-find-bundle-for-base-name-javax-servle[Thanks]]
+
+[[JUnit-CDI]]
+== JUnit and CDI
 Unit testing objects that heavily rely on CDI (or other container services) is not recommended: if you really wish to test properly in isolation, you need to mock up injected services, which is a pain (see The https://antoniogoncalves.org/2012/11/27/launching-the-nomock-movement/[NoMock] Movement and this https://antoniogoncalves.org/2012/01/16/wytiwyr-what-you-test-is-what-you-run/[opinion] for further details).
 
 == Arquillian
