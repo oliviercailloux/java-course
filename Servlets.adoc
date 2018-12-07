@@ -36,7 +36,7 @@ For you to define a new servlet that will be recognized as such by the container
 The value of the `@WebServlet` annotation is the URI at which your servlet must be reached.
 
 //[source, java]
-.An example of a Java EE servlet
+.An https://github.com/oliviercailloux/samples/blob/master/JavaEE-Servlets/src/main/java/io/github/oliviercailloux/javaee_servlets/servlets/SayHelloServlet.java[example] of a Java EE servlet
 --
 include::https://github.com/oliviercailloux/samples/raw/master/JavaEE-Servlets/src/main/java/io/github/oliviercailloux/javaee_servlets/servlets/SayHelloServlet.java[]
 --
