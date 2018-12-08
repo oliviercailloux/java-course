@@ -5,7 +5,7 @@
 A short document about (de-)serialization of JSON using the JSON-B API. (See also JSON on https://en.wikipedia.org/wiki/JSON[Wikipedia] for a good introduction, JSON https://github.com/oliviercailloux/java-course/blob/master/JSON.adoc[Processing] for manipulation of JSON content.)
 
 == Dependency
-If you use Java SE (or Java EE 7), you need to add the required dependencies (http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22javax.json.bind%22%20AND%20a%3A%22javax.json.bind-api%22[javax.json.bind-api], http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.glassfish%22%20AND%20a%3A%22javax.json%22[javax.json], http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.eclipse%22%20AND%20a%3A%22yasson%22[yasson]{emptyattribute}).
+If you use Java SE, you need to add the required dependencies (http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22javax.json.bind%22%20AND%20a%3A%22javax.json.bind-api%22[javax.json.bind-api], http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.glassfish%22%20AND%20a%3A%22javax.json%22[javax.json], http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.eclipse%22%20AND%20a%3A%22yasson%22[yasson]{emptyattribute}).
 
 .Specify dependencies in your `pom.xml`
 [source,xml]
