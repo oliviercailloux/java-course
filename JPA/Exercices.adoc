@@ -56,7 +56,7 @@ You will soon realize that starting and ending transactions manually is cumberso
 * Your current statement that creates the entity manager, `emFactory.createEntityManager()`, creates a resource-local entity manager. We need to change it to (for example) `emFactory.createEntityManager(SynchronizationType.SYNCHRONIZED)` to create a JTA entity manager. The parameter tells it to be synchronized, meaning that this entity manager automatically joins the JTA transaction if one is present when it is created. If the entity manager doesn’t join the transaction automatically (because it is unsynchronized or because it is created before the transaction opens), you can call `em.joinTransaction()` to manually join the JTA transaction whenever you want.
 * Now we need to open a JTA transaction, instead of opening a resource-local transaction. Control of the JTA transaction is done through a `UserTransaction` object. Inject a `UserTransaction` object into your servlet, by annotating it `@Resource` (thus: `@Resource private UserTransaction ut;`).
 * Change your code to use `ut` instead of the object returned by `em.getTransaction()` to begin and commit the transaction.
-* If you instanciate the entity manager /before/ beginning the JTA transaction, do not forget to call `em.joinTransaction()`.
+* If you instanciate the entity manager _before_ beginning the JTA transaction, do not forget to call `em.joinTransaction()`.
 * Test your servlet, as usual.
 
 This strategy is illustrated https://github.com/oliviercailloux/samples/blob/master/JavaEE-JPA-Inject-Servlets/src/main/java/io/github/oliviercailloux/javaee_jpa_inject_servlets/servlets/advanced/GetItemsManualTransactionServletExtUnsJTAEntityManager.java[here].
