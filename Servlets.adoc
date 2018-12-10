@@ -21,7 +21,7 @@ In this document, web requests are considered to be HTTP requests. [small]#(The 
 To start a Maven compatible web project:
 
 * create a new folder,
-* use https://github.com/oliviercailloux/samples/blob/master/JavaEE-Servlets/pom.xml[this] sample pom,
+* use https://github.com/oliviercailloux/JavaEE-Servlets/blob/master/pom.xml[this] sample pom,
 * change the groupId and artifactId to name your new project,
 * create the default folders that Maven expects: `/src/main/java` and (optionally) `/src/main/resources`, `/src/test/java`, `/src/test/resources`
 * import the project into Eclipse.
@@ -36,9 +36,9 @@ For you to define a new servlet that will be recognized as such by the container
 The value of the `@WebServlet` annotation is the URI at which your servlet must be reached.
 
 //[source, java]
-.An https://github.com/oliviercailloux/samples/blob/master/JavaEE-Servlets/src/main/java/io/github/oliviercailloux/javaee_servlets/servlets/SayHelloServlet.java[example] of a Java EE servlet
+.An https://github.com/oliviercailloux/JavaEE-Servlets/blob/master/src/main/java/io/github/oliviercailloux/javaee_servlets/servlets/SayHelloServlet.java[example] of a Java EE servlet
 --
-include::https://github.com/oliviercailloux/samples/raw/master/JavaEE-Servlets/src/main/java/io/github/oliviercailloux/javaee_servlets/servlets/SayHelloServlet.java[]
+include::https://github.com/oliviercailloux/JavaEE-Servlets/raw/master/src/main/java/io/github/oliviercailloux/javaee_servlets/servlets/SayHelloServlet.java[]
 --
 
 (You may define more than one servlet. [small]#The constraints described above are not the only way to define a Java EE compliant servlet.#)

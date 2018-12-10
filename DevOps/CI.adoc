@@ -45,7 +45,7 @@ cache:
 
 Travis will start a new build each time you send a commit to your GitHub repository.
 
-The configuration file is written in http://yaml.org/[YAML], a human friendly format. I recommend http://www.yamllint.com/[validating] your configuration file whenever you change it.
+The configuration file is written in https://yaml.org/[YAML], a human friendly format. I recommend http://www.yamllint.com/[validating] your configuration file whenever you change it.
 
 The sample configuration file suggested here tells Travis to:
 
