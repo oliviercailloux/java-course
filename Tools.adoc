@@ -14,13 +14,13 @@ Various useful tools for Java and Java EE developers.
 
 For Java SE, add:
 
-* https://www.eclipse.org/downloads/[Eclipse IDE] “for Java Developers”
+* https://www.eclipse.org/downloads/packages/[Eclipse IDE] “for Java Developers”
 
 For Java EE, add:
 
-* https://www.eclipse.org/downloads/[Eclipse IDE] “for Java EE Developers”
+* https://www.eclipse.org/downloads/packages/[Eclipse IDE] “for Java EE Developers”
 * Download and install (deflate) http://wildfly.org/downloads/[WildFly] (14.0.1.Final or more recent, Java EE Full & Web Distribution)
-* http://tools.jboss.org/downloads/jbosstools/2018-09/4.9.0.Final.html[JBoss Tools], a plug-in for easy deployment to Wildfly. Install only JBoss AS Wildfly, EAP & Server Tools (Rationale: I have had stability issues in Eclipse after installing the whole of JBoss Tools.)
+* http://tools.jboss.org/downloads/jbosstools/2018-09/4.9.0.Final.html[JBoss Tools], a plug-in for easy deployment to Wildfly. Install only JBoss AS, WildFly & EAP Server Tools. (Rationale: I have had stability issues in Eclipse after installing the whole of JBoss Tools.) Or https://github.com/oliviercailloux/java-course/blob/master/Automated%20Eclipse%20install.adoc[automate] it.
 
 == Git
 

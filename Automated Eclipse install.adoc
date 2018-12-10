@@ -1,0 +1,15 @@
+= Automated Eclipse install
+
+Here is how I automate my Eclipse installation.
+
+* Uncompress `eclipse-jee-2018-09-linux-gtk-x86_64.tar.gz`
+* `sudo mv eclipse-jee-2018-09-linux-gtk-x86_64/eclipse/ /usr/local/share/eclipse-jee-2018-09-linux-gtk-x86_64`
+* `/usr/local/share/eclipse-jee-2018-09-linux-gtk-x86_64/eclipse -nosplash -application org.eclipse.equinox.p2.director -repository "http://download.jboss.org/jbosstools/photon/stable/updates" -installIU "org.jboss.ide.eclipse.as.feature.feature.group, org.jboss.tools.usage.feature.feature.group"`
+* `sudo chown -R root:staff /usr/local/share/eclipse-jee-2018-09-linux-gtk-x86_64/`
+
+This installs 40 jboss plugins and 11 jboss features in the `/usr/local/share/eclipse-jee-2018-09-linux-gtk-x86_64/plugins` and `/usr/local/share/eclipse-jee-2018-09-linux-gtk-x86_64/features` folders, so that they are available for all users in the system. This uses the https://help.eclipse.org/2018-09/index.jsp?topic=/org.eclipse.platform.doc.isv/reference/misc/multi_user_installs.html[shared configuration] approach.
+
+To know how to find the data for other plugins, look https://stackoverflow.com/a/38956772[here].
+
+Note that, in the case of the JBoss Tools, installing only the `org.jboss.ide.eclipse.as.feature.feature.group` still installs the same 40 plugins (but only 10 features, `org.jboss.tools.usage.feature_2.2.201.v20180802-1505` missing) and still asks for usage report at first start.
+
