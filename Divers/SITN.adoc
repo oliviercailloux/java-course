@@ -91,6 +91,7 @@ https://classroom.github.com/a/ygd_Ydml[Devoir] : un projet Maven, bien configur
 ** Voir https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/TestingEE.adoc#junit[JUnit en Java EE]
 
 === S4 (mercredi 12 décembre)
+* Remarque sur servlets parallèles
 * https://github.com/oliviercailloux/java-course/blob/master/JPA/README.adoc[JPA]
 * https://github.com/oliviercailloux/java-course/blob/master/CDI/README.adoc[CDI]
 
