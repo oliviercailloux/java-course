@@ -91,31 +91,25 @@ https://classroom.github.com/a/ygd_Ydml[Devoir] : un projet Maven, bien configur
 ** Voir https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/TestingEE.adoc#junit[JUnit en Java EE]
 
 === S4 (mercredi 12 décembre)
-* https://github.com/oliviercailloux/java-course/raw/master/JPA/presentation.pdf[JPA] : création d’une entité et création automatique BD
-** https://github.com/oliviercailloux/java-course/blob/master/DB%20from%20Eclipse.adoc[DB from Eclipse]
-** https://github.com/oliviercailloux/java-course/blob/master/JPA.adoc[Exercices]
+* https://github.com/oliviercailloux/java-course/blob/master/JPA.adoc[JPA]
+* https://github.com/oliviercailloux/java-course/blob/master/CDI/README.adoc[CDI]
 
 * Le plan doit être accepté avant la fin du 31 décembre. Attention, tenez compte d’un délai de 48h pour mes réponses.
 * Livraison d’une tentative de première réalisation avant la fin du dimanche 13 janvier.
 
-=== S5
-* Note sur la réutilisation intelligente (recompensée !) et le droit d’utilisation, ainsi que les https://github.com/oliviercailloux/projets/blob/master/Licence.adoc[licences]
+=== S5 (lundi 14 janvier)
+* https://github.com/oliviercailloux/projets/blob/master/Licence.adoc[licences]
 * https://github.com/oliviercailloux/java-course/blob/master/JAX-RS/README.adoc[JAX-RS]
 * http://arquillian.org/[Arquillian]
 
-À faire
-
-* Faire passer vos tests sur Travis CI
-
-=== S6
+=== S6 (vendredi 22 janvier)
+* https://github.com/oliviercailloux/java-course/blob/master/DevOps/IBM%20Cloud.adoc[IBM Cloud]
 * Suite ORM
 ** Start JPA & EMF
 ** ex: deploy
 ** transactions & EM
 ** ex: deux requêtes
-** https://github.com/oliviercailloux/java-course/blob/master/CDI/README.adoc[CDI]
 ** ex: transactions gérées (facultatif)
-* https://github.com/oliviercailloux/java-course/blob/master/DevOps/IBM%20Cloud.adoc[IBM Cloud]
 
 === S7
 * Projets
