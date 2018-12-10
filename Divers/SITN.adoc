@@ -91,14 +91,14 @@ https://classroom.github.com/a/ygd_Ydml[Devoir] : un projet Maven, bien configur
 ** Voir https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/TestingEE.adoc#junit[JUnit en Java EE]
 
 === S4 (mercredi 12 décembre)
-* https://github.com/oliviercailloux/java-course/blob/master/JPA.adoc[JPA]
+* https://github.com/oliviercailloux/java-course/blob/master/JPA/README.adoc[JPA]
 * https://github.com/oliviercailloux/java-course/blob/master/CDI/README.adoc[CDI]
 
 * Le plan doit être accepté avant la fin du 31 décembre. Attention, tenez compte d’un délai de 48h pour mes réponses.
 * Livraison d’une tentative de première réalisation avant la fin du dimanche 13 janvier.
 
 === S5 (lundi 14 janvier)
-* https://github.com/oliviercailloux/projets/blob/master/Licence.adoc[licences]
+* https://github.com/oliviercailloux/projets/blob/master/Licence.adoc[Licences]
 * https://github.com/oliviercailloux/java-course/blob/master/JAX-RS/README.adoc[JAX-RS]
 * http://arquillian.org/[Arquillian]
 
