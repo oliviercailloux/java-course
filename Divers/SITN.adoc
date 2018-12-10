@@ -64,6 +64,7 @@ https://classroom.github.com/a/ygd_Ydml[Devoir] : un projet Maven, bien configur
 * Le servlet répond aussi à un autre type de requête (envoyée à la même adresse), destinée à indiquer la valeur par défaut pour le deuxième nombre (`param2`). À vous de choisir un type correct (la méthode HTTP) pour cette requête. Cette requête indique (en `text/plain`) la valeur par défaut pour le deuxième nombre si manquant. Le servlet répond `ok` en `text/plain` si la requête a été comprise. Le servlet doit en tenir compte lors de sa réponse à la requête du premier type décrite ci-dessus.
 * Appliquer les https://github.com/oliviercailloux/java-course/tree/master/Best%20practices[bonnes pratiques] Maven, Exception, Git, Style.
 * Appliquer les https://github.com/oliviercailloux/java-course/blob/master/Divers/SITN.adoc#Devoirs[consignes] liées aux devoirs.
+* https://github.com/oliviercailloux/JavaEE-Servlets/[Correction]
 
 === S3 (jeudi 6 décembre)
 * Fail-fast, exceptions, Optional. See https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Null.adoc[illustration].
