@@ -2,7 +2,7 @@
 
 Java Persistence API (JPA) provides an object-oriented bridge to a Relational Database Management System.
 
-NOTE: The reader supposedly has basic knowledge of JDBC and Eclipse.
+NOTE: The reader supposedly has basic knowledge of JDBC (see https://raw.githubusercontent.com/oliviercailloux/java-course/master/JDBC/Pr%C3%A9sentation/presentation.pdf[Présentation]), transactions (see https://raw.githubusercontent.com/oliviercailloux/java-course/master/Concurrence/Pr%C3%A9sentation/presentation.pdf[Présentation]) and Eclipse.
 
 See: https://raw.githubusercontent.com/oliviercailloux/java-course/master/JPA/Pr%C3%A9sentation/presentation.pdf[Présentation], https://github.com/oliviercailloux/java-course/blob/master/JPA/Exercices.adoc[Exercices], (optionally) https://github.com/oliviercailloux/java-course/blob/master/JPA/Eclipse%20to%20WildFly.adoc[Eclipse to WildFly].
 
