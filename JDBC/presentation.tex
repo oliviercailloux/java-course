@@ -9,8 +9,10 @@
 \input{preamble/draw}
 \input{preamble/acronyms}
 \input{preamble/uml}
+\input{preamble/refAPIcmds}
 
 \setbeamertemplate{headline}[singleline]
+\setbeamertemplate{footline}[onlypage]
 
 \title{JDBC}
 \subject{Databases}
@@ -122,7 +124,7 @@
 			\item Robuste : \href{https://dl.acm.org/citation.cfm?id=362685}{Codd 1970}, ANSI (puis ISO) SQL \href{https://www.iso.org/iso/home/store/catalogue_ics/catalogue_detail_ics.htm?csnumber=16661}{1987} ; … ; \href{https://www.iso.org/iso/home/store/catalogue_ics/catalogue_detail_ics.htm?csnumber=53681}{2011}
 		\end{itemize}
 	\end{block}
-	(Bémol : nombreuses variations propriétaires)
+	Bémol : nombreuses variations propriétaires
 \end{frame}
 
 \section{Vue d’ensemble}
@@ -192,18 +194,18 @@
 	\frametitle{\texttt{PreparedStatement}}
 	\begin{itemize}
 		\item \jseref{java.sql/PreparedStatement} : précompilé + paramétrisation facile
-		\item La commande SQL contient des \texttt{?}
+		\item La commande SQL contient des \og{}\texttt{?}\fg{}
 		\item Invoquer \texttt{setInt}, \texttt{setString}… pour les paramètres
 	\end{itemize}
 	\begin{exampleblock}{Exemple \texttt{PreparedStatement}}
-		\begin{lstlisting}[keywordstyle=\fontspec{Latin Modern Mono Light}\textbf, emph={String, PreparedStatement}, emphstyle=\fontspec{Latin Modern Mono Light}\textbf, language=Java, basicstyle=\small\NoAutoSpacing\ttfamily, aboveskip=0pt, belowskip=0pt, showstringspaces=false]
-			String s = "update USER set NAME = ? where ID = ?";
-			PreparedStatement stmt = con.prepareStatement(s);
-			stmt.setString(1, "NewName");
-			stmt.setInt(2, 1234);
-			boolean isResultSet = stmt.execute();
-			assert(!isResultSet);
-			assert(stmt.getUpdateCount() == 1);
+		\begin{lstlisting}[basicstyle=\small\NoAutoSpacing\ttfamily, aboveskip=0pt, belowskip=0pt, showstringspaces=false]
+String s="update USER set NAME = ? where ID = ?";
+PreparedStatement stmt = con.prepareStatement(s);
+stmt.setString(1, "NewName");
+stmt.setInt(2, 1234);
+boolean isResultSet = stmt.execute();
+assert(!isResultSet);
+assert(stmt.getUpdateCount() == 1);
 		\end{lstlisting}
 	\end{exampleblock}
 	Utiliser \texttt{PreparedStatement} pour éviter les attaques de type injection SQL !

@@ -11,6 +11,7 @@
 \input{preamble/uml}
 
 \setbeamertemplate{headline}[singleline]
+\setbeamertemplate{footline}[onlypage]
 
 \title{Accès concurrents aux bases de données}
 \subject{Java}
@@ -52,24 +53,55 @@
 		\item Si une transaction par statement ? \pause
 	\end{itemize}
 	\begin{tikzpicture}
-		\path node[rectangle, draw, anchor=west] (risk) {Lost update};
+		\path node[anchor=west] (risk) {};
 		\path (risk.east) ++ (\JEEIsolBefTr, 0) coordinate (start line);
 		\path (start line) ++ (0, \JEEIsolVert) node[anchor=east] (trans 1) {Tr. 1};
 		\path (start line) ++ (0, -\JEEIsolVert) node[anchor=east] (trans 2) {Tr. 2};
 		\path[draw, ->] (start line) -- ++ (4.7cm, 0) node[anchor=north west] (time) {temps};
 		\path (trans 1.east) ++ (0.3cm, 0) node[anchor=west, inner sep=0] {$v == v_1$} edge (\tikztostart |- risk);
-		\path (trans 2.east) ++ (2.2cm, 0) node[inner sep=0] {$v ← v_2$} edge (\tikztostart |- risk);
+		\path (trans 2.east) ++ (0.2cm, 0) node[anchor=west, inner sep=0] {$v == v_1$} edge (\tikztostart |- risk);
+		\path (trans 2.east) ++ (2.5cm, 0) node[inner sep=0] {$v ← v_2$} edge (\tikztostart |- risk);
 		\path (trans 1.east) ++ (4.1cm, 0) node[inner sep=0] {$v ← v_3$} edge (\tikztostart |- risk);
 	\end{tikzpicture}
 	\pause
 	\begin{itemize}
 		\item Transaction atomique non triviale (couvrant un ensemble de statements) permet de lire-puis-écrire sans interruption
+		\item Limiter : transaction terminée par \emph{commit} ou \emph{rollback}
 		\item Implémentation naïve : DB verrouillée pour un utilisateur pendant le temps de la transaction
 		\item Problème ? \pause Souvent trop peu efficace
-		\item Protection : transaction terminée par \emph{commit} ou \emph{rollback}
 	\end{itemize}
 \end{frame}
 
+\begin{frame}
+	\frametitle{Limites de transactions, et puis ?}
+	\begin{itemize}
+		\item Les limites de transactions permettent l’isolation
+		\item Isolation fournie par le SGBD
+		\item Selon niveau d’isolation demandé
+		\item Sans isolation : risque que rollback écrase des modifications indépendantes
+	\end{itemize}
+	\vfill
+	\begin{tikzpicture}
+		\path node[rectangle, draw, anchor=west] (risk) {Lost update};
+		\path (risk.east) ++ (\JEEIsolBefTr, 0) coordinate (start line);
+		\path (start line) ++ (0, \JEEIsolVert) node[anchor=east] (trans 1) {Tr. 1};
+		\path (start line) ++ (0, -\JEEIsolVert) node[anchor=east] (trans 2) {Tr. 2};
+		\path[draw, ->] (start line) -- ++ (4.7cm, 0) node[anchor=north west] (time) {temps};
+		\path (trans 1.east) ++ (0.3cm, 0) node[anchor=west, inner sep=0] {$v ← v_1$} edge (\tikztostart |- risk);
+		\path (trans 2.east) ++ (2.5cm, 0) node[inner sep=0] {$v ← v_2$} edge (\tikztostart |- risk);
+		\path (trans 1.east) ++ (4.1cm, 0) node[inner sep=0] {rollback} edge (\tikztostart |- risk);
+		\path node[fit={(risk) (trans 1) (time)}] (all) {};
+		\path (all) ++ (0, 1cm) node[inner sep=0] (title) {Sans isolation (risques {↓})};
+		\path (risk.west)  ++ (-\JEEIsolOuter, 0) coordinate (left border);
+		\path (9.5cm, 0) coordinate (right border);
+		\path[draw] (left border |- title.north) -- (right border |- title.north);
+		\path[draw] (left border |- title.south) -- (right border |- title.south);
+		\path (all) ++ (0, -1cm) node[inner sep=0] (title) {Read uncommitted (protection {↑}, risques {↓})};
+		\path[draw] (left border |- title.north) -- (right border |- title.north);
+		\path[draw] (left border |- title.south) -- (right border |- title.south);
+	\end{tikzpicture}
+\end{frame}
+	
 \section{Niveaux d’isolation}
 \begin{frame}
 	\frametitle{Niveaux d’isolation}
@@ -83,7 +115,7 @@
 		\path (trans 1.east) ++ (4cm, 0) node[inner sep=0] {rollback} edge (\tikztostart |- risk);
 		\path (trans 2.east) ++ (2.5cm, 0) node[inner sep=0] {$v == v'$} edge (\tikztostart |- risk);
 		\path node[fit={(risk) (trans 1) (time)}] (all) {};
-		\path (all) ++ (0, 1cm) node[inner sep=0] (title) {Read uncommitted (risques {↓})};
+		\path (all) ++ (0, 1cm) node[inner sep=0] (title) {Read uncommitted (protection {↑}, risques {↓})};
 		\path (risk.west)  ++ (-\JEEIsolOuter, 0) coordinate (left border);
 		\path (9.5cm, 0) coordinate (right border);
 		\path[draw] (left border |- title.north) -- (right border |- title.north);
