@@ -5,7 +5,7 @@
 A short document about (de-)serialization of JSON using the JSON-B API. (See also JSON on https://en.wikipedia.org/wiki/JSON[Wikipedia] for a good introduction, JSON https://github.com/oliviercailloux/java-course/blob/master/JSON.adoc[Processing] for manipulation of JSON content.)
 
 == Dependency
-If you use Java SE, you need to add the required dependencies (http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22javax.json.bind%22%20AND%20a%3A%22javax.json.bind-api%22[javax.json.bind-api], http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.glassfish%22%20AND%20a%3A%22javax.json%22[javax.json], http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.eclipse%22%20AND%20a%3A%22yasson%22[yasson]{emptyattribute}). (Note that `org.eclipse:yasson:1.0.2` https://search.maven.org/artifact/org.eclipse/yasson/1.0.2/jar[depends] on `org.glassfish:javax.json:1.1.3`.)
+If you use Java SE, you need to add the required dependencies (http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22javax.json.bind%22%20AND%20a%3A%22javax.json.bind-api%22[javax.json.bind-api], http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.glassfish%22%20AND%20a%3A%22javax.json%22[javax.json], http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.eclipse%22%20AND%20a%3A%22yasson%22[yasson]{emptyattribute}). (Note that `org.eclipse:yasson:1.0.2` https://search.maven.org/artifact/org.eclipse/yasson/1.0.2/jar[depends] on `org.glassfish:javax.json:1.1.3`; WildFly 14.0.1 depends on `org.eclipse:yasson:1.0.1`; WildFly 15.0.0 depends on `org.eclipse:yasson:1.0.2`.)
 
 .Specify dependencies in your `pom.xml`
 [source,xml]
@@ -43,6 +43,30 @@ include::https://raw.githubusercontent.com/oliviercailloux/jsonb-sample/master/s
 --
 
 (This example uses the https://docs.oracle.com/javase/tutorial/essential/exceptions/tryResourceClose.html[try-with-resources] syntax.)
+
+== Default mapping
+The following rules apply in case of default mapping (thus with no customization) and for most usual cases (fields are not public, for example).
+
+Deserialization of a class uses its public or protected no-argument constructor, which must exist.
+
+Only public getter methods, for serialization (setters for deserialization) are considered and used, irrespective of whether a corresponding field exist.
+
+A transient field is ignored, even if matching input name-value pair.
+
+Deserialization into Collection is supported; into other interfaces, is not supported.
+
+Serialization follows the lexicographical order of properties.
+
+== Customized mapping
+Use https://javaee.github.io/javaee-spec/javadocs/javax/json/bind/annotation/JsonbTransient.html[`@JsonbTransient`] for not processing a property. Annotating the field takes effect for both serialization and deserialization. Annotating the getter (setter) takes effect only for serialization (deserialization).
+
+Use https://javaee.github.io/javaee-spec/javadocs/javax/json/bind/annotation/JsonbPropertyOrder.html[`@JsonbPropertyOrder`] on the class for overriding the order of processing of properties.
+
+Use https://javaee.github.io/javaee-spec/javadocs/javax/json/bind/annotation/JsonbCreator.html[`@JsonbCreator`] to annotate the constructor or static factory method that deserialization should use, use https://javaee.github.io/javaee-spec/javadocs/javax/json/bind/annotation/JsonbProperty.html[`@JsonbProperty`] on each parameter to map JSON names to parameters (otherwise “the proper mapping is NOT guaranteed”).
+
+Implement https://javaee.github.io/javaee-spec/javadocs/javax/json/bind/adapter/JsonbAdapter.html[`JsonbAdapter`] to customize the mapping for a given type. Register it on the Json-B instance with https://javaee.github.io/javaee-spec/javadocs/javax/json/bind/JsonbConfig.html[`JsonbConfig::withAdapters`] or annotate the related type with https://javaee.github.io/javaee-spec/javadocs/javax/json/bind/annotation/JsonbTypeAdapter.html[`@JsonbTypeAdapter`].
+
+Implement https://javaee.github.io/javaee-spec/javadocs/javax/json/bind/serializer/JsonbDeserializer.html[`JsonbSerializer`] in order to serialize an original type using a provided https://javaee.github.io/javaee-spec/javadocs/javax/json/stream/JsonGenerator.html[`JsonGenerator`]; and similarly https://javaee.github.io/javaee-spec/javadocs/javax/json/bind/serializer/JsonbDeserializer.html[`JsonbDeserializer`] using a provided https://javaee.github.io/javaee-spec/javadocs/javax/json/stream/JsonParser.html[`JsonParser`]. Register those instances with JsonbConfig::withSerializers and JsonbConfig::withDeserializers or annotate the related type with https://javaee.github.io/javaee-spec/javadocs/javax/json/bind/annotation/JsonbSerializer.html[`@JsonbSerializer`] or https://javaee.github.io/javaee-spec/javadocs/javax/json/bind/annotation/JsonbDeserializer.html[`@JsonbDeserializer`].
 
 == References
 * https://javaee.github.io/javaee-spec/javadocs/javax/json/bind/package-summary.html[API]
