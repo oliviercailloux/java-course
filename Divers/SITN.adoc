@@ -11,12 +11,15 @@
 
 == Projets
 * https://github.com/oliviercailloux/projets/tree/master/EE[Énoncés]
-* Attendu : cahiers des charges pour deux ou trois itérations courtes indiquant succinctement les exigences fonctionnelles (EF) ; 3 points de difficulté par membre au total sur l’année
+* Attendu : cahiers des charges pour deux ou trois itérations courtes indiquant succinctement les exigences fonctionnelles (EF) ; 3 points de difficulté par membre au total sur l’année.
 * Vous devez utiliser autant que possible les spécifications Java EE 8 dans votre projet (par exemple, les API de manipulation de JSON indiquées dans ce cours et pas d’autres ; le standard JPA et pas un autre)
-* Vous créez un dépôt pour votre projet et travaillez tous sur votre dépôt de groupe. Interdiction de commettre sur la branche master sans mon aval (sauf commit initial si nécessaire ou modifications sur `README.adoc`). À part ça, organisation interne libre. Suggestion : fusionnez vos fcts sur une branche `dev` dès que possible (https://fr.wikipedia.org/wiki/Int%C3%A9gration_continue[intégration continue]) ; à défaut, commit sur branches par fct et désigner un responsable fusion pour éviter écrasement.
-* Cahiers des charges et fonctions (une par EF) à remettre via pull request vers votre branche master. Je commente votre pull request. Dates de livraison précisées dans le programme ci-dessous. Non respect des dates : −0,2/20 par heure de retard (tout retard entamé est compté).
+* Vous créez un dépôt pour votre projet (un fork si vous repartez d’un existant) et travaillez tous sur votre dépôt de groupe. Interdiction de commettre sur votre branche master sans mon aval (sauf commit initial si nécessaire ou modifications sur `README.adoc`). À part ça, organisation interne libre. Suggestion : fusionnez vos fcts sur une branche `dev` dès que possible (https://fr.wikipedia.org/wiki/Int%C3%A9gration_continue[intégration continue]) ; à défaut, commit sur branches par fct et désigner un responsable fusion pour éviter écrasement.
+* M’ajouter comme collaborateur à votre projet pour pouvoir m’indiquer comme https://help.github.com/articles/about-pull-request-reviews/[Reviewer].
+* Créez une issue GitHub par EF et indiquez comme https://help.github.com/articles/assigning-issues-and-pull-requests-to-other-github-users/[“assignee”] la personne responsable, pour que je m’y retrouve.
+* Les remises se font via pull request vers votre branche master. Créez une pull request pour remettre (ou modifier) votre cahier des charges, et dans la mesure du possible une pull request par EF. Pour ce faire, créer une branche ad-hoc avec cette EF, le pull request fusionne la branche vers master. N’oubliez pas de m’ajouter comme Reviewer pour que je sois averti. Je commente votre pull request. Dates de livraison précisées dans le programme ci-dessous. Non respect des dates : −0,2/20 par heure de retard (max. −10/20).
+* Comptez 48h de délai pour que je vous réponde. Au-delà de 48h, envoyez-moi un e-mail de rappel.
 * Pull request (pour chaque fonction) à faire quand vous êtes sûr de vous (mais à temps). Plus je dois commenter, et plus il y a de pull requests avant acceptation du code, plus vous perdez de points (à fonctions égale). (Ne concerne pas l’aide apportée au cours ou par e-mail.)
-* L’auteur reçoit une note qualité et un nombre de points de difficultés lorsque la fonction est acceptée (code fusionné dans master). Voir https://github.com/oliviercailloux/java-course/tree/master/Best%20practices[Bonnes pratiques] et https://github.com/oliviercailloux/java-course/blob/master/Divers/Corr.adoc[Corr].
+* L’auteur reçoit une note qualité et un nombre de points de difficultés lorsque la fonction est acceptée (code fusionné dans master). Voir https://github.com/oliviercailloux/java-course/tree/master/Best%20practices[Bonnes pratiques] et https://github.com/oliviercailloux/java-course/blob/master/Divers/Corr.adoc[Corr]. Une fois la note attribuée, la personne responsable de l’issue ne peut plus être changée.
 * Note finale projet : moyenne des notes pour vos fonctions, pondérée par points de difficulté (meilleures notes sont considérées si plus de points de difficulté que requis) et note pour présentation finale. Ajustement possible pour tenir compte des difficultés et de la cohérence globales. (Note finale : 50% Projet, 50% CC.)
 * Conseil : travaillez ensemble et variez les binômes pour faire tourner les connaissances et varier les plaisirs.
 
@@ -25,6 +28,7 @@
 * Si vous voulez recommencer, effacez le dépôt créé pour le devoir et recommencez avec un nouveau dépôt.
 * Conseil : rendez 24h à l’avance pour être sûr. −3/20 par heure de retard (heure déterminée par la dernière activité sur le dépôt GitHub qui vous est attribué pour le devoir).
 * Vous pouvez utiliser le `groupId` `io.github.oliviercailloux.y2018.yourgithubusername`.
+* Vous pouvez échanger des pistes de solutions entre vous et discuter de votre code, mais pas travailler ensemble sur le code. je vous demande un rendu individuel. Je vous ne pouvez pas rendre un code identique ou ressemblant fortement à celui d’un autre étudiant.
 
 == Plan
 === S1 (mercredi 26 septembre 2018)
@@ -95,7 +99,7 @@ https://classroom.github.com/a/ygd_Ydml[Devoir] : un projet Maven, bien configur
 * https://github.com/oliviercailloux/java-course/blob/master/JPA/README.adoc[JPA]
 * https://github.com/oliviercailloux/java-course/blob/master/CDI/README.adoc[CDI]
 
-* Le plan doit être accepté avant la fin du 31 décembre. Attention, tenez compte d’un délai de 48h pour mes réponses.
+* Le plan doit être accepté avant la fin du 31 décembre.
 * Livraison d’une tentative de première réalisation avant la fin du dimanche 13 janvier.
 
 === S5 (lundi 14 janvier)
