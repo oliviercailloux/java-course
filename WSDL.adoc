@@ -91,7 +91,7 @@ The WSDL element `import` can be used to import WSDL documents into other WSDL d
 
 In WSDL 2.0, `portType` is called `interface`, `port` is called `endpoint`.
 
-Each of the operation message (input, …) in a SOAP link-type has a `soap:body` whose `use` must (http://ws-i.org/Profiles/BasicProfile-2.0-2010-11-09.html#R2706[BP 2.0], 1.1) be `literal` (or left to the default, `literal`, BP 1.2). (`encoded` is not used any more, see this https://msdn.microsoft.com/en-us/library/ms995710.aspx[opinion]).
+Each of the operation message (input, …) in a SOAP link-type has a `soap:body` whose `use` must (http://ws-i.org/Profiles/BasicProfile-2.0-2010-11-09.html#R2706[BP 2.0], 1.1) be `literal` (or left to the default, `literal`, BP 1.2). (`encoded` is not used any more, see this https://docs.microsoft.com/en-us/previous-versions/dotnet/articles/ms995710(v=msdn.10)[opinion]).
 
 BP 2.0 does not require the sender to set soapAction in the HTTP header nor as part of the Content-Type header. Thus, it may not be relied upon.
 
