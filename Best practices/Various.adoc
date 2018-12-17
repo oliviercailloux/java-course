@@ -1,0 +1,7 @@
+= Various
+
+== Use URI rather than URL
+The `URL` class has a flaw: its `URL#equals` method accesses the network. This makes it inadequate for a wide range of uses. Furthermore (and perhaps for the same reason), `URL` is not much used in libraries and `URI` is priviledged, for example, in the JAX-RS client API. `URI` is also a tad nicer to use thanks to its https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/net/URI.html#create(java.lang.String)[constructor] which does not throw checked exceptions.
+
+From the point of view of what it can represent, `URL` is more constrained than `URI` in that it allows only absolute URLs; more constrained in the protocols it allows; but less constrained in the sense of the syntax it allows (https://stackoverflow.com/a/23384891).
+
