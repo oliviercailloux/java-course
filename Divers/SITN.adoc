@@ -28,7 +28,7 @@
 * Si vous voulez recommencer, effacez le dépôt créé pour le devoir et recommencez avec un nouveau dépôt.
 * Conseil : rendez 24h à l’avance pour être sûr. −3/20 par heure de retard (heure déterminée par la dernière activité sur le dépôt GitHub qui vous est attribué pour le devoir).
 * Vous pouvez utiliser le `groupId` `io.github.oliviercailloux.y2018.yourgithubusername`.
-* Vous pouvez échanger des pistes de solutions entre vous et discuter de votre code, mais pas travailler ensemble sur le code. je vous demande un rendu individuel. Je vous ne pouvez pas rendre un code identique ou ressemblant fortement à celui d’un autre étudiant.
+* Vous pouvez échanger des pistes de solutions entre vous, mais pas travailler ensemble sur le code : je vous demande un rendu individuel. Vous ne pouvez pas rendre un code identique ou ressemblant fortement à celui d’un autre étudiant.
 
 == Plan
 === S1 (mercredi 26 septembre 2018)
