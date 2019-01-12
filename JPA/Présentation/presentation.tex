@@ -661,26 +661,26 @@ public class Person {
 \begin{frame}
 	\frametitle{Héritage}
 	\begin{tikzpicture}
-		\path node[/uml/class3] (animal) {%
+		\path node[/uml/class3, rectangle split parts=2] (animal) {%
 			\nodepart{one}
-			Animal
+			\slshape Animal%FIXME itshape not available with tt and bf
 			\nodepart{two}
 			mainColor\\
 			speed
 		};
-		\path (animal.south) ++(-3.2cm, -1em) node[anchor=north, /uml/class3] (animal1) {%
+		\path (animal.south) ++(-3.2cm, -1em) node[anchor=north, /uml/class3, rectangle split parts=2] (animal1) {%
 			\nodepart{one}
 			Snake
 			\nodepart{two}
 			likesElephants
 		};
-		\path (animal.south) ++(0, -1em) node[anchor=north, /uml/class3] (animal2) {%
+		\path (animal.south) ++(0, -1em) node[anchor=north, /uml/class3, rectangle split parts=2] (animal2) {%
 			\nodepart{one}
 			Cat
 			\nodepart{two}
 			likesCouch
 		};
-		\path (animal.south) ++(3.5cm, -1em) node[anchor=north, /uml/class3] (animal3) {%
+		\path (animal.south) ++(3.5cm, -1em) node[anchor=north, /uml/class3, rectangle split parts=2] (animal3) {%
 			\nodepart{one}
 			Crocodile
 			\nodepart{two}
@@ -693,9 +693,16 @@ public class Person {
 	\begin{description}[Mapped superclass]
 		\item[Mapped superclass]\mbox{}%
 		\uncover<2>{%
-			$n$ tables non liées
+			$n$ tables non liées (dupl. champs)
 			\begin{itemize}
-				\item Inconvénient : pas de requêtes \texttt{Animal}
+				\item Inconvénient : pas de \og{}type\fg{} \texttt{Animal}
+			\end{itemize}
+		}
+		\item[Table per class]\mbox{}%
+		\uncover<2>{%
+			$n$ tables non liées (dupl.) + 1 virtuelle
+			\begin{itemize}
+				\item Inconvénient : polymorph. peu performant
 			\end{itemize}
 		}
 		\item[Single table]\mbox{}%
@@ -711,10 +718,6 @@ public class Person {
 			\begin{itemize}
 				\item Inconvénient : moins performant (\texttt{JOIN})
 			\end{itemize}
-		}
-		\item[Table per class]\mbox{}%
-		\uncover<2>{%
-			$n + 1$ tables non liées (dupl. champs)
 		}
 	\end{description}
 \end{frame}
@@ -832,41 +835,13 @@ em2.getTransaction().commit(); // $\textsf{mise à jour BD}$
 \end{frame}
 
 \begin{frame}
-	\frametitle{Différentes égalités}
-	\begin{block}{Trois types d’égalités}
-		\begin{itemize}
-			\item Égalité en mémoire : \texttt{a == b}
-			\item Égalité objet : \texttt{a.equals(b)}
-			\item Égalité DB : \texttt{a.getId().equals(b.getId())}
-		\end{itemize}
-	\end{block}
-	Quelles propriétés prendre en compte dans \texttt{hashCode} et \texttt{equals} ?
-	\begin{itemize}
-		\item Table de hachage : objet ne peut changer de hash / d’égalité
-		\item Dans une session il faut éviter deux objets not equals() et concernant la même ligne de la table
-		\item Id pour égalité : pourquoi pas ? \pause Tant que non persistantes, ne fonctionne pas ; change lors sauvegarde \pause
-		\item[$⇒$] Ensemble d’attributs déterminants pt de vue utilisateur ! (username…)
-	\end{itemize}
-\end{frame}
-
-\begin{frame}
 	\frametitle{Patterns}
 	\begin{itemize}
-		\item DM \emph{sans} dépendance persistance (tests ;  simplification dépendances)
-		\item Entités transversales (couche web et business)
+		\item DM doit fonctionner \emph{sans} persistance (tests ;  simplification dépendances)
+		\item Entités transversales (couche web et business) (ou DTO : Data Transfer Object, ou Command Pattern)
 		\item Qqs classes service business
 		\item Qqs classes persistence visibles du business
 		\item Pattern DAO \emph{seulement si justifié}
-	\end{itemize}
-\end{frame}
-
-\begin{frame}
-	\frametitle{Place mémoire du contexte}
-	\begin{itemize}
-		\item Le contexte de persistence connait toutes les entités qu’il gère
-		\item Peut prendre trop de place en mémoire
-		\item Utiliser \texttt{em.detach(…)} pour détacher des entités
-		\item Voir aussi \texttt{em.clear()}
 	\end{itemize}
 \end{frame}
 
@@ -922,6 +897,16 @@ em2.getTransaction().commit(); // $\textsf{mise à jour BD}$
 		\item Contexte peut persister au-delà de la transaction
 		\item peut être non synchronisé
 		\item Voir \jeeref[@]{javax.persistence/PersistenceContext}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Place mémoire du contexte}
+	\begin{itemize}
+		\item Le contexte de persistence connait toutes les entités qu’il gère
+		\item Peut prendre trop de place en mémoire
+		\item Utiliser \texttt{em.detach(…)} pour détacher des entités
+		\item Voir aussi \texttt{em.clear()}
 	\end{itemize}
 \end{frame}
 
@@ -1022,6 +1007,24 @@ em2.getTransaction().commit(); // $\textsf{mise à jour BD}$
 		
 		\raggedleft{{\tiny Inspiré par : Java persistence with hibernate}}
 	\end{minipage}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Différentes égalités}
+	\begin{block}{Trois types d’égalités}
+		\begin{itemize}
+			\item Égalité en mémoire : \texttt{a == b}
+			\item Égalité objet : \texttt{a.equals(b)}
+			\item Égalité DB : \texttt{a.getId().equals(b.getId())}
+		\end{itemize}
+	\end{block}
+	Quelles propriétés prendre en compte dans \texttt{hashCode} et \texttt{equals} ?
+	\begin{itemize}
+		\item Table de hachage : objet ne peut changer de hash / d’égalité
+		\item Dans une session il faut éviter deux objets not equals() et concernant la même ligne de la table
+		\item Id pour égalité : pourquoi pas ? \pause Tant que non persistantes, ne fonctionne pas ; change lors sauvegarde \pause
+		\item[$⇒$] Ensemble d’attributs déterminants pt de vue utilisateur ! (username…)
+	\end{itemize}
 \end{frame}
 
 \section{Autres gestions de la persistance}
