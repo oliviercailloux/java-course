@@ -134,7 +134,7 @@ https://classroom.github.com/a/ygd_Ydml[Devoir] : un projet Maven, bien configur
 ** Pas de transferts via clé USB (présentations sur le dépôt)
 ** Format PDF, pas MS Office
 
-* Livraison 3 acceptée avant la fin du lundi 8 avril.
+* Livraison 3 acceptée avant la fin du samedi 6 avril.
 
 === S8 (mardi 9 avril)
 * Présentation des projets
