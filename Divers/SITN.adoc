@@ -114,6 +114,8 @@ https://classroom.github.com/a/ygd_Ydml[Devoir] : un projet Maven, bien configur
 * https://github.com/oliviercailloux/java-course/blob/master/JAX-RS/README.adoc[JAX-RS]
 * https://github.com/oliviercailloux/java-course/blob/master/DevOps/IBM%20Cloud.adoc[IBM Cloud]
 
+* Livraison 2 acceptée avant la fin du mercredi 27 mars.
+
 * https://classroom.github.com/a/PSif2M_9[Devoir JPA] : un project se déployant automatiquement sur IBM Cloud via l’intégration continue Travis (avec un badge dans le `README.adoc`), une base de données (à laquelle le code accède exclusivement en JPA), un servlet JAX-RS `GetCommentsServlet` et un servlet JAX-RS `AddCommentServlet`, et un test fonctionnel JUnit 5. À rendre avant la fin du vendredi 8 mars. Ce devoir compte double (les autres devoirs ont la même pondération entre eux) et sera le dernier devoir.
 ** Un commentaire est un `String` accompagné d’un `Instant` indiquant le moment de son enregistrement
 ** La base de données ne sert qu’à mémoriser les commentaires
@@ -121,8 +123,6 @@ https://classroom.github.com/a/ygd_Ydml[Devoir] : un projet Maven, bien configur
 ** Le servlet `AddCommentServlet` répond à la méthode HTTP adéquate (choisissez bien). La requête contient le commentaire à enregistrer en corps de message. Le client est libre de choisir son encodage, et le précisera dans l’en-tête adéquat de la requête HTTP. Le format doit être `text/plain`. On refusera les requêtes de corps plus gros que 2 Mo, pour limiter les attaques et les erreurs. Le serveur enregistre le commentaire et son instant de création (que le serveur détermine au moment d’enregistrer le commentaire, avec une précision à la seconde, donc sans les fractions de secondes). Le serveur répond `ok` à la requête, au format `text/plain`.
 ** Le test fonctionnel appelle le servlet pour ajouter un commentaire, puis le servlet pour récupérer les commentaires, et vérifie que le commentaire ajouté est bien l’unique commentaire renvoyé et que la date d’enregistrement est plausible. Le test appelle les servlets de façon interne (en appelant directement les méthodes Java adéquates), il ne doit pas nécessairement construire des requêtes HTTP. Comme le test fonctionne dans un environnement Java SE, vous vous passerez des services du Serveur d’application Java EE à l’aide de la technique de votre choix, par exemple en remplaçant les services qui accèdent à la base de données par une version simplifiée qui stocke les données en mémoire. (Vous pouvez aussi passer par Arquillian.)
 ** Vos deux servlets écoutent sur l’adresse `comments`, relative à votre context root, que vous pouvez choisir librement. Par exemple, si votre context root est `localhost/truc`, alors vos servlets doivent écouter sur `localhost/truc/comments`.
-
-* Livraison 2 acceptée avant la fin du mercredi 27 mars.
 
 === S7 (jeudi 28 mars)
 * Projets
