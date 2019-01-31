@@ -13,5 +13,7 @@ To know how to find the data for other plugins, look https://stackoverflow.com/a
 
 Note that, in the case of the JBoss Tools, installing only the `org.jboss.ide.eclipse.as.feature.feature.group` still installs the same 40 jboss plugins (but only 10 features, `org.jboss.tools.usage.feature_2.2.201.v20180802-1505` missing) and still asks for usage report at first start.
 
+To install https://checkstyle.org/eclipse-cs/[Eclipse Checkstyle Plug-in] and “Checkstyle configuration plugin for M2Eclipse” (part of https://marketplace.eclipse.org/content/m2e-code-quality[`m2e-code-quality`]): `sudo /usr/local/share/eclipse-jee-2018-12-R-linux-gtk-x86_64/eclipse -nosplash -application org.eclipse.equinox.p2.director -repository "https://checkstyle.org/eclipse-cs/update, http://m2e-code-quality.github.com/m2e-code-quality/site/latest" -installIU "net.sf.eclipsecs.feature.group, com.basistech.m2e.code.quality.checkstyle.feature.feature.group"`. This installs 2 features in `/usr/local/share/eclipse-jee-2018-12-R-linux-gtk-x86_64/features`.
+
 //TODO consider installing auto Papyrus. Works when installing manually from the normal Eclipse release update site just after the rest of the installation as described above.
 
