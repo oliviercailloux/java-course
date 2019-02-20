@@ -2,14 +2,13 @@
 :sectanchors:
 
 Various useful tools for Java and Java EE developers.
-//TODO check windows install
 
 == Java
 
 * https://www.oracle.com/technetwork/java/javase/downloads/index.html[Java] 9 (or ulterior)
 ** Important advice. Uninstall every version of Java you have, keep only one: the latest JDK (which includes a JRE). This prevents problems with tools selecting the wrong JDK or JRE.
 ** On Debian: https://packages.debian.org/search?keywords=openjdk-11-jdk&searchon=names&exact=1&suite=all&section=all[openjdk-11-jdk] (install https://packages.debian.org/search?keywords=openjdk-11-source&searchon=names&exact=1&suite=all&section=all[openjdk-11-source] to have the Javadoc accessible even when coding offline).
-** On Windows: install the JDK (which itself comes with a private JRE). Do not install the public JRE (uncheck the box). Set the environment variables: JAVA_HOME to where you installed the JDK and https://docs.oracle.com/javase/9/install/installation-jdk-and-jre-microsoft-windows-platforms.htm#JSJIG-GUID-96EB3876-8C7A-4A25-9F3A-A2983FEC016A[PATH] to "%JAVA_HOME%\bin" (for details, see http://maven.apache.org/install.html[Maven] and http://wiki.eclipse.org/FAQ_How_do_I_run_Eclipse%3F#Find_the_JVM[Eclipse], https://java.com/en/download/help/manual_regedit.xml[help] with removing traces of previous install). 
+** On Windows: install the JDK (which itself comes with a private JRE). Do not install the public JRE (uncheck the box). Set the environment variables: JAVA_HOME to where you installed the JDK and https://docs.oracle.com/en/java/javase/11/install/installation-jdk-microsoft-windows-platforms.html#GUID-96EB3876-8C7A-4A25-9F3A-A2983FEC016A[PATH] to "%JAVA_HOME%\bin" (for details, see http://maven.apache.org/install.html[Maven] and http://wiki.eclipse.org/FAQ_How_do_I_run_Eclipse%3F#Find_the_JVM[Eclipse].
 //** Note: some https://www.java.com/en/download/help/path.xml[doc] indicates that setting the PATH is not necessary to run Java programs. However, http://wiki.eclipse.org/FAQ_How_do_I_run_Eclipse%3F#Find_the_JVM[Eclipse] (for example) will apparently not start if it does not find Java in the path (unless specifically configured). Perhaps the https://docs.microsoft.com/windows/desktop/shell/app-registration[App Paths] mechanism could be used instead? (See also https://parsiya.net/blog/2017-10-23-run-line-vs.-cmd-vs.-powershell/[here].) Setting JAVA_HOME might be unnecessary, as under Linux (link not valid any more: sources.debian.org/src/openjdk-8/8u181-b13-1/debian/JAVA_HOME/). TODO: check whether .jar start; check whether Maven requires JAVA_HOME.
 * https://maven.apache.org/download.cgi[Maven]
 
