@@ -74,7 +74,7 @@ Links taken from the https://www.edx.org/course/introduction-to-biology-the-secr
 
 * https://github.com/oliviercailloux/java-course/raw/master/Pr%C3%A9sentation%20du%20cours%20Objet/presentation.pdf[Pres course]
 * Basic concepts and structures of Java: variables; types; subroutines; control structures; identifiers… [SK]
-** http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours0.pdf[Airiau C0], http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours1.pdf[Airiau C1] (compil, p. 16 to 20)
+** https://github.com/oliviercailloux/java-course/raw/master/Syntaxe/presentation.pdf[Syntaxe], http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours1.pdf[Airiau C1] (compil, p. 16 to 20)
 * https://github.com/oliviercailloux/java-course/raw/master/Notions%20objets/presentation.pdf[Basics of objects]
 * https://www.wooclap.com/JL[Quizz]
 
