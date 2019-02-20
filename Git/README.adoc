@@ -2,6 +2,23 @@
 
 See https://raw.githubusercontent.com/oliviercailloux/java-course/master/Git/Pr%C3%A9sentation/presentation.pdf[présentation], https://github.com/oliviercailloux/java-course/blob/master/Git/Exercices.adoc[exercices].
 
+== Learning the basics
+There are two ways to learn the basics of Git: the frustrating and long way, and the nice and short way. The frustrating and long way is the one you find yourself into if you do not read anything about git (because you do not have time) and just try to deal with it by running commands that you found on the web, that you do not fully understand, that you supposed would achieve just what you needed, and that instead created a mess you ignore how to get rid of.
+
+To save time, read the Pro Git book. For the basics, you really only need to read the following sections.
+
+* https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F[1.3] What is Git?
+* https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup[1.6] Getting Started - First-Time Git Setup
+* https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository[2.1] Getting a Git Repository
+* https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository[2.2] Recording Changes to the Repository
+* https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-History[2.3] Viewing the Commit History
+* https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes[2.5] Working with Remotes
+* https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell[3.1] Git Branching - Branches in a Nutshell
+* https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging[3.2] Git Branching - Basic Branching and Merging
+* https://git-scm.com/book/en/v2/Git-Branching-Remote-Branches[3.5] Git Branching - Remote Branches
+
+Hint: do not try to remember all the shortcut commands and options git provides. You just need those ones: `git config …` (just for the initial configuration); `git clone <url>` or `git init` to start the fun; `git status`, `git diff`, `git add <files>`, `git commit` and `git merge` to enrich your local history; `git log` and `git checkout <commit>` to navigate in your history; `git branch <name>` to create branches; `git fetch` and `git push` to synchronize with your remote repository. If you understand those basic commands, you know enough to use git effectively by combining them to achieve what you need. You can learn the rest when and if you need it.
+
 == References
 * https://git-scm.com/[Git-SCM]: official download; Cheat Sheets; Book Pro Git (free, as in speech and beer); tryGit
 * https://try.github.io/[Resources to learn Git]
