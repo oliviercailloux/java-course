@@ -2,12 +2,13 @@
 :sectanchors:
 
 Various useful tools for Java and Java EE developers.
+//TODO check windows install
 
 == Java
 
-* https://www.oracle.com/technetwork/java/javase/downloads/index.html[Java] 8 (or ulterior)
+* https://www.oracle.com/technetwork/java/javase/downloads/index.html[Java] 9 (or ulterior)
 ** Important advice. Uninstall every version of Java you have, keep only one: the latest JDK (which includes a JRE). This prevents problems with tools selecting the wrong JDK or JRE.
-** On Debian: https://packages.debian.org/search?keywords=openjdk-8-jdk&searchon=names&exact=1&suite=all&section=all[openjdk-8-jdk] (install https://packages.debian.org/search?keywords=openjdk-8-source&searchon=names&exact=1&suite=all&section=all[openjdk-8-source] to have the Javadoc accessible even when coding offline).
+** On Debian: https://packages.debian.org/search?keywords=openjdk-11-jdk&searchon=names&exact=1&suite=all&section=all[openjdk-11-jdk] (install https://packages.debian.org/search?keywords=openjdk-11-source&searchon=names&exact=1&suite=all&section=all[openjdk-11-source] to have the Javadoc accessible even when coding offline).
 ** On Windows: install the JDK (which itself comes with a private JRE). Do not install the public JRE (uncheck the box). Set the environment variables: JAVA_HOME to where you installed the JDK and https://docs.oracle.com/javase/9/install/installation-jdk-and-jre-microsoft-windows-platforms.htm#JSJIG-GUID-96EB3876-8C7A-4A25-9F3A-A2983FEC016A[PATH] to "%JAVA_HOME%\bin" (for details, see http://maven.apache.org/install.html[Maven] and http://wiki.eclipse.org/FAQ_How_do_I_run_Eclipse%3F#Find_the_JVM[Eclipse], https://java.com/en/download/help/manual_regedit.xml[help] with removing traces of previous install). 
 //** Note: some https://www.java.com/en/download/help/path.xml[doc] indicates that setting the PATH is not necessary to run Java programs. However, http://wiki.eclipse.org/FAQ_How_do_I_run_Eclipse%3F#Find_the_JVM[Eclipse] (for example) will apparently not start if it does not find Java in the path (unless specifically configured). Perhaps the https://docs.microsoft.com/windows/desktop/shell/app-registration[App Paths] mechanism could be used instead? (See also https://parsiya.net/blog/2017-10-23-run-line-vs.-cmd-vs.-powershell/[here].) Setting JAVA_HOME might be unnecessary, as under Linux (link not valid any more: sources.debian.org/src/openjdk-8/8u181-b13-1/debian/JAVA_HOME/). TODO: check whether .jar start; check whether Maven requires JAVA_HOME.
 * https://maven.apache.org/download.cgi[Maven]
@@ -42,16 +43,16 @@ For Eclipse users, I strongly recommend reading the following, for a great incre
 === Configuration
 I recommend configuring Eclipse to show more errors and warnings in order to help spot mistakes and code smells early.
 
-* From Eclipse, import my sample link:++Best practices/Eclipse-prefs.epf++[epf] (Eclipse preference) file. 
+* From Eclipse, import my sample https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Eclipse-prefs.epf[epf] (Eclipse preference) file. 
 * You can read the file contents to see what this changes to your Eclipse configuration.
 * Check in `Windows / Preferences` whether the changes were applied. For example, check in `Java / Code Style / Code Templates` that the `Catch block body` contains `throw new IllegalStateException(e);`.
 * Check in your project properties, `Java Compiler / Errors/Warnings` that the project uses your global Eclipse compiler settings.
 * Clean and recompile your project to see the effect.
 
 == VM (beta)
-https://universitedauphine-my.sharepoint.com/personal/olivier_cailloux_lamsade_dauphine_fr/_layouts/15/guestaccess.aspx?docid=03887190377294e79a8a63c8f063ffe9b&authkey=AdV4WjBgnfjLa2IRffbav5s&e=10400376c63043138b324257b2c8c6a6[Here] is a Virtual Machine (VM) file that contains all the tools above. It features https://www.debian.org/doc/user-manuals[Debian] stretch (9.2), a GNU/Linux system. The VM file is in a standard format (OVA). You can import it in https://www.virtualbox.org/[Virtual Box] for example.
+https://universitedauphine-my.sharepoint.com/personal/olivier_cailloux_lamsade_dauphine_fr/_layouts/15/guestaccess.aspx?docid=03887190377294e79a8a63c8f063ffe9b&authkey=AdV4WjBgnfjLa2IRffbav5s&e=10400376c63043138b324257b2c8c6a6[Here] is a Virtual Machine (VM) file that contains (almost) all the tools above. It features https://www.debian.org/doc/user-manuals[Debian] stretch (9.2), a GNU/Linux system. The VM file is in a standard format (OVA). You can import it in https://www.virtualbox.org/[Virtual Box] for example. Tell me if you are interested, I will then update it.
 
 The file is in beta version, please report any issues https://github.com/oliviercailloux/Deb-9-VM[here].
 
-Note that you will get (much) better performance by installing the tools directly on your machine rather than using them through a VM.
+Note that you will get (much?) better performance by installing the tools directly on your machine rather than using them through a VM.
 
