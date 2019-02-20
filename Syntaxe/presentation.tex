@@ -32,8 +32,7 @@
 \end{frame}
 \addtocounter{framenumber}{-1}
 
-\section{Syntaxe}
-\subsection{Focus}
+\section{Éléments}
 \begin{frame}[fragile]
 	\frametitle{Syntaxe élémentaire}
 	\begin{itemize}
@@ -58,6 +57,7 @@
 	\end{block}
 \end{frame}
 
+\section{Variables}
 \begin{frame}[fragile]
 	\frametitle{Variables}
 	\begin{block}{Déclaration variable}
@@ -98,59 +98,6 @@ nom = valeur;
 \end{frame}
 
 \begin{frame}[fragile]
-	\frametitle{Opérations primitives}
-	Opérateurs unaires :
-	\begin{description}
-		\item[-] renvoie le négatif
-		\item[!] Négation logique
-		\item[++] Incrémente un entier (affectation implicite)
-		\item[--] Décrémente un entier (affectation implicite)
-	\end{description}
-	\begin{block}{Exemples}
-		\begin{lstlisting}
-int x = -3;
-int z = -(x - y);
-++i;
-boolean b = !true;
-boolean c = !b;
-		\end{lstlisting}	
-	\end{block}
-\end{frame}
-
-\begin{frame}[fragile]
-	\frametitle{Opérations binaires}
-	\begin{description}
-		\item[+, -, *, /] NB / sur entiers ≠ / sur double : toujours préciser le type pour meilleure lisibilité
-		\item[\%] reste de la division entière
-		\item[<, >, <=, >=] compare et renvoie un booléen
-		\item[==] teste égalité et renvoie un booléen
-		\item[!=] teste différence
-		\item[\&\&] renvoie vrai ssi les deux opérands sont vrais {\tiny (court-circuite)}
-		\item[||] renvoie vrai ssi au moins un opérand est vrai {\tiny (court-circuite)}
-		\item[+=, -=] affectation et opération
-	\end{description}
-	\begin{block}{Exemple}
-		\begin{lstlisting}
-boolean c = (!b && (x > y)) || (a != 3)
-		\end{lstlisting}	
-	\end{block}
-\end{frame}
-
-\begin{frame}[fragile]
-	\frametitle{Tableaux}
-	\begin{block}{Tableaux}
-		\begin{lstlisting}
-int[] premiers = {2, 3, 5, 7, 11, 13, 17 };
-int x = premiers[0] + 2 * premiers[1];
-		\end{lstlisting}	
-	\end{block}
-	\begin{itemize}
-		\item Tableaux à plusieurs dimensions possibles
-		\item Dans ce cours on n’utilisera (presque) pas les tableaux
-	\end{itemize}
-\end{frame}
-
-\begin{frame}[fragile]
 	\frametitle{Portée}
 	\begin{itemize}
 		\item Variables connues en fonction de leur endroit de déclaration
@@ -173,8 +120,64 @@ int x = premiers[0] + 2 * premiers[1];
 	Bonne pratique : adopter portée la plus étroite possible
 \end{frame}
 
+\section{Opérations}
 \begin{frame}[fragile]
-	\frametitle{Conditionnelles}
+	\frametitle{Opérateurs unaires}
+	Opérateurs unaires :
+	\begin{description}
+		\item[-] renvoie le négatif
+		\item[!] Négation logique
+		\item[++] Incrémente un entier (affectation implicite)
+		\item[-{}-] Décrémente un entier (affectation implicite)
+	\end{description}
+	\begin{block}{Exemples}
+		\begin{lstlisting}
+int x = -3;
+int z = -(x - y);
+++i;
+boolean b = !true;
+boolean c = !b;
+		\end{lstlisting}	
+	\end{block}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Opérations binaires}
+	\begin{description}
+		\item[+, -, *, /] NB / sur entiers ≠ / sur double : toujours préciser le type pour meilleure lisibilité
+		\item[\%] reste de la division entière
+		\item[<, >, <=, >=] compare et renvoie un booléen
+		\item[==] teste égalité et renvoie un booléen
+		\item[!=] teste différence
+		\item[\&\&] renvoie vrai ssi les deux opérands sont vrais {\tiny (court-circuite)}
+		\item[||] renvoie vrai ssi au moins un opérand est vrai {\tiny (court-circuite)}
+		\item[+=, -=] opération puis affectation
+	\end{description}
+	\begin{block}{Exemple}
+		\begin{lstlisting}
+boolean c = (!b && (x > y)) || (a != 3)
+		\end{lstlisting}	
+	\end{block}
+\end{frame}
+
+\section{Tableaux}
+\begin{frame}[fragile]
+	\frametitle{Tableaux}
+	\begin{block}{Tableaux}
+		\begin{lstlisting}
+int[] premiers = {2, 3, 5, 7, 11, 13, 17 };
+int x = premiers[0] + 2 * premiers[1];
+		\end{lstlisting}	
+	\end{block}
+	\begin{itemize}
+		\item Tableaux à plusieurs dimensions possibles
+		\item Dans ce cours on n’utilisera (presque) pas les tableaux
+	\end{itemize}
+\end{frame}
+
+\section{Branchement}
+\begin{frame}[fragile]
+	\frametitle{Tests}
 	\begin{itemize}
 		\item \texttt{if (test) bloc}
 		\item \texttt{if (test) bloc else bloc}
@@ -215,6 +218,7 @@ for (int i=0; i < 3; ++i) {
 	Valeur de \texttt{a} ? \pause \texttt{7}
 \end{frame}
 
+\section{Méthodes}
 \begin{frame}[fragile]
 	\frametitle{Méthodes : utilité}
 	\begin{itemize}
@@ -244,8 +248,6 @@ public static void useWeightedSum () {
 	\end{block}
 	Valeur de \texttt{result} ? \pause \texttt{39}
 \end{frame}
-
-\end{document}
 
 \appendix
 \makeatletter
