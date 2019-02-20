@@ -1,0 +1,280 @@
+\RequirePackage[l2tabu, orthodox]{nag}
+\documentclass[english, french]{beamer}
+\input{preamble/packages}
+\input{preamble/math_basics}
+\input{preamble/math_mine}
+\input{preamble/redac}
+\input{preamble/draw}
+
+\setbeamertemplate{headline}[singleline]
+\setbeamertemplate{footline}[onlypage]
+
+\title{Syntaxe}
+\subject{Java}
+\author{Olivier Cailloux}
+\institute[LAMSADE]{LAMSADE, Université Paris-Dauphine}
+\date{Version du \today}
+
+\begin{document}
+\begin{frame}[plain]
+	\tikz[remember picture,overlay]{
+		\path (current page.south west) node[anchor=south west, inner sep=0] {
+			\includegraphics[height=1cm]{LAMSADE95.jpg}
+		};
+		\path (current page.south) ++ (0, 1mm) node[anchor=south, inner sep=0] {
+			\includegraphics[height=9mm]{Dauphine.jpg}
+		};
+		\path (current page.south east) node[anchor=south east, inner sep=0] {
+			\includegraphics[height=9mm]{PSL.png}
+		};
+	}
+	\titlepage
+\end{frame}
+\addtocounter{framenumber}{-1}
+
+\section{Syntaxe}
+\subsection{Focus}
+\begin{frame}[fragile]
+	\frametitle{Syntaxe élémentaire}
+	\begin{itemize}
+		\item Instructions terminées par un point virgule
+		\item Blocs d’instructions
+		\item Commentaires
+	\end{itemize}
+	\begin{block}{Bloc}
+		\begin{lstlisting}
+{
+	instruction1;
+	instruction2;
+}
+		\end{lstlisting}	
+	\end{block}
+	\begin{block}{Commentaires}
+		\begin{lstlisting}
+//commentaire sur une ligne
+/* commentaire sur 
+        plusieurs lignes */
+		\end{lstlisting}
+	\end{block}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Variables}
+	\begin{block}{Déclaration variable}
+		\begin{lstlisting}
+<type> nom;
+		\end{lstlisting}	
+	\end{block}
+	\begin{block}{Affectation variable}
+		\begin{lstlisting}
+nom = valeur;
+		\end{lstlisting}
+	\end{block}
+	\begin{block}{Déclaration et affectation variable}
+		\begin{lstlisting}
+<type> nom = valeur;
+		\end{lstlisting}	
+	\end{block}
+	$⇒$ Essayer avec \texttt{jshell} !
+\end{frame}
+
+\begin{frame}
+	\frametitle{Types primitifs et valeurs primitives}
+	\begin{block}{Types primitifs}
+		\begin{itemize}
+			\item \texttt{boolean}
+			\item \texttt{int} (32 bits)
+			\item \texttt{double} (64 bits)
+		\end{itemize}
+	\end{block}
+	\begin{block}{Valeurs primitives}
+		\begin{itemize}
+			\item \texttt{true}, \texttt{false}
+			\item littéral entier : \texttt{156}, \texttt{100\_000}
+			\item littéral flottant : \texttt{1.5d}, \texttt{2d} 
+		\end{itemize}
+	\end{block}
+	Une fois qu’une variable a une valeur, on peut l’utiliser
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Opérations primitives}
+	Opérateurs unaires :
+	\begin{description}
+		\item[-] renvoie le négatif
+		\item[!] Négation logique
+		\item[++] Incrémente un entier (affectation implicite)
+		\item[--] Décrémente un entier (affectation implicite)
+	\end{description}
+	\begin{block}{Exemples}
+		\begin{lstlisting}
+int x = -3;
+int z = -(x - y);
+++i;
+boolean b = !true;
+boolean c = !b;
+		\end{lstlisting}	
+	\end{block}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Opérations binaires}
+	\begin{description}
+		\item[+, -, *, /] NB / sur entiers ≠ / sur double : toujours préciser le type pour meilleure lisibilité
+		\item[\%] reste de la division entière
+		\item[<, >, <=, >=] compare et renvoie un booléen
+		\item[==] teste égalité et renvoie un booléen
+		\item[!=] teste différence
+		\item[\&\&] renvoie vrai ssi les deux opérands sont vrais {\tiny (court-circuite)}
+		\item[||] renvoie vrai ssi au moins un opérand est vrai {\tiny (court-circuite)}
+		\item[+=, -=] affectation et opération
+	\end{description}
+	\begin{block}{Exemple}
+		\begin{lstlisting}
+boolean c = (!b && (x > y)) || (a != 3)
+		\end{lstlisting}	
+	\end{block}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Tableaux}
+	\begin{block}{Tableaux}
+		\begin{lstlisting}
+int[] premiers = {2, 3, 5, 7, 11, 13, 17 };
+int x = premiers[0] + 2 * premiers[1];
+		\end{lstlisting}	
+	\end{block}
+	\begin{itemize}
+		\item Tableaux à plusieurs dimensions possibles
+		\item Dans ce cours on n’utilisera (presque) pas les tableaux
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Portée}
+	\begin{itemize}
+		\item Variables connues en fonction de leur endroit de déclaration
+		\item Connues dans les blocs inclus
+		\item Inconnues dans les blocs non inclus
+	\end{itemize}
+	\begin{block}{Exemple}
+		\begin{lstlisting}
+{
+	int a = 3;
+	{
+		int b = 2;
+		// a ? §\onslide<2->{Connu}§
+	}
+	// a ? §\onslide<3->{Connu}§
+	// b ? §\onslide<4->{Inconnu}§
+}
+		\end{lstlisting}	
+	\end{block}
+	Bonne pratique : adopter portée la plus étroite possible
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Conditionnelles}
+	\begin{itemize}
+		\item \texttt{if (test) bloc}
+		\item \texttt{if (test) bloc else bloc}
+		\item \texttt{if (test) bloc else if (test) bloc else bloc}
+	\end{itemize}
+	\begin{block}{Exemple}
+		\begin{lstlisting}
+if (value == 3) {
+	openGate = true;
+} else {
+	openGate = false;
+}
+		\end{lstlisting}	
+	\end{block}
+	Amélioration ? \pause \texttt{openGate = (value == 3);}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Boucles}
+	\begin{block}{While}
+		\begin{lstlisting}
+while (openGate) {
+	§…§
+}
+do {
+	§…§
+} while (openGate);
+		\end{lstlisting}	
+	\end{block}
+	\begin{block}{For}
+		\begin{lstlisting}
+int a = 4;
+for (int i=0; i < 3; ++i) {
+	a += i;
+}
+		\end{lstlisting}	
+	\end{block}
+	Valeur de \texttt{a} ? \pause \texttt{7}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Méthodes : utilité}
+	\begin{itemize}
+		\item Tout code doit se trouver dans une méthode
+		\item Méthode peut renvoyer une valeur
+		\item Peut être réutilisée, clarifie le code
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Méthodes : syntaxe}
+	\begin{itemize}
+		\item \texttt{public static <type de retour> <nom> (<type param1> <nom param1>, …)}
+		\item \texttt{return} pour renvoyer valeur (exécution méthode cesse)
+		\item \texttt{void} pour indiquer absence de retour
+	\end{itemize}
+	\begin{block}{Exemple}
+		\begin{lstlisting}
+public static int weightedSum (int a, int b, 
+      int w1, int w2) {
+	return a * w1 + b * w2;
+}
+public static void useWeightedSum () {
+	int result = weightedSum(3, 4, 5, 6);
+}
+		\end{lstlisting}	
+	\end{block}
+	Valeur de \texttt{result} ? \pause \texttt{39}
+\end{frame}
+
+\end{document}
+
+\appendix
+\makeatletter
+\def\insertframenumber{\@roman\c@framenumber}
+\def\inserttotalframenumber{\@roman\c@framenumber}
+\makeatother
+\AtBeginSection{
+}
+
+\clearpage\pdfbookmark{License}{License}
+\begin{frame}[plain]
+	\frametitle{License}
+	This presentation, and the associated \LaTeX{} code, are published under the \href{http://opensource.org/licenses/MIT}{MIT license}. Feel free to reuse (parts of) the presentation, under condition that you cite the author.
+	
+	Credits are to be given to \href{http://www.lamsade.dauphine.fr/~ocailloux/}{Olivier Cailloux}, Université Paris-Dauphine.
+\end{frame}
+\addtocounter{framenumber}{-1}
+\end{document}
+
+\begin{frame}
+	\frametitle{Title}
+	\begin{block}{Block}
+%		\setlength\abovedisplayskip{1 ex}% reduce space above equations
+		\begin{itemize}
+			\item Item
+		\end{itemize}
+	\end{block}
+	\begin{itemize}
+		\item Item
+	\end{itemize}
+\end{frame}
+

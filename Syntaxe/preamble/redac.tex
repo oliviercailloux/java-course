@@ -1,0 +1,155 @@
+%Requires package xcolor.
+\newcommand{\commentOC}[1]{\textcolor{blue}{\small$\big[$OC: #1$\big]$}}
+%Requires package babel and option [french]. According to babel doc, need two braces around \selectlanguage to make the changes really local.
+\newcommand{\commentOCf}[1]{\textcolor{blue}{{\small\selectlanguage{french}$\big[$OC : #1$\big]$}}}
+\newcommand{\commentYM}[1]{\textcolor{red}{\small$\big[$YM: #1$\big]$}}
+\newcommand{\commentYMf}[1]{\textcolor{red}{{\small\selectlanguage{french}$\big[$YM : #1$\big]$}}}
+
+%I find these settings useful in draft mode. Should be removed for final versions.
+\nottoggle{LCpres}{
+	%Which line breaks are chosen: accept worse lines, therefore reducing risk of overfull lines. Default = 200.
+		\tolerance=2000
+	%Accept overfull hbox up to...
+		\hfuzz=2cm
+	%Reduces verbosity about the bad line breaks.
+		\hbadness 5000
+	%Reduces verbosity about the underful vboxes.
+		\vbadness=1300
+}{
+}
+
+\bibliographystyle{abbrvnat}
+
+%https://tex.stackexchange.com/a/467188 - uncomment if one of those symbols is used.
+%\DeclareFontFamily{U} {MnSymbolD}{}
+%\DeclareFontShape{U}{MnSymbolD}{m}{n}{
+%  <-6> MnSymbolD5
+%  <6-7> MnSymbolD6
+%  <7-8> MnSymbolD7
+%  <8-9> MnSymbolD8
+%  <9-10> MnSymbolD9
+%  <10-12> MnSymbolD10
+%  <12-> MnSymbolD12}{}
+%\DeclareFontShape{U}{MnSymbolD}{b}{n}{
+%  <-6> MnSymbolD-Bold5
+%  <6-7> MnSymbolD-Bold6
+%  <7-8> MnSymbolD-Bold7
+%  <8-9> MnSymbolD-Bold8
+%  <9-10> MnSymbolD-Bold9
+%  <10-12> MnSymbolD-Bold10
+%  <12-> MnSymbolD-Bold12}{}
+%\DeclareSymbolFont{MnSyD} {U} {MnSymbolD}{m}{n}
+%\DeclareMathSymbol{\ntriplesim}{\mathrel}{MnSyD}{126}
+%\DeclareMathSymbol{\nlessgtr}{\mathrel}{MnSyD}{192}
+%\DeclareMathSymbol{\ngtrless}{\mathrel}{MnSyD}{193}
+%\DeclareMathSymbol{\nlesseqgtr}{\mathrel}{MnSyD}{194}
+%\DeclareMathSymbol{\ngtreqless}{\mathrel}{MnSyD}{195}
+%\DeclareMathSymbol{\nlesseqgtrslant}{\mathrel}{MnSyD}{198}
+%\DeclareMathSymbol{\ngtreqlessslant}{\mathrel}{MnSyD}{199}
+%\DeclareMathSymbol{\npreccurlyeq}{\mathrel}{MnSyD}{228}
+%\DeclareMathSymbol{\nsucccurlyeq}{\mathrel}{MnSyD}{229}
+
+%03B3 Greek Small Letter Gamma
+\newunicodechar{γ}{\gamma}
+%03B4 Greek Small Letter Delta
+\newunicodechar{δ}{\delta}
+%2115 Double-Struck Capital N
+\newunicodechar{ℕ}{\mathbb{N}}
+%211D Double-Struck Capital R
+\newunicodechar{ℝ}{\mathbb{R}}
+%21CF Rightwards Double Arrow with Stroke
+\newunicodechar{⇏}{\nRightarrow}
+%21D2 Rightwards Double Arrow
+\newunicodechar{⇒}{\Rightarrow}
+%21D4 Left Right Double Arrow
+\newunicodechar{⇔}{\Leftrightarrow}
+%21DD Rightwards Squiggle Arrow
+\newunicodechar{⇝}{\rightsquigarrow}
+%2212 Minus Sign
+\newunicodechar{−}{\ifmmode{-}\else\textminus\fi}
+%2227 Logical And
+\newunicodechar{∧}{\land}
+%2228 Logical Or
+\newunicodechar{∨}{\lor}
+%2229 Intersection
+\newunicodechar{∩}{\cap}
+%222A Union
+\newunicodechar{∪}{\cup}
+%2260 Not Equal To (handy also as text in informal writing)
+\newunicodechar{≠}{\ensuremath{\neq}}
+%2264 Less-Than or Equal To
+\newunicodechar{≤}{\leq}
+%2265 Greater-Than or Equal To
+\newunicodechar{≥}{\geq}
+%2270 Neither Less-Than nor Equal To
+\newunicodechar{≰}{\nleq}
+%2271 Neither Greater-Than nor Equal To
+\newunicodechar{≱}{\ngeq}
+%2272 Less-Than or Equivalent To
+\newunicodechar{≲}{\lesssim}
+%2273 Greater-Than or Equivalent To
+\newunicodechar{≳}{\gtrsim}
+%2274 Neither Less-Than nor Equivalent To – also, from MnSymbol: \nprecsim, a more exact match to the Unicode symbol; and \npreccurlyeq, too small
+\newunicodechar{≴}{\not\preccurlyeq}
+%2275 Neither Greater-Than nor Equivalent To
+\newunicodechar{≵}{\not\succcurlyeq}
+%2279 Neither Greater-Than nor Less-Than – requires MnSymbol; also \nlessgtr from txfonts/pxfonts, \ngtreqless from MnSymbol (but much higher), \ngtrless from MnSymbol (a more exact match to the Unicode symbol); for incomparability (not matching this Unicode symbol), may also consider \ntriplesim from MnSymbol,\nparallelslant from fourier, \between from mathabx, or ⋈
+\newunicodechar{≹}{\ngtreqlessslant}
+%227A Precedes
+\newunicodechar{≺}{\prec}
+%227B Succeeds
+\newunicodechar{≻}{\succ}
+%227C Precedes or Equal To
+\newunicodechar{≼}{\preccurlyeq}
+%227D Succeeds or Equal To
+\newunicodechar{≽}{\succcurlyeq}
+%227E Precedes or Equivalent To
+\newunicodechar{≾}{\precsim}
+%227F Succeeds or Equivalent To
+\newunicodechar{≿}{\succsim}
+%2280 Does Not Precede
+\newunicodechar{⊀}{\nprec}
+%2281 Does Not Succeed
+\newunicodechar{⊁}{\nsucc}
+%22B2 Normal Subgroup Of – \triangleleft is too small compared to \trianglelefteq and the like
+\newunicodechar{⊲}{\lhd}
+%22B3 Contains as Normal Subgroup
+\newunicodechar{⊳}{\rhd}
+%22B4 Normal Subgroup of or Equal To
+\newunicodechar{⊴}{\trianglelefteq}
+%22B5 Contains as Normal Subgroup or Equal To
+\newunicodechar{⊵}{\trianglerighteq}
+%22C8 Bowtie
+\newunicodechar{⋈}{\bowtie}
+%22EA Not Normal Subgroup Of
+\newunicodechar{⋪}{\ntriangleleft}
+%22EB Does Not Contain As Normal Subgroup
+\newunicodechar{⋫}{\ntriangleright}
+%22EC Not Normal Subgroup of or Equal To
+\newunicodechar{⋬}{\ntrianglelefteq}
+%22ED Does Not Contain as Normal Subgroup or Equal
+\newunicodechar{⋭}{\ntrianglerighteq}
+%25A1 White Square
+\newunicodechar{□}{\Box}
+%27E6 Mathematical Left White Square Bracket – there’s also \llbracket from stmaryrd
+\newunicodechar{⟦}{\text{\textlbrackdbl}}
+%27E7 Mathematical Right White Square Bracket – there’s also \rrbracket from stmaryrd
+\newunicodechar{⟧}{\text{\textrbrackdbl}}
+%27FC Long Rightwards Arrow from Bar
+\newunicodechar{⟼}{\longmapsto}
+%2AB0 Succeeds Above Single-Line Equals Sign
+\newunicodechar{⪰}{\succeq}
+%301A Left White Square Bracket
+\newunicodechar{〚}{\textlbrackdbl}
+%301B Right White Square Bracket
+\newunicodechar{〛}{\textrbrackdbl}
+%→ is defined by default as \textrightarrow, which is invalid in math mode. Same thing for the three other commands. I redefine those four using \DeclareUnicodeCharacter instead of \newunicodechar because the latter warns about the previous definition.
+%→ Rightwards Arrow
+\DeclareUnicodeCharacter{2192}{\ifmmode\rightarrow\else\textrightarrow\fi}
+%¬ Not Sign
+\DeclareUnicodeCharacter{00AC}{\ifmmode\lnot\else\textlnot\fi}
+%… Horizontal Ellipsis
+\DeclareUnicodeCharacter{2026}{\ifmmode\dots\else\textellipsis\fi}
+%× Multiplication Sign
+\DeclareUnicodeCharacter{00D7}{\ifmmode\times\else\texttimes\fi}
+

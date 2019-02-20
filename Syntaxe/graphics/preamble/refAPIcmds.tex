@@ -1,0 +1,86 @@
+
+\newbool{refAPIIsAnnotation}
+\newbool{refAPIDisplayFull}
+\newbool{refAPIOmitFQName}
+\pgfkeys{
+	/refAPI/.is family,
+	/refAPI/.cd,
+	base url/.estore in = \refAPIBaseUrl,
+	@/.is if = refAPIIsAnnotation,
+	full/.is if = refAPIDisplayFull,
+	omitfqname/.is if = refAPIOmitFQName,
+	prefix/.store in = \refAPIPrefix,
+	suffix/.estore in = \refAPISuffix,
+	default/.style = {
+		base url = ,
+		@ = false,
+		full = false,
+		omitfqname = false,
+		prefix = \texttt,
+		suffix = ,
+	},
+}
+
+%Usage: \refAPIParseRef{javax.persistence/EntityManager} ; \refAPIParseRef{javax.persistence/PersistenceContextType\#EXTENDED}
+%Defines: \refAPIFQName (before #) ; \refAPIFieldFull (after #) ; \refAPIFieldShort (after # and before -) ; \refAPIPackageSlashes (FQName before / with slashes instead of dots) ; \refAPIClass (FQName after /)
+\newcommand{\refAPIParseRef}[1]{%
+	\IfSubStr{#1}{\#}{%
+		\StrBefore{#1}{\#}[\refAPIFQName]%
+		\StrBehind{#1}{\#}[\refAPIFieldFull]%
+	}{%
+		\edef\refAPIFQName{#1}%
+		\edef\refAPIFieldFull{}%
+	}%
+	\IfSubStr{\refAPIFieldFull}{-}{%
+		\StrBefore{\refAPIFieldFull}{-}[\refAPIFieldShort]%
+	}{%
+		\edef\refAPIFieldShort{\refAPIFieldFull}%
+	}%
+	\StrBefore{\refAPIFQName}{/}[\refAPIPackage]%
+	\StrBehind{\refAPIFQName}{/}[\refAPIClass]%
+	\StrSubstitute{\refAPIPackage}{.}{/}[\refAPIPackageSlashes]%
+}
+
+%Usage: \jeeref{javax.persistence/EntityManager} ; \jeeref[@]{javax.persistence/PersistenceContextType\#EXTENDED}
+\newcommand{\jeeref}[2][]{\refAPIParseRef{#2}\jrefAPI{base url = https://docs.oracle.com/javaee/7/api/, #1}}
+\newcommand{\jseref}[2][]{\refAPIParseRef{#2}\jrefAPI{base url = https://docs.oracle.com/javase/8/docs/api/, #1}}
+\newcommand{\jsftag}[2][]{\refAPIParseRef{#2}\jrefAPI{base url = https://docs.oracle.com/javaee/7/javaserver-faces-2-2/vdldocs-facelets/, full, prefix=:, #1}}
+%Standard HTML RenderKit : https://docs.oracle.com/javaee/7/javaserver-faces-2-2/renderkitdocs/HTML_BASIC/javax.faces.Inputjavax.faces.Text.html
+
+%Accepts keys: @, prefix, suffix. Requires key: base url. Expects defined: \refAPIField ; \refAPIPackageSlashes ; \refAPIClass
+%Usage: \texttt{"Hello".\jseref[omitfqname]{java.lang/String\#substring-int-int-}(1, 3);}
+\newcommand{\jrefAPI}[1]{%
+	\pgfkeys{/refAPI/.cd, default, #1}%
+	\ifbool{refAPIIsAnnotation}{%
+		\edef\refAPIAnnot{@}%
+	}{%
+		\edef\refAPIAnnot{}%
+	}%
+	\IfEq{\refAPIFieldFull}{}{%
+		{%
+			\ifbool{refAPIDisplayFull}{%
+				\refAPIPackage%
+			}{%
+			}%
+			\refAPIPrefix{%
+			\href{%
+				\refAPIBaseUrl\refAPIPackageSlashes/\refAPIClass.html%
+			}{%
+				\refAPIAnnot\refAPIClass%
+			}%
+		}\refAPISuffix}%
+	}{%
+		{\refAPIPrefix{%
+			\ifbool{refAPIOmitFQName}{%
+			}{%
+				\refAPIAnnot\refAPIClass.%
+			}%
+			\href{%
+				\refAPIBaseUrl\refAPIPackageSlashes/\refAPIClass.html\#\refAPIFieldFull%
+			}{%
+				\refAPIFieldShort%
+			}%
+		}\refAPISuffix}%
+	}%
+}
+

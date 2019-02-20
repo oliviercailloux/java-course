@@ -1,0 +1,28 @@
+\newcommand{\R}{ℝ}
+\newcommand{\N}{ℕ}
+%\mathscr is rounder than \mathcal.
+\newcommand{\powerset}[1]{\mathscr{P}(#1)}
+%Powerset without zero.
+\newcommand{\powersetz}[1]{\mathscr{P}^*(#1)}
+%https://tex.stackexchange.com/a/45732, works within both \set and \set*, same spacing than \mid (https://tex.stackexchange.com/a/52905).
+\newcommand{\suchthat}{\;\ifnum\currentgrouptype=16 \middle\fi|\;}
+%Integer interval.
+\newcommand{\intvl}[1]{⟦#1⟧}
+%Allows for \abs and \abs*, which resizes the delimiters.
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}
+\DeclarePairedDelimiter\card{\lvert}{\rvert}
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}
+%Better than using the package braket because braket introduces possibly undesirable space. Then: \begin{equation}\set*{x \in \R^2 \suchthat \norm{x}<5}\end{equation}.
+\DeclarePairedDelimiter\set{\{}{\}}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+%We want the straight form of \phi for mathematics, as recommended in UTR #25: Unicode support for mathematics, and thus use \phi for the mathematical symbol and not \varphi; and similarly \epsilon is preferred to \varepsilon for the mathematical symbol.
+
+%The amssymb solution.
+%\newcommand{\restr}[2]{{#1}_{\restriction #2}}
+%Another acceptable solution.
+%\newcommand{\restr}[2]{{#1|}_{#2}}
+%https://tex.stackexchange.com/a/278631; drawback being that sometimes the text collides with the line below.
+\newcommand\restr[2]{#1\raisebox{-.5ex}{$|$}_{#2}}
+

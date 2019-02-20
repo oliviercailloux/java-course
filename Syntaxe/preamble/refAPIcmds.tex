@@ -1,0 +1,92 @@
+\usepackage{xstring}
+\usepackage{pgffor}
+%Thx https://tex.stackexchange.com/a/34318
+%Defines: \refAPIFQName (before #) ; \refAPIFieldFull (after #) ; \refAPIFieldShort (after # and before -) ; \refAPIPackageSlashes (FQName before / with slashes instead of dots) ; \refAPIClass (FQName after /)
+%Usage: \texttt{"Hello".\jseref[omitfqname]{java.lang/String\#substring-int-int-}(1, 3);}
+%{javax.persistence/EntityManager}
+%[@]{javax.persistence/PersistenceContextType\#EXTENDED}
+\newcommand{\jrefAPI}[2][]{%
+	\pgfkeys{/refAPI/.cd, default, #1}%
+	\IfSubStr{#2}{\#}{%
+		\StrBefore{#2}{\#}[\refAPIFQName]%
+		\StrBehind{#2}{\#}[\refAPIFieldFull]%
+	}{%
+		\edef\refAPIFQName{#2}%
+		\edef\refAPIFieldFull{}%
+	}%
+	\IfSubStr{\refAPIFieldFull}{-}{%
+		\StrBefore{\refAPIFieldFull}{-}[\refAPIFieldShort]%
+	}{%
+		\edef\refAPIFieldShort{\refAPIFieldFull}%
+	}%
+	\StrBefore{\refAPIFQName}{/}[\refAPIPackage]%
+	\StrBehind{\refAPIFQName}{/}[\refAPIClass]%
+	\StrSubstitute{\refAPIPackage}{.}{/}[\refAPIPackageSlashes]%
+	\ifbool{refAPIIsAnnotation}{%
+		\edef\refAPIAnnot{@}%
+	}{%
+		\edef\refAPIAnnot{}%
+	}%
+	\IfEq{\refAPIFieldFull}{}{%
+		{%
+			\ifbool{refAPIDisplayFull}{%
+				\refAPIPackage%
+			}{%
+			}%
+			\refAPIPrefix{%
+			\href{%
+				\refAPIBaseUrl\refAPIPackageSlashes/\refAPIClass.html%
+			}{%
+				\refAPIAnnot\refAPIClass%
+			}%
+		}\refAPISuffix}%
+	}{%
+		{\refAPIPrefix{%
+			\ifbool{refAPIOmitFQName}{%
+			}{%
+				\refAPIAnnot\refAPIClass.%
+			}%
+			\href{%
+				\refAPIBaseUrl\refAPIPackageSlashes/\refAPIClass.html\#\refAPIFieldFull%
+			}{%
+				\refAPIFieldShort%
+			}%
+		}\refAPISuffix}%
+	}%
+%	\refAPIPrintAll%
+}
+
+\newcommand{\refAPIPrintAll}{%
+	\begin{description}
+		\item[BaseUrl] \foreach \sfx in {BaseUrl}{\csname refAPI\sfx\endcsname}
+		\foreach \sfx in {FQName, FieldFull, FieldShort, Package, Class, PackageSlashes}{\item[\sfx] \csname refAPI\sfx\endcsname}
+	\end{description}%
+}
+
+\newbool{refAPIIsAnnotation}
+\newbool{refAPIDisplayFull}
+\newbool{refAPIOmitFQName}
+\pgfkeys{
+	/refAPI/.is family,
+	/refAPI/.cd,
+	base url/.estore in = \refAPIBaseUrl,
+	@/.is if = refAPIIsAnnotation,
+	full/.is if = refAPIDisplayFull,
+	omitfqname/.is if = refAPIOmitFQName,
+	prefix/.store in = \refAPIPrefix,
+	suffix/.estore in = \refAPISuffix,
+	default/.style = {
+		base url = ,
+		@ = false,
+		full = false,
+		omitfqname = false,
+		prefix = \texttt,
+		suffix = ,
+	},
+}
+
+\newcommand{\jeeref}[2][]{\jrefAPI[#1, base url = https://docs.oracle.com/javaee/7/api/]{#2}}
+\newcommand{\jseref}[2][]{\jrefAPI[#1, base url = https://docs.oracle.com/javase/8/docs/api/]{#2}}
+%Standard HTML RenderKit : https://docs.oracle.com/javaee/7/javaserver-faces-2-2/renderkitdocs/HTML_BASIC/javax.faces.Inputjavax.faces.Text.html
+%\newcommand{\jsftag}[2][]{\jrefAPI{base url = https://docs.oracle.com/javaee/7/javaserver-faces-2-2/vdldocs-facelets/, full, prefix=:, #1}}
+

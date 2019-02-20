@@ -1,0 +1,23 @@
+%this approach does not generalize to multipart nodes.
+%\tikzset{/uml/interface/.style={rectangle, draw, fill=yellow!20, align=left, node font=\fontspec{Latin Modern Mono Light}, node contents={$<<$interface$>>$\\\textbf{#1}}, name=#1
+%}}
+%this approach does not apply for <<interface>>. Never mind, I’ll do it manually, as I can’t find anything better. Use: \nodepart[font=]{one} \small <<interface>>\\\bfseries ItemDAO
+\tikzset{/uml/class/.style={rectangle, draw, align=center, fill=yellow!20, node font=\fontspec{Latin Modern Mono Light}, font=\bfseries
+}}
+\tikzset{/uml/abstract class/.style={rectangle, draw, align=center, fill=yellow!20, node font=\fontspec{Latin Modern Mono Light}, font=\bfseries\itshape
+}}
+\tikzset{/uml/class3/.style={
+rectangle split, rectangle split every empty part={}, rectangle split parts=3, rectangle split part align={center, left, left}, draw, fill=yellow!20, rectangle split empty part height=0, node font=\fontspec{Latin Modern Mono Light}, every one node part/.style={font=\bfseries, align=center}, every two node part/.style={align=left}, every three node part/.style={align=left}
+}}
+\tikzset{/uml/extends/.style={draw, -open triangle 45}}
+\tikzset{/uml/implements/.style={draw, -open triangle 45, dashed}}
+%prefix= used to cancel \texttt, otherwise this cancels the effect of the font selection \fontspec{Latin Modern Mono Light}, and thus renders \bfseries inoperant. With prefix=, the result is correct.
+%\jeeref[prefix=]{javax.faces.component.html/HtmlCommandButton}\\
+\tikzset{/uml/table/.style={rectangle, draw, align=center, fill=blue!20, node font=\fontspec{Latin Modern Mono Light}, font=\bfseries
+}}
+\tikzset{/uml/table2/.style={
+rectangle split, rectangle split every empty part={}, rectangle split parts=2, rectangle split part align={center, left}, draw, fill=blue!20, rectangle split empty part height=0, node font=\fontspec{Latin Modern Mono Light}, every one node part/.style={font=\bfseries, align=center}, every two node part/.style={align=left}
+}}
+\tikzset{/uml/dbkey/.style={draw, ->}}
+%http://tex.stackexchange.com/questions/79781/placing-anchor-before-and-after-text-in-multipart-rectangle
+
