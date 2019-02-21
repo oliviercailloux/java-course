@@ -6,7 +6,7 @@
 The entry page of the course about Java in L3.
 
 == Prerequisites
-You know algorithmics and the basic (non object-oriented) programming concepts in Java. If you have followed an algorithmics course with illustrations and exercices in Java, you satisfy the prerequisites.
+You know algorithmics and the basic programming concepts in Java. If you have followed an algorithmics course with illustrations and exercices in Java, you satisfy the prerequisites.
 
 == Abbreviations
 
