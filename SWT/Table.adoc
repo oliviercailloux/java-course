@@ -54,6 +54,6 @@ I recommend to use the more flexible and more recent API that involves table col
 As an alternative way of supporting edition, use a cell modifier. It uses column properties, text strings that identifies columns and that also are set on the viewer itself.
 
 == See also
-* Vogella’s http://www.vogella.com/tutorials/EclipseJFaceTable/article.html[introduction] to JFace and Table
-* Vogella’s http://www.vogella.com/tutorials/EclipseJFaceTableAdvanced/article.html[tricks] for JFace and Table
+* Vogella’s https://www.vogella.com/tutorials/EclipseJFaceTable/article.html[introduction] to JFace and Table
+* Vogella’s https://www.vogella.com/tutorials/EclipseJFaceTableAdvanced/article.html[tricks] for JFace and Table
 

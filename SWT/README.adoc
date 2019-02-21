@@ -82,7 +82,7 @@ Further notes:
 === Overview links
 * Platform Plug-in Developer Guide > Programmer's Guide > http://help.eclipse.org/oxygen/index.jsp?topic=/org.eclipse.platform.doc.isv/guide/swt.htm[The Standard Widget Toolkit]
 * Platform Plug-in Developer Guide > Programmer's Guide > http://help.eclipse.org/oxygen/index.jsp?topic=/org.eclipse.platform.doc.isv/guide/jface.htm[The JFace UI framework]
-* Vogella’s http://www.vogella.com/tutorials/SWT/article.html[SWT] and http://www.vogella.com/tutorials/EclipseJFace/article.html[JFace] overview articles (and http://www.vogella.com/tutorials/eclipse.html[more])
+* Vogella’s https://www.vogella.com/tutorials/SWT/article.html[SWT] and https://www.vogella.com/tutorials/EclipseJFace/article.html[JFace] overview articles (and https://www.vogella.com/tutorials/eclipse.html[more])
 * Understanding Layouts in SWT http://www.eclipse.org/articles/article.php?file=Article-Understanding-Layouts/index.html[article]
 
 === Links by topic

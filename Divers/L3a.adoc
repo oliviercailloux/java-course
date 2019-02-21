@@ -311,7 +311,7 @@ Links taken from the https://www.edx.org/course/introduction-to-biology-the-secr
 
 * MCQs constitute 20 to 30% of the CC grade.
 * A better String Comparator.
-* http://www.vogella.com/tutorials/JUnit/article.html[Unit testing]
+* https://www.vogella.com/tutorials/JUnit/article.html[Unit testing]
 * Project: Resources (cf. Best Practices, https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Resources.adoc[Resources])
 
 * Implement a class `EasyMap` with two methods: a method that puts a pair of key and value of your choice into a map, and a method that returns an Optional containing the value corresponding to the given key (parameter of the method) or that returns an empty Optional if there is no such value.

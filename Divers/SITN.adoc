@@ -75,7 +75,7 @@ https://classroom.github.com/a/ygd_Ydml[Devoir] : un projet Maven, bien configur
 * Fail-fast, exceptions, Optional. See https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Null.adoc[illustration].
 * https://github.com/oliviercailloux/java-course/blob/master/Log/README.adoc[Log]
 * Usage de git en équipe : dépôt propre ; ignore ; formattage & imports
-* http://www.vogella.com/tutorials/JUnit/article.html[Tests unitaires]
+* https://www.vogella.com/tutorials/JUnit/article.html[Tests unitaires]
 * https://github.com/oliviercailloux/java-course/blob/master/DevOps/CI.adoc[Travis CI]
 //https://education.github.community/t/using-travis-on-private-repos-for-student-assignments/24183
 * https://github.com/oliviercailloux/java-course/raw/master/Annotations/presentation.pdf[Annotations]

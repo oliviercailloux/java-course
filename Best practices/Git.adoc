@@ -9,7 +9,7 @@ https://github.com/oliviercailloux/test-call-xmcda-ws[Example]
 == No transformed products
 Some files are automatically deductible (translatable) from others. For example, compiled versions of source code. Do not put the transformed versions in your repository.
 
-Tell git to ignore those files: create a `.gitignore` file with content (for example): `*.class`. (See Vogella’s http://www.vogella.com/tutorials/Git/article.html#ignoring-files-and-directories-with-a-.gitignore-file[tutorial], official https://git-scm.com/docs/gitignore[doc].)
+Tell git to ignore those files: create a `.gitignore` file with content (for example): `*.class`. (See Vogella’s https://www.vogella.com/tutorials/Git/article.html#ignoring-files-and-directories-with-a-.gitignore-file[tutorial], official https://git-scm.com/docs/gitignore[doc].)
 
 Why?
 

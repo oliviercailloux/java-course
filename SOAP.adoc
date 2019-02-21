@@ -72,7 +72,7 @@ The spec defines how SOAP may be used for Remote Procedure Calls (RPCs).
 
 * W3C https://www.w3.org/TR/soap/[SOAP] recommendation
 * W3C https://www.w3.org/TR/2007/REC-soap12-part0-20070427/[SOAP primer] (I recommend it, it’s clear and short)
-* Web Services Interoperability (WS-I) http://www.ws-i.org/deliverables/workinggroup.aspx?wg=basicprofile[Basic Profile] (BP) clarifies and modifies SOAP and related specifications to promote interoperability.
+* Web Services Interoperability (http://www.ws-i.org/[WS-I]) Basic Profile (BP) clarifies and modifies SOAP and related specifications to promote interoperability.
 
 == Supplementary details
 
