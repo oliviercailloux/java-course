@@ -159,7 +159,7 @@
 	\frametitle{Programmation défensive}
 	\begin{itemize}
 		\item Aider les utilisateurs imprudents
-		\item Si précondition non satisfaite : le faire savoir
+		\item Échec rapide si précondition non satisfaite
 		\item En pratique : tester les préconditions en entrée de sous-routine {\tiny (sauf si très couteux en temps)}
 	\end{itemize}
 \end{frame}
@@ -168,7 +168,7 @@
 	\frametitle{Programmation prudente}
 	\begin{itemize}
 		\item Tester vos déductions à des endroits cruciaux 
-		\item Échec si non valide
+		\item Échec rapide si non valide
 		\item Exemple : je sais qu’ici telle valeur devrait être positive
 	\end{itemize}
 \end{frame}
@@ -224,11 +224,15 @@
 	\frametitle{Choix du type d’exception}
 	\begin{itemize}
 		\item Programmation défensive : interruption pour cause de précondition violée
-		\item Programmation prudente : interruption pour cause d’erreur de déduction détectée (assertion violée)
 	\end{itemize}
 	\begin{description}%[\texttt{IllegalArgumentException}]
 		\item[\texttt{IllegalArgumentException}] L’utilisateur vous fournit un argument incorrect (exemple : précondition chaîne non vide violée)
 		\item[\texttt{IllegalStateException}] L’utilisateur appelle votre sous-routine alors que l’état de votre programme ne le permet pas (exemple : précondition appel préalable d’une autre sous-routine violée)
+	\end{description}
+	\begin{itemize}
+		\item Programmation prudente : interruption pour cause d’erreur de déduction détectée (assertion violée)
+	\end{itemize}
+	\begin{description}
 		\item[\texttt{AssertionError}] Vous détectez une erreur de logique dans votre programme (exemple : une valeur devrait être paire à une certaine étape de calcul mais ne l’est pas)
 	\end{description}
 \end{frame}
