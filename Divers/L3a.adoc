@@ -118,7 +118,7 @@ Links taken from the https://www.edx.org/course/introduction-to-biology-the-secr
 
 *Lecture*
 
-* https://www.youtube.com/watch?v=lcYkOh4nweE&t=1m22s[Mars Climate Orbiter] (1m22 to 5m18; small mistake in the video: it’s Newton times second, not Newton force per second; see also https://en.wikipedia.org/wiki/Mars_Climate_Orbiter[Wikipedia])
+* https://www.youtube.com/watch?v=lcYkOh4nweE&t=1m21s[Mars Climate Orbiter] (1m21 to 5m18; small mistake in the video: it’s Newton times second, not Newton force per second; see also https://en.wikipedia.org/wiki/Mars_Climate_Orbiter[Wikipedia])
 * Marks; two methods for EE36
 * https://github.com/oliviercailloux/java-course/blob/master/Git/README.adoc[Git] & exercices
 * Two major principles of software engineering: https://github.com/oliviercailloux/java-course/raw/master/Contrat/presentation.pdf[contract] and fail-fast.
