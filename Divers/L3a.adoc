@@ -118,6 +118,7 @@ Links taken from the https://www.edx.org/course/introduction-to-biology-the-secr
 
 *Lecture*
 
+* https://www.youtube.com/watch?v=lcYkOh4nweE&t=1m22s[Mars Climate Orbiter] (1m22 to 5m18; small mistake in the video: it’s Newton times second, not Newton force per second; see also https://en.wikipedia.org/wiki/Mars_Climate_Orbiter[Wikipedia])
 * Marks; two methods for EE36
 * https://github.com/oliviercailloux/java-course/blob/master/Git/README.adoc[Git] & exercices
 * Two major principles of software engineering: https://github.com/oliviercailloux/java-course/raw/master/Contrat/presentation.pdf[contract] and fail-fast.
@@ -133,7 +134,7 @@ Links taken from the https://www.edx.org/course/introduction-to-biology-the-secr
 *Todo*
 
 * Your GitHub username and git “User Name” must be identical.
-* https://classroom.github.com/a/aiweSTSU[Git] (marked /10): use this repository (created when you accept the homework) at the last step of the git exercices above, connect your local repository to it, and so on (follow the instructions in the exercice).
+* https://classroom.github.com/a/aiweSTSU[Git] (marked /10): use this repository (created when you accept the homework) at the last step of the git exercices above _instead of creating a new remote remository RG_. Connect your local repository R1 to it, and keep on following the instructions in the exercice.
 * Read all the Workbench User Guide, Basic Tutorial, see https://github.com/oliviercailloux/java-course/blob/master/Tools.adoc#eclipse[Eclipse] doc [I]
 * Read the Important part, above
 * http://math.hws.edu/eck/cs124/javanotes7/c4/quiz.html[EQ4]
