@@ -114,23 +114,26 @@ Links taken from the https://www.edx.org/course/introduction-to-biology-the-secr
 * Indicate your GitHub username on https://mycourse.dauphine.fr/webapps/blackboard/execute/launcher?type=Course&id=_42475_1[MyCourse].
 
 [[S2]]
-=== S2
+=== S2 (Thursday 14th of March, 2019)
 
 *Lecture*
 
 * Marks; two methods for EE36
+* https://github.com/oliviercailloux/java-course/blob/master/Git/README.adoc[Git] & exercices
 * Two major principles of software engineering: https://github.com/oliviercailloux/java-course/raw/master/Contrat/presentation.pdf[contract] and fail-fast.
-* Mechanisms: interface; black box; preconditions and postconditions; javadoc; exceptions
+** Mechanisms: interface; black box; preconditions and postconditions; javadoc; exceptions
 
 *Material and going beyond*
 
 * https://tutorial.djangogirls.org/en/intro_to_command_line/[Introduction] to the terminal
 * http://math.hws.edu/eck/cs124/javanotes7/c3/[ES3.7] (except 3.7.3), http://math.hws.edu/eck/cs124/javanotes7/c4/[4 intro] to 4.7.
 * ES4.3 intro to 4.3.2, 4.6.1 [I]
+* Javadoc: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours3.pdf[Airiau C3], p. 12 to 19.
 
 *Todo*
 
-* Git exercices (local part only)
+* Your GitHub username and git “User Name” must be identical.
+* https://classroom.github.com/a/aiweSTSU[Git] (marked /10): use this repository (created when you accept the homework) at the last step of the git exercices above, connect your local repository to it, and so on (follow the instructions in the exercice).
 * Read all the Workbench User Guide, Basic Tutorial, see https://github.com/oliviercailloux/java-course/blob/master/Tools.adoc#eclipse[Eclipse] doc [I]
 * Read the Important part, above
 * http://math.hws.edu/eck/cs124/javanotes7/c4/quiz.html[EQ4]
@@ -139,10 +142,6 @@ Links taken from the https://www.edx.org/course/introduction-to-biology-the-secr
 === S3
 *Lecture*
 
-* Git, remote
-* Contract and fail-fast (second part).
-** Javadoc: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours4.pdf[Airiau C4], p. 18 to 25.
-* Your GitHub username and git “User Name” must be identical.
 * https://github.com/oliviercailloux/java-course/blob/master/Class%20path/README.adoc[class path] (packages, classes and directories).
 
 *Material and going beyond*
