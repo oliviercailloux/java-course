@@ -80,7 +80,7 @@ A sub-element of `port` gives the SOAP HTTP address to use to call the SOAP web 
 [[refs]]
 == Refs
 * W3C https://www.w3.org/TR/2001/NOTE-wsdl-20010315[WSDL 1.1] note; https://www.w3.org/Submission/2006/SUBM-wsdl11soap12-20060405/[WSDL 1.1 to SOAP 1.2] link-type
-* WSDL https://www.w3.org/standards/techs/wsdl[Current Status] on W3C
+* WSDL https://www.w3.org/TR/?title=wsdl[Specifications] on W3C
 * Web Services Interoperability (http://www.ws-i.org/[WS-I]) Basic Profile (BP) clarifies and modifies WSDL and related specifications to promote interoperability.
 //* BP 2.0 corrected http://ws-i.org/profiles/basic/1.1/wsdl-2004-08-24.xsd[WSDL schema] TODO check 2.0 or 1.1?
 
