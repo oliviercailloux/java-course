@@ -1,7 +1,8 @@
 = Planning
-:toc:
-:toc-placement: preamble
+:toc: preamble
 :sectanchors:
+//works around awesome_bot bug that used to be published at github.com/dkhamsing/awesome_bot/issues/182.
+:emptyattribute:
 
 The entry page of the course about Java in L3.
 
@@ -118,7 +119,7 @@ Links taken from the https://www.edx.org/course/introduction-to-biology-the-secr
 
 *Lecture*
 
-* https://www.youtube.com/watch?v=lcYkOh4nweE&t=1m21s[Mars Climate Orbiter] (1m21 to 5m18; small mistake in the video: it’s Newton times second, not Newton force per second; see also https://en.wikipedia.org/wiki/Mars_Climate_Orbiter[Wikipedia]; similarly http://www-users.math.umn.edu/~arnold/disasters/ariane.html[sad] https://www.youtube.com/watch?v=gp_D8r-2hwk[story])
+* https://www.youtube.com/watch?v=lcYkOh4nweE&t=1m21s[Mars Climate Orbiter] (1m21 to 5m18; small mistake in the video: it’s Newton times second, not Newton force per second; see also https://en.wikipedia.org/wiki/Mars_Climate_Orbiter[Wikipedia]; similarly http://www-users.math.umn.edu/~arnold/disasters/ariane.html[sad] https://www.youtube.com/watch?v=gp_D8r-2hwk[story]{emptyattribute})
 * Marks; two methods for EE36
 * https://github.com/oliviercailloux/java-course/blob/master/Git/README.adoc[Git] & exercices
 * Two major principles of software engineering: https://github.com/oliviercailloux/java-course/raw/master/Contrat/presentation.pdf[contract] and fail-fast.
@@ -143,6 +144,7 @@ Links taken from the https://www.edx.org/course/introduction-to-biology-the-secr
 === S3
 *Lecture*
 
+* Exceptions: checked and unchecked
 * https://github.com/oliviercailloux/java-course/blob/master/Class%20path/README.adoc[class path] (packages, classes and directories).
 
 *Material and going beyond*
