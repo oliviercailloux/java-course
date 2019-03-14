@@ -5,7 +5,7 @@
 
 Some exercices for git starters. The reader is supposed to know already the basics of git (see slides in this course).
 
-Hint: use the git Cheat sheets.
+Hint: use the git https://github.github.com/training-kit/[Cheat sheets].
 
 // https://graphviz.gitlab.io/_pages/doc/info/command.html
 // file:///home/olivier/Professions/Enseignement/java-course/Git/out.svg
