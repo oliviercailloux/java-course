@@ -8,8 +8,8 @@ See: https://raw.githubusercontent.com/oliviercailloux/java-course/master/Search
 
 == References
 
-* Oracle https://docs.oracle.com/javase/8/docs/technotes/tools/[tools]
-* https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html#getResource(java.lang.String)
+* Oracle docs: https://docs.oracle.com/en/java/javase/11/tools/main-tools-create-and-build-applications.html[Main Tools to Create and Build Applications]
+//* https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html#getResource(java.lang.String)
 
 == Modules
 If you want to go further, here are references about the module system. It is advisable to be familiar with the class path mechanism before delving in the module system.
@@ -21,4 +21,8 @@ If you want to go further, here are references about the module system. It is ad
 * https://stackoverflow.com/questions/46741907/what-is-an-automatic-module
 * https://stackoverflow.com/questions/43192741/how-should-i-name-my-java-9-module
 * More SO questions tagged https://stackoverflow.com/questions/tagged/java-module?sort=votes[java-module]
+
+//Note the contradiction in these two answers: https://stackoverflow.com/questions/48768879/how-to-access-resource-using-class-loader-in-java-9
+// Eclipse: Photon 4.9RC2 with Java 11 plugin. Maven: 3.5.0. compiler plugin: 3.8.0. surefire and failsafe: 2.22.0
+// See: https://logging.apache.org/log4j/2.0/log4j-slf4j-impl/
 
