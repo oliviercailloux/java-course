@@ -145,7 +145,7 @@ Links taken from the https://www.edx.org/course/introduction-to-biology-the-secr
 *Lecture*
 
 * Exceptions: checked and unchecked
-* https://github.com/oliviercailloux/java-course/blob/master/Class%20path/README.adoc[class path] (packages, classes and directories).
+* https://github.com/oliviercailloux/java-course/blob/master/Search%20path/README.adoc[search path] (packages, classes and directories).
 
 *Material and going beyond*
 
@@ -205,7 +205,6 @@ Links taken from the https://www.edx.org/course/introduction-to-biology-the-secr
 * Improve course for points (and prestige)
 ** Accepted improvement (or three spelling mistakes or typos): +1
 ** Impressive correction: 1 prestige point (in supplement)
-* A word about the https://github.com/oliviercailloux/java-course/blob/master/Class%20path/README.adoc[class path]
 * Java Interfaces and the Calculator example: replaceability and use as type
 * Inheritance: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours3.pdf[Airiau C3]
 * Generics and collections: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours6.pdf[Airiau C6]
