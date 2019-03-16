@@ -1,0 +1,24 @@
+= Search path
+
+The search path is the set of places where the JVM will look for your classes and other resources.
+
+Essentially two mechanisms are used: the class path and the module path. In this introduction we only explain the class path mechanism. It is anyway necessary to understand it in order to understand the (slightly more advanced) module path mechanism. Thus, the description here pretends that search path equals class path, although this is somewhat of an oversimplification.
+
+See: https://raw.githubusercontent.com/oliviercailloux/java-course/master/Search%20path/Pr%C3%A9sentation/presentation.pdf[Présentation], https://github.com/oliviercailloux/java-course/blob/master/Search%20path/Overview.adoc[Overview], https://github.com/oliviercailloux/java-course/blob/master/Search%20path/Exercices.adoc[Exercices], BP https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Resources.adoc[resources].
+
+== References
+
+* Oracle https://docs.oracle.com/javase/8/docs/technotes/tools/[tools]
+* https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html#getResource(java.lang.String)
+
+== Modules
+If you want to go further, here are references about the module system. It is advisable to be familiar with the class path mechanism before delving in the module system.
+
+* https://blog.codefx.org/java/java-module-system-tutorial/[Code-First Java Module System Tutorial] on https://blog.codefx.org/[Code FX], a general high-quality blog about Java
+* https://blog.codefx.org/java/java-9-resources-talks-articles-blogs-books-courses/[References] about Java 9 resources, on the same blog
+* https://www.manning.com/books/the-java-module-system[The Java Module System], a book written by Nicolai Parlog, the author of the said blog.
+* JRebel’s Java Platform Module System http://files.zeroturnaround.com/pdf/RebelLabs-Java-9-modules-cheat-sheet.pdf[Cheat Sheet]
+* https://stackoverflow.com/questions/46741907/what-is-an-automatic-module
+* https://stackoverflow.com/questions/43192741/how-should-i-name-my-java-9-module
+* More SO questions tagged https://stackoverflow.com/questions/tagged/java-module?sort=votes[java-module]
+

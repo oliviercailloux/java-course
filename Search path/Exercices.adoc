@@ -23,5 +23,5 @@
 * Run the program using a terminal, with `java`. Check that it says Hello twice.
 
 == Solution
-The https://github.com/oliviercailloux/java-course/tree/master/Class%20path/Solution/[solution] is available as a bash script and two folders containing the source code.
+The https://github.com/oliviercailloux/java-course/tree/master/Search%20path/Solution/[solution] is available as a bash script and two folders containing the source code.
 
