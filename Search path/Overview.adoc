@@ -4,11 +4,17 @@
 
 A short document that recalls the main points about the class path in Java.
 
+== Relative and absolute file names
+Here is a short reminded about relative and absolute file names. This is not specific to Java.
+
+* A file stored on your hard disk has an absolute name that locates it independently of the folder you stand currently in. For example: `/home/myuser/myprojectfolder/README.txt`. This example is plausible under Linux and macOS. Windows uses backslashes to separate path names and a different naming scheme, so an example would be `C:\Documents\myprojectfolder\README.txt`. Examples in this course follow the Linux-like naming.
+* Whenever you want to refer to some file, for example, when you type a command in a terminal, you may use its absolute name or its name relative to your current folder. For example, if you are in the folder `/home/myuser/`, the relative file name would be `myprojectfolder/README.txt`.
+
 == Source code
-* A class in package `a.b` and named `MyClass` has a full name `a.b.MyClass`: this is the non-ambiguous name by which you can access it (you rather usually use the short form `MyClass` and use an `import` statement in your code).
+* A class in package `a.b` and named `MyClass` has a fully qualified name `a.b.MyClass`: this is the non-ambiguous name by which you can access it (you rather usually use the short form `MyClass` and use an `import` statement in your code).
 * Your source code is stored in files with extension `.java`.
-* The example class above would be stored in the _file_ `a/b/MyClass.java`.
-* Do not mix up class name and source file name: the class name is the name by which the language knows your class; the source file name is the file where your code is stored.
+* The example class above would be stored in the _file_ whose name, relative to your source folder, would be `a/b/MyClass.java`. (Thus, the absolute name of the file could be `/home/myuser/myprojectfolder/src/a/b/MyClass.java`.)
+* Do not mix up the fully qualified class name and the source file name: the class name is the name by which the language knows your class; the source file name is the file where your code is stored. The first name is the one by which you reference the classes you use in your source code, the second one locates where the source is to be found. This separation permits to move your project without having to change your code.
 
 == Compiled code
 * From your source code, corresponding compiled code is created.
@@ -18,22 +24,24 @@ A short document that recalls the main points about the class path in Java.
 
 * The Java compiler starts from your source code files, for example, `a/b/MyClass.java`.
 * The Java compiler stores compiled files in files with extension `.class`.
-* The compiled files have names corresponding to the source files, for example, `a/b/MyClass.class`.
+* The compiled files have names corresponding to the source files, for example, `a/b/MyClass.class`, relative to your compiled files folder. Its absolute name could be `/home/myuser/myprojectfolder/bin/a/b/MyClass.class`.
 
-* To compile, use `javac` (see Oracle https://docs.oracle.com/javase/8/docs/technotes/tools/#basic[tools]{emptyattribute}).
-* Give it the names of the files to compile.
+* To compile, use https://docs.oracle.com/en/java/javase/11/tools/javac.html[`javac`].
+* Give it the names of the files to compile. And _not_ the fully qualified names of the classes to compile!
 * To compile a single class whose source code is in `a/b/MyClass.java`, you simply run: `javac "a/b/MyClass.java"`.
 
 == Class path
 * Sometimes, your class depends on other classes.
 * For example, `c.d.e.MySecondClass` depends on `a.b.MyFirstClass`.
 * The compiler must know where to find the referenced classes when it compiles the referencing class.
+* When the compiler searches for the class with fully qualified name `a.b.MyFirstClass`, it knows it has to search for a file named `a/b/MyFirstClass.class` (on Linux), or a file named `a/b/MyFirstClass.java` if searching for the corresponding source code. But the compiler ignores where these files are exactly on the file structure of your hard disk. It ignores your source folder location, so it can’t infer an absolute file name and locate the file.
+* In general, you might have multiple source or compiled class folders. For example, it is common to separate “real” classes and test classes into different source folders, and it is common to need compiled classes from different projects (possibly stored under different folders for clarity) when compiling your project.
 
-The *class path* is the path where the compiled classes can be found.
+The *class path* contains the paths where the (source and) compiled classes should be looked for.
 
 * To give the class path to the java compiler, use the parameter `-cp`.
-* Actually, giving `cp "."` is the same as not specifying the class path at all: by default, it equals `"."`.
-* The compiler knows that if a class is named `a.b.SomeName`, it is supposed to look into the subfolder `a/b/`. Do not repeat this in the class path!
+* In case of multiple paths, separate them with `:` under Linux, `;` under Windows.
+* Giving `cp "."` is the same as not specifying the class path at all: by default, it equals `"."`.
 
 First example: `javac -cp "." "a/b/MyFirstClass.java"`. The compiler will look for classes in `.` (the current folder). In fact, if `a.b.MyFirstClass` does not depend on anything, which class path we give does not matter at all.
 
@@ -42,13 +50,13 @@ Second example: `javac -cp "." "c/d/e/MySecondClass.java"`. Now the class path m
 . see in the file `c/d/e/MySecondClass.java` that it depends on another class `a.b.MyFirstClass`;
 . look for that class in the class path;
 . and thus look into the current folder (`.`) and inside that folder, look for `a/b/MyFirstClass.class`. 
-In this example, the compilation will succeed if, and only if, both `c/d/e/MySecondClass.java` and `a/b/MyFirstClass.class` are found, starting from the current folder. (Actually, it also works if `a/b/MyFirstClass.java` is found, in which case it is compiled as well.)
+In this example, the compilation will succeed if, and only if, both `c/d/e/MySecondClass.java` and either `a/b/MyFirstClass.class` or `a/b/MyFirstClass.java` are found, starting from the current folder. (If `a/b/MyFirstClass.java` is found, it is compiled as well.)
 
-Third example: `javac -cp "src:bin" "c/d/e/MySecondClass.java"`. The compilation will succeed if, and only if, `MySecondClass.java` can be found in `src/c/d/e/` or `bin/c/d/e/` and `MyFirstClass.class` (or `MyFirstClass.java`) can be found in `src/a/b/` or `bin/a/b/`.
+Third example: `javac -cp "src:bin" "c/d/e/MySecondClass.java"`. The compilation will succeed if, and only if, `MySecondClass.java` can be found in `src/c/d/e/` or `bin/c/d/e/` and `MyFirstClass.class` (or `MyFirstClass.java`) can be found in `src/a/b/` or `bin/a/b/`. All these paths are relative to the current folder, meaning, the one you run the `javac` command from.
 
 == Running the project
-* To run a program, use `java` (see Oracle https://docs.oracle.com/javase/8/docs/technotes/tools/#basic[tools]{emptyattribute}).
-* Give it the _full name_ of the class containing the `main()` method you want to run.
+* To run a program, use https://docs.oracle.com/en/java/javase/11/tools/javac.html[`java`].
+* Give it the _fully qualified name_ of the class containing the `main()` method you want to run.
 * Give it the class path that permits it to find the required class files, with the `-cp` argument.
 * The `java` command runs the Java VM. The Java VM understands bytecode only, thus, compiled files.
 
@@ -57,7 +65,7 @@ Example: `java -cp "bin1:bin2" "c.d.e.MySecondClass"` will run `main()` in the c
 == The case of .jar archives
 Instead of folders containing classes, you can also use Java Archives : files with extension `.jar` that contain collections of compiled classes (and possibly also sources).
 
-You may give a jar file as an element of a class path.
+You may give jar files as elements of a class path.
 
-Example: `java -cp "bin1:bin2:myjar.jar" "c.d.e.MySecondClass"` will run `main()` in the class `MySecondClass`, provided the class can be found in `bin1/c/d/e/MySecondClass.class` or in `bin2/c/d/e/MySecondClass.class` or in the `myjar.jar` archive, and provided all of its dependencies can also be found in `bin1` or `bin2` or `myjar.jar`.
+Example: `java -cp "bin1:bin2:myjar.jar" "c.d.e.MySecondClass"` will run `main()` in the class `MySecondClass`, provided the class can be found in `bin1/c/d/e/MySecondClass.class` or in `bin2/c/d/e/MySecondClass.class` or in the `myjar.jar` archive (under condition that it be stored under the expected name `c.d.e.MySecondClass`), and the execution will succeed provided all classes the program depends on can also be found in `bin1` or `bin2` or `myjar.jar`.
 
