@@ -44,46 +44,56 @@
 \begin{frame}
 	\frametitle{Packages : principe}
 	\begin{itemize}
-		\item Chaque classe principale Java : dans son fichier
-		\item Classe \texttt{MyClass} dans fichier ? \onslide<2->{\texttt{MyClass.java}}
-		\item Compilée dans fichier ? \onslide<3->{\texttt{MyClass.class}}
-		\item Chaque fichier déclaré dans un \emph{package} {\tiny Sauf si package par défaut, non recommandé.}
+		\item Une classe Java a un nom simple
+		\item Exemple : \texttt{Math.java}
+		\item Une classe a aussi un nom complet, \og{} fully qualified name\fg{}
+		\item Exemple : \texttt{java.lang.Math}, \texttt{java.util.Scanner}
+		\item Utilité du nom complet ? \onslide<2->{Assurer unicité ! (\texttt{MathUtils})}
+		\item Chaque classe déclarée dans un \emph{package} {\tiny Sauf si package par défaut, non recommandé.}
+		\item Nom complet = nom du package point nom de la classe
+		\item Référence à la classe par son nom complet ou nom simple avec import
 		\item Packages structurés hiérarchiquement, comme un arbre
 		\item Structure indiquée par des points
-		\item Exemples dans l’API Java : \texttt{java.nio.file}, \texttt{java.util.logging}
-		\item Quand utilisation d’une classe, il faut l’importer en indiquant son package
-	\end{itemize}
-\end{frame}
-
-\begin{frame}
-	\frametitle{Utilité des packages}
-	\begin{itemize}
-		\item Plusieurs classes de même nom peuvent exister (\texttt{MathUtils})
-		\item Nom complet d’une classe doit être unique
-		\item Nom complet = nom du package point nom de la classe
 		\item Organiser par thème
 	\end{itemize}
 \end{frame}
 
 \begin{frame}
-	\frametitle{Packages et répertoires}
+	\frametitle{Packages et fichiers}
 	\begin{itemize}
-		\item Fichier dans un package \texttt{nom1.nom2.nom3}
-		\item Se trouve dans sous-répertoire \texttt{nom1/nom2/nom3}
-		\item Utilité de cette séparation en répertoires ? \onslide<2->{Organisation ; Unicité de nom}
-		\item Chemin considéré à partir du répertoire source
-		\item Dans Eclipse par défaut : \texttt{MyProject/src/nom1/nom2/nom3}
+		\item Classe de nom complet \texttt{MyClass}
+		\begin{itemize}
+			\item Fichier source ? \onslide<2->{\texttt{<src>/MyClass.java} (\texttt{<src>} = rép.\ source)}
+			\item Compilée dans fichier ? \onslide<3->{\texttt{<dst>/MyClass.class}}
+		\end{itemize}
+		\item Classe de nom complet \texttt{nom1.nom2.nom3.MyClass}
+		\begin{itemize}
+			\item Fichier source ? \onslide<4->{\texttt{<src>/nom1/nom2/nom3/MyClass.java}}
+			\item \onslide<4->{Séparation en répertoires pour organisation et unicité de nom}
+			\item Compilée dans ? \onslide<5->{\texttt{<dst>/nom1/nom2/nom3/MyClass.class}}
+		\end{itemize}
+		\item Dans Eclipse par défaut : \texttt{MyProject/src}, \texttt{MyProject/bin}
 	\end{itemize}
 \end{frame}
 
 \begin{frame}
 	\frametitle{Compilation}
 	\begin{itemize}
-		\item Classes compilées : où ?
-		\item<2-> Souvent : dans répertoire \texttt{bin} ou \texttt{target}
 		\item Structure des sources conservée !
-		\item<2-> Exemple : classe dans \texttt{src/myutils/draft/MathUtils.java} compilée dans \texttt{bin/myutils/draft/MathUtils.class}
-		\item Package ? \onslide<3->{\texttt{myutils.draft}}
+		\item Exemple : rép.\ source = \texttt{src/main/java}, source dans \texttt{src/main/java/myutils/draft/MathUtils.java}
+		\item Nom complet ? \onslide<2->{\texttt{myutils.draft.MathUtils}}
+		\item Compilée dans ? \onslide<3->{\texttt{bin/myutils/draft/MathUtils.class}}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Exécution}
+	Pour exécuter une classe, de quelles informations la JVM a-t-elle besoin ?
+	\begin{itemize}
+		\item<2-> Nom complet de la classe à exécuter (expl : \texttt{myutils.draft.MathUtils})
+		\item<2-> Répertoire de la classe compilée (expl : \texttt{bin})
+		\item<2-> Si dépendance ?
+		\item<3-> Répertoires où trouver les classes dont la classe dépend (expl : \texttt{bin} et \texttt{myotherproject/bin})
 	\end{itemize}
 \end{frame}
 
