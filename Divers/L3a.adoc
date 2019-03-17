@@ -144,6 +144,7 @@ Links taken from the https://www.edx.org/course/introduction-to-biology-the-secr
 === S3 (Thursday 21st of March, 2019)
 *Lecture*
 
+* Connect to the https://app.gosoapbox.com/event/290081765[confusion barometer]
 * https://github.com/oliviercailloux/java-course/blob/master/Search%20path/README.adoc[search path] (packages, classes and directories).
 * Clean repository: projet root = git root; no derived artifacts; format your source code
 * https://github.com/oliviercailloux/java-course/raw/master/Objets/presentation.pdf[Objects]
