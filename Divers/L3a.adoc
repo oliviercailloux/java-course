@@ -135,7 +135,7 @@ Links taken from the https://www.edx.org/course/introduction-to-biology-the-secr
 *Todo*
 
 * Your GitHub username and git “User Name” must be identical.
-* https://classroom.github.com/a/aiweSTSU[Git] (marked /10): use this repository (created when you accept the homework) at the last step of the git exercices above _instead of creating a new remote remository RG_. Connect your local repository R1 to it, and keep on following the instructions in the exercice.
+* https://classroom.github.com/a/aiweSTSU[Git] (marked /10): use this repository (created when you accept the homework) at the last step of the git exercices above _instead of creating a new remote remository RG_. Connect your local repository R1 to it, and keep on following the instructions in the exercice. I do not expect written answers to the questions asked in the exercice.
 * Read all the Workbench User Guide, Basic Tutorial, see https://github.com/oliviercailloux/java-course/blob/master/Tools.adoc#eclipse[Eclipse] doc [I]
 * Read the Important part, above
 * http://math.hws.edu/eck/cs124/javanotes7/c4/quiz.html[EQ4]
