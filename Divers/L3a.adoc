@@ -159,10 +159,10 @@ Links taken from the https://www.edx.org/course/introduction-to-biology-the-secr
 
 * You are expected to comment all your code appropriately with Javadoc, use correct (implying, non-default) packages, and generally follow all best practices we’ve seen, for all exercices from now on [M]
 * http://math.hws.edu/eck/cs124/javanotes7/c4/exercises.html[EE4.1], 4.2
-* EE4.3 [M] (to be done before S5)
+* EE4.3
 * EE4.4
 * EE4.5, 4.6 [O]
-* EE4.7 [M] (to be done before S5)
+* EE4.7
 
 *Todo*
 
