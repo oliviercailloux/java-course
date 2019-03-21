@@ -176,7 +176,7 @@ Links taken from the https://www.edx.org/course/introduction-to-biology-the-secr
 *Lecture*
 
 * Java Interfaces and the Calculator example: replaceability and use as type
-* Inheritance: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours3.pdf[Airiau C3]
+* Inheritance: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours2.pdf[Airiau C2]
 * Exceptions: checked and unchecked
 
 *Material and going beyond*
