@@ -175,9 +175,11 @@ Links taken from the https://www.edx.org/course/introduction-to-biology-the-secr
 *Lecture*
 
 * Java Interfaces and the Calculator example: replaceability and use as type
-* Inheritance: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours2.pdf[Airiau C2]
 * Exceptions: checked and unchecked
 * Clean repository: projet root = git root; no derived artifacts; format your source code
+* Improve course for points (and prestige)
+** Accepted improvement (or three spelling mistakes or typos): +1
+** Impressive correction: 1 prestige point (in supplement)
 
 *Material and going beyond*
 
@@ -208,10 +210,7 @@ Links taken from the https://www.edx.org/course/introduction-to-biology-the-secr
 *Lecture*
 
 * Graded quizz
-* Choose your project
-* Improve course for points (and prestige)
-** Accepted improvement (or three spelling mistakes or typos): +1
-** Impressive correction: 1 prestige point (in supplement)
+* Inheritance: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours2.pdf[Airiau C2]
 * Generics and collections: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours6.pdf[Airiau C6]
 
 *Material and going beyond*
@@ -257,6 +256,7 @@ Links taken from the https://www.edx.org/course/introduction-to-biology-the-secr
 
 * Primitive types (autoboxing); null; optional; give guarantees: https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Null.adoc[Best practices]
 * https://github.com/oliviercailloux/java-course/blob/master/Tools.adoc#configuration[Tools]: use correct Eclipse config. (Check warnings, compile errors, instructions!)
+* Choose your project
 * Correct E1
 .. découpé en sous-routines ?
 .. contrat général (Collection au lieu de LinkedList) ?
