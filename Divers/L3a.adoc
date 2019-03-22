@@ -25,16 +25,17 @@ You know algorithmics and the basic programming concepts in Java. If you have fo
 == Instructions & grading
 
 * Your GitHub username and git “User Name” must be identical.
+* You may use the `groupId` `io.github.<yourgithubusername>`.
 
 === Homeworks from the book
 * Cliquez sur le lien indiqué sur le devoir pour que GitHub classroom vous crée un dépôt privé où soumettre votre devoir.
 * Si vous voulez recommencer, effacez le dépôt créé pour le devoir et recommencez avec un nouveau dépôt.
 * All mandatory (suffixed with [M]) book exercices (prefixed with EE) must be in that repository (in the branch `master`), the day before the lecture, 23:59 + 1min (e.g., lecture on Thursday 23rd means a deadline on the end of Wednesday 22nd).
+* You must have at least one class named EExy for each exercice x.y; for example, EE32 for exercice EE 3.2.
 * Your mark will be either 1 (exercices are done on time, even imperfectly, committed under your name, instructions are followed) or 0. This counts for 20% of the CC grade.
 
 === Devoirs hors livre
 * Conseil : rendez 24h à l’avance pour être sûr. −3/20 par heure de retard (heure déterminée par la dernière activité sur le dépôt GitHub qui vous est attribué pour le devoir).
-* Vous pouvez utiliser le `groupId` `io.github.<yourgithubusername>`.
 * Vous pouvez échanger des pistes de solutions entre vous, mais pas travailler ensemble sur le code : je vous demande un rendu individuel. Vous ne pouvez pas rendre un code identique ou ressemblant fortement à celui d’un autre étudiant.
 
 === Projets
