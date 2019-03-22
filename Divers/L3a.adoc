@@ -202,7 +202,7 @@ Links taken from the https://www.edx.org/course/introduction-to-biology-the-secr
 * Read all the Java development user guide, Basic Tutorial, see https://github.com/oliviercailloux/java-course/blob/master/Tools.adoc#eclipse[Eclipse] doc [I]
 * Finish class path exercices
 * Review material from the start
-* Commit the mandatory exercices using `git`
+* Commit the mandatory exercices using `git` https://classroom.github.com/a/Clfupgrv[here]
 
 [[S5]]
 === S5
