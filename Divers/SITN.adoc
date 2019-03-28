@@ -128,6 +128,7 @@ https://classroom.github.com/a/ygd_Ydml[Devoir] : un projet Maven, bien configur
 
 === S7 (jeudi 28 mars)
 * Projets
+* https://www.wooclap.com/SONDONS[Révisions]
 * Consignes présentation : sur mon ordinateur
 ** Sauf si bons arguments (S8 − 2j au plus tard)
 ** Possibilité de me demander confirmation d’un fonctionnement (S8 − 2j au plus tard)
@@ -137,6 +138,7 @@ https://classroom.github.com/a/ygd_Ydml[Devoir] : un projet Maven, bien configur
 ** Format PDF, pas MS Office
 
 * Livraison 3 acceptée avant la fin du samedi 6 avril.
+* Présentation sur votre dépôt avant la fin du lundi 8 avril.
 
 === S8 (mardi 9 avril)
 * Présentation des projets
