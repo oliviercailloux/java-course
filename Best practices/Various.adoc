@@ -5,3 +5,6 @@ The `URL` class has a flaw: its `URL#equals` method accesses the network. This m
 
 From the point of view of what it can represent, `URL` is more constrained than `URI` in that it allows only absolute URLs; more constrained in the protocols it allows; but less constrained in the sense of the syntax it allows (https://stackoverflow.com/a/23384891).
 
+== Consider suppressing the warning about missing serialVersionUID
+Use `@SuppressWarnings("serial")` rather than adding a `serialVersionUID` field to your class documents your intent better when you do not really want to support serialization. (See https://stackoverflow.com/a/7636578[SO].)
+
