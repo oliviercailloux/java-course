@@ -142,7 +142,7 @@ https://classroom.github.com/a/ygd_Ydml[Devoir] : un projet Maven, bien configur
 
 === S8 (mardi 9 avril)
 * Présentation des projets
-** 20 minutes par groupe max
+** Environ 20 minutes par groupe
 * Vote
 * Appréciation du cours
 * https://github.com/oliviercailloux/projets/blob/master/Licence.adoc[Licences]
