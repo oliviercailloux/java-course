@@ -23,7 +23,7 @@ Ask your compiler to enable strict checks of possible errors. See link:../Tools.
 As an exception to strict checking, I authorize boxing and unboxing without warnings. This is because first, the warning has drawbacks and second, it is not very effective. First, this warning sometimes encourage writing more obscure code, for example `myMap.put(Integer.valueOf(myInt), myValue)` instead of `myMap.put(myInt, myValue)`. (And stuffing your code with a lot of `@SuppressWarnings("boxing")` is not very clean either.) Second, this warning only helps avoiding possible null pointer exceptions (when unboxing), and this anyway is a problem that happens when dealing with objects. It feels unjustified to spend so much energy specifically on this risk when dealing with numeric types.
 
 == Formatting
-Use your IDE mechanisms to format your source code systematically and automatically. Make sure everybody use the same conventions in your team. This reduces the number of conflicts when merging concurrent modifications.
+Use your IDE mechanisms to format your source code systematically and automatically. Make sure everybody use the same conventions in your team. This reduces the number of conflicts when merging concurrent modifications; and ensures that git comparison works (otherwise, for example, git sees modifications when only the spaces have been changed to tabs, and thus real modifications become hard to find).
 
 == Outdated references
 * https://www.oracle.com/technetwork/java/namingconventions-139351.html[Oracle J2EE] (I don’t think this should be taken seriously as it is very old, apparently unmaintained, and not included in recent documentation of Oracle).
