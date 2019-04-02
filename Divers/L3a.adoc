@@ -193,8 +193,8 @@ Links taken from the https://www.edx.org/course/introduction-to-biology-the-secr
 * http://math.hws.edu/eck/cs124/javanotes7/c5/exercises.html[EE5.1], 5.2
 * EE5.3 [M]
 ** Supplementary requirement: you will archive `PairOfDice` and `StatCalc` into a JAR file and use this in a new Eclipse project where only one class is defined, which uses `PairOfDice` and `StatCalc`. Commit both projects into your repository (in two separate folders). The structure of your git repository should be as follows. Please follow the exact naming scheme.
-** `projet43/`… (contains `src` with your source code inside a sub-folder of it)
-** `projet47/`… (contains `src` with your source code inside a sub-folder of it)
+** `project43/`… (contains `src` with your source code inside a sub-folder of it)
+** `project47/`… (contains `src` with your source code inside a sub-folder of it)
 ** `project53utils/`… (contains `utils.jar` and `src/` with `PairOfDice` and `StatCalc` inside a sub-folder of it)
 ** `project53main/`… (contains `src/` with you main method)
 * EE5.4, EE5.5: Play Blackjack!
