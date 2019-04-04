@@ -1,0 +1,44 @@
+= JUnit
+//works around awesome_bot bug that used to be published at github.com/dkhamsing/awesome_bot/issues/182.
+:emptyattribute:
+
+A brief introduction to unit testing in Java with JUnit 5, and (more particularly) Jupiter.
+
+== Principle
+Instead of running your program with various input parameters manually, test a single part of your program at a time, in an automated way.
+
+== Goal
+* Automated tests: When you refactor or add functionalities to your program, you simply re-run the tests to make sure you didn’t break existing functionality.
+* Test a single part at a time: instead of having to debug a whole program when you observe an incorrect behavior, you know exactly which part fails.
+* Document usage
+* Improve your code by making sure you can test it in isolated parts, which thus require that you program using loosely coupled blocks.
+
+== Basics
+Say you have a class `SuperComputer` with a method declared as `public int complicatedComputation(int parameter)`. (You can copy https://github.com/oliviercailloux/Sample-JUnit-5/blob/master/src/main/java/io/github/oliviercailloux/sample_junit_5/SuperComputer.java[this].)
+
+You can check https://github.com/oliviercailloux/Sample-JUnit-5/blob/master/src/test/java/io/github/oliviercailloux/sample_junit_5/SuperComputerTests.java[this] class for an example of what you should obtain by following the instructions below.
+
+* Define a new class, named `SuperComputerTests`. 
+* Add a method `void testComplicatedComputationWithParameter0()`.
+* Annotate the header with https://junit.org/junit5/docs/current/api/org/junit/jupiter/api/Test.html[`@Test`].
+* In the method, create an object, invoke `complicatedComputation(0)` and store the result in a variable `actual`.
+* Finally, invoke `https://junit.org/junit5/docs/current/api/org/junit/jupiter/api/Assertions.html#assertEquals(byte,byte)[assertEquals](3, actual)`, where the first parameter is the value you expect to obtain (in this example, we test that `complicatedComputation(0)` returns `3`).
+* You need to have JUnit 5 on the build path in order to compile and run the test.
+* Check whether the test succeeds or fails depending on your source code.
+
+== Usage
+* In real-world projects, you would write many tests and run them all each time you change the code.
+* It is important in particular to check boundary conditions: what happens when the value is zero? Negative? Infinite (for a double)? null (for an object)? 
+* You should follow some specified naming patterns for naming your test classes, otherwise they might be https://junit.org/junit5/docs/current/user-guide/#running-tests-build-maven[ignored], depending on your build tool. Ending their names with “Tests” is a best practice.
+* Your test class should lie in the same package as the class it tests.
+* Your test classes should be in a source folder distinct from the rest of your code: you do not want to distribute your test classes to users, this is only for internal use; and it makes it easy to find them.
+* Check the numerous other assert-like methods that you can use and learn to use the right one.
+
+== Methods that depend on other objects
+Things are usually not as simple as the basic example above. A method will typically use at least one other object to perform its work. In such a case, mock the used object (see references below).
+
+== References
+* JUnit 5 official https://junit.org/junit5/docs/current/user-guide/[User Guide] and https://github.com/junit-team/junit5-samples[samples]
+* JUnit 5 https://blog.codefx.org/libraries/junit-5-basics/[basics] on CodeFX
+
+
