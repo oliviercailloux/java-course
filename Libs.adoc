@@ -3,7 +3,7 @@
 My recommendations concerning various libraries.
 
 * Google https://github.com/google/guava[Guava]: “new collection types (such as multimap and multiset), immutable collections, a graph library, functional types, an in-memory cache, and APIs/utilities for concurrency, I/O, hashing, primitives, reflection, string processing, and much more”. You should definitely use their preconditions helpers. Then check whatever else you might have a use for.
-* Parce https://en.wikipedia.org/wiki/Comma-separated_values[CSV] files: http://super-csv.github.io/super-csv/index.html[SuperCSV]; https://github.com/uniVocity/univocity-parsers[uniVocity] (more recent, looks nice, but I haven’t tried it)
+* Parce https://en.wikipedia.org/wiki/Comma-separated_values[CSV] files: http://super-csv.github.io/super-csv/index.html[SuperCSV]; https://github.com/uniVocity/univocity-parsers[uniVocity] (more recent, looks nice, but I haven’t tried it); more https://www.baeldung.com/java-csv[references]
 * Parse command line arguments: I have used Apache http://commons.apache.org/proper/commons-cli/[Commons CLI], but I’d encourage you to check out http://jopt-simple.github.io/jopt-simple/[JOpt Simple].
 * https://en.wikipedia.org/wiki/ICalendar[iCalendar] (ical, ics) files: according to https://stackoverflow.com/questions/33901/best-icalendar-library-for-java[SO], https://github.com/mangstadt/biweekly[biweekly] is better than https://github.com/ical4j/ical4j[iCal4j]. I found that iCal4j has very scarce http://ical4j.sourceforge.net/introduction.html[documentation]. A minor inconvenience of both is that they use old date-time java objects rather than the new https://docs.oracle.com/javase/tutorial/datetime/[java.time] API.
 
