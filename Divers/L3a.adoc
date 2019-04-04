@@ -22,6 +22,11 @@ You know algorithmics and the basic programming concepts in Java. If you have fo
 * Ranges are always given with ends included (EQ1.3 to 1.9 means 3 and 9 included)
 * Markers apply to the whole line. Example: "4.3 intro to 4.3.2, 4.6.1 [I]" means that everything in between 4.3 and 4.3.2 plus 4.6.1 are important.
 
+== General references
+* Eck’s http://math.hws.edu/javanotes8/[book]
+* Stéphane Airiau’s https://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/[course] (in French)
+* The https://app.gosoapbox.com/event/290081765/[confusion barometer]
+
 == Instructions & grading
 
 * Your GitHub username and git “User Name” must be identical.
@@ -145,7 +150,6 @@ Links taken from the https://www.edx.org/course/introduction-to-biology-the-secr
 === S3 (Thursday 21st of March, 2019)
 *Lecture*
 
-* Connect to the https://app.gosoapbox.com/event/290081765/[confusion barometer]
 * https://github.com/oliviercailloux/java-course/blob/master/Search%20path/README.adoc[search path] (packages, classes and directories).
 * https://github.com/oliviercailloux/java-course/raw/master/Objets/presentation.pdf[Objects]
 * https://www.wooclap.com/JL[Quizz]
@@ -207,24 +211,33 @@ Links taken from the https://www.edx.org/course/introduction-to-biology-the-secr
 * Commit the mandatory exercices using `git` https://classroom.github.com/a/Clfupgrv[here]
 
 [[S5]]
-=== S5
+=== S5 (Thursday 4th of April, 2019)
 
 *Lecture*
 
 * Graded quizz
-* Inheritance: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours2.pdf[Airiau C2]
-* Generics and collections: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours6.pdf[Airiau C6]
+** Search path = class path (approximation)
+** “Does not compile” ⇒ only if conceptual problem (for example, a variable is out of scope or a class is used instead of an object)
+** Linux syntax, thus `/` and `:` (Windows uses `\` and `;`). Paths may be terminated by `/`, arguments may be surrounded by quotes.
+** Questions and answers in randomized order. It is possible that no answer is correct.
+** Read with care
+** Late ⇒ zero
+
+* https://github.com/oliviercailloux/java-course/blob/master/JUnit.adoc[Unit testing]
+* Inheritance: Object; print an object; more polymorphism.
+* Generics and https://www.scientecheasy.com/2018/09/collection-hierarchy-in-java.html[collections].
+** For this course, use by default: `ArrayList`; `LinkedHashSet`; `LinkedHashMap`.
 
 *Material and going beyond*
 
-* http://math.hws.edu/eck/cs124/javanotes7/c5/[ES5.5] to 5.8
-* http://math.hws.edu/eck/cs124/javanotes7/c10/[ES10] to 10.2
+* http://math.hws.edu/javanotes8/c5/[ES5.5] to 5.8
+* http://math.hws.edu/javanotes8/c10/[ES10] to 10.2
 // simple inheritance (no TextIO depended on, actually), but complex set up
-* http://math.hws.edu/eck/cs124/javanotes7/c5/exercises.html[EE5.4] (use `Scanner` instead of `TextIO`)
+* http://math.hws.edu/javanotes8/c5/exercises.html[EE5.4] (use `Scanner` instead of `TextIO`)
 //interfaces with generics and collections
-* http://math.hws.edu/eck/cs124/javanotes7/c10/exercises.html[EE10.4] (except you use the https://docs.oracle.com/javase/8/docs/api/java/util/function/Predicate.html[Predicate] interface from the Java API instead of writing your own)
+* http://math.hws.edu/javanotes8/c10/exercises.html[EE10.4] 
 // list of words
-* EE7.7 (you may use standard input instead of file input)
+* http://math.hws.edu/javanotes8/c7/exercises.html[EE7.6] (you may use standard input instead of file input)
 // set (long)
 * http://math.hws.edu/eck/cs124/javanotes7/c10/exercises.html[EE10.2]
 
@@ -235,21 +248,20 @@ Links taken from the https://www.edx.org/course/introduction-to-biology-the-secr
 * Implement a `Predicate<String>` to represent a function that associates to a String the value `true` iff its length is even.
 * Define a class `Pair<T1, T2>` to store an ordered pair of objects of type `T1` and `T2`.
 // implements but no inheritance
-* http://math.hws.edu/eck/cs124/javanotes7/c5/exercises.html[EE5.7] [M] (the part about anonymous classes is optional)
+* http://math.hws.edu/javanotes8/c5/exercises.html[EE5.7] [M] (the part about anonymous classes is optional)
 //** Supplementary requirements: your code must lie in at least two packages;
 //** The idea of this exercice is that you simulate that three different people work on this exercice: one provides some interfaces; another implements the interfaces; a third one uses the interfaces and their implementations to solve the exercice (except you represent all these persons).
 //** Declare at least one interface in another Eclipse project, exported as a Java archive (JAR file);
 //** implement those interfaces in another Eclipse project, exported as a Java archive (JAR file) (will you need the previous JAR file? Why / why not?);
 //** solve the exercices in a third Eclipse project (will you need the previous JAR files? Which ones and why?).
 // read, sort a list
-* http://math.hws.edu/eck/cs124/javanotes7/c7/exercises.html[EE7.1], 7.5 (except that you can use built-sorting functions from the Java API).
-* A class E1 that asks the end-user for a set of integer values. The user enters 0 to stop entering values. Store these values in a Set of Integer values (discarding duplicates). Do it again, obtaining a second set. Then print each set of values entered, then the union of both sets. For example, if the user enters 3, 4, 2, 0, then 1, 1, 2, 5, 0, it prints: 3, 4, 2, then 1, 2, 5, then 3, 4, 2, 1, 5. [M]
-* Project: Contract [M]
+* http://math.hws.edu/javanotes8/c7/exercises.html[EE7.1], 7.5 (except that you can use built-sorting functions from the Java API).
+* A class E1 that asks the end-user for a set of integer values. The user enters 0 to stop entering values. Store these values in a Set of Integer values (discarding duplicates). Do it again, obtaining a second set. Then print each set of values entered, then the union of both sets. For example, if the user enters 3, 4, 2, 0, then 1, 1, 2, 5, 0, it prints: 3, 4, 2, then 1, 2, 5, then 3, 4, 2, 1, 5. Use Java sets and interfaces appropriately. [M]
 
 *Todo*
 
-* All mandatory exercices, including from S4.
-* Remember to respect the quality requirements in your design: contract, fail-fast, clear interface; and to respect the technical requirements for submitting your project code. (See above.)
+* https://github.com/oliviercailloux/java-course/blob/master/Tools.adoc#configuration[Tools]: use correct Eclipse config. (Check warnings, compile errors, instructions!)
+* Commit mandatory exercices https://classroom.github.com/a/X7DXDNfU[here].
 
 [[S6]]
 === S6
@@ -257,7 +269,6 @@ Links taken from the https://www.edx.org/course/introduction-to-biology-the-secr
 *Lecture*
 
 * Primitive types (autoboxing); null; optional; give guarantees: https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Null.adoc[Best practices]
-* https://github.com/oliviercailloux/java-course/blob/master/Tools.adoc#configuration[Tools]: use correct Eclipse config. (Check warnings, compile errors, instructions!)
 * Choose your project
 * Correct E1
 .. découpé en sous-routines ?
@@ -318,7 +329,6 @@ Links taken from the https://www.edx.org/course/introduction-to-biology-the-secr
 
 * MCQs constitute 20 to 30% of the CC grade.
 * A better String Comparator.
-* https://www.vogella.com/tutorials/JUnit/article.html[Unit testing]
 * Project: Resources (cf. Best Practices, https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Resources.adoc[Resources])
 
 * Implement a class `EasyMap` with two methods: a method that puts a pair of key and value of your choice into a map, and a method that returns an Optional containing the value corresponding to the given key (parameter of the method) or that returns an empty Optional if there is no such value.
