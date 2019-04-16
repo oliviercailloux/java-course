@@ -48,7 +48,7 @@
 . Rediriger vos e-mails @ Dauphine si nécessaire pour vous assurer de recevoir les annonces
 . Terminer exercices git
 . https://github.com/oliviercailloux/java-course/blob/master/WS%20client/README.adoc[Client WS], partie curl (la partie Java sera vue en S2)
-. Effectuer le https://classroom.github.com/a/dvTohDAJ[devoir] (noté) : accepter le devoir, puis, à la dernière étape de l’exercice git ci-dessus, utiliser le dépôt GitHub créé pour le devoir. Utilisez ce dépôt pour aller jusqu’au bout de l’exercice. Ensuite, ajoutez un fichier curl.txt au dépôt dans une branche curl, contenant juste une ligne qui récupère l’information depuis Wikipedia demandée dans l’exercice Client WS en invoquant curl. À rendre avant la fin du vendredi 30 novembre.
+. Effectuer le devoir (noté) : accepter le devoir, puis, à la dernière étape de l’exercice git ci-dessus, utiliser le dépôt GitHub créé pour le devoir. Utilisez ce dépôt pour aller jusqu’au bout de l’exercice. Ensuite, ajoutez un fichier curl.txt au dépôt dans une branche curl, contenant juste une ligne qui récupère l’information depuis Wikipedia demandée dans l’exercice Client WS en invoquant curl. À rendre avant la fin du vendredi 30 novembre.
 
 === S2 (lundi 3 décembre)
 * Open Data explained https://www.youtube.com/watch?v=c42QNa-rccw[in a nutshell] (ou : L’Open Data https://www.youtube.com/watch?v=aHxv_2BMJfw[à la loupe])

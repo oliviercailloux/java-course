@@ -31,7 +31,7 @@ You know algorithmics and the basic programming concepts in Java. If you have fo
 * 5 ways of taking notes https://www.youtube.com/watch?v=AffuwyJZTQQ[video]
 * https://doi.org/10.1177/0956797614524581[Research] shows that taking notes, and especially writing what is said in your own words after some mental processing, permits more effective study
 
-Links taken from the https://www.edx.org/course/introduction-to-biology-the-secret-of-life[course] “Introduction to Biology - The Secret of Life”, MITx
+Links taken from the https://www.edx.org/course/introduction-to-biology-the-secret-of-life-3[course] “Introduction to Biology - The Secret of Life”, MITx
 
 == Instructions & grading
 
