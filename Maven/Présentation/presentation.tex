@@ -142,23 +142,42 @@
 		{\centering Répertoires de base\par}
 		\begin{description}[\texttt{…/resources}]
 			\item[\texttt{/src/main/…}] fichiers code et ressources \og{}normales\fg{}
-			\item[\texttt{/src/test/…}] fichiers code et ressources pour tests
 			\item[\texttt{…/java}] code java
 			\item[\texttt{…/resources}] images, etc., devant être dans classpath
+			\item[\texttt{/src/test/…}] fichiers code et ressources pour tests
 		\end{description}
 	\end{minipage}
 \end{frame}
 
-\section{Cycle de vie}
+\section{Exécution}
+\begin{frame}
+	\frametitle{Exécution}
+	\begin{itemize}
+		\item Lors exécution de Maven, préciser un plugin et un goal
+		\item (ou préciser une phase, voire plus loin)
+		\item Maven accompagné de nombreux plugins
+		\item Plugins téléchargés à la demande et mis en cache
+		\item Exemple : \texttt{mvn compiler:compile}
+		\item Appelle goal \texttt{compile} dans plugin \texttt{compiler}
+		\item Compile sources dans répertoire destination
+		\item \texttt{compiler} est le nom \emph{court} du plugin
+		\item Coordonnées complètes : groupId, artifactId, version
+		\item Version par défaut dépend de la version de Maven installée
+		\item Commande complète : \texttt{mvn org.apache.maven.plugins: maven-compiler-plugin:3.8.0:compile} (en un seul mot)
+	\end{itemize}
+\end{frame}
+
 \begin{frame}
 	\frametitle{Cycles de vie Maven}
 	\begin{itemize}
-		\item Maven utilise des cycles de vie
-		\item Cycles embarqués : default ; clean ; site
+		\item On veut généralement exécuter un ensemble ordonné de goals
+		\item Maven définit des cycles de vie
+		\item Cycles embarqués : default ; clean {\tiny et site mais plus utilisé}
 		\item Cycle : ensemble ordonné de \emph{phases}
+		\item Lors exécution de Maven, préciser une phase (ou un plugin et un goal)
+		\item Maven en déduit le cycle
 		\item Cycle “clean” contient {\tiny essentiellement} phase “clean”
-		\item Cycle “site” contient {\tiny essentiellement} phase “site”
-		\item Lors exécution de Maven, préciser une phase (Maven en déduit le cycle)
+%		\item Cycle “site” contient {\tiny essentiellement} phase “site”
 	\end{itemize}
 \end{frame}
 
@@ -215,7 +234,7 @@
 <dependency>
   <groupId>com.google.guava</groupId>
   <artifactId>guava</artifactId>
-  <version>24.1-jre</version>
+  <version>27.1-jre</version>
 </dependency>
 \end{lstlisting}\vspace{-1mm}
 	\end{block}

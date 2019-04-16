@@ -19,11 +19,11 @@ The command displays a long list of archetypes available to you. We’ll start b
 
 Your project gets created in a sub-folder of your current position.
 
-* Which files has maven created? What are their purpose?
+* Which files has Maven created? What are their purpose?
 * In the terminal, move into the newly created project.
 * Type `mvn compile`. What does it do, and why (how does it work)? Is `compile` a phase, or a plugin goal?
 * What has changed on your hard disk?
-* Run the compiled application in the command line (if necessary, see Eck’s http://math.hws.edu/eck/cs124/javanotes7/c2/s6.html#basics.6.6[book]{emptyattribute}). What does it do?
+* Run the compiled application in the command line (if necessary, see Eck’s http://math.hws.edu/javanotes8/c2/s6.html#basics.6.6[book]{emptyattribute}). What does it do?
 
 == Modern project
 Let’s now use a different archetype to generate a project better suited for our future use.
