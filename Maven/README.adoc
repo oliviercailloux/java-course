@@ -2,6 +2,18 @@
 
 See https://github.com/oliviercailloux/java-course/raw/master/Maven/Pr%C3%A9sentation/presentation.pdf[présentation], https://github.com/oliviercailloux/java-course/blob/master/Maven/Exercices.adoc[exercices], https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Maven.adoc[best practices], https://github.com/oliviercailloux/java-course/blob/master/Tools.adoc[Tools] for installation.
 
+== Eclipse
+To import a Maven project into Eclipse, use `File` / `Import` / `Existing Maven Projects`.
+
+=== Hint
+If Eclipse is lost, first try to update the Eclipse configuration from the Maven configuration. From your project properties, run `Maven` / `Update project` / `Update project configuration from pom.xml`.
+
+If Eclipse is still lost, make sure it uses the configuration from Maven (sometimes the above procedure does not suffice):
+
+* Delete the project from Eclipse
+* Using a file navigator, manually delete the Eclipse configuration from within your project: `.project`, `.classpath` and the folder `.settings`.
+* Re-import the project into Eclipse. This forces Eclipse to re-create the configuration from scratch (based on Maven).
+
 == References
 * Simple, recommended https://github.com/oliviercailloux/java-se-1.8-archetype/blob/master/src/main/resources/archetype-resources/pom.xml[POM]
 * https://maven.apache.org/guides/getting-started/index.html[Tutorial] Apache Maven
@@ -12,4 +24,6 @@ See https://github.com/oliviercailloux/java-course/raw/master/Maven/Pr%C3%A9sent
 * Archetypes: http://maven.apache.org/archetype/maven-archetype-plugin/usage.html[maven-archetype-plugin]
 //* Packaging
 * Assemblies: http://maven.apache.org/plugins/maven-assembly-plugin/[maven-assembly-plugin]
+//== Refs
+//* http://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_jar_packaging
 

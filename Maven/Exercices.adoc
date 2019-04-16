@@ -38,19 +38,5 @@ Your project gets created in a sub-folder of your current position.
 * What changed, compared to the previous project? Compare in particular both `pom.xml` files: what changed? What will be the effect of those changes?
 * Compare your answer to the https://github.com/oliviercailloux/java-se-1.8-archetype[documentation].
 
-== Eclipse
-Let’s now import the project into Eclipse.
-
-* Run Eclipse
-* Import using: `File` / `Import` / `Existing Maven Projects`
-
-=== Hint
-If Eclipse is lost:
-
-* Delete the project from Eclipse
-* Using a file navigator, manually delete the Eclipse configuration from within your project: `.project`, `.classpath` and the folder `.settings`.
-* Re-import the project into Eclipse. This forces Eclipse to re-create the configuration from scratch (based on Maven).
-
-//== Refs
-//* http://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_jar_packaging
+Finally, import your project in Eclipse.
 
