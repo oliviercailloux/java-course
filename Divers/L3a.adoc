@@ -288,7 +288,7 @@ Don’t hesitate to send me your question by e-mail if you’re blocked in your 
 .. pas de commentaires inutiles (tq auto-générés //TODO, @author vide, …)
 .. (micro) pas de comparaison à True (if(isBig == true))
 .. vous arrivez à voir le résultat de votre code javadoc (exemple: @param truc of type String inutile)
-* Maps, Comparable, Comparator: Airiau http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/[C7], http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/[C8]
+* Maps, Comparable, Comparator (voir aussi diapos Airiau)
 
 *Material and going beyond*
 
