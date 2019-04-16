@@ -271,7 +271,7 @@ Don’t hesitate to send me your question by e-mail if you’re blocked in your 
 *Lecture*
 
 * https://github.com/oliviercailloux/java-course/tree/master/Maven[Maven]
-* Use https://mvnrepository.com/artifact/com.google.guava/guava/24.1-jre[Guava] `https://github.com/google/guava/wiki/PreconditionsExplained[Preconditions]#checkArgument`
+* Use https://mvnrepository.com/artifact/com.google.guava/guava/27.1-jre[Guava] `https://github.com/google/guava/wiki/PreconditionsExplained[Preconditions]#checkArgument`
 * Overload `toString()`: use Guava https://google.github.io/guava/releases/snapshot/api/docs/com/google/common/base/MoreObjects.html#toStringHelper-java.lang.Object-[`MoreObjects`]
 * Primitive types (autoboxing); null; optional; give guarantees: https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Null.adoc[Best practices]
 * Correct E1
