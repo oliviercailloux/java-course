@@ -1,6 +1,6 @@
 = Maven
 
-See https://github.com/oliviercailloux/java-course/raw/master/Maven/Pr%C3%A9sentation/presentation.pdf[présentation], https://github.com/oliviercailloux/java-course/blob/master/Maven/Exercices.adoc[exercices], https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Maven.adoc[best practices], https://github.com/oliviercailloux/java-course/blob/master/Tools.adoc[Tools] for installation.
+See https://github.com/oliviercailloux/java-course/raw/master/Maven/Pr%C3%A9sentation/presentation.pdf[présentation], https://github.com/oliviercailloux/java-course/blob/master/Maven/Exercices.adoc[exercices], https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Maven.adoc[best practices], https://github.com/oliviercailloux/java-course/blob/master/Tools.adoc[Tools] for installation. When you’re ready, publish your open source artifacts to https://github.com/oliviercailloux/java-course/blob/master/Maven/Maven%20central.adoc[Maven central]!
 
 == Eclipse
 To import a Maven project into Eclipse, use `File` / `Import` / `Existing Maven Projects`.
