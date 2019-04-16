@@ -27,6 +27,12 @@ You know algorithmics and the basic programming concepts in Java. If you have fo
 * Stéphane Airiau’s https://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/[course] (in French)
 * The https://app.gosoapbox.com/event/290081765/[confusion barometer]
 
+=== Take notes
+* 5 ways of taking notes https://www.youtube.com/watch?v=AffuwyJZTQQ[video]
+* https://doi.org/10.1177/0956797614524581[Research] shows that taking notes, and especially writing what is said in your own words after some mental processing, permits more effective study
+
+Links taken from the https://www.edx.org/course/introduction-to-biology-the-secret-of-life[course] “Introduction to Biology - The Secret of Life”, MITx
+
 == Instructions & grading
 
 * Your GitHub username and git “User Name” must be identical.
@@ -44,6 +50,7 @@ You know algorithmics and the basic programming concepts in Java. If you have fo
 * Vous pouvez échanger des pistes de solutions entre vous, mais pas travailler ensemble sur le code : je vous demande un rendu individuel. Vous ne pouvez pas rendre un code identique ou ressemblant fortement à celui d’un autre étudiant.
 
 === Projets
+//Considérer : une note par livraison. Peu fait, pénalisation sur la note (mais c’est surtout la qualité qui compte). Beaucoup, la note compte double, ou reçoit une note bonus après 2×1,5. Rien : zéro. Prévoir date livraison initiale et livraison finale. Non approuvé : noté qd-même, avec pénalisation à choisir pour code de mauvaise qualité ou fct inutile (si erreur du candidat). On peut poursuivre une fct non encore approuvée à l’itération suivante. Il faut un scrum master tournant, vérifie la cohérence du cahier des charges et prérequis, réactions à temps quand retour en modif. Équipes 5 à 7 : un scrum master qui analyse et gère, et deux ou trois binômes qui codent (ou un tout seul occasionnellement avec son scrum master, mais je préfère pas).
 * https://github.com/oliviercailloux/projets/tree/master/SE[Énoncés]
 * Attendu : cahiers des charges pour deux ou trois itérations courtes indiquant succinctement les exigences fonctionnelles (EF) ; 3 points de difficulté par membre au total sur l’année.
 * Vous devez utiliser autant que possible les spécifications Java EE 8 dans votre projet (par exemple, les API de manipulation de JSON indiquées dans ce cours et pas d’autres ; le standard JPA et pas un autre)
@@ -65,12 +72,6 @@ You know algorithmics and the basic programming concepts in Java. If you have fo
 * The final grade is a mix of 50% CC grade, 50% (final) Project grade.
 
 Don’t hesitate to send me your question by e-mail if you’re blocked in your project, instead of wasting hours. However, I do expect that you make some research before you ask, and that your question be clear. See these https://codeblog.jonskeet.uk/2012/11/24/stack-overflow-question-checklist/[guidelines].
-
-== Take notes
-* 5 ways of taking notes https://www.youtube.com/watch?v=AffuwyJZTQQ[video]
-* https://doi.org/10.1177/0956797614524581[Research] shows that taking notes, and especially writing what is said in your own words after some mental processing, permits more effective study
-
-Links taken from the https://www.edx.org/course/introduction-to-biology-the-secret-of-life[course] “Introduction to Biology - The Secret of Life”, MITx
 
 == Planning
 
@@ -181,6 +182,7 @@ Links taken from the https://www.edx.org/course/introduction-to-biology-the-secr
 
 * Java Interfaces and the Calculator example: replaceability and use as type
 * Exceptions: checked and unchecked
+//* Exceptions in Java: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours5.pdf[Airiau C5] (and see slides Contrat, appendix)
 * Clean repository: projet root = git root; no derived artifacts; format your source code
 * Improve course for points (and prestige)
 ** Accepted improvement (or multiple spelling mistakes or typos): +1
@@ -264,12 +266,14 @@ Links taken from the https://www.edx.org/course/introduction-to-biology-the-secr
 * Commit mandatory exercices https://classroom.github.com/a/X7DXDNfU[here].
 
 [[S6]]
-=== S6
+=== S6 (Tuesday 16th of April, 2019)
 
 *Lecture*
 
+* https://github.com/oliviercailloux/java-course/tree/master/Maven[Maven]
+* Use https://mvnrepository.com/artifact/com.google.guava/guava/24.1-jre[Guava] `https://github.com/google/guava/wiki/PreconditionsExplained[Preconditions]#checkArgument`
+* Overload `toString()`: use Guava https://google.github.io/guava/releases/snapshot/api/docs/com/google/common/base/MoreObjects.html#toStringHelper-java.lang.Object-[`MoreObjects`]
 * Primitive types (autoboxing); null; optional; give guarantees: https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Null.adoc[Best practices]
-* Choose your project
 * Correct E1
 .. découpé en sous-routines ?
 .. contrat général (Collection au lieu de LinkedList) ?
@@ -282,57 +286,55 @@ Links taken from the https://www.edx.org/course/introduction-to-biology-the-secr
 .. conventions respectées ? (noms de variables et méthodes en camelCase, de classes en PascalCase, de packages en minuscules, …)
 .. méthodes d’instance (et pas statiques) ?
 .. pas de commentaires inutiles (tq auto-générés //TODO, @author vide, …)
-.. (micro) pas de comparaison à des booléens (if(isBig == true))
+.. (micro) pas de comparaison à True (if(isBig == true))
 .. vous arrivez à voir le résultat de votre code javadoc (exemple: @param truc of type String inutile)
+* Maps, Comparable, Comparator: Airiau http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/[C7], http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/[C8]
 
 *Material and going beyond*
 
 * http://math.hws.edu/eck/cs124/javanotes7/c10/[ES10.3] to 10.5
 * http://math.hws.edu/eck/cs124/javanotes7/c8/[ES8] intro to 8.4
 
-*Todo*
+*Exercices*
 
-* Project: Finish Contract
-* Read half of the Java development user guide, Tips and Tricks (until Navigation included), see https://github.com/oliviercailloux/java-course/blob/master/Tools.adoc#eclipse[Eclipse] doc
+* http://math.hws.edu/javanotes8/c10/exercises.html[EE10.1]
+//interfaces with generics and collections
+* http://math.hws.edu/javanotes8/c10/exercises.html[EE10.4]
 
 [[S7]]
-=== S7
+=== S7 (Thursday 18th of April, 2019)
 
-* Comments: Read them all; no plagiarism (but reuse!); use https://mvnrepository.com/artifact/com.google.guava/guava/24.1-jre[Guava] `https://github.com/google/guava/wiki/PreconditionsExplained[Preconditions]#checkArgument`
+* No plagiarism (but reuse!)
 * Static factory method
 ** A static method
 ** Produces the type of the class it belongs to
 ** Serves as a factory
 ** Examples: `String.valueOf(true);`, `Integer.valueOf(3);`, `ImmutableList.of();`
-
-* Exceptions in Java: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours5.pdf[Airiau C5] (and see slides Contrat, appendix)
-* Maps, Comparable, Comparator: Airiau http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/[C7], http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/[C8]
 * https://docs.oracle.com/javase/tutorial/java/javaOO/arguments.html[Varargs]
 * Files and https://github.com/oliviercailloux/java-course/blob/master/Flows.adoc[flows]
+* https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Resources.adoc[Resources]
 
 *Exercices*
 
-* http://math.hws.edu/eck/cs124/javanotes7/c10/exercises.html[EE10.1]
-//interfaces with generics and collections
-* http://math.hws.edu/eck/cs124/javanotes7/c10/exercises.html[EE10.4] (except you use the https://docs.oracle.com/javase/8/docs/api/java/util/function/Predicate.html[Predicate] interface from the Java API instead of writing your own)
-// list of words
-* http://math.hws.edu/eck/cs124/javanotes7/c7/exercises.html[EE7.7] (you may use standard input instead of file input)
 * Create (manually) a text file containing “Hé !” and (programmatically) open it and print its content. Your method should also work when the file is too big to fit in memory.
+// list of words
+* http://math.hws.edu/javanotes8/c7/exercises.html[EE7.6] (do not use the provided method: split words at space character; use standard file IO instead of TextIO)
+* Implement a class `EasyMap` with two methods: a method that puts a pair of key and value of your choice into a map, and a method that returns an Optional containing the value corresponding to the given key (parameter of the method) or that returns an empty Optional if there is no such value.
+* Define MyComparator, a class that implements a comparator over your values. Add a third method to EasyMap, that returns a list of values ordered by that comparator.
 
 *Todo*
 
-* Project: Files
-* Read the rest of the Java development user guide, Tips and Tricks, see https://github.com/oliviercailloux/java-course/blob/master/Tools.adoc#eclipse[Eclipse] doc
+* Read Best Practices
+* Read https://github.com/oliviercailloux/java-course/blob/master/Tools.adoc#eclipse[Eclipse] doc (or equivalent)
 
 [[S8]]
 === S8
 
+* Graded exercice
+* Choose your project
 * MCQs constitute 20 to 30% of the CC grade.
 * A better String Comparator.
-* Project: Resources (cf. Best Practices, https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Resources.adoc[Resources])
-
-* Implement a class `EasyMap` with two methods: a method that puts a pair of key and value of your choice into a map, and a method that returns an Optional containing the value corresponding to the given key (parameter of the method) or that returns an empty Optional if there is no such value.
-* Define MyComparator, a class that implements a comparator over your values. Add a third method to EasyMap, that returns a list of values ordered by that comparator.
+* Project: Resources (cf. Best Practices, )
 
 [[S9]]
 === S9
@@ -340,8 +342,6 @@ Links taken from the https://www.edx.org/course/introduction-to-biology-the-secr
 * Generality: cut into blocks (read then do); choose the right Collection
 * In class path: unique names; access through class path; read-only
 * Use Readers and Writers as parameters
-* https://github.com/oliviercailloux/java-course/tree/master/Maven[Maven]
-* Overload `toString()`: use Guava https://google.github.io/guava/releases/snapshot/api/docs/com/google/common/base/MoreObjects.html#toStringHelper-java.lang.Object-[`MoreObjects`]
 
 [[S10]]
 === S10
