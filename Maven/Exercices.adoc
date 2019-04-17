@@ -9,8 +9,8 @@ Simple exercices for Maven. The reader is supposed to know already the basics of
 * Open a terminal. Move into a folder where you want to put your new project (which will be created as a sub-folder).
 * Type `mvn archetype:generate`. 
 
-The command `mvn` followed by a goal runs Maven with this goal.
-This command simply executes the plugin goal `archetype:generate`. This is because `archetype:generate` is the name of a plugin goal and not the name of a phase of a lifecycle. This goal is defined in the `archetype` Maven plugin.
+The command `mvn` followed by “plugin:goal” runs Maven with this goal.
+This command simply executes the goal `generate` in the `archetype` Maven plugin.
 
 The command displays a long list of archetypes available to you. We’ll start by using the `maven-archetype-quickstart` archetype (that’s its artifactId).
 
