@@ -286,8 +286,8 @@ Don’t hesitate to send me your question by e-mail if you’re blocked in your 
 .. conventions respectées ? (noms de variables et méthodes en camelCase, de classes en PascalCase, de packages en minuscules, …)
 .. méthodes d’instance (et pas statiques) ?
 .. pas de commentaires inutiles (tq auto-générés //TODO, @author vide, …)
-.. (micro) pas de comparaison à True (if(isBig == true))
-.. vous arrivez à voir le résultat de votre code javadoc (exemple: @param truc of type String inutile)
+.. (micro) pas de comparaison à `true` (`if(isBig == true)`)
+.. vous arrivez à voir le résultat de votre code javadoc (exemple: `@param truc of type String` inutile)
 * Maps, Comparable, Comparator (voir aussi diapos Airiau)
 
 *Material and going beyond*
