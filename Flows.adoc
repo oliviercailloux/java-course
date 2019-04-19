@@ -22,7 +22,7 @@ Always close your streams after use. Use the https://docs.oracle.com/javase/tuto
 == Exercice
 * Create (manually) a text file containing “Hé !” and (programmatically) open it and print its *byte* content (thus it should print numbers). Then, print its content as characters (thus it should print “Hé !”). Your program should also work when the file is too big to fit in memory.
 * Create a class `Person` with a first name and a last name. Create (manually) a text file containing multiple persons. Each person is described by two lines: her first name then her last name. Thus the file contains n times 2 lines for describing n persons. Create a method that reads such a file and returns a list of persons. What’s the best choice of parameter for this method?
-* Create a unit test that creates a `String` equal to `"firstname, lastname"`. The test gives the string to your method created in the previous exercice. To do this, use a `StringReader` and make sure your method is sufficiently general. The test asserts that the created person has the right first and last names.
+* Create a unit test that creates a `String` equal to `"firstname\nlastname"`. The test gives the string to your method created in the previous exercice. To do this, use a `StringReader` and make sure your method is sufficiently general. The test asserts that the created person has the right first and last names.
 
 == References
 See Oracle’s https://docs.oracle.com/javase/tutorial/essential/io/index.html[Basic I/O] tutorial.
