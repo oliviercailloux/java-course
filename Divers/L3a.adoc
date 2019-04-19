@@ -309,7 +309,7 @@ Don’t hesitate to send me your question by e-mail if you’re blocked in your 
 ** A static method
 ** Produces the type of the class it belongs to
 ** Serves as a factory
-** Examples: `String.valueOf(true);`, `Integer.valueOf(3);`, `ImmutableList.of();`, `String.https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#format(java.lang.String,java.lang.Object...)[format]("Person name: %s, id: %d", name, id);`
+** Examples: `String.valueOf(true);`, `Integer.valueOf(3);`, `ImmutableList.of();`, `String.link:https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#format(java.lang.String,java.lang.Object...)[format]("Person name: %s, id: %d", name, id);`
 * https://docs.oracle.com/javase/tutorial/java/javaOO/arguments.html[Varargs]
 * Files and https://github.com/oliviercailloux/java-course/blob/master/Flows.adoc[flows]
 * https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Resources.adoc[Resources]; exercice: read a file from the class path.
