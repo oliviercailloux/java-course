@@ -13,11 +13,15 @@ There are four essential kinds of objects that represent flows of information in
 It is typical for a flow of character to be encoded in a flow of bytes, for example, a text file stored on your hard disk contain character data but also byte data.
 Character flows should be used preferably to byte flows in that case, as they represent higher level information. 
 
-Readers are generally obtained from a byte source (and writers, from a byte sink). In that case they *must* be accompanied by a character encoding, which specifies how bytes and characters relate. (Java permits to omit this information in some cases, but not doing so makes your program fragile as some default will be used implicitly.)
+Readers are generally obtained from a byte source (and writers, from a byte sink). In that case they must be accompanied by a character encoding, which specifies how bytes and characters relate. A reasonable default choice is https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/nio/charset/StandardCharsets.html#UTF_8[UTF-8].
 
 Two essential classes help you deal with files: https://docs.oracle.com/javase/8/docs/api/java/nio/file/Path.html[Path] and https://docs.oracle.com/javase/8/docs/api/java/nio/file/Files.html[Files]. For example, use `Files#newBufferedWriter()` to obtain a `Writer` that writes to a file.
 
 Always close your streams after use. Use the https://docs.oracle.com/javase/tutorial/essential/exceptions/tryResourceClose.html[try-with-resources] statement for this.
+
+== Exercice
+* Create (manually) a text file containing “Hé !” and (programmatically) open it and print its *byte* content (thus it should print numbers). Then, print its content as characters (thus it should print “Hé !”). Your program should also work when the file is too big to fit in memory.
+* Create a class `Person` with a first name and a last name. Create (manually) a text file containing multiple persons. Each person is described by two lines: her first name then her last name. Thus the file contains n times 2 lines for describing n persons. Create a method that reads such a file and returns a list of persons. What’s the best choice of parameter for this method?
 
 == References
 See Oracle’s https://docs.oracle.com/javase/tutorial/essential/io/index.html[Basic I/O] tutorial.
