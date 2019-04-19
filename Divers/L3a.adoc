@@ -326,12 +326,16 @@ Don’t hesitate to send me your question by e-mail if you’re blocked in your 
 
 * Read https://github.com/oliviercailloux/java-course/blob/master/Tools.adoc#eclipse[Eclipse] doc (or equivalent for your IDE of choice)
 * Make sure you can see the javadoc of the JDK and of the libraries you add through Maven through your IDE, for coding efficiently
+* If you use an IDE different than Eclipse, you are supposed to adjust your parameters to match the configuration provided for Eclipse (see Tools.adoc).
 
 [[S8]]
 === S8
 
 * Questions?
 * Graded exercice
+** Submitted code must be clean: well-formatted, clear, well named, …
+** Must compile (otherwise, no point awarded)
+** No warning given by Eclipse
 * Choose your project
 //* MCQs constitute 20 to 30% of the CC grade.
 * A better String Comparator.
