@@ -15,7 +15,7 @@ Character flows should be used preferably to byte flows in that case, as they re
 
 Readers are generally obtained from a byte source (and writers, from a byte sink). In that case they must be accompanied by a character encoding, which specifies how bytes and characters relate. A reasonable default choice is https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/nio/charset/StandardCharsets.html#UTF_8[UTF-8].
 
-Two essential classes help you deal with files: https://docs.oracle.com/javase/8/docs/api/java/nio/file/Path.html[Path] and https://docs.oracle.com/javase/8/docs/api/java/nio/file/Files.html[Files]. For example, use `Files#newBufferedWriter()` to obtain a `Writer` that writes to a file.
+Two essential classes help you deal with files: https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/nio/file/Path.html[Path] (or `https://docs.oracle.com/javase/8/docs/api/java/nio/file/Path.html[Paths]` before Java 11) and https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/nio/file/Files.html[Files]. For example, use `Files#newBufferedWriter()` to obtain a `Writer` that writes to a file.
 
 Always close your streams after use. Use the https://docs.oracle.com/javase/tutorial/essential/exceptions/tryResourceClose.html[try-with-resources] statement for this.
 
