@@ -324,8 +324,8 @@ Don’t hesitate to send me your question by e-mail if you’re blocked in your 
 
 *Todo*
 
-* Read https://github.com/oliviercailloux/java-course/blob/master/Best%20practices[Best Practices]
-* Read https://github.com/oliviercailloux/java-course/blob/master/Tools.adoc#eclipse[Eclipse] doc (or equivalent)
+* Read https://github.com/oliviercailloux/java-course/blob/master/Tools.adoc#eclipse[Eclipse] doc (or equivalent for your IDE of choice)
+* Make sure you can see the javadoc of the JDK and of the libraries you add through Maven through your IDE, for coding efficiently
 
 [[S8]]
 === S8
