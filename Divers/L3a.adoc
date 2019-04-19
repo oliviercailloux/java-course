@@ -273,7 +273,7 @@ Don’t hesitate to send me your question by e-mail if you’re blocked in your 
 * https://github.com/oliviercailloux/java-course/tree/master/Maven[Maven]
 * Use https://mvnrepository.com/artifact/com.google.guava/guava/27.1-jre[Guava] `https://github.com/google/guava/wiki/PreconditionsExplained[Preconditions]#checkArgument`
 * Overload `toString()`: use Guava https://google.github.io/guava/releases/snapshot/api/docs/com/google/common/base/MoreObjects.html#toStringHelper-java.lang.Object-[`MoreObjects`]
-* Primitive types (autoboxing); null; optional; give guarantees: https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Null.adoc[Best practices]
+* null (started)
 * Correct E1
 .. découpé en sous-routines ?
 .. contrat général (Collection au lieu de LinkedList) ?
@@ -302,39 +302,41 @@ Don’t hesitate to send me your question by e-mail if you’re blocked in your 
 * http://math.hws.edu/javanotes8/c10/exercises.html[EE10.4]
 
 [[S7]]
-=== S7 (Thursday 18th of April, 2019)
+=== S7 (Friday 19th of April, 2019)
 
 * No plagiarism (but reuse!)
 * Static factory method
 ** A static method
 ** Produces the type of the class it belongs to
 ** Serves as a factory
-** Examples: `String.valueOf(true);`, `Integer.valueOf(3);`, `ImmutableList.of();`
+** Examples: `String.valueOf(true);`, `Integer.valueOf(3);`, `ImmutableList.of();`, `String.https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#format(java.lang.String,java.lang.Object...)[format]("Person name: %s, id: %d", name, id);`
 * https://docs.oracle.com/javase/tutorial/java/javaOO/arguments.html[Varargs]
 * Files and https://github.com/oliviercailloux/java-course/blob/master/Flows.adoc[flows]
-* https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Resources.adoc[Resources]
+* https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Resources.adoc[Resources]; exercice: read a file from the class path.
+* Primitive types (autoboxing); optional; give guarantees: https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Null.adoc[Best practices]
 
 *Exercices*
 
-* Create (manually) a text file containing “Hé !” and (programmatically) open it and print its content. Your method should also work when the file is too big to fit in memory.
+* Implement an interface `EasyMap` with two methods: a method that puts a pair of key and value of your choice into a map, and a method that returns an `Optional` containing the value corresponding to the given key (parameter of the method) or that returns an empty `Optional` if there is no such value. Implement this interface in a class `EasyMapImpl`. Provide a static factory method in the interface `EasyMap`. Minimize the number of lines of code (but not at the price of readability). Note that this exercice implements the https://en.wikipedia.org/wiki/Forwarding_(object-oriented_programming)[forwarding] pattern.
+** Define `MyComparator`, a class that implements a comparator over your values. Add a third method to `EasyMap`, that returns a list of values ordered by that comparator.
 // list of words
 * http://math.hws.edu/javanotes8/c7/exercises.html[EE7.6] (do not use the provided method: split words at space character; use standard file IO instead of TextIO)
-* Implement a class `EasyMap` with two methods: a method that puts a pair of key and value of your choice into a map, and a method that returns an Optional containing the value corresponding to the given key (parameter of the method) or that returns an empty Optional if there is no such value.
-* Define MyComparator, a class that implements a comparator over your values. Add a third method to EasyMap, that returns a list of values ordered by that comparator.
 
 *Todo*
 
-* Read Best Practices
+* Read https://github.com/oliviercailloux/java-course/blob/master/Best%20practices[Best Practices]
 * Read https://github.com/oliviercailloux/java-course/blob/master/Tools.adoc#eclipse[Eclipse] doc (or equivalent)
 
 [[S8]]
 === S8
 
+* Questions?
 * Graded exercice
 * Choose your project
-* MCQs constitute 20 to 30% of the CC grade.
+//* MCQs constitute 20 to 30% of the CC grade.
 * A better String Comparator.
-* Project: Resources (cf. Best Practices, )
+* Override `equals` and `hashcode`.
+* Wrapping exceptions
 
 [[S9]]
 === S9
