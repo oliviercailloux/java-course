@@ -6,6 +6,8 @@ Essentially two mechanisms are used: the class path and the module path. In this
 
 See: https://raw.githubusercontent.com/oliviercailloux/java-course/master/Search%20path/Pr%C3%A9sentation/presentation.pdf[Présentation], https://github.com/oliviercailloux/java-course/blob/master/Search%20path/Overview.adoc[Overview], https://github.com/oliviercailloux/java-course/blob/master/Search%20path/Exercices.adoc[Exercices], BP https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Resources.adoc[resources].
 
+//TODO binary name as defined in The Java™ Language Specification, section 13.1 "The Form of a Binary".
+
 == References
 
 * Oracle docs: https://docs.oracle.com/en/java/javase/11/tools/main-tools-create-and-build-applications.html[Main Tools to Create and Build Applications]
