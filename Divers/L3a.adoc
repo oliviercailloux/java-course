@@ -266,7 +266,7 @@ Don’t hesitate to send me your question by e-mail if you’re blocked in your 
 * Commit mandatory exercices https://classroom.github.com/a/X7DXDNfU[here].
 
 [[S6]]
-=== S6 (Tuesday 16th of April, 2019)
+=== S6 (Wednesday 17th of April, 2019)
 
 *Lecture*
 
@@ -334,12 +334,12 @@ Don’t hesitate to send me your question by e-mail if you’re blocked in your 
 * Questions?
 * Graded exercice
 ** Submitted code must be clean: well-formatted, clear, well named, …
-** Must compile (otherwise, no point awarded)
+** Must compile using Maven (otherwise, no point awarded)
 ** No warning given by Eclipse
 * Choose your project
 //* MCQs constitute 20 to 30% of the CC grade.
-* A better String Comparator.
-* Override `equals` and `hashcode`.
+* Comparing Persons, revisited
+* Override `equals` and `hashcode`
 * Wrapping exceptions
 
 [[S9]]
