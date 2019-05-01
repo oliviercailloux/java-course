@@ -1,5 +1,4 @@
 = Projets
-:stem:
 
 == Affectation initiale
 * https://github.com/oliviercailloux/projets/tree/master/SE[Énoncés]
@@ -12,7 +11,7 @@
 == Instructions générales
 * Quatre itérations au total, chacune clôturée par une livraison
 * Une livraison par 2 (ou 3) séances, environ 12h (ou 18h) de travail sur projet par sous-équipe (calendrier dans programme du cours)
-* Une équipe de stem:[n] personnes est constituée de _n/2_ (arrondi au-dessus) sous-équipes : des binômes de développeurs et un ou deux Scrum Master / Product Owner (SM/PO)
+* Une équipe de _n_ personnes est constituée de _n/2_ (arrondi au-dessus) sous-équipes : des binômes de développeurs et un ou deux Scrum Master / Product Owner (SM/PO)
 * Sous-équipes doivent changer à chaque itération ; être maximum deux fois SM/PO en tout
 * SM/PO : planifie avec son équipe les _tâches_ à délivrer, documente, fournit des diagrammes (exigences un peu plus grandes si binôme que si seul) ; réoriente les tâches en cas de problème de prérequis ; vérifie que le projet fonctionne toujours après fusion ; est responsable de la cohérence du tout
 * La sous-équipe SM/PO délivre (typiquement) une tâche en début d’itération, pour annoncer le travail à effectuer, et une ou plusieurs tâches pendant la livraison (documentation, diagrammes, réorientation du planning). Un binôme dev. travaille sur une (typiquement) ou plusieurs tâches dans une itération (exemple : coder une hiérarchie de classe pour enregistrer des commandes de produit). Une tâche peut consister à compléter une tâche précédente (ajout de tests unitaires, correction bugs, …).
