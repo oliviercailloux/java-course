@@ -1,5 +1,5 @@
 = Projets
-:stem: latexmath
+:stem:
 
 == Affectation initiale
 * https://github.com/oliviercailloux/projets/tree/master/SE[Énoncés]
