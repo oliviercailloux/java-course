@@ -305,15 +305,14 @@ Links taken from the https://www.edx.org/course/introduction-to-biology-the-secr
 * If you use an IDE different than Eclipse, you are supposed to adjust your parameters to match the configuration provided for Eclipse (see Tools.adoc).
 
 [[S8]]
-=== S8
+=== S8 (Monday 6th of May, 2019)
 
 * Questions?
 * Graded exercice
 ** Submitted code must be clean: well-formatted, clear, well named, …
 ** Must compile using Maven (otherwise, no point awarded)
 ** No warning given by Eclipse
-* Choose your project
-//* MCQs constitute 20 to 30% of the CC grade.
+* Choose your https://github.com/oliviercailloux/java-course/blob/master/Divers/Projets.adoc[project]
 * Comparing Persons, revisited
 * Override `equals` and `hashcode`
 * Wrapping exceptions
@@ -321,16 +320,14 @@ Links taken from the https://www.edx.org/course/introduction-to-biology-the-secr
 [[S9]]
 === S9
 
-* Generality: cut into blocks (read then do); choose the right Collection
-* In class path: unique names; access through class path; read-only
-* Use Readers and Writers as parameters
+* https://github.com/oliviercailloux/java-course/blob/master/Log/README.adoc[Logging]
+* https://github.com/oliviercailloux/java-course/blob/master/DevOps/CI.adoc[CI]
+* https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Maven.adoc[Maven Best Practices]
 
 [[S10]]
 === S10
 
-* https://github.com/oliviercailloux/java-course/blob/master/Log/README.adoc[Logging]
-* https://github.com/oliviercailloux/java-course/blob/master/DevOps/CI.adoc[CI]
-* Everybody is supposed to master the tools used in the project (for example, check the https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Maven.adoc[Maven Best Practices])
+* https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Maven.adoc[Maven Best Practices]
 
 [[S11]]
 === S11
