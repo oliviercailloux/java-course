@@ -5,7 +5,7 @@
 * Max. une équipe par sujet
 * Équipes de 4 à 7
 * Obligation d’accepter membres supplémentaires à la demande si < 7
-* Inscription dans colonne : noter tous les noms. Il faut être au moins 4 pour noter son nom. Indiquer le numéro d’ordre d’inscription de l’équipe (numérotation par sujet). S’effacer d’une colonne si on s’inscrit dans une autre.
+* Inscription dans colonne : noter tous les noms. Il faut être au moins 4 pour noter son nom. S’effacer d’une colonne si on s’inscrit dans une autre.
 * Si conflit : plus grosse équipe prioritaire ; puis première équipe inscrite (lexicographiquement)
 
 == Instructions générales
@@ -32,11 +32,11 @@ Commencez à coder seulement lorsque j’ai approuvé votre proposition de plan 
 == Instructions de livraison
 * Interdiction de commettre sur votre branche `master` sans mon aval. À part ça, organisation interne libre. Suggestion : fusionnez vos fcts sur une branche `dev` dès que possible (https://fr.wikipedia.org/wiki/Int%C3%A9gration_continue[intégration continue]).
 * M’ajouter comme collaborateur à votre projet pour pouvoir m’indiquer comme https://help.github.com/en/articles/about-pull-request-reviews[Reviewer].
-* Quand vous avez terminé une tâche, créez une pull request (PR) GitHub pour cette tâche, d’une branche dont le nom décrit succinctement la tâche (exemple : « unit tests Truc ») vers _votre_ branche `master`. La branche peut être créée après coup, il faut alors y placer manuellement (par exemple) les modifications en rapport avec cette tâche.
+* Quand vous avez terminé une tâche, créez une pull request (PR) GitHub pour cette tâche, dont le nom décrit succinctement la tâche (exemple : « unit tests Truc »), d’une de vos branches vers _votre_ branche `master`. La branche peut être créée après coup, il faut alors y placer manuellement (par exemple) les modifications en rapport avec cette tâche.
 ** https://help.github.com/en/articles/assigning-issues-and-pull-requests-to-other-github-users[Affectez] à la PR tous les membres de la sous-équipe responsable de la tâche.
 ** M’ajouter comme Reviewer pour que je sois averti. Si opportun, je commente votre tâche pour indiquer les améliorations à effectuer avant de pouvoir fusionner dans `master` (à faire lors d’une prochaine itération), ou je vous indique que vous pouvez fusionner.
 ** Si vos collègues dépendent de votre tâche, vous pouvez bien sûr (ou devriez) modifier directement sans attendre la prochaine livraison. Ce sera en particulier le cas si vous êtes le SM/PO et que votre tâche définit le plan à suivre pour cette livraison. Dans ce cas, effectuez des commits sur la branche de votre tâche, puis commentez en me https://github.blog/2011-03-23-mention-somebody-they-re-notified/[@mentionnant] (`@oliviercailloux`) quand vous êtes prêt pour une nouvelle review.
-** Si votre tâche poursuit une tâche d’une livraison précédente, il s’agit quand-même d’une nouvelle tâche. Créez une nouvelle PR, pour que je m’y retrouve, et indiquez le binôme qui s’en occupe (qui devrait avoir au moins partiellement changé).
+** Une tâche est effectuée en une seule itération. Si votre tâche poursuit une tâche d’une livraison précédente, il s’agit quand-même d’une nouvelle tâche. Créez une nouvelle PR, pour que je m’y retrouve, et indiquez le binôme qui s’en occupe (qui devrait avoir au moins partiellement changé).
 ** Vous remettez un devoir, pas un brouillon mal torché. Soignez-le. Votre code doit être mis en forme systématique, suivre les https://github.com/oliviercailloux/java-course/tree/master/Best%20practices[bonnes pratiques], vous devez prendre en compte d’éventuelles indications d’erreurs de vos outils (Eclipse, GitHub, Travis, …), etc. Faites tout ça _avant_ de m’indiquer comme reviewer sur une PR. (Vous pouvez compléter une PR après sa création en ajoutant des commit dans la branche associée.)
 * Si vous ne respectez pas une des instructions notées ici, j’indiquerai simplement INSTR SVP, car je n’ai pas le temps de rappeler les instructions à chacun en détail. Dans ce cas, _votre livraison n’est pas acceptée_. J’attends une correction pour respect des instructions. (Suivez les instructions de modification sur une même branche, ci-dessus.) En attendant, votre délai de retard cours, si la date de livraison est dépassée. (Seule cette abréviation INSTR indique que votre livraison n’est pas acceptée. Si j’utilise d’autres abréviations, elles se réfèrent généralement à la table ci-dessous, et font partie de mon évaluation normale de votre tâche.)
 
