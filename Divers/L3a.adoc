@@ -308,7 +308,7 @@ Links taken from the https://www.edx.org/course/introduction-to-biology-the-secr
 === S8 (Monday 6th of May, 2019)
 
 * Questions?
-* Graded exercice
+* Graded https://github.com/oliviercailloux/java-course/blob/master/Divers/Extractor.adoc[exercice]
 ** Submitted code must be clean: well-formatted, clear, well named, …
 ** Must compile using Maven (otherwise, no point awarded)
 ** No warning given by Eclipse
