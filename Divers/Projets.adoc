@@ -1,7 +1,7 @@
 = Projets
 
 == Affectation initiale
-* https://github.com/oliviercailloux/projets/tree/master/SE[Énoncés]
+* https://github.com/oliviercailloux/projets/[Énoncés]
 * Max. une équipe par sujet
 * Équipes de 4 à 7
 * Obligation d’accepter membres supplémentaires à la demande si < 7
