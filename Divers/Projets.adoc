@@ -56,7 +56,7 @@ Don’t hesitate to send me your question by e-mail if you’re blocked in your 
 * Privilégiez les méthodes statiques aux constructeurs.
 * Si vous modifiez du code existant, vous êtes responsable d’améliorer raisonnablement le code qui l’entoure là où c’est facile, de corriger les bugs évidents. Ne vous dédouanez pas d’erreurs évidentes sous prétexte que ce n’est pas vous qui avez écrit telle ou telle ligne de code précisément.
 * Lorsque vous intégrez du code d’autrui, il faut indiquer que votre projet l’utilise. Cette mention doit être claire, pas être noyée dans un flot de texte où vous décrivez d’autres choses. Par exemple, mentionner dans le README de votre projet la provenance de votre template html. Ou, indiquer la provenance dans la javadoc d’une méthode copiée depuis StackOverflow. Cette règle ne s’applique pas si vous ne copiez qu’une ou deux lignes de codes triviales.
-* Je dois voir vos changements facilement et les distinguer de code auto-généré ou importé sans changements de votre part. Si par exemple vous ajoutez un canevas HTML de 100 fichiers, faites-le dans une tâche dédiée, et créez une autre tâche pour vos modifications.
+* [#separate]Je dois voir vos changements facilement et les distinguer de code auto-généré ou importé sans changements de votre part. Si par exemple vous ajoutez un canevas HTML de 100 fichiers, faites-le dans une tâche dédiée, et créez une autre tâche pour vos modifications.
 * Maintenez les conversations focalisées. Ce n’est pas une bonne idée, par exemple, d’indiquer dans un commentaire de la PR #37 que vous avez décidé d’abandonner la PR #22 pour telle et telle raison : quand j’évaluerai la PR #22 par la suite, il est peu probable que je me souvienne de vos explications se trouvant en PR #37.
 * Une mission importante du SM/PO est de s’assurer que le projet converge vers un ensemble cohérent de fonctionnalités exploitables dans la branche `master`. Tentez de terminer en priorité les tâches presque finies qui ne sont pas encore dans `master`, par exemple, avant de commencer de nouvelles choses.
 
@@ -73,7 +73,7 @@ Don’t hesitate to send me your question by e-mail if you’re blocked in your 
 | NOISE	| Sans commentaires auto-générés | Réduit le bruit | −2
 | DER	| le dépôt ne contient pas de produits dérivés	| https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Git.adoc[BP Git]	| −1
 | FOLDER	| la racine du dépôt est la racine du projet	| https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Git.adoc[BP Git]	| −0,5
-| HIST	| Ne pas écraser l’historique	| Git	| 0
+| HIST	| Ne pas écraser l’historique	| Git	| 
 | PLAG	| Citer la source quand on inclut du code d’autrui	| https://fr.wikipedia.org/wiki/Plagiat[Plagiat]	| -3
 | ECL	| Le code est correct d’après Eclipse : pas de warnings	| https://github.com/oliviercailloux/java-course/blob/master/Tools.adoc#configuration[Tools]	| -1
 | CP	| Le code est séparé des autres ressources du class path	| https://github.com/oliviercailloux/java-course/tree/master/Search%20path[Search path]	| −1
@@ -87,6 +87,7 @@ Don’t hesitate to send me your question by e-mail if you’re blocked in your 
 | LOG	| Utiliser des loggers	| https://github.com/oliviercailloux/java-course/blob/master/Log/README.adoc[Log]	| −1
 | STREAMS	| Utiliser des streams pour plus de généralité quand approprié	| https://github.com/oliviercailloux/java-course/blob/master/Flows.adoc[Flows]	| −1
 | POM	| Respecter les conventions de nommage et autres bonnes pratiques Maven, simplifier le POM autant que possible	| https://github.com/oliviercailloux/java-course/tree/master/Maven[Maven]	| −1
+| SEP	| Séparer les tâches | https://github.com/oliviercailloux/java-course/blob/master/Divers/Projets.adoc#separate[Projets#separate] | 
 |===
 
 
