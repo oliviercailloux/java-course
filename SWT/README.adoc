@@ -43,26 +43,7 @@ You need to replace the artifactId with the one corresponding to your platform (
 </dependency>
 ----
 
-When depending on JFace, you also need to add the following in your dependencyManagement section (to specify the versions and hence avoid relying on the versions ranges provided in the pom of JFace).
-
-.Specify version of dependencies in your `pom.xml`
-[source,xml]
-----
-<dependencyManagement>
-	<dependencies>
-		<dependency>
-			<groupId>org.eclipse.platform</groupId>
-			<artifactId>org.eclipse.core.commands</artifactId>
-			<version>3.9.0</version>
-		</dependency>
-		<dependency>
-			<groupId>org.eclipse.platform</groupId>
-			<artifactId>org.eclipse.equinox.common</artifactId>
-			<version>3.9.0</version>
-		</dependency>
-	</dependencies>
-</dependencyManagement>
-----
+For compatibility with multiple OSes, use Maven profiles. See this https://github.com/oliviercailloux/PDF-p/blob/0daf84096c91186fc2593ef51c60720e8b338e6e/pom.xml[example].
 
 Further notes:
 
