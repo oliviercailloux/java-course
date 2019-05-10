@@ -312,23 +312,25 @@ Links taken from the https://www.edx.org/course/introduction-to-biology-the-secr
 ** Submitted code must be clean: well-formatted, clear, well named, …
 ** Must compile using Maven (otherwise, no point awarded)
 ** No warning given by Eclipse
+** 15h44 to 16h24
 * Choose your https://github.com/oliviercailloux/java-course/blob/master/Divers/Projets.adoc[project]
-* Comparing Persons, revisited
+* Comparing Persons, revisited, using https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html[Lambda Expressions]
 * Override `equals` and `hashcode`
-* Wrapping exceptions
 
 [[S9]]
-=== S9
+=== S9 (Friday 10th of May, 2019)
 
-* https://github.com/oliviercailloux/java-course/blob/master/Log/README.adoc[Logging]
-* https://github.com/oliviercailloux/java-course/blob/master/DevOps/CI.adoc[CI]
-* https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Maven.adoc[Maven Best Practices]
+* Tentative coefficients: graded quizz: 0.5, Extractor: 0.5, next graded exercices: 1, last graded exercice: 2
+* https://github.com/oliviercailloux/java-course/blob/master/DevOps/CI.adoc[CI]: Travis
 * TODO : livraison 1 avant fin de la veille de S10.
 
 [[S10]]
-=== S10
+=== S10 (Monday 20th of May, 2019)
 
-* https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Maven.adoc[Maven Best Practices]
+* Graded https://github.com/oliviercailloux/java-course/blob/master/Divers/Dep-Git.adoc[exercice] (about Maven dependencies and Git)
+* Wrapping exceptions
+* https://github.com/oliviercailloux/java-course/blob/master/Log/README.adoc[Logging]
+* https://github.com/oliviercailloux/java-course/raw/master/Annotations/presentation.pdf[Annotations]
 
 [[S11]]
 === S11
@@ -341,17 +343,12 @@ Links taken from the https://www.edx.org/course/introduction-to-biology-the-secr
 
 * NB: possible to go beyond initial diff; 1/3 diff pts for everybody (at end) for each of Log, Travis, Maven
 * Equals, Hashcode
-** Hash function
-** Uses
-** Equals in Java
-** Hashcode in Java: consistency
 ** Implementation
 
 [[S13]]
 === S13
 
 * Accès privé depuis un autre objet de même type
-* https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html[Lambda Expressions] (facultatif)
 * Aide demandée / aide proposée
 
 [[S14]]
@@ -359,7 +356,6 @@ Links taken from the https://www.edx.org/course/introduction-to-biology-the-secr
 
 * Back to Lambdas
 * Licenses and philosophy: https://www.gnu.org/philosophy/philosophy.html[GNU]; https://opensource.org/[OSI]; Copyleft (GNU https://opensource.org/licenses/GPL-3.0[GPL]); Non-copyleft (https://opensource.org/licenses/MIT[MIT])
-* https://github.com/oliviercailloux/java-course/raw/master/Annotations/presentation.pdf[Annotations]
 * Parsing HTML: https://github.com/oliviercailloux/java-course/blob/master/HTML%20to%20DOM.adoc[DOM]
 * Accessing REST web services: https://github.com/oliviercailloux/java-course/blob/master/WS%20client/JAX-RS%20client.adoc[JAX-RS client]
 
