@@ -7,14 +7,14 @@ NOTE: The reader supposedly has read https://github.com/oliviercailloux/java-cou
 == Access
 IBM offers time-limited access to its Cloud offering to academic partners. Check at https://onthehub.com/[OnTheHub] whether your institution is listed. (Students who follow the course: register at https://dauphine.onthehub.com/[Dauphine OnTheHub] using your @dauphine.eu address.) 
 
-Then get the “IBM Cloud Promo Code - 6 Month Trial” in your cart. Follow the instructions. At the end of the process you should be able to enter your promo code on the IBM Cloud https://console.bluemix.net/[console], which will give you access to the products we need.
+Then get the “IBM Cloud Promo Code - 6 Month Trial” in your cart. Follow the instructions. At the end of the process you should be able to enter your promo code on the IBM Cloud https://cloud.ibm.com/[console], which will give you access to the products we need.
 
 == Overview
 We will use only one thing from the vast offering of IBM Cloud: its “Liberty” hosting service. This means we will deploy your project on a server hosted by IBM, so that it will become permanently reachable on the internet, instead of just on your developer computer. This is useful for demonstration purposes; and this closes the loop by showing one way of deploying a project to the real world. (Well, the real virtual world.)
 
-The IBM Cloud https://console.bluemix.net/[console] is used to monitor and configure your applications running on the cloud. (We will not use OnTheHub anymore, it serves only to provide initial access.)
+The IBM Cloud https://cloud.ibm.com/[console] is used to monitor and configure your applications running on the cloud. (We will not use OnTheHub anymore, it serves only to provide initial access.)
 
-You can use the command-line tool https://console.bluemix.net/docs/cli/index.html[CloudFoundry], `cf`, together with the IBM Cloud console, to manually deploy your applications or do a lot of other things. This is useful for debugging and going further with IBM products, but in this introduction, we will automate the deployment thanks to Travis, so we will not need `cf`. (Travis actually uses `cf` behind the scenes.)
+You can use the command-line tool https://cloud.ibm.com/docs/cli/index.html[CloudFoundry], `cf`, together with the IBM Cloud console, to manually deploy your applications or do a lot of other things. This is useful for debugging and going further with IBM products, but in this introduction, we will automate the deployment thanks to Travis, so we will not need `cf`. (Travis actually uses `cf` behind the scenes.)
 
 == Set-up
 Add a file `manifest.yml` to the root of your repository, with the content below. This indicates to IBM Cloud how your application should be deployed to their server. (See https://cloud.ibm.com/docs/runtimes/liberty?topic=liberty-options_for_pushing[doc] for details.) Replace `MyAppName` appropriately.
