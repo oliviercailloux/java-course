@@ -60,8 +60,8 @@ Further notes:
 == References
 
 === Overview links
-* Platform Plug-in Developer Guide > Programmer's Guide > http://help.eclipse.org/oxygen/index.jsp?topic=/org.eclipse.platform.doc.isv/guide/swt.htm[The Standard Widget Toolkit]
-* Platform Plug-in Developer Guide > Programmer's Guide > http://help.eclipse.org/oxygen/index.jsp?topic=/org.eclipse.platform.doc.isv/guide/jface.htm[The JFace UI framework]
+* Platform Plug-in Developer Guide > Programmer's Guide > http://help.eclipse.org/2019-03/index.jsp?topic=/org.eclipse.platform.doc.isv/guide/swt.htm[The Standard Widget Toolkit]
+* Platform Plug-in Developer Guide > Programmer's Guide > http://help.eclipse.org/2019-03/index.jsp?topic=/org.eclipse.platform.doc.isv/guide/jface.htm[The JFace UI framework]
 * Vogella’s https://www.vogella.com/tutorials/SWT/article.html[SWT] and https://www.vogella.com/tutorials/EclipseJFace/article.html[JFace] overview articles (and https://www.vogella.com/tutorials/eclipse.html[more])
 * Understanding Layouts in SWT http://www.eclipse.org/articles/article.php?file=Article-Understanding-Layouts/index.html[article]
 
@@ -70,7 +70,7 @@ Further notes:
 * http://wiki.eclipse.org/JFaceSnippets[JFace snippets]
 * SWT Widget http://wiki.eclipse.org/SWT_Widget_Style_Bits[Style Bits]
 * SWT Widgets http://www.eclipse.org/swt/widgets/[by screenshot]
-* Javadoc: Package http://help.eclipse.org/oxygen/nftopic/org.eclipse.platform.doc.isv/reference/api/org/eclipse/swt/widgets/package-summary.html[org.eclipse.swt.widgets]
+* Javadoc: Package http://help.eclipse.org/2019-03/nftopic/org.eclipse.platform.doc.isv/reference/api/org/eclipse/swt/widgets/package-summary.html[org.eclipse.swt.widgets]
 * Using an SWT/JFace https://github.com/oliviercailloux/java-course/blob/master/SWT/Table.adoc[Table]
 * http://wiki.eclipse.org/JFace_Data_Binding[JFace Data Binding]
 
