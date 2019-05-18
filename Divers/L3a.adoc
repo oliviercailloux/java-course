@@ -328,28 +328,24 @@ Links taken from the https://www.edx.org/course/introduction-to-biology-the-secr
 === S10 (Monday 20th of May, 2019)
 
 * Graded https://github.com/oliviercailloux/java-course/blob/master/Divers/Dep-Git.adoc[exercice] (about Maven dependencies and Git)
-* Wrapping exceptions
+* https://stackoverflow.com/questions/28972893/what-is-exception-wrapping-in-java[Wrapping] exceptions
 * https://github.com/oliviercailloux/java-course/blob/master/Log/README.adoc[Logging]
 * https://github.com/oliviercailloux/java-course/raw/master/Annotations/presentation.pdf[Annotations]
 
 [[S11]]
-=== S11
+=== S11 (Thursday 23rd of May, 2019)
 
 * https://github.com/oliviercailloux/java-course/tree/master/SWT[SWT]
-* Next delivery date: end of the 14th
 
 [[S12]]
-=== S12
+=== S12 (Friday 24th of May, 2019)
 
-* NB: possible to go beyond initial diff; 1/3 diff pts for everybody (at end) for each of Log, Travis, Maven
-* Equals, Hashcode
-** Implementation
+* TODO : livraison suivante avant fin de la veille de la prochaine séance.
 
 [[S13]]
-=== S13
+=== S13 (Tuesday 4th of June, 2019)
 
-* Accès privé depuis un autre objet de même type
-* Aide demandée / aide proposée
+* Graded exercice: unit tests / access resources through class path / continue Extractor.
 
 [[S14]]
 === S14
