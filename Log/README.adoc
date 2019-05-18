@@ -2,12 +2,12 @@
 
 Logging is tracing what your program is doing with statements that indicate which instructions have been executed and the values of important variables.
 
-One of the exasperating things in the Java world is the multiplicity of logging framework (see Antonio Goncalves’ related https://antoniogoncalves.org/2012/09/06/i-need-you-for-logging-api-spec-lead/[blog post]). My personal default choice is to go for JUL for Java EE projects and SLF4J plus logback for Java SE projects.
+One of the exasperating things in the Java world is the multiplicity of logging framework (see Antonio Goncalves’ related https://antoniogoncalves.org/2012/09/06/i-need-you-for-logging-api-spec-lead/[blog post]). My personal default choice is https://www.slf4j.org/[SLF4J] plus https://logback.qos.ch/[logback].
 
-See https://github.com/oliviercailloux/java-course/raw/master/Log/SLF4J/presentation.pdf[presentation] about SLF4J.
+See this https://github.com/oliviercailloux/java-course/raw/master/Log/SLF4J/presentation.pdf[presentation] about SLF4J.
 
 == Reason for logging frameworks
-It is classical to use `System.out.println` to log. (In an application server, the container will by default redirect the output to the log file; otherwise, the result is simply shown in the terminal.) 
+It is classical to use `System.out.println` to log.
 
 However, this is not the cleanest way to log:
 
@@ -15,9 +15,28 @@ However, this is not the cleanest way to log:
 * it does not offer differentiated log levels
 * if you later move the code to a standalone library or application, you will have to refactor all those statements to turn them into proper log statements
 
+== SLF4J
+
+To log using SLF4J, your project has to depend on the SLF4J https://search.maven.org/search?q=g:org.slf4j%20AND%20a:slf4j-api&core=gav[API] (see this example https://github.com/oliviercailloux/java-archetype/blob/master/src/main/resources/archetype-resources/pom.xml[pom]).
+
+To log, proceed as follows. First, declare a logger in your class `MyClassName` using this code.
+
+----
+@SuppressWarnings("unused")
+private static final Logger LOGGER = LoggerFactory.getLogger(MyClassName.class);
+----
+
+(The suppress warnings is there to make sure the compiler will not nag you if it turns out you do not use the logger anywhere.)
+
+You can then write logging statements such as `LOGGER.info("Hello, {}.", name);`, where `name` is a variable whose content you want to log. (See this example https://github.com/oliviercailloux/java-archetype/blob/master/src/main/resources/archetype-resources/src/main/java/App.java[code].)
+
+To effectively log using logback, https://search.maven.org/search?q=g:ch.qos.logback%20AND%20a:logback-classic&core=gav[depend] on it and add a `logback.xml` configuration file in your class path (https://github.com/oliviercailloux/java-archetype/blob/master/src/main/resources/archetype-resources/src/main/resources/logback.xml[example]).
+
+https://github.com/oliviercailloux/java-archetype[This] Maven archetype lets you quickly start a project already configured for SLF4J and logback.
+
 == Java Utils Logging
 
-To log using Java Utils Logging (JUL), proceed as follows. First, declare a logger in your class using this code.
+To log using Java Utils Logging (JUL), in case you prefer this to SLF4J, proceed as follows. First, declare a logger in your class using this code.
 
 ----
 @SuppressWarnings("unused")
@@ -25,8 +44,6 @@ private static final Logger LOGGER = Logger.getLogger(MyClassName.class.getCanon
 ----
 
 You can then write logging statements such as `LOGGER.info("Hello, world.");`.
-
-(The suppress warnings is there to make sure the compiler will not nag you if it turns out you do not use the logger anywhere.)
 
 == References
 * Oracle https://docs.oracle.com/javase/8/docs/technotes/guides/logging/index.html[tutorial] about JUL

@@ -55,8 +55,6 @@
 			\item statements that stay in the code
 			\item and that follow a systematic strategy
 		\end{itemize}
-		\item Write to temporary output: \only<1>{?}\onslide<2->{standard output stream (or standard error stream)}
-		\item Or write to persistent output: \only<1-2>{?}\onslide<3->{file}
 		\item Why log?
 	\end{itemize}
 \end{frame}
@@ -112,7 +110,7 @@
 		\item Logger for a given class is in field \texttt{private static final Logger LOGGER}
 		\item Because: no need to distinguish loggers per instance
 		\item Obtain the logger using \texttt{LoggerFactory.getLogger(MyClass.class);}
-		\item Advantage wrt \texttt{LoggerFactory.getLogger("mypackage.MyClass")}? \only<2>{Refactoring: explicit link to class}
+		\item Advantage wrt \texttt{LoggerFactory.getLogger("mypackage.MyClass")}? \onslide<2>{Refactoring: explicit link to class}
 	\end{itemize}
 	\begin{lstlisting}
 @SuppressWarnings("unused")
@@ -179,7 +177,7 @@ try {
 		\item Example: a log request of level DEBUG is not sent to a logger with effective level INFO
 		\item Log level not configured explicitly ⇒ inherited from parent
 		\item If root has level DEBUG and no other is configured: all DEBUG
-		\item If root has level DEBUG and X.Y has level INFO, X has effective level? \pause DEBUG; X.Z? \pause DEBUG; X.Y.Z? INFO
+		\item If root has level DEBUG and X.Y has level INFO, X has effective level? \pause DEBUG; X.Z? \pause DEBUG; X.Y.Z? \pause INFO
 	\end{itemize}
 \end{frame}
 
