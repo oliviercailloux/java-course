@@ -10,7 +10,7 @@
 
 == Instructions générales
 * Quatre itérations au total, chacune clôturée par une livraison
-* Une livraison par 2 (ou 3) séances, environ 12h (ou 18h) de travail sur projet par sous-équipe (calendrier dans programme du cours)
+* Une livraison par 2 (ou 3) séances, environ 10h (ou 15h) de travail sur projet par sous-équipe (calendrier dans programme du cours)
 * Une équipe de _n_ personnes est constituée de _n/2_ (arrondi au-dessus) sous-équipes : des binômes de développeurs et une sous-équipe de un ou deux Scrum Master / Product Owner (nommée ci-après « le SM/PO » pour désigner la sous-équipe, même quand ils sont deux)
 * Sous-équipes doivent changer à chaque itération ; être maximum deux fois SM/PO en tout
 * SM/PO : planifie avec son équipe les _tâches_ à délivrer, documente, fournit des diagrammes (exigences un peu plus grandes si binôme que si seul) ; réoriente les tâches en cas de problème de prérequis ; vérifie que le projet fonctionne toujours après fusion ; est responsable de la cohérence du tout
