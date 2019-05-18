@@ -32,11 +32,11 @@ applications:
 
 Now we need to tell Travis to deploy your application to IBM Cloud as a part of the continuous integration process. Edit your `.travis.yml` file to reflect the configuration in this https://github.com/oliviercailloux/sample-jax-rs/blob/master/.travis.yml[sample] (look at the `deploy` part). (Check the Travis Bluemix CloudFoundry Deployment https://docs.travis-ci.com/user/deployment/bluemixcloudfoundry/[doc] for details.)
 
-You can find your organization, space and region by looking at your https://console.bluemix.net/dashboard/apps/[deployed apps] in the IBM Cloud console.
+You can find your organization, space and region by looking at your https://cloud.ibm.com/resources[deployed apps] in the IBM Cloud console.
 
 Go to https://travis-ci.org/[Travis CI]: in your application, `More options` / `Settings`, you will find a way to add environment variables. Add one named `BLUEMIX_PASSWORD` with your password as value. Make sure “Display value in build log” is off.
 
 In your `pom.xml`, in the `build` element, add `<finalName>${project.artifactId}</finalName>`, so that maven will produce an artifact with no version number in it. (Check this https://github.com/oliviercailloux/sample-jax-rs/blob/master/pom.xml[sample].) Otherwise, the `path` we have indicated in the `manifest.yml` must be changed to reflect the version.
 
-Push your changes. Watch in the Travis log your application getting built, then deployed to IBM Cloud (isn’t it beautiful?). If all went well, the log indicates the url where your application is reachable, probably `https://MyAppName.eu-gb.mybluemix.net` (this is its context root). Refresh your https://console.bluemix.net/dashboard/apps/[deployed apps] page, you should see it there. Its servlets should now be reachable.
+Push your changes. Watch in the Travis log your application getting built, then deployed to IBM Cloud (isn’t it beautiful?). If all went well, the log indicates the url where your application is reachable, probably `https://MyAppName.eu-gb.mybluemix.net` (this is its context root). Refresh your https://cloud.ibm.com/resources[deployed apps] page, you should see it there. Its servlets should now be reachable.
 

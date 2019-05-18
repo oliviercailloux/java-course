@@ -15,7 +15,7 @@ If Eclipse is still lost, make sure it uses the configuration from Maven (someti
 * Re-import the project into Eclipse. This forces Eclipse to re-create the configuration from scratch (based on Maven).
 
 == References
-* Simple, recommended https://github.com/oliviercailloux/java-se-1.8-archetype/blob/master/src/main/resources/archetype-resources/pom.xml[POM]
+* Simple, recommended https://github.com/oliviercailloux/java-archetype/blob/master/src/main/resources/archetype-resources/pom.xml[POM]
 * https://maven.apache.org/guides/getting-started/index.html[Tutorial] Apache Maven
 * https://books.sonatype.com/mvnref-book/reference/index.html[Book] Maven: The Complete Reference
 * https://books.sonatype.com/mvnex-book/reference/index.html[Book] Maven by Example

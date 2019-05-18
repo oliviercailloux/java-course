@@ -36,7 +36,7 @@ Let’s now use a different archetype to generate a project better suited for ou
 Your project gets created in a sub-folder of your current position.
 
 * What changed, compared to the previous project? Compare in particular both `pom.xml` files: what changed? What will be the effect of those changes?
-* Compare your answer to the https://github.com/oliviercailloux/java-se-1.8-archetype[documentation].
+* Compare your answer to the https://github.com/oliviercailloux/java-archetype[documentation].
 
 Finally, import your project in Eclipse.
 

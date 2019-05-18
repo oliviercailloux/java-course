@@ -60,7 +60,7 @@ Links taken from the https://www.edx.org/course/introduction-to-biology-the-secr
 * Basic concepts and structures of Java: variables; types; subroutines; control structures; identifiers… [SK]
 ** https://github.com/oliviercailloux/java-course/raw/master/Syntaxe/presentation.pdf[Syntaxe], http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours1.pdf[Airiau C1] (compil, p. 16 to 20)
 * https://github.com/oliviercailloux/java-course/raw/master/Notions%20objets/presentation.pdf[Basics of objects]
-* https://www.wooclap.com/JL[Quizz]
+* http://www.wooclap.com/JL[Quizz]
 * https://github.com/oliviercailloux/java-course/blob/master/Git/README.adoc[Git]: local repo, start ex
 
 // Present all theory, 90 min. Then 30 min ex. Then 30 min git theory (local only!), 30 min ex.
