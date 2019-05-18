@@ -381,6 +381,6 @@ https://github.com/Deeplygends/Apartments/raw/master/Apartments%20-%20Presentati
 https://github.com/J-Conf-Team/J-Confs/raw/master/Pr%C3%A9sentation/Pr%C3%A9sentation.pdf[J-Confs] 
 (using the code and the slides on my computer)
 * votes
-* Evals, and https://github.com/oliviercailloux/projets/blob/master/Licence.adoc[Licences]: https://github.com/oliviercailloux/projets/raw/master/Declaration%20of%20licensing.odt[Decl]
+* Evals, and https://github.com/oliviercailloux/projets/blob/master/Licences/Licence.adoc[Licences]: https://github.com/oliviercailloux/projets/raw/master/Licences/Declaration%20of%20licensing.odt[Decl]
 * https://www.youtube.com/watch?v=aHxv_2BMJfw
 
