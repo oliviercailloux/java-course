@@ -45,7 +45,7 @@
 \begin{frame}
 	\frametitle{What’s a GUI?}
 	\begin{itemize}
-		\item GUI? \pause Graphical User Interface
+		\item GUI? \onslide<2->{Graphical User Interface}
 		\item \emph{An} interface between the user and your program
 		\item Assembles graphical components
 		\item Components are provided
@@ -58,7 +58,7 @@
 \begin{frame}
 	\frametitle{Control in GUIs}
 	\begin{itemize}
-		\item IoC? \pause Inversion of control
+		\item IoC? \onslide<2->{Inversion of control}
 		\item AKA The Hollywood principle: “Don’t call us, we’ll call you”
 		\item Usually: you control the application flow
 		\item From \texttt{main}, go to this method, …
@@ -191,7 +191,7 @@
 		\item JavaFX: replacer of Swing
 		\item Declarative language for definition of the GUI; animations; CSS styles
 		\item Paints its own controls
-		\item AWT, Swing, JavaFX part of the JRE
+		\item AWT, Swing, JavaFX standardized in Java
 		\item Standard Widget Toolkit (SWT): Eclipse’s alternative to AWT/Swing
 		\item JFace: Eclipse’s advanced library that supplements SWT
 	\end{itemize}
@@ -201,7 +201,7 @@
 \begin{frame}
 	\frametitle{Characteristics}
 	\begin{itemize}
-		\item A blatant lie in the name: \only<1>{?}\onslide<2>{it’s not standard!}
+		\item A lie in the name: \only<1>{?}\onslide<2>{it’s not standard!}
 		\item JavaFX is newer and (possibly) more popular, and (really) standard
 		\item SWT uses native graphical components (like AWT)
 		\item JFace/SWT has high-level components (like Swing or JavaFX)
@@ -307,7 +307,7 @@ display.dispose();
 		\item Example: \href{http://help.eclipse.org/oxygen/advanced/content.jsp?topic=/org.eclipse.platform.doc.isv/reference/api/org/eclipse/swt/events/SelectionListener.html}{\texttt{SelectionListener}}
 		\item Add your implementer to the observers of the widget
 		\item \texttt{button.addSelectionListener(myListener);}
-		\item When the widget fires the corresponding event, your listener will be called
+		\item When the widget fires the corresponding event, your listener is called
 	\end{itemize}
 \end{frame}
 
