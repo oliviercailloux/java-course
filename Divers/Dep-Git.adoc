@@ -12,7 +12,7 @@ Here are the instructions for the graded exercice “Dep-Git”.
 
 You will be graded as follows.
 
-* One of the commits that you created must have the starting commit as parent, and be an ancestor of the final position of the branch `my-branch`.
+* One of the commits that you created must have the starting commit as parent, and be an ancestor of the final position of `my-branch`.
 * One of the commits that you created must have two parents: a commit that you created; and one that you did not create; both parents having as parent the starting commit. The commit must be the final position of the branch `my-branch`, or be an ancestor of it.
 * In your last commit which modifies the pom, the dependency to jgit must be correct.
 * Commits created using the GitHub web site do not count.
