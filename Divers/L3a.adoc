@@ -340,6 +340,7 @@ Links taken from the https://www.edx.org/course/introduction-to-biology-the-secr
 [[S12]]
 === S12 (Friday 24th of May, 2019)
 
+* Back to https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html[Method references]
 * TODO : livraison suivante avant fin de la veille de la prochaine séance.
 
 [[S13]]
@@ -350,7 +351,6 @@ Links taken from the https://www.edx.org/course/introduction-to-biology-the-secr
 [[S14]]
 === S14
 
-* Back to Lambdas
 * Licenses and philosophy: https://www.gnu.org/philosophy/philosophy.html[GNU]; https://opensource.org/[OSI]; Copyleft (GNU https://opensource.org/licenses/GPL-3.0[GPL]); Non-copyleft (https://opensource.org/licenses/MIT[MIT])
 * Parsing HTML: https://github.com/oliviercailloux/java-course/blob/master/HTML%20to%20DOM.adoc[DOM]
 * Accessing REST web services: https://github.com/oliviercailloux/java-course/blob/master/WS%20client/JAX-RS%20client.adoc[JAX-RS client]
