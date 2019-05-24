@@ -5,6 +5,7 @@
 Tell JPA to use delimited identifiers (see the object/relational xml mapping file, `orm.xml`, in my JPA https://github.com/oliviercailloux/samples[samples]). (See JSR 338 JPA 2.1 http://download.oracle.com/otn-pub/jcp/persistence-2_2-mrel-eval-spec/JavaPersistence.pdf[spec], section 2.13.) JPA will then “delimit” (quote) all SQL identifiers, thus avoiding conflicts with e.g. table names that are also SQL keywords. Note that this renders identifiers case sensitive.
 
 * Delimited identifiers is off by default and may cause nasty problems, especially because SQL keywords differ by vendor (and it’s hard to keep track of all of them, see e.g. http://hsqldb.org/doc/guide/lists-app.html[here] or https://www.drupal.org/node/141051[here]). A typical problem with non delimited identifiers occurs when using an entity named `User`: this may work on some DBMS and fail at runtime on others.
+* See this Hibernate https://hibernate.atlassian.net/browse/HHH-13347[bug]
 
 [[metamodel]]
 == Metamodel generator for typesafe JPA queries
