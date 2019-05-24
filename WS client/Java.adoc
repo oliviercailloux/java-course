@@ -12,5 +12,5 @@ We will access those same web services we practiced with in the exercice using C
 * Replace the skeleton code with the right calls so that you access JSONPlaceholder as requested in the previous exercice. Check that you obtain the expected result. Use appropriate “URI templates” (`{path}`) for nicer code.
 * Add a method that retrieves the Wikipedia page as requested per the second exercice, above.
 
-A solution is https://github.com/oliviercailloux/empty-rest-client/tree/example[here]. Do not cheat! Look at the solution only after you solved it by yourself.
+A solution is provided (link above). Do not cheat! Look at the solution only after you solved it by yourself.
 
