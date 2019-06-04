@@ -1,4 +1,4 @@
-= Extractor
+= JUnit
 
 In this exercice, you will test a simple class, `MySimpleExtractor`, that is able to extract plain text from a PDF.
 
