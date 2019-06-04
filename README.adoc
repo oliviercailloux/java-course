@@ -8,7 +8,9 @@ Course about Java SE and Java EE.
 
 == Main content
 
-Look into the various `.adoc` files and sub-folders, depending on your interest!
+Look into the various `.adoc` files and sub-folders, depending on your interest.
+
+Please drop me an e-mail if you use (some of) this content (the license permits you to re-use the content without asking or telling me however).
 
 == See also
 * https://github.com/oliviercailloux/samples[Samples]
