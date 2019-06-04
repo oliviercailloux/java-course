@@ -347,7 +347,7 @@ Links taken from the https://www.edx.org/course/introduction-to-biology-the-secr
 === S13 (Tuesday 4th of June, 2019)
 
 * Graded https://github.com/oliviercailloux/java-course/blob/master/Divers/JUnit.adoc[exercice]: unit tests / access resources through class path / continue Extractor.
-** 17h17 to 17h37
+** 17h17 to 17h42 (5 min for delays due to GitHub)
 
 * Write the list of PRs for Iteration 2 for each sub-team in `README.adoc` in your `dev` branch.
 
