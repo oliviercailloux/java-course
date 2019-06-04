@@ -1,0 +1,22 @@
+= Extractor
+
+In this exercice, you will test a simple class, `MySimpleExtractor`, that is able to extract plain text from a PDF.
+
+* Create a repository for your exercice https://classroom.github.com/a/Q_hWoHQq[here]. This is also where your code must be submitted.
+* Clone the resulting project. Import it into your IDE.
+* Define a class named `ExtractorTests` (full name `io.github.oliviercailloux.extractor.ExtractorTests`), put http://www.xmlpdf.com/manualfiles/hello-world.pdf[this] PDF in your class path and name it `hello-world.pdf`. Follow the best practices given in the course.
+* You must define two unit tests which check that the `writeText` method of `MySimpleExtractor` satisfies its contract.
+** Write a test whose method name is `testNormalPdf()` which gives the content of `hello-world.pdf` (as a stream) to the method `writeText` and checks that the corresponding output is `"hello world\n"`. Your method may not write to the hard disk. (You may use a `StringWriter` to retrieve the written output easily.)
+** Write a test whose method name is `testNullInput()` which tests that `MySimpleExtractor` has the right behavior when being sent a `null` input (as specified in the contract). You must test both the case of a `null` and a non `null` output.
+** Your test should be written so that the amount of code to be changed be minimal if we want to test another implementation of the `SimpleExtractor` interface.
+** Obviously, your tests must pass if and only if `writeText` indeed satisfies its contract. (I will check whether your test fails, as it should, when given incorrect variants of `MySimpleExtractor`.)
+* Commit using `git` in the `testing` branch (that you must create, starting from `master`).
+
+Here are some supplementary information about grading.
+
+* *Important* Make sure your code compiles (according to `mvn compile`). Otherwise, almost no points will be granted.
+* All `Closable` objects you create must be correctly closed.
+* Only your last commit counts.
+
+* Time allowed: 20 minutes. Late: −0.05/20 per second. (Timestamp given by GitHub server.)
+
