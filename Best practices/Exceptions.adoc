@@ -5,6 +5,9 @@
 == Cath exceptions only if you have a good reason to do so
 Beginner programmers sometimes catch an exception just to get rid of the problem, and do not do anything in the catch block (or just log or print the exception). This is very bad style as it contradicts the fail-fast principle. Consider rather to re-throw the exception, or to wrap it in an unchecked exception.
 
+== Do not log and throw
+If you throw an exception, avoid logging the exception as well. This would lead to double logging, as the caller of the code would also possibly log upon receiving the exception. Only the part of the code that finally deals with the exception and does not re-throw it, if any, should decide of the appropriate action.
+
 == Throw `NullPointerException` when receiving an incorrect `null` argument
 There’s some debate about whether `NullPointerException` or `IllegalArgumentException` should be thrown when receiving an incorrect `null` argument in a method. 
 
