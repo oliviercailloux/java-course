@@ -8,6 +8,9 @@ Beginner programmers sometimes catch an exception just to get rid of the problem
 == Do not log and throw
 If you throw an exception, avoid logging the exception as well. This would lead to double logging, as the caller of the code would also possibly log upon receiving the exception. Only the part of the code that finally deals with the exception and does not re-throw it, if any, should decide of the appropriate action.
 
+== Exception declaration
+A method must declare all exception that it can possibly throw that do not extend `RuntimeException`. Runtime exceptions should generally not be declared. Declare those only if you see a specific reason to draw attention to it.
+
 == Throw `NullPointerException` when receiving an incorrect `null` argument
 There’s some debate about whether `NullPointerException` or `IllegalArgumentException` should be thrown when receiving an incorrect `null` argument in a method. 
 
