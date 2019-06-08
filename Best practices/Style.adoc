@@ -16,8 +16,11 @@ http://google.github.io/styleguide/javaguide.html#s2.3.1-whitespace-characters[2
 
 http://google.github.io/styleguide/javaguide.html#s5.2.1-package-names[5.2.1], “Package names are all lowercase, with consecutive words simply concatenated together (no underscores)”. I use underscores to separate words in packages (see https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Maven.adoc[Maven]).
 
-=== No code commented out
-Use javadoc style comments to comment your code (`/** This explains something. */`). Do not use comments to comment out code (`//object.someMethod()`). This hinders readability and increases the length of the code, and quickly becomes completely unuseful as commented code accumulate. You should anyway use a versioning control system and use this to go back in time when desired.
+=== No code disabled using comments
+Do not use comments to comment out code (`//object.someMethod()`). This hinders readability and increases the length of the code, and quickly becomes completely unuseful as commented code accumulate. You should anyway use a versioning control system and use this to go back in time when desired.
+
+=== Use Javadoc style comments
+Use javadoc style comments to comment your code (`/** This explains the code that follows. */`). Put the comment just before the code that it comments. Javadoc style comment is used for multi-line comments that contain free-flowing text, which your IDE will thus reformat to respect margin boundaries. On the contrary, C-style comments (`//comment`) are normally used to disable code (which you should not do, see above). Your IDE will typically consider it is not allowed to reformat these comments by changing the line feed characters.
 
 == Method parameters
 Avoid method with numerous parameters, especially if they are of the same type. It increases the risk of passing a parameter for another one. For example, avoid `buildPerson(firstName: String, lastName: String, description: String, phoneNumber: String, address: String)`.
@@ -41,9 +44,6 @@ If your comments are general comments about your class (its goal, how to use it,
 Omit tags that you have nothing to say about. For example, it is often reasonable to omit `@throws IOException` tag.
 
 Get inspiration from well written documentation such as the one on `List`.
-
-== Exception declaration
-Your method must declare all exception that it can possibly throw that do not extend `RuntimeException`. Runtime exceptions should generally not be declared. It may be declared if, and only if, its presence helps understand the behavior of the code, or should be paid particular attention.
 
 == Outdated references
 * https://www.oracle.com/technetwork/java/namingconventions-139351.html[Oracle J2EE] (I don’t think this should be taken seriously as it is very old, apparently unmaintained, and not included in recent documentation of Oracle).
