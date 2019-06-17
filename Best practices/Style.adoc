@@ -5,6 +5,7 @@
 == Writing code
 I mainly refer here to http://google.github.io/styleguide/javaguide.html[GJSG]: Google Java Style Guide, which generally makes sense.
 Most importantly:
+
 * GJSG http://google.github.io/styleguide/javaguide.html#s5.2-specific-identifier-names[5.2], Rules by identifier type
 * GJSG http://google.github.io/styleguide/javaguide.html#s2.2-file-encoding[2.2], File encoding: UTF-8
 * “Tip: Never make your code less readable simply out of fear that some programs might not handle non-ASCII characters properly. If that should happen, those programs are broken and they must be fixed.” (GJSG http://google.github.io/styleguide/javaguide.html#s2.3.3-non-ascii-characters[2.3.3]{emptyattribute})
