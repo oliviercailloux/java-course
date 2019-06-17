@@ -352,38 +352,37 @@ Links taken from the https://www.edx.org/course/introduction-to-biology-the-secr
 * Write the list of PRs for Iteration 2 for each sub-team in `README.adoc` in your `dev` branch.
 
 [[S14]]
-=== S14
+=== S14 (Wednesday 5th of June, 2019)
 
 * Licenses and philosophy: https://www.gnu.org/philosophy/philosophy.html[GNU]; https://opensource.org/[OSI]; Copyleft (GNU https://opensource.org/licenses/GPL-3.0[GPL]); Non-copyleft (https://opensource.org/licenses/MIT[MIT])
 * Parsing HTML: https://github.com/oliviercailloux/java-course/blob/master/HTML%20to%20DOM.adoc[DOM]
 * Accessing REST web services: https://github.com/oliviercailloux/java-course/blob/master/WS%20client/JAX-RS%20client.adoc[JAX-RS client]
 
 [[S15]]
-=== S15
+=== S15 (Monday 17th of June, 2019)
 
-* Back to: SWT; Logging; Resources (in JAR)
 * Work on project
+* TODO : livraison 3 avant fin du jeudi 20, avec PRs affectées à une https://help.github.com/en/articles/about-milestones[Milestone] « Itération 3 » (merci à l’équipe Assisted Board Games pour cette astuce).
 
 [[S16]]
-=== S16
+=== S16 (Friday 21st of June, 2019)
 
 * Work on project
-* Next delivery: end of 14th.
-* End of 22nd: final code on GitHub.
-* End of 24th: final slides on GitHub (format: PDF).
+* TODO : livraison 4 avant fin du vendredi 28, avec PRs affectées à une https://help.github.com/en/articles/about-milestones[Milestone] « Itération 4 ».
+* Présentation avant fin du dimanche 30 directement sur branche master, dans `Doc/Présentation 2019.pdf`.
 
 [[S17]]
-=== S17
+=== S17 (Monday 1st of July, 2019)
 
-* Presentations: 
-https://github.com/LibraryGroup/2D-Library/raw/master/Presentation/JAVA%202D-LIBRARY%20PROJECT%20PRESENTATION.pdf[2D Library], 
-https://github.com/Perciii/J-Voting/raw/master/Presentation/presentation.pdf[J-Voting], 
-https://github.com/LosProfesoresDeDauphine/Teach-spreadsheets/raw/master/Presentation/Java_Presentation.pdf[Teach spreadsheets], 
-https://github.com/Raphaaal/XM-GUI/raw/master/XM-GUI%20-%20Presentation.pdf[XM-GUI], 
-https://github.com/Deeplygends/Apartments/raw/master/Apartments%20-%20Presentation.pdf[Apartments], 
-https://github.com/J-Conf-Team/J-Confs/raw/master/Pr%C3%A9sentation/Pr%C3%A9sentation.pdf[J-Confs] 
-(using the code and the slides on my computer)
+* Présentations : (ordre à déterminer)
+https://github.com/CHARLONCyril/2D-Library/raw/master/Doc/Présentation%202019.pdf[2D Library], 
+https://github.com/Amioplk/Apartments/raw/master/Doc/Présentation%202019.pdf[Apartments], 
+https://github.com/busychess/Assisted-Board-Games/raw/master/Doc/Présentation%202019.pdf[Assisted Board Games], 
+https://github.com/13tomoore/J-Confs/raw/master/Doc/Présentation%202019.pdf[J-Confs], 
+https://github.com/j-voting/J-Voting/raw/master/Doc/Présentation%202019.pdf[J-Voting]
+** Code & diapos sur ordinateur de présentation
+** 15 à 30 minutes
+** Noté : intérêt pour l’audience ; compréhension par l’audience du contexte et de l’objectif du projet ; compréhension par l’audience de l’architecture du code et des aspects techniques ; partage clair des fcts déjà présentes VS ajoutées ; autres aspects intéressants, instructifs, originaux… (soyez créatifs !)
 * votes
 * Evals, and https://github.com/oliviercailloux/projets/blob/master/Licences/Licence.adoc[Licences]: https://github.com/oliviercailloux/projets/raw/master/Licences/Declaration%20of%20licensing.odt[Decl]
-* https://www.youtube.com/watch?v=aHxv_2BMJfw
 
