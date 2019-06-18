@@ -382,7 +382,7 @@ https://github.com/13tomoore/J-Confs/raw/master/Doc/Présentation%202019.pdf[J-C
 https://github.com/j-voting/J-Voting/raw/master/Doc/Présentation%202019.pdf[J-Voting]
 ** Code & diapos sur ordinateur de présentation
 ** 15 à 30 minutes
-** Noté : intérêt pour l’audience ; compréhension par l’audience du contexte et de l’objectif du projet ; compréhension par l’audience de l’architecture du code et des aspects techniques ; partage clair des fcts déjà présentes VS ajoutées ; autres aspects intéressants, instructifs, originaux… (soyez créatifs !)
-* votes
+** Noté : intérêt pour l’audience ; compréhension par l’audience du contexte et de l’objectif du projet ; compréhension par l’audience de l’architecture du code et des aspects techniques ; distinction claire des fcts déjà présentes VS ajoutées ; originalité & créativité éventuelle ; …
+* Votes
 * Evals, and https://github.com/oliviercailloux/projets/blob/master/Licences/Licence.adoc[Licences]: https://github.com/oliviercailloux/projets/raw/master/Licences/Declaration%20of%20licensing.odt[Decl]
 
