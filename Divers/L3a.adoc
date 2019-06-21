@@ -369,6 +369,7 @@ Links taken from the https://www.edx.org/course/introduction-to-biology-the-secr
 
 * Work on project
 * TODO : livraison 4 avant fin du vendredi 28, avec PRs affectées à une https://help.github.com/en/articles/about-milestones[Milestone] « Itération 4 ».
+** Facultatif : une tâche qui ajoute dans votre README des éléments que vous désirez que je prenne en compte dans mon évaluation globale (difficultés rencontrées, travaux que j’aurais oublié d’évaluer lors d’une itération précédente, …). Complémentez vos propos d’éléments vérifiables (commits, documents, …).
 * Présentation avant fin du dimanche 30 directement sur branche master, dans `Doc/Présentation 2019.pdf`.
 
 [[S17]]
