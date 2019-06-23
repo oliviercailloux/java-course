@@ -129,7 +129,7 @@ Links taken from the https://www.edx.org/course/introduction-to-biology-the-secr
 
 * https://github.com/oliviercailloux/java-course/blob/master/Search%20path/README.adoc[search path] (packages, classes and directories).
 * https://github.com/oliviercailloux/java-course/raw/master/Objets/presentation.pdf[Objects]
-* http://app.wooclap.com/JL[Quizz]
+* https://app.wooclap.com/JL[Quizz]
 
 *Material and going beyond*
 
