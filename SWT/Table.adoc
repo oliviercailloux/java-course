@@ -55,5 +55,4 @@ As an alternative way of supporting edition, use a cell modifier. It uses column
 
 == See also
 * Vogella’s https://www.vogella.com/tutorials/EclipseJFaceTable/article.html[introduction] to JFace and Table
-* Vogella’s https://www.vogella.com/tutorials/EclipseJFaceTableAdvanced/article.html[tricks] for JFace and Table
 

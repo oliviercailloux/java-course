@@ -7,9 +7,9 @@ NOTE: The reader supposedly has basic knowledge of JDBC (see https://raw.githubu
 See: https://raw.githubusercontent.com/oliviercailloux/java-course/master/JPA/Pr%C3%A9sentation/presentation.pdf[Présentation], https://github.com/oliviercailloux/java-course/blob/master/JPA/Exercices.adoc[Exercices], (optionally) https://github.com/oliviercailloux/java-course/blob/master/JPA/Eclipse%20to%20WildFly.adoc[Eclipse to WildFly].
 
 == References
-* Hibernate http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html[User guide]
+* Hibernate https://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html[User guide]
 * https://www.manning.com/books/java-persistence-with-hibernate-second-edition[Book]: Java Persistence with Hibernate, Second Edition
 * https://jcp.org/en/jsr/detail?id=338[JSR 338] (JPA 2.2) (https://download.oracle.com/otn-pub/jcp/persistence-2_2-mrel-eval-spec/JavaPersistence.pdf[direct])
 * https://jcp.org/en/jsr/detail?id=907[JSR 907] (JTA) (not that useful for application developers)
-* Article ENORM: An Essential Notation for Object-Relational Mapping, ACM SIGMOD Record 43(2), June 2014, pp 23–28 (http://dx.doi.org/10.1145/2694413.2694418[doi], https://sigmodrecord.org/publications/sigmodRecord/1406/pdfs/05.articles.Torres.pdf[pdf])
+* Article ENORM: An Essential Notation for Object-Relational Mapping, ACM SIGMOD Record 43(2), June 2014, pp 23–28 (https://doi.org/10.1145/2694413.2694418[doi], https://sigmodrecord.org/publications/sigmodRecord/1406/pdfs/05.articles.Torres.pdf[pdf])
 

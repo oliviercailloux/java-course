@@ -14,10 +14,10 @@ A method must declare all exception that it can possibly throw that do not exten
 == Throw `NullPointerException` when receiving an incorrect `null` argument
 There’s some debate about whether `NullPointerException` or `IllegalArgumentException` should be thrown when receiving an incorrect `null` argument in a method. 
 
-The argument in favor of the latter is that it is clear to the caller that a fault occurred because of an incorrect argument, rather than because of the designer of the API having by mistake tried to access some `null` value. I admit this is a good argument but there’s also good arguments against. 
+The argument in favor of the latter is that it is clear to the caller that a fault occurred because of an incorrect argument, rather than because of the designer of the API having by mistake tried to access some `null` value. I admit this is a good argument but there are also good arguments against. 
 
 Thus, I consider it sensible to follow the standard. And the standard is to throw `NullPointerException`.
 
 * Many APIs in the JDK pro-actively throws `NullPointerException`, e.g. https://docs.oracle.com/javase/10/docs/api/java/util/Map.html#containsKey(java.lang.Object)[`Map.containsKey`], https://docs.oracle.com/javase/10/docs/api/java/util/Objects.html#requireNonNull(T)[`Objects.requireNonNull`] (https://stackoverflow.com/questions/3881/illegalargumentexception-or-nullpointerexception-for-a-null-parameter/6358#6358[thanks]{emptyattribute}.)
-* https://google.github.io/guava/releases/snapshot/api/docs/com/google/common/base/Preconditions.html#checkNotNull-T-[Guava] also favors `NullPointerException` over `IllegalArgumentException`.
+* https://guava.dev/releases/snapshot/api/docs/com/google/common/base/Preconditions.html#checkNotNull-T-[Guava] also favors `NullPointerException` over `IllegalArgumentException`.
 * “Effective Java” agrees, see https://stackoverflow.com/a/6358[SO].

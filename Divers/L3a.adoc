@@ -60,7 +60,7 @@ Links taken from the https://www.edx.org/course/introduction-to-biology-the-secr
 * Basic concepts and structures of Java: variables; types; subroutines; control structures; identifiers… [SK]
 ** https://github.com/oliviercailloux/java-course/raw/master/Syntaxe/presentation.pdf[Syntaxe], http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours1.pdf[Airiau C1] (compil, p. 16 to 20)
 * https://github.com/oliviercailloux/java-course/raw/master/Notions%20objets/presentation.pdf[Basics of objects]
-* http://app.wooclap.com/JL[Quizz]
+* https://app.wooclap.com/JL[Quizz]
 * https://github.com/oliviercailloux/java-course/blob/master/Git/README.adoc[Git]: local repo, start ex
 
 // Present all theory, 90 min. Then 30 min ex. Then 30 min git theory (local only!), 30 min ex.
@@ -248,7 +248,7 @@ Links taken from the https://www.edx.org/course/introduction-to-biology-the-secr
 
 * https://github.com/oliviercailloux/java-course/tree/master/Maven[Maven]
 * Use https://mvnrepository.com/artifact/com.google.guava/guava/27.1-jre[Guava] `https://github.com/google/guava/wiki/PreconditionsExplained[Preconditions]#checkArgument`
-* Overload `toString()`: use Guava https://google.github.io/guava/releases/snapshot/api/docs/com/google/common/base/MoreObjects.html#toStringHelper-java.lang.Object-[`MoreObjects`]
+* Overload `toString()`: use Guava https://guava.dev/releases/snapshot/api/docs/com/google/common/base/MoreObjects.ToStringHelper.html[`MoreObjects`]
 * null (started)
 * Correct E1
 .. découpé en sous-routines ?
@@ -377,11 +377,11 @@ Links taken from the https://www.edx.org/course/introduction-to-biology-the-secr
 === S17 (Monday 1st of July, 2019)
 
 * Présentations : (ordre à déterminer)
-https://github.com/CHARLONCyril/2D-Library/raw/master/Doc/Présentation%202019.pdf[2D Library], 
-https://github.com/Amioplk/Apartments/raw/master/Doc/Présentation%202019.pdf[Apartments], 
-https://github.com/busychess/Assisted-Board-Games/raw/master/Doc/Présentation%202019.pdf[Assisted Board Games], 
-https://github.com/13tomoore/J-Confs/raw/master/Doc/Présentation%202019.pdf[J-Confs], 
-https://github.com/j-voting/J-Voting/raw/master/Doc/Présentation%202019.pdf[J-Voting]
+https://github.com/CHARLONCyril/2D-Library/raw/master/Doc/Pr%C3%A9sentation%202019.pdf[2D Library], 
+https://github.com/Amioplk/Apartments/raw/master/Doc/Pr%C3%A9sentation%202019.pdf[Apartments], 
+https://github.com/busychess/Assisted-Board-Games/raw/master/Doc/Pr%C3%A9sentation%202019.pdf[Assisted Board Games], 
+https://github.com/13tomoore/J-Confs/raw/master/Doc/Pr%C3%A9sentation%202019.pdf[J-Confs], 
+https://github.com/j-voting/J-Voting/raw/master/Doc/Pr%C3%A9sentation%202019.pdf[J-Voting]
 ** Code & diapos sur ordinateur de présentation
 ** 15 à 30 minutes
 ** Noté : intérêt pour l’audience ; compréhension par l’audience du contexte et de l’objectif du projet ; compréhension par l’audience de l’architecture du code et des aspects techniques ; distinction claire des fcts déjà présentes VS ajoutées ; originalité & créativité éventuelle ; …
