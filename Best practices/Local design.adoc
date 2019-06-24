@@ -1,0 +1,12 @@
+= Local design
+//works around awesome_bot bug that used to be published at github.com/dkhamsing/awesome_bot/issues/182.
+:emptyattribute:
+
+Various tips for good code from the local structure point of view (as opposed to architectural design questions), that do not fit in the other categories on this site.
+
+== Method parameters
+Avoid method with numerous parameters, especially if they are of the same type. It increases the risk of passing a parameter for another one. For example, avoid `buildPerson(firstName: String, lastName: String, description: String, phoneNumber: String, address: String)` (use a https://codereview.stackexchange.com/a/127509[builder] instead).
+
+== Factor
+In algebra, you factor an expression such as `ax+bx+cx` by transforming it into `x(a+b+c)`. View this as a way of not repeating yourself: we say only once to multiply by `x`. Similarly, you can often factor your code. When two methods have some code in common, and only differ by a small portion, there is certainly a way of putting what is common to both methods in a method, and let both methods call this one method, or re-use the code in some other way. You make your code more concise (thus easier to understand and verify) and make sure that there is only one place to change if you spot a bug.
+
