@@ -21,3 +21,7 @@ Thus, I consider it sensible to follow the standard. And the standard is to thro
 * Many APIs in the JDK pro-actively throws `NullPointerException`, e.g. https://docs.oracle.com/javase/10/docs/api/java/util/Map.html#containsKey(java.lang.Object)[`Map.containsKey`], https://docs.oracle.com/javase/10/docs/api/java/util/Objects.html#requireNonNull(T)[`Objects.requireNonNull`] (https://stackoverflow.com/questions/3881/illegalargumentexception-or-nullpointerexception-for-a-null-parameter/6358#6358[thanks]{emptyattribute}.)
 * https://guava.dev/releases/snapshot/api/docs/com/google/common/base/Preconditions.html#checkNotNull-T-[Guava] also favors `NullPointerException` over `IllegalArgumentException`.
 * “Effective Java” agrees, see https://stackoverflow.com/a/6358[SO].
+
+== Declare most general exceptions on non callable methods
+Some methods are conceived to be executed, not to be called by other methods: `main` methods and unit testing methods. In such cases, the precise list of exceptions that can be thrown is irrelevant. Just declare that the method throws `Exception` and do not worry about it.
+
