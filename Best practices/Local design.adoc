@@ -10,3 +10,7 @@ Avoid method with numerous parameters, especially if they are of the same type. 
 == Factor
 In algebra, you factor an expression such as `ax+bx+cx` by transforming it into `x(a+b+c)`. View this as a way of not repeating yourself: we say only once to multiply by `x`. Similarly, you can often factor your code. When two methods have some code in common, and only differ by a small portion, there is certainly a way of putting what is common to both methods in a method, and let both methods call this one method, or re-use the code in some other way. You thereby make your code more concise (thus easier to understand and verify) and make sure that there is only one place to change if you spot a bug.
 
+== Avoid important effects in constructors
+It is typically expected that merely constructing an object does not produce “important” effects on the running system. What’s an “important” effect depends on the context, but typical examples are: starting intensive computations, or displaying a GUI on the screen. Rather put this behavior in a method that annonces more clearly that this will happen, and that the user has to call expressly after constructing the object.
+
+
