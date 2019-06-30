@@ -90,9 +90,10 @@ Don’t hesitate to send me your question by e-mail if you’re blocked in your 
 | STREAMS	| Utiliser des streams pour plus de généralité quand approprié	| https://github.com/oliviercailloux/java-course/blob/master/Flows.adoc[Flows]	| −1
 | POM	| Respecter les conventions de nommage et autres bonnes pratiques Maven, simplifier le POM autant que possible	| https://github.com/oliviercailloux/java-course/tree/master/Maven[Maven]	| −1
 | SEP	| Séparer les tâches | https://github.com/oliviercailloux/java-course/blob/master/Divers/Projets.adoc#SEP[Projets – SEP], FOCUS | 
-| TRAV  | Test qualité Travis passe | https://github.com/oliviercailloux/java-course/blob/master/Divers/Projets.adoc#NICE[Projets – NICE]
+| TRAV  | Test qualité Travis passe | https://github.com/oliviercailloux/java-course/blob/master/Divers/Projets.adoc#NICE[Projets – NICE] |
 | SUPPR | Résoudre les problèmes soulignés par votre IDE, pas les supprimer sans justification à l’aide de `@SuppressWarnings` | | −2
 | GNRL | Utiliser de préférence des types plus généraux (t.q. `List` au lieu de `ArrayList`) lorsqu’il n’y a pas d’inconvénient | | −1
+| SPEC | Utiliser de préférence des types qui annoncent clairement et restreignent de façon adéquate l’information qu’ils peuvent contenir (t.q. `int` plutôt que `double`, `Path` plutôt que `String`) | | −0.5
 |===
 
 
