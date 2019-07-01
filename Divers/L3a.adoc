@@ -377,10 +377,10 @@ Links taken from the https://www.edx.org/course/introduction-to-biology-the-secr
 === S17 (Monday 1st of July, 2019)
 
 * Présentations : (ordre à déterminer)
-https://github.com/CHARLONCyril/2D-Library/raw/master/Doc/Pr%C3%A9sentation%202019.pdf[2D Library], 
-https://github.com/Amioplk/Apartments/raw/master/Doc/Pr%C3%A9sentation%202019.pdf[Apartments], 
-https://github.com/busychess/Assisted-Board-Games/raw/master/Doc/Pr%C3%A9sentation%202019.pdf[Assisted Board Games], 
 https://github.com/13tomoore/J-Confs/raw/master/Doc/Pr%C3%A9sentation%202019.pdf[J-Confs], 
+https://github.com/Amioplk/Apartments/raw/master/Doc/Pr%C3%A9sentation%202019.pdf[Apartments], 
+https://github.com/CHARLONCyril/2D-Library/raw/master/Doc/Pr%C3%A9sentation%202019.pdf[2D Library], 
+https://github.com/busychess/Assisted-Board-Games/raw/master/Doc/Pr%C3%A9sentation%202019.pdf[Assisted Board Games], 
 https://github.com/j-voting/J-Voting/raw/master/Doc/Pr%C3%A9sentation%202019.pdf[J-Voting]
 ** Code & diapos sur ordinateur de présentation
 ** 15 à 30 minutes
