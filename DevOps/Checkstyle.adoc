@@ -59,7 +59,7 @@ And add this to your POM in order to include jxr, which permits to have links to
 Download https://github.com/oliviercailloux/JLP/blob/master/checkstyle.xml[this] example checkstyle configuration file and put in in your project directory.
 
 * You might want to remove the modules named `JavadocPackage` and `JavadocMethod` from `checkstyle.xml` to authorize missing javadoc comments.
-* Alternatively, do not include any `checkstyle.xml` file and change in your POM the `configLocation` https://maven.apache.org/plugins/maven-checkstyle-plugin/check-mojo.html#configLocation[parameter] to `google_checks.xml` to use the checkstyle https://checkstyle.sourceforge.net/google_style.html[configuration] based on Google Style (you do not need a `google_checks.xml` file, it is included in the plugin).
+* Alternatively, do not include any `checkstyle.xml` file and change in your POM the `configLocation` https://maven.apache.org/plugins/maven-checkstyle-plugin/check-mojo.html#configLocation[parameter] to `google_checks.xml` to use the checkstyle https://checkstyle.org/google_style.html[configuration] based on Google Style (you do not need a `google_checks.xml` file, it is included in the plugin).
 
 Eclipse will rant that it does not know what to do with checkstyle as applied to the validate phase. Just auto-fix it by letting Eclipse configure itself and ignore this plugin.
 
@@ -70,7 +70,7 @@ In case of build failing for style issues, you can see what is wrong in the Mave
 == Refs
 
 * https://maven.apache.org/plugins/maven-checkstyle-plugin/index.html[Apache Maven Checkstyle Plugin]
-* checkstyle https://checkstyle.sourceforge.net/config.html[configuration] documentation
+* checkstyle https://checkstyle.org/config.html[configuration] documentation
 * https://search.maven.org/search?q=g:com.puppycrawl.tools%20AND%20a:checkstyle&core=gav[checkstyle] and https://search.maven.org/search?q=g:org.apache.maven.plugins%20AND%20a:maven-checkstyle-plugin&core=gav[maven-checkstyle-plugin] on Maven Central
 * https://stackoverflow.com/questions/184563/checkstyle-vs-pmd[Checkstyle vs. PMD] on Stack Overflow. (From a cursory examination I think Checkstyle is more oriented towards style checking than PMD, for example PMD does not seem to have a configuration for http://google.github.io/styleguide/javaguide.html[Google Java style].)
 

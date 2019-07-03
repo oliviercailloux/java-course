@@ -25,7 +25,7 @@ For Java EE, add:
 == Git
 
 * Git https://git-scm.com/downloads[client] (I recommend the command line for learning; I’ve been told https://www.gitkraken.com/[GitKraken] is a great GUI complement)
-* https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup[Configure] your git identity: `user.name` and `user.email`. (Specific for GitHub: https://help.github.com/en/articles/setting-your-username-in-git[user.name], https://help.github.com/en/articles/setting-your-commit-email-address-in-git[user.email].)
+* https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup[Configure] your git identity: `user.name` and `user.email`. (Specific for GitHub: https://help.github.com/en/articles/setting-your-username-in-git[user.name], https://help.github.com/en/articles/setting-your-commit-email-address[user.email].)
 
 == Command line
 You should know how to execute command-line operations (thus, how to open a “terminal”). In Windows, use https://docs.microsoft.com/powershell/scripting/setup/installing-windows-powershell[PowerShell].
