@@ -46,7 +46,7 @@ URIs are composed as follows (parenthesis refer to some of the examples above):
 Furthermore, HTTP conventions dictate that the query string be composed of pairs of parameter and values separated by equal signs, each pair being separated by an ampersand.
 
 == Content negotiation
-Resources may be representable in different formats. For example, `+http://example.com/mycat+` may be available as a JPEG image, a BMP image, an HTML description, or a plain text description. Standards define “link:https://tools.ietf.org/html/rfc7231#section-3.1.1.1[media types]” (also called https://www.w3.org/TR/html5/infrastructure.html#mime-type[mime types]) to represent these formats. Examples: `image/jpeg`, `image/bmp`, `text/html;charset=utf-8`, `text/plain;charset=utf-8` (official https://www.iana.org/assignments/media-types/[list]).
+Resources may be representable in different formats. For example, `+http://example.com/mycat+` may be available as a JPEG image, a BMP image, an HTML description, or a plain text description. Standards define “link:https://mimesniff.spec.whatwg.org/#mime-type[MIME types]” (also called https://tools.ietf.org/html/rfc2046[media types]) to represent these formats. Examples: `image/jpeg`, `image/bmp`, `text/html;charset=utf-8`, `text/plain;charset=utf-8` (official https://www.iana.org/assignments/media-types/[list]).
 
 An HTTP request may include an `Accept` header that indicates the client’s preference regarding content types to be received. Similarly, the HTTP response may include a `Content-Type` header that indicates the format of the message body it is serving.
 

@@ -62,5 +62,5 @@ LOGGER.info("Main tag name: {}.", docE.getTagName());
 
 * Parsing from DOM and related technologies in Java: see https://docs.oracle.com/javase/tutorial/jaxp/TOC.html[JAXP] tutorial (focus on the parts related to the DOM)
 * https://en.wikipedia.org/wiki/Comparison_of_HTML_parsers[Comparison] of HTML parsers (Wikipedia)
-* W3C https://www.w3.org/TR/dom/[DOM4] (Recommendation 19 November 2015), a snapshot of the DOM Living Standard
+* W3C https://www.w3.org/TR/2015/REC-dom-20151119/[DOM4] (Recommendation 19 November 2015), a snapshot of the DOM Living Standard
 
