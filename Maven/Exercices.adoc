@@ -6,16 +6,20 @@
 Simple exercices for Maven. The reader is supposed to know already the basics of Maven (see slides in this course).
 
 == Default sample project
+In this exercice we will use an archetype called `maven-archetype-quickstart`, that allows us to generate a basic project.
+
 * Open a terminal. Move into a folder where you want to put your new project (which will be created as a sub-folder).
 * Type `mvn archetype:generate`. 
 
 The command `mvn` followed by “plugin:goal” runs Maven with this goal.
-This command simply executes the goal `generate` in the `archetype` Maven plugin.
+Thus, this command simply executes the goal `generate` in the `archetype` Maven plugin.
 
-The command displays a long list of archetypes available to you. We’ll start by using the `maven-archetype-quickstart` archetype (that’s its artifactId).
+The command displays a long list of archetypes available to you. Then you see something like “Choose a number or apply filter (format: [groupId:]artifactId, case sensitive contains): 1388:”. You are supposed to either provide a number; provide a filter; or accept the default answer. The default answer, if any, is always given just before the last colon, in this example it is 1388. Just hit ENTER if the default answer suits you. In this exercice, we will rather use the filter to make sure we select the plugin we want. To use a filter, just enter (a part or the whole of) the artifactId of the desired archetype. Then a “case senstive contains” search is run, meaning simply that Maven will list all the archetypes whose artifactId contains the string you entered.
+
+We’ll start by using the `maven-archetype-quickstart` archetype (that’s its artifactId).
 
 * Find this one by using the filter in the command line, then select it using its number.
-* Answer the remaining questions. You can simply hit ENTER when a default answer is proposed, if it suits you.
+* Answer the remaining questions. Remember to simply hit ENTER when the default answer seems reasonable.
 
 Your project gets created in a sub-folder of your current position.
 
