@@ -4,7 +4,7 @@ A short note about parsing HTML documents in Java using W3C’s DOM (Document Ob
 
 == Valid HTML
 
-This should successfully parse any document that can be transformed to a DOM according to W3C standard, including valid HTML documents in HTML syntax or XHTML syntax. It uses the https://www.w3.org/TR/DOM-Level-3-Core/core.html#Bootstrap[bootstrapping] approach (described in the DOM Level 3 Core Specification) and the LS feature (described in the DOM Level 3 https://www.w3.org/TR/2004/REC-DOM-Level-3-LS-20040407/[Load and Save] specification).
+This should successfully parse any document that can be transformed to a DOM according to W3C standard, including valid HTML documents in HTML syntax or XML syntax. It uses the https://www.w3.org/TR/DOM-Level-3-Core/core.html#Bootstrap[bootstrapping] approach (described in the DOM Level 3 Core Specification) and the LS feature (described in the DOM Level 3 https://www.w3.org/TR/2004/REC-DOM-Level-3-LS-20040407/[Load and Save] specification).
 
 .Obtain a DOM object from a valid HTML document
 [source,java]
@@ -22,11 +22,11 @@ Element docE = doc.getDocumentElement();
 LOGGER.info("Main tag name: {}.", docE.getTagName());
 ----
 
-== XHTML
+== XML syntax
 
 This approach uses https://en.wikipedia.org/wiki/Simple_API_for_XML[SAX] rather than the standard bootstrapping approach. I recommend using the previous one instead where applicable. (It might also be specific to loading XML documents, though I have had successes loading an HTML document in HTML syntax with it.)
 
-.Obtain a DOM object from a valid XHTML document
+.Obtain a DOM object from a valid HTML document in XML syntax
 [source,java]
 ----
 Document doc;
