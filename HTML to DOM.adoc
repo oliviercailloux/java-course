@@ -58,10 +58,10 @@ Element docE = doc.getDocumentElement();
 LOGGER.info("Main tag name: {}.", docE.getTagName());
 ----
 
-== Writing XHTML
-Here is how to programmatically write an XHTML document (with namespaces). Assuming a `private static final String XHTML_NAME_SPACE = "http://www.w3.org/1999/xhtml";` field.
+== Writing HTML
+Here is how to programmatically write an HTML document (in XML syntax, with namespaces). Assuming a `private static final String XHTML_NAME_SPACE = "http://www.w3.org/1999/xhtml";` field.
 
-.Write XHTML
+.Write HTML in XML syntax
 [source,java]
 ----
 DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
@@ -103,7 +103,7 @@ return writer.toString();
 == Validate your XML
 Validating the XML on the fly while writing it using an `LSSerializer` seems https://hg.openjdk.java.net/jdk/jdk11/file/tip/src/java.xml/share/classes/com/sun/org/apache/xml/internal/serializer/dom3/LSSerializerImpl.java#l140[unsupported]. An alternative approach is to use the Java Validation API, as illustrated below (https://stackoverflow.com/questions/15732/whats-the-best-way-to-validate-an-xml-file-against-an-xsd-file[thanks]).
 
-.Validate a XHTML document
+.Validate an HTML document in XML syntax
 [source,java]
 ----
 Schema schema = SchemaFactory.newDefaultInstance().newSchema(getClass().getResource("xhtml1-strict.xsd"));
