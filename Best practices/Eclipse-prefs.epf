@@ -1,6 +1,9 @@
 file_export_version=3.0
 
 #Java
+#→Appearance
+/instance/org.eclipse.jdt.ui/org.eclipse.jdt.ui.sortLibraryEntriesByName=true
+
 #→Code Style / Clean Up
 /instance/org.eclipse.jdt.ui/cleanup.showwizard=false
 /instance/org.eclipse.jdt.ui/cleanup_profile=_Drastic
