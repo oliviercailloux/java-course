@@ -23,8 +23,8 @@ The Web Services Description Language (WSDL) spec defines a WSDL document. A WSD
 
 Except when mentioned otherwise, the elements this document refers to are XML elements with WSDL namespace [small]#(`\http://schemas.xmlsoap.org/wsdl/`)#.
 
-.WSDL 1.1
-image:WSDL_11.png[Under a WSDL 1.1 document: an abstract description (types, message, portType), and a concrete description (binding, service)., title="derived from work by Cristcost [Public domain\], via Wikimedia Commons", float="left"]
+.WSDL 1.1, derived from work by Cristcost [Public domain\], via Wikimedia Commons
+image:WSDL_11.png[Under a WSDL 1.1 document: an abstract description (types, message, portType), and a concrete description (binding, service)., float="left"]
 
 * An abstract description indicates the operations that the web service provides, and the types it uses.
 ** The types it uses are defined under `types` and `message` elements.
