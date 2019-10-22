@@ -84,5 +84,5 @@ The HTTP binding also requires support for the SOAP Action feature and for the S
 
 The SOAP spec permits multiple elements inside a body element inside the envelope, but BP http://ws-i.org/Profiles/BasicProfile-2.0-2010-11-09.html#R9981[R9981] modifies this.
 
-SOAP 1.1 uses the `http://schemas.xmlsoap.org/soap/envelope/` namespace and `text/xml` instead of `application/soap+xml` media type.
+SOAP 1.1 uses the `\http://schemas.xmlsoap.org/soap/envelope/` namespace and `text/xml` instead of `application/soap+xml` media type.
 
