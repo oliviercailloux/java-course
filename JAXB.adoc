@@ -59,7 +59,7 @@ To generate nice prefixes for better readability of the generated XML instances,
 This is what the dependency to https://github.com/Siggen/jaxb2-namespace-prefix[org.jvnet.jaxb2_commons:jaxb2-namespace-prefix] is for in the sample POM above. (If you do not use the “nice prefix” functionality, you can remove this dependency.)
 
 == Namespace and schema
-JAXB specification 2.3 defines `http://java.sun.com/xml/ns/jaxb` as the namespace defining the schema for binding declarations (Section 7.1); and gives URL http://java.sun.com/xml/ns/jaxb/bindingschema_2_0.xsd for the online version of the JAXB Binding Schema (appendix C).
+JAXB specification 2.3 defines `\http://java.sun.com/xml/ns/jaxb` as the namespace defining the schema for binding declarations (Section 7.1); and gives URL http://java.sun.com/xml/ns/jaxb/bindingschema_2_0.xsd for the online version of the JAXB Binding Schema (appendix C).
 
 == References
 * Full working examples: https://github.com/choweiyuan/schemaexample[simplest], https://github.com/oliviercailloux/XMCDA-2.2.1-JAXB[with customization] (and biggest schema), https://github.com/xmcda-modular/jaxb[with more complex schema].
