@@ -19,7 +19,7 @@ If you want to go further, here are references about the module system. It is ad
 * https://blog.codefx.org/java/java-module-system-tutorial/[Code-First Java Module System Tutorial] on https://blog.codefx.org/[Code FX], a general high-quality blog about Java
 * https://blog.codefx.org/java/java-9-resources-talks-articles-blogs-books-courses/[References] about Java 9 resources, on the same blog
 * https://www.manning.com/books/the-java-module-system[The Java Module System], a book written by Nicolai Parlog, the author of the said blog.
-* JRebel’s Java Platform Module System https://www.jrebel.com/rebellabs/java-9-modules-cheat-sheet/[Cheat Sheet]
+* JRebel’s Java Platform Module System https://www.jrebel.com/blog/java-9-modules-cheat-sheet/[Cheat Sheet]
 * https://stackoverflow.com/questions/46741907/what-is-an-automatic-module
 * https://stackoverflow.com/questions/43192741/how-should-i-name-my-java-9-module
 * More SO questions tagged https://stackoverflow.com/questions/tagged/java-module?sort=votes[java-module]
