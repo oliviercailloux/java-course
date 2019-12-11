@@ -363,13 +363,13 @@ Links taken from the https://www.edx.org/bio/eric-s-lander[course] “Introducti
 === S15 (Monday 17th of June, 2019)
 
 * Work on project
-* TODO : livraison 3 avant fin du jeudi 20, avec PRs affectées à une https://help.github.com/en/articles/about-milestones[Milestone] « Itération 3 » (merci à l’équipe Assisted Board Games pour cette astuce).
+* TODO : livraison 3 avant fin du jeudi 20, avec PRs affectées à une Milestone « Itération 3 » (merci à l’équipe Assisted Board Games pour cette astuce).
 
 [[S16]]
 === S16 (Friday 21st of June, 2019)
 
 * Work on project
-* TODO : livraison 4 avant fin du vendredi 28, avec PRs affectées à une https://help.github.com/en/articles/about-milestones[Milestone] « Itération 4 ».
+* TODO : livraison 4 avant fin du vendredi 28, avec PRs affectées à une Milestone « Itération 4 ».
 ** Facultatif : une tâche qui ajoute dans votre README des éléments que vous désirez que je prenne en compte dans mon évaluation globale (difficultés rencontrées, travaux que j’aurais oublié d’évaluer lors d’une itération précédente, …). Complémentez vos propos d’éléments vérifiables (commits, documents, …).
 ** Remise autorisée jusqu’à la fin du samedi 29 si nécessaire, mais une prime sera accordée pour une remise le vendredi soir.
 * Présentation avant fin du dimanche 30 directement sur branche master, dans `Doc/Présentation 2019.pdf`.
