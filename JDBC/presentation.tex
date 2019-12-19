@@ -136,7 +136,7 @@
 		\item Gérer début et fin de transaction via la connexion
 		\item Exécuter des statements SQL via cette connexion
 		\item Par défaut, mode auto-commit : une transaction par stmt
-		\item Via \texttt{Connection} : exécution requêtes, navigation de \href{https://docs.oracle.com/javase/8/docs/api/java/sql/ResultSet.html}{\texttt{ResultSet}}s, …
+		\item Via \texttt{Connection} : exécution requêtes, navigation de \jdocRef{java.sql/java.sql/ResultSet}s, …
 %		\item (Pilote JDBC peut aussi supporter JTA)
 		\item Puis \emph{fermer} la connexion
 	\end{itemize}
@@ -166,7 +166,7 @@
 \begin{frame}
 	\frametitle{Injection de la \texttt{DataSource} (Java EE)}
 	\begin{itemize}
-		\item Injection de ressources via \jdocRef[base url = https\string://javaee.github.io/javaee-spec/javadocs/, parameters style = hyphen]{@javax.annotation/Resource}
+		\item Injection de ressources via \jdocRef[base url = \jdocRefEEEightBaseUrl, parameters style = hyphen]{@javax.annotation/Resource}
 		\item Le conteneur va chercher la ressource via JNDI
 		\item Nom JNDI par défaut selon type de la ressource
 		\item Pour nous : \texttt{@Resource DataSource myDataSource;}

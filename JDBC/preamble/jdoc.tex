@@ -44,7 +44,7 @@
 	},
 }
 
-%Thx https://tex.stackexchange.com/a/34318
+%Thx https://tex.stackexchange.com/a/34318. TODO read https://tex.stackexchange.com/a/161982 .
 %Approach: define the following jdocRef macros. AtSign (starts with at); Module (before unique / or empty); Method (after unique # if has ( or empty); Field (after unique # if no ( or empty if no #); FQName (between / and # or after / or before # or everything); FQNameSlashes (FQName with slashes instead of dots); Class (between last dot and #).
 %The main argument specifies everything needed to build the URL and the default appearance (@ or no @…), except possibly for default global variables such as base url. The default appearance can be changed with keys.
 \newcommand{\jdocRef}[2][]{%
@@ -184,7 +184,16 @@
 	\end{description}%
 }
 
-\DeclareExpandableDocumentCommand{\jdocRefBaseUrl}{}{https://docs.oracle.com/en/java/javase/12/docs/api/}
+\DeclareExpandableDocumentCommand{\jdocRefSevenBaseUrl}{}{https\string://docs.oracle.com/javase/7/docs/api/}
+\DeclareExpandableDocumentCommand{\jdocRefEightBaseUrl}{}{https\string://docs.oracle.com/javase/8/docs/api/}
+\DeclareExpandableDocumentCommand{\jdocRefNineBaseUrl}{}{https\string://docs.oracle.com/javase/9/docs/api/}
+\DeclareExpandableDocumentCommand{\jdocRefTenBaseUrl}{}{https\string://docs.oracle.com/javase/10/docs/api/}
+\DeclareExpandableDocumentCommand{\jdocRefElevenBaseUrl}{}{https\string://docs.oracle.com/en/java/javase/11/docs/api/}
+\DeclareExpandableDocumentCommand{\jdocRefTwelveBaseUrl}{}{https\string://docs.oracle.com/en/java/javase/12/docs/api/}
+\DeclareExpandableDocumentCommand{\jdocRefEESevenBaseUrl}{}{https\string://docs.oracle.com/javaee/7/api/}
+\DeclareExpandableDocumentCommand{\jdocRefEEEightBaseUrl}{}{https\string://javaee.github.io/javaee-spec/javadocs/}
+
+\DeclareExpandableDocumentCommand{\jdocRefBaseUrl}{}{\jdocRefTwelveBaseUrl}
 \DeclareExpandableDocumentCommand{\jdocRefParametersStyle}{}{parenthesis}
 
 %Standard HTML RenderKit : https://docs.oracle.com/javaee/7/javaserver-faces-2-2/renderkitdocs/HTML_BASIC/javax.faces.Inputjavax.faces.Text.html
