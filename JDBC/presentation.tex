@@ -1,15 +1,13 @@
 \RequirePackage[l2tabu, orthodox]{nag}
-\RequirePackage{silence}
-\WarningFilter{fmtcount}{\ordinal already defined use \FCordinal instead}
 \documentclass[english, french]{beamer}
 \input{preamble/packages}
+\input{preamble/redac}
 \input{preamble/math_basics}
 \input{preamble/math_mine}
-\input{preamble/redac}
 \input{preamble/draw}
-\input{preamble/acronyms}
+%\input{preamble/acronyms}
 \input{preamble/uml}
-\input{preamble/refAPIcmds}
+\input{preamble/jdoc}
 
 \setbeamertemplate{headline}[singleline]
 \setbeamertemplate{footline}[onlypage]
@@ -77,8 +75,8 @@
 	\frametitle{Instantiation}
 	\begin{itemize}
 		\item Souhait : instancier pilote adéquat avec minimum de code spécifique à un fournisseur
-		\item API JDBC nous fournit \jseref{java.sql/DriverManager}
-		\item Appeler \texttt{DriverManager.getConnection(String url)}
+		\item API JDBC nous fournit \jdocRef{java.sql/java.sql/DriverManager}
+		\item Appeler \texttt{\jdocRef[show parameters, parameters text = {url: String}]{java.sql/java.sql/DriverManager\#getConnection(java.lang.String)}}
 		\item \texttt{url} au format \texttt{jdbc:subprotocol:subname}
 		\item Exemple : \texttt{jdbc:postgresql:mydb} (cf. \href{https://jdbc.postgresql.org/documentation/head/connect.html}{Doc JDBC Postgresql})
 	\end{itemize}
@@ -101,7 +99,7 @@
 \begin{frame}
 	\frametitle{Remarques concernant l’instanciation}
 	\begin{itemize}
-		\item Avec \texttt{DriverManager} on peut aussi obtenir le \jseref{java.sql/Driver} (utile pour avoir n° de version par exemple)
+		\item Avec \texttt{DriverManager} on peut aussi obtenir le \jdocRef{java.sql/java.sql/Driver} (utile pour avoir n° de version par exemple)
 		\item Beaucoup de tutoriels sur le net suggèrent d’enregistrer explicitement le pilote {\tiny par exemple avec \texttt{Class.forName()}}. Ce n’est plus nécessaire depuis longtemps (cf. explication précédente).
 	\end{itemize}
 \end{frame}
@@ -132,7 +130,7 @@
 	\frametitle{Vue d’ensemble de l’API JDBC}
 	\begin{itemize}
 		\item Fournisseur de SGBD implémente un pilote JDBC
-		\item Obtenir une \jseref{java.sql/Connection} (communique avec le pilote)
+		\item Obtenir une \jdocRef{java.sql/java.sql/Connection} (communique avec le pilote)
 		\item \texttt{Connection} permet les \emph{transactions}
 		\item Transaction : ensemble atomique de \og{}statements\fg{} SQL
 		\item Gérer début et fin de transaction via la connexion
@@ -150,15 +148,15 @@
 	\frametitle{Instanciation}
 	\begin{block}{Approche 1 (Java SE, typiquement)}
 		\begin{itemize}
-			\item Une classe fournisseur implémente \href{https://docs.oracle.com/javase/8/docs/api/java/sql/Driver.html}{\texttt{Driver}}
-			\item Développeur appelle \jseref{java.sql/DriverManager}
+			\item Une classe fournisseur implémente \jdocRef{java.sql/java.sql/Driver}
+			\item Développeur appelle \jdocRef{java.sql/java.sql/DriverManager}
 			\item \texttt{DriverManager} trouve le pilote et l’instancie
 			\item Exemple : \texttt{DriverManager.getConnection(url)}
 		\end{itemize}
 	\end{block}
 	\begin{block}{Approche 2 (Java EE, typiquement)}
 		\begin{itemize}
-			\item Une classe fournisseur implémente \jseref{javax.sql/DataSource}
+			\item Une classe fournisseur implémente \jdocRef{java.sql/javax.sql/DataSource}
 			\item Source accessible via JNDI à un endroit convenu
 			\item Développeur instancie DataSource par \texttt{lookup} JNDI puis appelle \texttt{source.getConnection(…)}
 		\end{itemize}
@@ -168,7 +166,7 @@
 \begin{frame}
 	\frametitle{Injection de la \texttt{DataSource} (Java EE)}
 	\begin{itemize}
-		\item Injection de ressources via \jeeref[@]{javax.annotation/Resource}
+		\item Injection de ressources via \jdocRef[base url = https\string://javaee.github.io/javaee-spec/javadocs/, parameters style = hyphen]{@javax.annotation/Resource}
 		\item Le conteneur va chercher la ressource via JNDI
 		\item Nom JNDI par défaut selon type de la ressource
 		\item Pour nous : \texttt{@Resource DataSource myDataSource;}
@@ -180,10 +178,10 @@
 \begin{frame}
 	\frametitle{\texttt{Statement} et \texttt{ResultSet}}
 	\begin{itemize}
-		\item Création d’un \jseref{java.sql/Statement} (via \texttt{Connection})
+		\item Création d’un \jdocRef{java.sql/java.sql/Statement} (via \texttt{Connection})
 		\item Via \texttt{Statement} : exécution d’une commande SQL (SELECT, UPDATE…)
 		\item Via \texttt{Statement} : paramétrisation possible (nb résultats max…)
-		\item Obtention (si SELECT) d’un \jseref{java.sql/ResultSet}
+		\item Obtention (si SELECT) d’un \jdocRef{java.sql/java.sql/ResultSet}
 		\item \texttt{ResultSet} associé à une ligne courante ; initialement : avant la première
 		\item Naviguer via \texttt{next()} aux lignes suivantes
 		\item Invoquer \texttt{getInt(columnLabel)}, \texttt{getString(columnLabel)}…
@@ -193,19 +191,19 @@
 \begin{frame}[fragile]
 	\frametitle{\texttt{PreparedStatement}}
 	\begin{itemize}
-		\item \jseref{java.sql/PreparedStatement} : précompilé + paramétrisation facile
+		\item \jdocRef{java.sql/java.sql/PreparedStatement} : précompilé + paramétrisation facile
 		\item La commande SQL contient des \og{}\texttt{?}\fg{}
 		\item Invoquer \texttt{setInt}, \texttt{setString}… pour les paramètres
 	\end{itemize}
 	\begin{exampleblock}{Exemple \texttt{PreparedStatement}}
 		\begin{lstlisting}[basicstyle=\small\NoAutoSpacing\ttfamily, aboveskip=0pt, belowskip=0pt, showstringspaces=false]
-String s="update USER set NAME = ? where ID = ?";
-PreparedStatement stmt = con.prepareStatement(s);
-stmt.setString(1, "NewName");
-stmt.setInt(2, 1234);
-boolean isResultSet = stmt.execute();
+String s="update USR set NAME = ? where ID = ?";
+PreparedStatement stm = con.prepareStatement(s);
+stm.setString(1, "NewName");
+stm.setInt(2, 1234);
+boolean isResultSet = stm.execute();
 assert(!isResultSet);
-assert(stmt.getUpdateCount() == 1);
+assert(stm.getUpdateCount() == 1);
 		\end{lstlisting}
 	\end{exampleblock}
 	Utiliser \texttt{PreparedStatement} pour éviter les attaques de type injection SQL !
@@ -217,7 +215,7 @@ assert(stmt.getUpdateCount() == 1);
 	Par défaut, mode \emph{auto commit} : une transaction par commande
 	\begin{block}{Gestion de transactions explicite}
 		\begin{itemize}
-			\item Invoquer \texttt{setAutoCommit} sur \jseref{java.sql/Connection}
+			\item Invoquer \texttt{setAutoCommit} sur \jdocRef{java.sql/java.sql/Connection}
 			\item Exécuter les commandes normalement
 			\item Puis invoquer \texttt{commit} sur \texttt{Connection}
 			\item Ou : \texttt{rollback}
