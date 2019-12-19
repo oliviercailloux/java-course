@@ -1,0 +1,202 @@
+\usepackage{xstring}
+\usepackage{pgffor}
+
+\ExplSyntaxOn
+\NewDocumentCommand{\extractlast}{O{.}mo}
+ {
+  \seq_set_split:Nnn \l_stroobants_string_seq { #1 } { #2 }
+  \IfNoValueTF { #3 }
+   {
+    \seq_item:Nn \l_stroobants_string_seq { -1 }
+   }
+   {
+    \tl_set:Nx #3 { \seq_item:Nn \l_stroobants_string_seq { -1 } }
+   }
+ }
+\seq_new:N \l_stroobants_string_seq
+\ExplSyntaxOff
+
+\newbool{jdocRefTypewriter}
+\newbool{jdocRefShowPackage}
+\newbool{jdocRefShowField}
+\newbool{jdocRefShowMethod}
+\newbool{jdocRefShowParameters}
+\pgfkeys{
+	/jdocRef/.is family,
+	/jdocRef/.cd,
+	full text/.estore in = \jdocRefFullText,
+	parameters text/.estore in = \jdocRefParametersText,
+	base url/.estore in = \jdocRefBaseUrl,
+	parameters style/.estore in = \jdocRefParametersStyle,
+	typewriter/.is if = jdocRefTypewriter,
+	show package/.is if = jdocRefShowPackage,
+	show field/.is if = jdocRefShowField,
+	show method/.is if = jdocRefShowMethod,
+	show parameters/.is if = jdocRefShowParameters,
+	default/.style = {
+		full text =,
+		parameters text=,
+		typewriter = true,
+		show package = false,
+		show field = true,
+		show method = true,
+		show parameters = false,
+	},
+}
+
+%Thx https://tex.stackexchange.com/a/34318. TODO read https://tex.stackexchange.com/a/161982 .
+%Approach: define the following jdocRef macros. AtSign (starts with at); Module (before unique / or empty); Method (after unique # if has ( or empty); Field (after unique # if no ( or empty if no #); FQName (between / and # or after / or before # or everything); FQNameSlashes (FQName with slashes instead of dots); Class (between last dot and #).
+%The main argument specifies everything needed to build the URL and the default appearance (@ or no @…), except possibly for default global variables such as base url. The default appearance can be changed with keys.
+\newcommand{\jdocRef}[2][]{%
+	\pgfkeys{/jdocRef/.cd, default, #1}%
+	\edef\jdocRefFull{#2}%
+	\IfBeginWith{#2}{@}{%
+		\edef\jdocRefAtSign{@}%
+		\StrBehind{#2}{@}[\jdocRefWithoutAt]%
+	}{%
+		\edef\jdocRefAtSign{}%
+		\edef\jdocRefWithoutAt{#2}%
+	}%
+	\IfSubStr{#2}{/}{%
+	}{%
+		\typeout{Missing slash!}
+	}%
+	\StrBefore{\jdocRefWithoutAt}{/}[\jdocRefBeforeFirstSlash]%
+	\StrBehind{\jdocRefWithoutAt}{/}[\jdocRefAfterFirstSlash]%
+	\IfSubStr{\jdocRefAfterFirstSlash}{/}{%
+		\edef\jdocRefModule{\jdocRefBeforeFirstSlash}%
+		\StrBefore{\jdocRefAfterFirstSlash}{/}[\jdocRefPackage]%
+		\StrBehind{\jdocRefAfterFirstSlash}{/}[\jdocRefClassAndRest]%
+	}{%
+		\edef\jdocRefModule{}%
+		\edef\jdocRefPackage{\jdocRefBeforeFirstSlash}%
+		\edef\jdocRefClassAndRest{\jdocRefAfterFirstSlash}%
+	}%
+	\StrSubstitute{\jdocRefPackage}{.}{/}[\jdocRefPackageSlashes]%
+	\IfSubStr{#2}{\#}{%
+		\StrBehind{#2}{\#}[\jdocRefAfterSharp]%
+		\IfSubStr{\jdocRefAfterSharp}{(}{%
+			\StrBehind{#2}{\#}[\jdocRefMethodWithParameters]%
+		}{%
+			\edef\jdocRefMethodWithParameters{}%
+		}%
+	}{%
+		\edef\jdocRefMethodWithParameters{}%
+	}%
+	\StrSubstitute{\jdocRefMethodWithParameters}{ }{}[\jdocRefMethodWithParametersWithoutSpaces]%
+	\StrBefore{\jdocRefMethodWithParameters}{(}[\jdocRefMethodWithoutParameters]%
+	\IfSubStr{#2}{\#}{%
+		\StrBehind{#2}{\#}[\jdocRefAfterSharp]%
+		\IfSubStr{\jdocRefAfterSharp}{(}{%
+			\edef\jdocRefField{}%
+		}{%
+			\StrBehind{#2}{\#}[\jdocRefField]%
+		}%
+	}{%
+		\edef\jdocRefField{}%
+	}%
+	\IfSubStr{\jdocRefClassAndRest}{\#}{%
+		\StrBefore{\jdocRefClassAndRest}{\#}[\jdocRefClass]%
+	}{%
+		\edef\jdocRefClass{\jdocRefClassAndRest}%
+	}%
+	%
+	%\jdocRefPrintAll%
+	%
+	\edef\jdocRefTarget{\jdocRefBaseUrl}%
+	\IfEq{\jdocRefModule}{}{%
+	}{%
+		\appto\jdocRefTarget{\jdocRefModule}%
+		\appto\jdocRefTarget{/}%
+	}%
+	\appto\jdocRefTarget{\jdocRefPackageSlashes}%
+	\appto\jdocRefTarget{/}%
+	\appto\jdocRefTarget{\jdocRefClass}%
+	\appto\jdocRefTarget{.html}%
+	\IfEq{\jdocRefField}{}{%
+	}{%
+		\appto\jdocRefTarget{\#\jdocRefField}%
+	}%
+	\IfEq{\jdocRefMethodWithParametersWithoutSpaces}{}{%
+	}{%
+		\IfEq{\jdocRefParametersStyle}{hyphen}{%
+			\StrSubstitute{\jdocRefMethodWithParametersWithoutSpaces}{(}{-}[\jdocRefMethodWithParametersWithoutSpacesWithHyphens]%
+			\StrSubstitute{\jdocRefMethodWithParametersWithoutSpacesWithHyphens}{,}{-}[\jdocRefMethodWithParametersWithoutSpacesWithHyphens]%
+			\StrSubstitute{\jdocRefMethodWithParametersWithoutSpacesWithHyphens}{)}{-}[\jdocRefMethodWithParametersWithoutSpacesWithHyphens]%
+			\appto\jdocRefTarget{\#\jdocRefMethodWithParametersWithoutSpacesWithHyphens}%
+		}{%
+			\appto\jdocRefTarget{\#\jdocRefMethodWithParametersWithoutSpaces}%
+		}%
+	}%
+	%
+	\edef\jdocRefLinkText{}%
+	\appto\jdocRefLinkText{\jdocRefAtSign}%
+	\ifbool{jdocRefShowPackage}{%
+		\appto\jdocRefLinkText{\jdocRefPackage}%
+		\appto\jdocRefLinkText{.}%
+	}{%
+	}%
+	\appto\jdocRefLinkText{\jdocRefClass}%
+	\ifbool{jdocRefShowField}{%
+		\IfEq{\jdocRefField}{}{%
+		}{%
+			\appto\jdocRefLinkText{\#\jdocRefField}%
+		}%
+	}{%
+	}%
+	\ifbool{jdocRefShowMethod}{%
+		\ifbool{jdocRefShowParameters}{%
+			\IfEq{\jdocRefMethodWithParameters}{}{%
+			}{%
+				\IfEq{\jdocRefParametersText}{}{%
+					\appto\jdocRefLinkText{\#\jdocRefMethodWithParameters}%
+				}{%
+					\appto\jdocRefLinkText{\#\jdocRefMethodWithoutParameters}%
+					\appto\jdocRefLinkText{(}%
+					\appto\jdocRefLinkText{\jdocRefParametersText}%
+					\appto\jdocRefLinkText{)}%
+				}%
+			}%
+		}{%
+			\IfEq{\jdocRefMethodWithoutParameters}{}{%
+			}{%
+				\appto\jdocRefLinkText{\#\jdocRefMethodWithoutParameters}%
+			}%
+		}%
+	}{%
+	}%
+	%
+	\IfEq{\jdocRefFullText}{}{%
+		\ifbool{jdocRefTypewriter}{%
+			\href{\jdocRefTarget}{\texttt{\jdocRefLinkText}}%
+		}{%
+			\href{\jdocRefTarget}{\jdocRefLinkText}%
+		}%
+	}{%
+		\href{\jdocRefTarget}{\jdocRefFullText}%
+	}%
+}
+
+\newcommand{\jdocRefPrintAll}{%
+	\begin{description}
+		\item[BaseUrl] \foreach \sfx in {BaseUrl}{\csname jdocRef\sfx\endcsname}
+		\foreach \sfx in {Full, AtSign, Module, MethodWithParameters, MethodWithParametersWithoutSpaces, MethodWithoutParameters, Field, Package, PackageSlashes, Class}{\item[\sfx] \csname jdocRef\sfx\endcsname}
+	\end{description}%
+}
+
+\DeclareExpandableDocumentCommand{\jdocRefSevenBaseUrl}{}{https\string://docs.oracle.com/javase/7/docs/api/}
+\DeclareExpandableDocumentCommand{\jdocRefEightBaseUrl}{}{https\string://docs.oracle.com/javase/8/docs/api/}
+\DeclareExpandableDocumentCommand{\jdocRefNineBaseUrl}{}{https\string://docs.oracle.com/javase/9/docs/api/}
+\DeclareExpandableDocumentCommand{\jdocRefTenBaseUrl}{}{https\string://docs.oracle.com/javase/10/docs/api/}
+\DeclareExpandableDocumentCommand{\jdocRefElevenBaseUrl}{}{https\string://docs.oracle.com/en/java/javase/11/docs/api/}
+\DeclareExpandableDocumentCommand{\jdocRefTwelveBaseUrl}{}{https\string://docs.oracle.com/en/java/javase/12/docs/api/}
+\DeclareExpandableDocumentCommand{\jdocRefEESevenBaseUrl}{}{https\string://docs.oracle.com/javaee/7/api/}
+\DeclareExpandableDocumentCommand{\jdocRefEEEightBaseUrl}{}{https\string://javaee.github.io/javaee-spec/javadocs/}
+
+\DeclareExpandableDocumentCommand{\jdocRefBaseUrl}{}{\jdocRefTwelveBaseUrl}
+\DeclareExpandableDocumentCommand{\jdocRefParametersStyle}{}{parenthesis}
+
+%Standard HTML RenderKit : https://docs.oracle.com/javaee/7/javaserver-faces-2-2/renderkitdocs/HTML_BASIC/javax.faces.Inputjavax.faces.Text.html
+%\newcommand{\jsftag}[2][]{\jjdocRef{base url = https://docs.oracle.com/javaee/7/javaserver-faces-2-2/vdldocs-facelets/, full, prefix=:, #1}}
+
+
