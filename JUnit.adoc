@@ -20,9 +20,9 @@ You can check https://github.com/oliviercailloux/Sample-JUnit-5/blob/master/src/
 
 * Define a new class, named `SuperComputerTests`. 
 * Add a method `void testComplicatedComputationWithParameter0()`.
-* Annotate the header with https://junit.org/junit5/docs/current/api/org/junit/jupiter/api/Test.html[`@Test`].
+* Annotate the header with https://junit.org/junit5/docs/current/api/org.junit.jupiter.api/org/junit/jupiter/api/Test.html[`@Test`].
 * In the method, create an object, invoke `complicatedComputation(0)` and store the result in a variable `actual`.
-* Finally, invoke `https://junit.org/junit5/docs/current/api/org/junit/jupiter/api/Assertions.html#assertEquals(int,int)[assertEquals](3, actual)`, where the first parameter is the value you expect to obtain (in this example, we test that `complicatedComputation(0)` returns `3`).
+* Finally, invoke `https://junit.org/junit5/docs/current/api/org.junit.jupiter.api/org/junit/jupiter/api/Assertions.html#assertEquals(int,int)[assertEquals](3, actual)`, where the first parameter is the value you expect to obtain (in this example, we test that `complicatedComputation(0)` returns `3`).
 * You need to have JUnit 5 on the build path in order to compile and run the test.
 * Check whether the test succeeds or fails depending on your source code.
 
