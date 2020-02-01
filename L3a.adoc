@@ -39,24 +39,25 @@ Links taken from the https://www.edx.org/bio/eric-s-lander[course] “Introducti
 == Planning
 
 [[S1]]
-=== S1 (5 Feb 2020)
+=== S1 (5 & 6 Feb 2020)
 
 *Lecture*
 
 * https://github.com/oliviercailloux/java-course/raw/master/Pr%C3%A9sentation%20du%20cours%20Objet/presentation.pdf[Pres course]
 * Basic concepts and structures of Java: variables; types; subroutines; control structures; identifiers… [Should be known or easy]
-** https://github.com/oliviercailloux/java-course/raw/master/Syntaxe/presentation.pdf[Syntax] (without classes and objects), http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours1.pdf[Airiau C1] (compil, p. 16 to 20) (TODO : main, corriger a = 2)
+** https://github.com/oliviercailloux/java-course/raw/master/Syntaxe/presentation.pdf[Syntax] (without classes and objects)
 * With jshell:
-** Show the result of multiplying 4659 and 23, assigning these numbers to variables before multiplying them
+** Assign 4659 and 23 to variables, and show the result of multiplying these variables
 ** Show the greatest divisor of 4659 different than 4659 (use the `%` operator and a loop)
 ** Define a method that accepts an integer parameter and returns its greatest divisor except itself; use it to show the greatest divisor of 4659.
 * Syntax: classes (no objects)
-* With a text editor: define a class containing the method 
+* With a text editor: define a class `MyMathClass` containing the method above and a method that returns the smallest divisor (greater than one) of its parameter; and a class `MyBooleanClass` containing a method `xor` returning `true` iff exactly one of its parameter is `true`. Copy-paste this in jshell and make sure you can call all these methods from jshell.
 * https://github.com/oliviercailloux/java-course/raw/master/Notions%20objets/presentation.pdf[Basics of objects]
-* https://app.wooclap.com/JL[Quizz]
 * https://github.com/oliviercailloux/java-course/blob/master/Git/README.adoc[Git]: local repo, start ex
+* http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours1.pdf[Airiau C1] (compil, p. 16 to 20) (TODO : main)
 
 // Present all theory, 90 min. Then 30 min ex. Then 30 min git theory (local only!), 30 min ex.
+//* https://app.wooclap.com/JL[Quizz]
 
 *Material and going beyond*
 
@@ -85,7 +86,6 @@ Links taken from the https://www.edx.org/bio/eric-s-lander[course] “Introducti
 * Read half of the Workbench User Guide, Basic Tutorial, see https://github.com/oliviercailloux/java-course/blob/master/Tools.adoc#eclipse[Eclipse] doc [I]
 * http://math.hws.edu/javanotes/c1/quiz.html[EQ1.3] to 1.9
 * http://math.hws.edu/javanotes/c2/quiz.html[EQ2.1] to 2.4; 2.6 to 2.9; 2.11
-* Commit the mandatory exercices above https://classroom.github.com/a/50ZPImPs[here]: see https://github.com/oliviercailloux/java-course/blob/master/Divers/L3a.adoc#homeworks-from-the-book[Instructions]
 ** Do _not_ send me an e-mail to give me your username, or your repository URL.
 ** You are not obliged to use the command `git` to send your files on GitHub for now, you may do it “manually” with your web browser. Here is how. (Or watch this https://www.youtube.com/watch?v=pgzOiH1kmnI&t=1m20s[video], from 1min 20s to 4min.)
 .. When creating your repository, check the box “Initialize this repository with a README” (the goal is simply to make your repository non-empty)
