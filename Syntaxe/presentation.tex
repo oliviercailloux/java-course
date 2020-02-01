@@ -107,7 +107,7 @@ nom = valeur;
 	\begin{block}{Exemple}
 		\begin{lstlisting}
 {
-	int a = 3;
+	int a = 2;
 	{
 		int b = 2;
 		// a ? §\onslide<2->{Connu}§
@@ -234,22 +234,46 @@ for (int i=0; i < 3; ++i) {
 \begin{frame}[fragile]
 	\frametitle{Méthodes : syntaxe}
 	\begin{itemize}
-		\item \texttt{public static <type de retour> <nom> (<type param1> <nom param1>, …)}
+		\item \texttt{static <type de retour> <nom> (<type param1> <nom param1>, …)}
 		\item \texttt{return} pour renvoyer valeur (exécution méthode cesse)
 		\item \texttt{void} pour indiquer absence de retour
+		\item Méthode statique peut être vue comme une fonction
 	\end{itemize}
 	\begin{block}{Exemple}
 		\begin{lstlisting}
-public static int weightedSum (int a, int b, 
-      int w1, int w2) {
-	return a * w1 + b * w2;
+static double weightedSum(double a, double b, 
+      double w1, double w2) {
+	return w1 * a + w2 * b;
 }
-public static void useWeightedSum () {
-	int result = weightedSum(3, 4, 5, 6);
+static void useWeightedSum() {
+	double r = weightedSum(2d, 4d, 0.8d, 0.2d);
 }
 		\end{lstlisting}	
 	\end{block}
-	Valeur de \texttt{result} ? \pause \texttt{39}
+	Valeur de \texttt{r} ? \pause \texttt{2.4d}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Classes}
+	\begin{itemize}
+		\item Toute méthode doit se trouver dans une classe (sauf jshell)
+		\item \texttt{class MyClass} suivi d’un bloc
+		\item Sert (entre autres) à grouper les méthodes
+		\item Nom de la méthode préfixé du nom de la classe
+	\end{itemize}
+	\begin{block}{Exemple}
+		\begin{lstlisting}
+class MyMathClass {
+	static void sum(double a, double b) {
+		return a + b;
+	}
+	static void mult(double a, double b) {
+		return a * b;
+	}
+}
+		\end{lstlisting}	
+	\end{block}
+	Puis appel avec : \texttt{MyMathClass.sum(3d, 1d);}
 \end{frame}
 
 \appendix

@@ -13,7 +13,10 @@ Hint: use the git https://github.github.com/training-kit/[Cheat sheets].
 == Local repository
 
 === Configure git
-* Define globally (at least) `user.name`. Check with `git config --list`.
+Git can be configured by associating string values to “options”. Here we want to associate your name as a value to the option `user.name`. Git will use this to sign your commits.
+An option can be configured locally (for a given repository) or globally (for every time you use git on that system).
+
+* Define globally the option `user.name`. Check with `git config --list` (if this returns nothing, it means that no option is configured yet).
 ** Hint: type `git config` and read the doc; use the option `--global`.
 
 === First commit
@@ -22,7 +25,7 @@ Hint: use the git https://github.github.com/training-kit/[Cheat sheets].
 ** Hint: check in the slides, or in the Cheat sheets, how to do this.
 * Put `start.txt` in the index. Modify its content so that it contains `hello2`. Observe (using a git command) the difference between the version of this file in the workdir, in the index, and in the repository (all three should be different). Now place your new version of `start.txt` in the index.
 * Send your first commit. (Where is it sent?) Check that your current situation conforms to <<C1>>.
-** Hint: it’s time to use this big `git log` command suggested in the slides.
+** Hint: it’s time to use this big `git log` command suggested https://github.com/oliviercailloux/java-course/blob/master/Git/README.adoc[here], or to use a graphical interface.
 
 [[C1]]
 .Right after the first commit
@@ -67,7 +70,7 @@ Thinking about it, you decide to merge both your ideas into `master`.
 == Remote repository on GitHub
 
 * Create a new remote remository, RG, on https://github.com/[GitHub]. Connect R1 to RG.
-** Hint: follow and adapt the instructions given by GitHub.
+** Hint: understand and adapt the instructions given by GitHub.
 * Send your local informations to RG. Check with a browser that they have reached GitHub.
 * Clone RG into a new folder, R3. Modify a file and commit into R3. Send it to RG. Check online.
 * Modify something in R1, commit. Try to send it to RG. Why is it refused? How can you effectively send your last modification online? Send it to your RG repository.

@@ -18,11 +18,6 @@ For Java EE, add:
 * Download and install (deflate) https://wildfly.org/downloads/[WildFly] (14.0.1.Final or more recent, Java EE Full & Web Distribution)
 * https://tools.jboss.org/downloads/jbosstools/2018-09/4.9.0.Final.html[JBoss Tools], a plug-in for easy deployment to Wildfly. Install only JBoss AS, WildFly & EAP Server Tools. (Rationale: I have had stability issues in Eclipse after installing the whole of JBoss Tools.) Or https://github.com/oliviercailloux/java-course/blob/master/Automated%20Eclipse%20install.adoc[automate] it.
 
-== Git
-
-* Git https://git-scm.com/downloads[client] (I recommend the command line for learning; I’ve been told https://www.gitkraken.com/[GitKraken] is a great GUI complement)
-* https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup[Configure] your git identity: `user.name` and `user.email`. (Specific for GitHub: https://help.github.com/en/github/using-git/setting-your-username-in-git[user.name], https://help.github.com/en/github/setting-up-and-managing-your-github-user-account/setting-your-commit-email-address[user.email].)
-
 == Command line
 You should know how to execute command-line operations (thus, how to open a “terminal”). In Windows, use https://docs.microsoft.com/powershell/scripting/setup/installing-windows-powershell[PowerShell].
 
