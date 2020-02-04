@@ -1,0 +1,167 @@
+%Requires package xcolor.
+\NewDocumentCommand{\commentOC}{m}{\textcolor{blue}{\small$\big[$OC: #1$\big]$}}
+%Requires package babel and option [french]. According to babel doc, need two braces around \selectlanguage to make the changes really local.
+\NewDocumentCommand{\commentOCf}{m}{\textcolor{blue}{{\small\selectlanguage{french}$\big[$OC : #1$\big]$}}}
+\NewDocumentCommand{\commentYM}{m}{\textcolor{red}{\small$\big[$YM: #1$\big]$}}
+\NewDocumentCommand{\commentYMf}{m}{\textcolor{red}{{\small\selectlanguage{french}$\big[$YM : #1$\big]$}}}
+
+\bibliographystyle{abbrvnat}
+%TODO \newcommand{\possessivecite}[2][]{\citeauthor{#2}’s \citeyearpar[#1]{#2}}
+\NewDocumentCommand{\possessivecite}{m}{\citeauthor{#1}’s \citeyearpar{#1}}
+
+%https://tex.stackexchange.com/a/467188, https://tex.stackexchange.com/a/36088 - uncomment if one of those symbols is used.
+%\DeclareFontFamily{U} {MnSymbolD}{}
+%\DeclareFontShape{U}{MnSymbolD}{m}{n}{
+%  <-6> MnSymbolD5
+%  <6-7> MnSymbolD6
+%  <7-8> MnSymbolD7
+%  <8-9> MnSymbolD8
+%  <9-10> MnSymbolD9
+%  <10-12> MnSymbolD10
+%  <12-> MnSymbolD12}{}
+%\DeclareFontShape{U}{MnSymbolD}{b}{n}{
+%  <-6> MnSymbolD-Bold5
+%  <6-7> MnSymbolD-Bold6
+%  <7-8> MnSymbolD-Bold7
+%  <8-9> MnSymbolD-Bold8
+%  <9-10> MnSymbolD-Bold9
+%  <10-12> MnSymbolD-Bold10
+%  <12-> MnSymbolD-Bold12}{}
+%\DeclareSymbolFont{MnSyD} {U} {MnSymbolD}{m}{n}
+%\DeclareMathSymbol{\ntriplesim}{\mathrel}{MnSyD}{126}
+%\DeclareMathSymbol{\nlessgtr}{\mathrel}{MnSyD}{192}
+%\DeclareMathSymbol{\ngtrless}{\mathrel}{MnSyD}{193}
+%\DeclareMathSymbol{\nlesseqgtr}{\mathrel}{MnSyD}{194}
+%\DeclareMathSymbol{\ngtreqless}{\mathrel}{MnSyD}{195}
+%\DeclareMathSymbol{\nlesseqgtrslant}{\mathrel}{MnSyD}{198}
+%\DeclareMathSymbol{\ngtreqlessslant}{\mathrel}{MnSyD}{199}
+%\DeclareMathSymbol{\npreccurlyeq}{\mathrel}{MnSyD}{228}
+%\DeclareMathSymbol{\nsucccurlyeq}{\mathrel}{MnSyD}{229}
+%\DeclareFontFamily{U} {MnSymbolA}{}
+%\DeclareFontShape{U}{MnSymbolA}{m}{n}{
+%  <-6> MnSymbolA5
+%  <6-7> MnSymbolA6
+%  <7-8> MnSymbolA7
+%  <8-9> MnSymbolA8
+%  <9-10> MnSymbolA9
+%  <10-12> MnSymbolA10
+%  <12-> MnSymbolA12}{}
+%\DeclareFontShape{U}{MnSymbolA}{b}{n}{
+%  <-6> MnSymbolA-Bold5
+%  <6-7> MnSymbolA-Bold6
+%  <7-8> MnSymbolA-Bold7
+%  <8-9> MnSymbolA-Bold8
+%  <9-10> MnSymbolA-Bold9
+%  <10-12> MnSymbolA-Bold10
+%  <12-> MnSymbolA-Bold12}{}
+%\DeclareSymbolFont{MnSyA} {U} {MnSymbolA}{m}{n}
+%%Rightwards wave arrow: ↝. Alternative: \rightsquigarrow from amssymb, but it’s uglier
+%\DeclareMathSymbol{\rightlsquigarrow}{\mathrel}{MnSyA}{160}
+
+%03B3 Greek Small Letter Gamma
+\newunicodechar{γ}{\gamma}
+%03B4 Greek Small Letter Delta
+\newunicodechar{δ}{\delta}
+%2115 Double-Struck Capital N
+\newunicodechar{ℕ}{\mathbb{N}}
+%211D Double-Struck Capital R
+\newunicodechar{ℝ}{\mathbb{R}}
+%21CF Rightwards Double Arrow with Stroke
+\newunicodechar{⇏}{\nRightarrow}
+%21D2 Rightwards Double Arrow
+\newunicodechar{⇒}{\ensuremath{\Rightarrow}}
+%21D4 Left Right Double Arrow
+\newunicodechar{⇔}{\Leftrightarrow}
+%21DD Rightwards Squiggle Arrow
+\newunicodechar{⇝}{\rightsquigarrow}
+%2212 Minus Sign
+\newunicodechar{−}{\ifmmode{-}\else\textminus\fi}
+%2227 Logical And
+\newunicodechar{∧}{\land}
+%2228 Logical Or
+\newunicodechar{∨}{\lor}
+%2229 Intersection
+\newunicodechar{∩}{\cap}
+%222A Union
+\newunicodechar{∪}{\cup}
+%2260 Not Equal To (handy also as text in informal writing)
+\newunicodechar{≠}{\ensuremath{\neq}}
+%2264 Less-Than or Equal To
+\newunicodechar{≤}{\leq}
+%2265 Greater-Than or Equal To
+\newunicodechar{≥}{\geq}
+%2270 Neither Less-Than nor Equal To
+\newunicodechar{≰}{\nleq}
+%2271 Neither Greater-Than nor Equal To
+\newunicodechar{≱}{\ngeq}
+%2272 Less-Than or Equivalent To
+\newunicodechar{≲}{\lesssim}
+%2273 Greater-Than or Equivalent To
+\newunicodechar{≳}{\gtrsim}
+%2274 Neither Less-Than nor Equivalent To – also, from MnSymbol: \nprecsim, a more exact match to the Unicode symbol; and \npreccurlyeq, too small
+\newunicodechar{≴}{\not\preccurlyeq}
+%2275 Neither Greater-Than nor Equivalent To
+\newunicodechar{≵}{\not\succcurlyeq}
+%2279 Neither Greater-Than nor Less-Than – requires MnSymbol; also \nlessgtr from txfonts/pxfonts, \ngtreqless from MnSymbol (but much higher), \ngtrless from MnSymbol (a more exact match to the Unicode symbol); for incomparability (not matching this Unicode symbol), may also consider \ntriplesim from MnSymbol,\nparallelslant from fourier, \between from mathabx, or ⋈
+\newunicodechar{≹}{\ngtreqlessslant}
+%227A Precedes
+\newunicodechar{≺}{\prec}
+%227B Succeeds
+\newunicodechar{≻}{\succ}
+%227C Precedes or Equal To
+\newunicodechar{≼}{\preccurlyeq}
+%227D Succeeds or Equal To
+\newunicodechar{≽}{\succcurlyeq}
+%227E Precedes or Equivalent To
+\newunicodechar{≾}{\precsim}
+%227F Succeeds or Equivalent To
+\newunicodechar{≿}{\succsim}
+%2280 Does Not Precede
+\newunicodechar{⊀}{\nprec}
+%2281 Does Not Succeed
+\newunicodechar{⊁}{\nsucc}
+%22B2 Normal Subgroup Of – using \vartriangleleft from amsfonts, which goes well with \trianglelefteq, \ntriangleright, and so on, also from amsfonts; another possibility is \lhd from latexsym, which seems visually equivalent to \vartriangleleft from amsfonts; latexsym also has ⊴=\unlhd, but doesn’t have a symbol for ⊴. Other related symbols: \triangleleft from latesym package is too small; fdsymbol provides \triangleleft=\medtriangleleft and \vartriangleleft=\smalltriangleleft; MnSymbol provides \medtriangleleft and \vartriangleleft=\lessclosed=\lhd which are smaller than \vartriangleleft from amsfont; \vartriangleleft from mathabx (p. 67), looks different (wider); also \vartriangleleft from boisik (p. 69) looks still different; \vartriangleleft=\lhd from stix are smaller. Oddly enough, \triangleright appears as the LMMathItalic12-Regular font whereas \rhd appears as LASY10 and \vartriangleright appears as MSAM10.
+\newunicodechar{⊲}{\vartriangleleft}
+%22B3 Contains as Normal Subgroup (also: 25B7 White right-pointing triangle or 25B9 White right-pointing small triangle)
+\newunicodechar{⊳}{\vartriangleright}
+%22B4 Normal Subgroup of or Equal To
+\newunicodechar{⊴}{\trianglelefteq}
+%22B5 Contains as Normal Subgroup or Equal To
+\newunicodechar{⊵}{\trianglerighteq}
+%22C8 Bowtie
+\newunicodechar{⋈}{\bowtie}
+%22EA Not Normal Subgroup Of
+\newunicodechar{⋪}{\ntriangleleft}
+%22EB Does Not Contain As Normal Subgroup
+\newunicodechar{⋫}{\ntriangleright}
+%22EC Not Normal Subgroup of or Equal To
+\newunicodechar{⋬}{\ntrianglelefteq}
+%22ED Does Not Contain as Normal Subgroup or Equal
+\newunicodechar{⋭}{\ntrianglerighteq}
+%25A1 White Square
+\newunicodechar{□}{\Box}
+%27E6 Mathematical Left White Square Bracket – there’s also \llbracket from stmaryrd
+\newunicodechar{⟦}{\text{\textlbrackdbl}}
+%27E7 Mathematical Right White Square Bracket – there’s also \rrbracket from stmaryrd
+\newunicodechar{⟧}{\text{\textrbrackdbl}}
+%27FC Long Rightwards Arrow from Bar
+\newunicodechar{⟼}{\longmapsto}
+%2AB0 Succeeds Above Single-Line Equals Sign
+\newunicodechar{⪰}{\succeq}
+%301A Left White Square Bracket
+\newunicodechar{〚}{\textlbrackdbl}
+%301B Right White Square Bracket
+\newunicodechar{〛}{\textrbrackdbl}
+%→ is defined by default as \textrightarrow, which is invalid in math mode. Same thing for the three other commands. Using \DeclareUnicodeCharacter instead of \newunicodechar because the latter warns about the previous definition.
+%→ Rightwards Arrow
+\DeclareUnicodeCharacter{2192}{\ifmmode\rightarrow\else\textrightarrow\fi}
+%¬ Not Sign
+\DeclareUnicodeCharacter{00AC}{\ifmmode\lnot\else\textlnot\fi}
+%… Horizontal Ellipsis
+\DeclareUnicodeCharacter{2026}{\ifmmode\dots\else\textellipsis\fi}
+%× Multiplication Sign
+\DeclareUnicodeCharacter{00D7}{\ifmmode\times\else\texttimes\fi}
+%Permits to really obtain a straight quote when typing a straight quote; potentially dangerous, see https://tex.stackexchange.com/a/521999
+\catcode`\'=\active
+\DeclareUnicodeCharacter{0027}{\ifmmode{^{\prime}}\else\textquotesingle\fi}
+

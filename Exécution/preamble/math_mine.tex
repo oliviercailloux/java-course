@@ -1,0 +1,36 @@
+%Decision Theory (MCDA and SC)
+\NewDocumentCommand{\allalts}{}{\mathscr{A}}
+\NewDocumentCommand{\allcrits}{}{\mathscr{C}}
+\NewDocumentCommand{\alts}{}{A}
+\NewDocumentCommand{\dm}{}{i}
+\NewDocumentCommand{\allF}{}{\mathscr{F}}
+\NewDocumentCommand{\allvoters}{}{\mathscr{N}}
+\NewDocumentCommand{\voters}{}{N}
+\NewDocumentCommand{\allprofs}{}{\boldsymbol{\mathcal{R}}}
+\NewDocumentCommand{\prof}{}{\boldsymbol{R}}
+\NewDocumentCommand{\linors}{}{\mathscr{L}(\allalts)}
+%Thanks to https://tex.stackexchange.com/q/154549
+	%\makeatletter
+	%\def\@myRgood@#1#2{\mathrel{R^X_{#2}}}
+	%\def\myRgood{\@ifnextchar_{\@myRgood@}{\mathrel{R^X}}}
+	%\makeatother
+
+%Deliberated Judgment
+\NewDocumentCommand{\allargs}{}{S^*}
+\NewDocumentCommand{\args}{}{S}
+\NewDocumentCommand{\ar}{}{s}
+\NewDocumentCommand{\allprops}{}{T}
+\NewDocumentCommand{\prop}{}{t}
+\NewDocumentCommand{\ileadsto}{}{⇝}
+\NewDocumentCommand{\ibeatse}{}{⊳_\exists}
+\NewDocumentCommand{\nibeatse}{}{⋫_\exists}
+\NewDocumentCommand{\ibeatsst}{}{⊳_\forall}
+\NewDocumentCommand{\nibeatsst}{}{⋫_\forall}
+\NewDocumentCommand{\mleadsto}{O{\eta}}{⇝_{#1}}
+\NewDocumentCommand{\mbeats}{O{\eta}}{⊳_{#1}}
+\NewDocumentCommand{\ibeatseinv}{}{⊳_\exists^{-1}}
+
+%Logic
+\NewDocumentCommand{\ltru}{}{\texttt{T}}
+\NewDocumentCommand{\lfal}{}{\texttt{F}}
+

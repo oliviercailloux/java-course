@@ -1,0 +1,87 @@
+\mode<presentation>
+%NB requires color darkred, to be provided by the color theme.
+%from outer theme infolines
+	%\setbeamercolor*{author in head/foot}{parent=palette tertiary}
+	%\setbeamercolor*{title in head/foot}{parent=palette secondary}
+	\setbeamercolor*{date in head/foot}{parent=palette primary}
+
+	\setbeamercolor*{section in head/foot}{parent=palette tertiary}
+	%changed from palette primary
+	\setbeamercolor*{subsection in head/foot}{parent=section in head/foot}
+	%\setbeamersize{text margin left=1em,text margin right=1em}
+
+\setbeamercolor*{page number in head/foot}{fg=darkred,bg=gray!10!white}
+
+\defbeamertemplate*{headline}{doubleline}{%
+	\begin{beamercolorbox}[ht=2.25ex,dp=1ex]{section in head/foot}%
+		\insertsectionnavigationhorizontal{\paperwidth}{}{}%
+	\end{beamercolorbox}%
+	\begin{beamercolorbox}[ht=2.25ex,dp=1ex]{subsection in head/foot}%
+		\insertsubsectionnavigationhorizontal{\paperwidth}{}{}%
+	\end{beamercolorbox}%
+}
+\defbeamertemplate{headline}{singleline}{%
+	\begin{beamercolorbox}[ht=2.25ex,dp=1ex]{section in head/foot}%
+		\insertsectionnavigationhorizontal{\paperwidth}{}{}%
+	\end{beamercolorbox}%
+}
+
+% bug corrected, https://bitbucket.org/rivanvx/beamer/issue/195/incorrect-handling-of-empty-shortinstitute
+\defbeamertemplate*{footline}{authortitle}{%
+	\leavevmode%
+	\hbox{%
+		\begin{beamercolorbox}[wd=.45\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+			\usebeamerfont{author in head/foot}%
+			\insertshortauthor%
+			\expandafter\beamer@ifempty%
+				\expandafter{\beamer@shortinstitute}{}{~~(\insertshortinstitute)}%
+		\end{beamercolorbox}%
+		\begin{beamercolorbox}[wd=.46\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+			\usebeamerfont{title in head/foot}\insertshorttitle%
+		\end{beamercolorbox}%
+		\begin{beamercolorbox}[wd=.09\paperwidth,ht=2.25ex,dp=1ex,right]{page number in head/foot}%
+			\insertframenumber{} / \inserttotalframenumber\hspace*{2ex}%
+		\end{beamercolorbox}%
+	}
+}
+
+\defbeamertemplate{footline}{onlypage}{%
+	\leavevmode%
+	\hfill%
+	\usebeamercolor{page number in head/foot}%
+	\insertframenumber{} / \inserttotalframenumber\hspace*{2ex}%
+}
+
+\defbeamertemplate{footline}{title}{%
+	\leavevmode%
+	\hbox{%
+		\begin{beamercolorbox}[wd=.90\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+			\usebeamerfont{title in head/foot}%
+			\insertshorttitle%
+		\end{beamercolorbox}%
+		\begin{beamercolorbox}[wd=.1\paperwidth,ht=2.25ex,dp=1ex,right]{page number in head/foot}%
+			\insertframenumber{} / \inserttotalframenumber\hspace*{2ex}%
+		\end{beamercolorbox}%
+	}
+}
+\defbeamertemplate{footline}{titlesubtitle}{%
+	\leavevmode%
+	\hbox{%
+		\begin{beamercolorbox}[wd=.45\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+			\usebeamerfont{title in head/foot}%
+			\insertshorttitle%
+		\end{beamercolorbox}%
+		\begin{beamercolorbox}[wd=.45\paperwidth,ht=2.25ex,dp=1ex,center]{subtitle in head/foot}%
+			\usebeamerfont{subtitle in head/foot}%
+			\insertshortsubtitle
+		\end{beamercolorbox}%
+		\begin{beamercolorbox}[wd=.1\paperwidth,ht=2.25ex,dp=1ex,right]{page number in head/foot}%
+			\insertframenumber{} / \inserttotalframenumber\hspace*{2ex}%
+		\end{beamercolorbox}%
+	}
+}
+
+\setbeamertemplate{frametitle continuation}[from second]
+
+\mode<all>
+

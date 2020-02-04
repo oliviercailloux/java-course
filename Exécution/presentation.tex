@@ -1,0 +1,167 @@
+\RequirePackage[l2tabu, orthodox]{nag}
+\documentclass[english, french]{beamer}
+\input{preamble/packages}
+\input{preamble/redac}
+\input{preamble/math_basics}
+\input{preamble/math_mine}
+\input{preamble/draw}
+
+\setbeamertemplate{headline}[singleline]
+\setbeamertemplate{footline}[onlypage]
+
+\title{Compiler, interpréter, distribuer, exécuter}
+\keywords{VM, Java}
+\author{Olivier Cailloux}
+\institute[LAMSADE]{LAMSADE, Université Paris-Dauphine}
+\date{Version du \today}
+
+\begin{document}
+\begin{frame}[plain]
+	\tikz[remember picture,overlay]{
+		\path (current page.south west) node[anchor=south west, inner sep=0] {
+			\includegraphics[height=8mm]{Dauphine-Noir.png}
+		};
+		\path (current page.south east) node[anchor=south east, inner sep=0] {
+			\includegraphics[height=1cm]{LAMSADE95.jpg}
+		};
+	}
+	\titlepage
+\end{frame}
+\addtocounter{framenumber}{-1}
+
+\section{Introduction}
+\begin{frame}
+	\frametitle{Introduction}
+	\begin{itemize}
+		\item Compiler : transformer un langage en un autre
+		\item Intepréter : traduire et exécuter les instructions
+		\item C++ est le plus souvent compilé en code machine (puis interprété par le CPU, ou \og{}exécuté\fg{})
+		\item Java est le plus souvent compilé puis interprété
+		\item Similaire à Python, différent de C++
+		\item Java peut aussi être directement interprété : cf. jshell
+		\item Java pourrait aussi (en principe) être directement compilé en code machine, comme C++
+		\item Compilation-puis-interprétation est devenu courant dans les langages de haut niveau (Python, Ruby, C\#, …) avec exceptions (Go)
+	\end{itemize}
+\end{frame}
+
+\section{Compilation}
+\begin{frame}
+	\frametitle{Compilation}
+	\begin{itemize}
+		\item Compilateur fourni avec le JDK
+		\item JDK ? \onslide<2>{Java Development Kit}
+		\item Transforme le code source en code compilé
+		\item Par convention, le code source est dans un fichier `.java`
+		\item Le code compilé est dans un fichier `.class`
+		\item Appelé \emph{bytecode}
+		\item Une paire de fichiers par classe {\tiny de premier niveau}
+	\end{itemize}
+\end{frame}
+
+\section{Interprétation}
+\begin{frame}
+	\frametitle{Interprétation}
+	\begin{itemize}
+		\item Bytecode destiné à être interprété par une machine virtuelle Java (JVM)
+		\item Les fichiers `.class` ne dépendent \emph{pas} de l’OS de destination
+		\item La JVM dépend de l’OS de destination
+		\item[⇒] fichiers \texttt{.class} + JVM linux = programme exécutable sous linux
+		\item[⇒] fichiers \texttt{.class} + JVM windows = programme exécutable sous windows
+		\item …
+	\end{itemize}
+\end{frame}
+
+\section{Distribution}
+\begin{frame}
+	\frametitle{Distribution et utilisation}
+	Comment rendre son programme Java utilisable ?
+	\begin{enumerate}
+		\item \label{unik} JVM unique + fichiers \texttt{.class}, séparément
+		\begin{itemize}
+			\item Installer la JDK sur le système, inclut la JVM [U]
+			\item Récupérer les \texttt{.class} [U]
+			\item Exécuter avec la JVM à l’aide d’une commande [U]
+			\item Ou inclure un lanceur, une icône à cliquer… (qui exécute la commande) [D]
+		\end{itemize}
+		\item JVM embarquée avec les fichiers \texttt{.class}
+		\begin{itemize}
+			\item Emballer la JVM, les fichiers \texttt{.class} et un lanceur dans un installeur (cf. jlink) [D]
+			\item Installer puis exécuter le lanceur [U]
+		\end{itemize}
+		\item \label{srv} La JVM tourne sur un serveur et communique avec l’utilisateur par le réseau
+	\end{enumerate}
+	Dans ce cours : JVM unique (\cref{unik}) puis serveur (\cref{srv})
+\end{frame}
+
+\section{Commandes}
+\begin{frame}
+	\frametitle{Commandes : Compiler}
+	\begin{itemize}
+		\item Compiler : invoquer \texttt{javac} 
+		\item donner les chemins des fichiers à compiler en arguments
+		\item Extension de ces fichiers ? \onslide<2->{.java}
+		\item Exemple : \onslide<2->{\texttt{javac "MainClass.java" "RequiredCls.java"}}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Commandes : Interpréter}
+	\begin{itemize}
+		\item Invoquer \texttt{java} 
+		\item donner le \emph{nom de la classe} à exécuter en argument
+		\item Que manque-t-il ? \onslide<2->{l’endroit où trouver les classes !}
+		\item Préciser le \og{}Class path\fg{} avec \texttt{-cp} chemins
+		\item Exemple : \texttt{java -cp "." "MainClass"}
+		\item Pas de class path précisé : \texttt{.} par défaut
+		\item Séparer les chemins par \texttt{:} sous Linux et par \texttt{;} sous Windows
+		\item Exemple : \texttt{java -cp "folder1:folder2" "MainClass"}
+	\end{itemize}
+	Mais que manque-t-il encore ? \onslide<3->{Quelle méthode exécuter ?}
+\end{frame}
+
+\section{Main}
+\begin{frame}
+	\frametitle{\insertsection}
+	\begin{itemize}
+		\item Par convention, méthode à exécuter déclarée par : \texttt{public static void main(String[] args)}
+		\item L’interpréteur reçoit le nom de la classe à exécuter
+		\item Il exécute la méthode \texttt{main} de cette classe
+		\item Les arguments suivant le nom de la classe à exécuter sont passés dans le paramètre \texttt{args}
+		\item Exemple : \texttt{java -cp "." "MainClass" "argument 1" "argument 2"}
+	\end{itemize}
+	Note :
+	\begin{itemize}
+		\item On peut avoir un \texttt{main} dans plusieurs classes
+		\item[⇒] multiples points d’entrée possibles
+	\end{itemize}
+\end{frame}
+
+\appendix
+\makeatletter
+\def\insertframenumber{\@roman\c@framenumber}
+\def\inserttotalframenumber{\@roman\c@framenumber}
+\makeatother
+
+\clearpage\pdfbookmark{License}{License}
+\begin{frame}[plain]
+	\frametitle{License}
+	This presentation, and the associated \LaTeX{} code, are published under the \href{https://opensource.org/licenses/MIT}{MIT license}. Feel free to reuse (parts of) the presentation, under condition that you cite the author.
+	
+	Credits are to be given to \href{http://www.lamsade.dauphine.fr/~ocailloux/}{Olivier Cailloux}, Université Paris-Dauphine.
+\end{frame}
+\addtocounter{framenumber}{-1}
+\end{document}
+
+\begin{frame}
+	\frametitle{Title}
+	\begin{block}{Block}
+%		\setlength\abovedisplayskip{1 ex}% reduce space above equations
+		\begin{itemize}
+			\item Item
+		\end{itemize}
+	\end{block}
+	\begin{itemize}
+		\item Item
+	\end{itemize}
+\end{frame}
+
