@@ -58,7 +58,7 @@ Links taken from the https://www.edx.org/bio/eric-s-lander[course] “Introducti
 ** Add a `main` method to you `MyMathClass` that calls your `xor` method with `true` and `false` and prints the result, followed by the first argument given to the program.
 ** Compile `MyBooleanClass` with https://docs.oracle.com/en/java/javase/13/docs/specs/man/javac.html[javac], move the resulting file into its own folder, execute it from the source folder.
 ** Find out _in the official documentation_ how to compile the class and let the resulting class be placed in its own folder, in a single step (without you having to move the file afterwards)
-** Compile `MyMathClass`, move the resulting file into its own folder (alone), and execute it from the source folder. Why does it fail? What does the error message say, and how is it related to the problem? Fix the problem and execute it, first by grouping the class files, second, while keeping both class files in different folders.
+** Compile `MyMathClass`, move the resulting file into its own folder (alone), and execute it from the source folder. Why does it fail? What does the error message indicate, and how is it related to the problem? Fix the problem and execute it, first by grouping the class files, second, while keeping both class files in different folders.
 ** (link:http://math.hws.edu/javanotes/c2/exercises.html[EE2.1] to 2.6, supposedly known)
 ** http://math.hws.edu/javanotes/c2/exercises.html[EE2.7]: use user input (Scanner) instead of file input; do not use TextIO
 ** http://math.hws.edu/javanotes/c1/quiz.html[EQ1.3] to 1.9
