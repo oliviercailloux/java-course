@@ -8,6 +8,8 @@ Course about Java SE and Java EE.
 
 == Main content
 
+The https://github.com/oliviercailloux/java-course/blob/master/L3a.adoc[entry page] for the L3a course.
+
 Look into the various `.adoc` files and sub-folders, depending on your interest.
 
 Please drop me an e-mail if you use (some of) this content (the license permits you to re-use the content without asking or telling me however).
