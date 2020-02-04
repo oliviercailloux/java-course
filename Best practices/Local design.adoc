@@ -48,7 +48,7 @@ public boolean equals(Object o2) {
 }
 ----
 
-If the fields may be `null`, use https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/util/Objects.html#equals(java.lang.Object,java.lang.Object)[`Objects.equals(Object, Object)`] instead.
+If the fields may be `null`, use https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/util/Objects.html#equals(java.lang.Object,java.lang.Object)[`Objects.equals(Object, Object)`]{emptyattribute} instead.
 
 == The `#hashCode()` method
 If you override `#equals(Object)`, you must override `#hashCode()` as well. Use simply something like: `return Objects.https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/util/Objects.html#hashCode(java.lang.Object)[hashCode](firstName, secondName)`.

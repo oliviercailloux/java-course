@@ -52,7 +52,7 @@ Links taken from the https://www.edx.org/bio/eric-s-lander[course] “Introducti
 * Going beyond: https://arbitrary-but-fixed.net/teaching/java/jshell/2017/12/14/jshell-peculiarities.html[The peculiarities of the JShell]
 * Syntax (end): classes (no objects)
 * With a text editor: define a class `MyMathClass` containing the method above and a method that returns the smallest divisor (greater than one) of its parameter; and a class `MyBooleanClass` containing a method `xor` returning `true` iff exactly one of its parameter is `true`. Copy-paste this in jshell and make sure you can call all these methods from jshell.
-* https://github.com/oliviercailloux/java-course/raw/master/Exécution/presentation.pdf[Exécution]
+* https://github.com/oliviercailloux/java-course/raw/master/Ex%C3%A9cution/presentation.pdf[Exécution]
 * Exercices:
 ** Add a `main` method to your `MyBooleanClass` that prints “Hello, this is my boolean class.” Use `System.out.println("…")` to print.
 ** Add a `main` method to you `MyMathClass` that calls your `xor` method with `true` and `false` and prints the result, followed by the first argument given to the program.
