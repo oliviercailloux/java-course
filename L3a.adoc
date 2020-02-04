@@ -59,8 +59,7 @@ Links taken from the https://www.edx.org/bio/eric-s-lander[course] “Introducti
 ** Compile `MyBooleanClass` with https://docs.oracle.com/en/java/javase/13/docs/specs/man/javac.html[javac], move the resulting file into its own folder, execute it from the source folder.
 ** Find out _in the official documentation_ how to compile the class and let the resulting class be placed in its own folder, in a single step (without you having to move the file afterwards)
 ** Compile `MyMathClass`, move the resulting file into its own folder (alone), and execute it from the source folder. Why does it fail? What does the error message indicate, and how is it related to the problem? Fix the problem and execute it, first by grouping the class files, second, while keeping both class files in different folders.
-** (link:http://math.hws.edu/javanotes/c2/exercises.html[EE2.1] to 2.6, supposedly known)
-** http://math.hws.edu/javanotes/c2/exercises.html[EE2.7]: use user input (Scanner) instead of file input; do not use TextIO
+** (link:http://math.hws.edu/javanotes/c2/exercises.html[EE2.1] to 2.2, supposedly known)
 ** http://math.hws.edu/javanotes/c1/quiz.html[EQ1.3] to 1.9
 ** http://math.hws.edu/javanotes/c2/quiz.html[EQ2.1] to 2.4; 2.6 to 2.9; 2.11
 
@@ -83,6 +82,8 @@ Links taken from the https://www.edx.org/bio/eric-s-lander[course] “Introducti
 ** EE3.8, 3.9 [O]
 // Present all theory, 90 min. Then 30 min ex. Then 30 min git theory (local only!), 30 min ex.
 //* https://app.wooclap.com/JL[Quizz]
+** http://math.hws.edu/javanotes/c2/exercises.html[EE2.3] to 2.6; use Scanner, not TextIO
+** http://math.hws.edu/javanotes/c2/exercises.html[EE2.7]: use user input (Scanner) instead of file input; do not use TextIO
 
 * https://www.youtube.com/watch?v=lcYkOh4nweE&t=1m21s[Mars Climate Orbiter] (1m21 to 5m18; small mistake in the video: it’s Newton times second, not Newton force per second; see also https://en.wikipedia.org/wiki/Mars_Climate_Orbiter[Wikipedia]; similarly http://www-users.math.umn.edu/~arnold/disasters/ariane.html[sad] https://www.youtube.com/watch?v=gp_D8r-2hwk[story]{emptyattribute})
 * Marks; two methods for EE36
