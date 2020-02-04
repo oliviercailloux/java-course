@@ -1,15 +1,12 @@
 = Git
 
-- Install Git https://gitforwindows.org/[client].
-- See below, and https://raw.githubusercontent.com/oliviercailloux/java-course/master/Git/Pr%C3%A9sentation/presentation.pdf[présentation] and https://github.com/oliviercailloux/java-course/blob/master/Git/Exercices.adoc[exercices].
+Prerequisites:
 
-== Command line
-I recommend using the command line when learning git. See https://tutorial.djangogirls.org/en/intro_to_command_line/[Introduction to command line] if necessary.
-Under Windows, use Git BASH (included in Git https://gitforwindows.org/[client]). As Git BASH emulates a Linux environment, you must use Linux-like commands there (for example, `ls` and not `dir`).
+- Install https://git-scm.com/download[git].
+- We will start learning with the command line interface of git. If you are not used to using a shell, read the https://github.com/oliviercailloux/java-course/blob/master/Shell.adoc#Introduction[introduction] to the shell, and the section about https://github.com/oliviercailloux/java-course/blob/master/Shell.adoc#Arguments[arguments].
+Under Windows, use Git BASH (included in git https://gitforwindows.org/[for Windows]). (As Git BASH emulates a Linux environment, you use Linux-like commands there.)
 
-Here is a remark about arguments that you need to know when using git. A command as used in the command line interface (Git BASH or your favorite terminal) contains (typically) a program name, followed by arguments, separated by spaces. Example: `touch afile anotherfile` calls the program `touch` with two arguments. (This command creates two empty files, `afile` and `anotherfile`, if they do not exist already.) The terminal will sometimes replace part of your argument; this is triggered by use of special characters such as `*`. Example: `echo anotherfi*` will result in the argument `anotherfi*` to be replaced by `anotherfile` if run after the previous command. To form a single argument containing spaces, or to prevent replacement of part of your argument, use single quotes. Example: `touch 'a file'` contains only one argument: `a file`. Thus, this command creates a file named `a file`, with a space in its name.
-
-Exercice: open a terminal, navigate (using `cd`) to some different place of your choice on your hard disk, create a file `my file.txt` there, delete it with your graphical file explorer, check in the terminal that it has disappeared (using `ls`).
+Then see below, and https://raw.githubusercontent.com/oliviercailloux/java-course/master/Git/Pr%C3%A9sentation/presentation.pdf[présentation] and https://github.com/oliviercailloux/java-course/blob/master/Git/Exercices.adoc[exercices].
 
 == Learning the basics
 There are two ways to learn the basics of Git: the frustrating and long way, and the nice and short way. The frustrating and long way is the one you find yourself into if you do not read anything about git (because you do not have time) and just try to deal with it by running commands that you found on the web, that you do not fully understand, that you supposed would achieve just what you need, and that instead created a mess that you ignore how to repair.
