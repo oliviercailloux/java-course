@@ -4,11 +4,7 @@
 
 A short document that recalls the main points about the class path in Java.
 
-== Relative and absolute file names
-Here is a short reminded about relative and absolute file names. This is not specific to Java.
-
-* A file stored on your hard disk has an absolute name that locates it independently of the folder you stand currently in. For example: `/home/myuser/myprojectfolder/README.txt`. This example is plausible under Linux and macOS. Windows uses backslashes to separate path names and a different naming scheme, so an example would be `C:\Documents\myprojectfolder\README.txt`. Examples in this course follow the Linux-like naming.
-* Whenever you want to refer to some file, for example, when you type a command in a terminal, you may use its absolute name or its name relative to your current folder. For example, if you are in the folder `/home/myuser/`, the relative file name would be `myprojectfolder/README.txt`.
+Prerequisite: you know how to https://github.com/oliviercailloux/java-course/blob/master/Shell.adoc#Paths[refer to a file by its absolute or relative path] in a shell.
 
 == Source code
 * A class in package `a.b` and named `MyClass` has a fully qualified name `a.b.MyClass`: this is the non-ambiguous name by which you can access it (you rather usually use the short form `MyClass` and use an `import` statement in your code).
