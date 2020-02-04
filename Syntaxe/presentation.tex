@@ -234,18 +234,18 @@ for (int i=0; i < 3; ++i) {
 \begin{frame}[fragile]
 	\frametitle{Méthodes : syntaxe}
 	\begin{itemize}
-		\item \texttt{static <type de retour> <nom> (<type param1> <nom param1>, …)}
+		\item \texttt{<type de retour> <nom> (<type param1> <nom param1>, …)}
 		\item \texttt{return} pour renvoyer valeur (exécution méthode cesse)
 		\item \texttt{void} pour indiquer absence de retour
-		\item Méthode statique peut être vue comme une fonction
+		\item Une telle méthode peut être vue comme une fonction
 	\end{itemize}
 	\begin{block}{Exemple}
 		\begin{lstlisting}
-static double weightedSum(double a, double b, 
+double weightedSum(double a, double b, 
       double w1, double w2) {
 	return w1 * a + w2 * b;
 }
-static void useWeightedSum() {
+void useWeightedSum() {
 	double r = weightedSum(2d, 4d, 0.8d, 0.2d);
 }
 		\end{lstlisting}	
@@ -259,7 +259,7 @@ static void useWeightedSum() {
 		\item Toute méthode doit se trouver dans une classe (sauf jshell)
 		\item \texttt{class MyClass} suivi d’un bloc
 		\item Sert (entre autres) à grouper les méthodes
-		\item Nom de la méthode préfixé du nom de la classe
+		\item En-tête de la méthode commence par \texttt{static}
 	\end{itemize}
 	\begin{block}{Exemple}
 		\begin{lstlisting}
