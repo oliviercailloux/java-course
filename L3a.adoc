@@ -45,7 +45,7 @@ Links taken from the https://www.edx.org/bio/eric-s-lander[course] “Introducti
 ** Assign 4659 and 23 to variables, and show the result of multiplying these variables
 ** Show the greatest divisor of 4659 that is different than 4659 (use the `%` operator and a loop)
 ** Define a method that accepts an integer parameter and returns its greatest divisor except itself; use it to show the greatest divisor of 4659.
-** [small]#Going beyond: https://arbitrary-but-fixed.net/teaching/java/jshell/2017/12/14/jshell-peculiarities.html[The peculiarities of the JShell]#
+** [small]#Going beyond: https://arbitrary-but-fixed.net/teaching/java/jshell/2017/12/14/jshell-peculiarities.html[The peculiarities of the JShell]# +++<font size=".5em">small</font>+++
 * Syntax (end): classes (no objects)
 ** Material: http://math.hws.edu/javanotes/contents-with-subsections.html[ES1.4] (Building blocks of programs), 2 intro (names and things), 2.1 (basic Java application), 2.2 (variables and primitive types), 2.3.3 (operations on strings), 2.4.1 (basic and formatted output), 2.5 (expressions), 2.6.7 (packages), ES3 intro to 3.6 (blocks, loops, algorithmic development, switch) [Should be known or easy]
 ** http://math.hws.edu/javanotes/c2/[ES2.2.1] (variables), 2.3.1 (subroutines), 2.4.6 (scanner for input) [I]
