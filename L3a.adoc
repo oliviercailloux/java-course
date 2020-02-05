@@ -41,7 +41,7 @@ Links taken from the https://www.edx.org/bio/eric-s-lander[course] “Introducti
 
 * https://github.com/oliviercailloux/java-course/raw/master/Pr%C3%A9sentation%20du%20cours%20Objet/presentation.pdf[Pres course]
 * https://github.com/oliviercailloux/java-course/raw/master/Syntaxe/presentation.pdf[Syntax] (without classes and objects) [Should be known or easy]
-* Exercice with https://docs.oracle.com/en/java/javase/13/docs/specs/man/jshell.html[jshell]:
+* Exercice with https://docs.oracle.com/en/java/javase/13/docs/specs/man/jshell.html[jshell] (or https://tryjshell.org/[online]):
 ** Assign 4659 and 23 to variables, and show the result of multiplying these variables
 ** Show the greatest divisor of 4659 that is different than 4659 (use the `%` operator and a loop)
 ** Define a method that accepts an integer parameter and returns its greatest divisor except itself; use it to show the greatest divisor of 4659.
@@ -50,7 +50,18 @@ Links taken from the https://www.edx.org/bio/eric-s-lander[course] “Introducti
 ** Material: http://math.hws.edu/javanotes/contents-with-subsections.html[ES1.4] (Building blocks of programs), 2 intro (names and things), 2.1 (basic Java application), 2.2 (variables and primitive types), 2.3.3 (operations on strings), 2.4.1 (basic and formatted output), 2.5 (expressions), 2.6.7 (packages), ES3 intro to 3.6 (blocks, loops, algorithmic development, switch) [Should be known or easy]
 ** http://math.hws.edu/javanotes/c2/[ES2.2.1] (variables), 2.3.1 (subroutines), 2.4.6 (scanner for input) [I]
 ** ES1.6 (modern UI), 1.7 (internet) [O]
-* With a text editor: define a class `MyMathClass` containing the method above and a method that returns the smallest divisor (greater than one) of its parameter; and a class `MyBooleanClass` containing a method `xor` returning `true` iff exactly one of its parameter is `true`. Copy-paste this in jshell and make sure you can call all these methods from jshell.
+* With a text editor: define a class `MyMathClass` containing the method above and a method that returns the smallest divisor (greater than one) of its parameter; and a class `MyBooleanClass` containing a method `xor` returning `true` iff exactly one of its parameter is `true`. Copy-paste this in jshell and make sure you can call all these methods from jshell. (TODO at home)
+
+*Todo*
+
+* Install a https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Various.adoc#installing-the-jdk[JDK] from OpenJDK (11 or ulterior)
+* Install https://www.eclipse.org/downloads/packages/[Eclipse IDE] “for Java Developers”
+* Install https://git-scm.com/download[git]
+* Redirect your e-mails @ Dauphine if necessary to ensure you receive announcements posted on MyCourse
+
+[[S2]]
+=== S2 (Thursday 14th of March, 2019)
+
 * https://github.com/oliviercailloux/java-course/raw/master/Ex%C3%A9cution/presentation.pdf[Exécution]
 ** http://math.hws.edu/javanotes/contents-with-subsections.html[ES1.1] (machine language), 1.2 (Asynchronous events), 1.3 (JVM)
 * Exercices:
@@ -62,16 +73,6 @@ Links taken from the https://www.edx.org/bio/eric-s-lander[course] “Introducti
 ** (link:http://math.hws.edu/javanotes/c2/exercises.html[EE2.1] to 2.2, supposedly known)
 ** http://math.hws.edu/javanotes/c1/quiz.html[EQ1.3] to 1.9
 ** http://math.hws.edu/javanotes/c2/quiz.html[EQ2.1] to 2.4; 2.6 to 2.9; 2.11
-
-*Todo*
-
-* Install a https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Various.adoc#installing-the-jdk[JDK] from OpenJDK (11 or ulterior)
-* Install https://www.eclipse.org/downloads/packages/[Eclipse IDE] “for Java Developers”
-* Install https://git-scm.com/download[git]
-* Redirect your e-mails @ Dauphine if necessary to ensure you receive announcements posted on MyCourse
-
-[[S2]]
-=== S2 (Thursday 14th of March, 2019)
 
 *Lecture*
 
