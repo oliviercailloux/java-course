@@ -41,7 +41,7 @@ Links taken from the https://www.edx.org/bio/eric-s-lander[course] “Introducti
 
 * https://github.com/oliviercailloux/java-course/raw/master/Pr%C3%A9sentation%20du%20cours%20Objet/presentation.pdf[Pres course]
 * https://github.com/oliviercailloux/java-course/raw/master/Syntaxe/presentation.pdf[Syntax] (without classes and objects) [Should be known or easy]
-* Exercice with https://docs.oracle.com/java/javase/13/jshell/[jshell]:
+* Exercice with https://docs.oracle.com/en/java/javase/13/docs/specs/man/jshell.html[jshell]:
 ** Assign 4659 and 23 to variables, and show the result of multiplying these variables
 ** Show the greatest divisor of 4659 that is different than 4659 (use the `%` operator and a loop)
 ** Define a method that accepts an integer parameter and returns its greatest divisor except itself; use it to show the greatest divisor of 4659.
@@ -67,7 +67,7 @@ Links taken from the https://www.edx.org/bio/eric-s-lander[course] “Introducti
 
 * Install a https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Various.adoc#installing-the-jdk[JDK] from OpenJDK (11 or ulterior)
 * Install https://www.eclipse.org/downloads/packages/[Eclipse IDE] “for Java Developers”
-- Install https://git-scm.com/download[git]
+* Install https://git-scm.com/download[git]
 * Redirect your e-mails @ Dauphine if necessary to ensure you receive announcements posted on MyCourse
 
 [[S2]]
