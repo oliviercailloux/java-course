@@ -41,16 +41,16 @@ Links taken from the https://www.edx.org/bio/eric-s-lander[course] “Introducti
 
 * https://github.com/oliviercailloux/java-course/raw/master/Pr%C3%A9sentation%20du%20cours%20Objet/presentation.pdf[Pres course]
 * https://github.com/oliviercailloux/java-course/raw/master/Syntaxe/presentation.pdf[Syntax] (without classes and objects) [Should be known or easy]
-* Exercice with https://docs.oracle.com/en/java/javase/13/docs/specs/man/jshell.html[jshell] (or https://tryjshell.org/[online]):
+* *Exercice* with https://docs.oracle.com/en/java/javase/13/docs/specs/man/jshell.html[jshell] (or https://tryjshell.org/[online]):
 ** Assign 4659 and 23 to variables, and show the result of multiplying these variables
 ** Show the greatest divisor of 4659 that is different than 4659 (use the `%` operator and a loop)
 ** Define a method that accepts an integer parameter and returns its greatest divisor except itself; use it to show the greatest divisor of 4659.
-** [small]#Going beyond: https://arbitrary-but-fixed.net/teaching/java/jshell/2017/12/14/jshell-peculiarities.html[The peculiarities of the JShell]# +++<font size=".5em">small</font>+++
+** Going beyond: https://arbitrary-but-fixed.net/teaching/java/jshell/2017/12/14/jshell-peculiarities.html[The peculiarities of the JShell]
 * Syntax (end): classes (no objects)
 ** Material: http://math.hws.edu/javanotes/contents-with-subsections.html[ES1.4] (Building blocks of programs), 2 intro (names and things), 2.1 (basic Java application), 2.2 (variables and primitive types), 2.3.3 (operations on strings), 2.4.1 (basic and formatted output), 2.5 (expressions), 2.6.7 (packages), ES3 intro to 3.6 (blocks, loops, algorithmic development, switch) [Should be known or easy]
 ** http://math.hws.edu/javanotes/c2/[ES2.2.1] (variables), 2.3.1 (subroutines), 2.4.6 (scanner for input) [I]
 ** ES1.6 (modern UI), 1.7 (internet) [O]
-* With a text editor: define a class `MyMathClass` containing the method above and a method that returns the smallest divisor (greater than one) of its parameter; and a class `MyBooleanClass` containing a method `xor` returning `true` iff exactly one of its parameter is `true`. Copy-paste this in jshell and make sure you can call all these methods from jshell. (TODO at home)
+* *Exercice* with a text editor: define a class `MyMathClass` containing the method above and a method that returns the smallest divisor (greater than one) of its parameter; and a class `MyBooleanClass` containing a method `xor` returning `true` iff exactly one of its parameter is `true`. Copy-paste this in jshell and make sure you can call all these methods from jshell. (TODO at home)
 
 *Todo*
 
