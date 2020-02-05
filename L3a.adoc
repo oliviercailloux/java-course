@@ -37,7 +37,7 @@ Links taken from the https://www.edx.org/bio/eric-s-lander[course] “Introducti
 [[S1]]
 === S1 (5 & 6 Feb 2020)
 
-*Lecture*
+*First half*
 
 * https://github.com/oliviercailloux/java-course/raw/master/Pr%C3%A9sentation%20du%20cours%20Objet/presentation.pdf[Pres course]
 * https://github.com/oliviercailloux/java-course/raw/master/Syntaxe/presentation.pdf[Syntax] (without classes and objects) [Should be known or easy]
@@ -59,7 +59,7 @@ Links taken from the https://www.edx.org/bio/eric-s-lander[course] “Introducti
 * Install https://git-scm.com/download[git]
 * Redirect your e-mails @ Dauphine if necessary to ensure you receive announcements posted on MyCourse
 
-(Second half)
+*Second half*
 
 * https://github.com/oliviercailloux/java-course/raw/master/Ex%C3%A9cution/presentation.pdf[Exécution]
 ** http://math.hws.edu/javanotes/contents-with-subsections.html[ES1.1] (machine language), 1.2 (Asynchronous events), 1.3 (JVM)
