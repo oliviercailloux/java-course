@@ -65,7 +65,7 @@ Links taken from the https://www.edx.org/bio/eric-s-lander[course] “Introducti
 ** http://math.hws.edu/javanotes/contents-with-subsections.html[ES1.1] (machine language), 1.2 (Asynchronous events), 1.3 (JVM)
 * *Exercices*:
 ** Add a `main` method to your `MyBooleanClass` that prints “Hello, this is my boolean class.” Use `System.out.println("…")` to print.
-** Add a `main` method to you `MyMathClass` that calls your `xor` method with `true` and `false` and prints the result, then prints the first argument given to the program.
+** Add a `main` method to you `MyMathClass` that accepts two arguments that can each be either `"true"` or `"false"`; the method calls your `xor` method with the corresponding parameters and prints the result.
 ** Compile `MyBooleanClass` with https://docs.oracle.com/en/java/javase/13/docs/specs/man/javac.html[javac], move the resulting file into its own folder, execute it from the source folder.
 ** Find out _in the official documentation_ how to compile the class and let the resulting class be placed in its own folder, in a single step (without you having to move the file afterwards)
 ** Compile `MyMathClass`, move the resulting file into its own folder (alone), and execute it from the source folder. Why does it fail? What does the error message indicate, and how is it related to the problem? Fix the problem and execute it, first by grouping the class files, second, while keeping both class files in different folders.
