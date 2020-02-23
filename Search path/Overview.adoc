@@ -24,7 +24,7 @@ Prerequisite: you know how to https://github.com/oliviercailloux/java-course/blo
 
 * To compile, use https://docs.oracle.com/en/java/javase/13/docs/specs/man/javac.html[`javac`].
 * Give it the names of the files to compile. And _not_ the fully qualified names of the classes to compile!
-* To compile a single class whose source code is in `a/b/MyClass.java`, you simply run: `javac "a/b/MyClass.java"`.
+* To compile a single class whose source code is in `a/b/MyClass.java`, you simply run: `javac 'a/b/MyClass.java'`.
 
 == Class path
 * Sometimes, your class depends on other classes.
