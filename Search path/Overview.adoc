@@ -37,18 +37,18 @@ The *class path* contains the paths where the (source and) compiled classes shou
 
 * To give the class path to the java compiler, use the parameter `-cp`.
 * In case of multiple paths, separate them with `:` under Linux, `;` under Windows.
-* Giving `cp "."` is the same as not specifying the class path at all: by default, it equals `"."`.
+* Giving `cp '.'` is the same as not specifying the class path at all: by default, it equals `'.'`.
 
-First example: `javac -cp "." "a/b/MyFirstClass.java"`. The compiler will look for classes in `.` (the current folder). In fact, if `a.b.MyFirstClass` does not depend on anything, which class path we give does not matter at all.
+First example: `javac -cp '.' 'a/b/MyFirstClass.java'`. The compiler will look for classes in `.` (the current folder). In fact, if `a.b.MyFirstClass` does not depend on anything, which class path we give does not matter at all.
 
-Second example: `javac -cp "." "c/d/e/MySecondClass.java"`. Now the class path matters, because `MySecondClass` depends on `MyFirstClass`. In this example, the compiler will:
+Second example: `javac -cp '.' 'c/d/e/MySecondClass.java'`. Now the class path matters, because `MySecondClass` depends on `MyFirstClass`. In this example, the compiler will:
 
 . see in the file `c/d/e/MySecondClass.java` that it depends on another class `a.b.MyFirstClass`;
 . look for that class in the class path;
 . and thus look into the current folder (`.`) and inside that folder, look for `a/b/MyFirstClass.class`. 
 In this example, the compilation will succeed if, and only if, both `c/d/e/MySecondClass.java` and either `a/b/MyFirstClass.class` or `a/b/MyFirstClass.java` are found, starting from the current folder. (If `a/b/MyFirstClass.java` is found, it is compiled as well.)
 
-Third example: `javac -cp "src:bin" "c/d/e/MySecondClass.java"`. The compilation will succeed if, and only if, `MySecondClass.java` can be found in `src/c/d/e/` or `bin/c/d/e/` and `MyFirstClass.class` (or `MyFirstClass.java`) can be found in `src/a/b/` or `bin/a/b/`. All these paths are relative to the current folder, meaning, the one you run the `javac` command from.
+Third example: `javac -cp 'src:bin' 'c/d/e/MySecondClass.java'`. The compilation will succeed if, and only if, `MySecondClass.java` can be found in `src/c/d/e/` or `bin/c/d/e/` and `MyFirstClass.class` (or `MyFirstClass.java`) can be found in `src/a/b/` or `bin/a/b/`. All these paths are relative to the current folder, meaning, the one you run the `javac` command from.
 
 == Running the project
 * To run a program, use https://docs.oracle.com/en/java/javase/11/tools/javac.html[`java`].
@@ -56,12 +56,12 @@ Third example: `javac -cp "src:bin" "c/d/e/MySecondClass.java"`. The compilation
 * Give it the class path that permits it to find the required class files, with the `-cp` argument.
 * The `java` command runs the Java VM. The Java VM understands bytecode only, thus, compiled files.
 
-Example: `java -cp "bin1:bin2" "c.d.e.MySecondClass"` will run `main()` in the class `MySecondClass`, provided the class can be found in `bin1/c/d/e/MySecondClass.class` or in `bin2/c/d/e/MySecondClass.class`, and provided all of its dependencies can also be found in `bin1` or `bin2`.
+Example: `java -cp 'bin1:bin2' 'c.d.e.MySecondClass'` will run `main()` in the class `MySecondClass`, provided the class can be found in `bin1/c/d/e/MySecondClass.class` or in `bin2/c/d/e/MySecondClass.class`, and provided all of its dependencies can also be found in `bin1` or `bin2`.
 
 == The case of .jar archives
 Instead of folders containing classes, you can also use Java Archives : files with extension `.jar` that contain collections of compiled classes (and possibly also sources).
 
 You may give jar files as elements of a class path.
 
-Example: `java -cp "bin1:bin2:myjar.jar" "c.d.e.MySecondClass"` will run `main()` in the class `MySecondClass`, provided the class can be found in `bin1/c/d/e/MySecondClass.class` or in `bin2/c/d/e/MySecondClass.class` or in the `myjar.jar` archive (under condition that it be stored under the expected name `c.d.e.MySecondClass`), and the execution will succeed provided all classes the program depends on can also be found in `bin1` or `bin2` or `myjar.jar`.
+Example: `java -cp 'bin1:bin2:myjar.jar' 'c.d.e.MySecondClass'` will run `main()` in the class `MySecondClass`, provided the class can be found in `bin1/c/d/e/MySecondClass.class` or in `bin2/c/d/e/MySecondClass.class` or in the `myjar.jar` archive (under condition that it be stored under the expected name `c.d.e.MySecondClass`), and the execution will succeed provided all classes the program depends on can also be found in `bin1` or `bin2` or `myjar.jar`.
 
