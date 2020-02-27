@@ -17,7 +17,7 @@ Git can be configured by associating string values to “options”. Here we wan
 An option can be configured locally (for a given repository) or globally (for every time you use git on that system).
 
 * Define globally the option `user.name`. Check with `git config --list` (if this returns nothing, it means that no option is configured yet).
-** Hint: type `git config` and read the doc; use the option `--global`.
+** Hint: type `git config` and read the doc; use the option `--global`. See https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup[here] for detailed explanations.
 
 === First commit
 * Create a new folder `project` and put there a file `start.txt` with content `hello`.
