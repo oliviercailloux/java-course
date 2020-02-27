@@ -3,7 +3,6 @@
 A short note about parsing HTML documents in Java using W3C’s DOM (Document Object Model). Learning to parse using the DOM is good because the DOM is a widely implemented standard: once you know how it works, you can parse HTML (and XML) documents in Javascript, https://docs.python.org/3/library/xml.dom.html[Python], https://docs.microsoft.com/en-us/dotnet/standard/data/xml/xml-document-object-model-dom[.NET], …
 
 == Valid HTML
-
 This should successfully parse any document that can be transformed to a DOM according to W3C standard, including valid HTML documents in HTML syntax or XML syntax. It uses the https://www.w3.org/TR/DOM-Level-3-Core/core.html#Bootstrap[bootstrapping] approach (described in the DOM Level 3 Core Specification) and the LS feature (described in the DOM Level 3 https://www.w3.org/TR/2004/REC-DOM-Level-3-LS-20040407/[Load and Save] specification).
 
 .Obtain a DOM object from a valid HTML document
@@ -23,7 +22,6 @@ LOGGER.info("Main tag name: {}.", docE.getTagName());
 ----
 
 == XML syntax
-
 This approach uses https://en.wikipedia.org/wiki/Simple_API_for_XML[SAX] rather than the standard bootstrapping approach. I recommend using the previous one instead where applicable. (It might also be specific to loading XML documents, though I have had successes loading an HTML document in HTML syntax with it.)
 
 .Obtain a DOM object from a valid HTML document in XML syntax
@@ -41,8 +39,9 @@ Element docE = doc.getDocumentElement();
 LOGGER.info("Main tag name: {}.", docE.getTagName());
 ----
 
-== Real-life HTML
+(To manipulate general XML, https://stackoverflow.com/questions/49790117/are-there-any-disadvantages-to-setnamespaceawaretrue[add] `factory.setNamespaceAware(true);` before creating the builder.)
 
+== Real-life HTML
 HTML documents in the wild are seldom valid. You may use the https://jsoup.org/[jsoup] library for these cases.
 
 .Obtain a DOM object from a real-life HTML document
@@ -120,6 +119,7 @@ If possible, do not include https://search.maven.org/search?q=g:xerces%20AND%20a
 == Refs
 
 * Parsing from DOM and related technologies in Java: see https://docs.oracle.com/javase/tutorial/jaxp/TOC.html[JAXP] tutorial (focus on the parts related to the DOM)
+** (JAXP (https://jcp.org/en/jsr/detail?id=206[JSR 206]) has been withdrawn as a standalone project following its inclusion in OpenJDK 7, see section 11.5 in the specification PDF of JAXP 1.6 (Maintenance Release 3, 4 March 2014).)
 * https://dom4j.github.io/[<dom4j>], a well-written library for simpler DOM manipulation
 * https://en.wikipedia.org/wiki/Comparison_of_HTML_parsers[Comparison] of HTML parsers (Wikipedia)
 * W3C https://www.w3.org/TR/2015/REC-dom-20151119/[DOM4] (Recommendation 19 November 2015), a snapshot of the DOM Living Standard
