@@ -3,10 +3,10 @@
 Prerequisites:
 
 - Install https://git-scm.com/download[git].
-- We will start learning with the command line interface of git. If you are not used to using a shell, read the https://github.com/oliviercailloux/java-course/blob/master/Shell.adoc#Introduction[introduction] to the shell, and the section about https://github.com/oliviercailloux/java-course/blob/master/Shell.adoc#Arguments[arguments].
+- We will start learning with the command line interface of git. If you are not used to using a shell, read the https://github.com/oliviercailloux/java-course/blob/master/Shell.adoc[Shell] document.
 Under Windows, use Git BASH (included in git https://gitforwindows.org/[for Windows]). (As Git BASH emulates a Linux environment, you use Linux-like commands there.)
 
-Then see below, and https://raw.githubusercontent.com/oliviercailloux/java-course/master/Git/Pr%C3%A9sentation/presentation.pdf[présentation] and https://github.com/oliviercailloux/java-course/blob/master/Git/Exercices.adoc[exercices].
+Then see https://raw.githubusercontent.com/oliviercailloux/java-course/master/Git/Pr%C3%A9sentation/presentation.pdf[présentation] (or read below) and https://github.com/oliviercailloux/java-course/blob/master/Git/Exercices.adoc[exercices].
 
 == Learning the basics
 There are two ways to learn the basics of Git: the frustrating and long way, and the nice and short way. The frustrating and long way is the one you find yourself into if you do not read anything about git (because you do not have time) and just try to deal with it by running commands that you found on the web, that you do not fully understand, that you supposed would achieve just what you need, and that instead created a mess that you ignore how to repair.
@@ -34,4 +34,5 @@ Hint: do not try to remember all the shortcut commands and options git provides.
 * A quick and useful https://guides.github.com/introduction/flow/[guide] about workflow on GitHub; a branching https://nvie.com/posts/a-successful-git-branching-model/[model]
 * Git https://stevelosh.com/blog/2013/04/git-koans/[Koans]
 * I’ve been told https://www.gitkraken.com/[GitKraken] is a great GUI complement
+* GitHub specific doc about https://help.github.com/en/github/using-git/setting-your-username-in-git[user.name] and https://help.github.com/en/github/setting-up-and-managing-your-github-user-account/setting-your-commit-email-address[user.email]
 
