@@ -50,7 +50,7 @@ Links taken from the https://www.edx.org/bio/eric-s-lander[course] “Introducti
 ** Material: http://math.hws.edu/javanotes/contents-with-subsections.html[ES1.4] (Building blocks of programs), 2 intro (names and things), 2.1 (basic Java application), 2.2 (variables and primitive types), 2.3.3 (operations on strings), 2.4.1 (basic and formatted output), 2.5 (expressions), 2.6.7 (packages), ES3 intro to 3.6 (blocks, loops, algorithmic development, switch) [Should be known or easy]
 ** http://math.hws.edu/javanotes/c2/[ES2.2.1] (variables), 2.3.1 (subroutines), 2.4.6 (scanner for input) [I]
 ** ES1.6 (modern UI), 1.7 (internet) [O]
-* *Exercice* with a text editor: define a class `MyMathClass` containing the method above and a method that returns the smallest divisor (greater than one) of its parameter; and a class `MyBooleanClass` containing a method `xor` returning `true` iff exactly one of its parameter is `true`. Copy-paste this in jshell and make sure you can call all these methods from jshell. (TODO at home)
+* *Exercice* with a text editor: define a class `MyMathClass` containing the method above and a method that returns the smallest divisor (greater than one) of its parameter; and a class `MyBooleanClass` containing a method `xor` returning `true` iff exactly one of its parameter is `true`. Copy-paste this in jshell and make sure you can call all these methods from jshell. (TODO home)
 
 *Todo*
 
@@ -63,7 +63,7 @@ Links taken from the https://www.edx.org/bio/eric-s-lander[course] “Introducti
 
 * https://github.com/oliviercailloux/java-course/raw/master/Ex%C3%A9cution/presentation.pdf[Exécution]
 ** http://math.hws.edu/javanotes/contents-with-subsections.html[ES1.1] (machine language), 1.2 (Asynchronous events), 1.3 (JVM)
-* *Exercices*:
+* *Exercices* (TODO home):
 ** Add a `main` method to your `MyBooleanClass` that prints “Hello, this is my boolean class.” Use `System.out.println("…")` to print.
 ** Add a `main` method to you `MyMathClass` that accepts two arguments that can each be either `"true"` or `"false"`; the method calls your `xor` method with the corresponding parameters and prints the result.
 ** Compile `MyBooleanClass` with https://docs.oracle.com/en/java/javase/13/docs/specs/man/javac.html[javac], move the resulting file into its own folder, execute it from the source folder.
@@ -81,42 +81,43 @@ Links taken from the https://www.edx.org/bio/eric-s-lander[course] “Introducti
 ** EE3.8, 3.9 [O]
 
 [[S2]]
-=== S2 (Thursday 14th of March, 2019)
+=== S2 (28 Feb)
 
-*Lecture*
+* Supposed known: https://github.com/oliviercailloux/java-course/blob/master/Git/README.adoc[Git]; https://github.com/oliviercailloux/java-course/blob/master/Shell.adoc[Shell]; Execution (see above).
+* Reminder: https://github.com/oliviercailloux/java-course/raw/master/Notions%20objets/presentation.pdf[Basics of objects]
+* Note about packages (for using `Scanner`)
+** *http://math.hws.edu/javanotes/c2/exercises.html[EE2.3] to 2.6*; use Scanner, not TextIO
+** *http://math.hws.edu/javanotes/c2/exercises.html[EE2.7]*: use user input (Scanner) instead of file input; do not use TextIO
+** *http://math.hws.edu/javanotes/c3/exercises.html[EE3.1] to 3.3*
+** *EE3.4, 3.6 [I]*
+** EE3.8, 3.9 [O]
+* Two methods for EE36
+* Eclipse & Java :
+** Use Outline view
+** Use Problems view
+** Content completion with CTRL+Space
+** Organize imports: from an editor, select `Source` / `Organize Imports`
+** In the http://help.eclipse.org/latest/topic/org.eclipse.jdt.doc.user/gettingStarted/qs-2.htm[Basic tutorial], read: Creating a Java Class; Renaming Java elements; Navigate to a Java element's declaration; Viewing the type Hierarchy; Running your programs
 
-// Present all theory, 90 min. Then 30 min ex. Then 30 min git theory (local only!), 30 min ex.
-//* https://app.wooclap.com/JL[Quizz]
-
-* https://www.youtube.com/watch?v=lcYkOh4nweE&t=1m21s[Mars Climate Orbiter] (1m21 to 5m18; small mistake in the video: it’s Newton times second, not Newton force per second; see also https://en.wikipedia.org/wiki/Mars_Climate_Orbiter[Wikipedia]; similarly http://www-users.math.umn.edu/~arnold/disasters/ariane.html[sad] https://www.youtube.com/watch?v=gp_D8r-2hwk[story]{emptyattribute})
-* Marks; two methods for EE36
-* Two major principles of software engineering: https://github.com/oliviercailloux/java-course/raw/master/Contrat/presentation.pdf[contract] and fail-fast.
-** Mechanisms: interface; black box; preconditions and postconditions; javadoc; exceptions
-
-*Material and going beyond*
-
-* https://tutorial.djangogirls.org/en/intro_to_command_line/[Introduction] to the terminal
-* http://math.hws.edu/eck/cs124/javanotes7/c3/[ES3.7] (except 3.7.3), http://math.hws.edu/eck/cs124/javanotes7/c4/[4 intro] to 4.7.
-* ES4.3 intro to 4.3.2, 4.6.1 [I]
-* Javadoc: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours3.pdf[Airiau C3], p. 12 to 19.
-
-*Todo*
-
-* Your GitHub username and git “User Name” must be identical.
-* You may use the `groupId` `io.github.<yourgithubusername>`.
-
-* https://classroom.github.com/a/aiweSTSU[Git] (marked /10): use this repository (created when you accept the homework) at the last step of the git exercices above _instead of creating a new remote remository RG_. Connect your local repository R1 to it, and keep on following the instructions in the exercice. I do not expect written answers to the questions asked in the exercice.
-* Read all the Workbench User Guide, Basic Tutorial, see https://github.com/oliviercailloux/java-course/blob/master/Tools.adoc#eclipse[Eclipse] doc [I]
-* Read the Important part, above
-* http://math.hws.edu/eck/cs124/javanotes7/c4/quiz.html[EQ4]
+// * https://classroom.github.com/a/aiweSTSU[Git] (marked /10): use this repository (created when you accept the homework) at the last step of the git exercices above _instead of creating a new remote remository RG_. Connect your local repository R1 to it, and keep on following the instructions in the exercice. I do not expect written answers to the questions asked in the exercice. Your GitHub username and git `user.name` must be identical.
 
 [[S3]]
 === S3 (Thursday 21st of March, 2019)
-*Lecture*
 
-* https://github.com/oliviercailloux/java-course/blob/master/Search%20path/README.adoc[search path] (packages, classes and directories).
+* Graded exercice similar to Dep-Git
+
+* https://github.com/oliviercailloux/java-course/blob/master/Search%20path/README.adoc[Search path] (packages, classes and directories).
+
 * https://github.com/oliviercailloux/java-course/raw/master/Objets/presentation.pdf[Objects]
-* https://app.wooclap.com/JL[Quizz]
+* Two major principles of software engineering: https://github.com/oliviercailloux/java-course/raw/master/Contrat/presentation.pdf[contract] and fail-fast.
+** Mechanisms: interface; black box; preconditions and postconditions; javadoc; exceptions
+** http://math.hws.edu/javanotes/contents-with-subsections.html[ES3.7] Exceptions (except 3.7.3)
+** http://math.hws.edu/eck/cs124/javanotes7/c4/[4] Subroutines, lambdas, packages, javadoc.
+** ES4.3 intro to 4.3.2, 4.6.1 [I]
+** Javadoc: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours3.pdf[Airiau C3], p. 12 to 19.
+** http://math.hws.edu/javanotes/c4/quiz.html[EQ4]
+* https://www.youtube.com/watch?v=lcYkOh4nweE&t=1m21s[Mars Climate Orbiter] (1m21 to 5m18; small mistake in the video: it’s Newton times second, not Newton force per second; see also https://en.wikipedia.org/wiki/Mars_Climate_Orbiter[Wikipedia]; similarly http://www-users.math.umn.edu/~arnold/disasters/ariane.html[sad] https://www.youtube.com/watch?v=gp_D8r-2hwk[story]{emptyattribute})
+
 
 *Material and going beyond*
 
@@ -132,11 +133,6 @@ Links taken from the https://www.edx.org/bio/eric-s-lander[course] “Introducti
 * EE4.4
 * EE4.5, 4.6 [O]
 * EE4.7
-
-*Todo*
-
-* Read half of the Java development user guide, Basic Tutorial (until “Navigate to a Java element's declaration” included), see https://github.com/oliviercailloux/java-course/blob/master/Tools.adoc#eclipse[Eclipse] doc [I]
-* Read the Important part, above
 
 [[S4]]
 === S4 (Friday 22nd of March, 2019)
@@ -174,6 +170,8 @@ Links taken from the https://www.edx.org/bio/eric-s-lander[course] “Introducti
 * Finish class path exercices
 * Review material from the start
 * Commit the mandatory exercices using `git` https://classroom.github.com/a/Clfupgrv[here]
+* You may use the `groupId` `io.github.<yourgithubusername>`.
+
 
 [[S5]]
 === S5 (Thursday 4th of April, 2019)
