@@ -2,11 +2,12 @@
 
 Here are the instructions for the graded exercice “Dep-Git”.
 
-* Create a repository for your exercice https://classroom.github.com/a/yQP0a7An[here]. Your repository will be created as https://github.com/oliviercailloux-org/dep-git-yourGitHubUserName. (Sometimes GitHub seems stuck and does not tell you that it has been created, but it probably has been.) Your repository will be created with an existing project in it, your mission is to extend it and push your changes to that same repository.
+* Create a repository for your exercice https://classroom.github.com/a/yQP0a7An[here]. Your repository will be created as +https://github.com/oliviercailloux-org/dep-git-yourGitHubUserName+. (Sometimes GitHub seems stuck and does not tell you that it has been created, but it probably has been.) Your repository will be created with an existing project in it, your mission is to extend it and push your changes to that same repository.
 * Clone it.
 * Checkout the commit `38da901544294bf2b5784e4de1456905a306a341`. We will call this the “starting” commit.
 * Create and switch to a new branch, `my-branch`, departing from the starting commit.
-* Add a dependency to the latest version of the https://www.eclipse.org/jgit/[`jgit`] library (which permits to programmatically access the content of a git repository) that is in Maven Central. You have to find the right Maven coordinates. Commit into your branch (so that your commit has the starting commit as parent).
+// * Add a dependency to the latest version of the https://www.eclipse.org/jgit/[`jgit`] library (which permits to programmatically access the content of a git repository) that is in Maven Central. You have to find the right Maven coordinates. Commit into your branch (so that your commit has the starting commit as parent).
+* Change anything in the `pom.xml` file. Commit into your branch (so that your commit has the starting commit as parent).
 * Merge your branch with the commit that originally followed the starting commit.
 * Do not forget to send all your commits and your branch to the GitHub repository. Check that you see them online.
 
@@ -17,7 +18,5 @@ You will be graded as follows.
 * In your last commit which modifies the pom, the dependency to jgit must be correct.
 * Commits created using the GitHub web site do not count.
 
-Time allowed: 15 minutes.
-
-* Late: −0.05/20 per second. (Timestamp given by GitHub server.)
+Time allowed: 20 minutes.
 
