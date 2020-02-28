@@ -1,6 +1,6 @@
 = Dep-Git
 
-Here are the instructions for the graded exercice “Dep-Git”.
+Here are the instructions for the exercice “Dep-Git” (a variant of a marked exercice of a previous year).
 
 * Create a repository for your exercice https://classroom.github.com/a/yQP0a7An[here]. Your repository will be created as \https://github.com/oliviercailloux-org/dep-git-yourGitHubUserName. (Sometimes GitHub seems stuck and does not tell you that it has been created, but it probably has been.) Your repository will be created with an existing project in it, your mission is to extend it and push your changes to that same repository.
 * Clone it.
@@ -15,8 +15,6 @@ You will be graded as follows.
 
 * One of the commits that you created must have the starting commit as parent, and be an ancestor of the final position of `my-branch`.
 * One of the commits that you created must have two parents: a commit that you created; and one that you did not create; both parents having as parent the starting commit. The commit must be the final position of the branch `my-branch`, or be an ancestor of it.
-* In your last commit which modifies the pom, the dependency to jgit must be correct.
+* You must have changed the pom in your commit that has the starting commit as a parent.
 * Commits created using the GitHub web site do not count.
-
-Time allowed: 20 minutes.
 
