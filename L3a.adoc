@@ -99,7 +99,7 @@ Links taken from the https://www.edx.org/bio/eric-s-lander[course] “Introducti
 ** Content completion with CTRL+Space
 ** Organize imports: from an editor, select `Source` / `Organize Imports`
 ** In the http://help.eclipse.org/latest/topic/org.eclipse.jdt.doc.user/gettingStarted/qs-2.htm[Basic tutorial], read: Creating a Java Class; Renaming Java elements; Navigate to a Java element's declaration; Viewing the type Hierarchy; Running your programs
-* https://github.com/oliviercailloux/java-course/tree/master/Maven[Maven]: Introduction
+* https://github.com/oliviercailloux/java-course/blob/master/Maven/README.adoc[Maven]: Introduction
 ** Exercice: *Import a Maven project into Eclipse*
 
 [[S3]]
