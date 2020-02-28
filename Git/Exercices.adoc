@@ -10,6 +10,8 @@ Hint: use the git https://github.github.com/training-kit/[Cheat sheets].
 // https://graphviz.gitlab.io/_pages/doc/info/command.html
 // file:///home/olivier/Professions/Enseignement/java-course/Git/out.svg
 
+// * https://classroom.github.com/a/aiweSTSU[Git] (marked /10): use this repository (created when you accept the homework) at the last step of the git exercices above _instead of creating a new remote remository RG_. Connect your local repository R1 to it, and keep on following the instructions in the exercice. I do not expect written answers to the questions asked in the exercice.
+
 == Local repository
 
 === Configure git
