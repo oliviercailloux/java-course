@@ -95,6 +95,7 @@ Links taken from the https://www.edx.org/bio/eric-s-lander[course] “Introducti
 * Eclipse & Java :
 ** Use Outline view
 ** Use Problems view
+** Use Javadoc view
 ** Content completion with CTRL+Space
 ** Organize imports: from an editor, select `Source` / `Organize Imports`
 ** In the http://help.eclipse.org/latest/topic/org.eclipse.jdt.doc.user/gettingStarted/qs-2.htm[Basic tutorial], read: Creating a Java Class; Renaming Java elements; Navigate to a Java element's declaration; Viewing the type Hierarchy; Running your programs
