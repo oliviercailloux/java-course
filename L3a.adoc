@@ -86,29 +86,31 @@ Links taken from the https://www.edx.org/bio/eric-s-lander[course] “Introducti
 * Supposed known: https://github.com/oliviercailloux/java-course/blob/master/Git/README.adoc[Git]; https://github.com/oliviercailloux/java-course/blob/master/Shell.adoc[Shell]; Execution (see above).
 * Reminder: https://github.com/oliviercailloux/java-course/raw/master/Notions%20objets/presentation.pdf[Basics of objects]
 * Note about packages (for using `Scanner`)
-** *http://math.hws.edu/javanotes/c2/exercises.html[EE2.3] to 2.6*; use Scanner, not TextIO
-** *http://math.hws.edu/javanotes/c2/exercises.html[EE2.7]*: use user input (Scanner) instead of file input; do not use TextIO
+** *http://math.hws.edu/javanotes/c2/exercises.html[EE2.2] to 2.6*; use Scanner, not TextIO
+** *http://math.hws.edu/javanotes/c2/exercises.html[EE2.7]*; use user input (Scanner) instead of file input; do not use TextIO
 ** *http://math.hws.edu/javanotes/c3/exercises.html[EE3.1] to 3.3*
 ** *EE3.4, 3.6 [I]*
-** EE3.8, 3.9 [O]
-* Two methods for EE36
 * Eclipse & Java :
 ** Use Outline view
 ** Use Problems view
 ** Content completion with CTRL+Space
 ** Organize imports: from an editor, select `Source` / `Organize Imports`
 ** In the http://help.eclipse.org/latest/topic/org.eclipse.jdt.doc.user/gettingStarted/qs-2.htm[Basic tutorial], read: Creating a Java Class; Renaming Java elements; Navigate to a Java element's declaration; Viewing the type Hierarchy; Running your programs
-
-// * https://classroom.github.com/a/aiweSTSU[Git] (marked /10): use this repository (created when you accept the homework) at the last step of the git exercices above _instead of creating a new remote remository RG_. Connect your local repository R1 to it, and keep on following the instructions in the exercice. I do not expect written answers to the questions asked in the exercice. Your GitHub username and git `user.name` must be identical.
+* https://github.com/oliviercailloux/java-course/tree/master/Maven[Maven]: Introduction
+** Exercice: *Import a Maven project into Eclipse*
 
 [[S3]]
-=== S3 (Thursday 21st of March, 2019)
+=== S3 (4 March)
 
-* Graded exercice similar to Dep-Git
-
+* Graded exercice similar to https://github.com/oliviercailloux/java-course/blob/master/Git/Dep-Git.adoc[Dep-Git]. Your GitHub username and git `user.name` must be identical.
+* https://github.com/oliviercailloux/java-course/tree/master/Maven[Maven]
+* https://github.com/oliviercailloux/java-course/raw/master/Objets/presentation.pdf[Objets]
 * https://github.com/oliviercailloux/java-course/blob/master/Search%20path/README.adoc[Search path] (packages, classes and directories).
 
-* https://github.com/oliviercailloux/java-course/raw/master/Objets/presentation.pdf[Objects]
+[[S4]]
+=== S4 (5 March)
+
+* Graded exercice using your knowledge from Git (similar to https://github.com/oliviercailloux/java-course/blob/master/Git/README.adoc[Dep-Git] for this part); Shell; Execution; EE2.x; EE3.x (see above). Your GitHub username and git `user.name` must be identical.
 * Two major principles of software engineering: https://github.com/oliviercailloux/java-course/raw/master/Contrat/presentation.pdf[contract] and fail-fast.
 ** Mechanisms: interface; black box; preconditions and postconditions; javadoc; exceptions
 ** http://math.hws.edu/javanotes/contents-with-subsections.html[ES3.7] Exceptions (except 3.7.3)
@@ -116,40 +118,22 @@ Links taken from the https://www.edx.org/bio/eric-s-lander[course] “Introducti
 ** ES4.3 intro to 4.3.2, 4.6.1 [I]
 ** Javadoc: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours3.pdf[Airiau C3], p. 12 to 19.
 ** http://math.hws.edu/javanotes/c4/quiz.html[EQ4]
+** https://github.com/oliviercailloux/java-course/raw/master/Assert/presentation.pdf[assertions] (advanced)
+** Illustration: http://math.hws.edu/eck/cs124/javanotes7/c4/s6.html#subroutines.6.2[Mosaic]
+** http://math.hws.edu/eck/cs124/javanotes7/c4/s2.html#subroutines.2.4[EE4.2.4] [I]
+* *Exercices:*
+** Comment your code appropriately with Javadoc
+** http://math.hws.edu/eck/cs124/javanotes7/c4/exercises.html[EE4.1], 4.2
+** EE4.3
+** EE4.4
+** EE4.7
 * https://www.youtube.com/watch?v=lcYkOh4nweE&t=1m21s[Mars Climate Orbiter] (1m21 to 5m18; small mistake in the video: it’s Newton times second, not Newton force per second; see also https://en.wikipedia.org/wiki/Mars_Climate_Orbiter[Wikipedia]; similarly http://www-users.math.umn.edu/~arnold/disasters/ariane.html[sad] https://www.youtube.com/watch?v=gp_D8r-2hwk[story]{emptyattribute})
-
-
-*Material and going beyond*
-
-* https://github.com/oliviercailloux/java-course/raw/master/Assert/presentation.pdf[assertions] (advanced)
-* Illustration: http://math.hws.edu/eck/cs124/javanotes7/c4/s6.html#subroutines.6.2[Mosaic]
-* http://math.hws.edu/eck/cs124/javanotes7/c4/s2.html#subroutines.2.4[EE4.2.4] [I]
-
-*Exercices*
-
-* You are expected to comment all your code appropriately with Javadoc, use correct (implying, non-default) packages, and generally follow all best practices we’ve seen, for all exercices from now on [I]
-* http://math.hws.edu/eck/cs124/javanotes7/c4/exercises.html[EE4.1], 4.2
-* EE4.3
-* EE4.4
-* EE4.5, 4.6 [O]
-* EE4.7
-
-[[S4]]
-=== S4 (Friday 22nd of March, 2019)
-
-*Lecture*
-
 * Java Interfaces and the Calculator example: replaceability and use as type
 * Exceptions: checked and unchecked
+** http://math.hws.edu/eck/cs124/javanotes7/c5/[ES5] intro to 5.4
 //* Exceptions in Java: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours5.pdf[Airiau C5] (and see slides Contrat, appendix)
-* Clean repository: projet root = git root; no derived artifacts; format your source code
-* Improve course for points (and prestige)
-** Accepted improvement (or multiple spelling mistakes or typos): +1
-** Impressive correction: 1 prestige point (in supplement)
 
-*Material and going beyond*
-
-* http://math.hws.edu/eck/cs124/javanotes7/c5/[ES5] intro to 5.4
+//* Clean repository: projet root = git root; no derived artifacts; format your source code
 
 *Exercices*
 
@@ -164,14 +148,7 @@ Links taken from the https://www.edx.org/bio/eric-s-lander[course] “Introducti
 ** `project53main/`… (contains `src/` with you main method)
 * EE5.4, EE5.5: Play Blackjack!
 
-*Todo*
-
-* Read all the Java development user guide, Basic Tutorial, see https://github.com/oliviercailloux/java-course/blob/master/Tools.adoc#eclipse[Eclipse] doc [I]
-* Finish class path exercices
-* Review material from the start
-* Commit the mandatory exercices using `git` https://classroom.github.com/a/Clfupgrv[here]
-* You may use the `groupId` `io.github.<yourgithubusername>`.
-
+//* You may use the `groupId` `io.github.<yourgithubusername>`.
 
 [[S5]]
 === S5 (Thursday 4th of April, 2019)
