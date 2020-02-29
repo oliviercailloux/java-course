@@ -85,14 +85,15 @@ Links taken from the https://www.edx.org/bio/eric-s-lander[course] “Introducti
 
 * Supposed known: https://github.com/oliviercailloux/java-course/blob/master/Git/README.adoc[Git]; https://github.com/oliviercailloux/java-course/blob/master/Shell.adoc[Shell]; Execution (see above).
 * Reminder: https://github.com/oliviercailloux/java-course/raw/master/Notions%20objets/presentation.pdf[Basics of objects]
-** Two roles; static VS non-static (behavior depends on values of parameters and instance attributes)
+** Two roles of classes; static VS instance methods (whose behavior depends on values of parameters and instance attributes)
 * Note about packages (for using `Scanner`)
 ** Class has a short name and a package, hence, a long name. (And two file names!)
-** *http://math.hws.edu/javanotes/c2/exercises.html[EE2.2] to 2.6*; use Scanner, not TextIO
-** *http://math.hws.edu/javanotes/c2/exercises.html[EE2.7]*; use user input (Scanner) instead of file input; do not use TextIO
-** *http://math.hws.edu/javanotes/c3/exercises.html[EE3.1] to 3.3*
-** *EE3.4, 3.6 [I]*
-* Eclipse & Java :
+* *Exercices* (TODO home):
+** http://math.hws.edu/javanotes/c2/exercises.html[EE2.2] to 2.6; use Scanner, not TextIO
+** http://math.hws.edu/javanotes/c2/exercises.html[EE2.7]; use user input (Scanner) instead of file input; do not use TextIO
+** http://math.hws.edu/javanotes/c3/exercises.html[EE3.1] to 3.3
+** EE3.4, 3.6 [I]
+* Eclipse & Java:
 ** Use Outline view
 ** Use Problems view
 ** Use Javadoc view
@@ -105,8 +106,8 @@ Links taken from the https://www.edx.org/bio/eric-s-lander[course] “Introducti
 [[S3]]
 === S3 (4 March)
 
-* Graded exercice similar to https://github.com/oliviercailloux/java-course/blob/master/Git/Dep-Git.adoc[Dep-Git]. Your GitHub username and git `user.name` must be identical (and for all exercices to come as well).
-* https://github.com/oliviercailloux/java-course/tree/master/Maven[Maven], and *exercices*
+* Graded exercice similar to https://github.com/oliviercailloux/java-course/blob/master/Git/Dep-Git.adoc[Dep-Git] and similar to the exercices related to https://github.com/oliviercailloux/java-course/blob/master/Git/README.adoc[Git] in this course. Your GitHub username and git `user.name` must be identical (and for all exercices to come as well).
+* https://github.com/oliviercailloux/java-course/blob/master/Maven/README.adoc[Maven], and *exercices*
 * https://github.com/oliviercailloux/java-course/raw/master/Objets/presentation.pdf[Objets]
 
 [[S4]]
