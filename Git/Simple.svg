@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg version="1.1" xml:lang="en" width="200mm" height="180mm" viewBox="0 0 200 180"
+<svg version="1.1" xml:lang="en" width="200mm" height="57mm" viewBox="0 0 200 57"
   xmlns:svg="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
   xmlns="http://www.w3.org/2000/svg"
@@ -15,7 +15,7 @@
 	<svg id="dots0" x="0" y="27" width="20" height="6">
 		<g viewBox="0 0 100 100">
 			<use xlink:href="#commit" />
-			<text x="50%" y="78%">…</text>
+			<text x="50%" y="75%">…</text>
 		</g>
 	</svg>
 	<svg id="S" x="45" y="27" width="20" height="6">
@@ -27,7 +27,7 @@
 	<svg id="dots1" x="90" y="0" width="20" height="6">
 		<g viewBox="0 0 100 100">
 			<use xlink:href="#commit" />
-			<text x="50%" y="78%">…</text>
+			<text x="50%" y="76%">…</text>
 		</g>
 	</svg>
 	<svg id="B" x="90" y="18" width="20" height="6">
