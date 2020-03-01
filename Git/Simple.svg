@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg version="1.1" xml:lang="en" width="200mm" height="180mm" viewBox="0 0 650 560"
+<svg version="1.1" xml:lang="en" width="125mm" height="180mm" viewBox="0 0 125 180"
   xmlns:svg="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
   xmlns="http://www.w3.org/2000/svg"
@@ -12,34 +12,35 @@
 			<path d="M3,0 l-3,3 l3,3" stroke="black" fill="none" />
 		</marker>
 	</defs>
-	<svg id="dots0" x="0" y="244" width="50" height="13">
+	<text y="50">Coucou</text>
+	<svg id="dots0" x="0" y="61" width="23" height="6">
 		<g viewBox="0 0 100 100">
 			<use xlink:href="#commit" />
 			<text x="50%" y="78%" text-anchor="middle" dominant-baseline="middle">…</text>
 		</g>
 	</svg>
-	<svg id="S" x="150" y="244" width="50" height="13">
+	<svg id="S" x="51" y="61" width="23" height="6">
 		<g viewBox="0 0 100 100">
 			<use xlink:href="#commit" />
 			<text x="50%" y="78%" text-anchor="middle" dominant-baseline="middle">S</text>
 		</g>
 	</svg>
-	<svg id="dots1" x="300" y="0" width="50" height="13">
+	<svg id="dots1" x="102" y="0" width="23" height="6">
 		<g viewBox="0 0 100 100">
 			<use xlink:href="#commit" />
 			<text x="50%" y="78%" text-anchor="middle" dominant-baseline="middle">…</text>
 		</g>
 	</svg>
-	<svg id="B" x="300" y="163" width="50" height="13">
+	<svg id="B" x="102" y="41" width="23" height="6">
 		<g viewBox="0 0 100 100">
 			<use xlink:href="#commit" />
 			<text x="50%" y="78%" text-anchor="middle" dominant-baseline="middle">B</text>
 		</g>
 	</svg>
-	<svg id="A" x="300" y="326" width="50" height="13">
+	<svg id="A" x="102" y="82" width="23" height="15">
 		<g viewBox="0 0 100 100">
 			<use xlink:href="#commit" />
-			<text x="50%" y="78%" text-anchor="middle" dominant-baseline="middle">A</text>
+			<text x="50%" y="78%" text-anchor="middle" dominant-baseline="middle">Anchor</text>
 		</g>
 	</svg>
 	<svg id="C" x="450" y="163" width="50" height="13">
