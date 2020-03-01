@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg version="1.1" xml:lang="en" width="650" height="560"
+  xmlns:svg="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns="http://www.w3.org/2000/svg"
+  id="git_br">
+	<defs>
+		<symbol id="Symbol_commit">
+			<rect width="100%" height="100%" fill="white" stroke="black" />
+		</symbol>
+	</defs>
+	<svg id="dots0" x="0" y="244" width="50" height="13">
+		<g viewBox="0 0 100 100">
+			<use xlink:href="#Symbol_commit" />
+			<text x="50%" y="78%" text-anchor="middle" dominant-baseline="middle">…</text>
+		</g>
+	</svg>
+	<svg id="S" x="150" y="244" width="50" height="13">
+		<g viewBox="0 0 100 100">
+			<use xlink:href="#Symbol_commit" />
+			<text x="50%" y="78%" text-anchor="middle" dominant-baseline="middle">S</text>
+		</g>
+	</svg>
+	<svg id="dots1" x="300" y="0" width="50" height="13">
+		<g viewBox="0 0 100 100">
+			<use xlink:href="#Symbol_commit" />
+			<text x="50%" y="78%" text-anchor="middle" dominant-baseline="middle">…</text>
+		</g>
+	</svg>
+	<svg id="B" x="300" y="163" width="50" height="13">
+		<g viewBox="0 0 100 100">
+			<use xlink:href="#Symbol_commit" />
+			<text x="50%" y="78%" text-anchor="middle" dominant-baseline="middle">B</text>
+		</g>
+	</svg>
+	<svg id="A" x="300" y="326" width="50" height="13">
+		<g viewBox="0 0 100 100">
+			<use xlink:href="#Symbol_commit" />
+			<text x="50%" y="78%" text-anchor="middle" dominant-baseline="middle">A</text>
+		</g>
+	</svg>
+	<svg id="C" x="450" y="163" width="50" height="13">
+		<g viewBox="0 0 100 100">
+			<use xlink:href="#Symbol_commit" />
+			<text x="50%" y="78%" text-anchor="middle" dominant-baseline="middle">C</text>
+		</g>
+	</svg>
+	<svg id="D" x="600" y="244" width="50" height="13">
+		<g viewBox="0 0 100 100">
+			<use xlink:href="#Symbol_commit" />
+			<text x="50%" y="78%" text-anchor="middle" dominant-baseline="middle">D</text>
+		</g>
+	</svg>
+</svg>
+
