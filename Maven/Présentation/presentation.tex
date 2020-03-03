@@ -157,13 +157,13 @@
 		\item (ou préciser une phase, voire plus loin)
 		\item Maven accompagné de nombreux plugins
 		\item Plugins téléchargés à la demande et mis en cache
-		\item Exemple : \texttt{mvn compiler:compile}
-		\item Appelle goal \texttt{compile} dans plugin \texttt{compiler}
+		\item Exemple : \texttt{mvn org.apache.maven.plugins: maven-compiler-plugin:3.8.0:compile}
+		\item Appelle goal \texttt{compile} dans plugin \texttt{maven-compiler-plugin}
 		\item Compile sources dans répertoire destination
-		\item \texttt{compiler} est le nom \emph{court} du plugin
 		\item Coordonnées complètes : groupId, artifactId, version
+		\item Nom court du plugin : \texttt{compiler}
 		\item Version par défaut dépend de la version de Maven installée
-		\item Commande complète : \texttt{mvn org.apache.maven.plugins: maven-compiler-plugin:3.8.0:compile} (en un seul mot)
+		\item[⇒] \texttt{mvn compiler:compile} fonctionne également
 	\end{itemize}
 \end{frame}
 
@@ -234,19 +234,19 @@
 <dependency>
   <groupId>com.google.guava</groupId>
   <artifactId>guava</artifactId>
-  <version>27.1-jre</version>
+  <version>28.2-jre</version>
 </dependency>
-\end{lstlisting}\vspace{-1mm}
+\end{lstlisting}
 	\end{block}
-	\begin{block}{Exemple : dépendance vers \href{http://search.maven.org/\#search\%7Cgav\%7C1\%7Cg:"junit" AND a:"junit"}{junit}}
+	\begin{block}{Exemple : dépendance vers \href{https://search.maven.org/search?q=g:org.junit.jupiter}{jupiter}}
 		\begin{lstlisting}[aboveskip=0pt, language=]
 <dependency>
-  <groupId>junit</groupId>
-  <artifactId>junit</artifactId>
-  <version>4.12</version>
+  <groupId>org.junit.jupiter</groupId>
+  <artifactId>junit-jupiter-engine</artifactId>
+  <version>5.6.0</version>
   <scope>test</scope>
 </dependency>
-\end{lstlisting}	\vspace{-1mm}
+\end{lstlisting}
 	\end{block}
 \end{frame}
 
@@ -300,7 +300,7 @@
 		\item Utiliser comme groupeId un nom unique : généralement un nom de domaine inversé
 		\item Le paquet de base de toutes les classes doit être ce nom
 		\item Indiquer propriété \texttt{project.build.sourceEncoding} avec valeur \texttt{UTF-8}
-		\item Indiquer propriétés \texttt{maven.compiler.source} et \texttt{maven.compiler.target} avec valeur \texttt{8}
+		\item Indiquer propriétés \texttt{maven.compiler.source} et \texttt{maven.compiler.target} avec valeur \texttt{11}
 	\end{itemize}
 \end{frame}
 

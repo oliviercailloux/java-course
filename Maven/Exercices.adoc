@@ -9,14 +9,18 @@ Simple exercices for Maven. The reader is supposed to know already the basics of
 In this exercice we will use an archetype called `maven-archetype-quickstart`, that allows us to generate a basic project.
 
 * Open a terminal. Move into a folder where you want to put your new project (which will be created as a sub-folder).
-* Type `mvn archetype:generate`. 
+* Type `mvn org.apache.maven.plugins:maven-archetype-plugin:generate`. 
 
-The command `mvn` followed by “plugin:goal” runs Maven with this goal.
-Thus, this command simply executes the goal `generate` in the `archetype` Maven plugin.
+The command `mvn` followed by “groupId:pluginId:goal” runs Maven with the given goal, defined in the given plugin.
+Thus, this command simply executes the goal `generate` in the Maven plugin with id `maven-archetype-plugin` published under the groupId `org.apache.maven.plugins`.
 
-The command displays a long list of archetypes available to you. Then you see something like “Choose a number or apply filter (format: [groupId:]artifactId, case sensitive contains): 1388:”. You are supposed to either provide a number; provide a filter; or accept the default answer. The default answer, if any, is always given just before the last colon, in this example it is 1388. Just hit ENTER if the default answer suits you. In this exercice, we will rather use the filter to make sure we select the plugin we want. To use a filter, just enter (a part or the whole of) the artifactId of the desired archetype. Then a “case senstive contains” search is run, meaning simply that Maven will list all the archetypes whose artifactId contains the string you entered.
+The command displays a long list of archetypes available to you. Then you see something like “Choose a number or apply filter (format: [groupId:]artifactId, case sensitive contains): 1388:”.
 
-We’ll start by using the `maven-archetype-quickstart` archetype (that’s its artifactId).
+* You are supposed to either provide a number; provide a filter; or accept the default answer.
+* The default answer, if any, is always given just before the last colon, in this example it is 1388. (Just hit ENTER when the default answer suits you.)
+* In this exercice, we will rather use the filter to make sure we select the plugin we want. To use a filter, just enter (a part or the whole of) the artifactId of the desired archetype. Then a “case senstive contains” search is run, meaning simply that Maven will list all the archetypes whose artifactId contains the string you entered.
+
+We’ll start by using the archetype having groupId and artifactId `org.apache.maven.archetypes:maven-archetype-quickstart`.
 
 * Find this one by using the filter in the command line, then select it using its number.
 * Answer the remaining questions. Remember to simply hit ENTER when the default answer seems reasonable.
@@ -25,16 +29,16 @@ Your project gets created in a sub-folder of your current position.
 
 * Which files has Maven created? What are their purpose?
 * In the terminal, move into the newly created project.
-* Type `mvn compile`. What does it do, and why (how does it work)? Is `compile` a phase, or a plugin goal?
+* Type `mvn compile`. What does it do, and why (how does it work)? Is `compile` a phase, or a plugin goal (http://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html#Lifecycle_Reference[answer])?
 * What has changed on your hard disk?
-* Run the compiled application in the command line (if necessary, see Eck’s http://math.hws.edu/javanotes8/c2/s6.html#basics.6.6[book]{emptyattribute}). What does it do?
+* Run the compiled application from the shell. What does it do?
 
 == Modern project
 Let’s now use a different archetype to generate a project better suited for our future use.
 
 * Move into the folder of your choice to prepare for the new project creation.
-* Use the appopriate command to trigger the `archetype:generate` goal again.
-* This time, use the `io.github.oliviercailloux:java-se-1.8-archetype` archetype.
+* Use the appopriate command to trigger the archetype `generate` goal again.
+* This time, use the `io.github.oliviercailloux:java-archetype` archetype.
 * Answer the required questions.
 
 Your project gets created in a sub-folder of your current position.

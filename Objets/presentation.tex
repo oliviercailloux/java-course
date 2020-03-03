@@ -67,7 +67,7 @@
 		\item Un objet a un état : l’ensemble des valeurs de ses propriétés
 		\item Exemple : {taille = 60 cm ; couleur = blanc ; allumé}
 		\item Un objet a un comportement : l’ensemble de ses méthodes
-		\item Exemple : \texttt{isOn(): bool; getCalories(double seconds): double; powerOn()}
+		\item Exemple : \texttt{isOn(): bool; getEnergySpent(double seconds): double; powerOn()}
 		\item Classe définit : états possibles + comportement
 		\item Toutes les instances ont le même comportement {\tiny sauf héritage}
 		\item Mais toutes n’ont pas le même état
@@ -96,7 +96,7 @@
 		\item Exemple : ajouter \texttt{getPower()} ? Ou utile seulement en interne ?
 		\item Plus grande interface : plus de documentation à apporter, plus de méthodes à maintenir, plus de complexité
 		\item Bonne pratique : interdire aux utilisateurs de changer l’état de votre objet directement
-		\item Exemple : dire d’utiliser \texttt{heater.powerOn()} plutôt que \texttt{heater.on ← true}
+		\item Exemple : faire utiliser \texttt{heater.powerOn()} plutôt que \texttt{heater.on ← true}
 	\end{itemize}
 \end{frame}
 
@@ -115,8 +115,8 @@
 	\frametitle{Variables}
 	\begin{itemize}
 		\item 4 attributs d’une variable ? \onslide<2->{Nom, type, espace mémoire sur la pile, valeur}
-		\item Si variable réfère à un type primitif (\texttt{int}, \texttt{double}, …) : valeur dans sa case mémoire
-		\item Si variable réfère à un type objet : valeur est une référence vers un objet (sur le tas)
+		\item Type primitif (\texttt{int}, \texttt{double}, …) : valeur dans sa case mémoire
+		\item Type objet : valeur est une référence vers un objet (sur le tas)
 		\item Deux variables réfèrent à un même objet ≠ deux variables réfèrent à deux objets dans le même état
 		\item Destruction : par GC (? \onslide<3->{Garbage Collector})
 		\item<3-> Quand plus aucune référence vers l’objet
