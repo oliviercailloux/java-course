@@ -106,53 +106,44 @@ Links taken from the https://www.edx.org/bio/eric-s-lander[course] “Introducti
 [[S3]]
 === S3 (4 March)
 
-* Graded exercice similar to https://github.com/oliviercailloux/java-course/blob/master/Git/Dep-Git.adoc[Dep-Git] and similar to the exercices related to https://github.com/oliviercailloux/java-course/blob/master/Git/README.adoc[Git] in this course. Your GitHub username and git `user.name` must be identical (and for all exercices to come as well).
+* Graded exercice similar to https://github.com/oliviercailloux/java-course/blob/master/Git/Dep-Git.adoc[Dep-Git] and similar to the exercices related to https://github.com/oliviercailloux/java-course/blob/master/Git/README.adoc[Git] in this course. Your GitHub username and git `user.name` must be identical (and for all exercices to come as well). See https://github.com/oliviercailloux/java-course/blob/master/Git/Git-Br.adoc[Git-Br].
 * https://github.com/oliviercailloux/java-course/blob/master/Maven/README.adoc[Maven], and *exercices*
-* https://github.com/oliviercailloux/java-course/raw/master/Objets/presentation.pdf[Objets]
+* Two major principles of software engineering: https://github.com/oliviercailloux/java-course/raw/master/Contrat/presentation.pdf[contract] and fail-fast.
+** Mechanisms: interface; black box; preconditions and postconditions; javadoc; exceptions
+** http://math.hws.edu/javanotes/contents-with-subsections.html[ES3.7] Exceptions (except 3.7.3)
+** ES4 Subroutines, lambdas, packages, javadoc.
+** ES4.2.4 Member Variables [I]
+** ES4.3 intro to 4.3.2, 4.7.1 Preconditions and Postconditions [I]
+** Javadoc: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours3.pdf[Airiau C3], p. 12 to 19.
+** http://math.hws.edu/javanotes/c4/quiz.html[EQ4]
+** https://github.com/oliviercailloux/java-course/raw/master/Assert/presentation.pdf[assertions] (advanced)
+** Illustration: ES4.7.2 A Design Example
+* Javadoc in Eclipse: `Source` / `Generate Element Comment` (on methods and classes!), use the `Javadoc` view
+* Append `throw IllegalArgumentException` (for example) on your method header when you want to raise attention to it, and document it in Javadoc
+* *Exercices:*
+** Comment several methods with Javadoc, including the exceptions
+** http://math.hws.edu/javanotes/c4/exercises.html[EE4.1], 4.2
+** Find out how you can find, when your program crashes because of an exception, the exact place where the exception was raised and which call caused the crash
+** EE4.3, 4.4 [I] (TODO home)
+** EE4.7
 
 [[S4]]
 === S4 (5 March)
 
 * Graded exercice using your knowledge from Shell; Execution; EE2.x; EE3.x (see above).
-* https://github.com/oliviercailloux/java-course/blob/master/Search%20path/README.adoc[Search path] (packages, classes and directories).
-* Two major principles of software engineering: https://github.com/oliviercailloux/java-course/raw/master/Contrat/presentation.pdf[contract] and fail-fast.
-** Mechanisms: interface; black box; preconditions and postconditions; javadoc; exceptions
-** http://math.hws.edu/javanotes/contents-with-subsections.html[ES3.7] Exceptions (except 3.7.3)
-** http://math.hws.edu/eck/cs124/javanotes7/c4/[4] Subroutines, lambdas, packages, javadoc.
-** ES4.3 intro to 4.3.2, 4.6.1 [I]
-** Javadoc: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours3.pdf[Airiau C3], p. 12 to 19.
-** http://math.hws.edu/javanotes/c4/quiz.html[EQ4]
-** https://github.com/oliviercailloux/java-course/raw/master/Assert/presentation.pdf[assertions] (advanced)
-** Illustration: http://math.hws.edu/eck/cs124/javanotes7/c4/s6.html#subroutines.6.2[Mosaic]
-** http://math.hws.edu/eck/cs124/javanotes7/c4/s2.html#subroutines.2.4[EE4.2.4] [I]
+* https://github.com/oliviercailloux/java-course/raw/master/Objets/presentation.pdf[Objets]
+** http://math.hws.edu/javanotes/c5/[ES5] intro to 5.4
 * *Exercices:*
-** Comment your code appropriately with Javadoc
-** http://math.hws.edu/eck/cs124/javanotes7/c4/exercises.html[EE4.1], 4.2
-** EE4.3
-** EE4.4
-** EE4.7
-* https://www.youtube.com/watch?v=lcYkOh4nweE&t=1m21s[Mars Climate Orbiter] (1m21 to 5m18; small mistake in the video: it’s Newton times second, not Newton force per second; see also https://en.wikipedia.org/wiki/Mars_Climate_Orbiter[Wikipedia]; similarly http://www-users.math.umn.edu/~arnold/disasters/ariane.html[sad] https://www.youtube.com/watch?v=gp_D8r-2hwk[story]{emptyattribute})
-* Java Interfaces and the Calculator example: replaceability and use as type
-* Exceptions: checked and unchecked
-** http://math.hws.edu/eck/cs124/javanotes7/c5/[ES5] intro to 5.4
-//* Exceptions in Java: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours5.pdf[Airiau C5] (and see slides Contrat, appendix)
-
-//* Clean repository: projet root = git root; no derived artifacts; format your source code
-
-*Exercices*
-
-* http://math.hws.edu/eck/cs124/javanotes7/c4/exercises.html[EE4.3] [I]
-* EE4.7 [I]
-* http://math.hws.edu/eck/cs124/javanotes7/c5/exercises.html[EE5.1], 5.2
-* EE5.3 [I]
-** Supplementary requirement: you will archive `PairOfDice` and `StatCalc` into a JAR file and use this in a new Eclipse project where only one class is defined, which uses `PairOfDice` and `StatCalc`. Commit both projects into your repository (in two separate folders). The structure of your git repository should be as follows. Please follow the exact naming scheme.
-** `project43/`… (contains `src` with your source code inside a sub-folder of it)
-** `project47/`… (contains `src` with your source code inside a sub-folder of it)
-** `project53utils/`… (contains `utils.jar` and `src/` with `PairOfDice` and `StatCalc` inside a sub-folder of it)
-** `project53main/`… (contains `src/` with you main method)
-* EE5.4, EE5.5: Play Blackjack!
-
+** EE4.7 [I]
+** http://math.hws.edu/javanotes/c5/exercises.html[EE5.1], 5.2
+** EE5.3 [I]
+// ** Supplementary requirement: you will archive `PairOfDice` and `StatCalc` into a JAR file and use this in a new Eclipse project where only one class is defined, which uses `PairOfDice` and `StatCalc`. Commit both projects into your repository (in two separate folders). The structure of your git repository should be as follows. Please follow the exact naming scheme.
+// ** `project43/`… (contains `src` with your source code inside a sub-folder of it)
+// ** `project47/`… (contains `src` with your source code inside a sub-folder of it)
+// ** `project53utils/`… (contains `utils.jar` and `src/` with `PairOfDice` and `StatCalc` inside a sub-folder of it)
+// ** `project53main/`… (contains `src/` with you main method)
 //* You may use the `groupId` `io.github.<yourgithubusername>`.
+** EE5.4, EE5.5: Play Blackjack!
 
 [[S5]]
 === S5 (Thursday 4th of April, 2019)
@@ -160,12 +151,12 @@ Links taken from the https://www.edx.org/bio/eric-s-lander[course] “Introducti
 *Lecture*
 
 * Graded quizz
-** Search path = class path (approximation)
-** “Does not compile” ⇒ only if conceptual problem (for example, a variable is out of scope or a class is used instead of an object)
-** Linux syntax, thus `/` and `:` (Windows uses `\` and `;`). Paths may be terminated by `/`, arguments may be surrounded by quotes.
-** Questions and answers in randomized order. It is possible that no answer is correct.
-** Read with care
-** Late ⇒ zero
+* https://github.com/oliviercailloux/java-course/blob/master/Search%20path/README.adoc[Search path] (packages, classes and directories).
+* Java Interfaces and the Calculator example: replaceability and use as type
+* Exceptions: checked and unchecked
+//* Exceptions in Java: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours5.pdf[Airiau C5] (and see slides Contrat, appendix)
+
+* https://www.youtube.com/watch?v=lcYkOh4nweE&t=1m21s[Mars Climate Orbiter] (1m21 to 5m18; small mistake in the video: it’s Newton times second, not Newton force per second; see also https://en.wikipedia.org/wiki/Mars_Climate_Orbiter[Wikipedia]; similarly http://www-users.math.umn.edu/~arnold/disasters/ariane.html[sad] https://www.youtube.com/watch?v=gp_D8r-2hwk[story]{emptyattribute})
 
 * https://github.com/oliviercailloux/java-course/blob/master/JUnit.adoc[Unit testing]
 * Inheritance: Object; print an object; more polymorphism.

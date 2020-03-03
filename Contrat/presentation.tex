@@ -121,13 +121,13 @@
 		\item Découpe en sous-problèmes résolus par des services
 		\item Service fonctionne sous certaines conditions
 		\item Contrat : clarification des devoirs de l’utilisateur et du fournisseur de service
-		\item Exemple : entier fourni en paramètre > 0
+		\item entre appelant et programmeur de la sous-routine
 		\item Devoirs appelés \emph{préconditions}
-		\item \emph{Contrat} entre appelant et programmeur de la sous-routine
+		\item Exemple : entier fourni en paramètre > 0
 		\item Sous ces conditions, méthode fournit un service
-		\item Exemple : renvoie un nombre aléatoire entre 0 et l’entier fourni, exclu
 		\item Si conditions non remplies : pas de garanties offertes !
 		\item \emph{Postconditions} : garanties offertes en retour
+		\item Exemple : renvoie un nombre aléatoire entre 0 et l’entier fourni, exclu
 	\end{itemize}
 \end{frame}
 
@@ -147,9 +147,8 @@
 	\frametitle{Échec rapide}
 	\begin{itemize}
 		\item Principe de l’\emph{échec rapide} (\emph{fail-fast})
-		\item Mieux vaut une erreur immédiate qu’une action inattendue (cf. exemple)
+		\item Mieux vaut une erreur immédiate qu’une action inattendue
 		\item Évite les conséquences catastrophiques
-		\item Évite que l’erreur passe inaperçue
 		\item Facilite les corrections de bug
 		\item Deux mises en œuvre : programmation défensive (erreur de l’utilisateur) ; programmation prudente et explicite (erreur du programmeur)
 	\end{itemize}
@@ -181,8 +180,9 @@
 		\item Interrompt le flux normal de traitement
 		\item Pour gérer une situation exceptionnelle
 		\item Exemple ? \onslide<2->{Erreur utilisateur ; Erreur programmeur ; Mémoire vive épuisée}
+		\item Différence par rapport à un test (if / else) ? \onslide<3->{Service \og{}normal\fg{} non rendu}
 		\item Est une forme d’\emph{interruption}
-		\item Exemple d’interruption qui n’est pas une exception ? \onslide<3->{Interruption pour basculer à une autre tâche}
+		\item Exemple d’interruption qui n’est pas une exception ? \onslide<4->{Préemption du processeur par un OS multi-tâches}
 	\end{itemize}
 \end{frame}
 
@@ -226,14 +226,14 @@
 		\item Programmation défensive : interruption pour cause de précondition violée
 	\end{itemize}
 	\begin{description}%[\texttt{IllegalArgumentException}]
-		\item[\texttt{IllegalArgumentException}] L’utilisateur vous fournit un argument incorrect (exemple : précondition chaîne non vide violée)
-		\item[\texttt{IllegalStateException}] L’utilisateur appelle votre sous-routine alors que l’état de votre programme ne le permet pas (exemple : précondition appel préalable d’une autre sous-routine violée)
+		\item[\texttt{IllegalArgumentException}] L’utilisateur vous fournit un argument incorrect (exemple : précondition \emph{chaîne non vide} violée)
+		\item[\texttt{IllegalStateException}] L’utilisateur appelle votre sous-routine alors que l’état de votre programme ne le permet pas (exemple : précondition \emph{appel préalable d’une autre sous-routine} violée)
 	\end{description}
 	\begin{itemize}
-		\item Programmation prudente : interruption pour cause d’erreur de déduction détectée (assertion violée)
+		\item Programmation prudente : interruption pour cause d’erreur de déduction détectée (vérification violée)
 	\end{itemize}
 	\begin{description}
-		\item[\texttt{AssertionError}] Vous détectez une erreur de logique dans votre programme (exemple : une valeur devrait être paire à une certaine étape de calcul mais ne l’est pas)
+		\item[\texttt{VerifyException}] (Guava) Vous détectez une erreur de logique dans votre programme (exemple : une valeur devrait être paire à une certaine étape de calcul mais ne l’est pas)
 	\end{description}
 \end{frame}
 
