@@ -8,7 +8,7 @@ Here are the instructions for the exercice “Dep-Git” (a variant of a marked 
 * Create and switch to a new branch, `my-branch`, departing from the starting commit.
 // * Add a dependency to the latest version of the https://www.eclipse.org/jgit/[`jgit`] library (which permits to programmatically access the content of a git repository) that is in Maven Central. You have to find the right Maven coordinates. Commit into your branch (so that your commit has the starting commit as parent).
 * Change anything in the `pom.xml` file. Commit into your branch (so that your commit has the starting commit as parent).
-* Merge your branch with the commit that originally followed the starting commit.
+* Bring the changes of the commit that originally followed the starting commit into `my-branch` (by merging).
 * Do not forget to send all your commits and your branch to the GitHub repository. Check that you see them online.
 
 You will be graded as follows.
