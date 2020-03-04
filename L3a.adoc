@@ -107,7 +107,7 @@ Links taken from the https://www.edx.org/bio/eric-s-lander[course] “Introducti
 === S3 (4 March)
 
 * Graded exercice similar to https://github.com/oliviercailloux/java-course/blob/master/Git/Dep-Git.adoc[Dep-Git] and similar to the exercices related to https://github.com/oliviercailloux/java-course/blob/master/Git/README.adoc[Git] in this course. Your GitHub username and git `user.name` must be identical (and for all exercices to come as well). See https://github.com/oliviercailloux/java-course/blob/master/Git/Git-Br.adoc[Git-Br].
-* https://github.com/oliviercailloux/java-course/blob/master/Maven/README.adoc[Maven], and *exercices*
+* https://github.com/oliviercailloux/java-course/blob/master/Maven/README.adoc[Maven], and *exercices* (TODO home: Modern project)
 * Two major principles of software engineering: https://github.com/oliviercailloux/java-course/raw/master/Contrat/presentation.pdf[contract] and fail-fast.
 ** Mechanisms: interface; black box; preconditions and postconditions; javadoc; exceptions
 ** http://math.hws.edu/javanotes/contents-with-subsections.html[ES3.7] Exceptions (except 3.7.3)
