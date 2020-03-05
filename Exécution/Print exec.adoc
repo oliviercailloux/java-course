@@ -8,7 +8,7 @@ In this graded exercice, we will define a program `Print exec` that prints the c
 Accept https://classroom.github.com/a/jYfjTkPD[this assignment]. This creates an empty repository. You must define only one class, in the default package (`""`), in a file named `PrintExec.java`, that you must send to the root folder of your repository.
 
 == The Print exec program
-Your user wants some help for compiling and running her program. She has several folders (0 or more) on her hard disk where she has uncompressed Java libraries. These folders each contain classes, already compiled, that are required for her program to run. Her program consists of a single class, not compiled yet, containing a `main` method and other methods. None of the classes in this exercice declare a package, thus, they all lie in the default (`""`) package. (We suppose the classes have unique names.)
+Your user wants some help for compiling and running her program. She has several folders (0 or more) on her hard disk where she has stored Java classes. These classes, already compiled, are required for her program to run. Her program consists of a single class, not compiled yet, containing a `main` method and other methods. None of the classes in this exercice declare a package, thus, they all lie in the default (`""`) package. (We suppose the classes have unique names.)
 
 For example, here is a possible structure of the folder `/home/user/Java/` on her hard disk.
 
