@@ -1,0 +1,20 @@
+= Eclipse
+
+== Useful doc
+Read the following (a piece at a time), for a great increase to your productivity and pleasure of coding.
+
+* Workbench User Guide, https://help.eclipse.org/2019-12/topic/org.eclipse.platform.doc.user/gettingStarted/qs-02a.htm?cp=0_1_0_0[Basic tutorial]
+* Workbench User Guide, http://help.eclipse.org/2019-03/topic/org.eclipse.platform.doc.user/tips/platform_tips.html?cp=0_5[Tips and Tricks]
+* Java development user guide, http://help.eclipse.org/2019-03/topic/org.eclipse.jdt.doc.user/gettingStarted/qs-2.htm[Basic tutorial]
+* Java development user guide, http://help.eclipse.org/2019-03/topic/org.eclipse.jdt.doc.user/tips/jdt_tips.html?cp=1_5[Tips and Tricks] (JDT)
+
+[[Eclipse-strict]]
+=== Configuration
+I recommend configuring Eclipse to show more errors and warnings in order to help spot mistakes and code smells early.
+
+* From Eclipse, import my sample https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Eclipse-prefs.epf[epf] (Eclipse preference) file. 
+* You can look at the text in the file to see what this changes to your Eclipse configuration.
+* Check in `Windows / Preferences` whether the changes were applied. For example, check in `Java / Code Style / Code Templates` that the `Catch block body` contains `throw new IllegalStateException(e);`.
+* Check in your project properties, `Java Compiler` / `Errors/Warnings` that the project uses your global Eclipse compiler settings.
+* Clean and recompile your project to see the effect.
+
