@@ -62,7 +62,7 @@ Links taken from the https://www.edx.org/bio/eric-s-lander[course] “Introducti
 
 *Second half*
 
-* https://github.com/oliviercailloux/java-course/raw/master/Ex%C3%A9cution/presentation.pdf[Exécution]
+* https://github.com/oliviercailloux/java-course/raw/master/Ex%C3%A9cution/Pr%C3%A9sentation/presentation.pdf[Exécution]
 ** http://math.hws.edu/javanotes/contents-with-subsections.html[ES1.1] (machine language), 1.2 (Asynchronous events), 1.3 (JVM)
 * *Exercices* (TODO home):
 ** Add a `main` method to your `MyBooleanClass` that prints “Hello, this is my boolean class.” Use `System.out.println("…")` to print.
