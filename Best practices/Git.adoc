@@ -4,7 +4,7 @@
 == Your project at the root of your repository
 Put your project immediately at the root of your repository (e.g., the `pom.xml` file for a Maven project).
 
-https://github.com/oliviercailloux/test-call-xmcda-ws[Example]
+https://github.com/oliviercailloux/google-or-tools-java[Example]
 
 == No transformed products
 Some files are automatically deductible (translatable) from others. For example, compiled versions of source code. Do not put the transformed versions in your repository.
