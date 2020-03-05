@@ -24,6 +24,7 @@ You know algorithmics and, preferrably, the basic syntax of Java (or a related l
 * Eck’s http://math.hws.edu/javanotes/[book]
 * Stéphane Airiau’s https://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/[course] (in French)
 * The https://app.gosoapbox.com/event/290081765/[confusion barometer]
+* https://pixees.fr/informatiquelycee/[Site] de David Roche
 
 === Take notes
 * 5 ways of taking notes https://www.youtube.com/watch?v=AffuwyJZTQQ[video]
@@ -106,7 +107,7 @@ Links taken from the https://www.edx.org/bio/eric-s-lander[course] “Introducti
 [[S3]]
 === S3 (4 March)
 
-* Graded exercice similar to https://github.com/oliviercailloux/java-course/blob/master/Git/Dep-Git.adoc[Dep-Git] and similar to the exercices related to https://github.com/oliviercailloux/java-course/blob/master/Git/README.adoc[Git] in this course. Your GitHub username and git `user.name` must be identical (and for all exercices to come as well). See https://github.com/oliviercailloux/java-course/blob/master/Git/Git-Br.adoc[Git-Br].
+* Graded exercice similar to https://github.com/oliviercailloux/java-course/blob/master/Git/Dep-Git.adoc[Dep-Git] and similar to the exercices related to https://github.com/oliviercailloux/java-course/blob/master/Git/README.adoc[Git] in this course. Your GitHub username and git `user.name` must be identical (and for all exercices to come as well). See https://github.com/oliviercailloux/java-course/blob/master/Git/Git-Br.adoc[Git-Br] (8h32 to 8h52).
 * https://github.com/oliviercailloux/java-course/blob/master/Maven/README.adoc[Maven], and *exercices* (TODO home: Modern project)
 * Two major principles of software engineering: https://github.com/oliviercailloux/java-course/raw/master/Contrat/presentation.pdf[contract] and fail-fast.
 ** Mechanisms: interface; black box; preconditions and postconditions; javadoc; exceptions
