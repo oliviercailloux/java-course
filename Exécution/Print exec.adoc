@@ -1,0 +1,63 @@
+= Print exec
+//START 17h26
+//END 17h59 (with slight modifications of wording, check of the slides)
+// 43 min incl. reading and committing. Give one hour!
+
+In this graded exercice, we will define a program `Print exec` that prints the command lines required to compile and run a single Java class that possibly depends on a set of libraries.
+
+Accept https://classroom.github.com/a/jYfjTkPD[this assignment]. This creates an empty repository. You must define only one class, in the default package (`""`), in a file named `PrintExec.java`, that you must send to the root folder of your repository.
+
+== The Print exec program
+Your user wants some help for compiling and running her program. She has several folders (0 or more) on her hard disk where she has uncompressed Java libraries. These folders each contain classes, already compiled, that are required for her program to run. Her program consists of a single class, not compiled yet, containing a `main` method and other methods. None of the classes in this exercice declare a package, thus, they all lie in the default (`""`) package. (We suppose they are all named differently.)
+
+For example, here is a possible structure of the folder `/home/user/Java/` on her hard disk.
+
+* `UnsortedClass.class`
+* `Google/`
+** `lib1/`
+*** `MathUtils.class`
+*** `StringUtils.class`
+** `other lib/`
+*** `Printer.class`
+* `GitHub/`
+** `lib1/`
+*** `Stuff.class`
+* `MyProject/`
+** `MyMainClass.java`
+** `MySubProject/`
+*** `MyUtils.class`
+
+Your program is called with the following arguments (one can imagine that the user uses a graphical user interface that in turn calls your program, but we do not care about this here).
+
+* A (relative or absolute) path to each folder containing a library that her program depends on (one argument per folder, thus at least zero arguments)
+* A (relative or absolute) path to the folder containing her class
+* The name of her class (starting with a capital letter)
+* As a last _optional_ argument, the string `true` if the user wants the compiled class to be automatically put in a sub-folder called `bin` (relative to the place your program is called from); the user may use the string `false` if she does not want this; if this argument is omitted, it is as if it was `false`.
+
+All the folders given as argument are supposed to end with a `/`. (We assume we are under a linux-like OS where paths are separated by `/` and not `\`.)
+
+For example, your program may be called from the folder `/home/user/Java/` with these arguments: `'Google/lib1/' '/home/user/Java/Google/other lib/' 'GitHub/lib1/' MyProject/MySubProject/ MyProject/ 'MyMainClass' true`.
+
+Your program must output _exactly two lines_ as a result.
+
+* The first one is the command required to compile the single class constituting her program (possibly putting the compiled file in the `bin` sub-folder, if requested).
+* The second one is the command required to run the resulting compiled program.
+
+We assume these commands would be run from the folder your program is called from.
+
+Hints. Do not forget to include the class path to _both_ your output lines! Start reading the arguments from the end.
+
+In addition, your commands must also work if the user also has class files that her program depends on in the folder she calls your program from, even if she omits this folder from the list of folders given as arguments. (So in the above example, your commands should work if her program also depends on the class `UnsortedClass`, even though the corresponding folder is not part of the arguments.)
+
+You do not have to deal with errors if your program is called with arguments that do not conform to the specifications described here.
+
+You will be graded according to a series of automated tests that judge whether your program outputs the right commands given arguments that correspond to situations _of varying complexity_. Thus, make sure your program at least works in the simplest situations (such as when using only two arguments) to get a few points.
+
+
+//== The Game 421 program (4 / 10)
+//Your program is run without arguments. It asks a number to the user (the number is entered through the shell) and it simulates rolling three dice this number of time. If one of the results is a 421 (thus, the dice rolled show 4, 2 and 1, in any order), print `Won!`, otherwise, print `Lost!`. The program then asks for another number, and keeps rolling and asking until the user enters `quit` instead of a number. (If the user types `quit` right from the start, no dice are rolled.)
+
+//To simulate the dice rolls, you _must_ instanciate _once_ `Random r = new Random(0)`, then use that object to simulate the rolls (check the doc). (This permits to always generate the same sequence of “random” numbers, thus, to make the results in fact deterministic.)
+
+//The correct use of the `Random` class counts for half the points, the rest evaluates the questioning of the user, the global logic, and the printing.
+
