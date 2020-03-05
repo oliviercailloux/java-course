@@ -45,19 +45,11 @@ Your program must output _exactly two lines_ as a result.
 
 We assume these commands would be run from the folder your program is called from.
 
-Hints. Do not forget to include the class path to _both_ your output lines! Start reading the arguments from the end.
+Hints. Do not forget to include the class path in _both_ your output lines! Start reading the arguments from the end.
 
 In addition, your commands must also work if the user also has class files that her program depends on in the folder she calls your program from, even if she omits this folder from the list of folders given as arguments. (So in the above example, your commands should work if her program also depends on the class `UnsortedClass`, even though the corresponding folder is not part of the arguments.)
 
 You do not have to deal with errors if your program is called with arguments that do not conform to the specifications described here.
 
 You will be graded according to a series of automated tests that judge whether your program outputs the right commands given arguments that correspond to situations _of varying complexity_. Thus, make sure your program at least works in the simplest situations (such as when using only two arguments) to get a few points.
-
-
-//== The Game 421 program (4 / 10)
-//Your program is run without arguments. It asks a number to the user (the number is entered through the shell) and it simulates rolling three dice this number of time. If one of the results is a 421 (thus, the dice rolled show 4, 2 and 1, in any order), print `Won!`, otherwise, print `Lost!`. The program then asks for another number, and keeps rolling and asking until the user enters `quit` instead of a number. (If the user types `quit` right from the start, no dice are rolled.)
-
-//To simulate the dice rolls, you _must_ instanciate _once_ `Random r = new Random(0)`, then use that object to simulate the rolls (check the doc). (This permits to always generate the same sequence of “random” numbers, thus, to make the results in fact deterministic.)
-
-//The correct use of the `Random` class counts for half the points, the rest evaluates the questioning of the user, the global logic, and the printing.
 
