@@ -146,22 +146,20 @@ Links taken from the https://www.edx.org/bio/eric-s-lander[course] “Introducti
 ** EE5.4, EE5.5: Play Blackjack!
 
 [[S5]]
-=== S5 (Thursday 4th of April, 2019)
+=== S5 (18 March)
 
-*Lecture*
-
-* Graded quizz
+* Graded programming exercice
+* https://github.com/oliviercailloux/java-course/blob/master/JUnit.adoc[Unit testing]
+* Inheritance: Object; print an object; more polymorphism.
+* Generics and https://www.scientecheasy.com/2018/09/collection-hierarchy-in-java.html[collections].
+** For this course, use by default: `ArrayList` / `ImmutableList`; `LinkedHashSet` / `ImmutableSet`; `LinkedHashMap` / `ImmutableMap`.
+* Exceptions: checked and unchecked
 * https://github.com/oliviercailloux/java-course/blob/master/Search%20path/README.adoc[Search path] (packages, classes and directories).
 * Java Interfaces and the Calculator example: replaceability and use as type
-* Exceptions: checked and unchecked
 //* Exceptions in Java: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours5.pdf[Airiau C5] (and see slides Contrat, appendix)
 
 * https://www.youtube.com/watch?v=lcYkOh4nweE&t=1m21s[Mars Climate Orbiter] (1m21 to 5m18; small mistake in the video: it’s Newton times second, not Newton force per second; see also https://en.wikipedia.org/wiki/Mars_Climate_Orbiter[Wikipedia]; similarly http://www-users.math.umn.edu/~arnold/disasters/ariane.html[sad] https://www.youtube.com/watch?v=gp_D8r-2hwk[story]{emptyattribute})
 
-* https://github.com/oliviercailloux/java-course/blob/master/JUnit.adoc[Unit testing]
-* Inheritance: Object; print an object; more polymorphism.
-* Generics and https://www.scientecheasy.com/2018/09/collection-hierarchy-in-java.html[collections].
-** For this course, use by default: `ArrayList`; `LinkedHashSet`; `LinkedHashMap`.
 
 *Material and going beyond*
 
