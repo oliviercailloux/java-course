@@ -148,7 +148,7 @@ Links taken from the https://www.edx.org/bio/eric-s-lander[course] “Introducti
 [[S5]]
 === S5 (18 March)
 
-* Graded programming exercice
+* Graded programming exercice (Maven; contract; fail fast; objects). Create a Maven project and push your whole project to the GitHub repository (so that the `pom.xml` is at the root of the GitHub repository). Make sure the POM follows the best practices as indicated in the course (hint: use “Modern project” archetype). Follow https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Git.adoc[Git Best practices].
 * https://github.com/oliviercailloux/java-course/blob/master/JUnit.adoc[Unit testing]
 * Inheritance: Object; print an object; more polymorphism.
 * Generics and https://www.scientecheasy.com/2018/09/collection-hierarchy-in-java.html[collections].
