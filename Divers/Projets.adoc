@@ -8,9 +8,11 @@
 * Un binôme de développeurs travaille sur une (typiquement) ou plusieurs tâches dans une itération (exemple : coder une classe pour enregistrer des commandes de produit). Une tâche peut consister à compléter une tâche précédente (ajout de tests unitaires, correction bugs, …).
 
 == Pour commencer votre projet
-Pour la première itération Java, le SM/PO crée un squelette initial de projet avec Maven, si ce n’est pas un fork, directement dans la branche `master`.
+Pour la première itération Java, le SM/PO crée un squelette initial de projet avec Maven, si ce n’est pas un fork, directement dans la branche `master` (si ce n’est déjà fait).
 
 Commencez par lire et appliquer les bonnes pratiques de https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Style.adoc[style].
+
+Voici quelques points de départ possibles pour améliorer le projet, ou points à garder en tête lors de vos contributions.
 
 * Indiquer par un bref commentaire sur chaque dépendance son utilité, vérifier versions, retirer les inutiles
 * JUnit 5 et non JUnit 4
@@ -19,7 +21,7 @@ Commencez par lire et appliquer les bonnes pratiques de https://github.com/olivi
 * Éviter redondance (code dupliqué, logique dupliquée…)
 * Améliorer lisibilité du code
 * Prendre en compte warnings Eclipse
-* Utiliser les canevas suggérés pour implémenter `#toString()`, `#equals()`, `#hashcode()`
+* Utiliser les https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Local%20design.adoc[canevas suggérés] pour implémenter `#toString()`, `#equals()`, `#hashcode()`
 
 == Instructions de livraison
 * Interdiction de commettre sur votre branche `master` sans mon aval. À part ça, organisation interne libre. Suggestion : une branche par tâche, et fusionnez vos fcts sur une branche `dev` au fur et à mesure (https://fr.wikipedia.org/wiki/Int%C3%A9gration_continue[intégration continue]).
@@ -47,7 +49,7 @@ N’hésitez pas à m’écrire si vous êtes bloqués, n’attendez pas d’avo
 * Si un membre d’un binôme n’a pas travaillé durant une livraison, indiquez-le en affectant un seul membre aux tâches de cette livraison. J’en tiendrai compte dans mon évaluation (travail de qualité plus difficile seul).
 * Note finale projet : moyenne de vos notes de livraison, avec bonus / malus pour la diversité de vos tâches, les éventuelles difficultés particulières, la cohésion de l’équipe et la cohérence globale de son projet, et la présentation finale.
 * Vous devez utiliser autant que possible les technologies vues au cours et les standards ISO, W3C et JSR Java dans votre projet (par exemple, JSON-B ou JSON-P et non Jackson).
-* Si vous modifiez du code existant, vous êtes responsable d’améliorer raisonnablement le code qui l’entoure là où c’est facile, de corriger les bugs évidents. Ne vous dédouanez pas d’erreurs évidentes sous prétexte que ce n’est pas vous qui avez écrit telle ligne de code précisément.
+* Si vous modifiez du code existant, vous êtes responsable d’améliorer raisonnablement le code qui l’entoure là où c’est facile, de corriger les bugs évidents. Ne vous dédouanez pas d’erreurs évidentes sous prétexte que ce n’est pas vous qui avez écrit telle ligne de code.
 * Lorsque vous intégrez du code d’autrui, il faut indiquer que votre projet l’utilise. Cette mention doit être claire, pas être noyée dans un flot de texte où vous décrivez d’autres choses. Par exemple, mentionner dans le README de votre projet la provenance de votre template html. Ou, indiquer la provenance dans la javadoc d’une méthode copiée depuis StackOverflow. Cette règle ne s’applique pas si vous ne copiez qu’une ou deux lignes de codes triviales.
 * Maintenez les conversations focalisées. Ce n’est pas une bonne idée, par exemple, d’indiquer dans un commentaire de la PR #37 que vous avez décidé d’abandonner la PR #22 pour telle et telle raison : quand j’évaluerai la PR #22 par la suite, il est peu probable que je me souvienne de vos explications se trouvant en PR #37.
 * Une mission importante de l’équipe est de s’assurer que le projet converge vers un ensemble cohérent de fonctionnalités exploitables dans la branche `master`. Tentez de terminer en priorité les tâches presque finies qui ne sont pas encore dans `master`, par exemple, avant de commencer de nouvelles choses.

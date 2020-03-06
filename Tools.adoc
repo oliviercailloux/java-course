@@ -8,24 +8,6 @@ Various useful tools for Java and Java EE developers.
 * Download and install (deflate) https://wildfly.org/downloads/[WildFly] (14.0.1.Final or more recent, Java EE Full & Web Distribution)
 * https://tools.jboss.org/downloads/jbosstools/2018-09/4.9.0.Final.html[JBoss Tools], a plug-in for easy deployment to Wildfly. Install only JBoss AS, WildFly & EAP Server Tools. (Rationale: I have had stability issues in Eclipse after installing the whole of JBoss Tools.) Or https://github.com/oliviercailloux/java-course/blob/master/Automated%20Eclipse%20install.adoc[automate] it.
 
-== Eclipse
-For Eclipse users, I strongly recommend reading the following, for a great increase to your productivity and pleasure of coding.
-
-* Workbench User Guide, https://help.eclipse.org/2019-12/topic/org.eclipse.platform.doc.user/gettingStarted/qs-02a.htm?cp=0_1_0_0[Basic tutorial]
-* Workbench User Guide, http://help.eclipse.org/2019-03/topic/org.eclipse.platform.doc.user/tips/platform_tips.html?cp=0_5[Tips and Tricks]
-* Java development user guide, http://help.eclipse.org/2019-03/topic/org.eclipse.jdt.doc.user/gettingStarted/qs-2.htm[Basic tutorial]
-* Java development user guide, http://help.eclipse.org/2019-03/topic/org.eclipse.jdt.doc.user/tips/jdt_tips.html?cp=1_5[Tips and Tricks] (JDT) (bit by bit!)
-
-[[Eclipse-strict]]
-=== Configuration
-I recommend configuring Eclipse to show more errors and warnings in order to help spot mistakes and code smells early.
-
-* From Eclipse, import my sample https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Eclipse-prefs.epf[epf] (Eclipse preference) file. 
-* You can look at the text in the file to see what this changes to your Eclipse configuration.
-* Check in `Windows / Preferences` whether the changes were applied. For example, check in `Java / Code Style / Code Templates` that the `Catch block body` contains `throw new IllegalStateException(e);`.
-* Check in your project properties, `Java Compiler / Errors/Warnings` that the project uses your global Eclipse compiler settings.
-* Clean and recompile your project to see the effect.
-
 == VM (beta)
 https://universitedauphine-my.sharepoint.com/personal/olivier_cailloux_lamsade_dauphine_fr/_layouts/15/guestaccess.aspx?docid=03887190377294e79a8a63c8f063ffe9b&authkey=AdV4WjBgnfjLa2IRffbav5s&e=10400376c63043138b324257b2c8c6a6[Here] is a Virtual Machine (VM) file that contains (almost) all the tools above. It features https://www.debian.org/doc/user-manuals[Debian] stretch (9.2), a GNU/Linux system. The VM file is in a standard format (OVA). You can import it in https://www.virtualbox.org/[Virtual Box] for example. Tell me if you are interested, I will then update it.
 

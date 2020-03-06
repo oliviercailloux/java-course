@@ -148,13 +148,19 @@ Links taken from the https://www.edx.org/bio/eric-s-lander[course] “Introducti
 [[S5]]
 === S5 (18 March)
 
-* Graded programming exercice (Maven; contract; fail fast; objects). Create a Maven project and push your whole project to the GitHub repository (so that the `pom.xml` is at the root of the GitHub repository). Make sure the POM follows the best practices as indicated in the course (hint: use “Modern project” archetype). Follow https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Git.adoc[Git Best practices].
-* https://github.com/oliviercailloux/java-course/blob/master/JUnit.adoc[Unit testing]
+* Graded programming exercice (Maven; contract; fail fast; objects). Create a Maven project and push your whole project to the GitHub repository (so that the `pom.xml` is at the root of the GitHub repository). Make sure the POM follows the best practices as indicated in the course (hint: use the “Modern project” archetype). Follow https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Git.adoc[Git Best practices].
+** Hint: Use https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Eclipse.adoc[correct] Eclipse config. (Check warnings, compile errors, instructions!)
 * Inheritance: Object; print an object; more polymorphism.
+** http://math.hws.edu/javanotes8/c5/[ES5.5] to 5.8
+** http://math.hws.edu/javanotes8/c10/[ES10] to 10.2
 * Generics and https://www.scientecheasy.com/2018/09/collection-hierarchy-in-java.html[collections].
+** Program a class `Pair` with generic types `L`, `R` (for Left and Right), that can store a pair of things, one of type `L` and one of type `R`. For example, a `Pair<Double, Integer>` instance can store a `Double` instance and an `Integer` instance.
+** Provide methods `getLeft()`, `getRight()`, that each return the apporpriate type, and `setContents()`, that admits two parameters and that set both instances of the pair.
+** Use your class in a `main` method that creates two `pairs`: one pair of `String` and `Integer` that holds your name and your age, and one pair of double initialized at random values drawn in [0, 1].
+** Add a static method `show` that admits any kind of pair as parameter and prints its content (by calling `toString()` on the left and then on the right content of the pair). Use `show` from your main for each of your instances of pair.
+** Finally, still from your `main`, create a pair that contains each of your instances of pairs, and give it as an argument to `show`.
 ** For this course, use by default: `ArrayList` / `ImmutableList`; `LinkedHashSet` / `ImmutableSet`; `LinkedHashMap` / `ImmutableMap`.
 * Exceptions: checked and unchecked
-* https://github.com/oliviercailloux/java-course/blob/master/Search%20path/README.adoc[Search path] (packages, classes and directories).
 * Java Interfaces and the Calculator example: replaceability and use as type
 //* Exceptions in Java: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours5.pdf[Airiau C5] (and see slides Contrat, appendix)
 
@@ -163,8 +169,6 @@ Links taken from the https://www.edx.org/bio/eric-s-lander[course] “Introducti
 
 *Material and going beyond*
 
-* http://math.hws.edu/javanotes8/c5/[ES5.5] to 5.8
-* http://math.hws.edu/javanotes8/c10/[ES10] to 10.2
 // simple inheritance (no TextIO depended on, actually), but complex set up
 * http://math.hws.edu/javanotes8/c5/exercises.html[EE5.4] (use `Scanner` instead of `TextIO`)
 //interfaces with generics and collections
@@ -191,17 +195,13 @@ Links taken from the https://www.edx.org/bio/eric-s-lander[course] “Introducti
 * http://math.hws.edu/javanotes8/c7/exercises.html[EE7.1], 7.5 (except that you can use built-sorting functions from the Java API).
 * A class E1 that asks the end-user for a set of integer values. The user enters 0 to stop entering values. Store these values in a Set of Integer values (discarding duplicates). Do it again, obtaining a second set. Then print each set of values entered, then the union of both sets. For example, if the user enters 3, 4, 2, 0, then 1, 1, 2, 5, 0, it prints: 3, 4, 2, then 1, 2, 5, then 3, 4, 2, 1, 5. Use Java sets and interfaces appropriately. [I]
 
-*Todo*
-
-* https://github.com/oliviercailloux/java-course/blob/master/Tools.adoc#configuration[Tools]: use correct Eclipse config. (Check warnings, compile errors, instructions!)
-* Commit mandatory exercices https://classroom.github.com/a/X7DXDNfU[here].
-
 [[S6]]
 === S6 (Wednesday 17th of April, 2019)
 
 *Lecture*
 
-* https://github.com/oliviercailloux/java-course/tree/master/Maven[Maven]
+* https://github.com/oliviercailloux/java-course/blob/master/Search%20path/README.adoc[Search path] (packages, classes and directories).
+* https://github.com/oliviercailloux/java-course/blob/master/JUnit.adoc[Unit testing]
 * Use https://mvnrepository.com/artifact/com.google.guava/guava/27.1-jre[Guava] `https://github.com/google/guava/wiki/PreconditionsExplained[Preconditions]#checkArgument`
 * Overload `toString()`: use Guava https://guava.dev/releases/snapshot/api/docs/com/google/common/base/MoreObjects.ToStringHelper.html[`MoreObjects`]
 * null (started)
