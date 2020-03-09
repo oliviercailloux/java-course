@@ -149,11 +149,12 @@ Links taken from the https://www.edx.org/bio/eric-s-lander[course] “Introducti
 === S5 (18 March)
 
 * Graded programming exercice (Maven; contract; fail fast; objects). Create a Maven project and push your whole project to the GitHub repository (so that the `pom.xml` is at the root of the GitHub repository). Make sure the POM follows the best practices as indicated in the course (hint: use the “Modern project” archetype). Follow https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Git.adoc[Git Best practices].
-** Hint: Use https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Eclipse.adoc[correct] Eclipse config. (Check warnings, compile errors, instructions!)
-* Inheritance: Object; print an object; more polymorphism.
-** http://math.hws.edu/javanotes8/c5/[ES5.5] to 5.8
-** http://math.hws.edu/javanotes8/c10/[ES10] to 10.2
+** Hint: Use https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Eclipse.adoc[correct] Eclipse configuration. Check your warnings!
+* Inheritance: Object; print an object; polymorphism and interfaces.
+** http://math.hws.edu/javanotes/contents-with-subsections.html[ES5.5] to 5.8
 * Generics and https://www.scientecheasy.com/2018/09/collection-hierarchy-in-java.html[collections].
+** http://math.hws.edu/javanotes/contents-with-subsections.html[ES10] to 10.2
+* *Exercice*:
 ** Program a class `Pair` with generic types `L`, `R` (for Left and Right), that can store a pair of things, one of type `L` and one of type `R`. For example, a `Pair<Double, Integer>` instance can store a `Double` instance and an `Integer` instance.
 ** Provide methods `getLeft()`, `getRight()`, that each return the apporpriate type, and `setContents()`, that admits two parameters and that set both instances of the pair.
 ** Use your class in a `main` method that creates two `pairs`: one pair of `String` and `Integer` that holds your name and your age, and one pair of double initialized at random values drawn in [0, 1].
@@ -161,8 +162,7 @@ Links taken from the https://www.edx.org/bio/eric-s-lander[course] “Introducti
 ** Finally, still from your `main`, create a pair that contains each of your instances of pairs, and give it as an argument to `show`.
 ** For this course, use by default: `ArrayList` / `ImmutableList`; `LinkedHashSet` / `ImmutableSet`; `LinkedHashMap` / `ImmutableMap`.
 * Exceptions: checked and unchecked
-* Java Interfaces and the Calculator example: replaceability and use as type
-//* Exceptions in Java: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours5.pdf[Airiau C5] (and see slides Contrat, appendix)
+** http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours5.pdf[Airiau C5] (and see slides Contrat, appendix)
 
 * https://www.youtube.com/watch?v=lcYkOh4nweE&t=1m21s[Mars Climate Orbiter] (1m21 to 5m18; small mistake in the video: it’s Newton times second, not Newton force per second; see also https://en.wikipedia.org/wiki/Mars_Climate_Orbiter[Wikipedia]; similarly http://www-users.math.umn.edu/~arnold/disasters/ariane.html[sad] https://www.youtube.com/watch?v=gp_D8r-2hwk[story]{emptyattribute})
 
