@@ -22,4 +22,18 @@ Clone your new repository, work on it locally, then push your additions to the r
 .Desired history at end of the exercice (italicized: your additions to the history)
 image::Git-Br.svg[opts="inline"]
 
+== Statistics
+* ID: 21/26.
+* Start: ≥ 11/26.
+* Commit A: commit exists, 16/26; file exists, 14/26, contents match exactly, 11/26. 
+* Commit B: commit exists, 18/26; file exists, 16/26, contents match exactly, 13/26.
+* Commit C: commit exists, 13/26; file exists, 10/26, contents match exactly, 7/26.
+* Commit D: commit exists, 8/26; file exists, 7/26, contents match exactly, 4/26.
+* BR_1: 10/26.
+
+= Suggestions
+* For those who failed ID or A exists and B exists: absolutely need to practice Git. (Required for projects.)
+* Failed BR_1? Do the graded tests again and check online.
+* Missing time? Should have practiced more.
+* Start: similar to dep-git.
 
