@@ -31,9 +31,10 @@ image::Git-Br.svg[opts="inline"]
 * Commit D: commit exists, 8/26; file exists, 7/26, contents match exactly, 4/26.
 * BR_1: 10/26.
 
-= Suggestions
-* For those who failed ID or A exists and B exists: absolutely need to practice Git. (Required for projects.)
+== Suggestions
+* For those who failed ID, or A exists and B exists: absolutely need to practice Git. (Required for projects.)
 * Failed BR_1? Do the graded tests again and check online.
 * Missing time? Should have practiced more.
 * Start: similar to dep-git.
+* Failed exact match: please read and follow specifications carefully, it is crucial to be precise and rigorous in (applied and theoretical) computer science.
 
