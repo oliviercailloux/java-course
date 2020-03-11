@@ -1,4 +1,5 @@
 = Shell
+
 == Introduction
 A shell (also called a terminal or a command line interface) permits to invoke programs by typing commands. Under Linux, use BASH (Bourne-again Shell) (or another compatible shell). Under Windows, use https://docs.microsoft.com/powershell/scripting/setup/installing-windows-powershell[PowerShell], or, if you intend to use a shell to run git commands, use Git BASH, which emulates a Linux shell. (Different shells admit slightly different syntax and provide slightly different capabilities, and commands sometimes differ, but the commands we will need for this course are the same in most classical shells, except when indicated.)
 
