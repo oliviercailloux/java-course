@@ -30,6 +30,7 @@ image::Git-Br.svg[opts="inline"]
 * Commit C: commit exists, 13/26; file exists, 10/26, contents match exactly, 7/26.
 * Commit D: commit exists, 8/26; file exists, 7/26, contents match exactly, 4/26.
 * BR_1: 10/26.
+* Average grade: 9.3 / 20 [box: 5.2; 7.6; 15.7].
 
 == Suggestions
 * For those who failed ID, or A exists and B exists: absolutely need to practice Git. (Required for projects.)
