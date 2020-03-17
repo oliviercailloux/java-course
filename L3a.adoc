@@ -153,7 +153,8 @@ Links taken from the https://www.edx.org/bio/eric-s-lander[course] “Introducti
 ** Create a class having full name `io.github.yourgithubusername.TripletOfDice` (use your GitHub username). This object represents three dice. Its constructor accepts an integer which defines the number of https://commons.wikimedia.org/wiki/Dice_by_number_of_sides[sides] of the dice. Add methods `rollAllDice()` and `rollOneDie(int: dieNumber)` whose parameter must be the integer one, two or three; and methods `getFirstDie(): int`, `getSecondDie(): int` and `getThirdDie(): int`. Determine and write down (in Javadoc) the contracts of these methods and write their code. [Optional: propose a better interface.]
 ** Create a class `io.github.yourgithubusername.DiceUser` having a static method `rollOnce(): TripletOfDice`. It creates a triplet of six-sided dice, rolls them once, and returns the object representing the triplet.
 ** In the `DiceUser` class, create a `main` method. It calls `rollOnce()` and prints the result on three lines, as follows (example for a result of 4, 2 and 1): `The die number 1 is a 4`, second line `The die number 2 is a 2`, third line `The die number 3 is a 1`.
-* Inheritance: polymorphism and interfaces; effective type of variables. See https://raw.githubusercontent.com/oliviercailloux/Simple-Papyrus-project/interface/An%20interface%20and%20two%20realizations.svg?sanitize=true[diagram]; clone the corresponding project
+* https://github.com/oliviercailloux/java-course/blob/master/Git/Git-Br.adoc[Git-br]: comment
+* Inheritance: polymorphism and interfaces; effective type of variables. See https://raw.githubusercontent.com/oliviercailloux/Simple-Papyrus-project/interface/An%20interface%20and%20two%20realizations.svg?sanitize=true[diagram]; import the corresponding https://github.com/oliviercailloux/sample-interface[project] in Eclipse
 ** http://math.hws.edu/javanotes/contents-with-subsections.html[ES5.5] to 5.8
 ** *Exercice*: program an interface `MovableObject` with methods `canAccelerate(): boolean`, `accelerate(): void` and `getTimeToMove(double): double`; implement it twice in classes `ConstantSpeedMovable` and `GenericMovable`, in a reasonable way of your choice. In a class `MovableUser`, program a `main` method that instanciates one `ConstantSpeedMovable` and two `GenericMovable` objects, accelerate one of them, and prints the three resulting times to move 1 km. Add a method `brake(): void` to `MovableObject`. Add to `MovableUser` a method `getTotalTime(movable: MovableObject): double` that computes the total time taken for the given movable object to move 1 km then brake then move 100m then accelerate then move 1 km again. Change your `main` so that it also prints that total time, for each of the three objects created in the method. Commit to a repository named `I-like-to-move-it` in your GitHub account.
 * Inheritance: Object; print an object. See https://raw.githubusercontent.com/oliviercailloux/Simple-Papyrus-project/inheritance/Object%20and%20Car.svg?sanitize=true[diagram].
@@ -161,11 +162,10 @@ Links taken from the https://www.edx.org/bio/eric-s-lander[course] “Introducti
 * Exceptions: checked and unchecked (see this http://journals.ecs.soton.ac.uk/java/tutorial/java/exceptions/throwable.html[diagram])
 ** *Exercice*: program a method that draws a random number and throws a `IOException` with one chance on two. Observe that it compiles only if you advertise this exception in the signature. Call this method from another method. Observe that the calling method also must advertise the exception. Change the exception to an `IllegalArgumentException`. Observe that you do not have to advertise this in either method signature.
 ** http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours5.pdf[Airiau C5] (and see slides Contrat, appendix)
+** More exercices: http://math.hws.edu/javanotes/c5/exercises.html[EE5] (more advanced: http://math.hws.edu/javanotes/c8/exercises.html[EE8])
 
 [[S6]]
 === S6 (19 March)
-
-*Lecture*
 
 * Generics and https://www.scientecheasy.com/2018/09/collection-hierarchy-in-java.html[collections].
 ** http://math.hws.edu/javanotes/contents-with-subsections.html[ES10] to 10.2
@@ -177,20 +177,17 @@ Links taken from the https://www.edx.org/bio/eric-s-lander[course] “Introducti
 ** Add a static method `show` that admits any kind of pair as parameter and prints its content (by calling `toString()` on the left and then on the right content of the pair). Use `show` from your main for each of your instances of pair.
 ** Finally, still from your `main`, create a pair that contains each of your instances of pairs, and give it as an argument to `show`.
 ** *Exercice*: Implement a `Predicate<String>` to represent a function that associates to a String the value `true` iff its length is even.
-// simple inheritance (no TextIO depended on, actually), but complex set up
-// implements but no inheritance
-* http://math.hws.edu/javanotes/c5/exercises.html[EE5.7] (the part about anonymous classes is optional)
-//** Supplementary requirements: your code must lie in at least two packages;
-//** The idea of this exercice is that you simulate that three different people work on this exercice: one provides some interfaces; another implements the interfaces; a third one uses the interfaces and their implementations to solve the exercice (except you represent all these persons).
-//** Declare at least one interface in another Eclipse project, exported as a Java archive (JAR file);
-//** implement those interfaces in another Eclipse project, exported as a Java archive (JAR file) (will you need the previous JAR file? Why / why not?);
-//** solve the exercices in a third Eclipse project (will you need the previous JAR files? Which ones and why?).
-* http://math.hws.edu/javanotes/c5/exercises.html[EE5.4] (use `Scanner` instead of `TextIO`)
-* https://github.com/oliviercailloux/java-course/blob/master/JUnit.adoc[Unit testing]
-* Use https://mvnrepository.com/artifact/com.google.guava/guava/27.1-jre[Guava] `https://github.com/google/guava/wiki/PreconditionsExplained[Preconditions]#checkArgument`
-* Overload `toString()`: use Guava https://guava.dev/releases/snapshot/api/docs/com/google/common/base/MoreObjects.ToStringHelper.html[`MoreObjects`]
-* null (started)
-* Correct E1
+* More exercices:
+//interfaces with generics and collections
+** http://math.hws.edu/javanotes/c10/exercises.html[EE10.4] 
+// list of words
+** http://math.hws.edu/javanotes/c10/exercises.html[EE7.6] (you may use standard input instead of file input)
+// set (long)
+** http://math.hws.edu/javanotes/c10/exercises.html[EE10.2]
+// read, sort a list
+** http://math.hws.edu/javanotes8/c7/exercises.html[EE7.1], 7.5 (except that you can use built-sorting functions from the Java API).
+** A class E1 that asks the end-user for a set of integer values. The user enters 0 to stop entering values. Store these values in a Set of Integer values (discarding duplicates). Do it again, obtaining a second set. Then print each set of values entered, then the union of both sets. For example, if the user enters 3, 4, 2, 0, then 1, 1, 2, 5, 0, it prints: 3, 4, 2, then 1, 2, 5, then 3, 4, 2, 1, 5. Use Java sets and interfaces appropriately. [I]
+** Correct E1
 .. découpé en sous-routines ?
 .. contrat général (Collection au lieu de LinkedList) ?
 .. noms complets de classes uniques ?
@@ -204,35 +201,29 @@ Links taken from the https://www.edx.org/bio/eric-s-lander[course] “Introducti
 .. pas de commentaires inutiles (tq auto-générés //TODO, @author vide, …)
 .. (micro) pas de comparaison à `true` (`if(isBig == true)`)
 .. vous arrivez à voir le résultat de votre code javadoc (exemple: `@param truc of type String` inutile)
-* Maps, Comparable, Comparator (voir aussi diapos Airiau)
-* https://github.com/oliviercailloux/java-course/blob/master/Search%20path/README.adoc[Search path] (packages, classes and directories).
+// simple inheritance (no TextIO depended on, actually), but complex set up
+// implements but no inheritance
+* http://math.hws.edu/javanotes/c5/exercises.html[EE5.7] (the part about anonymous classes is optional)
+//** Supplementary requirements: your code must lie in at least two packages;
+//** The idea of this exercice is that you simulate that three different people work on this exercice: one provides some interfaces; another implements the interfaces; a third one uses the interfaces and their implementations to solve the exercice (except you represent all these persons).
+//** Declare at least one interface in another Eclipse project, exported as a Java archive (JAR file);
+//** implement those interfaces in another Eclipse project, exported as a Java archive (JAR file) (will you need the previous JAR file? Why / why not?);
+//** solve the exercices in a third Eclipse project (will you need the previous JAR files? Which ones and why?).
+* http://math.hws.edu/javanotes/c5/exercises.html[EE5.4] (use `Scanner` instead of `TextIO`)
+* https://github.com/oliviercailloux/java-course/blob/master/JUnit.adoc[Unit testing]
 
-*Material and going beyond*
-
-* http://math.hws.edu/eck/cs124/javanotes7/c10/[ES10.3] to 10.5
-* http://math.hws.edu/eck/cs124/javanotes7/c8/[ES8] intro to 8.4
-
-*Exercices*
-
-* http://math.hws.edu/javanotes8/c10/exercises.html[EE10.1]
-//interfaces with generics and collections
-* http://math.hws.edu/javanotes8/c10/exercises.html[EE10.4]
-
-//* https://www.youtube.com/watch?v=lcYkOh4nweE&t=1m21s[Mars Climate Orbiter] (1m21 to 5m18; small mistake in the video: it’s Newton times second, not Newton force per second; see also https://en.wikipedia.org/wiki/Mars_Climate_Orbiter[Wikipedia]; similarly http://www-users.math.umn.edu/~arnold/disasters/ariane.html[sad] https://www.youtube.com/watch?v=gp_D8r-2hwk[story]{emptyattribute})
-
-//interfaces with generics and collections
-* http://math.hws.edu/javanotes/c10/exercises.html[EE10.4] 
-// list of words
-* http://math.hws.edu/javanotes/c10/exercises.html[EE7.6] (you may use standard input instead of file input)
-// set (long)
-* http://math.hws.edu/javanotes/c10/exercises.html[EE10.2]
-
-// read, sort a list
-* http://math.hws.edu/javanotes8/c7/exercises.html[EE7.1], 7.5 (except that you can use built-sorting functions from the Java API).
-* A class E1 that asks the end-user for a set of integer values. The user enters 0 to stop entering values. Store these values in a Set of Integer values (discarding duplicates). Do it again, obtaining a second set. Then print each set of values entered, then the union of both sets. For example, if the user enters 3, 4, 2, 0, then 1, 1, 2, 5, 0, it prints: 3, 4, 2, then 1, 2, 5, then 3, 4, 2, 1, 5. Use Java sets and interfaces appropriately. [I]
+*TODO home* Before end of 22nd of March: push new commit(s) to your `Print exec` repository. You will given a second grade considering the last commit before 23rd of March. Your final `Print exec` grade will be a weighted sum of your first grade (received previously) and second grade. The weights depend on the number of lines that have changed between these two grades: the weight of the new grade (as a proportion of the full grade) will be 80% if you changed only one line, 60% if two or three lines have changed, 40% for four or five lines, 20% for six or seven lines.
 
 [[S7]]
 === S7 (Friday 19th of April, 2019)
+
+* null (started)
+* Maps, Comparable, Comparator (voir aussi diapos Airiau)
+* https://github.com/oliviercailloux/java-course/blob/master/Search%20path/README.adoc[Search path] (packages, classes and directories).
+//* http://math.hws.edu/eck/cs124/javanotes7/c10/[ES10.3] to 10.5
+//* http://math.hws.edu/eck/cs124/javanotes7/c8/[ES8] intro to 8.4
+
+//* https://www.youtube.com/watch?v=lcYkOh4nweE&t=1m21s[Mars Climate Orbiter] (1m21 to 5m18; small mistake in the video: it’s Newton times second, not Newton force per second; see also https://en.wikipedia.org/wiki/Mars_Climate_Orbiter[Wikipedia]; similarly http://www-users.math.umn.edu/~arnold/disasters/ariane.html[sad] https://www.youtube.com/watch?v=gp_D8r-2hwk[story]{emptyattribute})
 
 * No plagiarism (but reuse!)
 * Static factory method
