@@ -148,55 +148,38 @@ Links taken from the https://www.edx.org/bio/eric-s-lander[course] “Introducti
 [[S5]]
 === S5 (18 March)
 
-* Graded programming exercice (Maven; contract; fail fast; objects). Create a Maven project and push your whole project to the GitHub repository (so that the `pom.xml` is at the root of the GitHub repository). Make sure the POM follows the best practices as indicated in the course (hint: use the “Modern project” archetype). Follow https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Git.adoc[Git Best practices].
+* _Non-graded_ programming exercice (Maven; contract; fail fast; objects). Create a Maven project and push your whole project to the GitHub repository (so that the `pom.xml` is at the root of the GitHub repository). Make sure the POM follows the best practices as indicated in the course (hint: use the “Modern project” archetype). Follow https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Git.adoc[Git Best practices].
 ** Hint: Use https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Eclipse.adoc[correct] Eclipse configuration. Check your warnings!
+** Create a class having full name `io.github.yourgithubusername.TripletOfDice` (use your GitHub username). This object represents three dice. Its constructor accepts an integer which defines the number of https://commons.wikimedia.org/wiki/Dice_by_number_of_sides[sides] of the dice. Add methods `rollAllDice()` and `rollOneDie(int: dieNumber)` whose parameter must be the integer one, two or three; and methods `getFirstDie(): int`, `getSecondDie(): int` and `getThirdDie(): int`. Determine and write down (in Javadoc) the contracts of these methods and write their code. [Optional: propose a better interface.]
+** Create a class `io.github.yourgithubusername.DiceUser` having a static method `rollOnce(): TripletOfDice`. It creates a triplet of six-sided dice, rolls them once, and returns the object representing the triplet.
+** In the `DiceUser` class, create a `main` method. It calls `rollOnce()` and prints the result on three lines, as follows (example for a result of 4, 2 and 1): `The die number 1 is a 4`, second line `The die number 2 is a 2`, third line `The die number 3 is a 1`.
 * Inheritance: Object; print an object; polymorphism and interfaces.
 ** http://math.hws.edu/javanotes/contents-with-subsections.html[ES5.5] to 5.8
+** *Exercice*: program an interface `MovableObject` with methods `canAccelerate(): boolean`, `accelerate(): void` and `getTimeToMove(double): double`; implement it twice in classes `ConstantSpeedMovable` and `GenericMovable`, in a reasonable way of your choice. In a class `MovableUser`, program a `main` method that instanciates one `ConstantSpeedMovable` and two `GenericMovable` objects, accelerate one of them, and prints the three resulting times to move 1 km. Add a method `brake(): void` to `MovableObject`. Add to `MovableUser` a method `getTotalTime(movable: MovableObject): double` that computes the total time taken for the given movable object to move 1 km then brake then move 100m then accelerate then move 1 km again. Change your `main` so that it also prints that total time, for each of the three objects created in the method. Commit to a repository named `I-like-to-move-it` in your GitHub account.
 * Generics and https://www.scientecheasy.com/2018/09/collection-hierarchy-in-java.html[collections].
 ** http://math.hws.edu/javanotes/contents-with-subsections.html[ES10] to 10.2
+** For this course, use by default: `ArrayList` / `ImmutableList`; `LinkedHashSet` / `ImmutableSet`; `LinkedHashMap` / `ImmutableMap`.
 * *Exercice*:
 ** Program a class `Pair` with generic types `L`, `R` (for Left and Right), that can store a pair of things, one of type `L` and one of type `R`. For example, a `Pair<Double, Integer>` instance can store a `Double` instance and an `Integer` instance.
-** Provide methods `getLeft()`, `getRight()`, that each return the apporpriate type, and `setContents()`, that admits two parameters and that set both instances of the pair.
+** Provide methods `getLeft()`, `getRight()`, that each return the appropriate type, and `setContents()`, that admits two parameters and that set both instances of the pair.
 ** Use your class in a `main` method that creates two `pairs`: one pair of `String` and `Integer` that holds your name and your age, and one pair of double initialized at random values drawn in [0, 1].
 ** Add a static method `show` that admits any kind of pair as parameter and prints its content (by calling `toString()` on the left and then on the right content of the pair). Use `show` from your main for each of your instances of pair.
 ** Finally, still from your `main`, create a pair that contains each of your instances of pairs, and give it as an argument to `show`.
-** For this course, use by default: `ArrayList` / `ImmutableList`; `LinkedHashSet` / `ImmutableSet`; `LinkedHashMap` / `ImmutableMap`.
-* Exceptions: checked and unchecked
-** http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours5.pdf[Airiau C5] (and see slides Contrat, appendix)
-
-* https://www.youtube.com/watch?v=lcYkOh4nweE&t=1m21s[Mars Climate Orbiter] (1m21 to 5m18; small mistake in the video: it’s Newton times second, not Newton force per second; see also https://en.wikipedia.org/wiki/Mars_Climate_Orbiter[Wikipedia]; similarly http://www-users.math.umn.edu/~arnold/disasters/ariane.html[sad] https://www.youtube.com/watch?v=gp_D8r-2hwk[story]{emptyattribute})
-
-
-*Material and going beyond*
-
+** *Exercice*: Implement a `Predicate<String>` to represent a function that associates to a String the value `true` iff its length is even.
 // simple inheritance (no TextIO depended on, actually), but complex set up
-* http://math.hws.edu/javanotes8/c5/exercises.html[EE5.4] (use `Scanner` instead of `TextIO`)
-//interfaces with generics and collections
-* http://math.hws.edu/javanotes8/c10/exercises.html[EE10.4] 
-// list of words
-* http://math.hws.edu/javanotes8/c7/exercises.html[EE7.6] (you may use standard input instead of file input)
-// set (long)
-* http://math.hws.edu/eck/cs124/javanotes7/c10/exercises.html[EE10.2]
-
-*Exercices*
-
-* Write an interface `Calculator` with a method `add` that takes two integers as parameters. Write a method `tester` in a different class that receives a calculator as a parameter and check that `add(2, 3)` gives 5. Write a `SimpleCalculator` that uses the normal Java addition (“+”) to implement `Calculator`.
-//interfaces with generics
-* Implement a `Predicate<String>` to represent a function that associates to a String the value `true` iff its length is even.
-* Define a class `Pair<T1, T2>` to store an ordered pair of objects of type `T1` and `T2`.
 // implements but no inheritance
-* http://math.hws.edu/javanotes8/c5/exercises.html[EE5.7] [I] (the part about anonymous classes is optional)
+* http://math.hws.edu/javanotes/c5/exercises.html[EE5.7] (the part about anonymous classes is optional)
 //** Supplementary requirements: your code must lie in at least two packages;
 //** The idea of this exercice is that you simulate that three different people work on this exercice: one provides some interfaces; another implements the interfaces; a third one uses the interfaces and their implementations to solve the exercice (except you represent all these persons).
 //** Declare at least one interface in another Eclipse project, exported as a Java archive (JAR file);
 //** implement those interfaces in another Eclipse project, exported as a Java archive (JAR file) (will you need the previous JAR file? Why / why not?);
 //** solve the exercices in a third Eclipse project (will you need the previous JAR files? Which ones and why?).
-// read, sort a list
-* http://math.hws.edu/javanotes8/c7/exercises.html[EE7.1], 7.5 (except that you can use built-sorting functions from the Java API).
-* A class E1 that asks the end-user for a set of integer values. The user enters 0 to stop entering values. Store these values in a Set of Integer values (discarding duplicates). Do it again, obtaining a second set. Then print each set of values entered, then the union of both sets. For example, if the user enters 3, 4, 2, 0, then 1, 1, 2, 5, 0, it prints: 3, 4, 2, then 1, 2, 5, then 3, 4, 2, 1, 5. Use Java sets and interfaces appropriately. [I]
+* http://math.hws.edu/javanotes/c5/exercises.html[EE5.4] (use `Scanner` instead of `TextIO`)
+* Exceptions: checked and unchecked
+** http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours5.pdf[Airiau C5] (and see slides Contrat, appendix)
 
 [[S6]]
-=== S6 (Wednesday 17th of April, 2019)
+=== S6 (19 March)
 
 *Lecture*
 
@@ -231,6 +214,19 @@ Links taken from the https://www.edx.org/bio/eric-s-lander[course] “Introducti
 * http://math.hws.edu/javanotes8/c10/exercises.html[EE10.1]
 //interfaces with generics and collections
 * http://math.hws.edu/javanotes8/c10/exercises.html[EE10.4]
+
+//* https://www.youtube.com/watch?v=lcYkOh4nweE&t=1m21s[Mars Climate Orbiter] (1m21 to 5m18; small mistake in the video: it’s Newton times second, not Newton force per second; see also https://en.wikipedia.org/wiki/Mars_Climate_Orbiter[Wikipedia]; similarly http://www-users.math.umn.edu/~arnold/disasters/ariane.html[sad] https://www.youtube.com/watch?v=gp_D8r-2hwk[story]{emptyattribute})
+
+//interfaces with generics and collections
+* http://math.hws.edu/javanotes/c10/exercises.html[EE10.4] 
+// list of words
+* http://math.hws.edu/javanotes/c10/exercises.html[EE7.6] (you may use standard input instead of file input)
+// set (long)
+* http://math.hws.edu/javanotes/c10/exercises.html[EE10.2]
+
+// read, sort a list
+* http://math.hws.edu/javanotes8/c7/exercises.html[EE7.1], 7.5 (except that you can use built-sorting functions from the Java API).
+* A class E1 that asks the end-user for a set of integer values. The user enters 0 to stop entering values. Store these values in a Set of Integer values (discarding duplicates). Do it again, obtaining a second set. Then print each set of values entered, then the union of both sets. For example, if the user enters 3, 4, 2, 0, then 1, 1, 2, 5, 0, it prints: 3, 4, 2, then 1, 2, 5, then 3, 4, 2, 1, 5. Use Java sets and interfaces appropriately. [I]
 
 [[S7]]
 === S7 (Friday 19th of April, 2019)
