@@ -212,7 +212,7 @@ Links taken from the https://www.edx.org/bio/eric-s-lander[course] “Introducti
 * http://math.hws.edu/javanotes/c5/exercises.html[EE5.4] (use `Scanner` instead of `TextIO`)
 * https://github.com/oliviercailloux/java-course/blob/master/JUnit.adoc[Unit testing]
 
-*TODO home* Before end of 22nd of March: push new commit(s) to your `Print exec` repository. You will given a second grade considering the last commit before 23rd of March. Your final `Print exec` grade will be a weighted sum of your first grade (received previously) and second grade. The weights depend on the number of lines that have changed between these two grades: the weight of the new grade (as a proportion of the full grade) will be 80% if you changed only one line, 60% if two or three lines have changed, 40% for four or five lines, 20% for six or seven lines.
+*TODO home* Before end of 22nd of March: push new commit(s) to your `Print exec` repository. You will given a second grade considering the last commit before the deadline. Your final `Print exec` grade will be a weighted sum of your first grade (received previously) and second grade. The weights depend on the number of lines that have changed between these two grades: the weight of the new grade (as a proportion of the full grade) will be 80% if you changed only one line, 60% if two or three lines have changed, 40% for four or five lines, 20% for six or seven lines.
 
 [[S7]]
 === S7 (Friday 19th of April, 2019)
