@@ -9,10 +9,10 @@ Simple exercices for Maven. The reader is supposed to know already the basics of
 In this exercice we will use an archetype called `maven-archetype-quickstart`, that allows us to generate a basic project.
 
 * Open a terminal. Move into a folder where you want to put your new project (which will be created as a sub-folder).
-* Type `mvn org.apache.maven.plugins:maven-archetype-plugin:generate`. 
+* Type `mvn org.apache.maven.plugins:maven-archetype-plugin:3.1.2:generate`. 
 
-The command `mvn` followed by “groupId:pluginId:goal” runs Maven with the given goal, defined in the given plugin.
-Thus, this command simply executes the goal `generate` in the Maven plugin with id `maven-archetype-plugin` published under the groupId `org.apache.maven.plugins`.
+The command `mvn` followed by “groupId:pluginId:version:goal” runs Maven with the given goal, defined in the given plugin.
+Thus, this command simply executes the goal `generate` in the Maven plugin with id https://search.maven.org/artifact/org.apache.maven.plugins/maven-archetype-plugin[`maven-archetype-plugin`] published under the groupId `org.apache.maven.plugins`.
 
 The command displays a long list of archetypes available to you. Then you see something like “Choose a number or apply filter (format: [groupId:]artifactId, case sensitive contains): 1388:”.
 
