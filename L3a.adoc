@@ -167,18 +167,19 @@ Links taken from the https://www.edx.org/bio/eric-s-lander[course] “Introducti
 * Exceptions: checked and unchecked (see this http://journals.ecs.soton.ac.uk/java/tutorial/java/exceptions/throwable.html[diagram])
 ** *Exercice*: program a method that draws a random number and throws a `IOException` with one chance on two. Observe that it compiles only if you advertise this exception in the signature. Call this method from another method. Observe that the calling method also must advertise the exception. Change the exception to an `IllegalArgumentException`. Observe that you do not have to advertise this in either method signature.
 ** http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours5.pdf[Airiau C5] (and see slides Contrat, appendix)
-** More exercices: http://math.hws.edu/javanotes/c5/exercises.html[EE5] (more advanced: http://math.hws.edu/javanotes/c8/exercises.html[EE8])
-* Generics and https://www.scientecheasy.com/2018/09/collection-hierarchy-in-java.html[collections].
-** http://math.hws.edu/javanotes/contents-with-subsections.html[ES10] to 10.2
-** For this course, use by default: `ArrayList` / `ImmutableList`; `LinkedHashSet` / `ImmutableSet`; `LinkedHashMap` / `ImmutableMap`.
-* *Exercice*:
+* More exercices: http://math.hws.edu/javanotes/c5/exercises.html[EE5] (more advanced: http://math.hws.edu/javanotes/c8/exercises.html[EE8])
+* Generics 
+** *Exercice*:
 ** Program a class `Pair` with generic types `L`, `R` (for Left and Right), that can store a pair of things, one of type `L` and one of type `R`. For example, a `Pair<Double, Integer>` instance can store a `Double` instance and an `Integer` instance.
 ** Provide methods `getLeft()`, `getRight()`, that each return the appropriate type, and `setContents()`, that admits two parameters and that set both instances of the pair.
 ** Use your class in a `main` method that creates two `pairs`: one pair of `String` and `Integer` that holds your name and your age, and one pair of double initialized at random values drawn in [0, 1].
 ** Add a static method `show` that admits any kind of pair as parameter and prints its content (by calling `toString()` on the left and then on the right content of the pair). Use `show` from your main for each of your instances of pair.
 ** Finally, still from your `main`, create a pair that contains each of your instances of pairs, and give it as an argument to `show`.
 ** *Exercice*: Implement a `Predicate<String>` to represent a function that associates to a String the value `true` iff its length is even.
-* More exercices:
+* https://www.scientecheasy.com/2018/09/collection-hierarchy-in-java.html[Collections]
+** http://math.hws.edu/javanotes/contents-with-subsections.html[ES10] to 10.2
+** For this course, use by default: `ArrayList` / `ImmutableList`; `LinkedHashSet` / `ImmutableSet`; `LinkedHashMap` / `ImmutableMap`.
+* *Exercices*:
 //interfaces with generics and collections
 ** http://math.hws.edu/javanotes/c10/exercises.html[EE10.4] 
 // list of words
@@ -188,20 +189,20 @@ Links taken from the https://www.edx.org/bio/eric-s-lander[course] “Introducti
 // read, sort a list
 ** http://math.hws.edu/javanotes8/c7/exercises.html[EE7.1], 7.5 (except that you can use built-sorting functions from the Java API).
 ** A class E1 that asks the end-user for a set of integer values. The user enters 0 to stop entering values. Store these values in a Set of Integer values (discarding duplicates). Do it again, obtaining a second set. Then print each set of values entered, then the union of both sets. For example, if the user enters 3, 4, 2, 0, then 1, 1, 2, 5, 0, it prints: 3, 4, 2, then 1, 2, 5, then 3, 4, 2, 1, 5. Use Java sets and interfaces appropriately. [I]
-** Correct E1
-.. découpé en sous-routines ?
-.. contrat général (Collection au lieu de LinkedList) ?
-.. noms complets de classes uniques ?
-.. structures appropriées ? (Set)
-.. réutilisation si on demande les nombres différemment ? (Lus depuis fichiers)
-.. nommage approprié ? (searchNumber renvoie boolean, non, devrait poser une question: isIn)
-.. documentation javadoc lorsque nécessaire ?
-.. utilisation adéquate des structures ? (ne pas rechercher un nombre dans une liste)
-.. conventions respectées ? (noms de variables et méthodes en camelCase, de classes en PascalCase, de packages en minuscules, …)
-.. méthodes d’instance (et pas statiques) ?
-.. pas de commentaires inutiles (tq auto-générés //TODO, @author vide, …)
-.. (micro) pas de comparaison à `true` (`if(isBig == true)`)
-.. vous arrivez à voir le résultat de votre code javadoc (exemple: `@param truc of type String` inutile)
+//** Correct E1
+//.. découpé en sous-routines ?
+//.. contrat général (Collection au lieu de LinkedList) ?
+//.. noms complets de classes uniques ?
+//.. structures appropriées ? (Set)
+//.. réutilisation si on demande les nombres différemment ? (Lus depuis fichiers)
+//.. nommage approprié ? (searchNumber renvoie boolean, non, devrait poser une question: isIn)
+//.. documentation javadoc lorsque nécessaire ?
+//.. utilisation adéquate des structures ? (ne pas rechercher un nombre dans une liste)
+//.. conventions respectées ? (noms de variables et méthodes en camelCase, de classes en PascalCase, de packages en minuscules, …)
+//.. méthodes d’instance (et pas statiques) ?
+//.. pas de commentaires inutiles (tq auto-générés //TODO, @author vide, …)
+//.. (micro) pas de comparaison à `true` (`if(isBig == true)`)
+//.. vous arrivez à voir le résultat de votre code javadoc (exemple: `@param truc of type String` inutile)
 // simple inheritance (no TextIO depended on, actually), but complex set up
 // implements but no inheritance
 * http://math.hws.edu/javanotes/c5/exercises.html[EE5.7] (the part about anonymous classes is optional)
