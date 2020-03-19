@@ -168,7 +168,7 @@ Links taken from the https://www.edx.org/bio/eric-s-lander[course] “Introducti
 ** *Exercice*: program a method that draws a random number and throws a `IOException` with one chance on two. Observe that it compiles only if you advertise this exception in the signature. Call this method from another method. Observe that the calling method also must advertise the exception. Change the exception to an `IllegalArgumentException`. Observe that you do not have to advertise this in either method signature.
 ** http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours5.pdf[Airiau C5] (and see slides Contrat, appendix)
 * More exercices: http://math.hws.edu/javanotes/c5/exercises.html[EE5] (more advanced: http://math.hws.edu/javanotes/c8/exercises.html[EE8])
-* Generics 
+* Generics: diagram https://raw.githubusercontent.com/oliviercailloux/Simple-Papyrus-project/cars-before-generic/Three%20cars.svg?sanitize=true[before generics], https://raw.githubusercontent.com/oliviercailloux/Simple-Papyrus-project/cars-after-generic/Generic%20Car%20and%20Cars.svg?sanitize=true[after generics]; sample https://github.com/oliviercailloux/sample-generic-cars[code]
 ** *Exercice*:
 ** Program a class `Pair` with generic types `L`, `R` (for Left and Right), that can store a pair of things, one of type `L` and one of type `R`. For example, a `Pair<Double, Integer>` instance can store a `Double` instance and an `Integer` instance.
 ** Provide methods `getLeft()`, `getRight()`, that each return the appropriate type, and `setContents()`, that admits two parameters and that set both instances of the pair.
