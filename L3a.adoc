@@ -213,9 +213,11 @@ Links taken from the https://www.edx.org/bio/eric-s-lander[course] “Introducti
 //** solve the exercices in a third Eclipse project (will you need the previous JAR files? Which ones and why?).
 * http://math.hws.edu/javanotes/c5/exercises.html[EE5.4] (use `Scanner` instead of `TextIO`)
 
-*TODO home* Before end of 22nd of March: push new commit(s) to your `Print exec` repository. You will given a second grade considering the last commit before the deadline. Your final `Print exec` grade will be a weighted sum of your first grade (received previously) and second grade. The weights depend on the number of lines that have changed between these two grades: the weight of the new grade (as a proportion of the full grade) will be 90% if you changed only one line, 70% if two or three lines have changed, 60% for four or five lines, 40% for six or seven lines. What counts is the difference between both files *as shown by https://git-scm.com/docs/git-diff#Documentation/git-diff.txt-emgitdiffemltoptionsgtltcommitgtltcommitgt--ltpathgt82308203[git diff], or on https://help.github.com/en/github/committing-changes-to-your-project/comparing-commits#comparing-commits[GitHub]*. Your solution *may not* use the commands `mkdir` or `cd`.
+*TODO home*
 
-*TODO home* Read http://help.eclipse.org/latest/topic/org.eclipse.jdt.doc.user/gettingStarted/qs-2.htm[Editing Java elements]
+* Before end of 22nd of March: push new commit(s) to your `Print exec` repository. You will given a second grade considering the last commit before the deadline. Your final `Print exec` grade will be a weighted sum of your first grade (received previously) and second grade. The weights depend on the number of lines that have changed between these two grades: the weight of the new grade (as a proportion of the full grade) will be 90% if you changed only one line, 70% if two or three lines have changed, 60% for four or five lines, 40% for six or seven lines. What counts is the difference between both files *as shown by https://git-scm.com/docs/git-diff#Documentation/git-diff.txt-emgitdiffemltoptionsgtltcommitgtltcommitgt--ltpathgt82308203[git diff], or on https://help.github.com/en/github/committing-changes-to-your-project/comparing-commits#comparing-commits[GitHub]*. Your solution *may not* use the commands `mkdir` or `cd`.
+* Read http://help.eclipse.org/latest/topic/org.eclipse.jdt.doc.user/gettingStarted/qs-2.htm[Editing Java elements]
+* Use https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Eclipse.adoc[this] Eclipse configuration.
 
 [[S7]]
 === S7 (Friday 19th of April, 2019)
