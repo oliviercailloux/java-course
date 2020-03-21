@@ -132,7 +132,7 @@ Links taken from the https://www.edx.org/bio/eric-s-lander[course] “Introducti
 [[S4]]
 === S4 (5 March)
 
-* Graded exercice using your knowledge from Shell; Execution; EE2.x; EE3.x (see above). See https://github.com/oliviercailloux/java-course/blob/master/Exécution/Print%20exec.adoc[Print exec]. (13h47 to 14h47)
+* Graded exercice using your knowledge from Shell; Execution; EE2.x; EE3.x (see above). See https://github.com/oliviercailloux/java-course/blob/master/Ex%C3%A9cution/Print%20exec.adoc[Print exec]. (13h47 to 14h47)
 * https://github.com/oliviercailloux/java-course/raw/master/Objets/presentation.pdf[Objets]
 ** http://math.hws.edu/javanotes/c5/[ES5] intro to 5.4
 * *Exercices:*
@@ -278,7 +278,6 @@ Links taken from the https://www.edx.org/bio/eric-s-lander[course] “Introducti
 [[S10]]
 === S10 (Monday 20th of May, 2019)
 
-* Graded https://github.com/oliviercailloux/java-course/blob/master/Divers/Dep-Git.adoc[exercice] (about Maven dependencies and Git)
 * https://stackoverflow.com/questions/28972893/what-is-exception-wrapping-in-java[Wrapping] exceptions
 * https://github.com/oliviercailloux/java-course/blob/master/Log/README.adoc[Logging]
 * https://github.com/oliviercailloux/java-course/raw/master/Annotations/presentation.pdf[Annotations]
