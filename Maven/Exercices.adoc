@@ -30,7 +30,7 @@ Your project gets created in a sub-folder of your current position.
 
 * Which files has Maven created? What are their purpose?
 * In the terminal, move into the newly created project.
-* Type `mvn compile`. What does it do, and why (how does it work)? Is `compile` a phase, or a plugin goal (http://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html#Lifecycle_Reference[answer])?
+* Type `mvn compile`. What does it do, and why (how does it work)? Is `compile` a phase, or a plugin goal (http://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html#Lifecycle_Reference{emptyattribute}[answer])?
 * What has changed in your project folder?
 * Run the compiled application from the shell (go into the `target/classes` folder and use the _full name_ of the class you want to run). What does it do?
 
