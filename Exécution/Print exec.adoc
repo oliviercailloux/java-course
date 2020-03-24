@@ -53,3 +53,18 @@ You do not have to deal with errors if your program is called with arguments tha
 
 You will be graded according to a series of automated tests that judge whether your program outputs the right commands given arguments that correspond to situations _of varying complexity_. Thus, make sure your program at least works in the simplest situations (such as when using only two arguments) to get a few points.
 
+== Analysis
+
+- Average FIRST_ATTEMPT 4.4/20, SECOND_ATTEMPT 7.4/20
+- Average improvement factor (ratio second / first attempt) is ×2.4 [improvement factor aggregated VS first is ×1.6]
+- COMPILES: 24/26 FIRST, 24/26 SECOND (not the same two persons failed!)
+- SECOND_ATTEMPT/TESTS/TEST_TWO_ARGS/COMPILE_COMMAND: 18 > 0; 1 MAX only
+- SECOND_ATTEMPT/TESTS/TEST_TWO_ARGS/COMPILE_COMMAND/TARGET: 7 > 0 (and MAX) only
+- SECOND_ATTEMPT/TESTS/TEST_TWO_ARGS/RUN_COMMAND: 19 > 0; 6 MAX
+- SECOND_ATTEMPT/TESTS/TEST_TWO_ARGS/RUN_COMMAND/TARGET: 15 > 0 (and MAX)
+- Other tests, almost identical results
+
+Suggestion
+
+Practice the exercices home and use the tools and configuration tips written in the course to be efficient: navigate using your IDE, look at the compilation problems, the warnings, the javadoc…
+
