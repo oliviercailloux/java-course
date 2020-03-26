@@ -184,7 +184,7 @@ Links taken from the https://www.edx.org/bio/eric-s-lander[course] “Introducti
 * Use https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Eclipse.adoc[this] Eclipse configuration.
 
 [[S7]]
-=== S7 (Friday 19th of April, 2019)
+=== S7 (1 April)
 
 * https://www.scientecheasy.com/2018/09/collection-hierarchy-in-java.html[Collections]
 ** http://math.hws.edu/javanotes/contents-with-subsections.html[ES10] to 10.2
@@ -256,7 +256,7 @@ Links taken from the https://www.edx.org/bio/eric-s-lander[course] “Introducti
 * If you use an IDE different than Eclipse, you are supposed to adjust your parameters to match the configuration provided for Eclipse (see Tools.adoc).
 
 [[S8]]
-=== S8 (Monday 6th of May, 2019)
+=== S8 (2 April)
 
 * Questions?
 * Graded https://github.com/oliviercailloux/java-course/blob/master/Divers/Extractor.adoc[exercice]
