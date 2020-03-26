@@ -3,10 +3,10 @@
 == Useful doc
 Read the following (a piece at a time), for a great increase to your productivity and pleasure of coding.
 
-* Workbench User Guide, https://help.eclipse.org/latest/topic/org.eclipse.platform.doc.user/gettingStarted/qs-02a.htm?cp=0_1_0_0[Basic tutorial]
-* Workbench User Guide, https://help.eclipse.org/latest/topic/org.eclipse.platform.doc.user/tips/platform_tips.html?cp=0_5[Tips and Tricks]
+* Workbench User Guide, https://help.eclipse.org/latest/topic/org.eclipse.platform.doc.user/gettingStarted/qs-02a.htm[Basic tutorial]
+* Workbench User Guide, https://help.eclipse.org/latest/topic/org.eclipse.platform.doc.user/tips/platform_tips.html[Tips and Tricks]
 * Java development user guide, https://help.eclipse.org/latest/topic/org.eclipse.jdt.doc.user/gettingStarted/qs-2.htm[Basic tutorial]
-* Java development user guide, https://help.eclipse.org/latest/topic/org.eclipse.jdt.doc.user/tips/jdt_tips.html?cp=1_5[Tips and Tricks] (JDT)
+* Java development user guide, https://help.eclipse.org/latest/topic/org.eclipse.jdt.doc.user/tips/jdt_tips.html[Tips and Tricks] (JDT)
 
 [[Eclipse-strict]]
 === Configuration
