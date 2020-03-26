@@ -37,6 +37,6 @@ Web applications do not require a web descriptor (the `web.xml` file that goes i
 * [Note 1: An alternative is to require version 3.0.0 of the Apache Maven WAR Plugin, as this is then no more necessary: “The default value for failOnMissingWebXml has been changed from true to false.” (https://maven.apache.org/plugins/maven-war-plugin/index.html[source]). However by default you get https://github.com/apache/maven/blob/master/maven-core/src/main/resources/META-INF/plexus/default-bindings.xml[2.2], and including the property is less verbose than switching the maven-war-plugin version, if no other reason mandates it. See also http://svn.apache.org/viewvc/maven/plugins/trunk/maven-war-plugin/src/main/java/org/apache/maven/plugins/war/WarMojo.java?view=log[source code history], http://svn.apache.org/viewvc/maven/plugins/tags/[releases].] 
 * [Note 2: Web applications do not require a web descriptor any more since Servlet 2.5 MR 5, more than 10 years ago (see JSR 340 Servlet 3.1 https://download.oracle.com/otn-pub/jcp/servlet-3_1-fr-eval-spec/servlet-3_1-final.pdf[spec], A.7.6 and 10.13).]
 
-== Do not refer to someone else’s project
-The POM may include a https://maven.apache.org/pom.html#More_Project_Information[`<url>`] element. If you use it, make sure it refers to your project. Do not copy templates without understanding their contents (I often see `<url>` pointing to \http://maven.apache.org!).
+== Understand the code you reuse
+The POM may include a https://maven.apache.org/pom.html#More_Project_Information[`<url>`] element. If you use it, make sure it refers to your project. I often see `<url>` pointing to \http://maven.apache.org, that is wrong! Do not copy templates without understanding their contents!
 

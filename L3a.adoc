@@ -25,6 +25,7 @@ You know algorithmics and, preferrably, the basic syntax of Java (or a related l
 * Stéphane Airiau’s https://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/[course] (in French)
 * The https://app.gosoapbox.com/event/290081765/[confusion barometer]
 * https://pixees.fr/informatiquelycee/[Site] de David Roche
+* Java API https://docs.oracle.com/en/java/javase/11/docs[Javadoc]
 * https://teams.microsoft.com/l/meetup-join/19%3ameeting_YThjOGQ2ZTgtNDFhNC00ZTA3LTk5NWUtMmQ0ZWNlZTFlMTYw%40thread.v2/0?context=%7b%22Tid%22%3a%2281e7c4de-26c9-4531-b076-b70e2d75966e%22%2c%22Oid%22%3a%22db290b1a-6988-4d6b-91c6-9ddd729313f6%22%7d[Teams]
 
 === Take notes
@@ -186,10 +187,13 @@ Links taken from the https://www.edx.org/bio/eric-s-lander[course] “Introducti
 [[S7]]
 === S7 (1 April)
 
-* https://www.scientecheasy.com/2018/09/collection-hierarchy-in-java.html[Collections]
+* https://www.scientecheasy.com/2018/09/collection-hierarchy-in-java.html[Collections] (Interfaces extend VS classes implement)
 ** http://math.hws.edu/javanotes/contents-with-subsections.html[ES10] to 10.2
+** *Exercice*: define a class `StringPairIterator` that implements `Iterator<String>`. (Is your class a generic type?) Such an object contains a `Pair` of `String` (as implemented in the previous exercice), and is able to iterate over a pair of two strings. The first call to `next()` gives the left member, the second call to `next()` gives the right member, and `hasNext()` returns `false` afterwards.  Document the contracts of `StringPairIterator` and check that they are compatible with the contracts of `Iterator<E>`. In a `main` method, define a pair, then a pair iterator, and use it to print the two members of the pair. Then, define a class `PairIterator<E>` that implements `Iterator<E>` in a similar way (is this new class generic?). Modify your `main` accordingly.
+** *Exercice*: define a class `Pair<E, E>` (a pair whose two members have the same type). Let your class implement `Iterable<E>`. When asked for an iterator, your pair returns an element of type `PairIterator<E>`. Define your method header for `iterator()` such that it announces that it returns `Iterator<E>`. Will the compiler accept that you in fact return `PairIterator<E>` when announcing `Iterator<E>`, and if so, will it work at runtime? Check your answer by trying it! Then, change your method header  for `iterator()` such that it announces that it returns `PairIterator<E>`. Will the compiler accept that you announce returning `PairIterator<E>` in a class that declares implementing `Iterable<E>` (and thus that should, when asked for `iterator()`, return an `Iterator<E>`), and if so, will it work at runtime? Check your answer by trying it! 
 ** For this course, use by default: `ArrayList` / `ImmutableList`; `LinkedHashSet` / `ImmutableSet`; `LinkedHashMap` / `ImmutableMap`.
 * *Exercices*:
+** Make sure you can see from your IDE the javadoc of the JDK and of the libraries you add with Maven, for coding efficiently
 //interfaces with generics and collections
 ** http://math.hws.edu/javanotes/c10/exercises.html[EE10.4] 
 // list of words
@@ -224,6 +228,10 @@ Links taken from the https://www.edx.org/bio/eric-s-lander[course] “Introducti
 * http://math.hws.edu/javanotes/c5/exercises.html[EE5.4] (use `Scanner` instead of `TextIO`)
 * https://github.com/oliviercailloux/java-course/blob/master/JUnit.adoc[Unit testing]
 * null (started)
+
+[[S8]]
+=== S8 (2 April)
+
 * Maps, Comparable, Comparator (voir aussi diapos Airiau)
 * https://github.com/oliviercailloux/java-course/blob/master/Search%20path/README.adoc[Search path] (packages, classes and directories).
 //* http://math.hws.edu/eck/cs124/javanotes7/c10/[ES10.3] to 10.5
@@ -248,16 +256,6 @@ Links taken from the https://www.edx.org/bio/eric-s-lander[course] “Introducti
 ** Define `MyComparator`, a class that implements a comparator over your values. Add a third method to `EasyMap`, that returns a list of values ordered by that comparator.
 // list of words
 * http://math.hws.edu/javanotes8/c7/exercises.html[EE7.6] (do not use the provided method: split words at space character; use standard file IO instead of TextIO)
-
-*Todo*
-
-* Read https://github.com/oliviercailloux/java-course/blob/master/Tools.adoc#eclipse[Eclipse] doc (or equivalent for your IDE of choice)
-* Make sure you can see the javadoc of the JDK and of the libraries you add through Maven through your IDE, for coding efficiently
-* If you use an IDE different than Eclipse, you are supposed to adjust your parameters to match the configuration provided for Eclipse (see Tools.adoc).
-
-[[S8]]
-=== S8 (2 April)
-
 * Questions?
 * Graded https://github.com/oliviercailloux/java-course/blob/master/Divers/Extractor.adoc[exercice]
 ** Submitted code must be clean: well-formatted, clear, well named, …
