@@ -20,18 +20,20 @@ Two essential classes help you deal with files: https://docs.oracle.com/en/java/
 
 Classes that represent flows (such as the four above) implement `Closeable`. This signals that they must be _closed_ after use. (This serves to release resources that might have been reserved by the operating system, or to proceed with finalizing operations, such as effectively writing to disk by flushing the cache.) Do not forget to close your flows after use by calling `close()`. Use the https://docs.oracle.com/javase/tutorial/essential/exceptions/tryResourceClose.html[try-with-resources] statement for this, as it is a simple way of making sure `close()` is duly called.
 
-NOTE: many examples on the internet still use the `File` class. This approach should now be considered https://docs.oracle.com/javase/tutorial/essential/io/legacy.html[deprecated]. Using `Path` and `Files`, as illustrated here, should be favored: among other advantages, it readily adapts to other kinds of file systems such as https://github.com/google/jimfs[in-memory file systems].
+NOTE: Many examples on the internet still use the `File` class. This approach should now be considered https://docs.oracle.com/javase/tutorial/essential/io/legacy.html[deprecated]. Using `Path` and `Files`, as illustrated here, should be favored: among other advantages, it readily adapts to other kinds of file systems such as https://github.com/google/jimfs[in-memory file systems].
 
 == Exercice: read using a byte flow
 * Create a file `in.txt` in your project directory, containing `Hello, world`. 
-* In Java, create a `Path` object designating that file (see above).
+* In Java, create a `Path` object designating that file.
 * Use the appropriate static method from the `Files` class to obtain an `InputStream` representing the content of that file.
 * Read and print the bytes from that stream using a loop, one by one.
 * Check that the bytes are as expected.
 
 Here is a https://github.com/oliviercailloux/sample-flows/tree/master/src/main/java/io/github/oliviercailloux/sample_flows[solution]. Don’t cheat! Try it for yourself before looking.
 
-In this example, the specific encoding used for encoding characters to bytes does not matter much, because all encodings used in practice encode the basic latin alphabet in the same way. Problems can arise when using “more exotic” characters. For example, the character `é` is encoded as the bytes http://www.fileformat.info/info/unicode/char/00e9[_C3_, _A9_] under `UTF-8`, but as https://en.wikipedia.org/wiki/%C3%89#Character_mappings[`E9`] under `ISO-8859-1`.
+* Move the file around in your hard disk (for example, put in into the `src/main` sub-folder, or put in into a directory higher up the hierarchy, one that is not included in your project). Adapt the code.
+
+In this example, the specific encoding used for encoding characters to bytes does not matter much, because all encodings used in practice encode the basic latin alphabet in the same way. Problems can arise when using “more exotic” characters. For example, the character `é` is encoded as the bytes http://www.fileformat.info/info/unicode/char/00e9[_C3_, _A9_] under `UTF-8`, but as https://en.wikipedia.org/wiki/%C3%89#Character_mappings[_E9_] under `ISO-8859-1`.
 
 == Exercice
 Create a text file containing `Hé !` using your favorite text editor, and print its byte content using a stream, as previously. From this, determine if your editor possibly used the `UTF-8` encoding.
