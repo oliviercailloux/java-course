@@ -236,7 +236,7 @@ Links taken from the https://www.edx.org/bio/eric-s-lander[course] “Introducti
 === S8 (2 April)
 
 * https://docs.oracle.com/javase/tutorial/java/javaOO/arguments.html[Varargs]
-** *Exercice*: call the static method `String.{emptyattribute}https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#format(java.lang.String,java.lang.Object...)[format]()` with no arguments, then with only one string as argument, then two strings, then three strings. Predict which calls will be accepted by the compiler. Explain in each case what parameters are effectively passed to the method, by considering the method declaration (hint: exactly two parameters are passed for each permissible call).
+** *Exercice*: call the static method `String.link:https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#format(java.lang.String,java.lang.Object...)[format]()` with no arguments, then with only one string as argument, then two strings, then three strings. Predict which calls will be accepted by the compiler. Explain in each case what parameters are effectively passed to the method, by considering the method declaration (hint: exactly two parameters are passed for each permissible call).
 * Files and https://github.com/oliviercailloux/java-course/blob/master/Flows.adoc[flows]
 * Static factory method
 ** A static method
