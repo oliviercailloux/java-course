@@ -1,6 +1,8 @@
 = Flows
 
-A brief overview of flow manipulation (including byte streams, character streams, files) in Java.
+About manipulation of flows (including byte streams, character flows, files) in Java.
+
+NOTE: The reader should understand https://github.com/oliviercailloux/java-course/blob/master/Shell.adoc#Paths[Relative and absolute paths]. The reader should know the https://docs.oracle.com/javase/tutorial/java/javaOO/arguments.html[Varargs] construct.
 
 == Overview
 There are four essential kinds of objects that represent flows of information in Java.
@@ -10,19 +12,42 @@ There are four essential kinds of objects that represent flows of information in
 * https://docs.oracle.com/javase/8/docs/api/java/io/Reader.html[Reader]: to read flows of characters.
 * https://docs.oracle.com/javase/8/docs/api/java/io/Writer.html[Writer]: to write flows of characters.
 
-It is typical for a flow of character to be encoded in a flow of bytes, for example, a text file stored on your hard disk contain character data but also byte data.
-Character flows should be used preferably to byte flows in that case, as they represent higher level information. 
+It is typical for a flow of character to be encoded as a flow of bytes. For example, to store the string `Hello, world` in a text file stored on your hard disk, using the https://en.wikipedia.org/wiki/UTF-8[UTF-8] encoding standard, the string would be first https://en.wikipedia.org/wiki/UTF-8#Codepage_layout[encoded] as the bytes _48_, _65_, _6C_, _6C_, _6E_, _2C_, _20_, _77_, _6F_, _72_, _6C_, _64_ in hexadecimal (or equivalently in decimal, _72_, _101_, _108_, _108_, _110_, _44_, _32_, _119_, _111_, _114_, _108_, _100_), then written in binary on the disk. You should always opt for the https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/nio/charset/StandardCharsets.html#UTF_8[`UTF-8`] encoding when you have a choice, as it is the standard general purpose encoding.
 
-Readers are generally obtained from a byte source (and writers, from a byte sink). In that case they must be accompanied by a character encoding, which specifies how bytes and characters relate. Opt for https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/nio/charset/StandardCharsets.html#UTF_8[UTF-8] (the de-facto general purpose https://en.wikipedia.org/wiki/UTF-8[encoding standard]) unless you have a good reason not to.
+The most common way of obtaining a flow is to read from a file. To designate the file, you typically use a path relative to your project directory (the place where `pom.xml` is stored, when you use Maven). 
 
 Two essential classes help you deal with files: https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/nio/file/Path.html[`Path`] and https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/nio/file/Files.html[`Files`]. For example, use `Files#newBufferedWriter()` to obtain a `Writer` that writes to a file.
 
-Always close your streams after use. Use the https://docs.oracle.com/javase/tutorial/essential/exceptions/tryResourceClose.html[try-with-resources] statement for this.
+Classes that represent flows (such as the four above) implement `Closeable`. This signals that they must be _closed_ after use. (This serves to release resources that might have been reserved by the operating system, or to proceed with finalizing operations, such as effectively writing to disk by flushing the cache.) Do not forget to close your flows after use by calling `close()`. Use the https://docs.oracle.com/javase/tutorial/essential/exceptions/tryResourceClose.html[try-with-resources] statement for this, as it is a simple way of making sure `close()` is duly called.
+
+NOTE: many examples on the internet still use the `File` class. This approach should now be considered https://docs.oracle.com/javase/tutorial/essential/io/legacy.html[deprecated]. Using `Path` and `Files`, as illustrated here, should be favored: among other advantages, it readily adapts to other kinds of file systems such as https://github.com/google/jimfs[in-memory file systems].
+
+== Exercice: read using a byte flow
+* Create a file `in.txt` in your project directory, containing `Hello, world`. 
+* In Java, create a `Path` object designating that file (see above).
+* Use the appropriate static method from the `Files` class to obtain an `InputStream` representing the content of that file.
+* Read and print the bytes from that stream using a loop, one by one.
+* Check that the bytes are as expected.
+
+Here is a https://github.com/oliviercailloux/sample-flows/tree/master/src/main/java/io/github/oliviercailloux/sample_flows[solution]. Don’t cheat! Try it for yourself before looking.
+
+In this example, the specific encoding used for encoding characters to bytes does not matter much, because all encodings used in practice encode the basic latin alphabet in the same way. Problems can arise when using “more exotic” characters. For example, the character `é` is encoded as the bytes http://www.fileformat.info/info/unicode/char/00e9[_C3_, _A9_] under `UTF-8`, but as https://en.wikipedia.org/wiki/%C3%89#Character_mappings[`E9`] under `ISO-8859-1`.
 
 == Exercice
-* Create (manually) a text file containing “Hé !” and (programmatically) open it and print its *byte* content (thus it should print numbers). Then, print its content as characters (thus it should print “Hé !”). Your program should also work when the file is too big to fit in memory.
-* Create a class `Person` with a first name and a last name. Create (manually) a text file containing multiple persons. Each person is described by two lines: her first name then her last name. Thus the file contains n times 2 lines for describing n persons. Create a method that reads such a file and returns a list of persons. What’s the best choice of parameter for this method?
-* Create a unit test that creates a `String` equal to `"firstname\nlastname"`. The test gives the string to your method created in the previous exercice. To do this, use a `StringReader` and make sure your method is sufficiently general. The test asserts that the created person has the right first and last names.
+Create a text file containing `Hé !` using your favorite text editor, and print its byte content using a stream, as previously. From this, determine if your editor possibly used the `UTF-8` encoding.
+
+== Reading from character flows
+Character flows should be used preferably to byte flows when reading or writing text data (as in the exercice above). Such a flow usually reads from (or writes to) a byte flow, decoding from or encoding to bytes as demanded. Note that this conversion will depend on the character set specified to the object representing the character flow.
+
+== Exercice
+Adapt the strategy used in the first exercice in order to use a `Reader` to print the content of your file containing `Hé !`. Use various character sets. Check that it prints `Hé !` or prints something else, depending on the character set your `Reader` object uses to decode the bytes.
+
+== A more realistic exercice
+* Create (manually) a text file containing multiple persons. Each person is described by two lines: her first name then her last name. Thus the file contains _n_ times 2 lines for describing _n_ persons. Create a class `Person` with a first name and a last name. Create a method `readPersons` that accepts a `Reader` as parameter, uses it to read such a file, and returns a list of persons.
+
+We now want to test this method. We could create a file and let the method read from that file, and then delete the file, but we prefer to avoid creating a file unnecessarily. This is possible thanks to the abstraction represented by `Reader`: remember that such an object represents a flow of characters, and this may come from a file, from memory, from the network, …
+
+* Create a unit test that creates a `String` equal to `firstname\nlastname`. The test gives the string to your `readPersons` method created in the previous exercice. To do this, use a https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/StringReader.html[`StringReader`]. The test asserts that the created person has the right first and last names.
 
 == References
 See Oracle’s https://docs.oracle.com/javase/tutorial/essential/io/index.html[Basic I/O] tutorial.
