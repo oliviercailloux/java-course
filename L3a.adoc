@@ -168,6 +168,15 @@ Links taken from the https://www.edx.org/bio/eric-s-lander[course] “Introducti
 * Exceptions: checked and unchecked (see this http://journals.ecs.soton.ac.uk/java/tutorial/java/exceptions/throwable.html[diagram])
 ** *Exercice*: program a method that draws a random number and throws a `IOException` with one chance on two. Observe that it compiles only if you advertise this exception in the signature. Call this method from another method. Observe that the calling method also must advertise the exception. Change the exception to an `IllegalArgumentException`. Observe that you do not have to advertise this in either method signature.
 ** http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours5.pdf[Airiau C5] (and see slides Contrat, appendix)
+// simple inheritance (no TextIO depended on, actually), but complex set up
+// implements but no inheritance
+* http://math.hws.edu/javanotes/c5/exercises.html[EE5.7] (the part about anonymous classes is optional)
+//** Supplementary requirements: your code must lie in at least two packages;
+//** The idea of this exercice is that you simulate that three different people work on this exercice: one provides some interfaces; another implements the interfaces; a third one uses the interfaces and their implementations to solve the exercice (except you represent all these persons).
+//** Declare at least one interface in another Eclipse project, exported as a Java archive (JAR file);
+//** implement those interfaces in another Eclipse project, exported as a Java archive (JAR file) (will you need the previous JAR file? Why / why not?);
+//** solve the exercices in a third Eclipse project (will you need the previous JAR files? Which ones and why?).
+* http://math.hws.edu/javanotes/c5/exercises.html[EE5.4] (use `Scanner` instead of `TextIO`)
 * More exercices: http://math.hws.edu/javanotes/c5/exercises.html[EE5] (more advanced: http://math.hws.edu/javanotes/c8/exercises.html[EE8])
 * Generics: diagram https://raw.githubusercontent.com/oliviercailloux/Simple-Papyrus-project/cars-before-generic/Three%20cars.svg?sanitize=true[before generics], https://raw.githubusercontent.com/oliviercailloux/Simple-Papyrus-project/cars-after-generic/Generic%20Car%20and%20Cars.svg?sanitize=true[after generics]; sample https://github.com/oliviercailloux/sample-generic-cars[code]
 ** *Exercice*:
@@ -219,46 +228,24 @@ Links taken from the https://www.edx.org/bio/eric-s-lander[course] “Introducti
 //.. pas de commentaires inutiles (tq auto-générés //TODO, @author vide, …)
 //.. (micro) pas de comparaison à `true` (`if(isBig == true)`)
 //.. vous arrivez à voir le résultat de votre code javadoc (exemple: `@param truc of type String` inutile)
-// simple inheritance (no TextIO depended on, actually), but complex set up
-// implements but no inheritance
-* http://math.hws.edu/javanotes/c5/exercises.html[EE5.7] (the part about anonymous classes is optional)
-//** Supplementary requirements: your code must lie in at least two packages;
-//** The idea of this exercice is that you simulate that three different people work on this exercice: one provides some interfaces; another implements the interfaces; a third one uses the interfaces and their implementations to solve the exercice (except you represent all these persons).
-//** Declare at least one interface in another Eclipse project, exported as a Java archive (JAR file);
-//** implement those interfaces in another Eclipse project, exported as a Java archive (JAR file) (will you need the previous JAR file? Why / why not?);
-//** solve the exercices in a third Eclipse project (will you need the previous JAR files? Which ones and why?).
-* http://math.hws.edu/javanotes/c5/exercises.html[EE5.4] (use `Scanner` instead of `TextIO`)
 * https://github.com/oliviercailloux/java-course/blob/master/JUnit.adoc[Unit testing]
-* null (started)
+** *Exercice:* define a class `PairIteratorTests` and a test that creates a pair of integers _(2, 3)_ and a `PairIterator` object to iterate over this pair, and verifies that the iterator gives elements _2_, _3_, and that its `hasNext()` method returns `false` only after the second step.
+* Primitive types (autoboxing); optional; give guarantees: https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Null.adoc[Best practices]
 
 [[S8]]
 === S8 (2 April)
 
-* Maps, Comparable, Comparator (voir aussi diapos Airiau)
-* https://github.com/oliviercailloux/java-course/blob/master/Search%20path/README.adoc[Search path] (packages, classes and directories).
-//* http://math.hws.edu/eck/cs124/javanotes7/c10/[ES10.3] to 10.5
-//* http://math.hws.edu/eck/cs124/javanotes7/c8/[ES8] intro to 8.4
-
-//* https://www.youtube.com/watch?v=lcYkOh4nweE&t=1m21s[Mars Climate Orbiter] (1m21 to 5m18; small mistake in the video: it’s Newton times second, not Newton force per second; see also https://en.wikipedia.org/wiki/Mars_Climate_Orbiter[Wikipedia]; similarly http://www-users.math.umn.edu/~arnold/disasters/ariane.html[sad] https://www.youtube.com/watch?v=gp_D8r-2hwk[story]{emptyattribute})
-
-* No plagiarism (but reuse!)
+* https://docs.oracle.com/javase/tutorial/java/javaOO/arguments.html[Varargs]
+** *Exercice*: call the static method `String.https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#format(java.lang.String,java.lang.Object...)[format]()` with no arguments, then with only one string as argument, then two strings, then three strings. Predict which calls will be accepted by the compiler. Explain in each case what parameters are effectively passed to the method, by considering the method declaration (hint: exactly two parameters are passed for each permissible call).
+* Files and https://github.com/oliviercailloux/java-course/blob/master/Flows.adoc[flows]
 * Static factory method
 ** A static method
 ** Produces the type of the class it belongs to
 ** Serves as a factory
 ** Examples: `String.valueOf(true);`, `Integer.valueOf(3);`, `ImmutableList.of();`, `String.link:https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#format(java.lang.String,java.lang.Object...)[format]("Person name: %s, id: %d", name, id);`
-* https://docs.oracle.com/javase/tutorial/java/javaOO/arguments.html[Varargs]
-* Files and https://github.com/oliviercailloux/java-course/blob/master/Flows.adoc[flows]
-* https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Resources.adoc[Resources]; exercice: read a file from the class path.
-* Primitive types (autoboxing); optional; give guarantees: https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Null.adoc[Best practices]
+* No plagiarism (but reuse!)
+* Projects discussion
 
-*Exercices*
-
-* Implement an interface `EasyMap` with two methods: a method that puts a pair of key and value of your choice into a map, and a method that returns an `Optional` containing the value corresponding to the given key (parameter of the method) or that returns an empty `Optional` if there is no such value. Implement this interface in a class `EasyMapImpl`. Provide a static factory method in the interface `EasyMap`. Minimize the number of lines of code (but not at the price of readability). Note that this exercice implements the https://en.wikipedia.org/wiki/Forwarding_(object-oriented_programming)[forwarding] pattern.
-** Define `MyComparator`, a class that implements a comparator over your values. Add a third method to `EasyMap`, that returns a list of values ordered by that comparator.
-// list of words
-* http://math.hws.edu/javanotes8/c7/exercises.html[EE7.6] (do not use the provided method: split words at space character; use standard file IO instead of TextIO)
-* Questions?
 * Graded https://github.com/oliviercailloux/java-course/blob/master/Divers/Extractor.adoc[exercice]
 ** Submitted code must be clean: well-formatted, clear, well named, …
 ** Must compile using Maven (otherwise, no point awarded)
@@ -268,12 +255,28 @@ Links taken from the https://www.edx.org/bio/eric-s-lander[course] “Introducti
 * Comparing Persons, revisited, using https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html[Lambda Expressions]
 * Override `equals` and `hashcode`
 
+Delivery 1: before end of the day before _S9_.
+
 [[S9]]
 === S9 (Friday 10th of May, 2019)
 
-* Tentative coefficients: graded quizz: 0.5, Extractor: 0.5, next graded exercices: 1, last graded exercice: 2
+* Maps, Comparable, Comparator (voir aussi diapos Airiau)
+* https://github.com/oliviercailloux/java-course/blob/master/Search%20path/README.adoc[Search path] (packages, classes and directories).
+//* http://math.hws.edu/eck/cs124/javanotes7/c10/[ES10.3] to 10.5
+//* http://math.hws.edu/eck/cs124/javanotes7/c8/[ES8] intro to 8.4
+
+//* https://www.youtube.com/watch?v=lcYkOh4nweE&t=1m21s[Mars Climate Orbiter] (1m21 to 5m18; small mistake in the video: it’s Newton times second, not Newton force per second; see also https://en.wikipedia.org/wiki/Mars_Climate_Orbiter[Wikipedia]; similarly http://www-users.math.umn.edu/~arnold/disasters/ariane.html[sad] https://www.youtube.com/watch?v=gp_D8r-2hwk[story]{emptyattribute})
+
+* https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Resources.adoc[Resources]; exercice: read a file from the class path.
+
+*Exercices*
+
+* Implement an interface `EasyMap` with two methods: a method that puts a pair of key and value of your choice into a map, and a method that returns an `Optional` containing the value corresponding to the given key (parameter of the method) or that returns an empty `Optional` if there is no such value. Implement this interface in a class `EasyMapImpl`. Provide a static factory method in the interface `EasyMap`. Minimize the number of lines of code (but not at the price of readability). Note that this exercice implements the https://en.wikipedia.org/wiki/Forwarding_(object-oriented_programming)[forwarding] pattern.
+** Define `MyComparator`, a class that implements a comparator over your values. Add a third method to `EasyMap`, that returns a list of values ordered by that comparator.
+// list of words
+* http://math.hws.edu/javanotes8/c7/exercises.html[EE7.6] (do not use the provided method: split words at space character; use standard file IO instead of TextIO)
+* Questions?
 * https://github.com/oliviercailloux/java-course/blob/master/DevOps/CI.adoc[CI]: Travis
-* TODO : livraison 1 avant fin de la veille de S10.
 
 [[S10]]
 === S10 (Monday 20th of May, 2019)

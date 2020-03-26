@@ -13,9 +13,9 @@ There are four essential kinds of objects that represent flows of information in
 It is typical for a flow of character to be encoded in a flow of bytes, for example, a text file stored on your hard disk contain character data but also byte data.
 Character flows should be used preferably to byte flows in that case, as they represent higher level information. 
 
-Readers are generally obtained from a byte source (and writers, from a byte sink). In that case they must be accompanied by a character encoding, which specifies how bytes and characters relate. A reasonable default choice is https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/nio/charset/StandardCharsets.html#UTF_8[UTF-8].
+Readers are generally obtained from a byte source (and writers, from a byte sink). In that case they must be accompanied by a character encoding, which specifies how bytes and characters relate. Opt for https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/nio/charset/StandardCharsets.html#UTF_8[UTF-8] (the de-facto general purpose https://en.wikipedia.org/wiki/UTF-8[encoding standard]) unless you have a good reason not to.
 
-Two essential classes help you deal with files: https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/nio/file/Path.html[`Path`] (or https://docs.oracle.com/javase/8/docs/api/java/nio/file/Path.html[`Paths]` before Java 11) and https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/nio/file/Files.html[`Files`]. For example, use `Files#newBufferedWriter()` to obtain a `Writer` that writes to a file.
+Two essential classes help you deal with files: https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/nio/file/Path.html[`Path`] and https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/nio/file/Files.html[`Files`]. For example, use `Files#newBufferedWriter()` to obtain a `Writer` that writes to a file.
 
 Always close your streams after use. Use the https://docs.oracle.com/javase/tutorial/essential/exceptions/tryResourceClose.html[try-with-resources] statement for this.
 
