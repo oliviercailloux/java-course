@@ -33,7 +33,7 @@ Here is a https://github.com/oliviercailloux/sample-flows/tree/master/src/main/j
 
 * Move the file around in your hard disk (for example, put in into the `src/main` sub-folder, or put in into a directory higher up the hierarchy, one that is not included in your project). Adapt the code.
 
-In this example, the specific encoding used for encoding characters to bytes does not matter much, because all encodings used in practice encode the basic latin alphabet in the same way. Problems can arise when using “more exotic” characters. For example, the character `é` is encoded as the bytes http://www.fileformat.info/info/unicode/char/00e9[_C3_, _A9_] under `UTF-8`, but as https://en.wikipedia.org/wiki/%C3%89#Character_mappings[_E9_] under `ISO-8859-1`.
+In this example, the specific encoding used for encoding characters to bytes does not matter much, because all encodings used in practice encode the basic latin alphabet in the same way. Problems can arise when using “more exotic” characters. For example, the character `é` is encoded as the bytes https://www.fileformat.info/info/unicode/char/00e9/index.htm[_C3_, _A9_] under `UTF-8`, but as https://en.wikipedia.org/wiki/%C3%89#Character_mappings[_E9_] under `ISO-8859-1`.
 
 == Exercice
 Create a text file containing `Hé !` using your favorite text editor, and print its byte content using a stream, as previously. From this, determine if your editor possibly used the `UTF-8` encoding.
