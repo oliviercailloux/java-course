@@ -158,7 +158,7 @@ Links taken from the https://www.edx.org/bio/eric-s-lander[course] “Introducti
 ** Peer grading:
 *** Maven and naming (/1.5): groupId controlled or is mine; package names correspond; Encoding; Java Version (see https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Maven.adoc[best practices])
 *** Git (/1.5) https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Git.adoc[Best practices]
-*** eclipse config (/3) (TODO check new stuff) (3 if no warnings and no @SuppressWarnings used, 1.5 if only one warning or @SuppressWarnings used, 0 otherwise)
+*** eclipse config (/3) (3 if no warnings and no @SuppressWarnings used, 1.5 if only one warning or @SuppressWarnings used, 0 otherwise)
 *** TripletOfDice (/10)
 **** rollAllDice indeed rolls all dice, rollOneDie indeed rolls the die, getFirstDie (or getDie) indeed returns the last die result, nothing is static (/3)
 **** rollOneDie must throw if die number invalid (/3)
