@@ -150,11 +150,23 @@ Links taken from the https://www.edx.org/bio/eric-s-lander[course] “Introducti
 [[S5]]
 === S5 (18 March)
 
-* _Non-graded_ programming exercice (Maven; contract; fail fast; objects). Create a personal GitHub repository named `maven-exercice`. Create a Maven project and push your whole project to the GitHub repository (so that the `pom.xml` is at the root of the GitHub repository). Make sure the POM follows the best practices as indicated in the course (hint: use the “Modern project” archetype). Follow https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Git.adoc[Git Best practices]. 8:35 to 9:35.
+* _Non-graded_ programming exercice (Maven; contract; fail fast; objects). Create a personal GitHub repository named `maven-exercice`. Create a Maven project and push your whole project to the GitHub repository (so that the `pom.xml` is at the root of the GitHub repository). Make sure the POM follows the https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Maven.adoc[best practices] as indicated in the course (hint: use the “Modern project” archetype). Follow https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Git.adoc[Git Best practices]. 8:35 to 9:35.
 ** Hint: Use https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Eclipse.adoc[correct] Eclipse configuration. Check your warnings!
 ** Create a class having full name `io.github.yourgithubusername.TripletOfDice` (use your GitHub username). This object represents three dice. Its constructor accepts an integer which defines the number of https://commons.wikimedia.org/wiki/Dice_by_number_of_sides[sides] of the dice. Add methods `rollAllDice()` and `rollOneDie(int: dieNumber)` whose parameter must be the integer one, two or three; and methods `getFirstDie(): int`, `getSecondDie(): int` and `getThirdDie(): int`. Determine and write down (in Javadoc) the contracts of these methods and write their code. [Optional: propose a better interface.]
 ** Create a class `io.github.yourgithubusername.DiceUser` having a static method `rollOnce(): TripletOfDice`. It creates a triplet of six-sided dice, rolls them once, and returns the object representing the triplet.
 ** In the `DiceUser` class, create a `main` method. It calls `rollOnce()` and prints the result on three lines, as follows (example for a result of 4, 2 and 1): `The die number 1 is a 4`, second line `The die number 2 is a 2`, third line `The die number 3 is a 1`.
+** Peer grading:
+*** Maven and naming (/1.5): groupId controlled or is mine; package names correspond; Encoding; Java Version (see https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Maven.adoc[best practices])
+*** Git (/1.5) https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Git.adoc[Best practices]
+*** eclipse config (/3) (TODO check new stuff) (3 if no warnings and no @SuppressWarnings used, 1.5 if only one warning or @SuppressWarnings used, 0 otherwise)
+*** TripletOfDice (/10)
+**** rollAllDice indeed rolls all dice, rollOneDie indeed rolls the die, getFirstDie (or getDie) indeed returns the last die result, nothing is static (/3)
+**** rollOneDie must throw if die number invalid (/3)
+**** better interface (/1, bonus): getDie(int die), must also throw argument if die number invalid. If getDie is there, getFirstDie and similar may have been omitted.
+**** Javadoc must mention what happens if I don’t roll and ask for a die (/4). No explanation, or explanation does not match behavior: 0. Example of a consistent explanation and behavior: Javadoc of the class indicates that “A die must be rolled before calling #getDie().”, Javadoc of the method getDie(int) (or of the methods getFirstDie, …) indicates “@throws IllegalStateException if the die is not rolled before calling”, and the code of getDie() indeed throws an IllegalStateException if the die is not rolled before calling.
+*** DiceUser (/4)
+**** rollOnce is static and performs correctly (/2)
+**** main prints exactly the expected text on three lines (/2)
 * https://github.com/oliviercailloux/java-course/blob/master/Git/Git-Br.adoc[Git-br]: comment; Print-exec: see end of S6.
 * Inheritance: polymorphism and interfaces; effective type of variables. See https://raw.githubusercontent.com/oliviercailloux/Simple-Papyrus-project/interface/An%20interface%20and%20two%20realizations.svg?sanitize=true[diagram]; import the corresponding https://github.com/oliviercailloux/sample-interface[project] in Eclipse
 ** http://math.hws.edu/javanotes/contents-with-subsections.html[ES5.5] to 5.8
@@ -196,10 +208,12 @@ Links taken from the https://www.edx.org/bio/eric-s-lander[course] “Introducti
 [[S7]]
 === S7 (1 April)
 
+* Peer grading of maven-exercice (https://github.com/oliviercailloux/java-course/blob/master/L3a.adoc#S5[S5]), for https://docs.google.com/document/d/1HxDej7S81B3Jgp5VOnct0iw3vO3E6u9HH1les9eg4Vw/edit?usp=sharing[volunteers].
 * https://www.scientecheasy.com/2018/09/collection-hierarchy-in-java.html[Collections], start: `Iterable` and `Iterator`.
 * *Exercices*:
-** Define a class `StringPairIterator` that implements `Iterator<String>`. (Is your class a generic type?) Such an object contains a `Pair` of `String` (as implemented in the previous exercice), and is able to iterate over a pair of two strings. The first call to `next()` gives the left member, the second call to `next()` gives the right member, and `hasNext()` returns `false` afterwards.  Document the contracts of `StringPairIterator` and check that they are compatible with the contracts of `Iterator<E>`. In a `main` method, define a pair, then a pair iterator, and use it to print the two members of the pair. Then, define a class `PairIterator<E>` that implements `Iterator<E>` in a similar way (is this new class generic?). Modify your `main` accordingly.
-** Define a class `Pair<E, E>` (a pair whose two members have the same type). Let your class implement `Iterable<E>`. When asked for an iterator, your pair returns an element of type `PairIterator<E>`. Define your method header for `iterator()` such that it announces that it returns `Iterator<E>`. Will the compiler accept that you in fact return `PairIterator<E>` when announcing `Iterator<E>`, and if so, will it work at runtime? Check your answer by trying it! Then, change your method header  for `iterator()` such that it announces that it returns `PairIterator<E>`. Will the compiler accept that you announce returning `PairIterator<E>` in a class that declares implementing `Iterable<E>` (and thus that should, when asked for `iterator()`, return an `Iterator<E>`), and if so, will it work at runtime? Check your answer by trying it! 
+** Define a class `StringPairIterator` that implements `Iterator<String>`. (Is your class a generic type?) Such an object contains a `Pair` of `String` (as implemented in the previous exercice), and is able to iterate over a pair of two strings. The first call to `next()` gives the left member, the second call to `next()` gives the right member, and `hasNext()` returns `false` afterwards. Document the contracts of `StringPairIterator` and check that they are compatible with the contracts of `Iterator<E>`. In a `main` method, define a pair, then a pair iterator, and use it to print the two members of the pair. Then, define a class `PairIterator<E>` that implements `Iterator<E>` in a similar way (is this new class generic?). Modify your `main` accordingly.
+** Define a class `Pair<E, E>` (a pair whose two members have the same type). Let your class implement `Iterable<E>`. When asked for an iterator, your pair returns an element of type `PairIterator<E>`. Define your method header for `iterator()` such that it announces that it returns `Iterator<E>`. Will the compiler accept that you in fact return `PairIterator<E>` when announcing `Iterator<E>`, and if so, will it work at runtime? Check your answer by trying it! Then, change your method header for `iterator()` such that it announces that it returns `PairIterator<E>`. Will the compiler accept that you announce returning `PairIterator<E>` in a class that declares implementing `Iterable<E>` (and thus that should, when asked for `iterator()`, return an `Iterator<E>`), and if so, will it work at runtime? Check your answer by trying it!
+** Use the https://docs.oracle.com/javase/tutorial/java/nutsandbolts/for.html[enhanced for (for-each) loop] on iterables and arrays!
 * Collections, next: Interfaces extend VS classes implement
 ** http://math.hws.edu/javanotes/contents-with-subsections.html[ES10] to 10.2
 ** For this course, use by default: `ArrayList` / `ImmutableList`; `LinkedHashSet` / `ImmutableSet`; `LinkedHashMap` / `ImmutableMap`.
@@ -238,28 +252,17 @@ Links taken from the https://www.edx.org/bio/eric-s-lander[course] “Introducti
 * https://docs.oracle.com/javase/tutorial/java/javaOO/arguments.html[Varargs]
 ** *Exercice*: call the static method `String.link:https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#format(java.lang.String,java.lang.Object.%2E.)[format]()` with no arguments, then with only one string as argument, then two strings, then three strings. Predict which calls will be accepted by the compiler. Explain in each case what parameters are effectively passed to the method, by considering the method declaration (hint: exactly two parameters are passed for each permissible call).
 * Files and https://github.com/oliviercailloux/java-course/blob/master/Flows.adoc[flows]
-* Static factory method
-** A static method
-** Produces the type of the class it belongs to
-** Serves as a factory
-** Examples: `String.valueOf(true);`, `Integer.valueOf(3);`, `ImmutableList.of();`, `String.link:https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#format(java.lang.String,java.lang.Object...)[format]("Person name: %s, id: %d", name, id);`
+* https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Local%20design.adoc#favor-static-factory-methods[Favor static factory methods]
+** *Exercice*: create two static factory methods for your class `Pair`. One that creates a pair holding twice the same element, and one that creates a pair with elements that are guaranteed to be different.
 * No plagiarism (but reuse!)
 * Projects discussion
 
-* Graded https://github.com/oliviercailloux/java-course/blob/master/Divers/Extractor.adoc[exercice]
-** Submitted code must be clean: well-formatted, clear, well named, …
-** Must compile using Maven (otherwise, no point awarded)
-** No warning given by Eclipse
-** 15h44 to 16h24
-* Choose your https://github.com/oliviercailloux/java-course/blob/master/Divers/Projets.adoc[project]
-* Comparing Persons, revisited, using https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html[Lambda Expressions]
-* Override `equals` and `hashcode`
-
-Delivery 1: before end of the day before _S9_.
+Delivery 1: before end of 20 April.
 
 [[S9]]
 === S9 (Friday 10th of May, 2019)
 
+* Override `equals` and `hashcode`
 * Maps, Comparable, Comparator (voir aussi diapos Airiau)
 * https://github.com/oliviercailloux/java-course/blob/master/Search%20path/README.adoc[Search path] (packages, classes and directories).
 //* http://math.hws.edu/eck/cs124/javanotes7/c10/[ES10.3] to 10.5
