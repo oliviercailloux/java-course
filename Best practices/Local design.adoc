@@ -11,8 +11,10 @@ Avoid method with numerous parameters, especially if they are of the same type. 
 In algebra, you factor an expression such as `ax+bx+cx` by transforming it into `x(a+b+c)`. View this as a way of not repeating yourself: we say only once to multiply by `x`. Similarly, you can often factor your code. When two methods have some code in common, and only differ by a small portion, there is certainly a way of putting what is common to both methods in a method, and let both methods call this one method, or re-use the code in some other way. You thereby make your code more concise (thus easier to understand and verify) and make sure that there is only one place to change if you spot a bug.
 
 == Favor static factory methods
-See https://www.baeldung.com/java-constructors-vs-static-factory-methods[here] for the reasons.
-Use the following idiom.
+Static factory methods are static methods that play the role of constructors (hence the name factory) from the point of view of the user of your class.
+See https://www.baeldung.com/java-constructors-vs-static-factory-methods[here] for the reasons for favoring static factory methods over constructors in your public interface.
+Examples: `String.valueOf(true);`, `Integer.valueOf(3);`, `ImmutableList.of();`, `String.link:https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#format(java.lang.String,java.lang.Object...)[format]("Person name: %s, id: %d", name, id);`.
+Use the following idiom (or an appropriate variant).
 
 [source,java]
 ----
@@ -48,8 +50,8 @@ public boolean equals(Object o2) {
 }
 ----
 
-If the fields may be `null`, use https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/util/Objects.html#equals(java.lang.Object,java.lang.Object){emptyattribute}[`Objects.equals(Object, Object)`] instead.
+If the fields may be `null`, use https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Objects.html#equals(java.lang.Object,java.lang.Object){emptyattribute}[`Objects.equals(Object, Object)`] instead.
 
 == The `#hashCode()` method
-If you override `#equals(Object)`, you must override `#hashCode()` as well. Use simply something like: `return Objects.https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/util/Objects.html#hashCode(java.lang.Object)[hashCode](firstName, secondName)`.
+If you override `#equals(Object)`, you must override `#hashCode()` as well. Use simply something like: `return Objects.https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Objects.html#hashCode(java.lang.Object)[hashCode](firstName, secondName)`.
 
