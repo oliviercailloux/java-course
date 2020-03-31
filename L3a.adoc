@@ -246,6 +246,11 @@ Links taken from the https://www.edx.org/bio/eric-s-lander[course] “Introducti
 ** *Exercice:* define a class `PairIteratorTests` and a test that creates a pair of integers _(2, 3)_ and a `PairIterator` object to iterate over this pair, and verifies that the iterator gives elements _2_, _3_, and that its `hasNext()` method returns `false` only after the second step.
 * Primitive types (autoboxing); optional; give guarantees: https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Null.adoc[Best practices]
 
+*TODO home* 
+
+* https://classroom.github.com/a/zHGHjChL[Coffee], submit before end of 5 April. Start by putting your GitHub username instead of mine in the groupId (thus it should be `io.github.yourgithubusername.samples`). Implement the classes `DripCoffeeMaker` and `MyEspressoMachine`, making sure they satisfy their contracts. You are encouraged to discuss your ideas or doubt with classmates, but you may not share code (any too similar code will be considered cheating and be graded zero). You will be graded automatically. If the code does not compile, the grade is zero. This exercice will have a very low weight if I get a chance to grade sufficiently many exercices after the quarantine or in a better controlled environment (in which case this will be considered essentially as a non graded exercice). Otherwise (if I do not find a better solution), this grade will have a weight similar to other graded exercices.
+* You may submit a new solution to print exec on your (existing) print exec repository, you will receive new comments considering your version at the end of 5 April. This will not count for the grade.
+
 [[S8]]
 === S8 (2 April)
 
