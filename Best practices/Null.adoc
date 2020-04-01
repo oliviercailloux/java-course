@@ -84,6 +84,8 @@ Here is a possible solution to those problems.
 .A better implementation
 [source, Java]
 ----
+import static Preconditions.checkNotNull;
+
 public class Person {
 
 	/**
@@ -114,7 +116,7 @@ public class Person {
 	 */
 	public Person(Department department) {
 		this.address = "";
-		this.department = Objects.requireNonNull(department);
+		this.department = checkNotNull(department);
 		this.emails = new ArrayList<>();
 		this.gender = Optional.empty();
 	}
@@ -181,7 +183,7 @@ public class Person {
 	 *            not <code>null</code>.
 	 */
 	public void setDepartment(Department department) {
-		this.department = Objects.requireNonNull(department);
+		this.department = checkNotNull(department);
 	}
 
 	/**
