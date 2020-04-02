@@ -263,7 +263,7 @@ Links taken from the https://www.edx.org/bio/eric-s-lander[course] “Introducti
 * No plagiarism (but reuse!)
 * Projects discussion
 
-Delivery 1: before end of 20 April.
+Delivery 1: before end of 20 April. See https://github.com/oliviercailloux/java-course/blob/master/Divers/Projets.adoc[instructions].
 
 [[S9]]
 === S9 (Friday 10th of May, 2019)
