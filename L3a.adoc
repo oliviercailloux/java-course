@@ -245,11 +245,10 @@ Links taken from the https://www.edx.org/bio/eric-s-lander[course] “Introducti
 //.. vous arrivez à voir le résultat de votre code javadoc (exemple: `@param truc of type String` inutile)
 * https://github.com/oliviercailloux/java-course/blob/master/JUnit.adoc[Unit testing]
 ** *Exercice:* define a class `PairIteratorTests` and a test that creates a pair of integers _(2, 3)_ and a `PairIterator` object to iterate over this pair, and verifies that the iterator gives elements _2_, _3_, and that its `hasNext()` method returns `false` only after the second step.
-* Primitive types (autoboxing); optional; give guarantees: https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Null.adoc[Best practices]
 
 *TODO home* 
 
-* https://classroom.github.com/a/zHGHjChL[Coffee], submit before end of 5 April. Implement the classes `DripCoffeeMaker` and `MyEspressoMachine`, making sure they satisfy their contracts. You are encouraged to discuss your ideas or doubt with classmates, but you may not share code (any too similar code will be considered cheating and be graded zero). You will be graded automatically. If the code does not compile, the grade is zero. This exercice will have a very low weight if I get a chance to grade sufficiently many exercices after the quarantine or in a better controlled environment (in which case this will be considered essentially as a non graded exercice). Otherwise (if I do not find a better solution), this grade will have a weight similar to other graded exercices. *NB: slightly https://github.com/oliviercailloux/coffee/compare/9c8f44..master[updated] since publication*
+* https://classroom.github.com/a/zHGHjChL[Coffee], submit before end of 5 April. Implement the classes `DripCoffeeMaker` and `MyEspressoMachine`, making sure they satisfy their contracts. You are encouraged to discuss your ideas or doubt with classmates, but you may not share code (any too similar code will be considered cheating and be graded zero). You will be graded automatically. If the code does not compile, the grade is zero. This exercice will have a very low weight if I get a chance to grade sufficiently many exercices after the quarantine or in a better controlled environment (in which case this will be considered essentially as a non graded exercice). Otherwise (if I find no better solution), this grade will have a weight similar to other graded exercices. *NB: slightly https://github.com/oliviercailloux/coffee/compare/9c8f44..master[updated] since publication*
 * You may submit a new solution to print exec on your (existing) print exec repository, you will receive new comments considering your version at the end of 5 April. This will not count for the grade.
 
 [[S8]]
@@ -258,6 +257,7 @@ Links taken from the https://www.edx.org/bio/eric-s-lander[course] “Introducti
 * https://docs.oracle.com/javase/tutorial/java/javaOO/arguments.html[Varargs]
 ** *Exercice*: call the static method `String.link:https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#format(java.lang.String,java.lang.Object.%2E.)[format]()` with no arguments, then with only one string as argument, then two strings, then three strings. Predict which calls will be accepted by the compiler. Explain in each case what parameters are effectively passed to the method, by considering the method declaration (hint: exactly two parameters are passed for each permissible call).
 * Files and https://github.com/oliviercailloux/java-course/blob/master/Flows.adoc[flows]
+* Primitive types (autoboxing); optional; give guarantees: https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Null.adoc[Best practices]
 * https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Local%20design.adoc#favor-static-factory-methods[Favor static factory methods]
 ** *Exercice*: create two static factory methods for your class `Pair`. One that creates a pair holding twice the same element, and one that creates a pair with elements that are guaranteed to be different.
 * No plagiarism (but reuse!)
