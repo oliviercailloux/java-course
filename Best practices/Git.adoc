@@ -26,3 +26,10 @@ Actually, it is easy to misconfigure something in your IDE by mistake, leading t
 
 Finally, it lets developers use the IDE of their choice without being bothered by irrelevant files, and while making sure that everybody uses the same (`pom.xml`) project configuration.
 
+== No old files
+Do not keep old, outdated files (such as an old version of a class or of documentation that you improved), just in the unlikely case you would need it again later. Instead, use a versioning control system, delete the file, and use your VCS to get back in time if you need it. 
+
+If you fear losing time when you will need it, put a link to the old version somewhere (example: a https://github.com/oliviercailloux/java-course/blob/fd16c598ab4a6a3ceb65dbea454a35c764567d02/Best%20practices/Git.adoc[link] to an old version of this document). This is a more compact way of keeping the same information.
+
+This is similar to https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Style.adoc#no-code-disabled-using-comments[this] comment.
+
