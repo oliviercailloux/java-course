@@ -6,6 +6,7 @@
 * Sous-équipes doivent changer à chaque itération ; le rôle de SM/PO doit être réparti égalitairement
 * SM/PO : vérifie le respect des _tâches_ à délivrer ; réoriente les tâches en cas de problème de prérequis ; vérifie que le projet fonctionne toujours après fusion ; est responsable de la cohérence du tout
 * Un binôme de développeurs travaille sur une (typiquement) ou plusieurs tâches dans une itération (exemple : coder une classe pour enregistrer des commandes de produit). Une tâche peut consister à compléter une tâche précédente (ajout de tests unitaires, correction bugs, …).
+* Vos fonctionnalités doivent être couvertes par des tests unitaires, considérés comme partie intégrante de chaque tâche et soumis en même temps que le code testé.
 
 == Pour commencer votre projet
 Pour la première itération Java, le SM/PO crée un squelette initial de projet avec Maven, si ce n’est pas un fork, directement dans la branche `master` (si ce n’est déjà fait).
