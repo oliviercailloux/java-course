@@ -260,7 +260,7 @@ Links taken from the https://www.edx.org/bio/eric-s-lander[course] “Introducti
 * Primitive types (autoboxing); optional; give guarantees: https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Null.adoc[Best practices]
 * https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Local%20design.adoc#favor-static-factory-methods[Favor static factory methods]
 ** *Exercice*: create two static factory methods for your class `Pair`. One that creates a pair holding twice the same element, and one that creates a pair with elements that are guaranteed to be different.
-* No plagiarism (but reuse!)
+* No https://mycore.core-cloud.net/index.php/s/jDdn1OcEfjjj8NU[plagiarism], but reuse! (Link to audio track from https://fr.wikipedia.org/wiki/Le_Jeu_des_dictionnaires[Le Jeu des Dictionnaires], included with permission from geluck.com.)
 * Projects discussion
 
 Delivery 1: before end of 20 April. See https://github.com/oliviercailloux/java-course/blob/master/Divers/Projets.adoc[instructions].
