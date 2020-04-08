@@ -123,7 +123,7 @@ Links taken from the https://www.edx.org/bio/eric-s-lander[course] “Introducti
 [[S4]]
 === S4 (5 March)
 
-* Graded exercice using your knowledge from Shell; Execution; EE2.x; EE3.x (see above). See https://github.com/oliviercailloux/java-course/blob/master/Ex%C3%A9cution/Print%20exec.adoc[Print exec]. (13h47 to 14h47)
+* Graded exercice using your knowledge from Shell; Execution; EE2.x; EE3.x (see above). See https://github.com/oliviercailloux/java-course/blob/master/Execution/Print%20exec.adoc[Print exec]. (13h47 to 14h47)
 * https://github.com/oliviercailloux/java-course/raw/master/Objets/presentation.pdf[Objets]
 ** http://math.hws.edu/javanotes/c5/[ES5] intro to 5.4
 * *Exercices:*
