@@ -56,6 +56,8 @@ N’hésitez pas à m’écrire si vous êtes bloqués, n’attendez pas d’avo
 
 === Abréviations
 
+OPT : J’indique (OPT) lorsque mon commentaire a pour but principal de vous indiquer comment vous auriez pu faire mieux. (Il s’agit généralement d’une erreur mineure ou d’une amélioration possible de la clarté du code mais qui ne l’empêche pas de fonctionner.) Vous pouvez quand-même modifier si vous voulez, mais je ne l’exige pas avant fusion dans `master` ; mais tenez-en compte en tous cas pour vos prochaines PRs !
+
 |===
 | Abbrv | Pratique à respecter | Informations | Sanction (/ 10, indicatif)
 | INSTR | Respect des instructions concernant la remise (création issues, etc.) | Instructions / project | −1
