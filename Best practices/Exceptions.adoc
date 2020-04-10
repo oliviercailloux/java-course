@@ -22,6 +22,9 @@ Thus, I consider it sensible to follow the standard. And the standard is to thro
 * https://guava.dev/releases/snapshot/api/docs/com/google/common/base/Preconditions.html#checkNotNull-T-[Guava] also favors `NullPointerException` over `IllegalArgumentException`.
 * “Effective Java” agrees, see https://stackoverflow.com/a/6358[SO].
 
+== Throw `IllegalStateException` when the state is incorrect
+When your object, or the external environment, is in a state that does not permit to call the current method, throw `IllegalStateException`. Even if the problem is that some internal reference is `null`. For example, your `Database` class requires the `connection` field to be not `null` before calling `requestData()`. If the user breaks this requirement, the method `requestData()` should throw `IllegalStateException`, not `NullPointerException` (which, by convention, indicates that a received _argument_ is `null` and should not be). There is no incorrect argument here! Thus, you may not use `https://guava.dev/releases/snapshot/api/docs/com/google/common/base/Preconditions.html#checkNotNull-T-[checkNotNull](connection)` in that case.
+
 == Declare most general exceptions on non callable methods
 Some methods are conceived to be executed, not to be called by other methods: `main` methods and unit testing methods. In such cases, the precise list of exceptions that can be thrown is irrelevant. Just declare that the method throws `Exception` and do not worry about it.
 
