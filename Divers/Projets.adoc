@@ -8,6 +8,8 @@
 * Un binôme de développeurs travaille sur une (typiquement) ou plusieurs tâches dans une itération (exemple : coder une classe pour enregistrer des commandes de produit). Une tâche peut consister à compléter une tâche précédente (ajout de tests unitaires, correction bugs, …).
 * Vos fonctionnalités doivent être couvertes par des tests unitaires, considérés comme partie intégrante de chaque tâche et soumis en même temps que le code testé.
 
+N’hésitez pas à m’écrire si vous êtes bloqués, n’attendez pas d’avoir perdu plusieurs heures. Cependant, je vous demande de faire l’effort de poser des questions raisonnablement claires et complètes, et de m’indiquer ce que vous avez essayé et votre analyse de la situation. Voyez ces https://codeblog.jonskeet.uk/2012/11/24/stack-overflow-question-checklist/[directives] pour vous inspirer. Si votre question peut intéresser les autres membres du groupe ou qu’il est utile de conserver la discussion pour référence future, créez une issue sur votre projet GitHub où vous décrivez votre problème et demandez-moi (par e-mail par exemple) d’y répondre en me donnant le lien.
+
 == Pour commencer votre projet
 Pour la première itération Java, le SM/PO crée un squelette initial de projet avec Maven, si ce n’est pas un fork, directement dans la branche `master` (si ce n’est déjà fait).
 
@@ -38,8 +40,6 @@ Voici quelques points de départ possibles pour améliorer le projet, ou points 
 * Si vous ne respectez pas les instructions et que cela m’empêche de donner une note, j’indiquerai INSTR, éventuellement associé de mots-clés (SEP, FOLLOW-UP, etc.). Dans ce cas, _votre livraison n’est pas acceptée_. J’attends une correction pour respect des instructions. (Suivez les instructions de modification sur une même branche, ci-dessus.) En attendant, votre délai de retard cours, si la date de livraison est dépassée. (Seule cette abréviation INSTR indique que votre livraison n’est pas acceptée. Si j’utilise d’autres abréviations, elles se réfèrent généralement à la table ci-dessous, et font partie de mon évaluation normale de votre tâche.) Envoyez-moi un e-mail sans attendre si vous pensez que vous avez bien respecté les instructions ou si vous ne comprenez pas ce que j’attends.
 
 Lors de la dernière itération, vous ajouterez dans votre README de projet une ligne indiquant, pour chacun d’entre vous, la diversité des tâches auxquelles vous avez participé (exemple : GUI dans tâche Truc, test unitaire dans tâche Bidule, parsing XML dans tâche Machin), et éventuellement un commentaire bref indiquant les difficultés particulières auxquelles vous avez été confronté dans votre projet ou dans vos tâches en particulier, pour attirer mon attention lors de l’évaluation finale.
-
-N’hésitez pas à m’écrire si vous êtes bloqués, n’attendez pas d’avoir perdu plusieurs heures. Cependant, je vous demande de faire l’effort de poser des questions raisonnablement claires et complètes. Voyez ces https://codeblog.jonskeet.uk/2012/11/24/stack-overflow-question-checklist/[directives] pour vous inspirer.
 
 == Évaluation
 * Chaque binôme de développeurs reçoit une note par livraison (agrégeant mon évaluation de l’ensemble de ses tâches durant cette itération). Le SM/PO reçoit simplement une appréciation `++`, `+`, `~`, `−`, `−−`. Cette appréciation sera transformée en la note moyenne de la personne évaluée au moment de l’agrégation finale, avec un bonus ou un malus.
