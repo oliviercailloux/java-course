@@ -56,7 +56,9 @@ Lors de la dernière itération, vous ajouterez dans votre README de projet une 
 
 === Abréviations
 
-OPT : J’indique (OPT) lorsque mon commentaire a pour but principal de vous indiquer comment vous auriez pu faire mieux. (Il s’agit généralement d’une erreur mineure ou d’une amélioration possible de la clarté du code mais qui ne l’empêche pas de fonctionner.) Vous pouvez quand-même modifier si vous voulez, mais je ne l’exige pas avant fusion dans `master` ; mais tenez-en compte en tous cas pour vos prochaines PRs !
+J’indique (OPT) lorsque mon commentaire a pour but principal de vous indiquer comment vous auriez pu faire mieux. (Il s’agit généralement d’une erreur mineure ou d’une amélioration possible de la clarté du code mais qui ne l’empêche pas de fonctionner.) Vous pouvez quand-même modifier si vous voulez, mais je ne l’exige pas avant fusion dans `master` ; mais tenez-en compte en tous cas pour vos prochaines PRs !
+
+Lorsque j’ajoute (FUTURE) à un commentaire, de même, je n’exige pas une résolution du problème avant fusion dans `master` (pour vous permettre d’avancer sur d’autres fonctionnalités à court terme), mais je vous prie d’ouvrir une Issue sur votre projet et d’y reporter mon commentaire et un lien vers l’endroit où j’ai fait le commentaire (pour retrouver le contexte). Vous êtes priés de vous occuper de ces issues lors d’itérations futures, en discussion avec moi éventuellement.
 
 |===
 | Abbrv | Pratique à respecter | Informations | Sanction (/ 10, indicatif)
