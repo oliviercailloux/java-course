@@ -9,9 +9,9 @@ See https://tutorial.djangogirls.org/en/intro_to_command_line/[Introduction to c
 == About arguments
 A shell command contains (typically) a program name, followed by arguments, separated by spaces. Example: `touch afile anotherfile` calls the program `touch` with two arguments. (This command creates two empty files, `afile` and `anotherfile`, if they do not exist already.) To form a single argument containing spaces, use quotes. Example: `touch "a file" "another file"` contains two arguments: `a file` and `another file`. Thus, this command creates two files, named `a file` and `another file`, with spaces in their names. The command `touch a file another file` (without quotes) would instead create four files. 
 
-Here are other examples for better understanding what an argument is: the command `ls -a` has one argument, `-a`. It is equivalent to `ls "-a"`. The command `ls --color always "a file"` has three arguments. The https://git-scm.com/docs/git-config[command] `git config --type bool --get core.filemode` has five arguments.
-
 Exercice: open a shell, navigate (using `cd`) to some different place of your choice on your hard disk, create a file `my file.txt` there, delete it with your graphical file explorer, check in the terminal that it has disappeared (using `ls`).
+
+Here are other examples for better understanding what an argument is: the command `ls -a` has one argument, `-a`. It is equivalent to `ls "-a"`. The command `ls --color=always "a file"` has two arguments. The https://git-scm.com/docs/git-config[command] `git config --type bool --get core.filemode` has five arguments (considering `git` as the command and `config` as its first argument).
 
 [[Paths]]
 == Relative and absolute paths
