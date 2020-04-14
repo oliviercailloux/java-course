@@ -8,7 +8,7 @@ Simple exercices for Maven. The reader is supposed to know already the basics of
 == Default sample project
 In this exercice we will use an archetype called `maven-archetype-quickstart`, that allows us to generate a basic project.
 
-* Open a terminal. Move into a folder into which you want to put your new project (which will be created as a sub-folder).
+* Open a terminal. Move into a directory into which you want to put your new project (which will be created as a sub-directory).
 * Type `mvn org.apache.maven.plugins:maven-archetype-plugin:3.1.2:generate`. 
 
 The command `mvn` followed by “groupId:pluginId:version:goal” runs Maven with the given goal, defined in the given plugin.
@@ -26,23 +26,23 @@ We’ll start by using the archetype having groupId and artifactId `org.apache.m
 * Consider the next question. What is the default answer? We want to accept the default, so we just press ENTER.
 * Answer the remaining questions, either by accepting the default answers when they seem reasonable, or by providing your own answers.
 
-Your project gets created in a sub-folder of your current position.
+Your project gets created in a sub-directory of your current position.
 
 * Which files has Maven created? What are their purpose?
 * In the terminal, move into the newly created project.
 * Type `mvn compile`. What does it do, and why (how does it work)? Is `compile` a phase, or a plugin goal (http://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html#Lifecycle_Reference{emptyattribute}[answer])?
-* What has changed in your project folder?
-* Run the compiled application from the shell (go into the `target/classes` folder and use the _full name_ of the class you want to run). What does it do?
+* What has changed in your project directory?
+* Run the compiled application from the shell (go into the `target/classes` directory and use the _full name_ of the class you want to run). What does it do?
 
 == Modern project
 Let’s now use a different archetype to generate a project better suited for our future use.
 
-* Move into the folder of your choice to prepare for the new project creation.
+* Move into the directory of your choice to prepare for the new project creation.
 * Use the appopriate command to trigger the archetype `generate` goal again.
 * This time, use the `io.github.oliviercailloux:java-archetype` archetype.
 * Answer the required questions.
 
-Your project gets created in a sub-folder of your current position.
+Your project gets created in a sub-directory of your current position.
 
 * What changed, compared to the previous project? Compare in particular both `pom.xml` files: what changed? What will be the effect of those changes?
 * Compare your answer to the https://github.com/oliviercailloux/java-archetype[documentation].

@@ -13,7 +13,7 @@ If Eclipse is lost, first try to update the Eclipse configuration from the Maven
 If Eclipse is still lost, make sure it uses the configuration from Maven (sometimes the above procedure does not suffice):
 
 * Remove the project from Eclipse (delete the project from Eclipse, not the project files!)
-* Manually delete the Eclipse configuration from within your project folder: `.project`, `.classpath` and the folder `.settings`.
+* Manually delete the Eclipse configuration from within your project directory: `.project`, `.classpath` and the directory `.settings`.
 * Re-import the project into Eclipse. This forces Eclipse to re-create the configuration from scratch (based on Maven).
 
 == References

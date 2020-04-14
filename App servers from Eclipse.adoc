@@ -15,7 +15,7 @@ Now you may add this RE to any of your existing Eclipse Java EE projects. This w
 * Go to the project properties and `Targeted Runtime`, select `My WildFly 14.0 Runtime`.
 
 You should now be able to deploy your project to your application server manually.
-From Eclipse, export your project as an archive. Note that Eclipse is clever enough not to include the Runtime Environments libraries in your archive. (You can see that by uncompressing the produced archive.) Put the archive inside the relevant folder in your application server. Check that your application is reachable.
+From Eclipse, export your project as an archive. Note that Eclipse is clever enough not to include the Runtime Environments libraries in your archive. (You can see that by uncompressing the produced archive.) Put the archive inside the relevant directory in your application server. Check that your application is reachable.
 
 == Servers
 In order to deploy your application from within Eclipse, Eclipse must “see” your server.

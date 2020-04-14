@@ -22,8 +22,8 @@ An option can be configured locally (for a given repository) or globally (for ev
 ** Hint: type `git config` and read the doc; use the option `--global`. See https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup[here] for detailed explanations.
 
 === First commit
-* Create a new folder `project` and put there a file `start.txt` with content `hello`.
-* Initialize a new git repository in your folder.
+* Create a new directory `project` and put there a file `start.txt` with content `hello`.
+* Initialize a new git repository in your directory.
 ** Hint: check in the slides, or in the Cheat sheets, how to do this.
 * Put `start.txt` in the index. Modify its content so that it contains `hello2`. Observe (using a git command) the difference between the version of this file in the workdir, in the index, and in the repository (all three should be different). Now place your new version of `start.txt` in the index.
 * Send your first commit. (Where is it sent?) Check that your current situation conforms to <<C1>>.
@@ -61,7 +61,7 @@ Thinking about it, you decide to merge both your ideas into `master`.
 
 == Remote repository
 
-* Clone your local repository into another folder of your same computer, in order to create another repository. Let’s call your original repository R1, your new one (cloned) R2, and the respective work directories WD1 and WD2. This way we simulate multiple users, using only your computer.
+* Clone your local repository into another directory of your same computer, in order to create another repository. Let’s call your original repository R1, your new one (cloned) R2, and the respective work directories WD1 and WD2. This way we simulate multiple users, using only your computer.
 ** Hint: proceed as if cloning from an url, but give it instead your local path to your repository.
 * Now R2 should have remote repository named `origin` pointing to R1, and a remote-tracking branch `master`. (The term “remote” is ill-suited here, generally your remote would effectively be located on another computer.) Use git commands to see what `origin` refers to, as well as `master` and `origin/master`.
 * Change the content of the file `bold.txt` into WD1 (add your first name). Commit into R1.
@@ -74,7 +74,7 @@ Thinking about it, you decide to merge both your ideas into `master`.
 * Create a new remote remository, RG, on https://github.com/[GitHub]. Connect R1 to RG.
 ** Hint: understand and adapt the instructions given by GitHub.
 * Send your local informations to RG. Check with a browser that they have reached GitHub.
-* Clone RG into a new folder, R3. Modify a file and commit into R3. Send it to RG. Check online.
+* Clone RG into a new directory, R3. Modify a file and commit into R3. Send it to RG. Check online.
 * Modify something in R1, commit. Try to send it to RG. Why is it refused? How can you effectively send your last modification online? Send it to your RG repository.
 * Send your two branches `dev` and `dev2` to RG as well. Check that you see them online.
 

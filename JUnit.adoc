@@ -37,7 +37,7 @@ Let us write a test for this method!
 * It is important in particular to check boundary conditions: what happens when the value is zero? Negative? Infinite (for a `double`)? `null` (for an object)? 
 * You should follow some specified naming patterns for naming your test classes, otherwise they might be https://junit.org/junit5/docs/current/user-guide/#running-tests-build-maven[ignored], depending on your build tool. Ending their names with “Tests” is a best practice.
 * Your test class should lie in the same package as the class it tests.
-* Your test classes should be in the `src/test/java` source folder, distinct from the rest of your code (lying in `src/main/java`): you do not want to distribute your test classes to users, this is only for internal use; and it makes it easy to find them.
+* Your test classes should be in the `src/test/java` source directory, distinct from the rest of your code (lying in `src/main/java`): you do not want to distribute your test classes to users, this is only for internal use; and it makes it easy to find them.
 * Instead of `import `org.junit.jupiter.api.Assertions;` and `Assertions.assertEquals(…)`, write `static import `org.junit.jupiter.api.Assertions.assertEquals;` (which permits to use the short name of a single method) and `assertEquals(…)`.
 * Order the parameters of `assertEquals` correctly, otherwise you get confusing messages when tests fail. Check the numerous other assert-like methods that you can use and learn to use the right one.
 
