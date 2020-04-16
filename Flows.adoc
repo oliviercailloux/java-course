@@ -1,4 +1,5 @@
 = Flows
+:toc:
 
 About manipulation of flows (including byte streams, character flows, files) in Java.
 
