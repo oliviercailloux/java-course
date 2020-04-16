@@ -256,7 +256,7 @@ Links taken from the https://www.edx.org/bio/eric-s-lander[course] “Introducti
 Delivery 1: before end of 20 April. See https://github.com/oliviercailloux/java-course/blob/master/Divers/Projets.adoc[instructions].
 
 [[S9]]
-=== S9 (Friday 10th of May, 2019)
+=== S9 (22 April)
 
 * Override `equals` and `hashcode`
 * Maps, Comparable, Comparator (voir aussi diapos Airiau)
@@ -278,25 +278,25 @@ Delivery 1: before end of 20 April. See https://github.com/oliviercailloux/java-
 * https://github.com/oliviercailloux/java-course/blob/master/DevOps/CI.adoc[CI]: Travis
 
 [[S10]]
-=== S10 (Monday 20th of May, 2019)
+=== S10 (23 April)
 
 * https://stackoverflow.com/questions/28972893/what-is-exception-wrapping-in-java[Wrapping] exceptions
 * https://github.com/oliviercailloux/java-course/blob/master/Log/README.adoc[Logging]
 * https://github.com/oliviercailloux/java-course/raw/master/Annotations/presentation.pdf[Annotations]
 
 [[S11]]
-=== S11 (Thursday 23rd of May, 2019)
+=== S11 (4 May)
 
 * https://github.com/oliviercailloux/java-course/tree/master/SWT[SWT]
 
 [[S12]]
-=== S12 (Friday 24th of May, 2019)
+=== S12 (6 May)
 
 * Back to https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html[Method references]
 * TODO : livraison suivante avant fin de la veille de la prochaine séance.
 
 [[S13]]
-=== S13 (Tuesday 4th of June, 2019)
+=== S13 (7 May)
 
 * Graded https://github.com/oliviercailloux/java-course/blob/master/Divers/JUnit.adoc[exercice]: unit tests / access resources through class path / continue Extractor.
 ** 17h17 to 17h42 (5 min for delays due to GitHub)
