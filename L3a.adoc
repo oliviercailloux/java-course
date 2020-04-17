@@ -258,33 +258,36 @@ Delivery 1: before end of 20 April. See https://github.com/oliviercailloux/java-
 [[S9]]
 === S9 (22 April)
 
-* Comparable, Comparator, Maps (see also: Airiau)
-** http://math.hws.edu/eck/cs124/javanotes7/c10/[ES10.3] to 10.5
-** http://math.hws.edu/eck/cs124/javanotes7/c8/[ES8] intro to 8.4
+* Files and https://github.com/oliviercailloux/java-course/blob/master/Flows.adoc[flows]: https://github.com/oliviercailloux/java-course/blob/master/Flows.adoc#path-operations[Path operations] and providers.
+* Comparable, Comparator, Maps
+** More info: http://math.hws.edu/eck/cs124/javanotes7/c10/[ES10.3] to 10.5, http://math.hws.edu/eck/cs124/javanotes7/c8/[ES8] intro to 8.4, Airiau http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours6.pdf[Airiau C6]
 * *Exercices*:
 ** Define an interface `EasyMap` with two methods: a method that puts a pair of key and value of your choice into a map, and a method that returns an `Optional` containing the value corresponding to the given key (parameter of the method) or that returns an empty `Optional` if there is no such value. Implement this interface in a class `EasyMapImpl`. Provide a static factory method in the interface `EasyMap`. Minimize the number of lines of code (but not at the price of readability). Note that this exercice implements a part of the https://en.wikipedia.org/wiki/Forwarding_(object-oriented_programming)[forwarding] pattern.
 ** Define `MyComparator`, a class that implements a comparator over your values. Add a third method to `EasyMap`, that returns a list of values ordered by that comparator.
 // implement a hashmap with a list of lists
 ** *TODO home* http://math.hws.edu/javanotes/c10/exercises.html[EE10.3] (you may use `List` implementations, but not `Map`, of course)
 // TreeMap<String, TreeSet<Integer>>  concordance
-** http://math.hws.edu/javanotes/c10/exercises.html[EE10.6] (you may use `List` implementations, but not `Map`, of course)
+** http://math.hws.edu/javanotes/c10/exercises.html[EE10.6]
 
 //* https://www.youtube.com/watch?v=lcYkOh4nweE&t=1m21s[Mars Climate Orbiter] (1m21 to 5m18; small mistake in the video: it’s Newton times second, not Newton force per second; see also https://en.wikipedia.org/wiki/Mars_Climate_Orbiter[Wikipedia]; similarly http://www-users.math.umn.edu/~arnold/disasters/ariane.html[sad] https://www.youtube.com/watch?v=gp_D8r-2hwk[story]{emptyattribute})
+
+Delivery 2: before end of 5 May. Recall: 10 hours of efficient work / person expected for each delivery. Focus on quality rather than on quantity.
 
 [[S10]]
 === S10 (23 April)
 
-* Override `equals` and `hashcode`
+* Graded test: `Set`, `List`, files, flows, paths, providers, and the methods `https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/nio/file/Files.html[Files]#copy`, `createFile`, `delete`, `exists`, `isDirectory`, `readAllLines`, `readString`, `write`, `writeString`.
+* Override https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Local%20design.adoc#the-equalsobject-method[`equals`] and `hashcode`
 * https://github.com/oliviercailloux/java-course/blob/master/Search%20path/README.adoc[Search path] (packages, classes and directories).
 * https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Resources.adoc[Resources]; exercice: read a file from the class path.
-* https://stackoverflow.com/questions/28972893/what-is-exception-wrapping-in-java[Wrapping] exceptions
-* https://github.com/oliviercailloux/java-course/blob/master/Log/README.adoc[Logging]
-* https://github.com/oliviercailloux/java-course/raw/master/Annotations/presentation.pdf[Annotations]
-* https://github.com/oliviercailloux/java-course/blob/master/DevOps/CI.adoc[CI]: Travis
 
 [[S11]]
 === S11 (4 May)
 
+* https://stackoverflow.com/questions/28972893/what-is-exception-wrapping-in-java[Wrapping] exceptions
+* https://github.com/oliviercailloux/java-course/blob/master/Log/README.adoc[Logging]
+* https://github.com/oliviercailloux/java-course/raw/master/Annotations/presentation.pdf[Annotations]
+* https://github.com/oliviercailloux/java-course/blob/master/DevOps/CI.adoc[CI]: Travis
 * https://github.com/oliviercailloux/java-course/tree/master/SWT[SWT]
 
 [[S12]]
