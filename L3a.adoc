@@ -258,7 +258,7 @@ Delivery 1: before end of 20 April. See https://github.com/oliviercailloux/java-
 [[S9]]
 === S9 (22 April)
 
-* Files and https://github.com/oliviercailloux/java-course/blob/master/Flows.adoc[flows]: https://github.com/oliviercailloux/java-course/blob/master/Flows.adoc#path-operations[Path operations] and providers.
+* Files and flows: https://github.com/oliviercailloux/java-course/blob/master/Flows.adoc#path-operations[Path operations] and providers.
 * Comparable, Comparator, Maps
 ** More info: http://math.hws.edu/eck/cs124/javanotes7/c10/[ES10.3] to 10.5, http://math.hws.edu/eck/cs124/javanotes7/c8/[ES8] intro to 8.4, Airiau http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours6.pdf[Airiau C6]
 * *Exercices*:
