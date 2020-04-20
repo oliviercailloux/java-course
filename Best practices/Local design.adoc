@@ -8,11 +8,24 @@ Various tips for good code from the local structure point of view (as opposed to
 Avoid method with numerous parameters, especially if they are of the same type. It increases the risk of passing a parameter for another one. For example, avoid `buildPerson(firstName: String, lastName: String, description: String, phoneNumber: String, address: String)` (use a https://codereview.stackexchange.com/a/127509[builder] instead).
 
 == Choose your return types wisely
-When a method returns a narrow type rather than a more general one (for example, `ImmutableList` instead of `List` or `Collection`), it makes it possibly more useful for the user: it documents more precisely what the returned type permits to do. On the other hand, it ties your implementation more strongly, as it better specifies the service that your method offers.
+When a method returns a narrow type rather than a more general one (for example, `ImmutableList` instead of `List`, or `List` instead of `Iterable`), it makes it possibly more useful for the user, because a more specific returned type may offer more services or more guarantees. For example, `ImmutableList` makes it clear that the list will never be modified; `List` permits to access an element https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html#get(int)[by index] or to ask for the https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html#size()[size] of the collection, which you can’t do with a simple `Iterable`. 
 
-Sometimes, the best choice will depend on the specific details of your method or its intended usage. But some choices may be usually bad: if a type is more specific but does not offer much more capabilities, it is a bad choice. For example, there is usually no reason to return `ArrayList`.
+On the other hand, returning a narrow type ties your implementation more strongly, as it better specifies the service that your method offers. For example, if you declare you return a `Collection` rather than a `List`, you can choose to rather return a `Set` later instead of a list.
+
+Sometimes, the best choice will depend on the specific details of your method or on its intended usage. But some choices may be usually bad: if a type is more specific but does not offer much more capabilities, it is a bad choice. For example, there is usually no reason to return `ArrayList` rather than `List`. And it very often makes conceptual sense to choose once and for all to return a `List` (because duplicates are possible or access by index makes sense), or choose once and for all to return a `Set` (because duplicates should be merged and access by index is unimportant): if one of those possibilities is conceptually justified but the other one is not, it is probably unwise to return a simple `Iterable` instead of a more capable type.
 
 https://stackoverflow.com/a/9521003[Favor] returning https://github.com/google/guava/wiki/ImmutableCollectionsExplained[`Immutable*`] collection kinds, to promote http://www.javapractices.com/topic/TopicAction.do?Id=29[immutability] in your application.
+
+== Accept general parameters if not costly
+Consider whether it is advantageous to design your method so that it accepts more general parameters. For example, instead of accepting a `Set`, can you make it accept a `Collection`? Or an `Iterable`? Making your method accepts more general parameters makes it more general.
+
+Similarly to the previous point, there are usually pro and cons with accepting more general parameters (thus making it more general): it makes the method more likely to be useful or easier to use, but it may render implementation more difficult, or it may be more difficult to understand what the method does. Thus, the best answer may be subjective or subtly depend on the case at hand, but some choices may still be better than others.
+
+For example, a method that takes a `Set` as parameter and prints its content to the screen should rather accept as parameter an `Iterable`: it has no drawback and thus makes the method more general “for free”: now the method can be called also with a `List`, for example.
+
+But, as another example, consider a method that takes a `Set` as parameter but that does something that makes sense only if the input collection contains no duplicates. In such a case, the fact that the parameter is a `Set` helps the user understand what the method does, or an important constraint on its use. It may be quite unclear what the method would do if the input was a list (you would perhaps need to document that, for example, duplicates will be eliminated).
+
+On the other hand, I have never seen a valid reason to accept an `ImmutableSet` instead of a `Set` as a parameter, for example: such a type is more constraint, thus makes the method less general, but it hardly makes anything clearer and does not ease implementation.
 
 == Factor
 In algebra, you factor an expression such as `ax+bx+cx` by transforming it into `x(a+b+c)`. View this as a way of not repeating yourself: we say only once to multiply by `x`. Similarly, you can often factor your code. When two methods have some code in common, and only differ by a small portion, there is certainly a way of putting what is common to both methods in a method, and let both methods call this one method, or re-use the code in some other way. You thereby make your code more concise (thus easier to understand and verify) and make sure that there is only one place to change if you spot a bug.
@@ -63,5 +76,7 @@ If the fields may be `null`, use https://docs.oracle.com/en/java/javase/11/docs/
 If you override `#equals(Object)`, you must override `#hashCode()` as well. Use simply something like: `return Objects.link:https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Objects.html#hashCode(java.lang.Object)[hashCode](firstName, secondName)`.
 
 == Tests and main should throw `Exception`
-In methods that are not designed to be called (such as unit testing and `main` methods), a detailed list of the kinds of exceptions that can be thrown is not very useful. Maintaining such a list is cumbersome, and an incorrect list is worst than no list. Thus, instead of `testWrite() throws NoSuchFileException, DatabaseException, ParsingException`, choose: `testWrite() throws Exception`, and do not worry about it.
+In methods that are not designed to be called (such as unit testing and `main` methods), a detailed list of the kinds of exceptions that can be thrown is not very useful. Maintaining such a list is cumbersome, and an incorrect list is worst than no list. 
+
+Thus, instead of `testWrite() throws NoSuchFileException, DatabaseException, ParsingException`, choose: `testWrite() throws Exception`, and do not worry about it.
 
