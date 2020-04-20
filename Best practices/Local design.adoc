@@ -62,3 +62,6 @@ If the fields may be `null`, use https://docs.oracle.com/en/java/javase/11/docs/
 == The `#hashCode()` method
 If you override `#equals(Object)`, you must override `#hashCode()` as well. Use simply something like: `return Objects.link:https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Objects.html#hashCode(java.lang.Object)[hashCode](firstName, secondName)`.
 
+== Tests and main should throw `Exception`
+In methods that are not designed to be called (such as unit testing and `main` methods), a detailed list of the kinds of exceptions that can be thrown is not very useful. Maintaining such a list is cumbersome, and an incorrect list is worst than no list. Thus, instead of `testWrite() throws NoSuchFileException, DatabaseException, ParsingException`, choose: `testWrite() throws Exception`, and do not worry about it.
+
