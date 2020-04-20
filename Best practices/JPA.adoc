@@ -9,7 +9,7 @@ Tell JPA to use delimited identifiers (see the object/relational xml mapping fil
 
 [[metamodel]]
 == Metamodel generator for typesafe JPA queries
-To generate the metamodel for use with typesafe Criteria queries, suffices to include a metamodel generator in your classpath (http://hibernate.org/orm/tooling/[doc], see my https://github.com/oliviercailloux/samples/tree/master/JavaEE-JPA-JSF[JavaEE-JPA-JSF] sample). Set it to `<provided>` scope as your code does not depend on it at runtime. 
+To generate the metamodel for use with typesafe Criteria queries, suffices to include a metamodel generator in your class path (http://hibernate.org/orm/tooling/[doc], see my https://github.com/oliviercailloux/samples/tree/master/JavaEE-JPA-JSF[JavaEE-JPA-JSF] sample). Set it to `<provided>` scope as your code does not depend on it at runtime. 
 
 * For correct integration in Eclipse (neon, Java EE version), I have installed `Maven Integration for Eclipse JDT Annotation Processor Toolkit`, then in the project settings, Maven / Annotation Processing, selected: Automatically configure JDT APT. (Eclipse also has an internal option to generate the metamodel, see the project options at JPA / Canonical metamodel, but I don’t use that as it would reduce compatibility of the project with other IDEs.)
 

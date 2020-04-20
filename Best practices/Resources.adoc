@@ -3,14 +3,14 @@
 == Access resources from code
 Scenario: your class `MyClass` requires a resource `data_file.csv` to work. Where should you put it and how to access it from code?
 
-You first decision is to either access the resource through the file system, or through the classpath. I favor classpath access (unless specific objections apply). Here we assume the resource is accessed through the classpath.
+You first decision is to either access the resource through the file system, or through the class path. I favor class path access (unless specific objections apply). Here we assume the resource is accessed through the class path.
 
 === Use unique names
-You need to give your resource a unique name. Otherwise, conflicts may happen with other packages (another package might come with a resource named like yours). To get things nicely sorted out, I suggest to use the package name of the (main) class that uses the resource. (Your class does have a link:Maven.adoc[unique package name], right?)
+You need to give your resource a unique name. Otherwise, conflicts may happen with other packages (another package might come with a resource named like yours). To get things nicely sorted out, I suggest to use the package name of the (main) class that uses the resource. (I suppose your class already has a link:Maven.adoc[unique package name].)
 
 To recap.
 
-* _Wrong_: putting your resource named `data_file.csv` in the root of your classpath. (What happens if another package you depend on also happens to ship with a resource named `data_file.csv` and has followed the same wrong strategy?)
+* _Wrong_: putting your resource named `data_file.csv` in the root of your class path. (Because conflicts would happen if another package you depend on also happens to ship with a resource named `data_file.csv` and has followed the same wrong strategy.)
 * _Right_: the resource is processed by some class `MyClass` in the package `com.mydomain.myproject.mysubpackage`, and therefore your resource goes into the folder `com/mydomain/myproject/mysubpackage` in your resource folder.
 
 === Access the resource
@@ -20,5 +20,19 @@ Here is a simple way to access your resource.
 ----
 URL resourceUrl = MyClass.class.getResource("data_file.csv");
 ----
-With this statement you ask the class loader to get your resource from the classpath, relative to the path of `MyClass`. You obtain a reference to the said resource. You can then invoke `resourceUrl.openStream()`, for example.
+With this statement you ask the class loader to get your resource from the class path, relative to the path of `MyClass`. You obtain a reference to the said resource. You can then invoke `resourceUrl.openStream()`, for example.
+
+== Do not write in your class path (or in your source folder)
+By design, the class path contains data that your program can *read*, but not write. If you want to write data, this should not be on the class path, but in memory; on the user’s hard disk; on the network… 
+
+Similarly, do not write in your source folder (for example, do not write to `src/test/resources`). Your *source* folder, by convention, is there to hold resources that serve as sources for your program, not as a place to store data or to write temporary data (see next point).
+
+== Make sure your methods that write data can write anywhere
+A method that writes data (for example, converts some object to an XML representation) should be able to write not only on a file sitting on a hard disk, but also in memory or generally on any output stream: this makes it more general, at no cost. 
+
+For example, instead of `asXml(String fileName)`, design your class with a method `asXml(Path outputPath)` and `asXml(OutputStream stream)` (just the first one is a better choice if your data size is small; the second one should accept a `Writer` instead of an `OutputStream` for character based flows).
+
+In particular, it often happens that some unit test needs to call a method that writes data, then needs to re-read the data just written, to check for correctness. In that case, writing to a physical file is inelegant: creating a physical file just to read it and deleting it afterwards is a waste of time and resources, and practically speaking, it requires to find some place on the hard disk where your code has write access, then make sure that somehow the file gets deleted afterwards. It is much better to write in memory. 
+
+See https://github.com/oliviercailloux/java-course/blob/master/Flows.adoc[Flows] to implement these advices.
 

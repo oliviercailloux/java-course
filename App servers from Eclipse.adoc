@@ -10,7 +10,7 @@ This document briefly explains how to configure Java EE Application Servers from
 * You must have already installed the `JBoss AS Wildfly, EAP & Server Tools` plugin for Eclipse (see https://github.com/oliviercailloux/java-course/blob/master/Tools.adoc[Tools]). If you want another server, you probably need another plugin.
 * Within Eclipse: `Preferences / Server / Runtime Environments`. Add your local WildFly installation there. Name it `My WildFly 14.0 Runtime`. (You should not mix up Runtime Environments and servers!)
 
-Now you may add this RE to any of your existing Eclipse Java EE projects. This will add the corresponding libraries in the classpath.
+Now you may add this RE to any of your existing Eclipse Java EE projects. This will add the corresponding libraries in the class path.
 
 * Go to the project properties and `Targeted Runtime`, select `My WildFly 14.0 Runtime`.
 
