@@ -23,7 +23,7 @@ Similarly to the previous point, there are usually pro and cons with making a me
 
 For example, a method that takes a `Set` as parameter and prints its content to the screen should rather accept an `Iterable` as parameter: this has no drawback and thus makes the method more general “for free”: now the method can be called also with a `List`, for example.
 
-But, as another example, consider a method that takes a `Set` as parameter but that does something that makes sense only if the input collection contains no duplicates. In such a case, the fact that the parameter is a `Set` helps the user understand what the method does, or an important constraint on its use. It may be quite unclear what the method would do if the input was a list (you would perhaps need to document that, for example, duplicates will be eliminated).
+But, as another example, consider a method that takes a `Set` as parameter but that does something that makes sense only if the input collection contains no duplicates. In such a case, the fact that the parameter is a `Set` helps the user understand the method. It may be quite unclear what the method would do if the input was a list (you would perhaps need to document that, for example, duplicates will be eliminated).
 
 On the other hand, I have never seen a valid reason to accept an `ImmutableSet` instead of a `Set` as a parameter, for example: such a type is more constraint, thus makes the method less general, but it hardly makes anything clearer and does not ease implementation.
 
