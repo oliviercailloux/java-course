@@ -19,9 +19,9 @@ https://stackoverflow.com/a/9521003[Favor] returning https://github.com/google/g
 == Accept general parameters if not costly
 Consider whether it is advantageous to design your method so that it accepts more general parameters. For example, instead of accepting a `Set`, can you make it accept a `Collection`? Or an `Iterable`? When your method accepts more general parameters, it is more general.
 
-Similarly to the previous point, there are usually pro and cons with making a method more general: it makes the method more likely to be useful or easier to use; but it may render implementation more difficult, or it may be more difficult to understand what the method does. Thus, the best answer may be subjective or subtly depend on the case at hand, but some choices may still be better than others.
+Similarly to the previous point, there are usually pro and cons with making a method more general: it makes the method more likely to be useful or easier to use; but it may render implementation more difficult, or it may be more difficult to understand what the method does. Thus, the best answer may be subjective or may subtly depend on the case at hand, but some choices may still be better than others.
 
-For example, a method that takes a `Set` as parameter and prints its content to the screen should rather accept as parameter an `Iterable`: it has no drawback and thus makes the method more general “for free”: now the method can be called also with a `List`, for example.
+For example, a method that takes a `Set` as parameter and prints its content to the screen should rather accept an `Iterable` as parameter: this has no drawback and thus makes the method more general “for free”: now the method can be called also with a `List`, for example.
 
 But, as another example, consider a method that takes a `Set` as parameter but that does something that makes sense only if the input collection contains no duplicates. In such a case, the fact that the parameter is a `Set` helps the user understand what the method does, or an important constraint on its use. It may be quite unclear what the method would do if the input was a list (you would perhaps need to document that, for example, duplicates will be eliminated).
 
