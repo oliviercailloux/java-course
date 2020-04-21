@@ -80,7 +80,6 @@ Lorsque j’ajoute (FUTURE) à un commentaire, de même, je n’exige pas une r�
 | REUSE	| Les bibliothèques existantes sont utilisées à bon escient plutôt que réinventer la roue	| 	| Code écrit non considéré
 | ARRAY	| Privilégier des collections (List, Set, etc.) plutôt que des tableaux de types primitifs	|	| −1
 | TEST	| Des tests unitaires ou fonctionnels couvrent les fonctionnalités demandées	| https://github.com/oliviercailloux/java-course/blob/master/JUnit.adoc[JUnit]	| −1
-| ENC	| Préciser l’encodage des flux lus ou écrits	| https://github.com/oliviercailloux/java-course/blob/master/Flows.adoc[Flows]	| −1
 | EN	| Coder et commenter en anglais	|	| −0.5
 | FORE	| Privilégier boucles for each	| https://docs.oracle.com/javase/tutorial/java/nutsandbolts/for.html[Tutorial]	| −0.5
 | LOG	| Utiliser des loggers	| https://github.com/oliviercailloux/java-course/blob/master/Log/README.adoc[Log]	| −1
