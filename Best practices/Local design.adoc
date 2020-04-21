@@ -25,7 +25,7 @@ For example, a method that takes a `Set` as parameter and prints its content to 
 
 But, as another example, consider a method that takes a `Set` as parameter but that does something that makes sense only if the input collection contains no duplicates. In such a case, the fact that the parameter is a `Set` helps the user understand the method. It may be quite unclear what the method would do if the input was a list (you would perhaps need to document that, for example, duplicates will be eliminated).
 
-On the other hand, I have never seen a valid reason to accept an `ImmutableSet` instead of a `Set` as a parameter, for example: such a type is more constraint, thus makes the method less general, but it hardly makes anything clearer and does not ease implementation.
+On the other hand, I have never seen a valid reason to accept an `ImmutableSet` instead of a `Set` as a parameter, for example: such a type is more constrained, thus makes the method less general, but it hardly makes anything clearer and does not ease implementation.
 
 == Factor
 In algebra, you factor an expression such as `ax+bx+cx` by transforming it into `x(a+b+c)`. View this as a way of not repeating yourself: we say only once to multiply by `x`. Similarly, you can often factor your code. When two methods have some code in common, and only differ by a small portion, there is certainly a way of putting what is common to both methods in a method, and let both methods call this one method, or re-use the code in some other way. You thereby make your code more concise (thus easier to understand and verify) and make sure that there is only one place to change if you spot a bug.
