@@ -262,8 +262,8 @@ Delivery 1: before end of 20 April. See https://github.com/oliviercailloux/java-
 * Comparable, Comparator, Maps
 ** More info: http://math.hws.edu/eck/cs124/javanotes7/c10/[ES10.3] to 10.5, http://math.hws.edu/eck/cs124/javanotes7/c8/[ES8] intro to 8.4, Airiau http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours6.pdf[Airiau C6]
 * *Exercices*:
-** Define an interface `EasyMap` with two methods: a method that puts a pair of key and value of your choice into a map, and a method that returns an `Optional` containing the value corresponding to the given key (parameter of the method) or that returns an empty `Optional` if there is no such value. Implement this interface in a class `EasyMapImpl`. Provide a static factory method in the interface `EasyMap`. Minimize the number of lines of code (but not at the price of readability). Note that this exercice implements a part of the https://en.wikipedia.org/wiki/Forwarding_(object-oriented_programming)[forwarding] pattern.
-** Define `MyComparator`, a class that implements a comparator over your values. Add a third method to `EasyMap`, that returns a list of values ordered by that comparator.
+** Define an interface `EasyMap` with two methods: a method that puts a pair of key (`String`, the last name of a person, here supposed to be unique) and value (`Person`, having a first name and a last name) into a map, and a method that returns an `Optional` containing the value corresponding to the given key (parameter of the method) or that returns an empty `Optional` if there is no such value. Implement this interface in a class `EasyMapImpl`. Provide a static factory method in the interface `EasyMap`. Minimize the number of lines of code (but not at the price of readability). Note that this exercice implements a part of the https://en.wikipedia.org/wiki/Forwarding_(object-oriented_programming)[forwarding] pattern.
+** Define `MyComparator`, a class that implements a comparator over `Person`: it considers a person as “smaller” (or “coming before”) another person according to the dictionary ordering of their last name. Add a third method to `EasyMap`, that returns a list of values ordered by that comparator.
 // implement a hashmap with a list of lists
 ** *TODO home* http://math.hws.edu/javanotes/c10/exercises.html[EE10.3] (you may use `List` implementations, but not `Map`, of course)
 // TreeMap<String, TreeSet<Integer>>  concordance
@@ -276,7 +276,7 @@ Delivery 2: before end of 5 May. Recall: 10 hours of efficient work / person exp
 [[S10]]
 === S10 (23 April)
 
-* Graded test: `Set`, `List`, files, flows, paths, providers, and the methods `https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/nio/file/Files.html[Files]#copy`, `createFile`, `delete`, `exists`, `isDirectory`, `readAllLines`, `readString`, `write`, `writeString`.
+* Graded test: `Set`, `List`, files, flows, paths, providers, and the methods `https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/nio/file/Files.html[Files]#copy`, `createFile`, `delete`, `exists`, `isDirectory`, `readAllLines`, `readString`, `write`, `writeString`. Some (incomplete) unit tests are already provided, to help you test your implementation (look under `src/test/`). You have 30 minutes.
 * Override https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Local%20design.adoc#the-equalsobject-method[`equals`] and `hashcode`
 * https://github.com/oliviercailloux/java-course/blob/master/Search%20path/README.adoc[Search path] (packages, classes and directories).
 * https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Resources.adoc[Resources]; exercice: read a file from the class path.
