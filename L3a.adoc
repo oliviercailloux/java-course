@@ -259,7 +259,7 @@ Delivery 1: before end of 20 April. See https://github.com/oliviercailloux/java-
 === S9 (22 April)
 
 * Files and flows: https://github.com/oliviercailloux/java-course/blob/master/Flows.adoc#path-operations[Path operations] and providers.
-* Comparable, Comparator, Maps
+* Comparator and sorting, (Comparable), Maps
 ** More info: http://math.hws.edu/eck/cs124/javanotes7/c10/[ES10.3] to 10.5, http://math.hws.edu/eck/cs124/javanotes7/c8/[ES8] intro to 8.4, Airiau http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours6.pdf[Airiau C6]
 * *Exercices*:
 ** Define an interface `EasyMap` with two methods: a method that puts a pair of key (`String`, the last name of a person, here supposed to be unique) and value (`Person`, having a first name and a last name) into a map, and a method that returns an `Optional` containing the value corresponding to the given key (parameter of the method) or that returns an empty `Optional` if there is no such value. Implement this interface in a class `EasyMapImpl`. Provide a static factory method in the interface `EasyMap`. Minimize the number of lines of code (but not at the price of readability). Note that this exercice implements a part of the https://en.wikipedia.org/wiki/Forwarding_(object-oriented_programming)[forwarding] pattern.
