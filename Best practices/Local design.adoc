@@ -75,7 +75,7 @@ public boolean equals(Object o2) {
 If the fields may be `null`, use https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Objects.html#equals(java.lang.Object,java.lang.Object){emptyattribute}[`Objects.equals(Object, Object)`] instead.
 
 == The `#hashCode()` method
-If you override `#equals(Object)`, you must override `#hashCode()` as well. Use simply something like: `return Objects.link:https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Objects.html#hashCode(java.lang.Object)[hash](firstName, secondName)`.
+If you override `#equals(Object)`, you must override `#hashCode()` as well. Use simply something like: `return Objects.link:https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Objects.html#hash(java.lang.Object...)[hash](firstName, secondName)`.
 
 == Tests and main should throw `Exception`
 In methods that are not designed to be called (such as unit testing and `main` methods), a detailed list of the kinds of exceptions that can be thrown is not very useful. Maintaining such a list is cumbersome, and an incorrect list is worst than no list. 
