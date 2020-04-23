@@ -7,7 +7,7 @@ Various tips for good code from the local structure point of view (as opposed to
 == Avoid numerous parameters
 Avoid method with numerous parameters, especially if they are of the same type. It increases the risk of passing a parameter for another one. For example, avoid `buildPerson(firstName: String, lastName: String, description: String, phoneNumber: String, address: String)` (use a https://codereview.stackexchange.com/a/127509[builder] instead).
 
-== Choose your return types wisely
+== Choose your return and field types wisely
 When a method returns a narrow type rather than a more general one (for example, `ImmutableList` instead of `List`, or `List` instead of `Iterable`), it makes it possibly more useful for the user, because a more specific returned type may offer more services or more guarantees. For example, `ImmutableList` makes it clear that the list will never be modified; `List` permits to access an element https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html#get(int)[by index] or to ask for the https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html#size()[size] of the collection, which you can’t do with a simple `Iterable`. 
 
 On the other hand, returning a narrow type ties your implementation more strongly, as it better specifies the service that your method offers. For example, if you declare you return a `Collection` rather than a `List`, you can choose to rather return a `Set` later instead of a list.
@@ -15,6 +15,8 @@ On the other hand, returning a narrow type ties your implementation more strongl
 Sometimes, the best choice will depend on the specific details of your method or on its intended usage. But some choices may be usually bad: if a type is more specific but does not offer much more capabilities, it is a bad choice. For example, there is usually no reason to return `ArrayList` rather than `List`. And it very often makes conceptual sense to choose once and for all to return a `List` (because duplicates are possible or access by index makes sense), or choose once and for all to return a `Set` (because duplicates should be merged and access by index is unimportant): if one of those possibilities is conceptually justified but the other one is not, it is probably unwise to return a simple `Iterable` instead of a more capable type.
 
 https://stackoverflow.com/a/9521003[Favor] returning https://github.com/google/guava/wiki/ImmutableCollectionsExplained[`Immutable*`] collection kinds, to promote http://www.javapractices.com/topic/TopicAction.do?Id=29[immutability] in your application.
+
+This also applies to the types of the fields in classes.
 
 == Accept general parameters if not costly
 Consider whether it is advantageous to design your method so that it accepts more general parameters. For example, instead of accepting a `Set`, can you make it accept a `Collection`? Or an `Iterable`? When your method accepts more general parameters, it is more general.
