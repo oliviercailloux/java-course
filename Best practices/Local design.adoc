@@ -35,7 +35,7 @@ In algebra, you factor an expression such as `ax+bx+cx` by transforming it into 
 == Favor static factory methods
 Static factory methods are static methods that play the role of constructors (hence the name factory) from the point of view of the user of your class.
 See https://www.baeldung.com/java-constructors-vs-static-factory-methods[here] for the reasons for favoring static factory methods over constructors in your public interface.
-Examples: `String.valueOf(true);`, `Integer.valueOf(3);`, `ImmutableList.of();`, `String.link:https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#format(java.lang.String,java.lang.Object...)[format]("Person name: %s, id: %d", name, id);`.
+Examples: `String.valueOf(true);`, `Integer.valueOf(3);`, `ImmutableList.of();`, `String.link:https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#format(java.lang.String,java.lang.Object.%2E.)[format]("Person name: %s, id: %d", name, id);`.
 Use the following idiom (or an appropriate variant).
 
 [source,java]
