@@ -285,25 +285,21 @@ Delivery 2: before end of 5 May. Recall: 10 hours of efficient work / person exp
 [[S11]]
 === S11 (4 May)
 
-* https://stackoverflow.com/questions/28972893/what-is-exception-wrapping-in-java[Wrapping] exceptions
 * https://github.com/oliviercailloux/java-course/blob/master/Log/README.adoc[Logging]
 * https://github.com/oliviercailloux/java-course/raw/master/Annotations/presentation.pdf[Annotations]
 * https://github.com/oliviercailloux/java-course/blob/master/DevOps/CI.adoc[CI]: Travis
 * https://github.com/oliviercailloux/java-course/tree/master/SWT[SWT]
 
 [[S12]]
-=== S12 (6 May)
+=== S12 (7 May)
 
-* Back to https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html[Method references]
-* TODO : livraison suivante avant fin de la veille de la prochaine séance.
+* https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html[Method references]
+* https://stackoverflow.com/questions/28972893/what-is-exception-wrapping-in-java[Wrapping] exceptions
 
+*Graded homework*: string-files-homework. Your last commit before the end of the 10th of May will be graded again, using the same set of tests as the graded test. This will count for 70% of a normal test. The string-files graded test counts for 30% or a normal test. Please commit on the same repository as the one already used (string-files).
+ 
 [[S13]]
-=== S13 (7 May)
-
-* Graded https://github.com/oliviercailloux/java-course/blob/master/Divers/JUnit.adoc[exercice]: unit tests / access resources through class path / continue Extractor.
-** 17h17 to 17h42 (5 min for delays due to GitHub)
-
-* Write the list of PRs for Iteration 2 for each sub-team in `README.adoc` in your `dev` branch.
+=== S13 ()
 
 [[S14]]
 === S14 (Wednesday 5th of June, 2019)
