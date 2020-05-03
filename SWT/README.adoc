@@ -6,7 +6,7 @@ See https://raw.githubusercontent.com/oliviercailloux/java-course/master/SWT/Pre
 
 == Maven
 
-Eclipse recently (and finally!) started publishing its artifacts to Maven Central. It is still to be polished somewhat, but it can be made to work. First, depend on https://search.maven.org/search?q=g:org.eclipse.platform%20org.eclipse.swt[SWT] and, optionally, https://search.maven.org/search?q=g:org.eclipse.platform%20AND%20a:org.eclipse.jface&core=gav[JFace].
+Eclipse publishes its artifacts to Maven Central for standalone reuse. It is still to be polished somewhat, but it can be made to work. First, depend on https://search.maven.org/search?q=g:org.eclipse.platform%20org.eclipse.swt[SWT] and, optionally, https://search.maven.org/search?q=g:org.eclipse.platform%20AND%20a:org.eclipse.jface&core=gav[JFace].
 
 .Include SWT as a dependency in your `pom.xml`
 [source,xml]
@@ -14,7 +14,7 @@ Eclipse recently (and finally!) started publishing its artifacts to Maven Centra
 <dependency>
 	<groupId>org.eclipse.platform</groupId>
 	<artifactId>org.eclipse.swt.gtk.linux.x86_64</artifactId>
-	<version>3.110.0</version>
+	<version>3.114.0</version>
 	<optional>true</optional>
 	<exclusions>
 		<exclusion>
@@ -33,7 +33,7 @@ You need to replace the artifactId with the one corresponding to your platform (
 <dependency>
 	<groupId>org.eclipse.platform</groupId>
 	<artifactId>org.eclipse.jface</artifactId>
-	<version>3.15.100</version>
+	<version>3.19.0</version>
 	<exclusions>
 		<exclusion>
 			<groupId>org.eclipse.platform</groupId>
@@ -60,8 +60,8 @@ Further notes:
 == References
 
 === Overview links
-* Platform Plug-in Developer Guide > Programmer's Guide > http://help.eclipse.org/2019-03/index.jsp?topic=/org.eclipse.platform.doc.isv/guide/swt.htm[The Standard Widget Toolkit]
-* Platform Plug-in Developer Guide > Programmer's Guide > http://help.eclipse.org/2019-03/index.jsp?topic=/org.eclipse.platform.doc.isv/guide/jface.htm[The JFace UI framework]
+* Platform Plug-in Developer Guide > Programmer's Guide > http://help.eclipse.org/latest/index.jsp?topic=/org.eclipse.platform.doc.isv/guide/swt.htm[The Standard Widget Toolkit]
+* Platform Plug-in Developer Guide > Programmer's Guide > http://help.eclipse.org/latest/index.jsp?topic=/org.eclipse.platform.doc.isv/guide/jface.htm[The JFace UI framework]
 * Vogella’s https://www.vogella.com/tutorials/SWT/article.html[SWT] and https://www.vogella.com/tutorials/EclipseJFace/article.html[JFace] overview articles (and https://www.vogella.com/tutorials/eclipse.html[more])
 * Understanding Layouts in SWT http://www.eclipse.org/articles/article.php?file=Article-Understanding-Layouts/index.html[article]
 
