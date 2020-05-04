@@ -287,7 +287,6 @@ Delivery 2: before end of 5 May. Recall: 10 hours of efficient work / person exp
 
 * https://github.com/oliviercailloux/java-course/blob/master/Log/README.adoc[Logging]
 * https://github.com/oliviercailloux/java-course/raw/master/Annotations/presentation.pdf[Annotations]
-* https://github.com/oliviercailloux/java-course/blob/master/DevOps/CI.adoc[CI]: Travis
 * https://github.com/oliviercailloux/java-course/tree/master/SWT[SWT]
 
 [[S12]]
@@ -298,34 +297,33 @@ Delivery 2: before end of 5 May. Recall: 10 hours of efficient work / person exp
 * https://stackoverflow.com/questions/28972893/what-is-exception-wrapping-in-java[Wrapping] exceptions
 
 *Graded homework*: string-files-homework. Your last commit before the end of the 10th of May will be graded again, using the same set of tests as the graded test. This will count for 70% of a normal test. The string-files graded test counts for 30% or a normal test. Please commit on the same repository as the one already used (string-files).
- 
+
+Next releases: 14th of June (third); 28th of June (fourth and last).
+
 [[S13]]
-=== S13 ()
+=== S13 (20 May)
+* https://github.com/oliviercailloux/java-course/blob/master/DevOps/CI.adoc[CI]: GitHub Workflows, by Avi Mimoun
 
 [[S14]]
-=== S14 (Wednesday 5th of June, 2019)
+=== S14 ()
 
 * Licenses and philosophy: https://www.gnu.org/philosophy/philosophy.html[GNU]; https://opensource.org/[OSI]; Copyleft (GNU https://opensource.org/licenses/GPL-3.0[GPL]); Non-copyleft (https://opensource.org/licenses/MIT[MIT])
 * Parsing HTML: https://github.com/oliviercailloux/java-course/blob/master/HTML%20to%20DOM.adoc[DOM]
 * Accessing REST web services: https://github.com/oliviercailloux/java-course/blob/master/WS%20client/JAX-RS%20client.adoc[JAX-RS client]
 
 [[S15]]
-=== S15 (Monday 17th of June, 2019)
+=== S15 ()
 
 * Work on project
-* TODO : livraison 3 avant fin du jeudi 20, avec PRs affectées à une Milestone « Itération 3 » (merci à l’équipe Assisted Board Games pour cette astuce).
 
 [[S16]]
-=== S16 (Friday 21st of June, 2019)
+=== S16 ()
 
 * Work on project
-* TODO : livraison 4 avant fin du vendredi 28, avec PRs affectées à une Milestone « Itération 4 ».
-** Facultatif : une tâche qui ajoute dans votre README des éléments que vous désirez que je prenne en compte dans mon évaluation globale (difficultés rencontrées, travaux que j’aurais oublié d’évaluer lors d’une itération précédente, …). Complémentez vos propos d’éléments vérifiables (commits, documents, …).
-** Remise autorisée jusqu’à la fin du samedi 29 si nécessaire, mais une prime sera accordée pour une remise le vendredi soir.
-* Présentation avant fin du dimanche 30 directement sur branche master, dans `Doc/Présentation 2019.pdf`.
+* Présentation avant fin du dimanche 30 directement sur branche master, dans `Doc/Présentation 2020.pdf`.
 
 [[S17]]
-=== S17 (Monday 1st of July, 2019)
+=== S17 ()
 
 * Présentations : 
 https://github.com/13tomoore/J-Confs/raw/master/Doc/Pr%C3%A9sentation%202019.pdf[J-Confs], 
