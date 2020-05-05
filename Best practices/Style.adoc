@@ -23,6 +23,8 @@ Do not use comments to comment out code (`//object.someMethod()`). This hinders 
 === Use Javadoc style comments
 Use javadoc style comments to comment your code (`/** This explains the code that follows. */`). Put the comment just before the code that it comments (not next to it as the auto-formatter will generally make it hard to read). Javadoc style comment is used for multi-line comments that contain free-flowing text, which your IDE will thus reformat to respect margin boundaries. On the contrary, C-style comments (`//comment`) are normally used to disable code (which you should not do, see above). Your IDE will typically consider itself not authorized to reformat C-style comments by changing the line feed characters.
 
+A Javadoc style comment that is not inside a method is considered as bound to the element that just follows the comment (you can see this by looking at the Eclipse Javadoc view). In other words, a comment inside a class comments either a method or a field of the class, unless it is inside a method. Avoid free-floating comments that should be attached to nothing in particular (perhaps your comment belongs to the class header?)
+
 == Compiler settings
 Ask your compiler to enable strict checks of possible errors. See https://github.com/oliviercailloux/java-course/blob/master/Tools.adoc#Eclipse-strict[Eclipse configuration].
 

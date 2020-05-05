@@ -2,8 +2,17 @@
 //works around awesome_bot bug that used to be published at github.com/dkhamsing/awesome_bot/issues/182.
 :emptyattribute:
 
-== Cath exceptions only if you have a good reason to do so
+== Catch exceptions only if you have a good reason to do so
 Beginner programmers sometimes catch an exception just to get rid of the problem, and do not do anything in the catch block (or just log or print the exception). This is very bad style as it contradicts the fail-fast principle. Consider rather to re-throw the exception, or to wrap it in an unchecked exception.
+
+== Change exception type if appropriate
+You sometimes want to throw another type of exception than the type declared by the method you call. For example, someone has designed a method `serializeObject(SomeObject) throws StrangeException`, and you want to throw something more appropriate, such as your own `SerializationException` if the `serializeObject` method throws. Proceed as follows.
+
+`try {
+	serializeObject(myObject)
+} catch (StrangeException e) {
+	throw new SerializationException(e);
+}`
 
 == Do not log and throw
 If you throw an exception, avoid logging the exception as well. This would lead to double logging, as the caller of the code would also possibly log upon receiving the exception. Only the part of the code that finally deals with the exception and does not re-throw it, if any, should decide of the appropriate action.
