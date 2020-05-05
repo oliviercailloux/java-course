@@ -8,11 +8,14 @@ Beginner programmers sometimes catch an exception just to get rid of the problem
 == Change exception type if appropriate
 You sometimes want to throw another type of exception than the type declared by the method you call. For example, someone has designed a method `serializeObject(SomeObject) throws StrangeException`, and you want to throw something more appropriate, such as your own `SerializationException` if the `serializeObject` method throws. Proceed as follows.
 
-`try {
+[source, Java]
+----
+try {
 	serializeObject(myObject)
 } catch (StrangeException e) {
 	throw new SerializationException(e);
-}`
+}
+----
 
 == Do not log and throw
 If you throw an exception, avoid logging the exception as well. This would lead to double logging, as the caller of the code would also possibly log upon receiving the exception. Only the part of the code that finally deals with the exception and does not re-throw it, if any, should decide of the appropriate action.
