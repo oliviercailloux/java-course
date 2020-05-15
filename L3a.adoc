@@ -307,6 +307,8 @@ Next releases: 14th of June (third); 28th of June (fourth and last).
 === S13 (20 May)
 * https://github.com/oliviercailloux/java-course/blob/master/DevOps/CI.adoc[CI]: GitHub Workflows, by Avi Mimoun
 
+*Graded homework*: chess-homework. Your last commit before the end of the 24th of May will be graded again, using the same set of tests as the graded test. This will count for 70% of a normal test. The chess graded test counts for 30% or a normal test. Please commit on the same repository as the one already used (chess).
+
 [[S14]]
 === S14 ()
 
