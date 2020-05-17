@@ -10,7 +10,7 @@
 
 toc::[]
 
-This document in no way indicates that Github Actions is better than another solution: it just allows you to present the Github Actions service
+This document in no way indicates that Github Actions is better than another solution: it only describes the Github Actions service
 
 == Motivation
 
@@ -39,30 +39,6 @@ An important distinction to know: the difference between Workflow and actions
 * *Workflow* : Automated and configurable process that calls up one or more Actions. + 
 Workflows consist of one or more tasks and can be scheduled or activated by different types of link:https://help.github.com/en/actions/reference/events-that-trigger-workflows[events]. +
 A workflow is defined in a `.yaml` file in the `.github/workflows/{nameFile}.yaml` file.
-
-=== Advantages of Github actions 👍
-
-WARNING: This list is not exhaustive. In addition, I'm talking about Github Actions in general, but I also include Workflows in this list.
-+ Plus, 
-
-* No registration
-* Very easy to write
-* Completely integrated with Github
-* Supports all platforms, all languages
-* Only one `.yaml` file is enough and it works!
-* Allows to execute different workflows and tasks at the same time (and support matrix configuration)
-* In the event of a fork, we start directly with the configured Github Actions (no manipulation necessary)
-* Based on sharing: We can make create/fork and make our actions public so that everyone can benefit (to make an action public, just create a Github repository, see link:https://help.github.com/en/actions/building-actions[building-actions]).
- - In a few lines we can use the specific action of a contributor
- - No need to install and manage it, we just refer to the repository and Github will take action for us
- - All the actions github are grouped in the link:https://github.com/marketplace?type=actions[marketplace]
-* It can be executed from any event (push, pull request, issue, comment, webhook, fork, etc ...)
-* Not limited to CI/CD (although used mainly for that in link:https://github.com/oliviercailloux/java-course[java-course])
-* No need to create images/instances or to host a virtual machine, link:https://help.github.com/en/actions/reference/virtual-environments-for-github-hosted-runners[Github keeps runners up to date for us].
-* Allows the execution of link:https://help.github.com/en/actions/hosting-your-own-runners[self-hosted runners]
-* Good log management (advanced log, search, download, color, emoji, etc.)
-* A set of workflows (apart from those shared by the whole world) are proposed by default by Github
-* Free up to a certain link:https://help.github.com/en/actions/getting-started-with-github-actions/about-github-actions#usage-limits[number of calls]
 
 == Get started ✨
 
@@ -140,6 +116,31 @@ TIP: You can configure a `pull_request` event and during your pull request you w
 * Much more, see link:https://github.com/sdras/awesome-actions[an organized list of awesome actions to use on GitHub]
 
 You can see in the link:#useful-links[Useful links] sections a multitude of actions already created
+
+== Strong points of Github actions 👍
+
+WARNING: This list is not exhaustive. In addition, I'm talking about Github Actions in general, but I also include Workflows in this list.
+
+As explained link:#github-actions[above], this is not a comparator, but an overall explanation of the strong points of Github Actions.
+
+* No registration
+* Very easy to write
+* Completely integrated with Github
+* Supports all platforms, all languages
+* Only one `.yaml` file is enough and it works!
+* Allows to execute different workflows and tasks at the same time (and support matrix configuration)
+* In the event of a fork, we start directly with the configured Github Actions (no manipulation necessary)
+* Based on sharing: We can make create/fork and make our actions public so that everyone can benefit (to make an action public, just create a Github repository, see link:https://help.github.com/en/actions/building-actions[building-actions]).
+ - In a few lines we can use the specific action of a contributor
+ - No need to install and manage it, we just refer to the repository and Github will take action for us
+ - All the actions github are grouped in the link:https://github.com/marketplace?type=actions[marketplace]
+* It can be executed from any event (push, pull request, issue, comment, webhook, fork, etc ...)
+* Not limited to CI/CD (although used mainly for that in link:https://github.com/oliviercailloux/java-course[java-course])
+* No need to create images/instances or to host a virtual machine, link:https://help.github.com/en/actions/reference/virtual-environments-for-github-hosted-runners[Github keeps runners up to date for us].
+* Allows the execution of link:https://help.github.com/en/actions/hosting-your-own-runners[self-hosted runners]
+* Good log management (advanced log, search, download, color, emoji, etc.)
+* A set of workflows (apart from those shared by the whole world) are proposed by default by Github
+* Free up to a certain link:https://help.github.com/en/actions/getting-started-with-github-actions/about-github-actions#usage-limits[number of calls]
 
 == Use of environment variables
 
