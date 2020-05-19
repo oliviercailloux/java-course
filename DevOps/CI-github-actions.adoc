@@ -1,0 +1,162 @@
+:tip-caption: :bulb:
+:note-caption: :information_source:
+:important-caption: :heavy_exclamation_mark:
+:caution-caption: :fire:
+:warning-caption: :warning:
+:toc:
+:toc-placement!:
+
+= Github Actions
+
+toc::[]
+
+This document in no way indicates that Github Actions is better than another solution: it only describes the Github Actions service
+
+== Motivation
+
+A subject that comes up a lot in development teams is **the automation of manual processes** (build, test, package, release, or deploy).
+This allows you to focus on the project itself and eliminate the various chores.
+
+Here we will introduce a concept used in software engineering: CI (Continuous Integration) +
+CI verifies that after changes to the source code, our software still meets the needs. +
+In this sense, verification can be done using unit, functional or integration tests. +
+Thus, this mainly allows to check the consistency of our software, to prevent regressions (functionality that no longer works) and to have a version of our software still operational.
+
+In addition, CI generally runs on remote servers, which ensures that our software runs in a different environment than that of the developer's computer.
+
+== Presentation of Github Actions
+
+Github Actions is a new service (presented in late 2018, released in November 2019) from Github to automate our workflow.
+As part of the link:https://github.com/oliviercailloux/java-course[java-course] we will see that how to configure CI for a Maven project using Github Actions. You are however free to look further on this subject (you will gain a lot)
+
+NOTE: Github Actions does not only allow CI! We can use it for link:https://en.wikipedia.org/wiki/Continuous_delivery[CD] (for example) and much more
+
+=== Action VS Workflow 
+
+An important distinction to know: the difference between Workflow and actions
+
+* *Action* : It is a Github repository that allows you to create a step in a workflow
+* *Workflow* : Automated and configurable process that calls up one or more Actions. + 
+Workflows consist of one or more tasks and can be scheduled or activated by different types of link:https://help.github.com/en/actions/reference/events-that-trigger-workflows[events]. +
+A workflow is defined in a `.yaml` file in the `.github/workflows/{nameFile}.yaml` file.
+
+== Get started ✨
+
+By default, the use of Github Actions is activated on a Github repository. (see https://github.com/{login}/{repoName}/actions) +
+To be able to use them, just add a file to `.github/workflows/{nameFile}.yaml`.
+
+[TIP]
+====
+* `nameFile` can be anything
+* You can also start from a configured template offered by Github (see link:https://help.github.com/en/actions/getting-started-with-github-actions/starting-with-preconfigured-workflow-templates[starting with preconfigured workflow templates]).
+====
+
+**Steps to configure an action that performs an `mvn test` :**
+
+1. Add a file `.gihtub/workflows/maven.yml` (you can call it otherwise) to your repository, with the contents indicated here below, and push it to GitHub.
+2. Go to your Github repository, and click to Actions tab : https://github.com/{login}/{repoName}/actions
+3. You can see on your left all the available workflows (only one for the moment) and click on it in order to see all the steps as well as the logs
+4. Add the relevant badge to your README.adoc in your project repository : +
+   &rarr; Click on your workflow ("Maven CI" if you have not changed the name) +
+   &rarr; Top right, "create status badge" +
+   &rarr; Select only the url of the svg (the format is in Markdown and not in Asciidoctor) +
+   &rarr; Add the badge in your README.adoc +
++
+[source, asciidoc]
+----
+image:https://github.com/{login}/{repoName}/workflows/Maven%20CI/badge.svg["Maven CI"]
+----
+
+5. **That’s all** 🎉
+
+.`**__.github/workflows/maven.yml__**`
+****
+[source, yaml]
+----
+# Workflow name
+name: Maven CI
+
+# This workflow is triggered on every pushes to the repository. (We can use a matrix system for example)
+# To see all events, https://help.github.com/en/actions/reference/events-that-trigger-workflows
+on:
+  [push]
+
+# We only use one job in this example
+jobs:
+  build:
+    # This job runs on Linux
+    runs-on: ubuntu-latest
+    # We have 3 steps: two which call existing actions and one which is a command given to the runner (Ubuntu)
+    steps:
+      # STEP 1
+      # Actions repository : https://github.com/actions/checkout
+      # We can also found this action in the MarketPlace : https://github.com/marketplace/actions/checkout
+      - uses: actions/checkout@v2
+      # STEP 2
+      # Actions repository : https://github.com/actions/setup-java
+      # We can also found this action in the MarketPlace : https://github.com/marketplace/actions/setup-java
+      - name: Set up JDK 11
+        uses: actions/setup-java@v1
+        with: # We pass an argument to the Github actions "setup-java" (see README of repository setup-java for more information)
+          java-version: 11
+      # STEP 3
+      # We don't use a specific action but just a command which will be run on Ubuntu
+      - name: Verify maven
+        run: mvn -B test --file pom.xml
+----
+****
+
+TIP: You can configure a `pull_request` event and during your pull request you will have a "CHECK" to verify if your changes are validated. You can see an example link:https://github.com/features/actions[here]
+
+=== Advanced examples of use cases
+
+* Publish on Github Packages, on Maven Central
+* Test your project on Windows, MacOS and Linux and for each OS, tested the JDK 9, 11 and 13 (matrix configuration)
+* Deploy a website (Github Pages for example) with the project Javadoc as well as the project documentation
+* Much more, see link:https://github.com/sdras/awesome-actions[an organized list of awesome actions to use on GitHub]
+
+You can see in the link:#useful-links[Useful links] sections a multitude of actions already created
+
+== Strong points of Github actions 👍
+
+WARNING: This list is not exhaustive. In addition, I'm talking about Github Actions in general, but I also include Workflows in this list.
+
+As explained link:#github-actions[above], this is not a comparator, but an overall explanation of the strong points of Github Actions.
+
+* No registration
+* Very easy to write
+* Completely integrated with Github
+* Supports all platforms, all languages
+* Only one `.yaml` file is enough and it works!
+* Allows to execute different workflows and tasks at the same time (and support matrix configuration)
+* In the event of a fork, we start directly with the configured Github Actions (no manipulation necessary)
+* Based on sharing: We can make create/fork and make our actions public so that everyone can benefit (to make an action public, just create a Github repository, see link:https://help.github.com/en/actions/building-actions[building-actions]).
+ - In a few lines we can use the specific action of a contributor
+ - No need to install and manage it, we just refer to the repository and Github will take action for us
+ - All the actions github are grouped in the link:https://github.com/marketplace?type=actions[marketplace]
+* It can be executed from any event (push, pull request, issue, comment, webhook, fork, etc ...)
+* Not limited to CI/CD (although used mainly for that in link:https://github.com/oliviercailloux/java-course[java-course])
+* No need to create images/instances or to host a virtual machine, link:https://help.github.com/en/actions/reference/virtual-environments-for-github-hosted-runners[Github keeps runners up to date for us].
+* Allows the execution of link:https://help.github.com/en/actions/hosting-your-own-runners[self-hosted runners]
+* Good log management (advanced log, search, download, color, emoji, etc.)
+* A set of workflows (apart from those shared by the whole world) are proposed by default by Github
+* Free up to a certain link:https://help.github.com/en/actions/getting-started-with-github-actions/about-github-actions#usage-limits[number of calls]
+
+== Use of environment variables
+
+In some cases, we need to authenticate with a server to perform some tasks. This is usually during deployment.
+
+Thus, by default, any Github project can access these own environment variables *(you must have administrator access)* +
+To manage these variables, just go to : https://github.com/{login}/{repoName}/settings/secrets +
+For example for the link:https://github.com/oliviercailloux/java-course[java-course] project, the URL is as follows https://github.com/oliviercailloux/java-course/settings/secrets
+
+For more information, see the link:https://help.github.com/en/actions/configuring-and-managing-workflows/using-variables-and-secrets-in-a-workflow[official documentation]
+
+== Useful links
+
+* link:https://help.github.com/en/actions[Official documentation]
+* link:https://github.com/sdras/awesome-actions[An organized list of awesome actions to use on GitHub]
+* link:https://github.com/samuelmeuli/action-maven-publis[Automatic publication of Maven packages]
+
+[%hardbreaks]
+link:#github-actions[⬆ back to top]
