@@ -307,22 +307,23 @@ Next releases: 14th of June (third); 28th of June (fourth and last).
 === S13 (20 May)
 * https://github.com/oliviercailloux/java-course/blob/master/DevOps/CI.adoc[CI]: GitHub Workflows, by Avi Mimoun
 
-*Graded homework*: chess-homework. Your last commit before the end of the 24th of May will be graded again, using the same set of tests as the graded test. This will count for 70% of a normal test. The chess graded test counts for 30% or a normal test. Please commit on the same repository as the one already used (chess).
-
 [[S14]]
-=== S14 ()
+=== S14 (22 May)
 
+* Graded test: score-keeper. About referring to objects from other objects. You will have 60 minutes. There will be several interfaces, you only have to implement `MyScoreManager`. (You may need to implement other classes to achieve this.) There is no documentation in this project: you will have to read the unit tests to understand what the class is supposed to do.
 * Licenses and philosophy: https://www.gnu.org/philosophy/philosophy.html[GNU]; https://opensource.org/[OSI]; Copyleft (GNU https://opensource.org/licenses/GPL-3.0[GPL]); Non-copyleft (https://opensource.org/licenses/MIT[MIT])
 * Parsing HTML: https://github.com/oliviercailloux/java-course/blob/master/HTML%20to%20DOM.adoc[DOM]
 * Accessing REST web services: https://github.com/oliviercailloux/java-course/blob/master/WS%20client/JAX-RS%20client.adoc[JAX-RS client]
 
+*Graded homework*: chess-homework. Your last commit before the end of the 24th of May will be graded again, using the same set of tests as the graded test. This will count for 70% of a normal test. The chess graded test counts for 30% or a normal test. Please commit on the same repository as the one already used (chess).
+
 [[S15]]
-=== S15 ()
+=== S15 (17 June)
 
 * Work on project
 
 [[S16]]
-=== S16 ()
+=== S16 (19 June)
 
 * Work on project
 * Présentation avant fin du dimanche 30 directement sur branche master, dans `Doc/Présentation 2020.pdf`.
