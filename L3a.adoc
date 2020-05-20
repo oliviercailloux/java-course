@@ -306,6 +306,7 @@ Next releases: 14th of June (third); 28th of June (fourth and last).
 [[S13]]
 === S13 (20 May)
 * https://github.com/oliviercailloux/java-course/blob/master/DevOps/CI-github-actions.adoc[CI]: GitHub Workflows, by Avi Mimoun
+* Work on project
 
 [[S14]]
 === S14 (22 May)
