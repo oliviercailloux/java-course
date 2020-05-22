@@ -301,8 +301,6 @@ Delivery 2: before end of 5 May. Recall: 10 hours of efficient work / person exp
 
 *Graded homework*: string-files-homework. Your last commit before the end of the 10th of May will be graded again, using the same set of tests as the graded test. This will count for 70% of a normal test. The string-files graded test counts for 30% or a normal test. Please commit on the same repository as the one already used (string-files).
 
-Next releases: 14th of June (third); 28th of June (fourth and last).
-
 [[S13]]
 === S13 (20 May)
 * https://github.com/oliviercailloux/java-course/blob/master/DevOps/CI-github-actions.adoc[CI]: GitHub Workflows, by Avi Mimoun
@@ -318,6 +316,8 @@ Next releases: 14th of June (third); 28th of June (fourth and last).
 
 *Graded homework*: chess-homework. Your last commit before the end of the 24th of May will be graded again, using the same set of tests as the graded test. This will count for 70% of a normal test. The chess graded test counts for 30% or a normal test. Please commit on the same repository as the one already used (chess).
 
+Third release before the end of the 14th of June.
+
 [[S15]]
 === S15 (17 June)
 
@@ -327,10 +327,12 @@ Next releases: 14th of June (third); 28th of June (fourth and last).
 === S16 (19 June)
 
 * Work on project
-* Présentation avant fin du dimanche 30 directement sur branche master, dans `Doc/Présentation 2020.pdf`.
+* Presentation before end of the 5th of July, directly in `master`, in your documentation folder, named `Présentation 2020.pdf`.
+
+Fourth and last release before the end of the 28th of June.
 
 [[S17]]
-=== S17 ()
+=== S17 (6 July)
 
 * Présentations : 
 https://github.com/13tomoore/J-Confs/raw/master/Doc/Pr%C3%A9sentation%202019.pdf[J-Confs], 
@@ -338,9 +340,10 @@ https://github.com/Amioplk/Apartments/raw/master/Doc/Pr%C3%A9sentation%202019.pd
 https://github.com/CHARLONCyril/2D-Library/raw/master/Doc/Pr%C3%A9sentation%202019.pdf[2D Library], 
 https://github.com/busychess/Assisted-Board-Games/raw/master/Doc/Pr%C3%A9sentation%202019.pdf[Assisted Board Games], 
 https://github.com/j-voting/J-Voting/raw/master/Doc/Pr%C3%A9sentation%202019.pdf[J-Voting]
-** Code & diapos sur ordinateur de présentation
 ** 15 à 30 minutes
 ** Noté : intérêt pour l’audience ; compréhension par l’audience du contexte et de l’objectif du projet ; compréhension par l’audience de l’architecture du code et des aspects techniques ; distinction claire des fcts déjà présentes VS ajoutées ; originalité & créativité éventuelle ; …
 * Votes
 * Evals, and https://github.com/oliviercailloux/projets/blob/master/Licences/Licence.adoc[Licences]: https://github.com/oliviercailloux/projets/raw/master/Licences/Declaration%20of%20licensing.odt[Decl]
+
+//** Code & diapos sur ordinateur de présentation
 
