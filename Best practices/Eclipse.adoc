@@ -9,8 +9,8 @@ Read the following (a piece at a time), for a great increase to your productivit
 * Java development user guide, https://help.eclipse.org/latest/topic/org.eclipse.jdt.doc.user/tips/jdt_tips.html[Tips and Tricks] (JDT)
 
 [[Eclipse-strict]]
-=== Configuration
-I recommend configuring Eclipse to show more errors and warnings in order to help spot mistakes and code smells early.
+== Configuration
+Configure Eclipse to show more errors and warnings in order to help spot mistakes and code smells early.
 
 * From Eclipse, import this https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Eclipse-prefs.epf[epf] (Eclipse Preference File). 
 ** You can look at the text in the file to see what this changes to your Eclipse configuration.
@@ -18,4 +18,9 @@ I recommend configuring Eclipse to show more errors and warnings in order to hel
 * Check in your project properties, `Java Compiler` / `Errors/Warnings` that the project uses your global Eclipse compiler settings.
 * Clean and recompile your project to see the effect.
 * Check that the instruction `ArrayList<String> l = new ArrayList<String>();` raises a warning (“Redundant specification of type arguments <String>”).
+
+== Warnings
+Your production-ready code should exhibit no warning. In a good quality code, any remaining warning should trigger an urge to solve the problem before going further. 
+
+In *rare* cases, the IDE will produce a warning that you can be sure does not apply to your situation. _Even in that case_, you should take care of the warning and not leave it unattended. Otherwise, the reader of your code will not easily see which warnings it should take seriously, and this prevents applying the systematic strategy of taking warnings seriously. There is certainly a way of making such a spurious warning disappear. Using `@SuppressWarnings` can be considered in such a case, but should be considered a last resort solution, and applied only if you are absolutely confident that the IDE is wrong, not you (hint: usually the opposite is true).
 

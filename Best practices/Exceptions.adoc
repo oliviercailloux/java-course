@@ -23,7 +23,7 @@ You may want to use this idiom to wrap `IOException` into `UncheckedIOException`
 If you throw an exception, avoid logging the exception as well. This would lead to double logging, as the caller of the code would also possibly log upon receiving the exception. Only the part of the code that finally deals with the exception and does not re-throw it, if any, should decide of the appropriate action.
 
 == Exception declaration
-A method must declare all exceptions that it can possibly throw that do not extend `RuntimeException`. Runtime exceptions should generally not be declared. Declare those only if you see a specific reason to draw attention to it.
+A method must (by the rules of Java) declare all exceptions that it can possibly throw that do not extend `RuntimeException`. Runtime exceptions should generally not be declared. Declare those only if you see a specific reason to draw attention to it.
 
 == Throw appropriate exceptions
 === Throw `IllegalStateException` when the state is incorrect
@@ -46,11 +46,11 @@ Thus, I consider it sensible to follow the standard. And the standard is to thro
 === Throw `VerifyException` when some internal verification fails
 When your test is there to ensure that your internal logic is correct, if it fails, you should throw a `VerificationException`: this conveys clearly to the user that it is not her problem but yours. As an exemple, this happens if you compute an intermediate result which should be non-negative, and you realize it is in fact negative. Or if you call a method in a library that should return a non-null value, but it happens to be null. Use the Guava https://guava.dev/releases/snapshot/api/docs/com/google/common/base/Verify.html[`Verify`] class for this.
 
-== Declare most general exceptions on non callable methods
-Some methods are conceived to be executed, not to be called by other methods: `main` methods and unit testing methods. In such cases, the precise list of exceptions that can be thrown is irrelevant. Just declare that the method throws `Exception` and do not worry about it.
+=== Throw narrow exception types on callable methods
+You should declare your method as throwing well specified exceptions, that indicate the problem it encountered; for example `IOException` if it is a problem of input-output. (This advice applies only if your method is conceived as callable, see below otherwise.) In particular, do _not_ declare `throws Exception`: think about your poor caller, who will have to deal with such an exception, that is much too general to be informative. She will probably have no choice than declaring in turn her method as throwing `Exception`, and soon your program will be full of completely uninformative `throws Exception` declarations. Not a pleasant state to be in.
 
-== Tests and main should throw `Exception`
-In methods that are not designed to be called (such as unit testing and `main` methods), a detailed list of the kinds of exceptions that can be thrown is not very useful. Maintaining such a list is cumbersome, and an incorrect list is worst than no list. 
+== Declare most general exceptions on non callable methods
+Some methods are conceived to be executed, not to be called by other methods: `main` methods and unit testing methods. In such cases, the precise list of exceptions that can be thrown is irrelevant. Maintaining such a list is cumbersome, and an incorrect list is worst than no list. Just declare that the method throws `Exception` and do not worry about it.
 
 Thus, instead of `testWrite() throws NoSuchFileException, DatabaseException, ParsingException`, choose: `testWrite() throws Exception`, and do not worry about it.
 
