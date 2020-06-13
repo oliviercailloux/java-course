@@ -42,6 +42,8 @@ If your comments are general comments about your class (its goal, how to use it,
 
 Omit tags that you have nothing to say about, in a first version of your API. For example, it is often reasonable to omit `@throws IOException` tag.
 
+Omit comments that bring no information: they hide the important comments. For example, do not add Javadoc on `getFirstName()` if it simply reads: `Returns the first name`. Omitting the Javadoc entirely is better, if the method is clear from its header, at least in a first version of your API.
+
 Get inspiration from well written documentation such as the one on https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/util/List.html[`List`].
 
 == Outdated references

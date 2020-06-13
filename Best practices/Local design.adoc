@@ -64,9 +64,6 @@ public boolean equals(Object o2) {
 	if (!(o2 instanceof Person)) {
 		return false;
 	}
-	if (this == o2) {
-		return true;
-	}
 	Person p2 = (Person) o2;
 	return firstName.equals(p2.firstName) && secondName.equals(p2.secondName);
 }
