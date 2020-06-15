@@ -34,6 +34,8 @@ Let us write a test for this method!
 
 == Usage
 * In real-world projects, you would write many tests and run them all each time you change the code.
+* You should test non-trivial code: do not test simple getters or `toString` methods; do not test that your method throws an `NullPointerException` when a parameter is `null`, … Such tests only duplicate your intent in the sense that if you change your mind (remove a getter, change the `toString` form), you will _also_ have to change the test.
+* Your test can have a documentary purpose: the test indicates the expected result of a code, with the added value (compared to a textual documentation) that this documentation is proven up-to-date by the simple fact that the test passes.
 * It is important in particular to check boundary conditions: what happens when the value is zero? Negative? Infinite (for a `double`)? `null` (for an object)? 
 * You should follow some specified naming patterns for naming your test classes, otherwise they might be https://junit.org/junit5/docs/current/user-guide/#running-tests-build-maven[ignored], depending on your build tool. Ending their names with “Tests” is a best practice.
 * Your test class should lie in the same package as the class it tests.
