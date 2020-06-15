@@ -321,6 +321,7 @@ Third release before the end of the 14th of June.
 [[S15]]
 === S15 (17 June)
 
+* Answer for https://github.com/oliviercailloux/samples-chess[chess] and https://github.com/oliviercailloux/samples-scorers[scorers]: look at the `impl` branch.
 * Work on project
 
 [[S16]]
