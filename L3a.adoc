@@ -328,12 +328,12 @@ Third release before the end of the 14th of June.
 === S16 (19 June)
 
 * Work on project
-* Presentation before end of the 5th of July, directly in `master`, in your documentation folder, named `Présentation 2020.pdf`.
+* Presentation before end of the 2th of July, directly in `master`, in your documentation folder, named `Présentation 2020.pdf`.
 
 Fourth and last release before the end of the 28th of June.
 
 [[S17]]
-=== S17 (6 July)
+=== S17 (3 July)
 
 * Présentations : 
 https://github.com/13tomoore/J-Confs/raw/master/Doc/Pr%C3%A9sentation%202019.pdf[J-Confs], 
