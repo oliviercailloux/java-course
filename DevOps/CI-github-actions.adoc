@@ -6,20 +6,19 @@
 :toc: preamble
 
 = Github Actions
+Continuous Integration (CI) refers to the process of frequently integrating changes created by various developers in your team, in order to have (almost) permanently underhand a current, integrated version of your software containing all the developments so far.
 
-This document has been originally created by Avi Mimoun, a student of this course. Thanks go to him. (His version is https://github.com/oliviercailloux/java-course/blob/a38d61e96d261fec0734b4560b97b0ccacda5ebd/DevOps/CI-github-actions.adoc[here].)
+CI makes especially sense when you are able to control automatically that your software still runs successfully after the merge. This you normally do by having a sufficient coverage of (unit or functional or integration) tests.
+
+In addition, CI generally runs on remote servers, which ensures that our software runs in a different environment than that of the developer's computer.
 
 == Motivation
 
-A subject that comes up a lot in development teams is **the automation of manual processes** (build, test, package, release, or deploy).
-This allows you to focus on the project itself and eliminate the various chores.
+When developing in a team, it is frequent that a sub-team will branch the project and work on a feature on its own for a while. This may break other features of the software, or introduce changes incompatible with the parallel changes made by some other sub-team. If the branch is being developed for a long time apart from other developments in the project, it will become increasingly difficult to merge the changes. At some point, it may even be considered easier to start developing the feature again from scratch than to merge. Frequent merges reduce this risk.
 
-Here we will introduce a concept used in software engineering: CI (Continuous Integration) +
-CI verifies that after changes to the source code, our software still meets the needs. +
-In this sense, verification can be done using unit, functional or integration tests. +
-Thus, this mainly allows to check the consistency of our software, to prevent regressions (functionality that no longer works) and to have a version of our software still operational.
+Another motivation of CI is to always have a version of your software ready for demonstration.
 
-In addition, CI generally runs on remote servers, which ensures that our software runs in a different environment than that of the developer's computer.
+A third motivation is that CI usually goes together with remote building: you set up a remote platform dedicated to building your project and running the tests. That ensures that your software builds and executes successfully in a clean environment (knowing that it builds and runs in the computers of the developers might be an insufficient guarantee, as those computers might have specific softwares and customization).
 
 == Presentation of Github Actions
 
@@ -155,5 +154,6 @@ For more information, see the link:https://help.github.com/en/actions/configurin
 * link:https://github.com/sdras/awesome-actions[An organized list of awesome actions to use on GitHub]
 * link:https://github.com/samuelmeuli/action-maven-publis[Automatic publication of Maven packages]
 
-[%hardbreaks]
-link:#github-actions[⬆ back to top]
+== Thanks
+This document has been originally created by Avi Mimoun, a student of this course. Thanks go to him. (His version is https://github.com/oliviercailloux/java-course/blob/a38d61e96d261fec0734b4560b97b0ccacda5ebd/DevOps/CI-github-actions.adoc[here].)
+
