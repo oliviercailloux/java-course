@@ -3,14 +3,11 @@
 :important-caption: :heavy_exclamation_mark:
 :caution-caption: :fire:
 :warning-caption: :warning:
-:toc:
-:toc-placement!:
+:toc: preamble
 
 = Github Actions
 
-toc::[]
-
-This document in no way indicates that Github Actions is better than another solution: it only describes the Github Actions service
+This document has been originally created by Avi Mimoun, a student of this course. Thanks go to him. (His version is https://github.com/oliviercailloux/java-course/blob/a38d61e96d261fec0734b4560b97b0ccacda5ebd/DevOps/CI-github-actions.adoc[here].)
 
 == Motivation
 
