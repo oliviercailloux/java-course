@@ -5,7 +5,7 @@
 :warning-caption: :warning:
 :toc: preamble
 
-= Github Actions
+= Continuous Integration with GitHub Actions
 
 Continuous Integration (CI) refers to the process of frequently integrating changes created by various developers in your team, in order to have (almost) permanently underhand a current, integrated version of your software containing all the developments so far.
 
