@@ -344,11 +344,10 @@ https://github.com/j-voting/J-Voting/raw/master/Doc/Pr%C3%A9sentation%202019.pdf
 ** 15 à 30 minutes
 ** Noté : intérêt pour l’audience ; compréhension par l’audience du contexte et de l’objectif du projet ; compréhension par l’audience de l’architecture du code et des aspects techniques ; distinction claire des fcts déjà présentes VS ajoutées ; originalité & créativité éventuelle ; …
 * Votes
-* Evals, and https://github.com/oliviercailloux/projets/blob/master/Licences/Licence.adoc[Licences]: https://github.com/oliviercailloux/projets/raw/master/Licences/Declaration%20of%20licensing.odt[Decl] :
-** Envoyer à votre délégué, Marcellino, vos évaluations et votre déclaration de licence. Sujet : « Fin cours Java ».
+* Evals, and https://github.com/oliviercailloux/projets/blob/master/Licences/Licence.adoc[Licences]: https://github.com/oliviercailloux/projets/raw/master/Licences/Declaration%20of%20licensing.odt[Decl] : envoyer à votre délégué, Marcellino, vos évaluations et votre déclaration de licence. Sujet : « Fin cours Java ».
 ** Envoyer un fichier texte (format Asciidoctor ou simple texte) contenant votre évaluation du cours Java et UML (https://github.com/oliviercailloux/java-course/raw/master/Divers/Appr%C3%A9ciation%20Java.pdf[inspiration]).
 ** Envoyer un PDF scanné (ou photographié) avec toutes les signatures de l’équipe.
-** Si pas possible : lui envoyer un PDF signé et scanné (ou photographié) par membre pour ceux qui peuvent et une déclaration d’intention écrite par e-mail.
+** Si pas possible : lui envoyer un PDF signé et scanné (ou photographié) par membre pour ceux qui peuvent et une déclaration d’intention écrite par e-mail. Vous vous engagez à signer cette déclaration dès que possible. Laissez-moi un moyen de vous contacter !
 ** Ou lui indiquer par e-mail votre décision collective de ne pas signer.
 ** Il me transmettra vos déclarations et évaluations après remise des notes finales.
 
