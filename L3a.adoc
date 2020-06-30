@@ -341,6 +341,7 @@ https://github.com/Amioplk/Apartments/raw/master/Doc/Pr%C3%A9sentation%202019.pd
 https://github.com/CHARLONCyril/2D-Library/raw/master/Doc/Pr%C3%A9sentation%202019.pdf[2D Library], 
 https://github.com/busychess/Assisted-Board-Games/raw/master/Doc/Pr%C3%A9sentation%202019.pdf[Assisted Board Games], 
 https://github.com/j-voting/J-Voting/raw/master/Doc/Pr%C3%A9sentation%202019.pdf[J-Voting]
+** Démo *obligatoirement uniquement* de votre branche master (mais vous pouvez parler et montrer des diagrammes – ou d’autres informations – du reste du programme également)
 ** 15 à 30 minutes
 ** Noté : intérêt pour l’audience ; compréhension par l’audience du contexte et de l’objectif du projet ; compréhension par l’audience de l’architecture du code et des aspects techniques ; distinction claire des fcts déjà présentes VS ajoutées ; originalité & créativité éventuelle ; …
 * Votes
