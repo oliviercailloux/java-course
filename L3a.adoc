@@ -337,7 +337,7 @@ Fourth and last release before the end of the 28th of June.
 
 * Présentations : 
 https://github.com/Julienchilhagopian/J-Voting/raw/master/Doc/Pr%C3%A9sentation%202020.pdf[J-Voting], 
-https://github.com/Sarah-Elhelw/teach_spreadsheets//raw/master/Doc/Pr%C3%A9sentation%202020.pdf[Teach-Spreadsheets], 
+https://github.com/Sarah-Elhelw/teach_spreadsheets/raw/master/Doc/Pr%C3%A9sentation%202020.pdf[Teach-Spreadsheets], 
 https://github.com/av1m/Apartments/raw/master/Doc/Pr%C3%A9sentation%202020.pdf[Apartments], 
 https://github.com/sebastienbourg/J-Confs/raw/master/Doc/Pr%C3%A9sentation%202020.pdf[J-Confs], 
 https://github.com/marcellinodour/MIDO-SVG/raw/master/Doc/Pr%C3%A9sentation%202020.pdf[MIDO-SVG]
