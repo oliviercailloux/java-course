@@ -336,11 +336,11 @@ Fourth and last release before the end of the 28th of June.
 === S17 (3 July)
 
 * Présentations : 
-https://github.com/13tomoore/J-Confs/raw/master/Doc/Pr%C3%A9sentation%202019.pdf[J-Confs], 
-https://github.com/Amioplk/Apartments/raw/master/Doc/Pr%C3%A9sentation%202019.pdf[Apartments], 
-https://github.com/CHARLONCyril/2D-Library/raw/master/Doc/Pr%C3%A9sentation%202019.pdf[2D Library], 
-https://github.com/busychess/Assisted-Board-Games/raw/master/Doc/Pr%C3%A9sentation%202019.pdf[Assisted Board Games], 
-https://github.com/j-voting/J-Voting/raw/master/Doc/Pr%C3%A9sentation%202019.pdf[J-Voting]
+https://github.com/Julienchilhagopian/J-Voting/raw/master/Doc/Pr%C3%A9sentation%202020.pdf[J-Voting], 
+https://github.com/Sarah-Elhelw/teach_spreadsheets//raw/master/Doc/Pr%C3%A9sentation%202020.pdf[Teach-Spreadsheets], 
+https://github.com/av1m/Apartments/raw/master/Doc/Pr%C3%A9sentation%202020.pdf[Apartments], 
+https://github.com/sebastienbourg/J-Confs/raw/master/Doc/Pr%C3%A9sentation%202020.pdf[J-Confs], 
+https://github.com/marcellinodour/MIDO-SVG/raw/master/Doc/Pr%C3%A9sentation%202020.pdf[MIDO-SVG]
 ** Démo *obligatoirement uniquement* de votre branche master (mais vous pouvez parler et montrer des diagrammes – ou d’autres informations – du reste du programme également)
 ** 15 à 30 minutes
 ** Noté : intérêt pour l’audience ; compréhension par l’audience du contexte et de l’objectif du projet ; compréhension par l’audience de l’architecture du code et des aspects techniques ; distinction claire des fcts déjà présentes VS ajoutées ; originalité & créativité éventuelle ; …
