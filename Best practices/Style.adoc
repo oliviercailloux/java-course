@@ -37,6 +37,8 @@ If you modify an existing project, make sure you use the same formatting convent
 
 Similarly, make sure you use only one encoding for end of lines throughout your team (either `\n` or `\r\n`). Otherwise, git will see differences where in reality only the end of line has changed.
 
+(Google-java-format is probably able to help with this, and its https://github.com/google/google-java-format/issues/504[issues] with Eclipse will hopefully be solved someday…)
+
 == Javadoc
 If your comments are general comments about your class (its goal, how to use it, general restrictions…), it should go on top of the class. Comments on a constructor should only explain what is specific to that constructor.
 

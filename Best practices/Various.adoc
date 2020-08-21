@@ -7,6 +7,8 @@ The `URL` class has a flaw: its `URL#equals` method accesses the network. This m
 
 From the point of view of what it can represent, `URL` is more constrained than `URI` in that it allows only absolute URLs; more constrained in the protocols it allows; but less constrained in the sense of the syntax it allows (see https://stackoverflow.com/a/23384891[SO]).
 
+Consider using https://javadoc.io/doc/jakarta.ws.rs/jakarta.ws.rs-api/2.1.6/javax/ws/rs/core/UriBuilder.html[`URIBuilder`] from Jakarta web services API for creating instances of `URI` easily.
+
 == Consider suppressing the warning about missing serialVersionUID
 Use `@SuppressWarnings("serial")` rather than adding a `serialVersionUID` field to your class when you do not want to support serialization: it documents your intent better. (See https://stackoverflow.com/a/7636578[SO].)
 
