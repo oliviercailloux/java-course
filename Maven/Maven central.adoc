@@ -35,7 +35,7 @@ You need to get your project authorized in OSSRH. (Sonatype essentially checks t
 . Change your `~/.m2/.settings.xml` file, or create it, to make it look like https://gist.github.com/oliviercailloux/3cc79ed504f986b5ea3442fa6e83f053[this]. This let `mvn deploy` know the credentials to access the OSSRH repository.
 
 == Deploy a snapshot
-Run `mvn -Prelease deploy`. Maven goes through all the phases of the default http://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html#Lifecycle_Reference[lifecycle]. If everything goes well, it will compile your project, run the tests, attach the sources and javadoc, sign those artifacts with GPG, and deploy them to OSSRH.
+Run `mvn -Prelease deploy`. Maven activates the `release` profile and goes through all the phases of the default http://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html#Lifecycle_Reference[lifecycle]. If everything goes well, it will compile your project, run the tests, attach the sources and javadoc, sign those artifacts with GPG, and deploy them to OSSRH.
 
 If deployment is successful, your artifacts should be immediately visible https://oss.sonatype.org/content/groups/public/io/[here] (or https://oss.sonatype.org/content/repositories/snapshots/io/[here] if you want to see only snapshots). Replace the “io” part in these URLs with your maven coordinates.
 
