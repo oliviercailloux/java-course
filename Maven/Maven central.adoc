@@ -24,35 +24,31 @@ You need to get your project authorized in OSSRH. (Sonatype essentially checks t
 
 == POM
 
-* Make sure your Maven coordinates are https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Maven.adoc#naming-conventions[right]. Make sure your version ends with `-SNAPSHOT` (the suggested initial version number being `0.0.1-SNAPSHOT`): for the moment we’ll practice deployment using snapshots.
-* Provide metadata to your project: project name, description, url, license, developer information, scm information (see https://central.sonatype.org/pages/requirements.html#sufficient-metadata[metadata requirements]). You can simply copy and adapt the relevant XML elements in this https://github.com/oliviercailloux/JLP/blob/V0.0.1/pom.xml[sample].
+. Make sure your Maven coordinates are https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Maven.adoc#naming-conventions[right]. Make sure your version ends with `-SNAPSHOT` (the suggested initial version number being `0.0.1-SNAPSHOT`): for the moment we’ll practice deployment using snapshots.
+. Provide metadata to your project: project name, description, url, license, developer information, scm information (see https://central.sonatype.org/pages/requirements.html#sufficient-metadata[metadata requirements]). You can simply copy and adapt the relevant XML elements in this https://github.com/oliviercailloux/pom/blob/master/pom.xml[sample].
 ** Apache Guide insists that providing good quality metadata is important. “The POM being deployed with the artifact is part of the process to make transitive dependencies a reality in Maven. The logic for getting transitive dependencies working is really not that hard, the problem is getting the data. The other applications that are made possible by having all the POMs available for artifacts are vast, so by placing them into the repository as part of the process we open up the doors to new ideas that involve unified access to project POMs.” From the Apache Metadata https://maven.apache.org/project-faq.html[FAQ]: “The quality of the metadata in the Maven repository is important to your users as they list dependencies on your metadata, and link in the information into their own projects.” (That FAQ is otherwise outdated.)
-* Make sure your dependencies have the right scope. See https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html[Dependency Mechanism] (or https://maven.apache.org/pom.html[POM Reference]). Provide only dependencies that exist in Maven central, if possible. (“we discourage the usage of <repositories> and <pluginRepositories> and instead publish any required components to the Central Repository. This applies for your own components as well as for 3rd party artifacts.”, https://central.sonatype.org/pages/requirements.html#sufficient-metadata[requirements]{emptyattribute})
-* Add into your `distributionManagement` element (create it if necessary) the `snapshotRepository` and `repository` elements (again, see sample above). (See also the Sonatype https://central.sonatype.org/pages/apache-maven.html[Maven guide], but I suggest to use the default Maven deploy plugin instead of the Nexus Staging Maven plugin.) Change also your `settings.xml` file as indicated.
-* Add three plugins: `maven-source-plugin`, `maven-javadoc-plugin`, `maven-gpg-plugin` (again, see sample above). (Note that the Sonatype documentation indicates old version numbers, see https://maven.apache.org/plugins/index.html[Apache Maven Plugins].)
+** I recommend using only the `scm/connection` and `scm/url` elements, and not the `scm/developerConnection` one, because the first two permit to read your source code and thus is precious metadata; whereas the latter gives write access, and is therefore not useful for persons external to your project, and furthermore only serves with the `maven-scm-plugin` and `maven-release-plugin`, which I do not recommend to use.
+. Make sure your dependencies have the right scope. See https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html[Dependency Mechanism] (or https://maven.apache.org/pom.html[POM Reference]). Provide only dependencies that exist in Maven central, if possible. (“we discourage the usage of <repositories> and <pluginRepositories> and instead publish any required components to the Central Repository. This applies for your own components as well as for 3rd party artifacts.”, https://central.sonatype.org/pages/requirements.html#sufficient-metadata[requirements]{emptyattribute})
+. Create a `release` profile section
+** Add into the `release` profile a `distributionManagement` element containing the `snapshotRepository` element (again, see sample above). (See also the Sonatype https://central.sonatype.org/pages/apache-maven.html[Maven guide].) 
+** Add some plugins into the `release` profile: `maven-source-plugin`, `maven-javadoc-plugin`, `maven-gpg-plugin`, `org.sonatype.plugins:nexus-staging-maven-plugin` (again, see sample above). (Note that the Sonatype documentation indicates old version numbers, see https://maven.apache.org/plugins/index.html[Apache Maven Plugins].)
+. Change your `~/.m2/.settings.xml` file, or create it, to make it look like https://gist.github.com/oliviercailloux/3cc79ed504f986b5ea3442fa6e83f053[this]. This let `mvn deploy` know the credentials to access the OSSRH repository.
 
 == Deploy a snapshot
-Run `mvn deploy`. Maven goes through all the phases of the default http://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html#Lifecycle_Reference[lifecycle]. If everything goes well, it will compile your project, run the tests, attach the sources and javadoc, sign those artifacts with GPG, and deploy them to OSSRH.
+Run `mvn -Prelease deploy`. Maven goes through all the phases of the default http://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html#Lifecycle_Reference[lifecycle]. If everything goes well, it will compile your project, run the tests, attach the sources and javadoc, sign those artifacts with GPG, and deploy them to OSSRH.
 
 If deployment is successful, your artifacts should be immediately visible https://oss.sonatype.org/content/groups/public/io/[here] (or https://oss.sonatype.org/content/repositories/snapshots/io/[here] if you want to see only snapshots). Replace the “io” part in these URLs with your maven coordinates.
 
 You can deploy several times using the same version number, provided it is a snapshot.
 
 == Deploy a release
-When you are ready to release, remove the `-SNAPSHOT` suffix from your Maven coordinates version number. Run `mvn deploy`.
+When you are ready to release, remove the `-SNAPSHOT` suffix from your Maven coordinates version number. Run `mvn -Prelease deploy`.
 
-If successful, this deploys your release to a temporary area in OSSRH. Follow these https://central.sonatype.org/pages/releasing-the-deployment.html[instructions] to verify your artifacts and transfer them to the public release section of OSSRH, from where they will automatically transfer to Maven central (after the close and release through OSSRH interface, your artifacts should appear immediately in the OSSRH groups url here above, and in the https://search.maven.org/[search] interface within https://central.sonatype.org/pages/ossrh-guide.html#releasing-to-central[two hours]). Remember that you publish a release version once and for all, contrary to snapshots: no overwrite is allowed.
+If successful, this deploys your release to the public release section of OSSRH, from where they will automatically transfer to Maven central (your artifacts should appear immediately in the OSSRH groups url here above, and in the https://search.maven.org/[search] interface within https://central.sonatype.org/pages/ossrh-guide.html#releasing-to-central[two hours]). Remember that you publish a release version once and for all, contrary to snapshots: no overwrite is allowed.
 
 As soon as you have successfully published a release, commit it to your SCM, tag the commit with the corresponding version number, then increase the version number in the POM and put the `-SNAPSHOT` suffix back, and commit again, in order to start a new development cycle.
 
-You can automate some of these steps even more, see the https://central.sonatype.org/pages/ossrh-guide.html[OSSRH guide]. However it may not be a good idea: I think it’s good to keep some manual verification steps for important milestones in a project.
-
-== Conditional deployments
-With the strategy described so far, the plugins you configured for deployment (sources, javadoc, gpg) activate on each build. This may be a loss of time, and is especially problematic if you configured a https://github.com/oliviercailloux/java-course/blob/master/DevOps/CI.adoc[CI] server: without special configuration, gpg signature would fail on the server as it does not know your private key.
-
-To solve those problems, simply declare the plugins and `distributionManagement` element in a Maven profile, called e.g. `release`. See example https://github.com/oliviercailloux/JLP/blob/with-release-profile/pom.xml[here] (notice that those elements have moved inside a `profile` element).
-
-Now to deploy you need to run `mvn -Prelease deploy`.
+See https://github.com/oliviercailloux/Deploy-script/blob/master/Deploy.bash[this bash script] if you want to automate these steps.
 
 == See also
 Rule of Tech’s https://ruleoftech.com/2014/distribute-projects-artifacts-in-maven-central-with-ossrh[tutorial] might be useful
