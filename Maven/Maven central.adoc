@@ -44,12 +44,7 @@ You can deploy several times using the same version number, provided it is a sna
 == Deploy a release
 When you are ready to release, remove the `-SNAPSHOT` suffix from your Maven coordinates version number. Run `mvn -Prelease deploy`.
 
-If successful, your release will immediately appear in the https://repo1.maven.org/maven2/io/[public release] section of OSSRH (replace the “io” part of this URL with your maven coordinates), and within https://central.sonatype.org/pages/ossrh-guide.html#releasing-to-central[ten minutes] (https://stackoverflow.com/questions/23235892/how-long-does-sonatype-staging-take-to-sync-my-artifacts-with-maven-central#comment45591048_23236185[thanks]) it will automatically transfer to Maven central (your artifact should appear in the https://search.maven.org/[search] interface within https://central.sonatype.org/pages/ossrh-guide.html#releasing-to-central[two hours]). Remember that you publish a release version once and for all, contrary to snapshots: no overwrite is allowed.
+If successful, your release will immediately appear in the https://repo1.maven.org/maven2/io/[public release] section of OSSRH (replace the “io” part of this URL with your maven coordinates), and within https://central.sonatype.org/pages/ossrh-guide.html#releasing-to-central[ten minutes] (https://stackoverflow.com/questions/23235892/how-long-does-sonatype-staging-take-to-sync-my-artifacts-with-maven-central#comment45591048_23236185[thanks]) it will automatically transfer to Maven central (your artifact should appear in the https://search.maven.org/[search] interface within https://central.sonatype.org/pages/ossrh-guide.html#releasing-to-central[two hours]). Remember that you publish a release version once and for all, contrary to snapshots: no overwrite is allowed. 
 
-As soon as you have successfully published a release, commit it to your SCM, tag the commit with the corresponding version number, then increase the version number in the POM and put the `-SNAPSHOT` suffix back, and commit again, in order to start a new development cycle.
-
-See https://github.com/oliviercailloux/Deploy-script/blob/master/Deploy.bash[this bash script] if you want to automate these steps.
-
-== See also
-Rule of Tech’s https://ruleoftech.com/2014/distribute-projects-artifacts-in-maven-central-with-ossrh[tutorial] might be useful
+As soon as you have successfully published a release, commit it to your SCM, tag the commit with the corresponding version number, then increase the version number in the POM and put the `-SNAPSHOT` suffix back, and commit again, in order to start a new development cycle. See https://github.com/oliviercailloux/Deploy-script/blob/master/Deploy.bash[this bash script] if you want to automate these steps.
 
