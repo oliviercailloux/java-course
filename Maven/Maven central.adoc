@@ -37,14 +37,14 @@ You need to get your project authorized in OSSRH. (Sonatype essentially checks t
 == Deploy a snapshot
 Run `mvn -Prelease deploy`. Maven activates the `release` profile and goes through all the phases of the default http://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html#Lifecycle_Reference[lifecycle]. If everything goes well, it will compile your project, run the tests, attach the sources and javadoc, sign those artifacts with GPG, and deploy them to OSSRH.
 
-If deployment is successful, your artifacts should be immediately visible https://oss.sonatype.org/content/groups/public/io/[here] (or https://oss.sonatype.org/content/repositories/snapshots/io/[here] if you want to see only snapshots). Replace the “io” part in these URLs with your maven coordinates.
+If deployment is successful, your artifacts should be immediately visible https://oss.sonatype.org/content/repositories/snapshots/io/[here] (replace the “io” part of this URL with your maven coordinates, for example, my snapshots are visible https://repo1.maven.org/maven2/io/github/oliviercailloux/[here]).
 
 You can deploy several times using the same version number, provided it is a snapshot.
 
 == Deploy a release
 When you are ready to release, remove the `-SNAPSHOT` suffix from your Maven coordinates version number. Run `mvn -Prelease deploy`.
 
-If successful, this deploys your release to the public release section of OSSRH, from where they will automatically transfer to Maven central (your artifacts should appear immediately in the OSSRH groups url here above, and in the https://search.maven.org/[search] interface within https://central.sonatype.org/pages/ossrh-guide.html#releasing-to-central[two hours]). Remember that you publish a release version once and for all, contrary to snapshots: no overwrite is allowed.
+If successful, your release will immediately appear in the https://repo1.maven.org/maven2/io/[public release] section of OSSRH (replace the “io” part of this URL with your maven coordinates), and within https://central.sonatype.org/pages/ossrh-guide.html#releasing-to-central[ten minutes] (https://stackoverflow.com/questions/23235892/how-long-does-sonatype-staging-take-to-sync-my-artifacts-with-maven-central#comment45591048_23236185[thanks]) it will automatically transfer to Maven central (your artifact should appear in the https://search.maven.org/[search] interface within https://central.sonatype.org/pages/ossrh-guide.html#releasing-to-central[two hours]). Remember that you publish a release version once and for all, contrary to snapshots: no overwrite is allowed.
 
 As soon as you have successfully published a release, commit it to your SCM, tag the commit with the corresponding version number, then increase the version number in the POM and put the `-SNAPSHOT` suffix back, and commit again, in order to start a new development cycle.
 
