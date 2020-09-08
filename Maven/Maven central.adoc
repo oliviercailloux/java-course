@@ -32,12 +32,12 @@ You need to get your project authorized in OSSRH. (Sonatype essentially checks t
 . Create a `release` profile section
 ** Add into the `release` profile a `distributionManagement` element containing the `snapshotRepository` element (again, see sample above). (See also the Sonatype https://central.sonatype.org/pages/apache-maven.html[Maven guide].) 
 ** Add some plugins into the `release` profile: `maven-source-plugin`, `maven-javadoc-plugin`, `maven-gpg-plugin`, `org.sonatype.plugins:nexus-staging-maven-plugin` (again, see sample above). (Note that the Sonatype documentation indicates old version numbers, see https://maven.apache.org/plugins/index.html[Apache Maven Plugins].)
-. Change your `~/.m2/.settings.xml` file, or create it, to make it look like https://gist.github.com/oliviercailloux/3cc79ed504f986b5ea3442fa6e83f053[this]. This let `mvn deploy` know the credentials to access the OSSRH repository.
+. Change your `~/.m2/.settings.xml` file, or create it, to make it look like https://gist.github.com/oliviercailloux/3cc79ed504f986b5ea3442fa6e83f053[this]. This lets `mvn deploy` know the credentials to access the OSSRH repository.
 
 == Deploy a snapshot
 Run `mvn -Prelease deploy`. Maven activates the `release` profile and goes through all the phases of the default http://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html#Lifecycle_Reference[lifecycle]. If everything goes well, it will compile your project, run the tests, attach the sources and javadoc, sign those artifacts with GPG, and deploy them to OSSRH.
 
-If deployment is successful, your artifacts should be immediately visible https://oss.sonatype.org/content/repositories/snapshots/io/[here] (replace the “io” part of this URL with your maven coordinates, for example, my snapshots are visible https://repo1.maven.org/maven2/io/github/oliviercailloux/[here]).
+If deployment is successful, your artifacts should be immediately visible https://oss.sonatype.org/content/repositories/snapshots/io/[here] (replace the “io” part of this URL with your maven coordinates, for example, my snapshots are visible https://oss.sonatype.org/content/repositories/snapshots/io/github/oliviercailloux/[here]).
 
 You can deploy several times using the same version number, provided it is a snapshot.
 
