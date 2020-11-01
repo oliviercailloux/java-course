@@ -29,6 +29,7 @@ Add the relevant badge to your README.adoc in your project repository: check htt
 A workflow is defined in a `.github/workflows/{nameFile}.yaml` file. It contains at least one job, and these jobs in turn contain steps. These steps reference actions or commands. An action is a basic task unit (for example: check out a repository). Some actions are provided officially by GitHub, but many more are available by third parties.
 
 In the above example, we create a workflow with one job containing these steps:
+
 . an action that executes a https://github.com/marketplace/actions/checkout[git checkout] of the repository;
 . an action that https://github.com/marketplace/actions/setup-java[sets up java] (and that takes an argument);
 . an action that saves or restores a https://help.github.com/actions/configuring-and-managing-workflows/caching-dependencies-to-speed-up-workflows[cache] containing Maven required artifacts;
