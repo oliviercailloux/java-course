@@ -3,7 +3,7 @@
 
 About manipulation of flows (including byte streams, character flows, files) in Java.
 
-NOTE: The reader should understand https://github.com/oliviercailloux/java-course/blob/master/Shell.adoc#Paths[Relative and absolute paths]. The reader should know the https://docs.oracle.com/javase/tutorial/java/javaOO/arguments.html[Varargs] construct. (The last exercice uses https://github.com/oliviercailloux/java-course/blob/master/Maven/README.adoc[Maven].)
+NOTE: The reader should understand https://github.com/oliviercailloux/java-course/blob/master/Git/Shell.adoc#Paths[Relative and absolute paths]. The reader should know the https://docs.oracle.com/javase/tutorial/java/javaOO/arguments.html[Varargs] construct. (The last exercice uses https://github.com/oliviercailloux/java-course/blob/master/Maven/README.adoc[Maven].)
 
 == Overview
 There are four essential kinds of objects that represent flows of information in Java.

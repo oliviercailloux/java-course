@@ -3,7 +3,7 @@
 == Introduction
 A shell (also called a terminal or a command line interface) permits to invoke programs by typing commands. Under Linux, use BASH (Bourne-again Shell) (or another compatible shell). Under Windows, use https://docs.microsoft.com/powershell/scripting/install/installing-windows-powershell[PowerShell], or, if you intend to use a shell to run git commands, use Git BASH, which emulates a Linux shell. (Different shells admit slightly different syntax and provide slightly different capabilities, and commands sometimes differ, but the commands we will need for this course are the same in most classical shells, except when indicated.)
 
-See https://tutorial.djangogirls.org/en/intro_to_command_line/[Introduction to command line] for the very basics of using a shell. Use your keyboard’s up arrow to recall previous commands.
+See https://tutorial.djangogirls.org/en/intro_to_command_line/[Introduction to command line] for the very basics of using a shell. Use ↑ (keyboard up https://en.wikipedia.org/wiki/Arrow_keys[arrow]) to reuse previous commands.
 
 [[Arguments]]
 == About arguments

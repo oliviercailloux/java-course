@@ -1,6 +1,6 @@
 = Execution
 
-NOTE: The reader is supposed to have a minimal knowledge of the https://github.com/oliviercailloux/java-course/blob/master/Shell.adoc[shell], in particular, understand how shell commands are given arguments, understand relative and absolute paths, and have solved the exercices there.
+NOTE: The reader is supposed to have a minimal knowledge of the https://github.com/oliviercailloux/java-course/blob/master/Git/Shell.adoc[shell], in particular, understand how shell commands are given arguments, understand relative and absolute paths, and have solved the exercices there.
 
 See: https://github.com/oliviercailloux/java-course/raw/master/Execution/Pr%C3%A9sentation/presentation.pdf[présentation].
 
@@ -9,11 +9,14 @@ See: https://github.com/oliviercailloux/java-course/raw/master/Execution/Pr%C3%A
 * Define a class `MyMathClass` containing the method `greatestDivisor` and a method that returns the smallest divisor (greater than one) of its parameter; and a class `MyBooleanClass` containing a method `xor` returning `true` iff exactly one of its parameter is `true`.
 * Add a `main` method to your `MyBooleanClass` that prints “Hello, this is my boolean class.” Use `System.out.println("…")` to print.
 * Add a `main` method to you `MyMathClass` that accepts two arguments that can each be either `"true"` or `"false"`; the method calls your `xor` method with the corresponding parameters and prints the result.
-* Compile `MyBooleanClass` with https://docs.oracle.com/en/java/javase/13/docs/specs/man/javac.html[javac], move the resulting file into its own directory, execute it from the source directory.
+* Compile `MyBooleanClass` with `javac`, move the resulting file into its own directory, execute it from the source directory.
 * Find out _in the official documentation_ how to compile the class and let the resulting class be placed in its own directory, in a single step (without you having to move the file afterwards)
 * Compile `MyMathClass`, move the resulting file into its own directory (alone), and execute it from the source directory. Why does it fail? What does the error message indicate, and how is it related to the problem? Fix the problem and execute it, first by grouping the class files, second, while keeping both class files in different directories.
 
 == References
+https://docs.oracle.com/en/java/javase/13/docs/specs/man/javac.html[javac]
+
+== In Eck’s book
 * http://math.hws.edu/javanotes/contents-with-subsections.html[ES1.1] (machine language), 1.2 (Asynchronous events), 1.3 (JVM)
 * (link:http://math.hws.edu/javanotes/c2/exercises.html[EE2.1] to 2.2, supposedly known)
 * http://math.hws.edu/javanotes/c1/quiz.html[EQ1.3] to 1.9
