@@ -13,10 +13,16 @@ Consider using https://javadoc.io/doc/jakarta.ws.rs/jakarta.ws.rs-api/2.1.6/java
 Use `@SuppressWarnings("serial")` rather than adding a `serialVersionUID` field to your class when you do not want to support serialization: it documents your intent better. (See https://stackoverflow.com/a/7636578[SO].)
 
 == Installing the JDK
+For this course, you need Java 11 or more recent.
+
 * Important advice. Uninstall every version of Java you have, keep only one: the latest JDK (which includes a JRE). This prevents problems with tools selecting the wrong JDK or JRE.
 * On Debian: https://packages.debian.org/search?keywords=openjdk-11-jdk&searchon=names&exact=1&suite=all&section=all[openjdk-11-jdk] (install https://packages.debian.org/search?keywords=openjdk-11-source&searchon=names&exact=1&suite=all&section=all[openjdk-11-source] to have the Javadoc accessible even when coding offline).
-* On Windows, to install the https://jdk.java.net/13/[OpenJDK] build, simply extract the compressed file into `C:\Program Files\Java\` (or elsewhere) and add to your `PATH` the value `"C:\Program Files\Java\jdk-13.0.1\bin"`, or adapt according to the name of the extracted `bin` subfolder (https://stackoverflow.com/a/52531093[thanks]).
-* To check that it is correctly installed, open a shell, and verify that both the `java --version` and `javac --version` commands print the correct java version.
+* On Windows or MacOS, install the https://adoptopenjdk.net[AdoptOpenJDK] package: choose the latest OpenJDK version and any JVM (HotSpot or OpenJ9). You should obtain a `.msi` file for Windows or a `.pkg` file for MacOS, that installs easily and configures the system correctly.
+
+For manual installation of the OpenJDK build on Windows, see below.
+
+* To install the https://jdk.java.net/15/[OpenJDK] build, simply extract the compressed file into `C:\Program Files\Java\` (or elsewhere) and add to your `PATH` the value `"C:\Program Files\Java\jdk-15.0.1\bin"`, or adapt according to the name of the extracted `bin` subfolder (https://stackoverflow.com/a/52531093[thanks]).
+* To check that it is correctly installed, open a https://github.com/oliviercailloux/java-course/blob/master/Shell.adoc[shell], and verify that both the `java --version` and `javac --version` commands print the correct java version.
 
 Remark: When installing the JDK, it is often recommended to set two https://superuser.com/q/284342[environment variables]: JAVA_HOME and PATH (https://stackoverflow.com/a/52531093[example]). I suggest to set only the PATH variable, because it is simpler and conceptually more elegant. Luckily, more and more programs do not need JAVA_HOME but will find your Java installation using the PATH variable, if set correctly (refs: Oracle https://docs.oracle.com/en/java/javase/11/install/installation-jdk-microsoft-windows-platforms.html#GUID-96EB3876-8C7A-4A25-9F3A-A2983FEC016A[docs] do not mention JAVA_HOME; https://sources.debian.org/src/openjdk-11/11.0.4+11-1%7Edeb10u1/debian/JAVA_HOME/[Debian]; https://wiki.eclipse.org/FAQ_How_do_I_run_Eclipse%3F#Find_the_JVM[Eclipse]; Maven is more tricky as the Windows https://github.com/apache/maven/blob/master/apache-maven/src/bin/mvn.cmd[script] claims it requires JAVA_HOME, but it is actually satisfied when only the PATH is set, and once Maven is launched, it https://git-wip-us.apache.org/repos/asf?p=maven.git;a=blob;f=maven-embedder/src/main/java/org/apache/maven/cli/CLIReportingUtils.java[does not refer] to JAVA_HOME any more (https://stackoverflow.com/a/15279640[thanks]), and its http://maven.apache.org/install.html[documentation] is https://issues.apache.org/jira/browse/MNG-6003[outdated]).
 
