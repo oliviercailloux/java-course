@@ -47,4 +47,5 @@ You can then write logging statements such as `LOGGER.info("Hello, world.");`.
 
 == References
 * Oracle https://docs.oracle.com/javase/8/docs/technotes/guides/logging/index.html[tutorial] about JUL
+* https://stackoverflow.com/questions/11359187/why-not-use-java-util-logging
 

@@ -1,0 +1,31 @@
+= Syntax
+
+Here we learn the basic syntax of Java, and train using jshell.
+
+== Présentation
+https://raw.githubusercontent.com/oliviercailloux/java-course/master/Git/Pr%C3%A9sentation/presentation.pdf[Présentation]
+
+== Hint
+In jshell, as with many shells, use ↑ (keyboard up https://en.wikipedia.org/wiki/Arrow_keys[arrow]) to recall previous commands.
+
+== Short exercices
+* Assign your first name to a variable and use it to print `Hello <your-first-name>.`
+* Assign your age to a variable and use it to print `<your-age> is my age!`
+* Assign each digit of your age to different variables; use them to print `<your-age> is my age!`
+* Create a boolean variable whose value is `true`, another one whose value is `false`, and use them to create an expression that evaluates to `true` and one that evaluates to `false`
+* Assign any number you like to an integer variable. Create an expression that evaluates to `true` if, and only if, that variable equals your age. (Test it by changing the value of the variable and running the expression again.)
+* Assign the value `true` to a variable of type `String`. Create an expression that evaluates to `true` if, and only if, that variable contains the String `true`.
+
+== Exercice 1
+* Assign 4659 and 23 to variables, and show the result of multiplying these variables
+* Compute and show the greatest divisor of 4659 that is different than 4659 (use the `%` operator and a loop)
+* Define a method that computes and show the greatest divisor of 4659 that is different than 4659
+* Define a method that accepts an integer parameter and returns its greatest divisor except itself; use it to show the greatest divisor of 4659.
+
+== Exercice 2
+In a text editor, define a class `MyMathClass` containing a method that accepts an integer parameter and returns its greatest divisor except itself, and a method that returns the smallest divisor of its parameter except one; and a class `MyBooleanClass` containing a method `xor` returning `true` iff exactly one of its two boolean parameters is `true`. Copy-paste this in jshell and call all these methods from jshell.
+
+== References
+* https://docs.oracle.com/en/java/javase/13/docs/specs/man/jshell.html[jshell]
+* https://arbitrary-but-fixed.net/teaching/java/jshell/2017/12/14/jshell-peculiarities.html[The peculiarities of the JShell]
+

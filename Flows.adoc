@@ -21,7 +21,7 @@ Two essential classes help you deal with files: https://docs.oracle.com/en/java/
 
 Classes that represent flows (such as the four above) implement `Closeable`. This signals that they must be _closed_ after use. (This serves to release resources that might have been reserved by the operating system, or to proceed with finalizing operations, such as effectively writing to disk by flushing the cache.) Do not forget to close your flows after use by calling `close()`. Use the https://docs.oracle.com/javase/tutorial/essential/exceptions/tryResourceClose.html[try-with-resources] statement for this, as it is a simple way of making sure `close()` is duly called.
 
-NOTE: Many examples on the internet still use the `File` class. This approach should now be considered https://docs.oracle.com/javase/tutorial/essential/io/legacy.html[deprecated]. Using `Path` and `Files`, as illustrated here, should be favored: among other advantages, it readily adapts to other kinds of file systems such as https://github.com/google/jimfs[in-memory file systems], as explained below.
+NOTE: Many examples on the internet still use the `File` class. This approach should now be considered https://docs.oracle.com/javase/tutorial/essential/io/legacy.html[deprecated]. Using `Path` and `Files`, as illustrated here, should be favored: it is a simpler API altogether, and readily adapts to other kinds of file systems such as https://github.com/google/jimfs[in-memory file systems], as explained below.
 
 == Exercice: read using a byte flow
 * Create a file `in.txt` in your project directory, containing `Hello, world`. 

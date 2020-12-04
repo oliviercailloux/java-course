@@ -1,41 +1,38 @@
 = Projets
 
 == Instructions générales
-* Dates de livraison précisées dans le programme du cours. https://www.wolframalpha.com/input/?i=Plot%5BPiecewise%5B%7B%7B-1%2F2*x,x%3C+2%7D,%7B-2%2F22*(x-2)-1,+2%3C%3D+x+%3C+24%7D,%7B-1%2F24*x-2,+24%3C%3D+x%7D%7D%5D,+%7Bx,+0,+72%7D%5D[Non respect] des dates : −0.5/20 pour 2h de retard, −3 pour 24h de retard puis −1 par jour supplémentaire.
+* Dates de livraison précisées dans le programme du cours. https://www.wolframalpha.com/input/?i=Plot%5BPiecewise%5B%7B%7B-1%2F2*x,x%3C+2%7D,%7B-2%2F22*(x-2)-1,+2%3C%3D+x+%3C+24%7D,%7B-1%2F24*x-2,+24%3C%3D+x%7D%7D%5D,+%7Bx,+0,+72%7D%5D[Non respect] des dates : −0.5/20 pour 2h de retard ou −3 pour 24h de retard, puis −1 par jour supplémentaire.
 * Une équipe de _n_ personnes est constituée de _n/2_ (arrondi au-dessus) sous-équipes : des binômes de développeurs et une sous-équipe de un ou deux Scrum Master / Product Owner (nommée ci-après « le SM/PO » pour désigner la sous-équipe, même quand ils sont deux)
 * Sous-équipes doivent changer à chaque itération ; le rôle de SM/PO doit être réparti égalitairement
-* SM/PO : vérifie le respect des _tâches_ à délivrer ; réoriente les tâches en cas de problème de prérequis ; vérifie que le projet fonctionne toujours après fusion ; est responsable de la cohérence du tout
+* SM/PO : vérifie le respect des _tâches_ à délivrer ; fait appliquer les https://github.com/oliviercailloux/java-course/tree/master/Best%20practices/[bonnes pratiques] ; réoriente les tâches en cas de problème de prérequis ; vérifie que le projet fonctionne toujours après fusion ; est responsable de la cohérence du tout
 * Un binôme de développeurs travaille sur une (typiquement) ou plusieurs tâches dans une itération (exemple : coder une classe pour enregistrer des commandes de produit). Une tâche peut consister à compléter une tâche précédente (ajout de tests unitaires, correction bugs, …).
 * Vos fonctionnalités doivent être couvertes par des tests unitaires, considérés comme partie intégrante de chaque tâche et soumis en même temps que le code testé.
 
 N’hésitez pas à m’écrire si vous êtes bloqués, n’attendez pas d’avoir perdu plusieurs heures. Cependant, je vous demande de faire l’effort de poser des questions raisonnablement claires et complètes, et de m’indiquer ce que vous avez essayé et votre analyse de la situation. Voyez ces https://codeblog.jonskeet.uk/2012/11/24/stack-overflow-question-checklist/[directives] pour vous inspirer. Si votre question peut intéresser les autres membres du groupe ou qu’il est utile de conserver la discussion pour référence future, créez une issue sur votre projet GitHub où vous décrivez votre problème et demandez-moi (par e-mail par exemple) d’y répondre en me donnant le lien. (ISSUE)
 
 == Pour commencer votre projet
-Pour la première itération Java, le SM/PO crée un squelette initial de projet avec Maven, si ce n’est pas un fork, directement dans la branche `master` (si ce n’est déjà fait).
-
 Commencez par lire et appliquer les bonnes pratiques de https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Style.adoc[style].
 
-Voici quelques points de départ possibles pour améliorer le projet, ou points à garder en tête lors de vos contributions.
+Voici quelques points de départ possibles pour améliorer le projet.
 
 * Indiquer par un bref commentaire sur chaque dépendance son utilité, vérifier versions, retirer les inutiles
 * JUnit 5 et non JUnit 4
 * Appliquer des créateurs statiques, constructeurs privés, immuabilité autant que possible, champs privés
-* Parcourir un itérable avec une boucle for each
 * Éviter redondance (code dupliqué, logique dupliquée…)
 * Améliorer lisibilité du code
 * Prendre en compte warnings Eclipse
 * Utiliser les https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Local%20design.adoc[canevas suggérés] pour implémenter `#toString()`, `#equals()`, `#hashcode()`
 
 == Instructions de livraison
-* Interdiction de commettre sur votre branche `master` sans mon aval. À part ça, organisation interne libre. Suggestion : une branche par tâche, et fusionnez vos fcts sur une branche `dev` au fur et à mesure (https://fr.wikipedia.org/wiki/Int%C3%A9gration_continue[intégration continue]).
+* Interdiction de commettre sur votre branche `main` sans mon aval. À part ça, organisation interne libre. Suggestion : une branche par tâche, et fusionnez vos fcts sur une branche `dev` au fur et à mesure (https://fr.wikipedia.org/wiki/Int%C3%A9gration_continue[intégration continue]).
 * M’ajouter comme collaborateur à votre projet pour pouvoir m’indiquer comme https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-request-reviews[Reviewer].
-* Quand vous avez terminé une tâche, créez une https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests[pull request] (PR) GitHub pour cette tâche, dont le nom décrit succinctement la tâche (exemple : « unit-tests-Truc »), d’une de vos branches vers _votre_ branche `master`.
+* Quand vous avez terminé une tâche, créez une https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests[pull request] (PR) GitHub pour cette tâche, dont le nom décrit succinctement la tâche (exemple : « unit-tests-Truc »), d’une de vos branches vers _votre_ branche `main`.
 ** https://help.github.com/en/github/managing-your-work-on-github/assigning-issues-and-pull-requests-to-other-github-users[Affectez] la PR au membre ou aux deux membres de la sous-équipe responsable de la tâche.
 ** Affectez votre PR à une https://help.github.com/en/github/managing-your-work-on-github/about-milestones[milestone] « Itération x », avec x = 1 si c’est la première itération, et ainsi de suite.
 ** M’ajouter comme Reviewer pour que je sois averti, uniquement si vous êtes effectivement prêts pour une review, c-à-d entre autres si la tâche n’a pas de pré-requis à reviewer et fusionner avant.
 ** [[SEP]] Je dois voir vos changements facilement et les distinguer de code auto-généré ou importé sans changements de votre part et de simples modifications de formatage. Si par exemple vous ajoutez un canevas HTML de 100 fichiers, ou si vous modifiez le formatage du code, faites-le dans une tâche dédiée, et créez une autre tâche pour vos modifications de contenu (SEP). Les changements visibles dans une PR doivent être tous en rapport avec votre tâche, elle-même focalisée sur un sujet bien défini (FOCUS).
 ** [[NICE]] Vous remettez un projet, pas un brouillon mal torché. Soignez-le. Votre code doit être mis en forme systématique, suivre les https://github.com/oliviercailloux/java-course/tree/master/Best%20practices[bonnes pratiques], vous devez prendre en compte d’éventuelles indications d’erreurs de vos outils (Eclipse, GitHub, Travis, …), etc. Faites tout ça _avant_ de m’indiquer comme reviewer sur une PR. (NICE)
-* Si opportun, je commente votre tâche pour indiquer les améliorations à effectuer avant de pouvoir fusionner dans `master`, ou je vous indique que vous pouvez fusionner.
+* Si opportun, je commente votre tâche pour indiquer les améliorations à effectuer avant de pouvoir fusionner dans `main`, ou je vous indique que vous pouvez fusionner.
 ** Vous pouvez (et vous devriez, si vos collègues attendent votre tâche) modifier directement sans attendre la prochaine livraison. Dans ce cas, effectuez des commits sur la branche de votre tâche (car vous pouvez compléter une PR après sa création en ajoutant des commit dans la branche associée), commentez, et ré-indiquez-moi comme reviewer pour que je sois averti quand vous êtes prêts pour une nouvelle review. 
 ** [[MENTION]] Évitez de me mentionner (`@oliviercailloux`) SVP : je ne peux pas m’investir dans des discussions du tac-au-tac pour chaque groupe d’étudiants que je suis. Re-demandez plutôt une review quand vous êtes prêts, après avoir répondu à autant de points que possibles : je regarderai toutes vos réponses en même temps. (Je reste bien sûr disponible par e-mail si besoin de me contacter en privé.)
 * [[FOLLOW-UP]] Une tâche est effectuée en une seule itération. Une fois notée, cette tâche doit être considérée comme définitivement terminée (cela permet de s’y retrouver dans les notes). Si votre tâche poursuit une tâche d’une livraison précédente, il s’agit quand-même d’une nouvelle tâche. Créez une nouvelle branche (par exemple « unit-tests-Truc-it-3 ») partant de votre branche existante. Lorsque vous créez la nouvelle PR, indiquez en commentaire que la tâche fait suite à la PR #x. (FOLLOW-UP)
@@ -54,43 +51,26 @@ Lors de la dernière itération, vous ajouterez dans votre README de projet une 
 * Si vous modifiez du code existant, vous êtes responsable d’améliorer raisonnablement le code qui l’entoure là où c’est facile, de corriger les bugs évidents. Ne vous dédouanez pas d’erreurs évidentes sous prétexte que ce n’est pas vous qui avez écrit telle ligne de code.
 * [[PLAGIAT]] Lorsque vous intégrez du code d’autrui, il faut indiquer _clairement_ que le code n’est pas de vous, et sa provenance. Par exemple, mentionner dans le README de votre projet la provenance de votre template html. Ou, indiquer la provenance dans la javadoc d’une méthode copiée depuis StackOverflow. Cette règle ne s’applique pas si vous ne copiez que quelques lignes de code triviales.
 * Maintenez les conversations focalisées. Ce n’est pas une bonne idée, par exemple, d’indiquer dans un commentaire de la PR #37 que vous avez décidé d’abandonner la PR #22 pour telle et telle raison : quand j’évaluerai la PR #22 par la suite, il est peu probable que je me souvienne de vos explications se trouvant en PR #37.
-* Une mission importante de l’équipe est de s’assurer que le projet converge vers un ensemble cohérent de fonctionnalités exploitables dans la branche `master`. Tentez de terminer en priorité les tâches presque finies qui ne sont pas encore dans `master`, par exemple, avant de commencer de nouvelles choses.
+* Une mission importante de l’équipe est de s’assurer que le projet converge vers un ensemble cohérent de fonctionnalités exploitables dans la branche `main`. Tentez de terminer en priorité les tâches presque finies qui ne sont pas encore dans `main`, par exemple, avant de commencer de nouvelles choses.
 
 === Abréviations
+J’indique (OPT) lorsque mon commentaire a pour but principal de vous indiquer comment vous auriez pu faire mieux. (Il s’agit généralement d’une erreur mineure ou d’une amélioration possible de la clarté du code mais qui ne l’empêche pas de fonctionner.) Vous êtes invités à modifer si cela ne vous retarde pas outre-mesure, mais je ne l’exige pas avant fusion dans `main` ; ou vous pouvez l’indiquer comme une issue (comme si c’était un FUTURE), ou simplement laisser tomber si vous trouvez que c’est un détail peu intéressant ; mais tenez-en compte en tous cas pour vos prochaines PRs !
 
-J’indique (OPT) lorsque mon commentaire a pour but principal de vous indiquer comment vous auriez pu faire mieux. (Il s’agit généralement d’une erreur mineure ou d’une amélioration possible de la clarté du code mais qui ne l’empêche pas de fonctionner.) Vous êtes invités à modifer si cela ne vous retarde pas outre-mesure, mais je ne l’exige pas avant fusion dans `master` ; ou vous pouvez l’indiquer comme une issue (comme si c’était un FUTURE), ou simplement laisser tomber si vous trouvez que c’est un détail peu intéressant ; mais tenez-en compte en tous cas pour vos prochaines PRs !
+Lorsque j’ajoute (FUTURE?) à un commentaire, de même, je n’exige pas une résolution du problème avant fusion dans `main` (pour vous permettre d’avancer sur d’autres fonctionnalités à court terme). Si vous décidez de ne pas le résoudre toute suite, je vous prie d’ouvrir une Issue sur votre projet et d’y reporter mon commentaire (éventuellement reformulé par vos soins pour le clarifier) et un lien vers l’endroit où j’ai fait le commentaire (pour retrouver le contexte). Vous êtes priés de vous occuper de ces issues lors d’itérations futures, en discussion avec moi selon les besoins.
 
-Lorsque j’ajoute (FUTURE?) à un commentaire, de même, je n’exige pas une résolution du problème avant fusion dans `master` (pour vous permettre d’avancer sur d’autres fonctionnalités à court terme). Si vous décidez de ne pas le résoudre toute suite, je vous prie d’ouvrir une Issue sur votre projet et d’y reporter mon commentaire (éventuellement reformulé par vos soins pour le clarifier) et un lien vers l’endroit où j’ai fait le commentaire (pour retrouver le contexte). Vous êtes priés de vous occuper de ces issues lors d’itérations futures, en discussion avec moi selon les besoins.
+D’autres abbréviations sont indiquées ci-dessous, et dans ce document (en majuscules).
 
 |===
-| Abbrv | Pratique à respecter | Informations | Sanction (/ 10, indicatif)
-| INSTR | Respect des instructions concernant la remise (création issues, etc.) | Instructions / project | −1
-| UNIK	| noms des ressources est unique et respecte les bonnes pratiques	| https://github.com/oliviercailloux/java-course/tree/master/Search%20path[Search path]		| −1
-| CASING	| respect des conventions de nommage	| https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Style.adoc[BP Style]	| −0.5
-| FORMAT	| le code est mis en forme systématiquement	| https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Style.adoc[BP Style]	| −1
-| WEB	| commit effectué via git	| Git	| −1
-| DOC	| Javadoc pour documentation du contrat lorsque utile | | −1
-| NOISE	| Sans commentaires auto-générés | Réduit le bruit | −2
-| DER	| le dépôt ne contient pas de produits dérivés	| https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Git.adoc[BP Git]	| −1
-| FOLDER	| la racine du dépôt est la racine du projet	| https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Git.adoc[BP Git]	| −0.5
-| HIST	| Ne pas écraser l’historique	| Git	| 
-| PLAG	| Citer la source quand on inclut du code d’autrui	| https://fr.wikipedia.org/wiki/Plagiat[Plagiat]	| -3
-| ECL	| Le code est correct d’après Eclipse : pas de warnings	| https://github.com/oliviercailloux/java-course/blob/master/Tools.adoc#configuration[Tools]	| -1
-| CP	| Le code est séparé des autres ressources du class path	| https://github.com/oliviercailloux/java-course/tree/master/Search%20path[Search path]	| −1
-| EXC	| Le code échoue rapidement et envoie des exceptions si approprié	| https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Exceptions.adoc#cath-exceptions-only-if-you-have-a-good-reason-to-do-so[BP Exc]	| −2
-| REUSE	| Les bibliothèques existantes sont utilisées à bon escient plutôt que réinventer la roue	| 	| Code écrit non considéré
-| ARRAY	| Privilégier des collections (List, Set, etc.) plutôt que des tableaux de types primitifs	|	| −1
-| TEST	| Des tests unitaires ou fonctionnels couvrent les fonctionnalités demandées	| https://github.com/oliviercailloux/java-course/blob/master/JUnit.adoc[JUnit]	| −1
-| EN	| Coder et commenter en anglais	|	| −0.5
-| FORE	| Privilégier boucles for each	| https://docs.oracle.com/javase/tutorial/java/nutsandbolts/for.html[Tutorial]	| −0.5
-| LOG	| Utiliser des loggers	| https://github.com/oliviercailloux/java-course/blob/master/Log/README.adoc[Log]	| −1
-| STREAMS	| Utiliser des streams pour plus de généralité quand approprié	| https://github.com/oliviercailloux/java-course/blob/master/Flows.adoc[Flows]	| −1
-| POM	| Respecter les conventions de nommage et autres bonnes pratiques Maven, simplifier le POM autant que possible	| https://github.com/oliviercailloux/java-course/tree/master/Maven[Maven]	| −1
-| SEP	| Séparer les tâches | https://github.com/oliviercailloux/java-course/blob/master/Divers/Projets.adoc#SEP[Projets – SEP], FOCUS | 
-| TRAV  | Test qualité Travis passe | https://github.com/oliviercailloux/java-course/blob/master/Divers/Projets.adoc#NICE[Projets – NICE] |
-| SUPPR | Résoudre les problèmes soulignés par votre IDE, pas les supprimer sans justification à l’aide de `@SuppressWarnings` | | −2
-| GNRL | Utiliser de préférence des types plus généraux (t.q. `List` au lieu de `ArrayList`) lorsqu’il n’y a pas d’inconvénient | | −1
-| SPEC | Utiliser de préférence des types qui annoncent clairement et restreignent de façon adéquate l’information qu’ils peuvent contenir (t.q. `int` plutôt que `double`, `Path` plutôt que `String`) | | −0.5
+| Abbrv | Pratique à respecter | Informations
+| INSTR | Respect des instructions concernant la remise (création issues, etc.) | Instructions / project
+| UNIK	| noms des ressources est unique et respecte les bonnes pratiques	| https://github.com/oliviercailloux/java-course/tree/master/Search%20path[Search path]
+| HIST	| Ne pas écraser l’historique	| Git
+| PLAG	| Citer la source quand on inclut du code d’autrui	| https://fr.wikipedia.org/wiki/Plagiat[Plagiat]
+| ECL	| Le code est correct d’après Eclipse : pas de warnings, pas de `@SuppressWarnings` injustifiés	| https://github.com/oliviercailloux/java-course/blob/master/Tools.adoc#configuration[Tools]
+| EXC	| Le code échoue rapidement et envoie des exceptions si approprié	| https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Exceptions.adoc#cath-exceptions-only-if-you-have-a-good-reason-to-do-so[BP Exc]
+| REUSE	| Les bibliothèques existantes sont utilisées à bon escient plutôt que réinventer la roue	|  Code écrit non considéré positivement
+| ARRAY	| Privilégier des collections (List, Set, etc.) plutôt que des tableaux de types primitifs	|
+| EN	| Coder et commenter en anglais	|	
+| FORE	| Privilégier boucles for each	| https://docs.oracle.com/javase/tutorial/java/nutsandbolts/for.html[Tutorial]
 |===
-
 

@@ -24,43 +24,21 @@ You know algorithmics and, preferrably, the basic syntax of Java (or a related l
 * Eck’s http://math.hws.edu/javanotes/[book]
 * Stéphane Airiau’s https://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/[course] (in French)
 * The https://app.gosoapbox.com/event/290081765/[confusion barometer]
-* https://pixees.fr/informatiquelycee/[Site] de David Roche
 * Java API https://docs.oracle.com/en/java/javase/11/docs[Javadoc]
 * https://teams.microsoft.com/l/meetup-join/19%3ameeting_YThjOGQ2ZTgtNDFhNC00ZTA3LTk5NWUtMmQ0ZWNlZTFlMTYw%40thread.v2/0?context=%7b%22Tid%22%3a%2281e7c4de-26c9-4531-b076-b70e2d75966e%22%2c%22Oid%22%3a%22db290b1a-6988-4d6b-91c6-9ddd729313f6%22%7d[Teams]
-
-=== Take notes
-* 5 ways of taking notes https://www.youtube.com/watch?v=AffuwyJZTQQ[video]
-* https://doi.org/10.1177/0956797614524581[Research] shows that taking notes, and especially writing what is said in your own words after some mental processing, permits more effective study
-
-Links taken from the https://www.edx.org/bio/eric-s-lander[course] “Introduction to Biology - The Secret of Life”, MITx
-//www.edx.org/course/introduction-to-biology-the-secret-of-life-4, www.edx.org/course?search_query=introduction%20to%20biology%20-%20the%20secret%20of%20life&level=introductory
+* https://github.com/oliviercailloux/Teaching/blob/main/README.adoc#take-notes[Take notes]!
 
 == Planning
 
 [[S1]]
-=== S1 (5 & 6 Feb 2020)
+=== S1 (2021)
+
+Prerequisites: https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Various.adoc#installing-the-jdk[JDK]
 
 *First half*
 
 * https://github.com/oliviercailloux/java-course/raw/master/Pr%C3%A9sentation%20du%20cours%20Objet/presentation.pdf[Pres course]
-* https://github.com/oliviercailloux/java-course/raw/master/Syntaxe/presentation.pdf[Syntax] (without classes and objects) [Should be known or easy]
-* *Exercice* with https://docs.oracle.com/en/java/javase/13/docs/specs/man/jshell.html[jshell] (or https://tryjshell.org/[online]):
-** Assign 4659 and 23 to variables, and show the result of multiplying these variables
-** Show the greatest divisor of 4659 that is different than 4659 (use the `%` operator and a loop)
-** Define a method that accepts an integer parameter and returns its greatest divisor except itself; use it to show the greatest divisor of 4659.
-** Going beyond: https://arbitrary-but-fixed.net/teaching/java/jshell/2017/12/14/jshell-peculiarities.html[The peculiarities of the JShell]
-* Syntax (end): classes (no objects)
-** Material: http://math.hws.edu/javanotes/contents-with-subsections.html[ES1.4] (Building blocks of programs), 2 intro (names and things), 2.1 (basic Java application), 2.2 (variables and primitive types), 2.3.3 (operations on strings), 2.4.1 (basic and formatted output), 2.5 (expressions), 2.6.7 (packages), ES3 intro to 3.6 (blocks, loops, algorithmic development, switch) [Should be known or easy]
-** http://math.hws.edu/javanotes/c2/[ES2.2.1] (variables), 2.3.1 (subroutines), 2.4.6 (scanner for input) [I]
-** ES1.6 (modern UI), 1.7 (internet) [O]
-* *Exercice* with a text editor: define a class `MyMathClass` containing the method above and a method that returns the smallest divisor (greater than one) of its parameter; and a class `MyBooleanClass` containing a method `xor` returning `true` iff exactly one of its parameter is `true`. Copy-paste this in jshell and make sure you can call all these methods from jshell. (TODO home)
-
-*Todo*
-
-* Install a https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Various.adoc#installing-the-jdk[JDK] from OpenJDK (11 or ulterior)
-* Install https://www.eclipse.org/downloads/packages/[Eclipse IDE] “for Java Developers”
-* Install https://git-scm.com/download[git]
-* Redirect your e-mails @ Dauphine if necessary to ensure you receive announcements posted on MyCourse
+* https://github.com/oliviercailloux/java-course/blob/master/Syntax/README.adoc[Syntax]: basics; exercices; classes; Exercice 2 [Should be known or easy]
 
 *Second half*
 
@@ -74,9 +52,11 @@ Links taken from the https://www.edx.org/bio/eric-s-lander[course] “Introducti
 ** EE3.8, 3.9 [O]
 
 [[S2]]
-=== S2 (28 Feb)
+=== S2 ()
 
-* Supposed known: https://github.com/oliviercailloux/java-course/blob/master/Git/README.adoc[Git]; https://github.com/oliviercailloux/java-course/blob/master/Shell.adoc[Shell]; Execution (see above).
+* Prerequisites: https://www.eclipse.org/downloads/packages/[Eclipse IDE] “for Java Developers”; https://git-scm.com/download[git]
+
+* Supposed known: https://github.com/oliviercailloux/java-course/blob/master/Git/README.adoc[Git]; https://github.com/oliviercailloux/java-course/blob/master/Git/Shell.adoc[Shell]; Execution (see above).
 * Reminder: https://github.com/oliviercailloux/java-course/raw/master/Notions%20objets/presentation.pdf[Basics of objects]
 ** Two roles of classes; static VS instance methods (whose behavior depends on values of parameters and instance attributes)
 * Note about packages (for using `Scanner`)
@@ -97,7 +77,7 @@ Links taken from the https://www.edx.org/bio/eric-s-lander[course] “Introducti
 ** Exercice: *Import a Maven project into Eclipse*
 
 [[S3]]
-=== S3 (4 March)
+=== S3 ()
 
 * Graded exercice similar to https://github.com/oliviercailloux/java-course/blob/master/Git/Dep-Git.adoc[Dep-Git] and similar to the exercices related to https://github.com/oliviercailloux/java-course/blob/master/Git/README.adoc[Git] in this course. Your GitHub username and git `user.name` must be identical (and for all exercices to come as well). See https://github.com/oliviercailloux/java-course/blob/master/Git/Git-Br.adoc[Git-Br] (8h32 to 8h52).
 * https://github.com/oliviercailloux/java-course/blob/master/Maven/README.adoc[Maven], and *exercices* (TODO home: Modern project)
@@ -121,7 +101,7 @@ Links taken from the https://www.edx.org/bio/eric-s-lander[course] “Introducti
 ** EE4.7
 
 [[S4]]
-=== S4 (5 March)
+=== S4 ()
 
 * Graded exercice using your knowledge from Shell; Execution; EE2.x; EE3.x (see above). See https://github.com/oliviercailloux/java-course/blob/master/Execution/Print%20exec.adoc[Print exec]. (13h47 to 14h47)
 * https://github.com/oliviercailloux/java-course/raw/master/Objets/presentation.pdf[Objets]
@@ -138,7 +118,7 @@ Links taken from the https://www.edx.org/bio/eric-s-lander[course] “Introducti
 ** EE5.4, EE5.5: Play Blackjack!
 
 [[S5]]
-=== S5 (18 March)
+=== S5 ()
 
 * _Non-graded_ programming exercice (Maven; contract; fail fast; objects). Create a personal GitHub repository named `maven-exercice`. Create a Maven project and push your whole project to the GitHub repository (so that the `pom.xml` is at the root of the GitHub repository). Make sure the POM follows the https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Maven.adoc[best practices] as indicated in the course (hint: use the “Modern project” archetype). Follow https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Git.adoc[Git Best practices]. 8:35 to 9:35.
 ** Hint: Use https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Eclipse.adoc[correct] Eclipse configuration. Check your warnings!
@@ -163,7 +143,7 @@ Links taken from the https://www.edx.org/bio/eric-s-lander[course] “Introducti
 ** *Exercice*: program an interface `MovableObject` with methods `canAccelerate(): boolean`, `accelerate(): void` and `getTimeToMove(double): double`; implement it twice in classes `ConstantSpeedMovable` and `GenericMovable`, in a reasonable way of your choice. In a class `MovableUser`, program a `main` method that instanciates one `ConstantSpeedMovable` and two `GenericMovable` objects, accelerate one of them, and prints the three resulting times to move 1 km. Add a method `brake(): void` to `MovableObject`. Add to `MovableUser` a method `getTotalTime(movable: MovableObject): double` that computes the total time taken for the given movable object to move 1 km then brake then move 100m then accelerate then move 1 km again. Change your `main` so that it also prints that total time, for each of the three objects created in the method. Commit to a repository named `I-like-to-move-it` in your GitHub account.
 
 [[S6]]
-=== S6 (19 March)
+=== S6 ()
 
 * Inheritance: Object; print an object. See this https://raw.githubusercontent.com/oliviercailloux/Simple-Papyrus-project/inheritance/Object%20and%20Car.svg?sanitize=true[diagram].
 ** *Exercice*: create an object `Car extends Object` that does not override `toString()`, call its `toString()` method, explain what happens. Override `toString()` in your class `Car`, call the `toString()` method, explain what happens. Consider the following code: `Object car = new Car(); car.toString()`. Will the method be the one declared in `Object` or in `Car`, and why? What changes if we instead write `Car car = new Car(); …`?
@@ -196,7 +176,7 @@ Links taken from the https://www.edx.org/bio/eric-s-lander[course] “Introducti
 * Use https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Eclipse.adoc[this] Eclipse configuration.
 
 [[S7]]
-=== S7 (1 April)
+=== S7 ()
 
 * Peer grading of maven-exercice (https://github.com/oliviercailloux/java-course/blob/master/L3a.adoc#S5{emptyattribute}[S5]), for https://docs.google.com/document/d/1HxDej7S81B3Jgp5VOnct0iw3vO3E6u9HH1les9eg4Vw/edit?usp=sharing[volunteers].
 * https://www.scientecheasy.com/2018/09/collection-hierarchy-in-java-collections-class.html/[Collections], start: `Iterable` and `Iterator`.
@@ -242,7 +222,7 @@ Links taken from the https://www.edx.org/bio/eric-s-lander[course] “Introducti
 * You may submit a new solution to print exec on your (existing) print exec repository, you will receive new comments considering your version at the end of 5 April. This will not count for the grade.
 
 [[S8]]
-=== S8 (2 April)
+=== S8 ()
 
 * https://docs.oracle.com/javase/tutorial/java/javaOO/arguments.html[Varargs]
 ** *Exercice*: call the static method `String.link:https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#format(java.lang.String,java.lang.Object.%2E.)[format]()` with no arguments, then with only one string as argument, then two strings, then three strings. Predict which calls will be accepted by the compiler. Explain in each case what parameters are effectively passed to the method, by considering the method declaration (hint: exactly two parameters are passed for each permissible call).
@@ -256,7 +236,7 @@ Links taken from the https://www.edx.org/bio/eric-s-lander[course] “Introducti
 Delivery 1: before end of 20 April. See https://github.com/oliviercailloux/java-course/blob/master/Divers/Projets.adoc[instructions].
 
 [[S9]]
-=== S9 (22 April)
+=== S9 ()
 
 * Files and flows: https://github.com/oliviercailloux/java-course/blob/master/Flows.adoc#path-operations[Path operations] and providers.
 * Comparator and sorting, (Comparable), Maps
@@ -274,7 +254,7 @@ Delivery 1: before end of 20 April. See https://github.com/oliviercailloux/java-
 Delivery 2: before end of 5 May. Recall: 10 hours of efficient work / person expected for each delivery. Focus on quality rather than on quantity.
 
 [[S10]]
-=== S10 (23 April)
+=== S10 ()
 
 * Graded test: https://classroom.github.com/a/BHlfOU0x[string-files]. About `Set`, `List`, files, flows, paths, providers, and the methods `https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/nio/file/Files.html[Files]#copy`, `createFile`, `delete`, `exists`, `isDirectory`, `readAllLines`, `readString`, `write`, `writeString`. Some (incomplete) unit tests are already provided, to help you test your implementation (look under `src/test/`). You have 30 minutes. Hint: use up to 10 minutes to make sure you understand the contract, including by reading the unit tests. Hint 2: implement the methods in the order they are defined in the interface.
 * Override https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Local%20design.adoc#the-equalsobject-method[`equals`] and `hashcode`
@@ -283,14 +263,14 @@ Delivery 2: before end of 5 May. Recall: 10 hours of efficient work / person exp
 * https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Resources.adoc[Resources]; exercice: read a file from the class path.
 
 [[S11]]
-=== S11 (4 May)
+=== S11 ()
 
 * https://github.com/oliviercailloux/java-course/blob/master/Log/README.adoc[Logging]
 * https://github.com/oliviercailloux/java-course/raw/master/Annotations/presentation.pdf[Annotations]
 * https://github.com/oliviercailloux/java-course/tree/master/SWT[SWT]
 
 [[S12]]
-=== S12 (7 May)
+=== S12 ()
 
 * Graded test: https://classroom.github.com/a/qzD5WTJc[chess]. About generics, `Set`, `List`, `Map`, and other classes and interfaces related to the collections in Java (see S6 to S9); as well as the class `Optional` (see https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Null.adoc[BP null]). You will have 90 minutes. (You can reuse the Coffee exercice in order to practice to start quickly.) Please have a look at the https://en.wikipedia.org/wiki/Algebraic_notation_(chess)[algebraic notation] and at the https://en.wikipedia.org/wiki/Chess_piece[chess pieces] if you know nothing about chess. (You do not have to know the rules of the game.) _Hint_: make sure the first method is implemented correctly.
 * https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html[Method references]
@@ -302,12 +282,12 @@ Delivery 2: before end of 5 May. Recall: 10 hours of efficient work / person exp
 *Graded homework*: string-files-homework. Your last commit before the end of the 10th of May will be graded again, using the same set of tests as the graded test. This will count for 70% of a normal test. The string-files graded test counts for 30% or a normal test. Please commit on the same repository as the one already used (string-files).
 
 [[S13]]
-=== S13 (20 May)
+=== S13 ()
 * https://github.com/oliviercailloux/java-course/blob/master/DevOps/CI-github-actions.adoc[CI]: GitHub Workflows, by Avi Mimoun
 * Work on project
 
 [[S14]]
-=== S14 (22 May)
+=== S14 ()
 
 * Graded test: https://classroom.github.com/a/D9vfNsRU[score-keeper]. About referring to objects from other objects. You will have 60 minutes (push before 9:35). There will be several interfaces, you only have to implement `MyScoreManager`. (You may need to implement other classes to achieve this.) There is no documentation in this project: you will have to read the unit tests to understand what the class is supposed to do.
 * Licenses and philosophy: https://www.gnu.org/philosophy/philosophy.html[GNU]; https://opensource.org/[OSI]; Copyleft (GNU https://opensource.org/licenses/GPL-3.0[GPL]); Non-copyleft (https://opensource.org/licenses/MIT[MIT])
@@ -319,13 +299,13 @@ Delivery 2: before end of 5 May. Recall: 10 hours of efficient work / person exp
 Third release before the end of the 14th of June.
 
 [[S15]]
-=== S15 (17 June)
+=== S15 ()
 
 * Answer for https://github.com/oliviercailloux/samples-chess[chess] and https://github.com/oliviercailloux/samples-scorers[scorers]: look at the `impl` branch.
 * Work on project
 
 [[S16]]
-=== S16 (19 June)
+=== S16 ()
 
 * Work on project
 * Presentation before end of the 2nd of July, directly in `master`, in your documentation folder, named `Présentation 2020.pdf`.
@@ -333,7 +313,7 @@ Third release before the end of the 14th of June.
 Fourth and last release before the end of the 28th of June.
 
 [[S17]]
-=== S17 (3 July)
+=== S17 ()
 
 * Présentations : 
 https://github.com/Julienchilhagopian/J-Voting/raw/master/Doc/Pr%C3%A9sentation%202020.pdf[J-Voting], 
