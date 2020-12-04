@@ -1,9 +1,9 @@
-= Various tools
+= Java EE
 :sectanchors:
 
-Various useful tools for Java and Java EE developers.
+This folder documents Java EE. This was up-to-date, mostly, as of beginning of 2019. I have not updated it for the newer https://jakarta.ee/[Jakarta EE], so watch out for relevant differences!
 
-== Java EE
+== Useful tools
 * https://www.eclipse.org/downloads/packages/[Eclipse IDE] “for Java EE Developers”
 * Download and install (deflate) https://wildfly.org/downloads/[WildFly] (14.0.1.Final or more recent, Java EE Full & Web Distribution)
 * https://tools.jboss.org/downloads/jbosstools/2018-09/4.9.0.Final.html[JBoss Tools], a plug-in for easy deployment to Wildfly. Install only JBoss AS, WildFly & EAP Server Tools. (Rationale: I have had stability issues in Eclipse after installing the whole of JBoss Tools.) Or https://github.com/oliviercailloux/java-course/blob/master/Automated%20Eclipse%20install.adoc[automate] it.
