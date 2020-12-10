@@ -102,7 +102,7 @@
 	\begin{itemize}
 		\item Histoire conservée \emph{localement} dans \texttt{.git} à la racine du projet
 		\item WD (\og{}work dir\fg{}) : version du projet (fichiers et sous-répert.)
-		\item Interaction avec sous-rép. \texttt{.git} : \emph{uniquement} via outils git
+		\item Interaction avec sous-rép. \texttt{.git} via commandes git
 	\end{itemize}
 	\texttt{/root}
 	\begin{itemize}
@@ -152,8 +152,8 @@
 	\begin{itemize}
 		\item \emph{Index} : changements à apporter au prochain commit
 		\item \emph{HEAD} : commit d’où le work dir actuel est issu
-		\item Initialisation nouveau dépôt ? \pause Index et HEAD vide \pause
-		\item Juste après un commit ? \pause Index vide
+		\item Initialisation nouveau dépôt ? \onslide<2->{Index et HEAD vides}
+		\item Juste après un commit ? \onslide<3->{Index vide}
 	\end{itemize}
 \end{frame}
 
@@ -193,9 +193,8 @@
 		\item commit : avance HEAD et branche actuelle
 		\item \texttt{git branch truc} : crée branche \texttt{truc}. HEAD inchangé !
 		\item \texttt{git checkout truc} : change HEAD et met à jour WD
-		\item Conseil : WD clean avant checkout !
-		\item \texttt{git log -{}-graph -{}-decorate -{}-oneline -{}-all}
 	\end{itemize}
+	Cf. démo commande et \href{https://git-school.github.io/visualizing-git/}{graphique}
 \end{frame}
 
 \begin{frame}

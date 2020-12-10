@@ -1,7 +1,7 @@
 = Shell
 
 == Introduction
-A shell (also called a terminal or a command line interface) permits to invoke programs by typing commands. Under Linux, use BASH (Bourne-again Shell) (or another compatible shell). Under Windows, use https://docs.microsoft.com/powershell/scripting/install/installing-windows-powershell[PowerShell], or, if you intend to use a shell to run git commands, use Git BASH, which emulates a Linux shell. (Different shells admit slightly different syntax and provide slightly different capabilities, and commands sometimes differ, but the commands we will need for this course are the same in most classical shells, except when indicated.)
+A shell (also called a terminal or a command line interface) permits to invoke programs by typing commands. Under Linux, use BASH (Bourne-again Shell), for example. Under Windows, use https://docs.microsoft.com/powershell/scripting/install/installing-windows-powershell[PowerShell], or Git BASH, which emulates a Linux shell. (Different shells admit slightly different syntax and provide slightly different capabilities, and commands sometimes differ, but the commands we will need for this course are the same in most classical shells, except when indicated.)
 
 See https://tutorial.djangogirls.org/en/intro_to_command_line/[Introduction to command line] for the very basics of using a shell. Use ↑ (keyboard up https://en.wikipedia.org/wiki/Arrow_keys[arrow]) to reuse previous commands.
 
@@ -23,7 +23,7 @@ The term “path” comes from the fact that this way of referring to files corr
 
 [[Tree]]
 .A tree representing a file system
-image::C2.svg[opts="inline"]
+image::https://docs.oracle.com/javase/tutorial/figures/essential/io-dirStructure.gif[opts="inline"]
 
 A file or a directory can also be referred to using a path that is _relative_ to another directory. For example, relative to the directory `/home/myuser/`, a relative path for the file in the above example is `myprojectdirectory/README.txt`. A path relative to `/home` is `myuser/myprojectdirectory/README.txt`. A path relative to `/home/myuser/myprojectdirectory` is simply `README.txt`. Relative paths can also use `..` segments to “climb up” one level in the hierarchy. That is, relative to `/home/myuser/anotherdirectory`, a path of the example file is `../myprojectdirectory/README.txt`. The mechanism for referring to directories using relative paths is similar. For example, a relative path to refer to the directory `/home/myuser/myprojectdirectory`, relative to `/home/`, is `myuser/myprojectdirectory`. A relative path never starts with a `/`, an absolute path always does (this is also true under Windows, if replacing `/` with `\` and neglecting the drive letter).
 
