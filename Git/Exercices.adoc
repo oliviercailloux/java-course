@@ -3,14 +3,7 @@
 :sectanchors:
 :xrefstyle: short
 
-Some exercices for git starters. The reader is supposed to know already the basics of git (see slides in this course).
-
-Hint: use the git https://github.github.com/training-kit/[Cheat sheets].
-
-// https://graphviz.gitlab.io/_pages/doc/info/command.html
-// file:///home/olivier/Professions/Enseignement/java-course/Git/out.svg
-
-// * https://classroom.github.com/a/aiweSTSU[Git] (marked /10): use this repository (created when you accept the homework) at the last step of the git exercices above _instead of creating a new remote remository RG_. Connect your local repository R1 to it, and keep on following the instructions in the exercice. I do not expect written answers to the questions asked in the exercice.
+Some exercices for git starters. Hint: use the git https://github.github.com/training-kit/[Cheat sheets].
 
 == Local repository
 
@@ -18,8 +11,9 @@ Hint: use the git https://github.github.com/training-kit/[Cheat sheets].
 Git can be configured by associating string values to “options”. Here we want to associate your name as a value to the option `user.name`. Git will use this to sign your commits.
 An option can be configured locally (for a given repository) or globally (for every time you use git on that system).
 
+* Type `git config` and read the doc, in particular, consider the options `--global`, `--get` and `--add`.
 * Define globally the option `user.name`. Check with `git config --list` (if this returns nothing, it means that no option is configured yet).
-** Hint: type `git config` and read the doc; use the option `--global`. See https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup[here] for detailed explanations.
+** See https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup[this] if you need more explanation.
 
 === First commit
 * Create a new directory `project` and put there a file `start.txt` with content `hello`.

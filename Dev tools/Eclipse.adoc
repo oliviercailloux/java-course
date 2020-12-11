@@ -1,0 +1,34 @@
+= Eclipse
+
+For this course you will need a recent version of the https://www.eclipse.org/downloads/packages/[Eclipse IDE] “for Java Developers”.
+
+== Basics
+To exploit the power of Eclipse, at the very minimum, you must understand the notion of perspectives and views, and know how to easily navigate within resources.
+
+In the Workbench User Guide, https://help.eclipse.org/latest/topic/org.eclipse.platform.doc.user/gettingStarted/qs-02a.htm[Basic tutorial], follow the first few sections of the tutorial: `The Workbench`, `Editors and views`, `A simple project`, `Closing an editor` and `Navigating resources`; then read `Rearranging views and editors`.
+
+== Basic exercices
+
+* Open the `Resource` perspective, then, the `Java` perspective
+* Open the `Problems` view in the `Resource` perspective, then, open the `Javadoc` view in the `Java` perspective
+* Clone the the https://github.com/JodaOrg/joda-money[Joda-Money] repository and import it into Eclipse using `File` / `Open Projects from File System`. Go directly to the class `Money` using a means you just learned, and, using the `Outline` view, go to the method `convertedTo`. Focus on the text `withCurrencyScale`, in the method implementation. Make sure your `Javadoc` view shows the documentation of that method.
+
+[[Eclipse-strict]]
+== Configuration
+Configure Eclipse to show more errors and warnings in order to help spot mistakes and code smells early.
+
+* From Eclipse, import this https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Eclipse-prefs.epf[epf] (Eclipse Preference File). 
+** You can look at the text in the file to see what this changes to your Eclipse configuration.
+* Check in `Windows / Preferences` whether the changes were applied. For example, check in `Java / Code Style / Code Templates` that the `Catch block body` contains `throw new IllegalStateException(e);`.
+* Check in your project properties, `Java Compiler` / `Errors/Warnings` that the project uses your global Eclipse compiler settings.
+* Clean and recompile your project to see the effect.
+* Check that the instruction `ArrayList<String> l = new ArrayList<String>();` raises a warning (“Redundant specification of type arguments <String>”).
+
+== More doc
+Read the following (a piece at a time), for a great increase to your productivity and pleasure of coding.
+
+* Workbench User Guide, https://help.eclipse.org/latest/topic/org.eclipse.platform.doc.user/gettingStarted/qs-02a.htm[Basic tutorial]
+* Workbench User Guide, https://help.eclipse.org/latest/topic/org.eclipse.platform.doc.user/tips/platform_tips.html[Tips and Tricks]
+* Java development user guide, https://help.eclipse.org/latest/topic/org.eclipse.jdt.doc.user/gettingStarted/qs-2.htm[Basic tutorial]
+* Java development user guide, https://help.eclipse.org/latest/topic/org.eclipse.jdt.doc.user/tips/jdt_tips.html[Tips and Tricks] (JDT)
+

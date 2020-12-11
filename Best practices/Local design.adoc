@@ -74,3 +74,11 @@ If the fields may be `null`, use https://docs.oracle.com/en/java/javase/11/docs/
 == The `#hashCode()` method
 If you override `#equals(Object)`, you must override `#hashCode()` as well. And remember that if `a.equals(b)`, then `a.hashCode()` must equal `b.hashCode()`. Use simply something like: `return Objects.link:https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Objects.html#hash(java.lang.Object.%2E.)[hash](firstName, secondName)`.
 
+== Warnings
+Your production-ready code should exhibit no warning. In a good quality code, meeting any warning should trigger an urge to solve the problem before going further. 
+
+In *rare* cases, the IDE will produce a warning that you can be sure does not apply to your situation. _Even in that case_, you should take care of the warning and not leave it unattended. Otherwise, the reader of your code will not easily see which warnings it should take seriously, and this prevents applying the systematic strategy of taking warnings seriously. There is certainly a way of making such a spurious warning disappear. Using `@SuppressWarnings` can be considered in such a case, but should be considered a last resort solution, and applied only if you are absolutely confident that the IDE is wrong, not you (hint: usually the opposite is true).
+
+== Favor for each syntax
+Favor the https://docs.oracle.com/javase/tutorial/java/nutsandbolts/for.html[for each] syntax for looping over an `Iterable` type. It is shorter and clearer than an explicit use of an iterator or of an array index.
+

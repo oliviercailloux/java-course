@@ -4,7 +4,7 @@ Prerequisites:
 
 - Install https://git-scm.com/download[git].
 - We will start learning with the command line interface of git. If you are not used to using a shell, read the https://github.com/oliviercailloux/java-course/blob/master/Git/Shell.adoc[Shell] document.
-Under Windows, use Git BASH (included in git https://gitforwindows.org/[for Windows]). (As Git BASH emulates a Linux environment, you use Linux-like commands there.)
+Under Windows, use Git BASH (included in git https://gitforwindows.org/[for Windows]). As Git BASH emulates a Linux environment, you use Linux-like commands there. (Power users may prefer to use https://www.develves.net/blogs/asd/articles/using-git-with-powershell-on-windows-10/[PowerShell].)
 
 Then see https://raw.githubusercontent.com/oliviercailloux/java-course/master/Git/Pr%C3%A9sentation/presentation.pdf[présentation] (or read below) and https://github.com/oliviercailloux/java-course/blob/master/Git/Exercices.adoc[exercices].
 
