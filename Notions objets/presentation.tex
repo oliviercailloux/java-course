@@ -42,37 +42,23 @@
 
 \section{Méthodes, classes, objets}
 \begin{frame}
-	\frametitle{Sous-routines}
-	\begin{itemize}
-		\item Sous-routine : entrée (facultative), ensemble d’instructions, sortie (facultative)
-		\item Fait qqch
-		\item On peut l’appeler sans savoir comment elle procède (boîte noire)
-		\item \jseref{java.lang/Math\#random--}\texttt{();} \jseref{java.lang/Math\#abs-int-}\texttt{(-4);}
-		\item Sous-routine \texttt{random} statique se trouvant dans classe \texttt{Math}
-		\item Classes regroupent des variables et sous-routines statiques
-		\item \texttt{System.out} : variable statique \texttt{out} dans classe \texttt{System}
-		\item Permet d’\emph{organiser} et de \emph{nommer}
-	\end{itemize}
-\end{frame}
-
-\begin{frame}
-	\frametitle{String vers int}
-	\begin{itemize}
-		\item Création d’un int ? \pause
-		\begin{itemize}
-			\item \texttt{2}
-			\item \texttt{int pos = Math.abs(-4);} \pause
-		\end{itemize}
-		\item Ou utiliser la classe \jseref{java.lang/Integer}
-		\item \texttt{int i = Integer.parseInt("10");}
-	\end{itemize}
-\end{frame}
-
-\begin{frame}
 	\frametitle{Deux rôles des classes}
 	\begin{itemize}
-		\item Classe : conteneur à variables et sous-routines statiques
+		\item Classe : conteneur à variables et méthodes statiques
 		\item Mais peut aussi être considérée comme un \emph{type} : spécification, modèle, moule à objets
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Conteneur statique}
+	\begin{itemize}
+		\item Classes regroupent des variables et sous-routines statiques
+		\item Permet d’\emph{organiser} et de \emph{nommer}
+%		\item Méthode : entrée (facultative), ensemble d’instructions, sortie (facultative)
+%		\item Fait qqch
+%		\item On peut l’appeler sans savoir comment elle procède (boîte noire)
+		\item \texttt{Math.\href{https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html\#sqrt(double)}{sqrt}(Math.PI);}
+		\item Méthode \texttt{sqrt} statique dans classe \texttt{Math}
 	\end{itemize}
 \end{frame}
 
