@@ -2,13 +2,14 @@
 \RequirePackage{silence}
 \documentclass[english, french]{beamer}
 \input{preamble/packages}
+\input{preamble/redac}
 \input{preamble/math_basics}
 \input{preamble/math_mine}
-\input{preamble/redac}
+\input{preamble/jdoc}
 \input{preamble/draw}
-\input{preamble/acronyms}
 \input{preamble/uml}
 \input{preamble/refAPIcmds}
+%\jdocRef{java.util/Random} \jdocRef{java.util/Random\#ints()} \jdocRef[show parameters]{java.util/Random\#doubles(double, double)} 
 
 \setbeamertemplate{headline}[singleline]
 \setbeamertemplate{footline}[onlypage]
@@ -40,7 +41,7 @@
 \end{frame}
 \addtocounter{framenumber}{-1}
 
-\section{Méthodes, classes, objets}
+\section{Deux rôles}
 \begin{frame}
 	\frametitle{Deux rôles des classes}
 	\begin{itemize}
@@ -50,42 +51,71 @@
 \end{frame}
 
 \begin{frame}
-	\frametitle{Conteneur statique}
+	\frametitle{Rôle 1 : Conteneur statique}
 	\begin{itemize}
 		\item Classes regroupent des variables et sous-routines statiques
 		\item Permet d’\emph{organiser} et de \emph{nommer}
-%		\item Méthode : entrée (facultative), ensemble d’instructions, sortie (facultative)
-%		\item Fait qqch
-%		\item On peut l’appeler sans savoir comment elle procède (boîte noire)
 		\item \texttt{Math.\href{https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html\#sqrt(double)}{sqrt}(Math.PI);}
 		\item Méthode \texttt{sqrt} statique dans classe \texttt{Math}
 	\end{itemize}
 \end{frame}
 
 \begin{frame}
-	\frametitle{Classes et objets}
+	\frametitle{Rôle 2 : Moule à objets}
 	\begin{itemize}
 		\item Classe : moule à objets, appelée type de l’objet
 		\item Objet : instance de classe
 		\item Exemple : classe \texttt{Car} modélise une voiture
 		\item Objet correspondant est une voiture donnée (de type \texttt{Car})
-		\item Classe \jseref{java.lang/String}, Objet : \texttt{"blah"}
-		\item Classe \jseref{java.util/Scanner}, Objet \texttt{scanner} utilisé pour récupérer le texte entré par l’utilisateur
+		\item Classe déjà utilisée dans ce cours ? \onslide<2->{\jdocRef{java.base/java.lang/String}, Objet : \texttt{"blah"}}
+%		\item Classe \jseref{java.util/Scanner}, Objet \texttt{scanner} utilisé pour récupérer le texte entré par l’utilisateur
 	\end{itemize}
 \end{frame}
 
-\section{Strings}
+\section{Création}
 \begin{frame}
-	\frametitle{Opérations sur String}
+	\frametitle{Création d’objets}
+	\begin{enumerate}
+		\item Via \emph{constructeur} : \texttt{new} + nom de la classe
+		\begin{itemize}
+			\item \texttt{Random r = new \jdocRef{java.base/java.lang/Random()};}
+			\item \texttt{IllegalArgumentException exc1 = new IllegalArgumentException("Must be positive.");}
+			\item \texttt{IllegalArgumentException exc2 = new IllegalArgumentException("Must be negative.");}
+		\end{itemize}
+		\item \only<1>{???}\onslide<2->{
+			Via une méthode
+			\begin{itemize}
+				\item \texttt{Instant now = Instant.now();}%\jdocRef{java.base/java.time/Instant\#now()};}
+				\item \texttt{String ten = String.valueOf(10);}
+			\end{itemize}
+			\item Via une variable statique: \texttt{DateTimeFormatter formatter = DateTimeFormatter.ISO\_DATE}
+			\item Syntaxe particulière pour instances de \texttt{String} : \texttt{String s = "Coucou";}
+		}
+	\end{enumerate}
+\end{frame}
+
+\section{Usage}
+\begin{frame}
+	\frametitle{Usage des objets}
 	\begin{itemize}
-		\item \texttt{"Hello".\jseref[omitfqname=true]{java.lang/String\#toUpperCase--}();}
-		\item \texttt{"Hello".\jseref[omitfqname]{java.lang/String\#indexOf-java.lang.String-}("l");} ⇒ \onslide<1>{?}\onslide<2->{\texttt{2}}
-		\item \texttt{"Hello".\jseref[omitfqname]{java.lang/String\#substring-int-int-}(1, 3);} ⇒ \onslide<1-2>{?}\onslide<3>{\texttt{"el"}}
+		\item Classes définissent des méthodes
+		\item \texttt{String s1 = "a";}
+		\item \texttt{String s2 = "Coucou";}
+		\item Différents objets, mais de même type
+		\item Méthodes non statiques ont un comportement différent en fonction de l’instance
+		\item \texttt{s1.toUpperCase()} ⇒ \texttt{"A"}
+		\item \texttt{s2.toUpperCase()} ⇒ \texttt{"COUCOU"}
+		\item \texttt{e1.getMessage()} ⇒ \texttt{"Must be positive."}
+		\item \texttt{e2.getMessage()} ⇒ \texttt{"Must be negative."}
 	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Égalité}
 	Attention au test d’égalité :
 	\begin{itemize}
-		\item[\mkkOK] utiliser \texttt{s1.equals(s2)} 
-		\item[\mkkNO] et \emph{pas} \texttt{s1 == s2}
+		\item[\mkkOK] utiliser \texttt{s1.equals(s2)} (teste l’égalité sémantique)
+		\item[\mkkNO] et \emph{pas} \texttt{s1 == s2} (teste l’égalité des références)
 	\end{itemize}
 \end{frame}
 
@@ -93,7 +123,6 @@
 \begin{frame}
 	\frametitle{Scanner}
 	\begin{itemize}
-		\item Objet créé par \texttt{new}
 		\item \texttt{Scanner stdin = new \jseref[omitfqname]{java.util/Scanner\#Scanner-java.io.InputStream-}(\jseref{java.lang/System\#in});}
 		\item \texttt{String userName = stdin.\jseref[omitfqname]{java.util/Scanner\#nextLine--}();}
 	\end{itemize}

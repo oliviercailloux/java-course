@@ -2,7 +2,7 @@
 
 NOTE: The reader is supposed to have a minimal knowledge of the https://github.com/oliviercailloux/java-course/blob/master/Git/Shell.adoc[shell], in particular, understand how shell commands are given arguments, understand relative and absolute paths, and have solved the exercices there.
 
-See: https://github.com/oliviercailloux/java-course/raw/master/Execution/Pr%C3%A9sentation/presentation.pdf[présentation].
+Here we learn how to compile and execute Java code, first in a simple case, then, in more general cases such as when using non-default packages. See: https://github.com/oliviercailloux/java-course/raw/master/Execution/Pr%C3%A9sentation/presentation.pdf[présentation].
 
 == Exercice
 * Define a method `greatestDivisor` that accepts an integer parameter and returns its greatest divisor except itself; use it to show the greatest divisor of 4659.
@@ -11,14 +11,53 @@ See: https://github.com/oliviercailloux/java-course/raw/master/Execution/Pr%C3%A
 * Add a `main` method to you `MyMathClass` that accepts two arguments that can each be either `"true"` or `"false"`; the method calls your `xor` method with the corresponding parameters and prints the result.
 * Compile `MyBooleanClass` with `javac`, move the resulting file into its own directory, execute it from the source directory.
 * Find out _in the official documentation_ how to compile the class and let the resulting class be placed in its own directory, in a single step (without you having to move the file afterwards)
-* Compile `MyMathClass`, move the resulting file into its own directory (alone), and execute it from the source directory. Why does it fail? What does the error message indicate, and how is it related to the problem? Fix the problem and execute it, first by grouping the class files, second, while keeping both class files in different directories.
+* Compile `MyMathClass`, move the resulting file into its own directory (alone), and execute it from the source directory. Why does it fail? What does the error message indicate, and how is it related to the problem? Fix the problem and execute it, first by grouping the class files, second, while keeping both class files in distinct directories.
+
+== Exercice: with packages
+Declare your class `MyMathClass` in a package `myclasses.mymathpackage`, and your class `MyBooleanClass` in a package `myclasses.mybooleanpackage`. Place these files in the right folders! (Hint: think about what relative path they must have.) Compile them, place the result in a folder `target`, distinct from the one you use for your source code, and execute the program. (Hint: think about the relative path the compiled files must have.)
+
+== The class path in general
+=== Search path, module path and class path
+The search path is the set of places where the JVM will look for your classes and other resources.
+
+Essentially two mechanisms are used: the class path and the module path. This course focuses on the class path mechanism. It is anyway necessary to understand it in order to understand the (slightly more advanced) module path mechanism. Thus, the description here pretends that search path equals class path, although this is an oversimplification.
+
+=== Quick facts to remember
+* A class has a simple name (for example, `MyClass`), and a full name (for example, `somepackage.somesubpackage.MyClass`)
+* A (top-level) class is defined in a source file whose relative path must reflect its full name, for example, `somepackage/somesubpackage/MyClass.java`; relative to some base folder where you put your source code (for example, `/home/me/My project/My source code/`)
+* A class is compiled in a file whose relative path must reflect its full name, for example, `somepackage/somesubpackage/MyClass.class`; relative to some base folder where you put your compiled code (for example, `/home/me/My project/My compiled code/`)
+* When using `javac` to compile, you give _files_ as arguments
+* When using `java` to execute, you give a _full class name_ as argument (the one whose `main` method you want to run
+* For both `javac` and `java`, the program must be able to find the adequate dependencies. To enable this, give it your _class path_: the paths to the base folders containing your compiled classes
+* Example: `java -cp "/home/me/My project/My compiled code/" "somepackage.somesubpackage.MyClass" "argument 1" "argument 2"` will search for classes from the folder `/home/me/My project/My compiled code/`, and will attempt to run the `main` method defined in the class `somepackage.somesubpackage.MyClass`, giving it the arguments `argument 1` and `argument 2`
+
+=== More about the class path
+For more information about the class path, see: https://github.com/oliviercailloux/java-course/blob/master/Execution/Pr%C3%A9sentation%20class%20path/presentation.pdf[Présentation class path], https://github.com/oliviercailloux/java-course/blob/master/Execution/Overview.adoc[Overview], https://github.com/oliviercailloux/java-course/blob/master/Execution/Exercices.adoc[Exercices], BP https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Resources.adoc[resources].
+
+//TODO binary name as defined in The Java™ Language Specification, section 13.1 "The Form of a Binary".
 
 == References
-https://docs.oracle.com/en/java/javase/13/docs/specs/man/javac.html[javac]
+* https://docs.oracle.com/en/java/javase/13/docs/specs/man/javac.html[javac]
+* https://docs.oracle.com/en/java/javase/11/tools/main-tools-create-and-build-applications.html[Main Tools to Create and Build Applications] (from Oracle)
 
 == In Eck’s book
 * http://math.hws.edu/javanotes/contents-with-subsections.html[ES1.1] (machine language), 1.2 (Asynchronous events), 1.3 (JVM)
-* (link:http://math.hws.edu/javanotes/c2/exercises.html[EE2.1] to 2.2, supposedly known)
+* http://math.hws.edu/javanotes/c2/exercises.html[EE2.1] to 2.2
 * http://math.hws.edu/javanotes/c1/quiz.html[EQ1.3] to 1.9
 * http://math.hws.edu/javanotes/c2/quiz.html[EQ2.1] to 2.4; 2.6 to 2.9; 2.11
+
+== Modules
+If you want to go further, here are references about the module system. It is advisable to be familiar with the class path mechanism before delving in the module system.
+
+* https://blog.codefx.org/java/java-module-system-tutorial/[Code-First Java Module System Tutorial] on https://blog.codefx.org/[Code FX], a general high-quality blog about Java
+* https://blog.codefx.org/java/java-9-resources-talks-articles-blogs-books-courses/[References] about Java 9 resources, on the same blog
+* https://www.manning.com/books/the-java-module-system[The Java Module System], a book written by Nicolai Parlog, the author of the said blog.
+* JRebel’s Java Platform Module System https://www.jrebel.com/blog/java-9-modules-cheat-sheet[Cheat Sheet]
+* https://stackoverflow.com/questions/46741907/what-is-an-automatic-module
+* https://stackoverflow.com/questions/43192741/how-should-i-name-my-java-9-module
+* More SO questions tagged https://stackoverflow.com/questions/tagged/java-module?sort=votes[java-module]
+
+//Note the contradiction in these two answers: https://stackoverflow.com/questions/48768879/how-to-access-resource-using-class-loader-in-java-9
+// Eclipse: Photon 4.9RC2 with Java 11 plugin. Maven: 3.5.0. compiler plugin: 3.8.0. surefire and failsafe: 2.22.0
+// See: https://logging.apache.org/log4j/2.0/log4j-slf4j-impl/
 

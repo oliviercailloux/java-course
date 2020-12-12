@@ -2,8 +2,7 @@
 
 Here we learn the basic syntax of Java, and train using jshell.
 
-== Présentation
-https://raw.githubusercontent.com/oliviercailloux/java-course/master/Git/Pr%C3%A9sentation/presentation.pdf[Présentation]
+See: https://raw.githubusercontent.com/oliviercailloux/java-course/master/Git/Pr%C3%A9sentation/presentation.pdf[présentation].
 
 == Hint
 In jshell, as with many shells, use ↑ (keyboard up https://en.wikipedia.org/wiki/Arrow_keys[arrow]) to recall previous commands.
@@ -16,14 +15,19 @@ In jshell, as with many shells, use ↑ (keyboard up https://en.wikipedia.org/wi
 * Assign any number you like to an integer variable. Create an expression that evaluates to `true` if, and only if, that variable equals your age. (Test it by changing the value of the variable and running the expression again.)
 * Assign the value `true` to a variable of type `String`. Create an expression that evaluates to `true` if, and only if, that variable contains the String `true`.
 
-== Exercice 1
+== Methods
 * Assign 4659 and 23 to variables, and show the result of multiplying these variables
 * Compute and show the greatest divisor of 4659 that is different than 4659 (use the `%` operator and a loop)
 * Define a method that computes and show the greatest divisor of 4659 that is different than 4659
 * Define a method that accepts an integer parameter and returns its greatest divisor except itself; use it to show the greatest divisor of 4659.
 
-== Exercice 2
+== Classes
 In a text editor, define a class `MyMathClass` containing a method that accepts an integer parameter and returns its greatest divisor except itself, and a method that returns the smallest divisor of its parameter except one; and a class `MyBooleanClass` containing a method `xor` returning `true` iff exactly one of its two boolean parameters is `true`. Copy-paste this in jshell and call all these methods from jshell.
+
+== More about classes
+Define a class `MovingThing` that has a static variable `greetings`, a static variable `currentSpeed` and a static variable `totalLength`; and a static method declared as `static void move(double time)` that computes the distance an object moving at `currentSpeed` moves in `time` and adds it to the current total length. Copy-paste this in jshell and use your class to check that it works well. For example, after calling `MovingThing.currentSpeed = 10` then `MovingThing.move(50)`, the variable `MovingThing.totalLength` should have a value of `500`.
+
+Once this works, make all your variables private so that nobody but your own class can touch them. Modify your class to make it still useable by providing appropriate methods to get or set their values as required. Make sure to restrict access as much as reasonable, for example, an external user should not be able to modify the `totalLength` directly.
 
 == References
 * https://docs.oracle.com/en/java/javase/13/docs/specs/man/jshell.html[jshell]

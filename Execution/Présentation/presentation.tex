@@ -34,8 +34,8 @@
 	\frametitle{Introduction}
 	\begin{itemize}
 		\item Compiler : transformer un langage en un autre
-		\item Intepréter : traduire et exécuter les instructions
-		\item C++ est le plus souvent compilé en code machine (puis interprété par le CPU, ou \og{}exécuté\fg{})
+		\item Interpréter : traduire et exécuter les instructions
+		\item C++ est le plus souvent compilé en code machine (puis \hrefblue{https://stackoverflow.com/a/9547498/}{interprété} par le CPU, ou \og{}exécuté\fg{})
 		\item Java est le plus souvent compilé puis interprété
 		\item Similaire à Python, différent de C++
 		\item Java peut aussi être directement interprété : cf. jshell
@@ -90,7 +90,7 @@
 		\end{itemize}
 		\item \label{srv} La JVM tourne sur un serveur et communique avec l’utilisateur par le réseau
 	\end{enumerate}
-	Dans ce cours : JVM unique (\cref{unik}) puis serveur (\cref{srv})
+	Dans ce cours : JVM unique (\cref{unik}), peut-être serveur (\cref{srv})
 \end{frame}
 
 \section{Commandes}
@@ -134,6 +134,21 @@
 	\begin{itemize}
 		\item On peut avoir un \texttt{main} dans plusieurs classes
 		\item[⇒] multiples points d’entrée possibles
+	\end{itemize}
+\end{frame}
+
+\section{Packages}
+\begin{frame}
+	\frametitle{Classes dans packages}
+	\begin{itemize}
+		\item Commandes précédentes valables quand pas de package défini (package par défaut)
+		\item Quid si classe \texttt{MyClass} définie dans package \texttt{me.myapp.mytheme} ?
+		\item Donner à \texttt{javac} les fichiers à compiler : ? \onslide<2->{\texttt{javac "My project/src/me/myapp/mytheme/MyClass.java"}}
+		\item Donner à \texttt{java} le nom \emph{complet} de la classe à exécuter : ? \onslide<3->{\texttt{java "me.myapp.mytheme.MyClass"}}
+		\item Mais que manque-t-il ? \onslide<4->{Où trouver cette classe !}
+		\item Class path : les chemins que la JVM utilise pendant son exécution pour charger les classes {\tiny (sauf celles de l’API Java)}
+		\item Class path fourni à la JVM au démarrage
+		\item Exemple : ? \onslide<5->{\texttt{java -cp "My project/src/" "me.myapp.mytheme.MyClass"}}
 	\end{itemize}
 \end{frame}
 

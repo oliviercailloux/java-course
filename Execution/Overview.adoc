@@ -23,7 +23,7 @@ Prerequisite: you know how to https://github.com/oliviercailloux/java-course/blo
 * The compiled files have names corresponding to the source files, for example, `a/b/MyClass.class`, relative to your compiled files folder. Its absolute name could be `/home/myuser/myprojectfolder/bin/a/b/MyClass.class`.
 
 * To compile, use https://docs.oracle.com/en/java/javase/13/docs/specs/man/javac.html[`javac`].
-* Give it the names of the files to compile. And _not_ the fully qualified names of the classes to compile!
+* Give it the files to compile. And _not_ the fully qualified names of the classes to compile!
 * To compile a single class whose source code is in `a/b/MyClass.java`, you simply run: `javac 'a/b/MyClass.java'`.
 
 == Class path

@@ -5,7 +5,7 @@ Prerequisites: install https://maven.apache.org/download.cgi[Maven] (https://sta
 See https://github.com/oliviercailloux/java-course/raw/master/Maven/Pr%C3%A9sentation/presentation.pdf[présentation], https://github.com/oliviercailloux/java-course/blob/master/Maven/Exercices.adoc[exercices], https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Maven.adoc[best practices]. When you’re ready, publish your open source artifacts to https://github.com/oliviercailloux/java-course/blob/master/Maven/Maven%20central.adoc[Maven central]!
 
 == Eclipse
-To import a Maven project into Eclipse, use `File` / `Import` / `Existing Maven Projects`.
+To import a (Maven) project into Eclipse, use `File` / `Open Projects from File System`.
 
 === Hint
 If Eclipse is lost, first try to update the Eclipse configuration from the Maven configuration. From your project properties, run `Maven` / `Update project` / `Update project configuration from pom.xml`.

@@ -1,4 +1,4 @@
-= Projets
+= Projets : Instructions générales
 
 == Démarrage d’une itération
 

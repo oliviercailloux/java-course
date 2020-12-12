@@ -1,4 +1,7 @@
-= Projets : instructions Java
+= Projets : Instructions Java
+
+Voir aussi : https://github.com/oliviercailloux/UML/blob/master/Projets%20-%20D%C3%A9marrage.adoc[Démarrage] ; https://github.com/oliviercailloux/java-course/blob/master/L3/Projets.adoc[Instructions générales].
+Ce document contient les instructions spécifiques au cours de Java.
 
 Commencez par lire et appliquer les bonnes pratiques de https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Style.adoc[style].
 

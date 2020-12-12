@@ -13,6 +13,18 @@ In the Workbench User Guide, https://help.eclipse.org/latest/topic/org.eclipse.p
 * Open the `Problems` view in the `Resource` perspective, then, open the `Javadoc` view in the `Java` perspective
 * Clone the the https://github.com/JodaOrg/joda-money[Joda-Money] repository and import it into Eclipse using `File` / `Open Projects from File System`. Go directly to the class `Money` using a means you just learned, and, using the `Outline` view, go to the method `convertedTo`. Focus on the text `withCurrencyScale`, in the method implementation. Make sure your `Javadoc` view shows the documentation of that method.
 
+== Eclipse & Java
+To code efficiently in Java within Eclipse:
+
+* Use Outline view
+* Use Problems view
+* Use Javadoc view
+* Use content completion with CTRL+Space
+* Organize imports: from an editor, select `Source` / `Organize Imports`
+* In the https://help.eclipse.org/latest/topic/org.eclipse.jdt.doc.user/gettingStarted/qs-2.htm[Basic tutorial], read: Creating a Java Class; Renaming Java elements; Navigate to a Java element's declaration; Running your programs
+
+// ; Viewing the type Hierarchy
+
 [[Eclipse-strict]]
 == Configuration
 Configure Eclipse to show more errors and warnings in order to help spot mistakes and code smells early.

@@ -7,13 +7,14 @@
 The entry page of the Java course in L3.
 
 == Prerequisites
-You know algorithmics and, preferrably, the basic syntax of Java (or a related language). If you have followed an algorithmics course with illustrations and exercices in Java, you satisfy the prerequisites.
+You know algorithmics: you know how to design algorithms to solve problems, using data structures, if required, such as lists or stacks. 
+You can use at least one of the three major operating systems (Windows, a Linux variant or Mac OS) to compile and run a program in at least one language, and are generally at ease with that OS: you know how to edit files and move them around, install and use basic programs, …
 
 == Abbreviations
 
 * [I]: Important
 * [O]: Optional (do it if you are specifically interested in the related aspect)
-* ESx.y (or ESx.y.z): designates section x.y (or x.y.z) in Eck’s http://math.hws.edu/javanotes/[book] (in chapter x)
+* ESx.y (or ESx.y.z): designates section x.y (or x.y.z) in Eck’s https://math.hws.edu/javanotes/[book] (in chapter x)
 * EQx: quiz chapter x
 * EQx.y: question number y in Eck’s book, from quiz chapter x
 * EEx.y: exercice number y in Eck’s book, from exercices chapter x
@@ -21,12 +22,13 @@ You know algorithmics and, preferrably, the basic syntax of Java (or a related l
 * Markers apply to the whole line. Example: "4.3 intro to 4.3.2, 4.6.1 [I]" means that everything in between 4.3 and 4.3.2 plus 4.6.1 are important.
 
 == General references
-* Eck’s http://math.hws.edu/javanotes/[book]
+* Eck’s https://math.hws.edu/javanotes/[book]
 * Stéphane Airiau’s https://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/[course] (in French)
 * The https://app.gosoapbox.com/event/290081765/[confusion barometer]
 * Java API https://docs.oracle.com/en/java/javase/11/docs[Javadoc]
 * https://teams.microsoft.com/l/meetup-join/19%3ameeting_YThjOGQ2ZTgtNDFhNC00ZTA3LTk5NWUtMmQ0ZWNlZTFlMTYw%40thread.v2/0?context=%7b%22Tid%22%3a%2281e7c4de-26c9-4531-b076-b70e2d75966e%22%2c%22Oid%22%3a%22db290b1a-6988-4d6b-91c6-9ddd729313f6%22%7d[Teams]
 * https://github.com/oliviercailloux/Teaching/blob/main/README.adoc#take-notes[Take notes]!
+* https://whiteboard.fi/g67kd
 
 == Planning
 
@@ -35,44 +37,33 @@ You know algorithmics and, preferrably, the basic syntax of Java (or a related l
 
 Prerequisites: https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Various.adoc#installing-the-jdk[JDK]
 
-*First half*
+* https://github.com/oliviercailloux/java-course/raw/master/L3/Pr%C3%A9sentation%20du%20cours%20Objet/presentation.pdf[Pres course]
+* https://github.com/oliviercailloux/java-course/blob/master/Syntax/README.adoc[Syntax]: basics; exercices (Shorts and Methods); then Classes
 
-* https://github.com/oliviercailloux/java-course/raw/master/Pr%C3%A9sentation%20du%20cours%20Objet/presentation.pdf[Pres course]
-* https://github.com/oliviercailloux/java-course/blob/master/Syntax/README.adoc[Syntax]: basics; exercices; classes; Exercice 2 [Should be known or easy]
-
-*Second half*
+// *Second slot*
 
 * https://github.com/oliviercailloux/java-course/blob/master/Execution/README.adoc[Execution]
-* https://github.com/oliviercailloux/java-course/raw/master/Notions%20objets/presentation.pdf[Basics of objects]
-** http://math.hws.edu/javanotes/contents-with-subsections.html[ES1.5] (objects), 2.3.2 (classes and objects)
-** *http://math.hws.edu/javanotes/c2/exercises.html[EE2.3] to 2.6*; use Scanner, not TextIO
-** *http://math.hws.edu/javanotes/c2/exercises.html[EE2.7]*: use user input (Scanner) instead of file input; do not use TextIO
-** *http://math.hws.edu/javanotes/c3/exercises.html[EE3.1] to 3.3*
-** *EE3.4, 3.6 [I]*
+* Syntax: packages
+** *https://math.hws.edu/javanotes/c3/exercises.html[EE3.1] to 3.2*
+** *3.6 [I]*
 ** EE3.8, 3.9 [O]
+
+// ** *https://math.hws.edu/javanotes/c2/exercises.html[EE2.3] to 2.6*; use Scanner, not TextIO
+// ** *https://math.hws.edu/javanotes/c2/exercises.html[EE2.7]*: use user input (Scanner) instead of file input; do not use TextIO
 
 [[S2]]
 === S2 ()
 
-* Prerequisites: https://www.eclipse.org/downloads/packages/[Eclipse IDE] “for Java Developers”; https://git-scm.com/download[git]
+Prerequisites: https://www.eclipse.org/downloads/packages/[Eclipse IDE] “for Java Developers”; https://git-scm.com/download[git]
 
-* Supposed known: https://github.com/oliviercailloux/java-course/blob/master/Git/README.adoc[Git]; https://github.com/oliviercailloux/java-course/blob/master/Git/Shell.adoc[Shell]; Execution (see above).
-* Reminder: https://github.com/oliviercailloux/java-course/raw/master/Notions%20objets/presentation.pdf[Basics of objects]
-** Two roles of classes; static VS instance methods (whose behavior depends on values of parameters and instance attributes)
-* Note about packages (for using `Scanner`)
-** Class has a short name and a package, hence, a long name. (And two file names!)
-* *Exercices* (TODO home):
-** http://math.hws.edu/javanotes/c2/exercises.html[EE2.2] to 2.6; use Scanner, not TextIO
-** http://math.hws.edu/javanotes/c2/exercises.html[EE2.7]; use user input (Scanner) instead of file input; do not use TextIO
-** http://math.hws.edu/javanotes/c3/exercises.html[EE3.1] to 3.3
+* https://github.com/oliviercailloux/java-course/raw/master/Notions%20objets/presentation.pdf[Basics of objects]
+** https://math.hws.edu/javanotes/contents-with-subsections.html[ES1.5] (objects), 2.3.2 (classes and objects)
+* *Exercices*:
+** https://math.hws.edu/javanotes/c2/exercises.html[EE2.2] to 2.6; use Scanner, not TextIO
+** https://math.hws.edu/javanotes/c2/exercises.html[EE2.7]; use user input (Scanner) instead of file input; do not use TextIO
+** https://math.hws.edu/javanotes/c3/exercises.html[EE3.1] to 3.3
 ** EE3.4, 3.6 [I]
-* Eclipse & Java:
-** Use Outline view
-** Use Problems view
-** Use Javadoc view
-** Content completion with CTRL+Space
-** Organize imports: from an editor, select `Source` / `Organize Imports`
-** In the http://help.eclipse.org/latest/topic/org.eclipse.jdt.doc.user/gettingStarted/qs-2.htm[Basic tutorial], read: Creating a Java Class; Renaming Java elements; Navigate to a Java element's declaration; Viewing the type Hierarchy; Running your programs
+* https://github.com/oliviercailloux/java-course/blob/master/Dev%20tools/Eclipse.adoc[Eclipse & Java]
 * https://github.com/oliviercailloux/java-course/blob/master/Maven/README.adoc[Maven]: Introduction
 ** Exercice: *Import a Maven project into Eclipse*
 
@@ -83,12 +74,12 @@ Prerequisites: https://github.com/oliviercailloux/java-course/blob/master/Best%2
 * https://github.com/oliviercailloux/java-course/blob/master/Maven/README.adoc[Maven], and *exercices* (TODO home: Modern project)
 * Two major principles of software engineering: https://github.com/oliviercailloux/java-course/raw/master/Contrat/presentation.pdf[contract] and fail-fast.
 ** Mechanisms: interface; black box; preconditions and postconditions; javadoc; exceptions
-** http://math.hws.edu/javanotes/contents-with-subsections.html[ES3.7] Exceptions (except 3.7.3)
+** https://math.hws.edu/javanotes/contents-with-subsections.html[ES3.7] Exceptions (except 3.7.3)
 ** ES4 Subroutines, lambdas, packages, javadoc.
 ** ES4.2.4 Member Variables [I]
 ** ES4.3 intro to 4.3.2, 4.7.1 Preconditions and Postconditions [I]
-** Javadoc: http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours3.pdf[Airiau C3], p. 12 to 19.
-** http://math.hws.edu/javanotes/c4/quiz.html[EQ4]
+** Javadoc: https://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours3.pdf[Airiau C3], p. 12 to 19.
+** https://math.hws.edu/javanotes/c4/quiz.html[EQ4]
 ** https://github.com/oliviercailloux/java-course/raw/master/Assert/presentation.pdf[assertions] (advanced)
 ** Illustration: ES4.7.2 A Design Example
 * Javadoc in Eclipse: `Source` / `Generate Element Comment` (on methods and classes!), use the `Javadoc` view
@@ -96,7 +87,7 @@ Prerequisites: https://github.com/oliviercailloux/java-course/blob/master/Best%2
 * *Exercices:*
 ** Comment several methods with Javadoc, including the exceptions
 ** Find out how you can find, when your program crashes because of an exception, the exact place where the exception was raised and which call caused the crash
-** http://math.hws.edu/javanotes/c4/exercises.html[EE4.1], 4.2
+** https://math.hws.edu/javanotes/c4/exercises.html[EE4.1], 4.2
 ** EE4.3, 4.4 [I] (TODO home)
 ** EE4.7
 
@@ -105,9 +96,9 @@ Prerequisites: https://github.com/oliviercailloux/java-course/blob/master/Best%2
 
 * Graded exercice using your knowledge from Shell; Execution; EE2.x; EE3.x (see above). See https://github.com/oliviercailloux/java-course/blob/master/Execution/Print%20exec.adoc[Print exec]. (13h47 to 14h47)
 * https://github.com/oliviercailloux/java-course/raw/master/Objets/presentation.pdf[Objets]
-** http://math.hws.edu/javanotes/c5/[ES5] intro to 5.4
+** https://math.hws.edu/javanotes/c5/[ES5] intro to 5.4
 * *Exercices:*
-** http://math.hws.edu/javanotes/c5/exercises.html[EE5.1], 5.2
+** https://math.hws.edu/javanotes/c5/exercises.html[EE5.1], 5.2
 ** EE5.3 [I]
 // ** Supplementary requirement: you will archive `PairOfDice` and `StatCalc` into a JAR file and use this in a new Eclipse project where only one class is defined, which uses `PairOfDice` and `StatCalc`. Commit both projects into your repository (in two separate directories). The structure of your git repository should be as follows. Please follow the exact naming scheme.
 // ** `project43/`… (contains `src` with your source code inside a sub-directory of it)
@@ -139,7 +130,7 @@ Prerequisites: https://github.com/oliviercailloux/java-course/blob/master/Best%2
 **** main prints exactly the expected text on three lines (/2)
 * https://github.com/oliviercailloux/java-course/blob/master/Git/Git-Br.adoc[Git-br]: comment; Print-exec: see end of S6.
 * Inheritance: polymorphism and interfaces; effective type of variables. See https://raw.githubusercontent.com/oliviercailloux/Simple-Papyrus-project/interface/An%20interface%20and%20two%20realizations.svg?sanitize=true[diagram]; import the corresponding https://github.com/oliviercailloux/sample-interface[project] in Eclipse
-** http://math.hws.edu/javanotes/contents-with-subsections.html[ES5.5] to 5.8
+** https://math.hws.edu/javanotes/contents-with-subsections.html[ES5.5] to 5.8
 ** *Exercice*: program an interface `MovableObject` with methods `canAccelerate(): boolean`, `accelerate(): void` and `getTimeToMove(double): double`; implement it twice in classes `ConstantSpeedMovable` and `GenericMovable`, in a reasonable way of your choice. In a class `MovableUser`, program a `main` method that instanciates one `ConstantSpeedMovable` and two `GenericMovable` objects, accelerate one of them, and prints the three resulting times to move 1 km. Add a method `brake(): void` to `MovableObject`. Add to `MovableUser` a method `getTotalTime(movable: MovableObject): double` that computes the total time taken for the given movable object to move 1 km then brake then move 100m then accelerate then move 1 km again. Change your `main` so that it also prints that total time, for each of the three objects created in the method. Commit to a repository named `I-like-to-move-it` in your GitHub account.
 
 [[S6]]
@@ -149,17 +140,17 @@ Prerequisites: https://github.com/oliviercailloux/java-course/blob/master/Best%2
 ** *Exercice*: create an object `Car extends Object` that does not override `toString()`, call its `toString()` method, explain what happens. Override `toString()` in your class `Car`, call the `toString()` method, explain what happens. Consider the following code: `Object car = new Car(); car.toString()`. Will the method be the one declared in `Object` or in `Car`, and why? What changes if we instead write `Car car = new Car(); …`?
 * Exceptions: checked and unchecked (see this http://journals.ecs.soton.ac.uk/java/tutorial/java/exceptions/throwable.html[diagram])
 ** *Exercice*: program a method that draws a random number and throws a `IOException` with one chance on two. Observe that it compiles only if you advertise this exception in the signature. Call this method from another method. Observe that the calling method also must advertise the exception. Change the exception to an `IllegalArgumentException`. Observe that you do not have to advertise this in either method signature.
-** http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours5.pdf[Airiau C5] (and see slides Contrat, appendix)
+** https://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours5.pdf[Airiau C5] (and see slides Contrat, appendix)
 // simple inheritance (no TextIO depended on, actually), but complex set up
 // implements but no inheritance
-* http://math.hws.edu/javanotes/c5/exercises.html[EE5.7] (the part about anonymous classes is optional)
+* https://math.hws.edu/javanotes/c5/exercises.html[EE5.7] (the part about anonymous classes is optional)
 //** Supplementary requirements: your code must lie in at least two packages;
 //** The idea of this exercice is that you simulate that three different people work on this exercice: one provides some interfaces; another implements the interfaces; a third one uses the interfaces and their implementations to solve the exercice (except you represent all these persons).
 //** Declare at least one interface in another Eclipse project, exported as a Java archive (JAR file);
 //** implement those interfaces in another Eclipse project, exported as a Java archive (JAR file) (will you need the previous JAR file? Why / why not?);
 //** solve the exercices in a third Eclipse project (will you need the previous JAR files? Which ones and why?).
-* http://math.hws.edu/javanotes/c5/exercises.html[EE5.4] (use `Scanner` instead of `TextIO`)
-* More exercices: http://math.hws.edu/javanotes/c5/exercises.html[EE5] (more advanced: http://math.hws.edu/javanotes/c8/exercises.html[EE8])
+* https://math.hws.edu/javanotes/c5/exercises.html[EE5.4] (use `Scanner` instead of `TextIO`)
+* More exercices: https://math.hws.edu/javanotes/c5/exercises.html[EE5] (more advanced: https://math.hws.edu/javanotes/c8/exercises.html[EE8])
 * Generics: diagram https://raw.githubusercontent.com/oliviercailloux/Simple-Papyrus-project/cars-before-generic/Three%20cars.svg?sanitize=true[before generics], https://raw.githubusercontent.com/oliviercailloux/Simple-Papyrus-project/cars-after-generic/Generic%20Car%20and%20Cars.svg?sanitize=true[after generics]; sample https://github.com/oliviercailloux/sample-generic-cars[code]
 ** *Exercice*:
 ** Program a class `Pair` with generic types `L`, `R` (for Left and Right), that can store a pair of things, one of type `L` and one of type `R`. For example, a `Pair<Double, Integer>` instance can store a `Double` instance and an `Integer` instance.
@@ -172,7 +163,7 @@ Prerequisites: https://github.com/oliviercailloux/java-course/blob/master/Best%2
 *TODO home*
 
 * Before end of 22nd of March: push new commit(s) to your `Print exec` repository. You will given a second grade considering the last commit before the deadline. Your final `Print exec` grade will be a weighted sum of your first grade (received previously) and second grade. The weights depend on the number of lines that have changed between these two grades: the weight of the new grade (as a proportion of the full grade) will be 90% if you changed only one line, 70% if two or three lines have changed, 60% for four or five lines, 40% for six or seven lines, 20% for eight or nine lines (and 0% beyond). What counts is the difference between both files *as shown by https://git-scm.com/docs/git-diff#Documentation/git-diff.txt-emgitdiffemltoptionsgtltcommitgtltcommitgt--ltpathgt82308203[git diff], or on https://help.github.com/en/github/committing-changes-to-your-project/comparing-commits#comparing-commits[GitHub]*. Your solution *may not* use the commands `mkdir` or `cd`.
-* Read http://help.eclipse.org/latest/topic/org.eclipse.jdt.doc.user/gettingStarted/qs-2.htm[Editing Java elements]
+* Read https://help.eclipse.org/latest/topic/org.eclipse.jdt.doc.user/gettingStarted/qs-2.htm[Editing Java elements]
 * Use https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Eclipse.adoc[this] Eclipse configuration.
 
 [[S7]]
@@ -186,18 +177,18 @@ Prerequisites: https://github.com/oliviercailloux/java-course/blob/master/Best%2
 ** More advanced, and more elegant: instead of defining a class `HomogeneousPair<E>` from scratch, define the class `HomogeneousPair<E>` so that it extends your existing class `Pair<L, R>`. Do the rest of the exercice above.
 ** Use the https://docs.oracle.com/javase/tutorial/java/nutsandbolts/for.html[enhanced for (for-each) loop] on iterables and arrays!
 * Collections, next: Interfaces extend VS classes implement
-** http://math.hws.edu/javanotes/contents-with-subsections.html[ES10] to 10.2
+** https://math.hws.edu/javanotes/contents-with-subsections.html[ES10] to 10.2
 ** For this course, use by default: `ArrayList` / `ImmutableList`; `LinkedHashSet` / `ImmutableSet`; `LinkedHashMap` / `ImmutableMap`.
 * *Exercices*:
 ** Make sure you can see from your IDE the javadoc of the JDK and of the libraries you add with Maven, for coding efficiently
 //interfaces with generics and collections
-** http://math.hws.edu/javanotes/c10/exercises.html[EE10.4] 
+** https://math.hws.edu/javanotes/c10/exercises.html[EE10.4] 
 // list of words
-** http://math.hws.edu/javanotes/c7/exercises.html[EE7.6] (you may use standard input instead of file input)
+** https://math.hws.edu/javanotes/c7/exercises.html[EE7.6] (you may use standard input instead of file input)
 // set (long)
-** http://math.hws.edu/javanotes/c10/exercises.html[EE10.2]
+** https://math.hws.edu/javanotes/c10/exercises.html[EE10.2]
 // read, sort a list
-** http://math.hws.edu/javanotes8/c7/exercises.html[EE7.1], 7.5 (except that you can use built-sorting functions from the Java API).
+** https://math.hws.edu/javanotes8/c7/exercises.html[EE7.1], 7.5 (except that you can use built-sorting functions from the Java API).
 ** A class E1 that asks the end-user for a set of integer values. The user enters 0 to stop entering values. Store these values in a Set of Integer values (discarding duplicates). Do it again, obtaining a second set. Then print each set of values entered, then the union of both sets. For example, if the user enters 3, 4, 2, 0, then 1, 1, 2, 5, 0, it prints: 3, 4, 2, then 1, 2, 5, then 3, 4, 2, 1, 5. Use Java sets and interfaces appropriately. [I]
 //** Correct E1
 //.. découpé en sous-routines ?
@@ -240,16 +231,16 @@ Delivery 1: before end of 20 April. See https://github.com/oliviercailloux/java-
 
 * Files and flows: https://github.com/oliviercailloux/java-course/blob/master/Flows.adoc#path-operations[Path operations] and providers.
 * Comparator and sorting, (Comparable), Maps
-** More info: http://math.hws.edu/eck/cs124/javanotes7/c10/[ES10.3] to 10.5, http://math.hws.edu/eck/cs124/javanotes7/c8/[ES8] intro to 8.4, Airiau http://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours6.pdf[C6]
+** More info: https://math.hws.edu/eck/cs124/javanotes7/c10/[ES10.3] to 10.5, https://math.hws.edu/eck/cs124/javanotes7/c8/[ES8] intro to 8.4, Airiau https://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours6.pdf[C6]
 * *Exercices*:
 ** Define an interface `EasyMap` with two methods: a method that puts a pair of key (`String`, the last name of a person, here supposed to be unique) and value (`Person`, having a first name and a last name) into a map, and a method that returns an `Optional` containing the value corresponding to the given key (parameter of the method) or that returns an empty `Optional` if there is no such value. Implement this interface in a class `EasyMapImpl`. Provide a static factory method in the interface `EasyMap` (it declares that it returns an `EasyMap`, and does it by instanciating your `EasyMapImpl`). Minimize the number of lines of code (but not at the price of readability). Note that this exercice implements a part of the https://en.wikipedia.org/wiki/Forwarding_(object-oriented_programming)[forwarding] pattern.
 ** Define `MyComparator`, a class that implements a comparator over `Person`: it considers a person as “smaller” (or “coming before”) another person according to the dictionary ordering of their last name. Add a third method to `EasyMap`, that returns a list of values ordered by that comparator.
 // implement a hashmap with a list of lists
-** *TODO home* http://math.hws.edu/javanotes/c10/exercises.html[EE10.3] (you may use `List` implementations, but not `Map`, of course)
+** *TODO home* https://math.hws.edu/javanotes/c10/exercises.html[EE10.3] (you may use `List` implementations, but not `Map`, of course)
 // TreeMap<String, TreeSet<Integer>>  concordance
-** http://math.hws.edu/javanotes/c10/exercises.html[EE10.6]
+** https://math.hws.edu/javanotes/c10/exercises.html[EE10.6]
 
-//* https://www.youtube.com/watch?v=lcYkOh4nweE&t=1m21s[Mars Climate Orbiter] (1m21 to 5m18; small mistake in the video: it’s Newton times second, not Newton force per second; see also https://en.wikipedia.org/wiki/Mars_Climate_Orbiter[Wikipedia]; similarly http://www-users.math.umn.edu/~arnold/disasters/ariane.html[sad] https://www.youtube.com/watch?v=gp_D8r-2hwk[story]{emptyattribute})
+//* https://www.youtube.com/watch?v=lcYkOh4nweE&t=1m21s[Mars Climate Orbiter] (1m21 to 5m18; small mistake in the video: it’s Newton times second, not Newton force per second; see also https://en.wikipedia.org/wiki/Mars_Climate_Orbiter[Wikipedia]; similarly https://www-users.math.umn.edu/~arnold/disasters/ariane.html[sad] https://www.youtube.com/watch?v=gp_D8r-2hwk[story]{emptyattribute})
 
 Delivery 2: before end of 5 May. Recall: 10 hours of efficient work / person expected for each delivery. Focus on quality rather than on quantity.
 
