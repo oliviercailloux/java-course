@@ -20,10 +20,9 @@ To code efficiently in Java within Eclipse:
 * Use Problems view
 * Use Javadoc view
 * Use content completion with CTRL+Space
-* Organize imports: from an editor, select `Source` / `Organize Imports`
-* In the https://help.eclipse.org/latest/topic/org.eclipse.jdt.doc.user/gettingStarted/qs-2.htm[Basic tutorial], read: Creating a Java Class; Renaming Java elements; Navigate to a Java element's declaration; Running your programs
+* Use Organize imports (from an editor, select `Source` / `Organize Imports`)
 
-// ; Viewing the type Hierarchy
+Check this very clear https://www.vogella.com/tutorials/Eclipse/article.html[tutorial from vogella] for the basics of using Eclipse with Java, including explanations about the points here above. Go to section 16 included, and follow 21 and 22 for more time saving.
 
 [[Eclipse-strict]]
 == Configuration
