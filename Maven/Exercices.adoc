@@ -5,6 +5,8 @@
 
 Simple exercices for Maven. The reader is supposed to know already the basics of Maven (see slides in this course).
 
+// * Add a dependency to the latest version of the https://www.eclipse.org/jgit/[`jgit`] library (which permits to programmatically access the content of a git repository) that is in Maven Central. You have to find the right Maven coordinates. Commit into your branch (so that your commit has the starting commit as parent).
+
 == Default sample project
 In this exercice we will use an archetype called `maven-archetype-quickstart`, that allows us to generate a basic project.
 
