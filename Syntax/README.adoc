@@ -29,6 +29,12 @@ Define a class `MovingThing` that has a static variable `greetings`, a static va
 
 Once this works, make all your variables private so that nobody but your own class can touch them. Modify your class to make it still useable by providing appropriate methods to get or set their values as required. Make sure to restrict access as much as reasonable, for example, an external user should not be able to modify the `totalLength` directly.
 
+== More exercices
+
+* *https://math.hws.edu/javanotes/c3/exercises.html[EE3.1] to 3.2*
+* *3.6 [I]*
+* EE3.8, 3.9 [O]
+
 == References
 * https://docs.oracle.com/en/java/javase/13/docs/specs/man/jshell.html[jshell]
 * https://arbitrary-but-fixed.net/teaching/java/jshell/2017/12/14/jshell-peculiarities.html[The peculiarities of the JShell]
