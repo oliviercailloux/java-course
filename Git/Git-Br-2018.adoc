@@ -1,6 +1,6 @@
-= Dep-Git
+= Git-Br-2018
 
-Here are the instructions for the exercice “Dep-Git”.
+Here are the instructions for this graded exercice.
 
 * Create a repository for your exercice here. Your repository will be created as \https://github.com/oliviercailloux-org/dep-git-yourGitHubUserName. (Sometimes GitHub seems stuck and does not tell you that it has been created, but it probably has been.) Your repository will be created with an existing project in it, your mission is to extend it and push your changes to that same repository.
 * Clone it.
