@@ -1,0 +1,14 @@
+= An overview of objects
+
+See: https://github.com/oliviercailloux/java-course/raw/master/Overview/presentation.pdf[Présentation].
+
+== Exercices
+
+* https://math.hws.edu/javanotes/c2/exercises.html[EE2.2] to 2.6; use Scanner, not TextIO
+* https://math.hws.edu/javanotes/c2/exercises.html[EE2.7]; use user input (Scanner) instead of file input; do not use TextIO
+* https://math.hws.edu/javanotes/c3/exercises.html[EE3.1] to 3.3
+* EE3.4, 3.6 [I]
+
+== References from Eck’s book
+https://math.hws.edu/javanotes/contents-with-subsections.html[ES1.5] (objects), 2.3.2 (classes and objects)
+

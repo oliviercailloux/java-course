@@ -43,13 +43,9 @@ Prerequisites: https://github.com/oliviercailloux/java-course/blob/master/Best%2
 // *Second slot*
 
 * https://github.com/oliviercailloux/java-course/blob/master/Execution/README.adoc[Execution]
-* Syntax: packages
-** *https://math.hws.edu/javanotes/c3/exercises.html[EE3.1] to 3.2*
-** *3.6 [I]*
-** EE3.8, 3.9 [O]
+* Syntax: packages ; more exercices
 
-// ** *https://math.hws.edu/javanotes/c2/exercises.html[EE2.3] to 2.6*; use Scanner, not TextIO
-// ** *https://math.hws.edu/javanotes/c2/exercises.html[EE2.7]*: use user input (Scanner) instead of file input; do not use TextIO
+* At end: random demonstrations using jshell, javac & java
 
 [[S2]]
 === S2 ()
@@ -64,14 +60,14 @@ Prerequisites: https://www.eclipse.org/downloads/packages/[Eclipse IDE] “for J
 ** https://math.hws.edu/javanotes/c3/exercises.html[EE3.1] to 3.3
 ** EE3.4, 3.6 [I]
 * https://github.com/oliviercailloux/java-course/blob/master/Dev%20tools/Eclipse.adoc[Eclipse & Java]
-* https://github.com/oliviercailloux/java-course/blob/master/Maven/README.adoc[Maven]: Introduction
-** Exercice: *Import a Maven project into Eclipse*
+
+* At end: random demonstrations using Eclipse
 
 [[S3]]
 === S3 ()
 
 * Graded exercice similar to https://github.com/oliviercailloux/java-course/blob/master/Git/Dep-Git.adoc[Dep-Git] and similar to the exercices related to https://github.com/oliviercailloux/java-course/blob/master/Git/README.adoc[Git] in this course. Your GitHub username and git `user.name` must be identical (and for all exercices to come as well). See https://github.com/oliviercailloux/java-course/blob/master/Git/Git-Br.adoc[Git-Br] (8h32 to 8h52).
-* https://github.com/oliviercailloux/java-course/blob/master/Maven/README.adoc[Maven], and *exercices* (TODO home: Modern project)
+* https://github.com/oliviercailloux/java-course/blob/master/Maven/README.adoc[Maven]: Introduction
 * Two major principles of software engineering: https://github.com/oliviercailloux/java-course/raw/master/Contrat/presentation.pdf[contract] and fail-fast.
 ** Mechanisms: interface; black box; preconditions and postconditions; javadoc; exceptions
 ** https://math.hws.edu/javanotes/contents-with-subsections.html[ES3.7] Exceptions (except 3.7.3)
