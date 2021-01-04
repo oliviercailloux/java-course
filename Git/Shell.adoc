@@ -31,6 +31,7 @@ Referring to some file or directory as an argument of a command typed in a termi
 
 You can use the special name `.` to refer to the current directory. For example, you can use `ls somepath` to list the content of the directory specified by `somepath`, and thus typing `ls .` lists the content of your current directory.
 
-Exercice: open a shell, navigate (using `cd`) to some directory of your choice `D1`. Use `ls` to list the content of a directory `D2` that is not a subdirectory of `D1`, using an absolute name for `D2`, then using a relative name. Still from `D1`, create a file in `D2`, using `touch`, by using an absolute file name as argument, then using a relative file name as argument.
+=== Exercice
+Open a shell, navigate (using `cd`) to some directory of your choice `D1`. Use `ls` to list the content of a directory `D2` that is not a subdirectory of `D1`, using an absolute name for `D2`, then using a relative name. Still from `D1`, create a file in `D2`, using `touch`, by using an absolute file name as argument, then using a relative file name as argument.
 
 

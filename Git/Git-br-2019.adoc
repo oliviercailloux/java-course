@@ -20,7 +20,7 @@ Clone your new repository, work on it locally, then push your additions to the r
 
 [[Goal]]
 .Desired history at end of the exercice (italicized: your additions to the history)
-image::Git-Br-2019.svg[opts="inline"]
+image::Git-br-2019.svg[opts="inline"]
 
 //== Statistics
 //* ID: 21/26.
