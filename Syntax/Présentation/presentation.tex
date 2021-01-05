@@ -80,7 +80,7 @@ nom = valeur;
 
 \begin{frame}
 	\frametitle{Types primitifs et valeurs primitives}
-	\begin{block}{Types primitifs}
+	\begin{block}{Types primitifs {\tiny (non exhaustif)}}
 		\begin{itemize}
 			\item \texttt{boolean}
 			\item \texttt{int} (32 bits)
@@ -94,15 +94,23 @@ nom = valeur;
 			\item littéral flottant : \texttt{1.5d}, \texttt{2d} 
 		\end{itemize}
 	\end{block}
-	Une fois qu’une variable a une valeur, on peut l’utiliser
+\end{frame}
+
+\begin{frame}
+	\frametitle{Type \texttt{String}}
+	\begin{itemize}
+		\item Type \texttt{String}
+		\item Valeur : utiliser guillemets
+		\item Exemple ? \onslide<2->{\texttt{String ploum = "coucou";}}
+	\end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]
 	\frametitle{Portée}
 	\begin{itemize}
 		\item Variables connues en fonction de leur endroit de déclaration
-		\item Connues dans les blocs inclus
-		\item Inconnues dans les blocs non inclus
+		\item Connues dans le bloc {\tiny (après déclaration)} (et ceux inclus)
+		\item Inconnues hors du bloc de déclaration
 	\end{itemize}
 	\begin{block}{Exemple}
 		\begin{lstlisting}
@@ -125,10 +133,10 @@ nom = valeur;
 	\frametitle{Opérateurs unaires}
 	Opérateurs unaires :
 	\begin{description}
-		\item[-] renvoie le négatif
-		\item[!] Négation logique
-		\item[++] Incrémente un entier (affectation implicite)
-		\item[-{}-] Décrémente un entier (affectation implicite)
+		\item[\texttt{-}] renvoie le négatif
+		\item[\texttt{!}] Négation logique
+		\item[\texttt{++}] Incrémente un entier (affectation implicite)
+		\item[\texttt{-{}-}] Décrémente un entier (affectation implicite)
 	\end{description}
 	\begin{block}{Exemples}
 		\begin{lstlisting}
@@ -144,14 +152,15 @@ boolean c = !b;
 \begin{frame}[fragile]
 	\frametitle{Opérations binaires}
 	\begin{description}
-		\item[+, -, *, /] NB / sur entiers ≠ / sur double : toujours préciser le type pour meilleure lisibilité
-		\item[\%] reste de la division entière
-		\item[<, >, <=, >=] compare et renvoie un booléen
-		\item[==] teste égalité et renvoie un booléen
-		\item[!=] teste différence
-		\item[\&\&] renvoie vrai ssi les deux opérands sont vrais {\tiny (court-circuite)}
-		\item[||] renvoie vrai ssi au moins un opérand est vrai {\tiny (court-circuite)}
-		\item[+=, -=] opération puis affectation
+		\item[\texttt{+}, \texttt{-}, \texttt{*}, \texttt{/}] NB \texttt{/} sur entiers ≠ \texttt{/} sur double : toujours préciser le type pour meilleure lisibilité
+		\item[\texttt{+}] sur \texttt{String}: concaténation de chaines
+		\item[\texttt{\%}] reste de la division entière
+		\item[\texttt{<}, \texttt{>}, \texttt{<=}, \texttt{>=}] compare et renvoie un booléen
+		\item[\texttt{==}] teste égalité de valeur et renvoie un booléen
+		\item[\texttt{!=}] inverse de \texttt{==}
+		\item[\texttt{\&\&}] renvoie vrai ssi les deux opérands sont vrais {\tiny (court-circuite)}
+		\item[\texttt{||}] renvoie vrai ssi au moins un opérand est vrai {\tiny (court-circuite)}
+		\item[\texttt{+=}, \texttt{-=}] opération puis affectation
 	\end{description}
 	\begin{block}{Exemple}
 		\begin{lstlisting}
@@ -217,7 +226,7 @@ do {
 	\begin{block}{For}
 		\begin{lstlisting}
 int a = 4;
-for (int i=0; i < 3; ++i) {
+for (int i = 0; i < 3; ++i) {
 	a += i;
 }
 		\end{lstlisting}	
@@ -248,8 +257,8 @@ for (int v : values) {
 	\frametitle{Méthodes : syntaxe}
 	\begin{itemize}
 		\item \texttt{<type de retour> <nom> (<type param1> <nom param1>, …)}
-		\item \texttt{return} pour renvoyer valeur (exécution méthode cesse)
 		\item \texttt{void} pour indiquer absence de retour
+		\item \texttt{return} pour renvoyer valeur (exécution méthode cesse)
 		\item Une telle méthode peut être vue comme une fonction
 	\end{itemize}
 	\begin{block}{Exemple}
@@ -270,7 +279,7 @@ void useWeightedSum() {
 \begin{frame}[fragile]
 	\frametitle{Classes : méthodes statiques}
 	\begin{itemize}
-		\item Toute méthode doit se trouver dans une classe (sauf jshell)
+		\item Toute méthode doit se trouver dans une classe {\tiny (sauf avec jshell)}
 		\item Syntaxe : \texttt{class MyClassName} suivi d’un bloc
 		\item Sert (entre autres) à grouper les méthodes
 		\item En-tête de la méthode commence par \texttt{static}
@@ -354,7 +363,7 @@ class MyMathClass {
 		\item \texttt{Math.\href{https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html\#random()}{random}();}
 			\texttt{Math.\href{https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html\#abs(double)}{abs}(-4);}
 			\texttt{Math.\href{https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html\#PI}{PI};}
-		\item \texttt{System.\href{https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/System.html\#out}{out};} : une variable pour écrire sur la sortie standard $⇒$ \texttt{System.out.println("Coucou");}
+		\item \texttt{System.\href{https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/System.html\#out}{out}} : une variable pour écrire sur la sortie standard $⇒$ \texttt{System.out.println("Coucou");}
 		\item Méthodes pour créer des entiers, par exemple \texttt{Integer.\href{https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html\#parseInt(java.lang.String)}{parseInt}("10");}
 		\item Méthodes pour créer des chaines, par exemple \texttt{String.\href{https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html\#format(java.lang.String,java.lang.Object...)}{format}("Hello \%s, your age is \%s.", "Ann", "25");}
 	\end{itemize}

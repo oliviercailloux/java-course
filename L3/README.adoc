@@ -26,14 +26,15 @@ You can use at least one of the three major operating systems (Windows, a Linux 
 * Stéphane Airiau’s https://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/[course] (in French)
 * The https://app.gosoapbox.com/event/290081765/[confusion barometer]
 * Java API https://docs.oracle.com/en/java/javase/11/docs[Javadoc]
-* https://teams.microsoft.com/l/meetup-join/19%3ameeting_YThjOGQ2ZTgtNDFhNC00ZTA3LTk5NWUtMmQ0ZWNlZTFlMTYw%40thread.v2/0?context=%7b%22Tid%22%3a%2281e7c4de-26c9-4531-b076-b70e2d75966e%22%2c%22Oid%22%3a%22db290b1a-6988-4d6b-91c6-9ddd729313f6%22%7d[Teams]
+* https://teams.microsoft.com/l/meetup-join/19%3Aaaa1a5bbda774320a271ee4b5ba402e4@thread.tacv2/1609694419561[Teams]
 * https://github.com/oliviercailloux/Teaching/blob/main/README.adoc#take-notes[Take notes]!
-* https://whiteboard.fi/g67kd
+
+//* https://whiteboard.fi/g67kd
 
 == Planning
 
 [[S1]]
-=== S1 (2021)
+=== S1 (6 January 2021)
 
 Prerequisites: https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Various.adoc#installing-the-jdk[JDK]
 

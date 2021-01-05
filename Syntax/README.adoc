@@ -2,7 +2,7 @@
 
 Here we learn the basic syntax of Java, and train using jshell.
 
-See: https://raw.githubusercontent.com/oliviercailloux/java-course/master/Git/Pr%C3%A9sentation/presentation.pdf[présentation].
+See: https://raw.githubusercontent.com/oliviercailloux/java-course/master/Syntax/Pr%C3%A9sentation/presentation.pdf[présentation].
 
 == Hint
 In jshell, as with many shells, use ↑ (keyboard up https://en.wikipedia.org/wiki/Arrow_keys[arrow]) to recall previous commands.
@@ -13,7 +13,7 @@ In jshell, as with many shells, use ↑ (keyboard up https://en.wikipedia.org/wi
 * Assign each digit of your age to different variables; use them to print `<your-age> is my age!`
 * Create a boolean variable whose value is `true`, another one whose value is `false`, and use them to create an expression that evaluates to `true` and one that evaluates to `false`
 * Assign any number you like to an integer variable. Create an expression that evaluates to `true` if, and only if, that variable equals your age. (Test it by changing the value of the variable and running the expression again.)
-* Assign the value `true` to a variable of type `String`. Create an expression that evaluates to `true` if, and only if, that variable contains the String `true`.
+* Assign the value `"true"` to a variable of type `String`. Create an expression that evaluates to `true` if, and only if, that variable contains the String `"true"`.
 
 == Methods
 * Assign 4659 and 23 to variables, and show the result of multiplying these variables
