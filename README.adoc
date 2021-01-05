@@ -2,13 +2,13 @@
 :toc-placement: preamble
 :sectanchors:
 
-image:https://api.travis-ci.org/oliviercailloux/java-course.svg?branch=master["Link Status", link="https://travis-ci.org/oliviercailloux/java-course"]
+image::.github/Links%20check.svg["Links check status", link="https://github.com/oliviercailloux/java-course/blob/master/.github/Last%20results.json"]
 
 Course about Java SE and Java EE.
 
 == Main content
 
-The https://github.com/oliviercailloux/java-course/blob/master/L3a.adoc[entry page] for the L3a course.
+The https://github.com/oliviercailloux/java-course/blob/master/L3/README.adoc[entry page] for the L3a course.
 
 Look into the various `.adoc` files and sub-folders, depending on your interest.
 

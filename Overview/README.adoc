@@ -1,6 +1,6 @@
 = An overview of objects
 
-See: https://github.com/oliviercailloux/java-course/raw/master/Overview/presentation.pdf[Présentation].
+See: https://github.com/oliviercailloux/java-course/raw/master/Overview/Pr%C3%A9sentation/presentation.pdf[Présentation].
 
 == Exercices
 

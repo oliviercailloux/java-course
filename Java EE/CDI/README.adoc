@@ -2,7 +2,7 @@
 
 Context Dependency Injection (CDI) is useful when a class A depends on some class B, that provides a service to A. For example, B provides persistency services; conversion services (serialization or deserialization); computation services (solving a system of equation). With CDI, you can inject the reference of B into A by letting your container deal with the lifecycle of B.
 
-See: https://raw.githubusercontent.com/oliviercailloux/java-course/master/CDI/Pr%C3%A9sentation/presentation.pdf[Présentation], https://github.com/oliviercailloux/sample-cdi-fake-db[Sample-CDI-Fake-DB].
+See: https://raw.githubusercontent.com/oliviercailloux/java-course/master/Java%20EE/CDI/Pr%C3%A9sentation/presentation.pdf[Présentation], https://github.com/oliviercailloux/sample-cdi-fake-db[Sample-CDI-Fake-DB].
 
 == References
 

@@ -26,7 +26,7 @@ Use javadoc style comments to comment your code (`/** This explains the code tha
 A Javadoc style comment that is not inside a method is considered as bound to the element that just follows the comment (you can see this by looking at the Eclipse Javadoc view). In other words, a comment inside a class comments either a method or a field of the class, unless it is inside a method. Avoid free-floating comments that should be attached to nothing in particular (perhaps your comment belongs to the class header?)
 
 == Compiler settings
-Ask your compiler to enable strict checks of possible errors. See https://github.com/oliviercailloux/java-course/blob/master/Tools.adoc#Eclipse-strict[Eclipse configuration].
+Ask your compiler to enable strict checks of possible errors. See https://github.com/oliviercailloux/java-course/blob/master/Dev%20tools/Eclipse.adoc#configuration[Eclipse configuration].
 
 As an exception to strict checking, I authorize boxing and unboxing without warnings. This is because first, the warning has drawbacks and second, it is not very effective. First, this warning sometimes encourage writing more obscure code, for example `myMap.put(Integer.valueOf(myInt), myValue)` instead of `myMap.put(myInt, myValue)`. (And stuffing your code with a lot of `@SuppressWarnings("boxing")` is not very clean either.) Second, this warning only helps avoiding possible null pointer exceptions (when unboxing), and this anyway is a problem that happens when dealing with objects. It feels unjustified to spend so much energy on this risk specifically when dealing with numeric types.
 

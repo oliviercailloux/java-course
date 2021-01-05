@@ -31,7 +31,7 @@ A workflow is defined in a `.github/workflows/{nameFile}.yaml` file. It contains
 In the above example, we create a workflow with one job containing these steps:
 
 . an action that executes a https://github.com/marketplace/actions/checkout[git checkout] of the repository;
-. an action that https://github.com/marketplace/actions/setup-java[sets up java] (and that takes an argument);
+. an action that https://github.com/marketplace/actions/setup-java-jdk[sets up java] (and that takes an argument);
 . an action that saves or restores a https://help.github.com/actions/configuring-and-managing-workflows/caching-dependencies-to-speed-up-workflows[cache] containing Maven required artifacts;
 . and a command that triggers a build by maven.
 

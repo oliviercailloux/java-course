@@ -2,7 +2,7 @@
 
 This document helps you get started with JPA. (You are supposed to have already some theoretical understanding of JPA.)
 
-NOTE: The reader supposedly has basic knowledge of database management systems, in particular the role of transactions. The reader knows how to write and deploy a servlet on an application server (see https://github.com/oliviercailloux/java-course/blob/master/Servlets.adoc[here] otherwise). The reader knows how to view the contents of the Java EE default database (see https://github.com/oliviercailloux/java-course/blob/master/DB%20from%20Eclipse.adoc[here] otherwise).
+NOTE: The reader supposedly has basic knowledge of database management systems, in particular the role of transactions. The reader knows how to write and deploy a servlet on an application server (see https://github.com/oliviercailloux/java-course/blob/master/Java%20EE/Servlets.adoc[here] otherwise). The reader knows how to view the contents of the Java EE default database (see https://github.com/oliviercailloux/java-course/blob/master/DB/DB%20from%20Eclipse.adoc[here] otherwise).
 
 == Your first entity
 
@@ -38,7 +38,7 @@ In general, it is a good practice to always make sure the entity manager has an 
 
 == Injecting the entity manager factory
 
-Prerequisite for this part: know the basics of https://github.com/oliviercailloux/java-course/tree/master/CDI[CDI].
+Prerequisite for this part: know the basics of https://github.com/oliviercailloux/java-course/blob/master/Java%20EE/CDI/README.adoc[CDI].
 
 Much of the work above is repetitive and can be managed by the container instead of you, and even made more efficient.
 

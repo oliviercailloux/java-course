@@ -2,7 +2,9 @@
 
 In this exercice, you will test a simple class, `MySimpleExtractor`, that is able to extract plain text from a PDF.
 
-* Create a repository for your exercice https://classroom.github.com/a/Q_hWoHQq[here]. This is also where your code must be submitted.
+//https://classroom.github.com/a/Q_hWoHQq
+
+* Create a repository for your exercice here. This is also where your code must be submitted.
 * Clone the resulting project. Import it into your IDE.
 * Define a class named `ExtractorTests` (full name `io.github.oliviercailloux.extractor.ExtractorTests`), put http://www.xmlpdf.com/manualfiles/hello-world.pdf[this] PDF in your class path and name it `hello-world.pdf`. Follow the best practices given in the course.
 * You must define two unit tests which check that the `writeText` method of `MySimpleExtractor` satisfies its contract.

@@ -2,7 +2,7 @@
 
 https://sonarcloud.io/about[SonarCloud] is an online service running a https://www.sonarqube.org/[SonarQube] instance. SonarQube is a software that checks your project and suggest improvements for higher code quality.
 
-This doc indicates how to set up SonarCloud, for a Java project using https://github.com/oliviercailloux/java-course/tree/master/Maven[Maven] and https://github.com/oliviercailloux/java-course/blob/master/DevOps/CI.adoc[Travis-CI] and hosted on GitHub.
+This doc indicates how to set up SonarCloud, for a Java project using https://github.com/oliviercailloux/java-course/tree/master/Maven[Maven] and https://github.com/oliviercailloux/java-course/blob/master/Dev%20tools/CI.adoc[Travis-CI] and hosted on GitHub.
 
 == Set-up
 

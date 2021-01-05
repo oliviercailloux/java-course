@@ -91,7 +91,7 @@ Prerequisites: install https://www.eclipse.org/downloads/packages/[Eclipse IDE] 
 === S5 ()
 
 * _Non-graded_ programming exercice (Maven; contract; fail fast; objects). Create a personal GitHub repository named `maven-exercice`. Create a Maven project and push your whole project to the GitHub repository (so that the `pom.xml` is at the root of the GitHub repository). Make sure the POM follows the https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Maven.adoc[best practices] as indicated in the course (hint: use the “Modern project” archetype). Follow https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Git.adoc[Git Best practices]. 8:35 to 9:35.
-** Hint: Use https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Eclipse.adoc[correct] Eclipse configuration. Check your warnings!
+** Hint: Use correct Eclipse configuration. Check your warnings!
 ** Create a class having full name `io.github.yourgithubusername.TripletOfDice` (use your GitHub username). This object represents three dice. Its constructor accepts an integer which defines the number of https://commons.wikimedia.org/wiki/Dice_by_number_of_sides[sides] of the dice. Add methods `rollAllDice()` and `rollOneDie(int: dieNumber)` whose parameter must be the integer one, two or three; and methods `getFirstDie(): int`, `getSecondDie(): int` and `getThirdDie(): int`. Determine and write down (in Javadoc) the contracts of these methods and write their code. [Optional: propose a better interface.]
 ** Create a class `io.github.yourgithubusername.DiceUser` having a static method `rollOnce(): TripletOfDice`. It creates a triplet of six-sided dice, rolls them once, and returns the object representing the triplet.
 ** In the `DiceUser` class, create a `main` method. It calls `rollOnce()` and prints the result on three lines, as follows (example for a result of 4, 2 and 1): `The die number 1 is a 4`, second line `The die number 2 is a 2`, third line `The die number 3 is a 1`.
@@ -107,7 +107,7 @@ Prerequisites: install https://www.eclipse.org/downloads/packages/[Eclipse IDE] 
 *** DiceUser (/4)
 **** rollOnce is static and performs correctly (/2)
 **** main prints exactly the expected text on three lines (/2)
-* https://github.com/oliviercailloux/java-course/blob/master/Git/Git-Br.adoc[Git-br]: comment; Print-exec: see end of S6.
+* Git-br: comment; Print-exec: see end of S6.
 * Inheritance: polymorphism and interfaces; effective type of variables. See https://raw.githubusercontent.com/oliviercailloux/Simple-Papyrus-project/interface/An%20interface%20and%20two%20realizations.svg?sanitize=true[diagram]; import the corresponding https://github.com/oliviercailloux/sample-interface[project] in Eclipse
 ** https://math.hws.edu/javanotes/contents-with-subsections.html[ES5.5] to 5.8
 ** *Exercice*: program an interface `MovableObject` with methods `canAccelerate(): boolean`, `accelerate(): void` and `getTimeToMove(double): double`; implement it twice in classes `ConstantSpeedMovable` and `GenericMovable`, in a reasonable way of your choice. In a class `MovableUser`, program a `main` method that instanciates one `ConstantSpeedMovable` and two `GenericMovable` objects, accelerate one of them, and prints the three resulting times to move 1 km. Add a method `brake(): void` to `MovableObject`. Add to `MovableUser` a method `getTotalTime(movable: MovableObject): double` that computes the total time taken for the given movable object to move 1 km then brake then move 100m then accelerate then move 1 km again. Change your `main` so that it also prints that total time, for each of the three objects created in the method. Commit to a repository named `I-like-to-move-it` in your GitHub account.
@@ -143,12 +143,12 @@ Prerequisites: install https://www.eclipse.org/downloads/packages/[Eclipse IDE] 
 
 * Before end of 22nd of March: push new commit(s) to your `Print exec` repository. You will given a second grade considering the last commit before the deadline. Your final `Print exec` grade will be a weighted sum of your first grade (received previously) and second grade. The weights depend on the number of lines that have changed between these two grades: the weight of the new grade (as a proportion of the full grade) will be 90% if you changed only one line, 70% if two or three lines have changed, 60% for four or five lines, 40% for six or seven lines, 20% for eight or nine lines (and 0% beyond). What counts is the difference between both files *as shown by https://git-scm.com/docs/git-diff#Documentation/git-diff.txt-emgitdiffemltoptionsgtltcommitgtltcommitgt--ltpathgt82308203[git diff], or on https://help.github.com/en/github/committing-changes-to-your-project/comparing-commits#comparing-commits[GitHub]*. Your solution *may not* use the commands `mkdir` or `cd`.
 * Read https://help.eclipse.org/latest/topic/org.eclipse.jdt.doc.user/gettingStarted/qs-2.htm[Editing Java elements]
-* Use https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Eclipse.adoc[this] Eclipse configuration.
+* Use https://github.com/oliviercailloux/java-course/blob/master/Dev%20tools/Eclipse.adoc[this] Eclipse configuration.
 
 [[S7]]
 === S7 ()
 
-* Peer grading of maven-exercice (https://github.com/oliviercailloux/java-course/blob/master/L3a.adoc#S5{emptyattribute}[S5]), for https://docs.google.com/document/d/1HxDej7S81B3Jgp5VOnct0iw3vO3E6u9HH1les9eg4Vw/edit?usp=sharing[volunteers].
+* Peer grading of maven-exercice (S5), for https://docs.google.com/document/d/1HxDej7S81B3Jgp5VOnct0iw3vO3E6u9HH1les9eg4Vw/edit?usp=sharing[volunteers].
 * https://www.scientecheasy.com/2018/09/collection-hierarchy-in-java-collections-class.html/[Collections], start: `Iterable` and `Iterator`.
 * *Exercices*:
 ** Define a class `StringPairIterator` that implements `Iterator<String>`. (Is your class a generic type?) Such an object contains (as a field) a `Pair` of `String` (as implemented in the previous exercice), and is able to iterate over a pair of two strings. The first call to `next()` gives the left member, the second call to `next()` gives the right member, and `hasNext()` returns `false` afterwards. Document the contracts of `StringPairIterator` and check that they are compatible with the contracts of `Iterator<E>`. In a `main` method, define a pair, then a pair iterator, and use it to print the two members of the pair. Then, define a class `PairIterator<E>` that implements `Iterator<E>` in a similar way (is this new class generic?). Modify your `main` accordingly.
@@ -183,12 +183,12 @@ Prerequisites: install https://www.eclipse.org/downloads/packages/[Eclipse IDE] 
 //.. pas de commentaires inutiles (tq auto-générés //TODO, @author vide, …)
 //.. (micro) pas de comparaison à `true` (`if(isBig == true)`)
 //.. vous arrivez à voir le résultat de votre code javadoc (exemple: `@param truc of type String` inutile)
-* https://github.com/oliviercailloux/java-course/blob/master/JUnit.adoc[Unit testing]
+* https://github.com/oliviercailloux/java-course/blob/master/JUnit/README.adoc[Unit testing]
 ** *Exercice:* define a class `PairIteratorTests` and a test that creates a pair of integers _(2, 3)_ and a `PairIterator` object to iterate over this pair, and verifies that the iterator gives elements _2_, _3_, and that its `hasNext()` method returns `false` only after the second step.
 
 *TODO home* 
 
-* https://classroom.github.com/a/zHGHjChL[Coffee], submit before end of 5 April. Implement the classes `DripCoffeeMaker` and `MyEspressoMachine`, making sure they satisfy their contracts. You are encouraged to discuss your ideas or doubt with classmates, but you may not share code (any too similar code will be considered cheating and be graded zero). You will be graded automatically. If the code does not compile, the grade is zero. This exercice will have a very low weight if I get a chance to grade sufficiently many exercices after the quarantine or in a better controlled environment (in which case this will be considered essentially as a non graded exercice). Otherwise (if I find no better solution), this grade will have a weight similar to other graded exercices. *NB: slightly https://github.com/oliviercailloux/coffee/compare/9c8f44..master[updated] since publication*
+* Coffee, submit before end of 5 April. Implement the classes `DripCoffeeMaker` and `MyEspressoMachine`, making sure they satisfy their contracts. You are encouraged to discuss your ideas or doubt with classmates, but you may not share code (any too similar code will be considered cheating and be graded zero). You will be graded automatically. If the code does not compile, the grade is zero. This exercice will have a very low weight if I get a chance to grade sufficiently many exercices after the quarantine or in a better controlled environment (in which case this will be considered essentially as a non graded exercice). Otherwise (if I find no better solution), this grade will have a weight similar to other graded exercices. *NB: slightly https://github.com/oliviercailloux/coffee/compare/9c8f44..master[updated] since publication*
 * You may submit a new solution to print exec on your (existing) print exec repository, you will receive new comments considering your version at the end of 5 April. This will not count for the grade.
 
 [[S8]]
@@ -203,7 +203,7 @@ Prerequisites: install https://www.eclipse.org/downloads/packages/[Eclipse IDE] 
 * No https://mycore.core-cloud.net/index.php/s/jDdn1OcEfjjj8NU[plagiarism], but reuse! (Link to audio track from https://fr.wikipedia.org/wiki/Le_Jeu_des_dictionnaires[Le Jeu des Dictionnaires], included with permission from geluck.com.)
 * Projects discussion
 
-Delivery 1: before end of 20 April. See https://github.com/oliviercailloux/java-course/blob/master/Divers/Projets.adoc[instructions].
+Delivery 1: before end of 20 April. See instructions.
 
 [[S9]]
 === S9 ()
@@ -226,10 +226,10 @@ Delivery 2: before end of 5 May. Recall: 10 hours of efficient work / person exp
 [[S10]]
 === S10 ()
 
-* Graded test: https://classroom.github.com/a/BHlfOU0x[string-files]. About `Set`, `List`, files, flows, paths, providers, and the methods `https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/nio/file/Files.html[Files]#copy`, `createFile`, `delete`, `exists`, `isDirectory`, `readAllLines`, `readString`, `write`, `writeString`. Some (incomplete) unit tests are already provided, to help you test your implementation (look under `src/test/`). You have 30 minutes. Hint: use up to 10 minutes to make sure you understand the contract, including by reading the unit tests. Hint 2: implement the methods in the order they are defined in the interface.
+* Graded test: string-files. About `Set`, `List`, files, flows, paths, providers, and the methods `https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/nio/file/Files.html[Files]#copy`, `createFile`, `delete`, `exists`, `isDirectory`, `readAllLines`, `readString`, `write`, `writeString`. Some (incomplete) unit tests are already provided, to help you test your implementation (look under `src/test/`). You have 30 minutes. Hint: use up to 10 minutes to make sure you understand the contract, including by reading the unit tests. Hint 2: implement the methods in the order they are defined in the interface.
 * Override https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Local%20design.adoc#the-equalsobject-method[`equals`] and `hashcode`
 ** Exercice: override `equals` on a class `Sock` that contains `color` and `size` fields. Test using a unit test that two socks are equal exactly when they should. Override `hashCode`. Test using a unit test that two equal socks have the same hashCode. Explain how you guarantee (by a reasoning, not by code) that this is true in general for your `Sock` class (not only in the case under test)? In another unit test, create three sock instances `a`, `b`, `c`, two being (semantically) equal, so that `a.equals(b)` and `!a.equals(c)`. Put `a` and `c` in a `LinkedHashSet`. Imagine that `LinkedHashSet` uses an array of size 10 and explain how Java could have decided in which compartment to put `a` and `c`. Are they possibly / necessarily in the same compartment? Check that `contains(a)`, `contains(b)`, `contains(c)` (on the set) returns `true`. Explain why and how it returns `true` in the case of `b`.
-* https://github.com/oliviercailloux/java-course/blob/master/Search%20path/README.adoc[Search path] (packages, classes and directories).
+* https://github.com/oliviercailloux/java-course/blob/master/Execution/README.adoc[Search path] (packages, classes and directories).
 * https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Resources.adoc[Resources]; exercice: read a file from the class path.
 
 [[S11]]
@@ -242,7 +242,7 @@ Delivery 2: before end of 5 May. Recall: 10 hours of efficient work / person exp
 [[S12]]
 === S12 ()
 
-* Graded test: https://classroom.github.com/a/qzD5WTJc[chess]. About generics, `Set`, `List`, `Map`, and other classes and interfaces related to the collections in Java (see S6 to S9); as well as the class `Optional` (see https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Null.adoc[BP null]). You will have 90 minutes. (You can reuse the Coffee exercice in order to practice to start quickly.) Please have a look at the https://en.wikipedia.org/wiki/Algebraic_notation_(chess)[algebraic notation] and at the https://en.wikipedia.org/wiki/Chess_piece[chess pieces] if you know nothing about chess. (You do not have to know the rules of the game.) _Hint_: make sure the first method is implemented correctly.
+* Graded test: chess. About generics, `Set`, `List`, `Map`, and other classes and interfaces related to the collections in Java (see S6 to S9); as well as the class `Optional` (see https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Null.adoc[BP null]). You will have 90 minutes. (You can reuse the Coffee exercice in order to practice to start quickly.) Please have a look at the https://en.wikipedia.org/wiki/Algebraic_notation_(chess)[algebraic notation] and at the https://en.wikipedia.org/wiki/Chess_piece[chess pieces] if you know nothing about chess. (You do not have to know the rules of the game.) _Hint_: make sure the first method is implemented correctly.
 * https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html[Method references]
 ** *Exercice* Define a class `Person` with a name and a height. Define a class `IsNameAToG` which implements `Predicate<Person>` and whose `test` method returns `true` iff the name of the person, upper cased, starts with a letter between `A` and `G`. In a unit test, define a set of persons, and use `stream()` on the set, then `filter` and `count` on the resulting stream, to count the number of persons in your set whose name match the predicate. In the unit test, make sure you have a line looking like `Predicate<Person> myPredicate = …`.
 ** Define a class `IsGreaterThan` which implements `Predicate<Person>`. Its constructor receives an height. Its `test` method returns `true` iff the person is greater than the height given when building it. Test it similarly in a unit test. Similarly, make sure your test includes a line such as `Predicate<Person> myPredicate = …`.
@@ -253,15 +253,15 @@ Delivery 2: before end of 5 May. Recall: 10 hours of efficient work / person exp
 
 [[S13]]
 === S13 ()
-* https://github.com/oliviercailloux/java-course/blob/master/DevOps/CI-github-actions.adoc[CI]: GitHub Workflows, by Avi Mimoun
+* https://github.com/oliviercailloux/java-course/blob/master/Dev%20tools/CI.adoc[CI]: GitHub Workflows, by Avi Mimoun
 * Work on project
 
 [[S14]]
 === S14 ()
 
-* Graded test: https://classroom.github.com/a/D9vfNsRU[score-keeper]. About referring to objects from other objects. You will have 60 minutes (push before 9:35). There will be several interfaces, you only have to implement `MyScoreManager`. (You may need to implement other classes to achieve this.) There is no documentation in this project: you will have to read the unit tests to understand what the class is supposed to do.
+* Graded test: score-keeper. About referring to objects from other objects. You will have 60 minutes (push before 9:35). There will be several interfaces, you only have to implement `MyScoreManager`. (You may need to implement other classes to achieve this.) There is no documentation in this project: you will have to read the unit tests to understand what the class is supposed to do.
 * Licenses and philosophy: https://www.gnu.org/philosophy/philosophy.html[GNU]; https://opensource.org/[OSI]; Copyleft (GNU https://opensource.org/licenses/GPL-3.0[GPL]); Non-copyleft (https://opensource.org/licenses/MIT[MIT])
-* Parsing HTML: https://github.com/oliviercailloux/java-course/blob/master/HTML%20to%20DOM.adoc[DOM]
+* Parsing HTML: https://github.com/oliviercailloux/java-course/blob/master/DOM.adoc[DOM]
 * Accessing REST web services: https://github.com/oliviercailloux/java-course/blob/master/WS%20client/JAX-RS%20client.adoc[JAX-RS client]
 
 *Graded homework*: chess-homework. Your last commit before the end of the 24th of May will be graded again, using the same set of tests as the graded test. This will count for 70% of a normal test. The chess graded test counts for 30% or a normal test. Please commit on the same repository as the one already used (chess).
@@ -271,8 +271,10 @@ Third release before the end of the 14th of June.
 [[S15]]
 === S15 ()
 
-* Answer for https://github.com/oliviercailloux/samples-chess[chess] and https://github.com/oliviercailloux/samples-scorers[scorers]: look at the `impl` branch.
+* Answer for chess and https://github.com/oliviercailloux/samples-scorers[scorers]: look at the `impl` branch.
 * Work on project
+
+// https://github.com/oliviercailloux/samples-chess
 
 [[S16]]
 === S16 ()
@@ -296,7 +298,7 @@ https://github.com/marcellinodour/MIDO-SVG/raw/master/Doc/Pr%C3%A9sentation%2020
 ** Noté : intérêt pour l’audience ; compréhension par l’audience du contexte et de l’objectif du projet ; compréhension par l’audience de l’architecture du code et des aspects techniques ; distinction claire des fcts déjà présentes VS ajoutées ; originalité & créativité éventuelle ; …
 * Votes
 * Evals, and https://github.com/oliviercailloux/projets/blob/master/Licences/Licence.adoc[Licences]: https://github.com/oliviercailloux/projets/raw/master/Licences/Declaration%20of%20licensing.odt[Decl] : envoyer à votre délégué, Marcellino, vos évaluations et votre déclaration de licence. Sujet : « Fin cours Java ».
-** Envoyer un fichier texte (format Asciidoctor ou simple texte) contenant votre évaluation du cours Java et UML (https://github.com/oliviercailloux/java-course/raw/master/Divers/Appr%C3%A9ciation%20Java.pdf[inspiration]).
+** Envoyer un fichier texte (format Asciidoctor ou simple texte) contenant votre évaluation du cours Java et UML (https://github.com/oliviercailloux/java-course/raw/master/L3/Appr%C3%A9ciation%20Java.pdf[inspiration]).
 ** Envoyer un PDF scanné (ou photographié) avec toutes les signatures de l’équipe.
 ** Si pas possible : lui envoyer un PDF signé et scanné (ou photographié) par membre pour ceux qui peuvent et une déclaration d’intention écrite par e-mail. Vous vous engagez à signer cette déclaration dès que possible. Laissez-moi un moyen de vous contacter !
 ** Ou lui indiquer par e-mail votre décision collective de ne pas signer.
