@@ -49,6 +49,6 @@ Omit comments that bring no information: they hide the important comments. For e
 Get inspiration from well written documentation such as the one on https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/util/List.html[`List`].
 
 == Outdated references
-* https://www.oracle.com/technetwork/java/namingconventions-139351.html[Oracle J2EE] (I don’t think this should be taken seriously as it is very old, apparently unmaintained, and not included in recent documentation of Oracle).
-* Code https://www.oracle.com/technetwork/java/javase/documentation/codeconvtoc-136057.html[Conventions] for the Java TM Programming Language contains many https://www.javacodegeeks.com/2012/10/java-coding-conventions-considered-harmful.html[incorrect] suggestions
+* https://www.oracle.com/java/technologies/naming-conventions.html[Oracle J2EE] (I don’t think this should be taken seriously as it is very old, apparently unmaintained, and not included in recent documentation of Oracle).
+* Code https://www.oracle.com/java/technologies/javase/codeconventions-contents.html[Conventions] for the Java Programming Language contains many https://www.javacodegeeks.com/2012/10/java-coding-conventions-considered-harmful.html[incorrect] suggestions
 
