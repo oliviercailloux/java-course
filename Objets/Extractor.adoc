@@ -2,7 +2,8 @@
 
 Here are the instructions to follow for the graded exercice “Extractor”.
 
-* Create a repository for your exercice https://classroom.github.com/a/Ny5sBwFU[here]. This is where your project must be submitted. (For example, clone it and let your Maven project to be created at the next step become the root of this folder.)
+//https://classroom.github.com/a/Ny5sBwFU
+* Create a repository for your exercice here. This is where your project must be submitted. (For example, clone it and let your Maven project to be created at the next step become the root of this folder.)
 * Create a Maven project. Use `groupId` `io.github.oliviercailloux` (or your own group id) and `artifactId` `extractor-` followed by your GitHub username.
 * This project will build a simple class that is able to extract plain text from a PDF. For this, we will use Apache https://pdfbox.apache.org/[PDFBox]. Add the required dependency to your POM.
 * There is a file already in your repository. It defines an interface `SimpleExtractor`. Move this file in the right folder, corresponding to its declared package (do not change its package).
