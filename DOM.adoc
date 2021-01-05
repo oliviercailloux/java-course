@@ -3,37 +3,35 @@
 A short note about parsing HTML and XML documents in Java using W3C’s DOM (Document Object Model). Learning to parse using the DOM is good because the DOM is a widely implemented standard: once you know how it works, you can parse HTML (and XML) documents in Javascript, https://docs.python.org/3/library/xml.dom.html[Python], https://docs.microsoft.com/en-us/dotnet/standard/data/xml/xml-document-object-model-dom[.NET], …
 
 == Valid HTML
-This should successfully parse any document that can be transformed to a DOM according to W3C standard, including valid HTML documents in HTML syntax or XML syntax. It uses the https://www.w3.org/TR/DOM-Level-3-Core/core.html#Bootstrap[bootstrapping] approach (described in the DOM Level 3 Core Specification) and the LS feature (described in the DOM Level 3 https://www.w3.org/TR/2004/REC-DOM-Level-3-LS-20040407/[Load and Save] specification).
+This should successfully parse any document that can be transformed to a DOM according to W3C standard, including valid HTML documents https://stackoverflow.com/questions/29041855[in XML syntax]. It uses the https://www.w3.org/TR/DOM-Level-3-Core/core.html#Bootstrap[bootstrapping] approach (described in the DOM Level 3 Core Specification) and the LS feature (described in the DOM Level 3 https://www.w3.org/TR/2004/REC-DOM-Level-3-LS-20040407/[Load and Save] specification).
 
-.Obtain a DOM object from a valid HTML document
+.Obtain a DOM object from a valid HTML document in XML syntax using DOM Level 3 Load and Save
 [source,java]
 ----
 Document doc;
-File inputFile = new File("input.html");
-String inputUrl = inputFile.toURI().toURL().toExternalForm();
+Path input = Path.of("input.xhtml");
 
 DOMImplementationRegistry registry = DOMImplementationRegistry.newInstance();
 DOMImplementationLS impl = (DOMImplementationLS) registry.getDOMImplementation("LS");
 LSParser builder = impl.createLSParser(DOMImplementationLS.MODE_SYNCHRONOUS, null);
-doc = builder.parseURI(inputUrl);
+doc = builder.parseURI(input.toUri().toString());
 
 Element docE = doc.getDocumentElement();
 LOGGER.info("Main tag name: {}.", docE.getTagName());
 ----
 
 == XML syntax
-This approach uses https://en.wikipedia.org/wiki/Simple_API_for_XML[SAX] rather than the standard bootstrapping approach. I recommend using the previous one instead where applicable. (It might also be specific to loading XML documents, though I have had successes loading an HTML document in HTML syntax with it.)
+This approach uses https://en.wikipedia.org/wiki/Simple_API_for_XML[SAX] rather than the standard bootstrapping approach. I recommend using the previous one instead where applicable.
 
-.Obtain a DOM object from a valid HTML document in XML syntax
+.Obtain a DOM object from a valid HTML document in XML syntax using SAX
 [source,java]
 ----
 Document doc;
-File inputFile = new File("input.html");
-String inputUrl = inputFile.toURI().toURL().toExternalForm();
+Path input = Path.of("input.xhtml");
 
 DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 DocumentBuilder builder = factory.newDocumentBuilder();
-doc = builder.parse(inputUrl);
+doc = builder.parse(input.toUri().toString());
 
 Element docE = doc.getDocumentElement();
 LOGGER.info("Main tag name: {}.", docE.getTagName());
