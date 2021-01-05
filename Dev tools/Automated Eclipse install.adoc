@@ -2,11 +2,16 @@
 
 Here is how I automate my Eclipse installation.
 
-* Uncompress `eclipse-jee-2019-12-R-linux-gtk-x86_64.tar.gz`
-* `sudo mv eclipse-jee-2019-12-R-linux-gtk-x86_64/eclipse/ /usr/local/share/eclipse-jee-2019-12-R-linux-gtk-x86_64`
+* Uncompress `eclipse-jee-2020-12-R-linux-gtk-x86_64.tar.gz`
+* `sudo mv eclipse-jee-2020-12-R-linux-gtk-x86_64/eclipse/ /usr/local/share/eclipse-jee-2020-12-R-linux-gtk-x86_64`
 * Install any desired shared plugins (optional, see below)
-* `sudo chown -R root:staff /usr/local/share/eclipse-jee-2019-12-R-linux-gtk-x86_64/`
+* `sudo chown -R root:staff /usr/local/share/eclipse-jee-2020-12-R-linux-gtk-x86_64/`
 * Delete your `.eclipse` folder and your previous Eclipse workspace to forget possible unwanted residuals from previous installations
+
+// 163 features, 920 plugins
+// 165 features, 927 plugins after checkstyle
+// 183 features, 1287 plugins after papyrus uml: 18 features and 229 plugins with papyrus in the name; gmf; apache batik; and so on.
+// 207 features, 1404 plugins after papyrus sdk: 42 features and 344 plugins with papyrus in the name; gmf; apache batik; and so on.
 
 ////
 == Automatic workspace selection
@@ -20,12 +25,50 @@ mkdir -p ".eclipse/org.eclipse.platform_4.14.0_1448112854_linux_gtk_x86_64/confi
 == Shared plugins
 This uses the https://help.eclipse.org/2019-12/index.jsp?topic=/org.eclipse.platform.doc.isv/reference/misc/multi_user_installs.html[shared configuration] approach.
 
-To install https://checkstyle.org/eclipse-cs/[Eclipse Checkstyle Plug-in] and “Checkstyle configuration plugin for M2Eclipse” (part of https://marketplace.eclipse.org/content/m2e-code-quality[`m2e-code-quality`]): `"/usr/local/share/eclipse-jee-2019-12-R-linux-gtk-x86_64/eclipse" -nosplash -application "org.eclipse.equinox.p2.director" -repository "http://checkstyle.org/eclipse-cs/update/, http://m2e-code-quality.github.io/m2e-code-quality/site/latest/" -installIU "net.sf.eclipsecs.feature.group, com.basistech.m2e.code.quality.checkstyle.feature.feature.group"`. (The installation process seems to hang for about one minute.) This installs 2 features in `/usr/local/share/eclipse-jee-2019-12-R-linux-gtk-x86_64/features` and 7 plugins in the `plugins` subfolder, so that they are available for all users in the system. 
-
-// To install https://www.eclipse.org/papyrus/[Papyrus]: `"/usr/local/share/eclipse-jee-2019-12-R-linux-gtk-x86_64/eclipse" -nosplash -application "org.eclipse.equinox.p2.director" -repository "http://download.eclipse.org/modeling/mdt/papyrus/components/designer/, http://download.eclipse.org/releases/2019-12/, http://download.eclipse.org/modeling/mdt/papyrus/components/marte/" -installIU "org.eclipse.papyrus.designer.languages.java.feature.feature.group"`. (This installs `org.eclipse.papyrus.designer.languages.java.feature.feature.group`, which gives the Java profile, and `org.eclipse.papyrus.designer.languages.common.feature.feature.group`, but these are not actually useful in this course. Perhaps `org.eclipse.papyrus.designer.transformation.main.feature.feature.group` is useful, I don’t know, but this requires C++ and Java profiles (and code generation) and MARTE static profile. Oddly enough, `org.eclipse.papyrus.sdk.feature.feature.group` is provided in http://download.eclipse.org/releases/2019-12/ and not in Papyrus Designer, Marte or Moka update sites. The Papyrus https://www.omg.org/omgmarte/[Marte] update site is required because “Papyrus base elements for code generation (Incubation)” (`org.eclipse.papyrus.designer.languages.common.feature.feature.group`) depends on “Papyrus common code generation UI” (`org.eclipse.papyrus.designer.languages.common.codegen.ui`), depending on “Papyrus designer: transformation core (Incubation)” (`org.eclipse.papyrus.designer.deployment.tools`), depending on “osgi.bundle; org.eclipse.papyrus.marte.static.profile 1.2.2”.)
+To install https://checkstyle.org/eclipse-cs/[Eclipse Checkstyle Plug-in] and “Checkstyle configuration plugin for M2Eclipse” (part of https://marketplace.eclipse.org/content/m2e-code-quality[`m2e-code-quality`]): `"/usr/local/share/eclipse-jee-2020-12-R-linux-gtk-x86_64/eclipse" -nosplash -application "org.eclipse.equinox.p2.director" -repository "http://checkstyle.org/eclipse-cs/update/, http://m2e-code-quality.github.io/m2e-code-quality/site/latest/" -installIU "net.sf.eclipsecs.feature.group, com.basistech.m2e.code.quality.checkstyle.feature.feature.group"`. (The installation process seems to hang for about one minute.) This installs 2 features in `/usr/local/share/eclipse-jee-2020-12-R-linux-gtk-x86_64/features` and 7 plugins in the `plugins` subfolder, so that they are available for all users in the system. 
 
 https://stackoverflow.com/a/38956772[This] lets you find the data for other plugins.
 
 == Others
 Under Linux Gnome, consider https://bugs.eclipse.org/bugs/show_bug.cgi?id=473562[disabling] the Alt+F5 shortcut so that the Eclipse one works.
+
+== Papyrus 5
+Installed with the inclusive download:
+
+Papyrus RCP Feature org.eclipse.papyrus.rcp.feature.feature.group (Eclipse Modeling Project): contains Papyrus and a collection of Eclipse Modeling Project components, including EMF, MDT XSD/OCL/UML2 elements. It includes a complete SDK, developer tools and source code. Note that the Modeling package includes some incubating components, as indicated by feature numbers less than 1.0.0 on the feature list.
+Papyrus for UML Developer Resources org.eclipse.papyrus.sdk.feature.source.feature.group (EMP): Papyrus for UML provides a UML 2 modeling environment that conforms to the OMG specification. Papyrus for UML notably features diagram editors for UML 2 diagrams, rich model editing facilities, and the glue required to integrate with other model-based tools. It also offers a very advanced support of UML profiles that enables users to define UML-based domain-specific modeling languages. To complement the UML profiles support, Papyrus provides very powerful customization mechanisms which can be leveraged to create user-defined Papyrus perspectives and give it the same look and feel as a native DSL editor. 
+Papyrus for UML org.eclipse.papyrus.sdk.feature.feature.group (EMP): Papyrus for UML provides a UML 2 modeling environment that conforms to the OMG specification. Papyrus for UML notably features diagram editors for UML 2 diagrams, rich model editing facilities, and the glue required to integrate with other model-based tools. It also offers a very advanced support of UML profiles that enables users to define UML-based domain-specific modeling languages. To complement the UML profiles support, Papyrus provides very powerful customization mechanisms which can be leveraged to create user-defined Papyrus perspectives and give it the same look and feel as a native DSL editor.
+	Also contains: org.eclipse.papyrus.doc.feature.feature.group
+	org.eclipse.papyrus.editor.feature.feature.group
+	org.eclipse.papyrus.emf.feature.feature.group
+	org.eclipse.papyrus.emf.facet.feature.feature.group
+	org.eclipse.papyrus.infra.feature.feature.group
+	org.eclipse.papyrus.infra.architecture.feature.feature.group
+	org.eclipse.papyrus.infra.core.feature.feature.group
+	…
+	Papyrus UML
+	org.eclipse.papyrus.views.feature.feature.group
+Papyrus UML org.eclipse.papyrus.uml.feature.feature.group (EMP): The Papyrus UML layer.
+	Also contains:
+	org.eclipse.papyrus.uml.alf.feature.feature.group
+	org.eclipse.papyrus.uml.decoratormodel.feature.feature.group
+	…
+
+Plug-ins
+Every listed plug-in org.eclipse.papyrus.\* is provided by the EMP.
+
+org.eclipse.papyrus.api.migration.doc
+org.eclipse.papyrus.copypaste.ui.doc
+org.eclipse.papyrus.developer.doc
+org.eclipse.papyrus.dsml.validation.doc
+
+$ ls papyrus-2020-12-5.0.0-linux64/Papyrus/features/ | grep papyr | wc -l
+85
+$ ls papyrus-2020-12-5.0.0-linux64/Papyrus/plugins/ | grep papyr | wc -l
+689
+
+"/usr/local/share/eclipse-jee-2020-12-R-linux-gtk-x86_64/eclipse" -nosplash -application "org.eclipse.equinox.p2.director" -repository "https://download.eclipse.org/releases/2020-12" -installIU "org.eclipse.papyrus.sdk.feature.feature.group"
+
+=== Vrac
+// To install https://www.eclipse.org/papyrus/[Papyrus]: `"/usr/local/share/eclipse-jee-2020-12-R-linux-gtk-x86_64/eclipse" -nosplash -application "org.eclipse.equinox.p2.director" -repository "http://download.eclipse.org/modeling/mdt/papyrus/components/designer/, http://download.eclipse.org/releases/2019-12/, http://download.eclipse.org/modeling/mdt/papyrus/components/marte/" -installIU "org.eclipse.papyrus.designer.languages.java.feature.feature.group"`. (This installs `org.eclipse.papyrus.designer.languages.java.feature.feature.group`, which gives the Java profile, and `org.eclipse.papyrus.designer.languages.common.feature.feature.group`, but these are not actually useful in this course. Perhaps `org.eclipse.papyrus.designer.transformation.main.feature.feature.group` is useful, I don’t know, but this requires C++ and Java profiles (and code generation) and MARTE static profile. Oddly enough, `org.eclipse.papyrus.sdk.feature.feature.group` is provided in http://download.eclipse.org/releases/2019-12/ and not in Papyrus Designer, Marte or Moka update sites. The Papyrus https://www.omg.org/omgmarte/[Marte] update site is required because “Papyrus base elements for code generation (Incubation)” (`org.eclipse.papyrus.designer.languages.common.feature.feature.group`) depends on “Papyrus common code generation UI” (`org.eclipse.papyrus.designer.languages.common.codegen.ui`), depending on “Papyrus designer: transformation core (Incubation)” (`org.eclipse.papyrus.designer.deployment.tools`), depending on “osgi.bundle; org.eclipse.papyrus.marte.static.profile 1.2.2”.)
 
