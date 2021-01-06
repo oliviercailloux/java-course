@@ -13,7 +13,7 @@ In jshell, as with many shells, use ↑ (keyboard up https://en.wikipedia.org/wi
 . Assign each digit of your age to different variables; use them to print `<your-age> is my age!`
 . Create a boolean variable whose value is `true`, another one whose value is `false`, and use them to create an expression that evaluates to `true` and one that evaluates to `false`
 . Assign any number you like to an integer variable. Create an expression that evaluates to `true` if, and only if, that variable equals your age. (Test it by changing the value of the variable and running the expression again.)
-. Assign the value `"true"` to a variable of type `String`. Create an expression that evaluates to `true` if, and only if, that variable contains the String `"true"`.
+. Assign the value `"true"` to a variable of type `String`. Create an expression that evaluates to `true` if, and only if, the value of that variable is equal to the String `"true"`. Use the method `s1.equals(s2)` to test for equality of two strings `s1` and `s2`.
 
 == Methods
 . Assign 4659 and 23 to variables, and show the result of multiplying these variables
