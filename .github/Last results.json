@@ -4855,15 +4855,6 @@
         "when": "2021-01-05T16:31:49.180209Z"
     },
     {
-        "url": "https://travis-ci.org/oliviercailloux/java-course",
-        "sources": [
-            "README.adoc"
-        ],
-        "response": 200,
-        "satisfied": true,
-        "when": "2021-01-05T16:31:54.790982Z"
-    },
-    {
         "url": "README.adoc#_main_content",
         "sources": [
             "README.adoc"
@@ -4880,15 +4871,6 @@
         "response": 1,
         "satisfied": true,
         "when": "2021-01-05T16:31:55.312739Z"
-    },
-    {
-        "url": "https://api.travis-ci.org/oliviercailloux/java-course.svg?branch=master",
-        "sources": [
-            "README.adoc"
-        ],
-        "response": 200,
-        "satisfied": true,
-        "when": "2021-01-05T16:31:56.018079Z"
     },
     {
         "url": "https://github.com/choweiyuan/schemaexample/blob/master/src/main/resources/c.xsd",
@@ -9111,15 +9093,6 @@
         "when": "2021-01-05T20:12:05.841551Z"
     },
     {
-        "url": "https://github.com/oliviercailloux/java-course/blob/master/JUnit/README.adoc",
-        "sources": [
-            "L3/README.adoc"
-        ],
-        "response": 404,
-        "satisfied": false,
-        "when": "2021-01-05T20:12:06.216901Z"
-    },
-    {
         "url": "https://github.com/oliviercailloux/java-course/blob/master/DOM.adoc",
         "sources": [
             "L3/README.adoc"
@@ -9127,15 +9100,6 @@
         "response": 200,
         "satisfied": true,
         "when": "2021-01-05T20:12:06.805322Z"
-    },
-    {
-        "url": "https://github.com/oliviercailloux/java-course/raw/master/L3/Appr%C3%A9ciation%20Java.pdf",
-        "sources": [
-            "L3/README.adoc"
-        ],
-        "response": 404,
-        "satisfied": false,
-        "when": "2021-01-05T20:12:07.174238Z"
     },
     {
         "url": "https://github.com/oliviercailloux/java-course/blob/master/DB/DB%20from%20Eclipse.adoc",
@@ -9172,5 +9136,41 @@
         "response": 200,
         "satisfied": true,
         "when": "2021-01-05T20:12:08.873738Z"
+    },
+    {
+        "url": "https://github.com/oliviercailloux/java-course/blob/master/.github/Last%20results.json",
+        "sources": [
+            "README.adoc"
+        ],
+        "response": 200,
+        "satisfied": true,
+        "when": "2021-01-06T10:17:55.152147Z"
+    },
+    {
+        "url": ".github/Links%20check.svg",
+        "sources": [
+            "README.adoc"
+        ],
+        "response": 1,
+        "satisfied": true,
+        "when": "2021-01-06T10:17:55.207992Z"
+    },
+    {
+        "url": "https://github.com/oliviercailloux/java-course/blob/master/JUnit/README.adoc",
+        "sources": [
+            "L3/README.adoc"
+        ],
+        "response": 200,
+        "satisfied": true,
+        "when": "2021-01-06T10:17:55.584020Z"
+    },
+    {
+        "url": "https://github.com/oliviercailloux/java-course/raw/master/L3/Appr%C3%A9ciation%20Java.pdf",
+        "sources": [
+            "L3/README.adoc"
+        ],
+        "response": 404,
+        "satisfied": false,
+        "when": "2021-01-06T10:17:55.882079Z"
     }
 ]
