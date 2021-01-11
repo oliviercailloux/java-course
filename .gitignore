@@ -8,9 +8,4 @@
 **/presentation.toc
 **/presentation.vrb
 
-**/Local notes *.txt
-**/Local notes *.adoc
-**/Local/
-
-Divers/SITN.html
-
+.github/Config.json
