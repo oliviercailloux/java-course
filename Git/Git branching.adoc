@@ -1,0 +1,22 @@
+= Git branching
+:xrefstyle: short
+
+In this graded exercice, we’ll simulate that we go back in time (to correct some problem in a previous version of a software), create two branches (to try two different approaches), and then merge those two branches.
+
+* Accept https://classroom.github.com/a/oIvmOkqa[this assignment]. Your repository will be created as +https://github.com/oliviercailloux-org/git-br-yourGitHubUserName+. This repository will be initialized with some history.
+* Clone your new repository (you should work on it locally, then push your additions to the remote).
+* We’ll start with an existing commit that we will name `Start`. That is the commit representing the state of the application on `August 15, 2020, 15:00:00 +0200`, that is, the commit just before that time.
+** For example, if there is a commit `C1` on that day at 14:30 and a commit `C2` just following it on that day at 15:20, then `Start = C1`.
+* You must create four commits and three branches in total. The history should look like <<Goal>> when you are done. Make sure your pointers are exactly as pictured, and that the branches are named as in the figure.
+** The three dots represent the rest of the history of that repository (you do not deal with this part).
+** Commits `A`, `B`, `C`, `D` are your own commits.
+** Commit `A` adds a file named `first.txt` containing “hello world”; its parent is `Start`.
+** Commit `B` adds a file named `first.txt` containing “coucou monde”; its parent is `Start`.
+** Commit `C` adds a file named `second.txt` containing “2021”; its parent is `B`.
+** `D` is the result of merging `A` and `C` (after resolving the conflict). It keeps both the text “hello world” AND the text “coucou monde” (on the next line), thus, commit `D` contains a blob `first.txt` that contains two lines (in addition to the blob `second.txt` that has no change from `C`).
+* When you are done, check (for example, using the GitHub web interface) that your commits and branches have reached the remote repository.
+
+[[Goal]]
+.Desired history at end of the exercice (italicized: your additions to the history)
+image::Git-br-2019.svg[opts="inline"]
+
