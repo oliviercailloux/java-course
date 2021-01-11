@@ -51,8 +51,6 @@ Prerequisites: https://github.com/oliviercailloux/java-course/blob/master/Best%2
 [[S2]]
 === S2a (12)
 
-Prerequisites: install https://www.eclipse.org/downloads/packages/[Eclipse IDE] “for Java Developers”
-
 * https://github.com/oliviercailloux/java-course/blob/master/Dev%20tools/Eclipse.adoc[Eclipse & Java]
 
 * At end: random questions involving Eclipse, javac & java
