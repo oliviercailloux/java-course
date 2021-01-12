@@ -12,8 +12,8 @@ In this graded exercice, we’ll simulate that we go back in time (to correct so
 ** Commits `A`, `B`, `C`, `D` are your own commits.
 ** Commit `A` adds a file named `first.txt` containing “hello world”; its parent is `Start`.
 ** Commit `B` adds a file named `first.txt` containing “coucou monde”; its parent is `Start`.
-** Commit `C` adds a file named `second.txt` containing “2021”; its parent is `B`.
-** `D` is the result of merging `A` and `C` (after resolving the conflict). It keeps both the text “hello world” AND the text “coucou monde” (on the next line), thus, commit `D` contains a blob `first.txt` that contains two lines (in addition to the blob `second.txt` that has no change from `C`).
+** Commit `C` adds a file whose name, relative to the path `a/b/c/`, would be `x/y/../z/some file.txt` containing “2021”; its parent is `B`. Note the space in its name, and create any required intermediate folder.
+** `D` is the result of merging `A` and `C` (after resolving the conflict). It keeps both the text “hello world” AND the text “coucou monde” (on the next line), thus, commit `D` contains a blob `first.txt` that contains two lines (in addition to the blob whose file name is `some file.txt` that has no change from `C`).
 * When you are done, check (for example, using the GitHub web interface) that your commits and branches have reached the remote repository.
 
 [[Goal]]
