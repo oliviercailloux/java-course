@@ -2,7 +2,9 @@
 
 Here are the instructions for this graded exercice.
 
-* Create a repository for your exercice here. Your repository will be created as \https://github.com/oliviercailloux-org/dep-git-yourGitHubUserName. (Sometimes GitHub seems stuck and does not tell you that it has been created, but it probably has been.) Your repository will be created with an existing project in it, your mission is to extend it and push your changes to that same repository.
+(NB the link for the repository creation is not available any more. This is provided only for checking the wording of the exercice.)
+
+* Create a repository for your exercice here. Your repository will be created as `+https://github.com/oliviercailloux-org/dep-git-yourGitHubUserName+`. (Sometimes GitHub seems stuck and does not tell you that it has been created, but it probably has been.) Your repository will be created with an existing project in it, your mission is to extend it and push your changes to that same repository.
 * Clone it.
 * Check out the commit `38da901544294bf2b5784e4de1456905a306a341`. We will call this the “starting” commit.
 * Create and switch to a new branch, `my-branch`, departing from the starting commit.
