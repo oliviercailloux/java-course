@@ -63,15 +63,14 @@ Prerequisites: https://github.com/oliviercailloux/java-course/blob/master/Best%2
 [[S3]]
 === S3 (13 and 14)
 
-* https://github.com/oliviercailloux/java-course/blob/master/Maven/README.adoc[Maven]: Introduction
-
 * Graded exercice "Eclipse": about refactoring, navigating, formatting…
 * Two major aspects of software engineering: https://github.com/oliviercailloux/java-course/blob/master/Contrat/README.adoc[contract] and fail-fast.
 
 [[S4]]
 === S4 ()
 
-* Graded exercice using your knowledge from Shell; Execution; EE2.x; EE3.x (see above). See https://github.com/oliviercailloux/java-course/blob/master/Execution/Print%20exec.adoc[Print exec]. (13h47 to 14h47)
+// * Graded exercice using your knowledge from Shell; Execution; EE2.x; EE3.x (see above). See https://github.com/oliviercailloux/java-course/blob/master/Execution/Print%20exec.adoc[Print exec]. (13h47 to 14h47)
+* https://github.com/oliviercailloux/java-course/blob/master/Maven/README.adoc[Maven]: Introduction
 * https://github.com/oliviercailloux/java-course/raw/master/Objets/presentation.pdf[Objets]
 ** https://math.hws.edu/javanotes/c5/[ES5] intro to 5.4
 * *Exercices:*
