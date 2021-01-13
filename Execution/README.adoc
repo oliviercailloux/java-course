@@ -27,7 +27,7 @@ Essentially two mechanisms are used: the class path and the module path. This co
 * A (top-level) class is defined in a source file whose relative path must reflect its full name, for example, `somepackage/somesubpackage/MyClass.java`; relative to some base folder where you put your source code (for example, `/home/me/My project/My source code/`)
 * A class is compiled in a file whose relative path must reflect its full name, for example, `somepackage/somesubpackage/MyClass.class`; relative to some base folder where you put your compiled code (for example, `/home/me/My project/My compiled code/`)
 * When using `javac` to compile, you give _files_ as arguments
-* When using `java` to execute, you give a _full class name_ as argument (the one whose `main` method you want to run
+* When using `java` to execute, you give a _full class name_ as argument (the one whose `main` method you want to run)
 * For both `javac` and `java`, the program must be able to find the adequate dependencies. To enable this, give it your _class path_: the paths to the base folders containing your compiled classes
 * Example: `java -cp "/home/me/My project/My compiled code/" "somepackage.somesubpackage.MyClass" "argument 1" "argument 2"` will search for classes from the folder `/home/me/My project/My compiled code/`, and will attempt to run the `main` method defined in the class `somepackage.somesubpackage.MyClass`, giving it the arguments `argument 1` and `argument 2`
 
