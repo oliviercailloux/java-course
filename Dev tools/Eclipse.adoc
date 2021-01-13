@@ -36,6 +36,9 @@ Configure Eclipse to show more errors and warnings in order to help spot mistake
 * Clean and recompile your project to see the effect.
 * Check that the instruction `ArrayList<String> l = new ArrayList<String>();` raises a warning (“Redundant specification of type arguments <String>”).
 
+== Start project
+To start a Java project, use `File` / `New` / `Java Project`, give it a name, then in the next page, uncheck `Create module-info.java file`. If you forgot to uncheck this, you should delete that file (we use the simpler class path mechanism in this course, see https://github.com/oliviercailloux/java-course/blob/master/Execution/README.adoc#modules[here] for references about the module path).
+
 == More doc
 Read the following (a piece at a time), for a great increase to your productivity and pleasure of coding.
 
