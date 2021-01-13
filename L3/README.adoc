@@ -57,7 +57,7 @@ Prerequisites: https://github.com/oliviercailloux/java-course/blob/master/Best%2
 
 === S2b (13)
 
-* Graded exercice "Git-br": similar to the exercices related to https://github.com/oliviercailloux/java-course/blob/master/Git/README.adoc[Git] (see also https://github.com/oliviercailloux/java-course/blob/master/Git/Git-br-2018.adoc[Git-br-2018] and https://github.com/oliviercailloux/java-course/blob/master/Git/Git-br-2019.adoc[Git-br-2019]). 20 minutes.
+* Graded exercice https://github.com/oliviercailloux/java-course/blob/master/Git/Git%20branching.adoc[Git branching]: similar to the exercices related to https://github.com/oliviercailloux/java-course/blob/master/Git/README.adoc[Git] (see also https://github.com/oliviercailloux/java-course/blob/master/Git/Git-br-2018.adoc[Git-br-2018] and https://github.com/oliviercailloux/java-course/blob/master/Git/Git-br-2019.adoc[Git-br-2019]). 25 minutes.
 * https://github.com/oliviercailloux/java-course/blob/master/Overview/README.adoc[Basics of objects]
 
 [[S3]]
