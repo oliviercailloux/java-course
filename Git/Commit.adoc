@@ -5,3 +5,5 @@ Créez votre dépôt de remise https://classroom.github.com/a/wJaBYDn9[ici]. Cr�
 
 //** [Énoncé an passé ! Cette année, inclusion : branches et Shell] Créez votre dépôt de remise https://classroom.github.com/a/hQKmTt6U[ici]. Créez dans un commit initial (COMMIT) un fichier texte `id.txt` (ID_FILE_EXISTS) contenant uniquement votre numéro d’étudiant de Dauphine (ID_FILE_CONTENTS). Faites en sorte que ce commit, et seulement ce commit (ONE_COMMIT), apparaisse dans votre dépôt de remise.
 
+Stats : 26 remis ; 21 has commits ; 15 right identity ; 16 branche coucou ; 15 branche main ou master ; 7 fichier `another file.txt` ; 1 branche `dev` & chemin corrects.
+
