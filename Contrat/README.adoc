@@ -4,7 +4,7 @@ Here we learn about the two most principles aspects of software engineering: des
 
 We will learn about the following mechanisms, that implement these principles: interface; black box; preconditions and postconditions; javadoc; exceptions.
 
-See: https://github.com/oliviercailloux/java-course/raw/master/Contrat/Pr%C3%A9sentation/presentation.pdf.
+See: https://github.com/oliviercailloux/java-course/raw/master/Contrat/Pr%C3%A9sentation/presentation.pdf[présentation].
 
 == Technical hints
 * Generate Javadoc from Eclipse: `Source` / `Generate Element Comment` (on methods and classes!); use the `Javadoc` view
