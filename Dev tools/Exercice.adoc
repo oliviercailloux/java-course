@@ -2,7 +2,7 @@
 
 In this graded exercice, we’ll clone an existing non-trivial project, modify it using Eclipse, and push our changes back to GitHub.
 
-* Accept https://classroom.github.com/a/FFmv9z_l[this assignment]. Your repository will be created as `+https://github.com/oliviercailloux-org/git-br-yourGitHubUserName+`. 
+* Accept https://classroom.github.com/a/FFmv9z_l[this assignment]. Your repository will be created as `+https://github.com/oliviercailloux-org/eclipse-yourGitHubUserName+`. 
 
 // This repository will be initialized with the content of an existing project.
 
