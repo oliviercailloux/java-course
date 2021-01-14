@@ -7,7 +7,7 @@ In this graded exercice, we’ll clone an existing non-trivial project, modify i
 // This repository will be initialized with the content of an existing project.
 
 * Clone https://github.com/oliviercailloux-org/minimax-ex to a new local repository.
-* Connect this local repository to GitHub by following GitHub’s instructions
+* Connect this local repository to your remote GitHub repository by following GitHub’s instructions.
 * Import the local project into Eclipse. Use `File` / `Open Projects from File System` (rather than “import”) so that Eclipse will use the right settings when importing it. You will need to wait a bit that Eclipse downloads the required dependencies.
 
 . Observe that this project suffers from a compilation error. Correct this error by adding the missing character. Commit your (single) change. (Advice: push it to the remote right now.)
