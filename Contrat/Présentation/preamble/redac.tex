@@ -1,130 +1,173 @@
-\definecolor{darkgreen}{rgb}{0,0.6,0}
-\newcommand{\commentOC}[1]{{\small\color{blue}{\selectlanguage{french}$\big[$OC: #1$\big]$}}}
-%\newcommand{\commentOC}[1]{{\selectlanguage{french}{\todo{OC : #1}}}}
-%Or: \todo[color=green!40]
-\newcommand{\innote}[1]{{\scriptsize{#1}}}
-
-%this probably requires outdated float package, see doc KomaScript for an alternative.
-% \newfloat{program}{t}{lop}
-% \floatname{program}{PM}
-
-%definition, theorem, lemma, example environments, qed trickery are only needed in article mode (not Beamer)
-\nottoggle{LCpres}{
-%style is plain by default (italic text)
-	\newtheorem{definition}{Definition}
-	\newtheorem{theorem}{Theorem}
-%no italic: expected.
-%http://tex.stackexchange.com/questions/144653/italicizing-of-amsthm-package
-	\newtheorem{lemma}{Lemma}
-%\crefname{axiom}{axiom}{axioms}%might be needed for workaround bug in cref when defining new theorems?
-
-%\ifdefined\theorem\else
-%\newtheorem{theorem}{\iflanguage{english}{Theorem}{Théorème}}
-%\fi
-
-\theoremstyle{remark}
-	\newtheorem{examplex}{Example}
-	\newtheorem{remarkx}{Remark}
-
-%trickery allowing use of \qedhere and the like.
-\newenvironment{example}{
-	\pushQED{\qed}\renewcommand{\qedsymbol}{$\triangle$}\examplex
-}{
-	\popQED\endexamplex
-}
-\newenvironment{remark}{
-	\pushQED{\qed}\renewcommand{\qedsymbol}{$\triangle$}\remarkx
-}{
-	\popQED\endremarkx
-}
-}{
-}
-\crefname{examplex}{example}{examples}% I wonder why this is unnecessary in case of singular
-
-%which line breaks are chosen: accept worse lines, therefore reducing risk of overfull lines. Default = 200
-\tolerance=2000
-%accept overfull hbox up to...
-\hfuzz=2cm
-%reduces verbosity about the bad line breaks
-\hbadness 5000
-%reduces verbosity about the underful vboxes
-\vbadness=1300
-%sloppy sets tolerance to 9999
-\apptocmd{\sloppy}{\hbadness 10000\relax}{}{}
+%Requires package xcolor.
+%\definecolor{ao(english)}{rgb}{0.0, 0.5, 0.0}
+\NewDocumentCommand{\commentOC}{m}{\textcolor{blue}{\small$\big[$OC: #1$\big]$}}
+%Requires package babel and option [french]. According to babel doc, need two braces around \selectlanguage to make the changes really local.
+\NewDocumentCommand{\commentOCf}{m}{\textcolor{blue}{{\small\selectlanguage{french}$\big[$OC : #1$\big]$}}}
+\NewDocumentCommand{\commentYM}{m}{\textcolor{red}{\small$\big[$YM: #1$\big]$}}
+\NewDocumentCommand{\commentYMf}{m}{\textcolor{red}{{\small\selectlanguage{french}$\big[$YM : #1$\big]$}}}
 
 \bibliographystyle{abbrvnat}
-%or \bibliographystyle{apalike} for presentations?
+\NewDocumentCommand{\possessivecite}{mO{}}{\citeauthor{#1}’s \citeyearpar[#2]{#1}}
 
-%doi package uses old-style dx.doi url, see 3.8 DOI system Proxy Server technical details, “Users may resolve DOI names that are structured to use the DOI system Proxy Server (http://doi.org (preferred) or http://dx.doi.org).”, https://www.doi.org/doi_handbook/3_Resolution.html
-\makeatletter
-\patchcmd{\@doi}{dx.doi.org}{doi.org}{}{}
-\makeatother
+%https://tex.stackexchange.com/a/467188, https://tex.stackexchange.com/a/36088 - uncomment if one of those symbols is used.
+%\DeclareFontFamily{U} {MnSymbolD}{}
+%\DeclareFontShape{U}{MnSymbolD}{m}{n}{
+%  <-6> MnSymbolD5
+%  <6-7> MnSymbolD6
+%  <7-8> MnSymbolD7
+%  <8-9> MnSymbolD8
+%  <9-10> MnSymbolD9
+%  <10-12> MnSymbolD10
+%  <12-> MnSymbolD12}{}
+%\DeclareFontShape{U}{MnSymbolD}{b}{n}{
+%  <-6> MnSymbolD-Bold5
+%  <6-7> MnSymbolD-Bold6
+%  <7-8> MnSymbolD-Bold7
+%  <8-9> MnSymbolD-Bold8
+%  <9-10> MnSymbolD-Bold9
+%  <10-12> MnSymbolD-Bold10
+%  <12-> MnSymbolD-Bold12}{}
+%\DeclareSymbolFont{MnSyD} {U} {MnSymbolD}{m}{n}
+%\DeclareMathSymbol{\ntriplesim}{\mathrel}{MnSyD}{126}
+%\DeclareMathSymbol{\nlessgtr}{\mathrel}{MnSyD}{192}
+%\DeclareMathSymbol{\ngtrless}{\mathrel}{MnSyD}{193}
+%\DeclareMathSymbol{\nlesseqgtr}{\mathrel}{MnSyD}{194}
+%\DeclareMathSymbol{\ngtreqless}{\mathrel}{MnSyD}{195}
+%\DeclareMathSymbol{\nlesseqgtrslant}{\mathrel}{MnSyD}{198}
+%\DeclareMathSymbol{\ngtreqlessslant}{\mathrel}{MnSyD}{199}
+%\DeclareMathSymbol{\npreccurlyeq}{\mathrel}{MnSyD}{228}
+%\DeclareMathSymbol{\nsucccurlyeq}{\mathrel}{MnSyD}{229}
+%\DeclareFontFamily{U} {MnSymbolA}{}
+%\DeclareFontShape{U}{MnSymbolA}{m}{n}{
+%  <-6> MnSymbolA5
+%  <6-7> MnSymbolA6
+%  <7-8> MnSymbolA7
+%  <8-9> MnSymbolA8
+%  <9-10> MnSymbolA9
+%  <10-12> MnSymbolA10
+%  <12-> MnSymbolA12}{}
+%\DeclareFontShape{U}{MnSymbolA}{b}{n}{
+%  <-6> MnSymbolA-Bold5
+%  <6-7> MnSymbolA-Bold6
+%  <7-8> MnSymbolA-Bold7
+%  <8-9> MnSymbolA-Bold8
+%  <9-10> MnSymbolA-Bold9
+%  <10-12> MnSymbolA-Bold10
+%  <12-> MnSymbolA-Bold12}{}
+%\DeclareSymbolFont{MnSyA} {U} {MnSymbolA}{m}{n}
+%%Rightwards wave arrow: ↝. Alternative: \rightsquigarrow from amssymb, but it’s uglier
+%\DeclareMathSymbol{\rightlsquigarrow}{\mathrel}{MnSyA}{160}
 
-% WRITING
-%\newcommand{\ie}{i.e.\@\xspace}%to try
-%\newcommand{\eg}{e.g.\@\xspace}
-%\newcommand{\etal}{et al.\@\xspace}
-\newcommand{\ie}{i.e.\ }
-\newcommand{\eg}{e.g.\ }
-\newcommand{\mkkOK}{\checkmark}%\color{green}{\checkmark}
-\newcommand{\mkkREQ}{\ding{53}}%requires pifont?%\color{green}{\checkmark}
-\newcommand{\mkkNO}{}%\text{\color{red}{\textsf{X}}}
-
-\newlength{\xdescwd}
-\makeatletter
-\NewEnviron{xdesc}{%
-  \setbox0=\vbox{\hbadness=\@M \global\xdescwd=0pt
-    \def\item[##1]{%
-      \settowidth\@tempdima{\textbf{##1}:}%
-      \ifdim\@tempdima>\xdescwd \global\xdescwd=\@tempdima\fi}
-  \BODY}
-  \begin{description}[leftmargin=\dimexpr\xdescwd+.5em\relax,
-    labelindent=0pt,labelsep=.5em,
-    labelwidth=\xdescwd,align=left]\BODY\end{description}}
-\makeatother
-
-\makeatletter
-\newcommand{\boldor}[2]{%
-	\ifnum\strcmp{\f@series}{bx}=\z@
-		#1%
-	\else
-		#2%
-	\fi
-}
-\newcommand{\textstyleElProm}[1]{\boldor{\MakeUppercase{#1}}{\textsc{#1}}}
-\makeatother
-\newcommand{\electre}{\textstyleElProm{Électre}\xspace}
-\newcommand{\electreIv}{\textstyleElProm{Électre Iv}\xspace}
-\newcommand{\electreIV}{\textstyleElProm{Électre IV}\xspace}
-\newcommand{\electreIII}{\textstyleElProm{Électre III}\xspace}
-\newcommand{\electreTRI}{\textstyleElProm{Électre Tri}\xspace}
-% \newcommand{\utadis}{\texorpdfstring{\textstyleElProm{utadis}\xspace}{UTADIS}}
-% \newcommand{\utadisI}{\texorpdfstring{\textstyleElProm{utadis i}\xspace}{UTADIS I}}
-
-%TODO
-% \newcommand{\textstyleElProm}[1]{{\rmfamily\textsc{#1}}} 
-
+%03B3 Greek Small Letter Gamma
+\newunicodechar{γ}{\gamma}
+%03B4 Greek Small Letter Delta
+\newunicodechar{δ}{\delta}
+%2115 Double-Struck Capital N
 \newunicodechar{ℕ}{\mathbb{N}}
+%211D Double-Struck Capital R
 \newunicodechar{ℝ}{\mathbb{R}}
-\newunicodechar{−}{\ifmmode{-}\else\textminus\fi}
-\newunicodechar{≠}{\ensuremath{\neq}}
-\newunicodechar{≤}{\ensuremath{\leq}}
-\newunicodechar{≥}{\ensuremath{\geq}}
-\newunicodechar{≻}{\succ}
-\newunicodechar{⊁}{\nsucc}
-\newunicodechar{▷}{\triangleright}
-\newunicodechar{⋫}{\ntriangleright}
-\newunicodechar{→}{\ifmmode\rightarrow\else\textrightarrow\fi}
+%21CF Rightwards Double Arrow with Stroke
+\newunicodechar{⇏}{\nRightarrow}
+%21D2 Rightwards Double Arrow
 \newunicodechar{⇒}{\ensuremath{\Rightarrow}}
-\newunicodechar{⇏}{\ensuremath{\nRightarrow}}
-\newunicodechar{⇔}{\ensuremath{\Leftrightarrow}}
-\newunicodechar{∪}{\cup}
-\newunicodechar{∩}{\cap}
+%21D4 Left Right Double Arrow
+\newunicodechar{⇔}{\Leftrightarrow}
+%21DD Rightwards Squiggle Arrow
+\newunicodechar{⇝}{\rightsquigarrow}
+%2205 Empty Set
+\newunicodechar{∅}{\emptyset}
+%2212 Minus Sign
+\newunicodechar{−}{\ifmmode{-}\else\textminus\fi}
+%2227 Logical And
 \newunicodechar{∧}{\land}
+%2228 Logical Or
 \newunicodechar{∨}{\lor}
-\newunicodechar{¬}{\ifmmode\lnot\else\textlnot\fi}
-\newunicodechar{…}{\ifmmode\ldots\else\textellipsis\fi}
-\newunicodechar{×}{\ifmmode\times\else\texttimes\fi}
-\newunicodechar{γ}{\ensuremath{\gamma}}
+%2229 Intersection
+\newunicodechar{∩}{\cap}
+%222A Union
+\newunicodechar{∪}{\cup}
+%2260 Not Equal To (handy also as text in informal writing)
+\newunicodechar{≠}{\ensuremath{\neq}}
+%2264 Less-Than or Equal To
+\newunicodechar{≤}{\leq}
+%2265 Greater-Than or Equal To
+\newunicodechar{≥}{\geq}
+%2270 Neither Less-Than nor Equal To
+\newunicodechar{≰}{\nleq}
+%2271 Neither Greater-Than nor Equal To
+\newunicodechar{≱}{\ngeq}
+%2272 Less-Than or Equivalent To
+\newunicodechar{≲}{\lesssim}
+%2273 Greater-Than or Equivalent To
+\newunicodechar{≳}{\gtrsim}
+%2274 Neither Less-Than nor Equivalent To – also, from MnSymbol: \nprecsim, a more exact match to the Unicode symbol; and \npreccurlyeq, too small
+\newunicodechar{≴}{\not\preccurlyeq}
+%2275 Neither Greater-Than nor Equivalent To
+\newunicodechar{≵}{\not\succcurlyeq}
+%2279 Neither Greater-Than nor Less-Than – requires MnSymbol; also \nlessgtr from txfonts/pxfonts, \ngtreqless from MnSymbol (but much higher), \ngtrless from MnSymbol (a more exact match to the Unicode symbol); for incomparability (not matching this Unicode symbol), may also consider \ntriplesim from MnSymbol,\nparallelslant from fourier, \between from mathabx, or ⋈
+\newunicodechar{≹}{\ngtreqlessslant}
+%227A Precedes
+\newunicodechar{≺}{\prec}
+%227B Succeeds
+\newunicodechar{≻}{\succ}
+%227C Precedes or Equal To
+\newunicodechar{≼}{\preccurlyeq}
+%227D Succeeds or Equal To
+\newunicodechar{≽}{\succcurlyeq}
+%227E Precedes or Equivalent To
+\newunicodechar{≾}{\precsim}
+%227F Succeeds or Equivalent To
+\newunicodechar{≿}{\succsim}
+%2280 Does Not Precede
+\newunicodechar{⊀}{\nprec}
+%2281 Does Not Succeed
+\newunicodechar{⊁}{\nsucc}
+%2286
+\newunicodechar{⊆}{\subseteq}
+%22B2 Normal Subgroup Of – using \vartriangleleft from amsfonts, which goes well with \trianglelefteq, \ntriangleright, and so on, also from amsfonts; another possibility is \lhd from latexsym, which seems visually equivalent to \vartriangleleft from amsfonts; latexsym also has ⊴=\unlhd, but doesn’t have a symbol for ⊴. Other related symbols: \triangleleft from latesym package is too small; fdsymbol provides \triangleleft=\medtriangleleft and \vartriangleleft=\smalltriangleleft; MnSymbol provides \medtriangleleft and \vartriangleleft=\lessclosed=\lhd which are smaller than \vartriangleleft from amsfont; \vartriangleleft from mathabx (p. 67), looks different (wider); also \vartriangleleft from boisik (p. 69) looks still different; \vartriangleleft=\lhd from stix are smaller. Oddly enough, \triangleright appears as the LMMathItalic12-Regular font whereas \rhd appears as LASY10 and \vartriangleright appears as MSAM10.
+\newunicodechar{⊲}{\vartriangleleft}
+%22B3 Contains as Normal Subgroup (also: 25B7 White right-pointing triangle or 25B9 White right-pointing small triangle)
+\newunicodechar{⊳}{\vartriangleright}
+%22B4 Normal Subgroup of or Equal To
+\newunicodechar{⊴}{\trianglelefteq}
+%22B5 Contains as Normal Subgroup or Equal To
+\newunicodechar{⊵}{\trianglerighteq}
+%22C8 Bowtie
+\newunicodechar{⋈}{\bowtie}
+%22EA Not Normal Subgroup Of
+\newunicodechar{⋪}{\ntriangleleft}
+%22EB Does Not Contain As Normal Subgroup
+\newunicodechar{⋫}{\ntriangleright}
+%22EC Not Normal Subgroup of or Equal To
+\newunicodechar{⋬}{\ntrianglelefteq}
+%22ED Does Not Contain as Normal Subgroup or Equal
+\newunicodechar{⋭}{\ntrianglerighteq}
+%25A1 White Square
 \newunicodechar{□}{\Box}
+%27E6 Mathematical Left White Square Bracket – requires stmaryrd (alternative: \text{\textlbrackdbl}, but ugly if used in an italicized text such as a theorem)
+\newunicodechar{⟦}{\llbracket}
+%27E7 Mathematical Right White Square Bracket
+\newunicodechar{⟧}{\rrbracket}
+%27FC Long Rightwards Arrow from Bar
+\newunicodechar{⟼}{\longmapsto}
+%2AB0 Succeeds Above Single-Line Equals Sign
+\newunicodechar{⪰}{\succeq}
+%301A Left White Square Bracket
+\newunicodechar{〚}{\textlbrackdbl}
+%301B Right White Square Bracket
+\newunicodechar{〛}{\textrbrackdbl}
+%→ is defined by default as \textrightarrow, which is invalid in math mode. Same thing for the three other commands. Using \DeclareUnicodeCharacter instead of \newunicodechar because the latter warns about the previous definition.
+%← Leftwards Arrow
+\DeclareUnicodeCharacter{2190}{\ifmmode\leftarrow\else\textleftarrow\fi}
+%→ Rightwards Arrow
+\DeclareUnicodeCharacter{2192}{\ifmmode\rightarrow\else\textrightarrow\fi}
+%¬ Not Sign
+\DeclareUnicodeCharacter{00AC}{\ifmmode\lnot\else\textlnot\fi}
+%… Horizontal Ellipsis
+\DeclareUnicodeCharacter{2026}{\ifmmode\dots\else\textellipsis\fi}
+%× Multiplication Sign
+\DeclareUnicodeCharacter{00D7}{\ifmmode\times\else\texttimes\fi}
+%Permits to really obtain a straight quote when typing a straight quote; potentially dangerous, see https://tex.stackexchange.com/a/521999
+\catcode`\'=\active
+\DeclareUnicodeCharacter{0027}{\ifmmode^\prime\else\textquotesingle\fi}
 
