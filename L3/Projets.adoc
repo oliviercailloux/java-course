@@ -36,7 +36,7 @@ Dates de livraison précisées dans le programme du cours. https://www.wolframal
 ** [[NICE]] Vous remettez un projet, pas un brouillon mal torché. Imaginez que c’est un rendu à un client. Soignez-le. Votre code, vos documents doivent être propres, bien formatés, vous devez prendre en compte d’éventuelles indications d’erreurs de vos outils (Eclipse, GitHub, …), etc. Faites tout ça _avant_ de m’indiquer comme reviewer sur une PR. (NICE)
 * Je commente votre tâche pour indiquer les améliorations à effectuer avant de pouvoir fusionner dans `main`, ou je vous indique que vous pouvez fusionner.
 ** Vous pouvez (et vous devriez, si vos collègues attendent votre tâche) modifier directement sans attendre la prochaine livraison. Dans ce cas, effectuez des commits sur la branche de votre tâche (car vous pouvez compléter une PR après sa création en ajoutant des commit dans la branche associée), commentez, et ré-indiquez-moi comme reviewer pour que je sois averti quand vous êtes prêts pour une nouvelle review. 
-** Ne modifiez jamais l’historique dans `main`, il doit uniquement s’enrichir.
+** Ne réécrivez jamais l’historique dans `main`, il doit uniquement s’enrichir.
 * [[FOLLOW-UP]] Une tâche est effectuée en une seule itération. Une fois notée, cette tâche doit être considérée comme définitivement terminée (cela permet de s’y retrouver dans les notes). Si votre tâche poursuit une tâche d’une livraison précédente, il s’agit quand-même d’une nouvelle tâche. Créez une nouvelle branche (par exemple « unit-tests-Truc-it-3 ») partant de votre branche existante. Lorsque vous créez la nouvelle PR, indiquez en commentaire que la tâche fait suite à la PR #x, en respectant précisément cette syntaxe pour la liaison automatique de GitHub. (FOLLOW-UP)
 
 == Communication
