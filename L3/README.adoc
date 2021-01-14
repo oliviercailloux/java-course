@@ -63,7 +63,7 @@ Prerequisites: https://github.com/oliviercailloux/java-course/blob/master/Best%2
 [[S3]]
 === S3 (13 and 14)
 
-* Graded exercice https://github.com/oliviercailloux/java-course/blob/master/Dev%20tools/Exercice.adoc[Eclipse]: about refactoring, navigating, formatting… You have 12 minutes.
+* Graded exercice https://github.com/oliviercailloux/java-course/blob/master/Dev%20tools/Exercice.adoc[Eclipse]: about refactoring, navigating, formatting… You have 12 minutes (17:29 to 17:41 or max 17:46 for late commits).
 * Two major aspects of software engineering: https://github.com/oliviercailloux/java-course/blob/master/Contrat/README.adoc[contract] and fail-fast.
 
 [[S4]]
