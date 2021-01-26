@@ -12,10 +12,14 @@ In this graded exercice, we’ll clone an existing non-trivial project, modify i
 
 . Observe that this project suffers from a compilation error. Correct this error by adding the missing character. Commit your (single) change. (Advice: push it to the remote right now.)
 . Observe that Eclipse shows a compile warning. Correct this warning by replacing the instruction that creates a problem as indicated in the comment next to it (you can leave or remove the comment, this does not matter). Commit your change. (Advice: push…)
-. Find the class `StrategyHelper`, rename it, everywhere in the code, in `Helper`. Commit. (…)
+. Find the class `StrategyHelper`, rename it, everywhere in the code, to `Helper`. Commit. (…)
 . In the file `courses.soc` (hint: Eclipse considers it as a resource), change in the first line the `9` to an `8`. Commit.
 . Search, in the whole project, for the text `0.8588174124160426`, and change the `5` to a `3`, thus, make it a `0.8388174124160426`. Commit.
 . Format systematically the whole code lying in `src/main/java`, to avoid undue differences of indentation. Commit.
 
 Check that all your commits reached the remote repository!
+
+NB: used 23:00 as a deadline considering subtelty with cloning.
+
+Stats: 27 > 0; 23 Compile; 21 Single change compile; 8 Warning; 16 StrategyHelper; 19 course; 19 Number; 9 Formatting.
 
