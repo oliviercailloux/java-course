@@ -1,6 +1,6 @@
 = Contract
 
-Here we learn about the two most principles aspects of software engineering: designing your methods as contracts; and failing fast.
+Here we learn about the two most important principles of software engineering: designing your methods as contracts; and failing fast.
 
 We will learn about the following mechanisms, that implement these principles: interface; black box; preconditions and postconditions; javadoc; exceptions.
 
