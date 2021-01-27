@@ -71,12 +71,13 @@ Prerequisites: https://github.com/oliviercailloux/java-course/blob/master/Best%2
 
 * https://github.com/oliviercailloux/java-course/blob/master/Contrat/README.adoc[Contract]: end; exercices
 * https://github.com/oliviercailloux/java-course/blob/master/Maven/README.adoc[Maven]: overview
-* https://github.com/oliviercailloux/java-course/blob/master/Objets/README.adoc[Objects]
 
 [[S5]]
 === S5 ()
 
-* _Non-graded_ programming exercice (Maven; contract; fail fast; objects). Create a personal GitHub repository named `maven-exercice`. Create a Maven project and push your whole project to the GitHub repository (so that the `pom.xml` is at the root of the GitHub repository). Make sure the POM follows the https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Maven.adoc[best practices] as indicated in the course (hint: use the “Modern project” archetype). Follow https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Git.adoc[Git Best practices]. 8:35 to 9:35.
+* https://github.com/oliviercailloux/java-course/blob/master/Objets/README.adoc[Objects]
+
+* (Old) _Non-graded_ programming exercice (Maven; contract; fail fast; objects). Create a personal GitHub repository named `maven-exercice`. Create a Maven project and push your whole project to the GitHub repository (so that the `pom.xml` is at the root of the GitHub repository). Make sure the POM follows the https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Maven.adoc[best practices] as indicated in the course (hint: use the “Modern project” archetype). Follow https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Git.adoc[Git Best practices]. 8:35 to 9:35.
 ** Hint: Use correct Eclipse configuration. Check your warnings!
 ** Create a class having full name `io.github.yourgithubusername.TripletOfDice` (use your GitHub username). This object represents three dice. Its constructor accepts an integer which defines the number of https://commons.wikimedia.org/wiki/Dice_by_number_of_sides[sides] of the dice. Add methods `rollAllDice()` and `rollOneDie(int: dieNumber)` whose parameter must be the integer one, two or three; and methods `getFirstDie(): int`, `getSecondDie(): int` and `getThirdDie(): int`. Determine and write down (in Javadoc) the contracts of these methods and write their code. [Optional: propose a better interface.]
 ** Create a class `io.github.yourgithubusername.DiceUser` having a static method `rollOnce(): TripletOfDice`. It creates a triplet of six-sided dice, rolls them once, and returns the object representing the triplet.
