@@ -1,8 +1,10 @@
 = Objects
 
+Prerequisites: contract and fail fast.
+
 See: https://github.com/oliviercailloux/java-course/raw/master/Objets/Pr%C3%A9sentation/presentation.pdf[présentation]; or read https://math.hws.edu/javanotes/c5/[ES5] intro to 5.4.
 
-== Exercices
+== Exercices from the book
 
 * https://math.hws.edu/javanotes/c5/exercises.html[EE5.1], 5.2
 * EE5.3 [I]
@@ -13,4 +15,12 @@ See: https://github.com/oliviercailloux/java-course/raw/master/Objets/Pr%C3%A9se
 // ** `project53main/`… (contains `src/` with you main method)
 //* You may use the `groupId` `io.github.<yourgithubusername>`.
 * EE5.4, EE5.5: Play Blackjack!
+
+== Exercice: Three dice
+
+* Create a class having full name `io.github.yourgithubusername.TripletOfDice` (use your GitHub username). This object represents three dice. Its constructor accepts an integer which defines the number of https://commons.wikimedia.org/wiki/Dice_by_number_of_sides[sides] of the dice. Add methods `rollAllDice()` and `rollOneDie(int: dieNumber)` whose parameter must be the integer one, two or three; and methods `getFirstDie(): int`, `getSecondDie(): int` and `getThirdDie(): int`. Determine and write down (in Javadoc) the contracts of these methods and write their code. [Optional: propose a better interface.]
+* Create a class `io.github.yourgithubusername.DiceUser` having a static method `rollOnce(): TripletOfDice`. It creates a triplet of six-sided dice, rolls them once, and returns the object representing the triplet.
+* In the `DiceUser` class, create a `main` method. It calls `rollOnce()` and prints the result on three lines, as follows (example for a result of 4, 2 and 1): `The die number 1 is a 4`, second line `The die number 2 is a 2`, third line `The die number 3 is a 1`.
+
+Hints about self-correction https://github.com/oliviercailloux/java-course/blob/master/Objets/Correction%20of%20Three%20dice.adoc[here]. Do not look at it before having implemented your own version!
 
