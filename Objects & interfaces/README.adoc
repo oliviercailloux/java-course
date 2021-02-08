@@ -36,7 +36,7 @@ Program a method that draws a random number and throws a `IOException` with one 
 == Exercice: Coffee
 Clone https://github.com/oliviercailloux/coffee/[this repository]. Implement the classes `DripCoffeeMaker` and `MyEspressoMachine`, making sure they satisfy their contracts. You are encouraged to discuss your ideas or doubt with classmates.
 
-== Exercices from the book
+== Supplementary exercices from the book
 // simple inheritance (no TextIO depended on, actually), but complex set up
 // implements but no inheritance
 * https://math.hws.edu/javanotes/c5/exercises.html[EE5.7] (the part about anonymous classes is optional)
