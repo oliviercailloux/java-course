@@ -1,4 +1,4 @@
-= Objects
+= Objects, interfaces and generics
 
 Prerequisites: contract and fail fast.
 
@@ -22,5 +22,51 @@ See: https://github.com/oliviercailloux/java-course/raw/master/Objets/Pr%C3%A9se
 * Create a class `io.github.yourgithubusername.DiceUser` having a static method `rollOnce(): TripletOfDice`. It creates a triplet of six-sided dice, rolls them once, and returns the object representing the triplet.
 * In the `DiceUser` class, create a `main` method. It calls `rollOnce()` and prints the result on three lines, as follows (example for a result of 4, 2 and 1): `The die number 1 is a 4`, second line `The die number 2 is a 2`, third line `The die number 3 is a 1`.
 
-Hints about self-correction https://github.com/oliviercailloux/java-course/blob/master/Objets/Correction%20of%20Three%20dice.adoc[here]. Do not look at it before having implemented your own version!
+Hints for self-correction https://github.com/oliviercailloux/java-course/blob/master/Objets/Correction%20of%20Three%20dice.adoc[here]. Do not look at it before having implemented your own version!
+
+== Exercice: I like to move it move it
+Program an interface `MovableObject` with methods `canAccelerate(): boolean`, `accelerate(): void` and `getTimeToMove(double): double`; implement it twice in classes `ConstantSpeedMovable` and `GenericMovable`, in a reasonable way of your choice. In a class `MovableUser`, program a `main` method that instanciates one `ConstantSpeedMovable` and two `GenericMovable` objects, accelerate one of them, and prints the three resulting times to move 1 km. Add a method `brake(): void` to `MovableObject`. Add to `MovableUser` a method `getTotalTime(movable: MovableObject): double` that computes the total time taken for the given movable object to move 1 km then brake then move 100m then accelerate then move 1 km again. Change your `main` so that it also prints that total time, for each of the three objects created in the method.
+
+== Exercice: Car string
+Create an object `Car extends Object` that does not override `toString()`, call its `toString()` method, explain what happens. Override `toString()` in your class `Car`, call the `toString()` method, explain what happens. Consider the following code: `Object car = new Car(); car.toString()`. Will the method be the one declared in `Object` or in `Car`, and why? What changes if we instead write `Car car = new Car(); …`?
+
+== Exercice: Checked exceptions
+Program a method that draws a random number and throws a `IOException` with one chance on two. Observe that it compiles only if you declare this exception in the signature. Call this method from another method. Observe that the calling method also must declare the exception. Change the exception to an `IllegalArgumentException`. Observe that you do not have to declare this in either method signature.
+
+== Exercice: Coffee
+Clone https://github.com/oliviercailloux/coffee/[this repository]. Implement the classes `DripCoffeeMaker` and `MyEspressoMachine`, making sure they satisfy their contracts. You are encouraged to discuss your ideas or doubt with classmates.
+
+== Exercices from the book
+// simple inheritance (no TextIO depended on, actually), but complex set up
+// implements but no inheritance
+* https://math.hws.edu/javanotes/c5/exercises.html[EE5.7] (the part about anonymous classes is optional)
+//** Supplementary requirements: your code must lie in at least two packages;
+//** The idea of this exercice is that you simulate that three different people work on this exercice: one provides some interfaces; another implements the interfaces; a third one uses the interfaces and their implementations to solve the exercice (except you represent all these persons).
+//** Declare at least one interface in another Eclipse project, exported as a Java archive (JAR file);
+//** implement those interfaces in another Eclipse project, exported as a Java archive (JAR file) (will you need the previous JAR file? Why / why not?);
+//** solve the exercices in a third Eclipse project (will you need the previous JAR files? Which ones and why?).
+
+* https://math.hws.edu/javanotes/c5/exercises.html[EE5.4] (use `Scanner` instead of `TextIO`)
+* (https://math.hws.edu/javanotes/c5/exercises.html[EE5] provides more exercices, and https://math.hws.edu/javanotes/c8/exercises.html[EE8] has more advanced ones)
+
+== Exercice: Generic pair
+
+* Program a class `Pair` with generic types `L`, `R` (for Left and Right), that can store a pair of things, one of type `L` and one of type `R`. For example, a `Pair<Double, Integer>` instance can store a `Double` instance and an `Integer` instance.
+* Provide methods `getLeft()`, `getRight()`, that each return the appropriate type, and `setContents()`, that admits two parameters and that set both instances of the pair.
+* Use your class in a `main` method that creates two `pairs`: one pair of `String` and `Integer` that holds your name and your age, and one pair of double initialized at random values drawn in [0, 1].
+* Add a static method `show` that admits any kind of pair as parameter and prints its content (by calling `toString()` on the left and then on the right content of the pair). Use `show` from your main for each of your instances of pair.
+* Finally, still from your `main`, create a pair that contains each of your instances of pairs, and give it as an argument to `show`.
+
+== Exercice: Predicate
+Implement a `Predicate<String>` to represent a function that associates to a String the value `true` iff its length is even.
+
+== References
+
+Remember that Interfaces may _extend_ other interfaces; classes may _implement_ interfaces and _extend_ other classes
+
+* Example using Java interface: see this https://raw.githubusercontent.com/oliviercailloux/Simple-Papyrus-project/interface/An%20interface%20and%20two%20realizations.svg[example diagram] and the corresponding https://github.com/oliviercailloux/sample-interface[project] (to be imported in Eclipse)
+* https://math.hws.edu/javanotes/contents-with-subsections.html[ES5.5] to 5.8
+* Exceptions, checked and unchecked: see this http://journals.ecs.soton.ac.uk/java/tutorial/java/exceptions/throwable.html[diagram]
+* https://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours5.pdf[Airiau C5] (and see slides Contrat, appendix)
+* Generics: diagram https://raw.githubusercontent.com/oliviercailloux/Simple-Papyrus-project/cars-before-generic/Three%20cars.svg?sanitize=true[before generics], https://raw.githubusercontent.com/oliviercailloux/Simple-Papyrus-project/cars-after-generic/Generic%20Car%20and%20Cars.svg?sanitize=true[after generics]; sample https://github.com/oliviercailloux/sample-generic-cars[code]
 

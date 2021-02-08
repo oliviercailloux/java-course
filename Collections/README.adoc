@@ -1,0 +1,41 @@
+= Collections
+
+See: https://www.scientecheasy.com/2018/09/collection-hierarchy-in-java-collections-class.html/[Collections], start: `Iterable` and `Iterator`.
+
+Use the https://docs.oracle.com/javase/tutorial/java/nutsandbolts/for.html[enhanced for (for-each) loop] on iterables and arrays!
+
+For this course, use by default: `ArrayList` / `ImmutableList`; `LinkedHashSet` / `ImmutableSet`; `LinkedHashMap` / `ImmutableMap`.
+
+== Exercices
+
+. Define a class `StringPairIterator` that implements `Iterator<String>`. (Is your class a generic type?) Such an object contains (as a field) a `Pair` of `String` (as implemented in the previous exercice), and is able to iterate over a pair of two strings. The first call to `next()` gives the left member, the second call to `next()` gives the right member, and `hasNext()` returns `false` afterwards. Document the contracts of `StringPairIterator` and check that they are compatible with the contracts of `Iterator<E>`. In a `main` method, define a pair, then a pair iterator, and use it to print the two members of the pair. Then, define a class `PairIterator<E>` that implements `Iterator<E>` in a similar way (is this new class generic?). Modify your `main` accordingly.
+
+. Define a class `HomogeneousPair<E>` (a pair whose two members have the same type). Let your class implement `Iterable<E>`. When asked for an iterator, your pair returns an instance of type `PairIterator<E>`. Define your method header for `iterator()` such that it announces that it returns `Iterator<E>`. Will the compiler accept that you in fact return `PairIterator<E>` when announcing `Iterator<E>`, and if so, will it work at runtime? Check your answer by trying it! Then, change your method header for `iterator()` such that it announces that it returns `PairIterator<E>`. Will the compiler accept that you announce returning `PairIterator<E>` in a class that declares implementing `Iterable<E>` (and thus that should, when asked for `iterator()`, return an `Iterator<E>`), and if so, will it work at runtime? Check your answer by trying it!
+.* More advanced, and more elegant: instead of defining a class `HomogeneousPair<E>` from scratch, define the class `HomogeneousPair<E>` so that it extends your existing class `Pair<L, R>`. Do the rest of the exercice above.
+
+* https://math.hws.edu/javanotes/contents-with-subsections.html[ES10] to 10.2
+//interfaces with generics and collections
+* https://math.hws.edu/javanotes/c10/exercises.html[EE10.4] 
+// list of words
+* https://math.hws.edu/javanotes/c7/exercises.html[EE7.6] (you may use standard input instead of file input)
+// set (long)
+* https://math.hws.edu/javanotes/c10/exercises.html[EE10.2]
+// read, sort a list
+* https://math.hws.edu/javanotes8/c7/exercises.html[EE7.1], 7.5 (except that you can use built-sorting functions from the Java API).
+
+* Implement a class E1 that asks the end-user for a set of integer values. The user enters 0 to stop entering values. Store these values in a Set of Integer values (discarding duplicates). Do it again, obtaining a second set. Then print each set of values entered, then the union of both sets. For example, if the user enters 3, 4, 2, 0, then 1, 1, 2, 5, 0, it prints: 3, 4, 2, then 1, 2, 5, then 3, 4, 2, 1, 5. Use Java sets and interfaces appropriately. [I]
+//** Correct E1
+//.. découpé en sous-routines ?
+//.. contrat général (Collection au lieu de LinkedList) ?
+//.. noms complets de classes uniques ?
+//.. structures appropriées ? (Set)
+//.. réutilisation si on demande les nombres différemment ? (Lus depuis fichiers)
+//.. nommage approprié ? (searchNumber renvoie boolean, non, devrait poser une question: isIn)
+//.. documentation javadoc lorsque nécessaire ?
+//.. utilisation adéquate des structures ? (ne pas rechercher un nombre dans une liste)
+//.. conventions respectées ? (noms de variables et méthodes en camelCase, de classes en PascalCase, de packages en minuscules, …)
+//.. méthodes d’instance (et pas statiques) ?
+//.. pas de commentaires inutiles (tq auto-générés //TODO, @author vide, …)
+//.. (micro) pas de comparaison à `true` (`if(isBig == true)`)
+//.. vous arrivez à voir le résultat de votre code javadoc (exemple: `@param truc of type String` inutile)
+
