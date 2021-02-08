@@ -73,29 +73,10 @@ Prerequisites: https://github.com/oliviercailloux/java-course/blob/master/Best%2
 * https://github.com/oliviercailloux/java-course/blob/master/Maven/README.adoc[Maven]: overview
 
 [[S5]]
-=== S5 ()
+=== S5 (9 Feb)
 
-* https://github.com/oliviercailloux/java-course/blob/master/Objets/README.adoc[Objects]
-
-* (Old) _Non-graded_ programming exercice (Maven; contract; fail fast; objects). Create a personal GitHub repository named `maven-exercice`. Create a Maven project and push your whole project to the GitHub repository (so that the `pom.xml` is at the root of the GitHub repository). Make sure the POM follows the https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Maven.adoc[best practices] as indicated in the course (hint: use the “Modern project” archetype). Follow https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Git.adoc[Git Best practices]. 8:35 to 9:35.
-** Hint: Use correct Eclipse configuration. Check your warnings!
-** Create a class having full name `io.github.yourgithubusername.TripletOfDice` (use your GitHub username). This object represents three dice. Its constructor accepts an integer which defines the number of https://commons.wikimedia.org/wiki/Dice_by_number_of_sides[sides] of the dice. Add methods `rollAllDice()` and `rollOneDie(int: dieNumber)` whose parameter must be the integer one, two or three; and methods `getFirstDie(): int`, `getSecondDie(): int` and `getThirdDie(): int`. Determine and write down (in Javadoc) the contracts of these methods and write their code. [Optional: propose a better interface.]
-** Create a class `io.github.yourgithubusername.DiceUser` having a static method `rollOnce(): TripletOfDice`. It creates a triplet of six-sided dice, rolls them once, and returns the object representing the triplet.
-** In the `DiceUser` class, create a `main` method. It calls `rollOnce()` and prints the result on three lines, as follows (example for a result of 4, 2 and 1): `The die number 1 is a 4`, second line `The die number 2 is a 2`, third line `The die number 3 is a 1`.
-** Peer grading:
-*** Maven and naming (/1.5): groupId controlled or is mine; package names correspond; Encoding; Java Version (see https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Maven.adoc[best practices])
-*** Git (/1.5) https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Git.adoc[Best practices]
-*** eclipse config (/3) (3 if no warnings and no @SuppressWarnings used, 1.5 if only one warning or @SuppressWarnings used, 0 otherwise)
-*** TripletOfDice (/10)
-**** rollAllDice indeed rolls all dice, rollOneDie indeed rolls the die, getFirstDie (or getDie) indeed returns the last die result, nothing is static (/3)
-**** rollOneDie must throw if die number invalid (/3)
-**** better interface (/1, bonus): getDie(int die), must also throw argument if die number invalid. If getDie is there, getFirstDie and similar may have been omitted.
-**** Javadoc must mention what happens if I don’t roll and ask for a die (/4). No explanation, or explanation does not match behavior: 0. Example of a consistent explanation and behavior: Javadoc of the class indicates that “A die must be rolled before calling #getDie().”, Javadoc of the method getDie(int) (or of the methods getFirstDie, …) indicates “@throws IllegalStateException if the die is not rolled before calling”, and the code of getDie() indeed throws an IllegalStateException if the die is not rolled before calling.
-*** DiceUser (/4)
-**** rollOnce is static and performs correctly (/2)
-**** main prints exactly the expected text on three lines (/2)
-* Git-br: comment; Print-exec: see end of S6.
-* Inheritance: polymorphism and interfaces; effective type of variables. See https://raw.githubusercontent.com/oliviercailloux/Simple-Papyrus-project/interface/An%20interface%20and%20two%20realizations.svg?sanitize=true[diagram]; import the corresponding https://github.com/oliviercailloux/sample-interface[project] in Eclipse
+* https://github.com/oliviercailloux/java-course/blob/master/Objects%20%26%20interfaces/README.adoc[Objects]
+* Inheritance: polymorphism and interfaces; effective type of variables. See https://raw.githubusercontent.com/oliviercailloux/Simple-Papyrus-project/interface/An%20interface%20and%20two%20realizations.svg[diagram]; import the corresponding https://github.com/oliviercailloux/sample-interface[project] in Eclipse
 ** https://math.hws.edu/javanotes/contents-with-subsections.html[ES5.5] to 5.8
 ** *Exercice*: program an interface `MovableObject` with methods `canAccelerate(): boolean`, `accelerate(): void` and `getTimeToMove(double): double`; implement it twice in classes `ConstantSpeedMovable` and `GenericMovable`, in a reasonable way of your choice. In a class `MovableUser`, program a `main` method that instanciates one `ConstantSpeedMovable` and two `GenericMovable` objects, accelerate one of them, and prints the three resulting times to move 1 km. Add a method `brake(): void` to `MovableObject`. Add to `MovableUser` a method `getTotalTime(movable: MovableObject): double` that computes the total time taken for the given movable object to move 1 km then brake then move 100m then accelerate then move 1 km again. Change your `main` so that it also prints that total time, for each of the three objects created in the method. Commit to a repository named `I-like-to-move-it` in your GitHub account.
 
