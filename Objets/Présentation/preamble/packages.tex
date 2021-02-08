@@ -1,159 +1,211 @@
-%INSTALL
-\pdfgentounicode=1 %permits (with package glyphtounicode) to copy eg x ⪰ y iff v(x) ≥ v(y) from pdf to unicode data. 
-\input{glyphtounicode}%TODO avoid warning when redefining → (and others) ; make it work for ℝ (U+211D) as well
-\usepackage[T1]{fontenc}%encode resulting accented characters correctly in resulting PDF, permits copy-paste
-\usepackage[utf8]{inputenc}
-\usepackage{newunicodechar}%able to use e.g. → or ≤ in source
-\usepackage{lmodern}%has more characters such as ligatures, permit copy from resulting PDF.
-\usepackage{textcomp}%useful for redefining → and ¬ and … (otherwise seems to attempt to use \textrightarrow and the like but are not defined)
-% solves bug in lmodern, https://tex.stackexchange.com/a/261188/
-\DeclareFontShape{OMX}{cmex}{m}{n}{
-  <-7.5> cmex7
-  <7.5-8.5> cmex8
-  <8.5-9.5> cmex9
-  <9.5-> cmex10
-}{}
+%Permits to copy eg x ⪰ y ⇔ v(x) ≥ v(y) from PDF to unicode data, and to search. From pdfTeX users manual. See https://tex.stackexchange.com/posts/comments/1203887.
+	\input glyphtounicode
+	\pdfgentounicode=1
+%Latin Modern has more glyphs than Computer Modern, such as diacritical characters. fntguide commands to load the font before fontenc, to prevent default loading of cmr.
+	\usepackage{lmodern}
+%Encode resulting accented characters correctly in resulting PDF, permits copy from PDF.
+	\usepackage[T1]{fontenc}
+%UTF8 seems to be the default in recent TeX installations, but not all, see https://tex.stackexchange.com/a/370280.
+	\usepackage[utf8]{inputenc}
+%Provides \newunicodechar for easy definition of supplementary UTF8 characters such as → or ≤ for use in source code.
+	\usepackage{newunicodechar}
+%Text Companion fonts, much used together with CM-like fonts. Provides \texteuro and commands for text mode characters such as \textminus, \textrightarrow, \textlbrackdbl.
+	\usepackage{textcomp}
+%St Mary’s Road symbol font, used for ⟦ = \llbracket. The \SetSymbolFont command avoids spurious warnings, but also some valid ones, see https://tex.stackexchange.com/a/106719/.
+	%\usepackage{stmaryrd}\SetSymbolFont{stmry}{bold}{U}{stmry}{m}{n}
+%Solves bug in lmodern, https://tex.stackexchange.com/a/261188; probably useful only for unusually big font sizes; and probably better to use exscale instead. Note that the authors of exscale write against this trick.
+	%\DeclareFontShape{OMX}{cmex}{m}{n}{
+		%<-7.5> cmex7
+		%<7.5-8.5> cmex8
+		%<8.5-9.5> cmex9
+		%<9.5-> cmex10
+	%}{}
+	%\SetSymbolFont{largesymbols}{normal}{OMX}{cmex}{m}{n}
+%More symbols (such as \sum) available in bold version, see https://github.com/latex3/latex2e/issues/71. In article mode (but not in presentation mode), also hides some potentially useful warnings such as when using $\bm{\llbracket}$, see stmaryrd in this document (not sure why).
+	\DeclareFontShape{OMX}{cmex}{bx}{n}{%
+	   <->sfixed*cmexb10%
+	   }{}
+	\SetSymbolFont{largesymbols}{bold}{OMX}{cmex}{bx}{n}
+%For small caps also in italics, see https://tex.stackexchange.com/questions/32942/italic-shape-needed-in-small-caps-fonts, https://tex.stackexchange.com/questions/284338/italic-small-caps-not-working.
+	\usepackage{slantsc}
+	\AtBeginDocument{%
+		%“Since nearly no font family will contain real italic small caps variants, the best approach is to substitute them by slanted variants.” -- slantsc doc
+		%\DeclareFontShape{T1}{lmr}{m}{scit}{<->ssub*lmr/m/scsl}{}%
+		%There’s no bold small caps in Latin Modern, we switch to Computer Modern for bold small caps, see https://tex.stackexchange.com/a/22241
+		%\DeclareFontShape{T1}{lmr}{bx}{sc}{<->ssub*cmr/bx/sc}{}%
+		%\DeclareFontShape{T1}{lmr}{bx}{scit}{<->ssub*cmr/bx/scsl}{}%
+	}
+\usepackage{xstring}
+%Warn about missing characters.
+	\tracinglostchars=2
+%Nicer tables: provides \toprule, \midrule, \bottomrule.
+	%\usepackage{booktabs}
+%For new column type X which stretches; can be used together with booktabs, see https://tex.stackexchange.com/a/97137. “tabularx modifies the widths of the columns, whereas tabular* modifies the widths of the inter-column spaces.” Loads array.
+	%\usepackage{tabularx}
+%math-mode version of "l" column type. Requires \usepackage{array}.
+	%\usepackage{array}
+	%\newcolumntype{L}{>{$}l<{$}}
+%Provides \xpretocmd and loads etoolbox which provides \apptocmd, \patchcmd, \newtoggle… Also loads xparse, which provides \NewDocumentCommand and similar commands intended as replacement of \newcommand in LaTeX3 for defining commands (see https://tex.stackexchange.com/q/98152 and https://github.com/latex3/latex2e/issues/89).
+	\usepackage{xpatch}
+%ntheorem doc says: “empheq provides an enhanced vertical placement of the endmarks”; must be loaded before ntheorem. Loads the mathtools package, which loads and fixes some bugs in amsmath and provides \DeclarePairedDelimiter. amsmath is considered a basic, mandatory package nowadays (Grätzer, More Math Into LaTeX).
+	\usepackage[ntheorem]{empheq}
+%Package frenchb asks to load natbib before babel-french. Package hyperref asks to load natbib before hyperref.
+	\usepackage{natbib}
 
-\SetSymbolFont{largesymbols}{normal}{OMX}{cmex}{m}{n}
-\SetSymbolFont{largesymbols}{bold}  {OMX}{cmex}{m}{n}
-%warn about missing characters
-\tracinglostchars=2
-
-%REDAC
-\usepackage{booktabs}
-\usepackage{calc}
-\usepackage{tabularx}
-
-\usepackage{etoolbox} %for addtocmd, newtoggle commands
 \newtoggle{LCpres}
-\toggletrue{LCpres}
+	\newtoggle{LCart}
+	\newtoggle{LCposter}
+	\makeatletter
+	\@ifclassloaded{beamer}{
+		\toggletrue{LCpres}
+		\togglefalse{LCart}
+		\togglefalse{LCposter}
+		\wlog{Presentation mode}
+	}{
+		\@ifclassloaded{tikzposter}{
+			\toggletrue{LCposter}
+			\togglefalse{LCpres}
+			\togglefalse{LCart}
+			\wlog{Poster mode}
+		}{
+			\toggletrue{LCart}
+			\togglefalse{LCpres}
+			\togglefalse{LCposter}
+			\wlog{Article mode}
+		}
+	}
+	\makeatother%
 
-\usepackage{mathtools} %load this before babel!
-	\mathtoolsset{showonlyrefs,showmanualtags}
-
-\usepackage{natbib}%Package frenchb asks to load natbib before babel/frenchb
-\usepackage{babel}%[french, english]: language options should be on the document level
-%suppresses the warning about frenchb not modifying the captions (“—” to “:” in “Figure 1 – Legend”).
-%	\frenchbsetup{AutoSpacePunctuation=false,SuppressWarning=true}% test with false?
-	\frenchbsetup{AutoSpacePunctuation=false,SuppressWarning=false}
-
-%\usepackage[super]{nth}%better use fmtcount! (loaded by datetime anyway; see below about pbl with warnings and package silence)
-\usepackage{listings} %typeset source code listings
-	\lstset{language=XML,tabsize=2,captionpos=b,basicstyle=\NoAutoSpacing}%NoAutoSpacing avoids space before colon or ?}%,literate={"}{{\tt"}}1, keywordstyle=\fontspec{Latin Modern Mono Light}\textbf, emph={String, PreparedStatement}, emphstyle=\fontspec{Latin Modern Mono Light}\textbf, language=Java, basicstyle=\small\NoAutoSpacing\ttfamily, frame=single, aboveskip=0pt, belowskip=0pt, showstringspaces=false
-\usepackage[nolist,smaller,printonlyused]{acronym}%,smaller option produces warnings from relsize in some cases, it seems.% Note silence and acronym and hyperref make (xe)latex crash when ac used in section (http://tex.stackexchange.com/questions/103483/strange-packages-interaction-acronyms-silence-hyperref), rather use \section{\texorpdfstring{\acs{UE}}{UE}}.
-\usepackage{fmtcount}
-\usepackage[nodayofweek]{datetime}%must be loaded after the babel package. However, loading it after {nth} generates a warning from fmtcount about ordinal being already defined. Better load it before nth? (then we can remove the silence package which creates possible crashes, see above.) Or remove nth?
-%\usepackage{xspace}%do we need this?
-\nottoggle{LCpres}{
-	\usepackage[textsize=small]{todonotes}
+%Language options ([french, english]) should be on the document level (last is main); except with tikzposter: put [french, english] options next to \usepackage{babel} to avoid warning. beamer uses the \translate command for the appendix: omitting babel results in a warning, see https://github.com/josephwright/beamer/issues/449. Babel also seems required for \refname.
+	\iftoggle{LCpres}{
+		\usepackage{babel}
+	}{
+	}
+	%\frenchbsetup{AutoSpacePunctuation=false}
+%listings (1.7) does not allow multi-byte encodings. listingsutf8 works around this only for characters that can be represented in a known one-byte encoding and only for \lstinputlisting. Other workarounds: use literate mechanism; or escape to LaTeX (but breaks alignment).
+	%\usepackage{listings}
+	%\lstset{tabsize=2, basicstyle=\ttfamily, escapechar=§, literate={é}{{\'e}}1}
+%I favor acro over acronym because the former is more recently updated (2018 VS 2015 at time of writing); has a longer user manual (about 40 pages VS 6 pages if not counting the example and implementation parts); has a command for capitalization; and acronym suffers a nasty bug when ac used in section, see https://tex.stackexchange.com/q/103483 (though this might be the fault of the silence package and might be solved in more recent versions, I do not know) and from a bug when used with cleveref, see https://tex.stackexchange.com/q/71364. However, loading it makes compilation time (one pass on this template) go from 0.6 to 1.4 seconds, see https://bitbucket.org/cgnieder/acro/issues/115.
+	\usepackage[single]{acro}
+	\input{preamble/acronyms}
+\iftoggle{LCpres}{
+	%I favor fmtcount over nth because it is loaded by datetime anyway; and fmtcount warns about possible conflicts when loaded after nth.
+	\usepackage{fmtcount}
+	%For nice input of date of presentation. Must be loaded after the babel package. Has possible problems with srcletter: https://golatex.de/verwendung-von-babel-und-datetime-in-scrlttr2-schlaegt-fehlt-t14779.html.
+	\usepackage[nodayofweek]{datetime}
 }{
 }
+%For presentations, Beamer implicitely uses the pdfusetitle option. ntheorem doc says to load hyperref “before the first use of \newtheorem”. autonum doc mandates option hypertexnames=false. I want to highlight links only if necessary for the reader to recognize it as a link, to reduce distraction. In presentations, this is already taken care of by beamer (https://tex.stackexchange.com/a/262014). If using colorlinks=true in a presentation, see https://tex.stackexchange.com/q/203056. Crashes the first compilation with tikzposter, just compile again and the problem disappears, see https://tex.stackexchange.com/q/254257.
+\makeatletter
 \iftoggle{LCpres}{
-	%remove pdfusetitle (implied by beamer)
 	\usepackage{hyperref}
 }{
-% option pdfusetitle must be introduced here, not in hypersetup.
-	\usepackage[pdfusetitle]{hyperref}
+	\usepackage[hypertexnames=false, pdfusetitle, linkbordercolor={1 1 1}, citebordercolor={1 1 1}, urlbordercolor={1 1 1}]{hyperref}
+	%https://tex.stackexchange.com/a/466235
+	\pdfstringdefDisableCommands{%
+		\let\thanks\@gobble
+	}
 }
-\nottoggle{LCpres}{
-%seems like authblk wants to be later than hyperref, but sooner than silence
-\usepackage{authblk}
-\renewcommand\Affilfont{\small}
-}{
-}
-\usepackage{silence}
-\WarningFilter{newunicodechar}{Redefining Unicode character}
-%breaklinks makes links on multiple lines into different PDF links to the same target.
-%colorlinks (false): Colors the text of links and anchors. The colors chosen depend on the the type of link. In spite of colored boxes, the colored text remains when printing.
-%linkcolor=black: this leaves other links in colors, e.g. refs in green, don't print well.
-%pdfborder (0 0 1, set to 0 0 0 if colorlinks): width of PDF link border
-%hidelinks or: colorlinks, linkcolor=black, citecolor=black, urlcolor={blue!80!black}
-\hypersetup{breaklinks, bookmarksopen}
-%add hyperfigures=true in hypersetup (already defined in article mode)
+\makeatother
+%urlbordercolor is used both for \url and \doi, which I think shouldn’t be colored, and for \href, thus might want to color manually when required. Requires xcolor.
+	\NewDocumentCommand{\hrefblue}{mm}{\textcolor{blue}{\href{#1}{#2}}}
+%hyperref doc says: “Package bookmark replaces hyperref’s bookmark organization by a new algorithm (...) Therefore I recommend using this package”.
+	\usepackage{bookmark}
+%Need to invoke hyperref explicitly to link to line numbers: \hyperlink{lintarget:mylinelabel}{\ref*{lin:mylinelabel}}, with \ref* to disable automatic link. Also see https://tex.stackexchange.com/q/428656 for referencing lines from another document.
+	%\usepackage{lineno}
+	%\NewDocumentCommand{\llabel}{m}{\hypertarget{lintarget:#1}{}\linelabel{lin:#1}}
+	%\setlength\linenumbersep{9mm}
+%For complex authors blocks. Seems like authblk wants to be later than hyperref, but sooner than silence. See https://tex.stackexchange.com/q/475513 for the patch to hyperref pdfauthor.
+	\ExplSyntaxOn
+	\seq_new:N \g_oc_hrauthor_seq
+	\NewDocumentCommand{\addhrauthor}{m}{
+		\seq_gput_right:Nn \g_oc_hrauthor_seq { #1 }
+	}
+	%Should be \NewExpandableDocumentCommand, but this is not yet provided by my version of xparse
+	\DeclareExpandableDocumentCommand{\hrauthor}{}{
+		\seq_use:Nn \g_oc_hrauthor_seq {,~}
+	}
+	\ExplSyntaxOff
+	{
+		\catcode`#=11\relax
+		\gdef\fixauthor{\xpretocmd{\author}{\addhrauthor{#2}}{}{}}%
+	}
+	\iftoggle{LCart}{
+		\usepackage{authblk}
+		\renewcommand\Affilfont{\small}
+		\fixauthor
+		\AtBeginDocument{
+		    \hypersetup{pdfauthor={\hrauthor}}
+		}
+	}{
+	}
+%I do not use floatrow, because it requires an ugly hack for proper functioning with KOMA script (see scrhack doc). Instead, the following command centers all floats (using \centering, as the center environment adds space, http://texblog.net/latex-archive/layout/center-centering/), and I manually place my table captions above and figure captions below their contents (https://tex.stackexchange.com/a/3253).
+	\makeatletter
+	\g@addto@macro\@floatboxreset\centering
+	\makeatother
+%Permits to customize enumeration display and references
+	%\nottoggle{LCpres}{
+		%\usepackage{enumitem} %follow list environments by a string to customize enumeration, example: \begin{description}[itemindent=8em, labelwidth=!] or \begin{enumerate}[label=({\roman*}), ref={\roman*}].
+	%}{
+	%}
+%Provides \Centering, \RaggedLeft, and \RaggedRight and environments Center, FlushLeft, and FlushRight, which allow hyphenation. With tikzposter, seems to cause 1=1 to be printed in the middle of the poster.
+	%\usepackage{ragged2e}
+%To typeset units by closely following the “official” rules.
+	%\usepackage[strict]{siunitx}
+%Turns the doi provided by some bibliography styles into URLs. However, uses old-style dx.doi url (see 3.8 DOI system Proxy Server technical details, “Users may resolve DOI names that are structured to use the DOI system Proxy Server (https://doi.org (current, preferred) or earlier syntax http://dx.doi.org).”, https://www.doi.org/doi_handbook/3_Resolution.html). The patch solves this.
+	\usepackage{doi}
+	\makeatletter
+	\patchcmd{\@doi}{http://dx.doi.org}{https://doi.org}{}{}
+	\makeatother
+%Makes sure upper case greek letters are italic as well.
+	\usepackage{fixmath}
+%Provides \mathbb; obsoletes latexsym (see http://tug.ctan.org/macros/latex/base/latexsym.dtx). Relatedly, \usepackage{eucal} to change the mathcal font and \usepackage[mathscr]{eucal} (apparently equivalent to \usepackage[mathscr]{euscript}) to supplement \mathcal with \mathscr. This last option is not very useful as both fonts are similar, and the intent of the authors of eucal was to provide a replacement to mathcal (see doc euscript). Also provides \mathfrak for supplementary letters.
+	\usepackage{amsfonts}
+%Provides a beautiful (IMHO) \mathscr and really different than \mathcal, for supplementary uppercase letters. But there is no bold version. Alternative: mathrsfs (more slanted), but when used with tikzposter, it warns about size substitution, see https://tex.stackexchange.com/q/495167.
+	\usepackage[scr]{rsfso}
+%Multiple means to produce bold math: \mathbf, \boldmath (defined to be \mathversion{bold}, see fntguide), \pmb, \boldsymbol (all legacy, from LaTeX base and AMS), \bm (the most recommended one), \mathbold from package fixmath (I don’t see its advantage over \boldsymbol).
+%“The \boldsymbol command is obtained preferably by using the bm package, which provides a newer, more powerful version than the one provided by the amsmath package. Generally speaking, it is ill-advised to apply \boldsymbol to more than one symbol at a time.” — AMS Short math guide. “If no bold font appears to be available for a particular symbol, \bm will use ‘poor man’s bold’” — bm. It is “best to load the package after any packages that define new symbol fonts” – bm. bm defines \boldsymbol as synonym to \bm. \boldmath accesses the correct font if it exists; it is used by \bm when appropriate. See https://tex.stackexchange.com/a/10643 and https://github.com/latex3/latex2e/issues/71 for some difficulties with \bm.
+	\usepackage{bm}
+	\nottoggle{LCpres}{
+	%https://ctan.org/pkg/amsmath recommends ntheorem, which supersedes amsthm, which corrects the spacing of proclamations and allows for theoremstyle. Option standard loads amssymb and latexsym. Must be loaded after amsmath (from ntheorem doc). From cleveref doc, “ntheorem is fully supported and even recommended”; says to load cleveref after ntheorem. When used with tikzposter, warns about size substitution for the lasy (latexsym) font when using \url, because ntheorem loads latexsym; relatedly (but not directly related to ntheorem), size substitution warning with the cmex font happens when loading amsmath and using \url. According to https://tex.stackexchange.com/q/535950, ntheorem “seems essentially unmaintaned and has severe problems”, but I use it anyway because it is very handy. Yields “! LaTeX Error: Something's wrong--perhaps a missing \item.” if some theorem follows thebibliography.
+		\usepackage[thmmarks, amsmath, standard, hyperref]{ntheorem}
+		%empheq doc says to do this after loading ntheorem
+		\usetagform{default}
+	%Provides \cref. Unfortunately, cref fails when the language is French and referring to a label whose name contains a colon (https://tex.stackexchange.com/q/83798). Use \cref{sec\string:intro} to work around this. cleveref should go “laster” than hyperref.
+		\usepackage{cleveref}
+	}{
+	}
+	\nottoggle{LCposter}{
+	%Equations get numbers iff they are referenced. Loading order should be “amsmath → hyperref → cleveref → autonum”, according to autonum doc. Use this in preference to the showonlyrefs option from mathtools, see https://tex.stackexchange.com/q/459918 and autonum doc. See https://tex.stackexchange.com/a/285953 for the etex line. Incompatible with my version of tikzposter (produces “! Improper \prevdepth”).
+		\expandafter\def\csname ver@etex.sty\endcsname{3000/12/31}\let\globcount\newcount
+		\usepackage{autonum}
+	}{
+	}
+%Also loaded by tikz.
+	%\usepackage{xcolor}
 \iftoggle{LCpres}{
-	\hypersetup{hyperfigures}
+	\usepackage{tikz}
+	%\usetikzlibrary{babel, matrix, fit, plotmarks, calc, trees, shapes.geometric, positioning, plothandlers, arrows, shapes.multipart}
 }{
 }
-
-%in Beamer, sets url colored links but does not change the rest of the colors (http://tex.stackexchange.com/questions/13423/how-to-change-the-color-of-href-links-for-real)
-%\hypersetup{breaklinks,bookmarksopen,colorlinks=true,urlcolor=blue,linkcolor=,hyperfigures=true}
-% hyperref doc says: Package bookmark replaces hyperref’s bookmark organization by a new algorithm (...) Therefore I recommend using this package.
-\usepackage{bookmark}
-
-% center floats by default, but do not use with float
-% \usepackage{floatrow}
-% \makeatletter
-% \g@addto@macro\@floatboxreset\centering
-% \makeatother
-\nottoggle{LCpres}{
-	\usepackage{enumitem} %follow enumerate by a string saying how to display enumeration
-}{
-}
-\usepackage{ragged2e} %new com­mands \Cen­ter­ing, \RaggedLeft, and \RaggedRight and new en­vi­ron­ments Cen­ter, FlushLeft, and FlushRight, which set ragged text and are eas­ily con­fig­urable to al­low hy­phen­ation (the cor­re­spond­ing com­mands in LaTeX, all of whose names are lower-case, pre­vent hy­phen­ation al­to­gether). 
-\usepackage{siunitx} %[expproduct=tighttimes, decimalsymbol=comma] ou (plus récent ?) [round-mode=figures, round-precision=2, scientific-notation = engineering]
-\sisetup{detect-all, locale = FR, strict}% to detect e.g. when in math mode (use a math font) - check whether this makes sense with strict
-\usepackage{braket} %for \Set
-\usepackage{doi}
-
-\usepackage{amsmath,amsthm}
-\usepackage{amssymb}% for \mathbb{R}
-\usepackage{bm}%“The \boldsymbol command is obtained preferably by using the bm package, which provides a newer, more powerful version than the one provided by the amsmath package. Generally speaking, it is ill-advised to apply \boldsymbol to more than one symbol at a time.” — AMS Short math guide. “If no bold font appears to be available for a particular symbol, \bm will use ‘poor man’s bold’” — bm
-% \usepackage{amsfonts} %not required?
-% \usepackage{dsfont} %for what?
-
-\usepackage{environ}%for xdescwd command
-%BUT see https://tex.stackexchange.com/questions/83798/cleveref-varioref-missing-endcsname-inserted for cleveref with french
-\usepackage{cleveref}% cleveref should go "laster" than hyperref
-%GRAPHICS
-\usepackage{pgf}
-\usepackage{pgfplots}
-	\usetikzlibrary{babel, matrix, fit, plotmarks, calc, trees, shapes.geometric, positioning, plothandlers, arrows, shapes.multipart}
-\pgfplotsset{compat=1.14}
+%Vizualization, on top of TikZ
+	%\usepackage{pgfplots}
+	%\pgfplotsset{compat=1.14}
 \usepackage{graphicx}
+	\graphicspath{{graphics/}}
 
-\DeclareMathAlphabet\mathbfcal{OMS}{cmsy}{b}{n}
+%Provides \printlength{length}, useful for debugging.
+	%\usepackage{printlen}
+	%\uselengthunit{mm}
 
-\graphicspath{{graphics/},{graphics-dm/}}
-\DeclareGraphicsExtensions{.pdf}
-\newcommand*{\IncludeGraphicsAux}[2]{%
-	\XeTeXLinkBox{%
-		\includegraphics#1{#2}%
-	}%
-}%
-
-%HACKING
-\usepackage{printlen}
-\uselengthunit{mm}
-% 	\newlength{\templ}% or LenTemp?
-% 	\setlength{\templ}{6 pt}
-% 	\printlength{\templ}
-\usepackage{scrhack}% load at end. Corrects a bug in float package, which is outdated but might be used by other packages
-\usepackage{mathrsfs}% for \mathscr
-
-%Beamer-specific
-%do not remove babel, which beamer uses (beamer uses the \translate command for the appendix); but french can be removed.
 \iftoggle{LCpres}{
 	\usepackage{appendixnumberbeamer}
+	%I have yet to see anyone actually use these navigation symbols; let’s disable them
 	\setbeamertemplate{navigation symbols}{} 
 	\usepackage{preamble/beamerthemeParisFrance}
-	\usefonttheme{professionalfonts}
 	\setcounter{tocdepth}{10}
-	\input{preamble/beamer-patch.tex}
 }{
 }
-% \newcommand{\citep}{\cite}%Better: leave natbib.
-% \setbeamersize{text margin left=0.1cm, text margin right=0.1cm} 
-% \usetheme{BrusselsBelgium}%no, replace with paris
-%\usetheme{ParisFrance}, no, usepackage better!
-% Tex Gyre takes too much space, replace with Latin Modern Roman / Sans / Mono.
-% Difference when loading explicitly Latin Modern Sans (compared to not using \setsansfont at all):
-% the font LMSans17-Regular appears in the document;
-% the title of the slides appears differently;
-% it does not say (in the log file):
-% > LaTeX Font Info:    Font shape `EU1/lmss/m/it' in size <10.95> not available
-% > (Font)              Font shape `EU1/lmss/m/sl' tried instead on input line 85.
-% > LaTeX Font Info:    Try loading font information for EU1+lmtt on input line 85.
 
-%tikzposter-specific
-%remove \usepackage{ragged2e}: causes 1=1 to be printed in the middle of the poster. (Anyway prints a warning about those characters being missing.)
-%put [french, english] options next to \usepackage{babel} to avoid warning of 
+%Do not use the displaymath environment: use equation. Do not use the eqnarray or eqnarray* environments: use align(*). This improves spacing. (See l2tabu or amsldoc.)
+

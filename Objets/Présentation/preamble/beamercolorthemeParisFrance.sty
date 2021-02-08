@@ -1,0 +1,45 @@
+\mode<presentation>
+\usecolortheme{beaver}
+
+\definecolor{craneorange}{RGB}{252,187,6}
+\definecolor{craneblue}{RGB}{4,6,76}
+
+\setbeamercolor*{page number in head/foot}{parent=date in head/foot}
+
+\setbeamercolor{block title}{use=structure,fg=structure.fg,bg=structure.fg!20!bg}
+\setbeamercolor{block body}{parent=normal text, use=structure, bg=structure.fg!10!bg}
+\setbeamercolor{block title example}{use=example text,fg=example text.fg,bg=example text.fg!20!bg}
+\setbeamercolor{block body example}{parent=normal text, use=example text, bg=example text.fg!10!bg}
+
+\addtobeamertemplate{proof begin}{%
+    \setbeamercolor{block title}{fg=black,bg=red!50!white}
+    \setbeamercolor{block body}{fg=red, bg=red!30!white}
+}{}
+
+\BeforeBeginEnvironment{theorem}{
+	\setbeamercolor{block title}{fg=craneblue,bg=craneorange}
+	\setbeamercolor{block body}{parent=normal text, fg=craneblue, bg=craneorange!25!bg}
+}
+\AfterEndEnvironment{theorem}{
+ \setbeamercolor{block title}{use=structure,fg=structure.fg,bg=structure.fg!20!bg}
+ \setbeamercolor{block body}{parent=normal text, use=structure, bg=structure.fg!10!bg}
+}
+
+\setbeamercolor{definition text}{parent=normal text, fg=red!80!black, bg=red}
+\BeforeBeginEnvironment{definition}{%
+	% Avoids the word "Definition" then parenthesis
+	\setbeamertemplate{theorem begin}{%
+		\begin{\inserttheoremblockenv}{%
+			\ifx\inserttheoremaddition\@empty\else\inserttheoremaddition\fi%
+		}%
+	}
+	\setbeamercolor{block title}{use=definition text, fg=definition text.fg, bg=definition text.fg!20!bg}
+	\setbeamercolor{block body}{parent=normal text, use=block title, bg=block title.bg!50!bg}
+}
+\AfterEndEnvironment{definition}{
+ \setbeamercolor{block title}{use=structure,fg=structure.fg,bg=structure.fg!20!bg}
+ \setbeamercolor{block body}{parent=normal text, use=structure, bg=structure.fg!10!bg}
+}
+
+\mode<all>
+

@@ -1,8 +1,12 @@
-%const
-\newcommand{\tikzboxit}{\path node[draw, overlay, inner sep=0.6mm, fit=(boxed), rectangle] {};}%
+\NewDocumentCommand{\tikzmark}{m}{%
+	\tikz[overlay, remember picture, baseline=(#1.base)] \node (#1) {};%
+}
 
-\newlength{\GraphsNodeSep}
-\setlength{\GraphsNodeSep}{7mm}
+\newlength{\GraphsDNodeSep}
+\setlength{\GraphsDNodeSep}{7mm}
+\tikzset{/GraphsD/dot/.style={
+	shape=circle, fill=black, inner sep=0, minimum size=1mm
+}}
 
 % MCDA Drawing Sorting
 \newlength{\MCDSCatHeight}
@@ -24,74 +28,67 @@
 \newcounter{MCDSNbCats}
 \newlength{\MCDSArrowDownOffset}
 \setlength{\MCDSArrowDownOffset}{0mm}
-
-\tikzset{/Graphs/dot/.style={
-	shape=circle, fill=black, inner sep=0, minimum size=1mm
-}}
-\tikzset{/MC/D/S/alt/.style={
+\tikzset{/MCD/S/alt/.style={
 	shape=rectangle, draw=black, inner sep=0, minimum height=\MCDSAltHeight, minimum width=\MCDSAltWidth
 }}
-\tikzset{MC/D/S/pref/.style={
+\tikzset{/MCD/S/pref/.style={
 	shape=ellipse, draw=gray, thick
 }}
-\tikzset{/MC/D/S/cat/.style={
+\tikzset{/MCD/S/cat/.style={
 	shape=rectangle, draw=black, inner sep=0, minimum height=\MCDSCatHeight, minimum width=\MCDSCatWidth
 }}
-\tikzset{/MC/D/S/evals matrix/.style={
+\tikzset{/MCD/S/evals matrix/.style={
 	matrix, row sep=-\pgflinewidth, column sep=-\pgflinewidth, nodes={shape=rectangle, draw=black, inner sep=0mm, text depth=0.5ex, text height=1em, minimum height=\MCDSEvalRowHeight, minimum width=12mm}, nodes in empty cells, matrix of nodes, inner sep=0mm, outer sep=0mm, row 1/.style={nodes={draw=none, minimum height=0em, text height=, inner ysep=1mm}}
 }}
 
-\newlength{\GitCommitSep}
-\setlength{\GitCommitSep}{13mm}
-
-\tikzset{/Git/commit/.style={
+%Git
+\newlength{\GitDCommitSep}
+\setlength{\GitDCommitSep}{13mm}
+\tikzset{/GitD/commit/.style={
 	shape=rectangle, draw, minimum width=4em, minimum height=0.6cm
 }}
-\tikzset{/Git/branch/.style={
+\tikzset{/GitD/branch/.style={
 	shape=ellipse, draw, red
 }}
-\tikzset{/Git/head/.style={
+\tikzset{/GitD/head/.style={
 	shape=ellipse, draw, fill=yellow
 }}
 
-\tikzset{profile matrix/.style={
+%Social Choice
+\tikzset{/SCD/profile matrix/.style={
 	matrix of math nodes, column sep=3mm, row sep=2mm, nodes={inner sep=0.5mm, anchor=base}
 }}
-\tikzset{rank-profile matrix/.style={
+\tikzset{/SCD/rank-profile matrix/.style={
 	matrix of math nodes, column sep=3mm, row sep=2mm, nodes={anchor=base}, column 1/.style={nodes={inner sep=0.5mm}}, row 1/.style={nodes={inner sep=0.5mm}}
 }}
-\tikzset{rank-vector/.style={
+\tikzset{/SCD/rank-vector/.style={
 	draw, rectangle, inner sep=0, outer sep=1mm
 }}
-\tikzset{isolated rank-vector/.style={
+\tikzset{/SCD/isolated rank-vector/.style={
 	draw, matrix of math nodes, column sep=3mm, inner sep=0, matrix anchor=base, nodes={anchor=base, inner sep=.33em}, ampersand replacement=\&
 }}
 
 % GUI
-\tikzset{/GUI/button/.style={
+\tikzset{/GUID/button/.style={
 	rectangle, very thick, rounded corners, draw=black, fill=black!40%, top color=black!70, bottom color=white
 }}
 
 % Logger objects
-\tikzset{/logger/main/.style={
+\tikzset{/loggerD/main/.style={
 	shape=rectangle, draw=black, inner sep=1ex, minimum height=7mm
 }}
-\tikzset{/logger/helper/.style={
+\tikzset{/loggerD/helper/.style={
 	shape=rectangle, draw=black, dashed, minimum height=7mm
 }}
-\tikzset{/logger/helper line/.style={
+\tikzset{/loggerD/helper line/.style={
 	<->, draw, dotted
 }}
 
 % Beliefs
-\tikzset{/Beliefs/D/S/attacker/.style={
+\tikzset{/BeliefsD/attacker/.style={
 	shape=rectangle, draw, minimum size=8mm
 }}
-\tikzset{/Beliefs/D/S/supporter/.style={
+\tikzset{/BeliefsD/supporter/.style={
 	shape=circle, draw
 }}
-
-\newcommand{\tikzmark}[1]{%
-	\tikz[overlay, remember picture, baseline=(#1.base)] \node (#1) {};%
-}
 
