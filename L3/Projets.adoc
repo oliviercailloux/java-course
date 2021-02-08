@@ -3,8 +3,10 @@
 == Démarrage d’une itération
 
 === Rôles
-* Une équipe de _n_ personnes est constituée de _n/2_ (arrondi au-dessus) sous-équipes : des binômes d’architectes développeurs et une sous-équipe de un ou deux Scrum Master / Product Owner (nommée ci-après « le SM/PO » pour désigner la sous-équipe, même quand ils sont deux)
-* Sous-équipes doivent changer à chaque itération ; le rôle de SM/PO doit être réparti égalitairement
+* Une équipe de _n_ personnes est constituée de _n/2_ (arrondi au-dessus) sous-équipes
+** une sous-équipe est constituée de un (si _n_ est impair) ou deux (si _n_ est pair) Scrum Master / Product Owner, nommée ci-après « le SM/PO » pour désigner la sous-équipe, même quand ils sont deux
+** les autres sous-équipes sont constituées de binômes d’architectes développeurs
+* Les sous-équipes doivent changer à chaque itération ; le rôle de SM/PO doit être réparti égalitairement
 
 === Responsabilités
 * SM/PO : vérifie le respect des _tâches_ à délivrer ; réoriente les tâches en cas de problème de prérequis ; vérifie la qualité des rendus, entre autres, en relisant les propositions avant soumission ; vérifie que le projet fonctionne toujours après fusion ; est responsable de la cohérence du tout
