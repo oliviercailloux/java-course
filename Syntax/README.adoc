@@ -35,6 +35,9 @@ Once this works, make all your variables private so that nobody but your own cla
 * *3.6 [I]*
 * EE3.8, 3.9 [O]
 
+== More syntax
+See https://github.com/oliviercailloux/java-course/blob/master/Syntax/Interfaces.adoc[here] for the syntax related to interfaces in Java
+
 == References
 * https://docs.oracle.com/en/java/javase/13/docs/specs/man/jshell.html[jshell]
 * https://arbitrary-but-fixed.net/teaching/java/jshell/2017/12/14/jshell-peculiarities.html[The peculiarities of the JShell]
