@@ -1,0 +1,40 @@
+= Syntax for interfaces
+
+A Java interface declares methods, but does not define them. It has no behavior. (Except for default methods, a recent addition to Java that we will not discuss in detail.) Classes can _implement_ interfaces. When a class implements an interface, it indicate that it can be manipulated using the methods declared in the interface.
+
+The following example indicates that anything that satisfies the `Robot` interface can be moved, can give its current position (as an integer), and can accelerate. But it does not say how any of this is done, internally.
+
+---
+public interface Robot {
+  public void move(int steps);
+  
+  public int getPosition();
+  
+  public void accelerate();
+}
+---
+
+Here is an example of a class implementing this interface.
+
+---
+public class FastRobot {
+  private int currentSpeed;
+  
+  private int currentPosition;
+  
+  @Override
+  public void move(int steps) {
+    currentPosition += steps * currentSpeed;
+  }
+  
+  @Override
+  public int getPosition() {
+    return currentPosition;
+  }
+  
+  @Override
+  public void accelerate() {
+    currentSpeed *= 2;
+  }
+}
+
