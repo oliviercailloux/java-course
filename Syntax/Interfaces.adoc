@@ -4,7 +4,7 @@ A Java interface declares methods, but does not define them. It has no behavior.
 
 The following example indicates that anything that satisfies the `Robot` interface can be moved, can give its current position (as an integer), and can accelerate. But it does not say how any of this is done, internally.
 
----
+----
 public interface Robot {
   public void move(int steps);
   
@@ -12,11 +12,11 @@ public interface Robot {
   
   public void accelerate();
 }
----
+----
 
 Here is an example of a class implementing this interface.
 
----
+----
 public class FastRobot {
   private int currentSpeed;
   
@@ -37,4 +37,5 @@ public class FastRobot {
     currentSpeed *= 2;
   }
 }
+----
 
