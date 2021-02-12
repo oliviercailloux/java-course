@@ -88,7 +88,7 @@ Prerequisites: https://github.com/oliviercailloux/java-course/blob/master/Best%2
 [[S7]]
 === S7 (3 Mar)
 
-* Graded exercice: Eclipse, Contract, Objects, Interfaces, `Object`, Exceptions, Generics. (Might be similar to the https://github.com/oliviercailloux/java-course/blob/master/Objects%20%26%20interfaces/README.adoc[Coffee] exercice.)
+* Graded exercice: Eclipse, Contract, Objects, Interfaces, `Object`, Exceptions. (Might be similar to the https://github.com/oliviercailloux/java-course/blob/master/Objects%20%26%20interfaces/README.adoc[Coffee] exercice.)
 ** If the code does not compile, the grade is zero.
 * https://github.com/oliviercailloux/java-course/blob/master/Objects%20%26%20interfaces/README.adoc[Generics]
 * https://github.com/oliviercailloux/java-course/blob/master/Collections/README.adoc[Collections]
