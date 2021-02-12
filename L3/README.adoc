@@ -83,7 +83,7 @@ Prerequisites: https://github.com/oliviercailloux/java-course/blob/master/Best%2
 
 * Polymorphism: inheritance
 * The `Object` class and its methods: `toString()`, `equals`, `hashcode`. Exercice: Car string
-* Exceptions. Exercice: Checked exceptions
+* http://journals.ecs.soton.ac.uk/java/tutorial/java/exceptions/throwable.html[Exceptions]. Exercice: Checked exceptions
 
 [[S7]]
 === S7 (3 Mar)
