@@ -44,7 +44,9 @@ See: https://github.com/oliviercailloux/java-course/blob/master/Syntax/Inheritan
 Create an object `Car extends Object` that does not override `toString()`, call its `toString()` method, explain what happens. Override `toString()` in your class `Car`, call the `toString()` method, explain what happens. Consider the following code: `Object car = new Car(); car.toString()`. Will the method be the one declared in `Object` or in `Car`, and why? What changes if we instead write `Car car = new Car(); …`?
 
 == Exercice: Checked exceptions
-Program a method that draws a random number and throws a `IOException` with one chance on two. Observe that it compiles only if you declare this exception in the signature. Call this method from another method. Observe that the calling method also must declare the exception. Change the exception to an `IllegalArgumentException`. Observe that you do not have to declare this in either method signature.
+
+. Program a method that draws a random number and throws a `IOException` with one chance on two. Observe that it compiles only if you declare this exception in the signature. Call this method from another method. Observe that the calling method also must declare the exception.
+. Change the exception to an `IllegalArgumentException`. Observe that you do not have to declare this in either method signature.
 
 == Supplementary exercices from the book
 // simple inheritance (no TextIO depended on, actually), but complex set up
