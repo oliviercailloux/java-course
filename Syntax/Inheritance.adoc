@@ -1,0 +1,60 @@
+= Inheritance
+
+== Interface extension
+Prerequisite: read and understand https://github.com/oliviercailloux/java-course/blob/master/Syntax/Interfaces.adoc[Interfaces].
+
+A Java interface can _extend_ another interface. When an interface `B` extends an interface `A`, it declares that anything that satisfies the contract of `B` also satisfies the contract of `A`.
+
+In the following example, we say that a flexible robot is a robot that also can break.
+
+[source, java]
+----
+public interface FlexibleRobot extends Robot {
+  public void break();
+}
+----
+
+When a variable is declared as `FlexibleRobot`, it can do anything a `Robot` can do, and more. Thus, the following instruction is valid (assuming `a` has declared type `FlexibleRobot`): `a.accelerate();`. This is because the compiler knows that `a` satisfies the contract of `Robot`. Also, we can type: `a.break();`. 
+
+Given a variable `b` declared as `Robot`, the compiler will accept `b.accelerate();` but reject `b.break();`.
+
+== Class extension
+Prerequisite: read and understand https://github.com/oliviercailloux/java-course/blob/master/Syntax/Classes%20%as%concept.adoc[Classes as concept].
+
+A Java class can _extend_ another class. Similarly to interfaces, when a class `B` extends a class `A`, it says that any instance of `B` can do anything an instance of `A` can do, and possibly more. 
+
+In supplement to interfaces, classes also have behavior, that is, code. The following example extends our concept of a car, that can only be painted green, to a concept of a car that can be painted anything.
+
+.The `CameleonCar` class
+[source, java]
+----
+public class CameleonCar extends Car {
+  public void paint(String newColor) {
+    color = newColor;
+  }
+}
+----
+
+For this to compile, `CameleonCar` must have access to the property `color` of the class `Car`. This is refused by the compiler if `color` is private to the class `Car`. To do this, it is appropriate to change in the definition of the class `Car` `private String color` to `protected String color`. The `protected` keyword gives access to the variable to the class itself and to all of its children (meaning, the classes that extend it).
+
+Given a variable `x` with declared type `CameleonCar`, the compiler will accept a call to the method `paint()` and everything that is permitted for a `Car`, such as, `x.getColor()`.
+
+We can also _change_ the implementation of some methods in `CamelelonCar`.
+
+.The `CameleonCar` class: overriding some methods
+[source, java]
+----
+public class CameleonCar extends Car {
+  @Override
+  public String getBrand() {
+    return super.getBrand() + " with color " + super.getColor();
+  }
+}
+----
+
+The `@Override` annotation indicates to the compiler and the reader of our code that the method `getBrand` already has a definition, and that we are changing it, rather that adding a new one as we did with `paint`.
+
+We call `super.getBrand()` to invoke the definition of `getBrand` that is in the “super” class, that is, the parent class of `CameleonCar`, thus, `Car` (thus returning its brand in upper case).
+
+When the _effective_ type of a variable is `CameleonCar`, and `getBrand()` is executed, the new version will be implemented. If the effective type is `Car`, the original definition will be executed.
+
