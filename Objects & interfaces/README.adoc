@@ -4,6 +4,9 @@ Prerequisites: contract and fail fast.
 
 See: https://github.com/oliviercailloux/java-course/raw/master/Objects%20%26%20interfaces/Pr%C3%A9sentation/presentation.pdf[présentation]; or read https://math.hws.edu/javanotes/c5/[ES5] intro to 5.4.
 
+== Instance variables and methods: syntax
+See https://github.com/oliviercailloux/java-course/blob/master/Syntax/Classes%20%as%concept.adoc[Classes as concept] for the syntax about instance variables and instance methods
+
 == Exercices from the book
 
 * https://math.hws.edu/javanotes/c5/exercises.html[EE5.1], 5.2

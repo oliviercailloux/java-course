@@ -1,0 +1,82 @@
+= Classes as concept definition
+
+Classes in Java can serve two very different purposes, which should not be confused. 
+
+. First: sort, classify. In its first role, a class contains static variables and methods that have a common purpose. For example, the class `Math` groups static variables and static methods related to basic mathematics.
+. Second: define concepts.
+
+Here we briefly document the syntax pertaining to the second role of classes.
+
+In its second role, a Java Class defines instance variables and instance methods, which together define and implement a concept. The class also serves to instanciate objects. These objects are said to be instances of that class, and are concrete instances of the general concept defined by the class. The class defines the properties and behavior of all instances of that class.
+
+Here is an example of a `Car` class that models a car that has a color and a brand, which can be queried (with its brand always returned upper case), and that can be painted green.
+
+.The `Car` class
+[source, java]
+----
+public class Car {
+  private String color;
+  private String brand;
+  
+  public Car(String theBrand) {
+    color = "Red";
+    brand = theBrand;
+  }
+
+  public Car(String theColor, String theBrand) {
+    color = theColor;
+    brand = theBrand;
+  }
+
+  public String getColor() {
+    return color;
+  }
+  
+  public String getBrand() {
+    return brand.toUpperCase();
+  }
+  
+  public void paintGreen() {
+    color = "Green";
+  }
+
+  public boolean isGreen() {
+    return color.equals("Green");
+  }
+}
+----
+
+This class represents the concept of a car, as needed for our imaginary application: we suppose we are only interested in its color and its brand, and that when we paint a car, it can only be painted green.
+
+The class has two constructors. One of them uses a default color, we chose it to be `Red`.
+
+We can create multiple instances of cars using that class. Using the instructions `new Car("Pink", "Ford");` and `new Car("Toyota");` we will create two such instances. One will be pink, the other one will be red. The first one invokes the constructor with two parameters, the second one, the constructor with one parameter. Each of them can be assigned to a variable declared as type `Car`: `Car myFirstCar = new Car("Pink", "Ford");`.
+
+== Using `this`
+
+One can also use `this` to refer to the “current” instance. Prefixing a variable or method by `this.` specifies explicitly that the variable or method is an instance variable or instance method defined in the object that is the context of the currently running code.
+
+.Using the keyword `this` to refer to instance variables and methods
+[source, java]
+----
+  public Car(String theColor, String theBrand) {
+    this.color = theColor;
+    this.brand = theBrand;
+  }
+----
+
+This alternative implementation of our previous constructor explicitly indicates that the `color` and `brand` variables that the code refers to are instance variables.
+
+This is mainly useful when ambiguities can arise, as in the following example.
+
+.Using the keyword `this` to avoid ambiguity
+[source, java]
+----
+  public Car(String color, String brand) {
+    this.color = color;
+    this.brand = brand;
+  }
+----
+
+In this example, two variables accessible within the constructor are named `color`. One is a local variable, that exists only within the scope of the constructor, and has the value that the caller has given to the first parameter when invoking the constructor (`"Pink"`, in our example). The other one is the instance variable `color` that represents the color of a given car instance. In case of ambiguity such as here, a variable name refers to the shortest scoped variable. Thus, here, `color` refers to the local variable. Hence the need of `this.color` to indicate the color of the car instance.
+
