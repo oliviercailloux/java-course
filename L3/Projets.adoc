@@ -13,10 +13,9 @@
 * Un binôme d’architectes développeurs travaille sur une ou plusieurs tâches dans une itération. Une tâche peut consister à compléter une tâche précédente (ajout de tests unitaires, correction bugs, …).
 
 === Plan
-* Le SM/PO commence l’itération en indiquant dans le README du projet un plan indiquant sur quoi portera cette itération, en accord avec l’équipe et le client. 
+* Le SM/PO commence l’itération en indiquant dans le README du projet un plan indiquant sur quoi portera cette itération, en accord avec l’équipe et le client. Ceci se fait par une PR, que je dois approuver avant le démarrage du travail (cf. ci-dessous).
 * Le plan de l’itération contient une découpe en tâches et pour chacune une affectation à un binôme et ses pré-requis éventuels (d’autres tâches).
 * Conseil : une découpe en tâches très élémentaires simplifiera grandement votre travail, surtout au début.
-* Ceci se fait par une PR, que je dois approuver avant le démarrage du travail.
 * Une mission importante de l’équipe est de s’assurer que le projet converge vers un ensemble cohérent de fonctionnalités exploitables dans la branche `main`. Tentez de terminer en priorité les tâches presque finies qui ne sont pas encore dans `main`, par exemple, avant de commencer de nouvelles choses.
 
 En interne, réfléchissez à un calendrier pour éviter de coincer les sous-équipes qui dépendent des autres et à un plan de repli. C’est la responsabilité principale, mais pas exclusive, du SM/PO.
@@ -32,10 +31,10 @@ Dates de livraison précisées dans le programme du cours. https://www.wolframal
 * M’ajouter comme collaborateur à votre projet pour pouvoir m’indiquer comme https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-request-reviews[Reviewer].
 * Quand vous avez terminé une tâche, créez une https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests[pull request] (PR) GitHub pour cette tâche, dont le nom décrit succinctement la tâche (exemple : « unit-tests-Truc »), d’une de vos branches vers _votre_ branche `main`.
 ** https://help.github.com/en/github/managing-your-work-on-github/assigning-issues-and-pull-requests-to-other-github-users[Affectez] la PR aux membres de la sous-équipe responsable de la tâche. Si un membre d’un binôme n’a pas contribué, indiquez-le en affectant un seul membre, j’en tiendrai compte dans mon évaluation (travail de qualité plus difficile seul).
-** Affectez votre PR à une https://help.github.com/en/github/managing-your-work-on-github/about-milestones[milestone] « Itération x », avec x = 1 si c’est la première itération, et ainsi de suite.
+** Affectez votre PR à une https://help.github.com/en/github/managing-your-work-on-github/about-milestones[milestone] « Itération x UML » ou « Itération x Java », avec x = 1 si c’est la première itération, et ainsi de suite.
 ** M’ajouter comme Reviewer pour que je sois averti, uniquement si vous êtes effectivement prêts pour une review, c-à-d entre autres si la tâche n’a pas de pré-requis à reviewer et fusionner avant, et si le SM/PO a jugé votre rendu de bonne qualité.
 ** Les changements visibles dans une PR doivent être tous en rapport avec votre tâche, elle-même focalisée sur un sujet bien défini (FOCUS).
-** [[NICE]] Vous remettez un projet, pas un brouillon mal torché. Imaginez que c’est un rendu à un client. Soignez-le. Votre code, vos documents doivent être propres, bien formatés, vous devez prendre en compte d’éventuelles indications d’erreurs de vos outils (Eclipse, GitHub, …), etc. Faites tout ça _avant_ de m’indiquer comme reviewer sur une PR. (NICE)
+** [[NICE]] Vous remettez un projet, pas un brouillon mal torché. Imaginez que c’est un rendu à un client. Soignez-le. Votre code, vos documents doivent être propres, bien formatés, vous devez prendre en compte d’éventuelles indications d’erreurs de vos outils (Eclipse, GitHub, …), etc. Faites tout ça _avant_ de m’indiquer comme reviewer sur une PR. (NO DRAFT)
 * Je commente votre tâche pour indiquer les améliorations à effectuer avant de pouvoir fusionner dans `main`, ou je vous indique que vous pouvez fusionner.
 ** Vous pouvez (et vous devriez, si vos collègues attendent votre tâche) modifier directement sans attendre la prochaine livraison. Dans ce cas, effectuez des commits sur la branche de votre tâche (car vous pouvez compléter une PR après sa création en ajoutant des commit dans la branche associée), commentez, et ré-indiquez-moi comme reviewer pour que je sois averti quand vous êtes prêts pour une nouvelle review. 
 ** Ne réécrivez jamais l’historique dans `main`, il doit uniquement s’enrichir.
@@ -44,8 +43,9 @@ Dates de livraison précisées dans le programme du cours. https://www.wolframal
 == Communication
 * [[MENTION]] Évitez de me mentionner (`@oliviercailloux`) dans vos PR sur GitHub SVP : cela a pour effet de me noyer de notifications (que GitHub ne permet pas de désactiver facilement), or, je ne peux pas m’investir dans des discussions du tac-au-tac pour chaque groupe d’étudiants que je suis. Re-demandez plutôt une review quand vous êtes prêts, après avoir répondu à autant de points que possibles : je regarderai toutes vos réponses en même temps.
 * Maintenez les conversations focalisées. Ce n’est pas une bonne idée, par exemple, d’indiquer dans un commentaire de la PR #37 que vous avez décidé d’abandonner la PR #22 pour telle et telle raison : quand j’évaluerai la PR #22 par la suite, il est peu probable que je me souvienne de vos explications se trouvant en PR #37.
+* Si vous souhaitez contester mon évaluation ou me poser une question, commentez dans la PR adéquate, et re-demandez une review lorsque vous êtes prêts, comme ci-dessus.
 * N’hésitez pas à m’écrire si vous êtes bloqués, n’attendez pas d’avoir perdu plusieurs heures. Cependant, je vous demande de faire l’effort de poser des questions raisonnablement claires et complètes, et de m’indiquer ce que vous avez essayé et votre analyse de la situation. Voyez ces https://codeblog.jonskeet.uk/2012/11/24/stack-overflow-question-checklist/[directives] pour vous inspirer. Si votre question peut intéresser les autres membres du groupe ou qu’il est utile de conserver la discussion pour référence future, créez une issue sur votre projet GitHub où vous décrivez votre problème et demandez-moi (par e-mail par exemple) d’y répondre en me donnant le lien. (ISSUE)
-* Envoyez-moi un e-mail sans délai si vous ne comprenez pas ce que j’attends, si vous pensez que je fais erreur dans mon évaluation, ou si vous n’avez pas de nouvelles de moi après 48h alors que vous attendez une réaction de ma part.
+* Envoyez-moi un e-mail sans délai si vous ne comprenez pas ce que j’attends, ou si vous n’avez pas de nouvelles de moi après 48h alors que vous attendez une réaction de ma part.
 
 Lorsque j’utilise des abréviations (termes en majuscules), elles font référence aux documents donnant les consignes pour le projet, tels que celui-ci, ou aux https://github.com/oliviercailloux/java-course/tree/master/Best%20practices[bonnes pratiques] quand l’abréviation commence par BP.
 
