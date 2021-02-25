@@ -94,9 +94,8 @@ Prerequisites: https://github.com/oliviercailloux/java-course/blob/master/Best%2
 * https://github.com/oliviercailloux/java-course/blob/master/Collections/README.adoc[Collections]
 
 [[S8]]
-=== S8 ()
+=== S8 (5 Mar)
 
-* Make sure you can see from your IDE the javadoc of the JDK and of the libraries you add with Maven, for coding efficiently
 * https://github.com/oliviercailloux/java-course/blob/master/JUnit/README.adoc[Unit testing]
 ** *Exercice:* define a class `PairIteratorTests` and a test that creates a pair of integers _(2, 3)_ and a `PairIterator` object to iterate over this pair, and verifies that the iterator gives elements _2_, _3_, and that its `hasNext()` method returns `false` only after the second step.
 * https://docs.oracle.com/javase/tutorial/java/javaOO/arguments.html[Varargs]
@@ -108,10 +107,12 @@ Prerequisites: https://github.com/oliviercailloux/java-course/blob/master/Best%2
 * No https://mycore.core-cloud.net/index.php/s/jDdn1OcEfjjj8NU[plagiarism], but reuse! (Link to audio track from https://fr.wikipedia.org/wiki/Le_Jeu_des_dictionnaires[Le Jeu des Dictionnaires], included with permission from geluck.com.)
 * Projects discussion
 
-Delivery 1: before end of 20 April. See instructions.
+// Delivery 1: before end of 20 April. See instructions.
 
 [[S9]]
-=== S9 ()
+=== S9 (17 Mar)
+
+* Graded exercice, _at Dauphine_: mainly about the contents of S7 and S8.
 
 * Files and flows: https://github.com/oliviercailloux/java-course/blob/master/Flows.adoc#path-operations[Path operations] and providers.
 * Comparator and sorting, (Comparable), Maps
