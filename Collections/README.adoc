@@ -1,6 +1,6 @@
 = Collections
 
-See: https://www.scientecheasy.com/2018/09/collection-hierarchy-in-java-collections-class.html/[Collections], start: `Iterable` and `Iterator`.
+See: https://www.scientecheasy.com/2018/09/collection-hierarchy-in-java-collections-class.html/[Collections], starting with https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Iterable.html[`Iterable`].
 
 Use the https://docs.oracle.com/javase/tutorial/java/nutsandbolts/for.html[enhanced for (for-each) loop] on iterables and arrays!
 
