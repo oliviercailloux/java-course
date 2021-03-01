@@ -11,7 +11,8 @@ Here is how I automate my Eclipse installation.
 // 163 features, 920 plugins
 // 165 features, 927 plugins after checkstyle
 // 183 features, 1287 plugins after papyrus uml: 18 features and 229 plugins with papyrus in the name; gmf; apache batik; and so on.
-// 207 features, 1404 plugins after papyrus sdk: 42 features and 344 plugins with papyrus in the name; gmf; apache batik; and so on.
+// 207 (206 now!) features, 1404 (1403 now!) plugins after papyrus sdk: 42 features and 344 plugins with papyrus in the name; gmf; apache batik; and so on.
+// 208 features (plus org.eclipse.papyrus.designer.languages.{common, java}), 1431 plugins (+ 28) after papyrus Java: 44 features and 371 plugins with papyrus in the name, plus org.eclipse.cdt.core_7.1.100.202012020953
 
 ////
 == Automatic workspace selection
@@ -28,6 +29,8 @@ This uses the https://help.eclipse.org/2019-12/index.jsp?topic=/org.eclipse.plat
 To install https://checkstyle.org/eclipse-cs/[Eclipse Checkstyle Plug-in] and “Checkstyle configuration plugin for M2Eclipse” (part of https://marketplace.eclipse.org/content/m2e-code-quality[`m2e-code-quality`]): `"/usr/local/share/eclipse-jee-2020-12-R-linux-gtk-x86_64/eclipse" -nosplash -application "org.eclipse.equinox.p2.director" -repository "http://checkstyle.org/eclipse-cs/update/, http://m2e-code-quality.github.io/m2e-code-quality/site/latest/" -installIU "net.sf.eclipsecs.feature.group, com.basistech.m2e.code.quality.checkstyle.feature.feature.group"`. (The installation process seems to hang for about one minute.) This installs 2 features in `/usr/local/share/eclipse-jee-2020-12-R-linux-gtk-x86_64/features` and 7 plugins in the `plugins` subfolder, so that they are available for all users in the system. 
 
 To install Papyrus: `"/usr/local/share/eclipse-jee-2020-12-R-linux-gtk-x86_64/eclipse" -nosplash -application "org.eclipse.equinox.p2.director" -repository "https://download.eclipse.org/releases/2020-12" -installIU "org.eclipse.papyrus.sdk.feature.feature.group"`. This installs 42 papyrus features and 477 plugins (among which 344 papyrus-specific plugins, gmf, apache batik, …). (Installing `org.eclipse.papyrus.uml.feature.feature.group` instead of `org.eclipse.papyrus.sdk.feature.feature.group`, which installs only 18 papyrus features and 360 plugins, does not seem to be sufficient, for example Papyrus project files do not open in that case.)
+
+To install Papyrus Java profile, library and code generation (Incubation): `"/usr/local/share/eclipse-jee-2020-12-R-linux-gtk-x86_64/eclipse" -nosplash -application "org.eclipse.equinox.p2.director" -repository "https://download.eclipse.org/releases/2020-12, https://download.eclipse.org/modeling/mdt/papyrus/components/designer/, https://download.eclipse.org/modeling/mdt/papyrus/components/marte/" -installIU "org.eclipse.papyrus.designer.languages.java.feature.feature.group"`.
 
 https://stackoverflow.com/a/38956772[This] lets you find the data for other plugins.
 
