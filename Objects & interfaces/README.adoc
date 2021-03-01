@@ -2,7 +2,7 @@
 
 Prerequisites: contract and fail fast.
 
-See: https://github.com/oliviercailloux/java-course/raw/master/Objects%20%26%20interfaces/Pr%C3%A9sentation/presentation.pdf[présentation]; or read https://math.hws.edu/javanotes/c5/[ES5] intro to 5.4.
+See: https://github.com/oliviercailloux/java-course/raw/master/Objects%20%26%20interfaces/Pr%C3%A9sentation/presentation.pdf[présentation]; or read https://math.hws.edu/javanotes/c5/[ES5] intro to 5.4. See also https://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours5.pdf[Airiau C5].
 
 == Instance variables and methods: syntax
 See https://github.com/oliviercailloux/java-course/blob/master/Syntax/Classes%20as%20concept.adoc[Classes as concept] for the syntax about instance variables and instance methods
@@ -30,6 +30,7 @@ Hints for self-correction https://github.com/oliviercailloux/java-course/blob/ma
 == Interfaces: syntax and example
 * See https://github.com/oliviercailloux/java-course/blob/master/Syntax/Interfaces.adoc[here] for the syntax related to interfaces in Java
 * Import https://github.com/oliviercailloux/sample-interface[this sample interface project] into Eclipse for an example with one `Computer` interface implemented as an `EcologicalComputer` and as a `CryptographyComputer`, and used by a `CryptographyService`.
+* Another example using Java interfaces: see this https://raw.githubusercontent.com/oliviercailloux/Simple-Papyrus-project/interface/An%20interface%20and%20two%20realizations.svg[example diagram] and the corresponding https://github.com/oliviercailloux/sample-interface[project] (to be imported in Eclipse)
 
 == Exercice: I like to move it move it
 Program an interface `MovableObject` with methods `canAccelerate(): boolean`, `accelerate(): void` and `getTimeToMove(double): double`; implement it twice in classes `ConstantSpeedMovable` and `GenericMovable`, in a reasonable way of your choice. In a class `MovableUser`, program a `main` method that instanciates one `ConstantSpeedMovable` and two `GenericMovable` objects, accelerate one of them, and prints the times to move 1 km for each of these instances. Add a method `brake(): void` to `MovableObject`. Add to `MovableUser` a method `getTotalTime(movable: MovableObject): double` that computes the total time taken for the given movable object to move 1 km then brake then move 100m then accelerate then move 1 km again. Should `getTotalTime` be static? Change your `main` so that it also prints that total time, for each of the three objects created in the method.
@@ -38,12 +39,15 @@ Program an interface `MovableObject` with methods `canAccelerate(): boolean`, `a
 Clone https://github.com/oliviercailloux/coffee/[this repository]. Implement the classes `DripCoffeeMaker` and `MyEspressoMachine`, making sure they satisfy their contracts. You are encouraged to discuss your ideas or doubt with classmates.
 
 == Inheritance
-See: https://github.com/oliviercailloux/java-course/blob/master/Syntax/Inheritance.adoc[Inheritance]
+See: https://github.com/oliviercailloux/java-course/blob/master/Syntax/Inheritance.adoc[Inheritance], or read https://math.hws.edu/javanotes/contents-with-subsections.html[ES5.5] to 5.8
+
+Remember that Interfaces may _extend_ other interfaces; classes may _implement_ interfaces and _extend_ other classes
 
 == Exercice: Car string
 Create an object `Car extends Object` that does not override `toString()`, call its `toString()` method, explain what happens. Override `toString()` in your class `Car`, call the `toString()` method, explain what happens. Consider the following code: `Object car = new Car(); car.toString()`. Will the method be the one declared in `Object` or in `Car`, and why? What changes if we instead write `Car car = new Car(); …`?
 
-== Exercice: Checked exceptions
+== Checked exceptions
+Exceptions, checked and unchecked: see this http://journals.ecs.soton.ac.uk/java/tutorial/java/exceptions/throwable.html[diagram]
 
 . Program a method that draws a random number and throws a `IOException` with one chance on two. Observe that it compiles only if you declare this exception in the signature. Call this method from another method. Observe that the calling method also must declare the exception.
 . Change the exception to an `IllegalArgumentException`. Observe that you do not have to declare this in either method signature.
@@ -61,6 +65,9 @@ Create an object `Car extends Object` that does not override `toString()`, call 
 * https://math.hws.edu/javanotes/c5/exercises.html[EE5.4] (use `Scanner` instead of `TextIO`)
 * (https://math.hws.edu/javanotes/c5/exercises.html[EE5] provides more exercices, and https://math.hws.edu/javanotes/c8/exercises.html[EE8] has more advanced ones)
 
+== Generics
+Diagram https://raw.githubusercontent.com/oliviercailloux/Simple-Papyrus-project/cars-before-generic/Three%20cars.svg?sanitize=true[before generics], https://raw.githubusercontent.com/oliviercailloux/Simple-Papyrus-project/cars-after-generic/Generic%20Car%20and%20Cars.svg?sanitize=true[after generics]; sample https://github.com/oliviercailloux/sample-generic-cars[code]
+
 == Exercice: Generic pair
 
 * Program a class `Pair` with generic types `L`, `R` (for Left and Right), that can store a pair of things, one of type `L` and one of type `R`. For example, a `Pair<Double, Integer>` instance can store a `Double` instance and an `Integer` instance.
@@ -71,14 +78,4 @@ Create an object `Car extends Object` that does not override `toString()`, call 
 
 == Exercice: Predicate
 Implement a `Predicate<String>` to represent a function that associates to a String the value `true` iff its length is even.
-
-== References
-
-Remember that Interfaces may _extend_ other interfaces; classes may _implement_ interfaces and _extend_ other classes
-
-* Example using Java interface: see this https://raw.githubusercontent.com/oliviercailloux/Simple-Papyrus-project/interface/An%20interface%20and%20two%20realizations.svg[example diagram] and the corresponding https://github.com/oliviercailloux/sample-interface[project] (to be imported in Eclipse)
-* https://math.hws.edu/javanotes/contents-with-subsections.html[ES5.5] to 5.8
-* Exceptions, checked and unchecked: see this http://journals.ecs.soton.ac.uk/java/tutorial/java/exceptions/throwable.html[diagram]
-* https://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours5.pdf[Airiau C5] (and see slides Contrat, appendix)
-* Generics: diagram https://raw.githubusercontent.com/oliviercailloux/Simple-Papyrus-project/cars-before-generic/Three%20cars.svg?sanitize=true[before generics], https://raw.githubusercontent.com/oliviercailloux/Simple-Papyrus-project/cars-after-generic/Generic%20Car%20and%20Cars.svg?sanitize=true[after generics]; sample https://github.com/oliviercailloux/sample-generic-cars[code]
 
