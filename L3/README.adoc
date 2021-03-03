@@ -91,7 +91,7 @@ Prerequisites: https://github.com/oliviercailloux/java-course/blob/master/Best%2
 * Graded exercice about: Eclipse, Contract, Objects, Interfaces, Exceptions. (Might be similar to the https://github.com/oliviercailloux/java-course/blob/master/Objects%20%26%20interfaces/README.adoc#exercice-coffee[Coffee] exercice.)
 ** As usual, you must configure Eclipse as expected in this course; and make sure your git `user.name` equals your GitHub username.
 ** If the code does not compile, the grade is zero.
-* https://github.com/oliviercailloux/java-course/blob/master/Objects%20%26%20interfaces/README.adoc[Generics]
+* https://github.com/oliviercailloux/java-course/blob/master/Objects%20%26%20interfaces/README.adoc#generics[Generics]
 * https://github.com/oliviercailloux/java-course/blob/master/Collections/README.adoc[Collections]
 
 [[S8]]
