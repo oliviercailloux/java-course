@@ -88,7 +88,7 @@ Prerequisites: https://github.com/oliviercailloux/java-course/blob/master/Best%2
 [[S7]]
 === S7 (3 Mar)
 
-* Graded exercice about: Eclipse, Contract, Objects, Interfaces, Exceptions. (Might be similar to the https://github.com/oliviercailloux/java-course/blob/master/Objects%20%26%20interfaces/README.adoc#exercice-coffee[Coffee] exercice.)
+* Graded exercice about: Eclipse, Contract, Objects, Interfaces, Exceptions. Accept https://classroom.github.com/a/M-4KNbQC[this assignment] to create your remote repository for this exercice. Clone my https://github.com/oliviercailloux/coffee/[Coffee] repository. Connect your local resulting repository to your remote repository for this exercice (instead of, or in supplement to, my Coffee repository). Implement the classes `DripCoffeeMaker` and `MyEspressoMachine`, making sure they satisfy their contracts. Push your work at regular time intervals to your remote repository for this exercice.
 ** As usual, you must configure Eclipse as expected in this course; and make sure your git `user.name` equals your GitHub username.
 ** If the code does not compile, the grade is zero.
 * https://github.com/oliviercailloux/java-course/blob/master/Objects%20%26%20interfaces/README.adoc[Generics]
