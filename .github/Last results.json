@@ -4489,7 +4489,8 @@
     {
         "url": "https://github.com/oliviercailloux/coffee/",
         "sources": [
-            "Objects & interfaces/README.adoc"
+            "Objects & interfaces/README.adoc",
+            "L3/README.adoc"
         ],
         "response": 200,
         "satisfied": true,
@@ -4525,7 +4526,8 @@
     {
         "url": "http://journals.ecs.soton.ac.uk/java/tutorial/java/exceptions/throwable.html",
         "sources": [
-            "Objects & interfaces/README.adoc"
+            "Objects & interfaces/README.adoc",
+            "L3/README.adoc"
         ],
         "response": 200,
         "satisfied": true,
@@ -5935,15 +5937,6 @@
         "when": "2021-02-08T20:45:59.559726Z"
     },
     {
-        "url": "http://super-csv.github.io/super-csv/index.html",
-        "sources": [
-            "Libs.adoc"
-        ],
-        "response": 200,
-        "satisfied": true,
-        "when": "2021-02-08T20:45:59.863731Z"
-    },
-    {
         "url": "https://github.com/uniVocity/univocity-parsers",
         "sources": [
             "Libs.adoc"
@@ -6104,24 +6097,6 @@
         "response": 200,
         "satisfied": true,
         "when": "2021-02-08T20:46:08.806126Z"
-    },
-    {
-        "url": "https://issues.apache.org/jira/browse/SANDBOX-460?jql=project%20%3D%20SANDBOX%20AND%20component%20%3D%20Graph",
-        "sources": [
-            "Libs.adoc"
-        ],
-        "response": 200,
-        "satisfied": true,
-        "when": "2021-02-08T20:46:09.247405Z"
-    },
-    {
-        "url": "https://commons.apache.org/sandbox/commons-graph/source-repository.html",
-        "sources": [
-            "Libs.adoc"
-        ],
-        "response": 200,
-        "satisfied": true,
-        "when": "2021-02-08T20:46:09.565990Z"
     },
     {
         "url": "https://www.baeldung.com/java-graphs#4-sourceforge-jung",
@@ -9286,5 +9261,131 @@
         "response": 200,
         "satisfied": true,
         "when": "2021-02-12T12:28:13.771070Z"
+    },
+    {
+        "url": "https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Iterable.html",
+        "sources": [
+            "Collections/README.adoc"
+        ],
+        "response": 200,
+        "satisfied": true,
+        "when": "2021-03-03T10:56:50.116647Z"
+    },
+    {
+        "url": "https://super-csv.github.io/super-csv/index.html",
+        "sources": [
+            "Libs.adoc"
+        ],
+        "response": 200,
+        "satisfied": true,
+        "when": "2021-03-03T10:56:50.531318Z"
+    },
+    {
+        "url": "https://graphstream-project.org/",
+        "sources": [
+            "Libs.adoc"
+        ],
+        "response": 200,
+        "satisfied": true,
+        "when": "2021-03-03T10:56:50.934559Z"
+    },
+    {
+        "url": "https://github.com/apache/commons-graph/",
+        "sources": [
+            "Libs.adoc"
+        ],
+        "response": 200,
+        "satisfied": true,
+        "when": "2021-03-03T10:56:51.790908Z"
+    },
+    {
+        "url": "https://github.com/apache/commons-graph/commits/master",
+        "sources": [
+            "Libs.adoc"
+        ],
+        "response": 200,
+        "satisfied": true,
+        "when": "2021-03-03T10:56:52.713434Z"
+    },
+    {
+        "url": "https://www.mail-archive.com/dev@commons.apache.org/msg68827.html",
+        "sources": [
+            "Libs.adoc"
+        ],
+        "response": 200,
+        "satisfied": true,
+        "when": "2021-03-03T10:56:53.545756Z"
+    },
+    {
+        "url": "https://www.mail-archive.com/dev@commons.apache.org/msg68844.html",
+        "sources": [
+            "Libs.adoc"
+        ],
+        "response": 200,
+        "satisfied": true,
+        "when": "2021-03-03T10:56:53.783214Z"
+    },
+    {
+        "url": "https://www.mail-archive.com/dev@commons.apache.org/msg68914.html",
+        "sources": [
+            "Libs.adoc"
+        ],
+        "response": 200,
+        "satisfied": true,
+        "when": "2021-03-03T10:56:54.043419Z"
+    },
+    {
+        "url": "https://www.mail-archive.com/dev@commons.apache.org/msg68955.html",
+        "sources": [
+            "Libs.adoc"
+        ],
+        "response": 200,
+        "satisfied": true,
+        "when": "2021-03-03T10:56:54.350155Z"
+    },
+    {
+        "url": "https://github.com/monora/jgraphl/commits/master",
+        "sources": [
+            "Libs.adoc"
+        ],
+        "response": 200,
+        "satisfied": true,
+        "when": "2021-03-03T10:56:55.479116Z"
+    },
+    {
+        "url": "https://github.com/oshi/oshi",
+        "sources": [
+            "Libs.adoc"
+        ],
+        "response": 200,
+        "satisfied": true,
+        "when": "2021-03-03T10:56:55.989700Z"
+    },
+    {
+        "url": "https://classroom.github.com/a/M-4KNbQC",
+        "sources": [
+            "L3/README.adoc"
+        ],
+        "response": 302,
+        "satisfied": true,
+        "when": "2021-03-03T10:56:56.607660Z"
+    },
+    {
+        "url": "https://download.eclipse.org/modeling/mdt/papyrus/components/designer/",
+        "sources": [
+            "Dev tools/Automated Eclipse install.adoc"
+        ],
+        "response": 200,
+        "satisfied": true,
+        "when": "2021-03-03T10:56:57.627399Z"
+    },
+    {
+        "url": "https://download.eclipse.org/modeling/mdt/papyrus/components/marte/",
+        "sources": [
+            "Dev tools/Automated Eclipse install.adoc"
+        ],
+        "response": 200,
+        "satisfied": true,
+        "when": "2021-03-03T10:56:57.934223Z"
     }
 ]
