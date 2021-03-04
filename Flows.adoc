@@ -8,10 +8,10 @@ NOTE: The reader should understand https://github.com/oliviercailloux/java-cours
 == Overview
 There are four essential kinds of objects that represent flows of information in Java.
 
-* https://docs.oracle.com/javase/8/docs/api/java/io/InputStream.html[InputStream]: to read flows of bytes.
-* https://docs.oracle.com/javase/8/docs/api/java/io/OutputStream.html[OutputStream]: to write flows of bytes.
-* https://docs.oracle.com/javase/8/docs/api/java/io/Reader.html[Reader]: to read flows of characters.
-* https://docs.oracle.com/javase/8/docs/api/java/io/Writer.html[Writer]: to write flows of characters.
+* https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/InputStream.html[InputStream]: to read flows of bytes.
+* https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/OutputStream.html[OutputStream]: to write flows of bytes.
+* https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/Reader.html[Reader]: to read flows of characters.
+* https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/Writer.html[Writer]: to write flows of characters.
 
 It is typical for a flow of character to be encoded as a flow of bytes. For example, to store the string `Hello, world` in a text file on your hard disk, using the https://en.wikipedia.org/wiki/UTF-8[UTF-8] encoding standard, the string would be first https://en.wikipedia.org/wiki/UTF-8#Codepage_layout[encoded] as the bytes _48_, _65_, _6C_, _6C_, _6F_, _2C_, _20_, _77_, _6F_, _72_, _6C_, _64_ in hexadecimal (or equivalently in decimal, _72_, _101_, _108_, _108_, _111_, _44_, _32_, _119_, _111_, _114_, _108_, _100_), then written (as a bit stream) on the disk. In Java, a mapping between characters and bytes is called a _character set_. You should always opt for the https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/nio/charset/StandardCharsets.html#UTF_8[`UTF-8`] character set when you have a choice, as it is the standard general purpose character set.
 
@@ -37,7 +37,7 @@ Here is a https://github.com/oliviercailloux/sample-flows/tree/master/src/main/j
 In this example, the specific encoding used for encoding characters to bytes does not matter much, because all encodings used in practice encode the basic latin alphabet in the same way. Problems can arise when using “more exotic” characters. For example, the character `é` is encoded as the bytes https://www.fileformat.info/info/unicode/char/00e9/index.htm[_C3_, _A9_] under `UTF-8`, but as https://en.wikipedia.org/wiki/%C3%89#Character_mappings[_E9_] under `ISO-8859-1`.
 
 == Exercice
-Create a text file containing `Hé !` using your favorite text editor, and print its byte content using a stream, as previously. From this, determine if your editor possibly used the `UTF-8` encoding.
+Create a text file containing `Hé !` using your favorite text editor, and print its byte content using a stream, as previously. From this, determine whether your editor possibly used the `UTF-8` encoding.
 
 == Reading from character flows
 Character flows should be used preferably to byte flows when reading or writing text data (as in the exercice above). Such a flow usually reads from (or writes to) a byte flow, decoding from or encoding to bytes as demanded. Note that this conversion will depend on the character set specified to the object representing the character flow.
