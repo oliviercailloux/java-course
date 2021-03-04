@@ -35,6 +35,11 @@ Once this works, make all your variables private so that nobody but your own cla
 * *3.6 [I]*
 * EE3.8, 3.9 [O]
 
+== Varargs
+See Oracle doc about the varargs syntax: https://docs.oracle.com/javase/tutorial/java/javaOO/arguments.html[Varargs]
+
+*Exercice*: call the static method `String.link:https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#format(java.lang.String,java.lang.Object.%2E.)[format]()` with no arguments, then with only one string as argument, then two strings, then three strings. Predict which calls will be accepted by the compiler. Explain in each case what parameters are effectively passed to the method, by considering the method declaration (hint: exactly two parameters are passed for each permissible call).
+
 == More syntax
 * https://github.com/oliviercailloux/java-course/blob/master/Syntax/Interfaces.adoc[Interfaces]
 * https://github.com/oliviercailloux/java-course/blob/master/Syntax/Classes%20as%20concept.adoc[Classes as concept]: instance variables and instance methods

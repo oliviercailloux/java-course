@@ -98,14 +98,11 @@ Prerequisites: https://github.com/oliviercailloux/java-course/blob/master/Best%2
 === S8 (5 Mar)
 
 * https://github.com/oliviercailloux/java-course/blob/master/JUnit/README.adoc[Unit testing]
-** *Exercice:* define a class `PairIteratorTests` and a test that creates a pair of integers _(2, 3)_ and a `PairIterator` object to iterate over this pair, and verifies that the iterator gives elements _2_, _3_, and that its `hasNext()` method returns `false` only after the second step.
-* https://docs.oracle.com/javase/tutorial/java/javaOO/arguments.html[Varargs]
-** *Exercice*: call the static method `String.link:https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#format(java.lang.String,java.lang.Object.%2E.)[format]()` with no arguments, then with only one string as argument, then two strings, then three strings. Predict which calls will be accepted by the compiler. Explain in each case what parameters are effectively passed to the method, by considering the method declaration (hint: exactly two parameters are passed for each permissible call).
-* Files and https://github.com/oliviercailloux/java-course/blob/master/Flows.adoc[flows]
-* Primitive types (autoboxing); optional; give guarantees: https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Null.adoc[Best practices]
-* https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Local%20design.adoc#favor-static-factory-methods[Favor static factory methods]
-** *Exercice*: create two static factory methods for your class `Pair`. One that creates a pair holding twice the same element, and one that creates a pair with elements that are guaranteed to be different.
+* https://github.com/oliviercailloux/java-course/blob/master/Syntax/README.adoc#varargs[Varargs] syntax & exercice
+* Primitive types (autoboxing); optional; give guarantees: https://github.com/oliviercailloux/java-course/blob/master/Style/Null.adoc[Protect against null references]
+* https://github.com/oliviercailloux/java-course/blob/master/Style/README.adoc[Favor static factory methods]
 * No https://mycore.core-cloud.net/index.php/s/jDdn1OcEfjjj8NU[plagiarism], but reuse! (Link to audio track from https://fr.wikipedia.org/wiki/Le_Jeu_des_dictionnaires[Le Jeu des Dictionnaires], included with permission from geluck.com.)
+* Files and https://github.com/oliviercailloux/java-course/blob/master/Flows.adoc[flows]
 * Projects discussion
 
 // Delivery 1: before end of 20 April. See instructions.
@@ -113,7 +110,7 @@ Prerequisites: https://github.com/oliviercailloux/java-course/blob/master/Best%2
 [[S9]]
 === S9 (17 Mar)
 
-* Graded exercice, _at Dauphine_: mainly about the contents of S7 and S8.
+* Graded exercice, _at Dauphine_: mainly about the contents of S7 and S8. As usual, you will have to accept an assignment to create your own remote repository; clone one of my repositories; connect your local repository to your own remote repository; and push your commits there. Make sure you can do this easily. *This test will count for three of the previous tests.*
 
 * Files and flows: https://github.com/oliviercailloux/java-course/blob/master/Flows.adoc#path-operations[Path operations] and providers.
 * Comparator and sorting, (Comparable), Maps
