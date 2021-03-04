@@ -1,4 +1,4 @@
-= Protect against nulls
+= Protect against null references
 
 Use primitive types rather than their object equivalent where possible. There are few valid cases, for example, for accepting a `Double` as an argument instead of a `double`. The only difference being that the former permits to take `null` arguments. Which should precisely be avoided in general. (Even more so than a `double` value admits a https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Double.html#NaN[value] that represents the absence of valid number.)
 

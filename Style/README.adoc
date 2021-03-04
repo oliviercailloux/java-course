@@ -1,0 +1,30 @@
+= Style
+
+Various suggestions about adopting a good coding style in Java.
+
+See: https://github.com/oliviercailloux/java-course/blob/master/Style/Null.adoc[Avoid nulls] and read the suggestion below about static factory methods.
+
+== Favor static factory methods
+Static factory methods are static methods that play the role of constructors (hence the name factory) from the point of view of the user of your class.
+See https://www.baeldung.com/java-constructors-vs-static-factory-methods[here] for the reasons for favoring static factory methods over constructors in your public interface.
+Examples: `String.valueOf(true);`, `Integer.valueOf(3);`, `ImmutableList.of();`, `String.link:https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#format(java.lang.String,java.lang.Object.%2E.)[format]("Person name: %s, id: %d", name, id);`.
+Use the following idiom (or an appropriate variant).
+
+[source,java]
+----
+public class MyClass {
+	public static MyClass given(int someParameter) {
+		return new MyClass(someParameter);
+	}
+	
+	private MyClass(int someParameter) {
+		/** basic initialization… */
+	}
+}
+----
+
+=== Exercice
+Assuming you have implemented a class `Pair` as requested https://github.com/oliviercailloux/java-course/blob/master/Objects%20%26%20interfaces/README.adoc#exercice-generic-pair[here].
+
+Create two static factory methods for your class `Pair`. One that creates a pair holding twice the same element, and one that creates a pair with elements that are guaranteed to be different.
+
