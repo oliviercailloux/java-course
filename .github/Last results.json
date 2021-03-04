@@ -5737,42 +5737,6 @@
         "when": "2021-02-08T20:45:55.042204Z"
     },
     {
-        "url": "https://docs.oracle.com/javase/8/docs/api/java/io/InputStream.html",
-        "sources": [
-            "Flows.adoc"
-        ],
-        "response": 200,
-        "satisfied": true,
-        "when": "2021-02-08T20:45:55.124090Z"
-    },
-    {
-        "url": "https://docs.oracle.com/javase/8/docs/api/java/io/OutputStream.html",
-        "sources": [
-            "Flows.adoc"
-        ],
-        "response": 200,
-        "satisfied": true,
-        "when": "2021-02-08T20:45:55.302909Z"
-    },
-    {
-        "url": "https://docs.oracle.com/javase/8/docs/api/java/io/Reader.html",
-        "sources": [
-            "Flows.adoc"
-        ],
-        "response": 200,
-        "satisfied": true,
-        "when": "2021-02-08T20:45:55.467727Z"
-    },
-    {
-        "url": "https://docs.oracle.com/javase/8/docs/api/java/io/Writer.html",
-        "sources": [
-            "Flows.adoc"
-        ],
-        "response": 200,
-        "satisfied": true,
-        "when": "2021-02-08T20:45:55.629004Z"
-    },
-    {
         "url": "https://en.wikipedia.org/wiki/UTF-8",
         "sources": [
             "Flows.adoc"
@@ -7089,15 +7053,6 @@
         "response": 200,
         "satisfied": true,
         "when": "2021-02-08T20:46:43.494685Z"
-    },
-    {
-        "url": "https://www.lamsade.dauphine.fr/~bnegrevergne/ens/Unix/TP/",
-        "sources": [
-            "Git/Shell.adoc"
-        ],
-        "response": 404,
-        "satisfied": false,
-        "when": "2021-02-08T20:46:43.697127Z"
     },
     {
         "url": "https://git-scm.com/docs/git-config",
@@ -9469,5 +9424,50 @@
         "response": 200,
         "satisfied": true,
         "when": "2021-03-04T14:40:41.611860Z"
+    },
+    {
+        "url": "https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/InputStream.html",
+        "sources": [
+            "Flows.adoc"
+        ],
+        "response": 200,
+        "satisfied": true,
+        "when": "2021-03-04T14:56:50.102430Z"
+    },
+    {
+        "url": "https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/OutputStream.html",
+        "sources": [
+            "Flows.adoc"
+        ],
+        "response": 200,
+        "satisfied": true,
+        "when": "2021-03-04T14:56:50.328473Z"
+    },
+    {
+        "url": "https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/Reader.html",
+        "sources": [
+            "Flows.adoc"
+        ],
+        "response": 200,
+        "satisfied": true,
+        "when": "2021-03-04T14:56:50.568980Z"
+    },
+    {
+        "url": "https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/Writer.html",
+        "sources": [
+            "Flows.adoc"
+        ],
+        "response": 200,
+        "satisfied": true,
+        "when": "2021-03-04T14:56:50.794587Z"
+    },
+    {
+        "url": "https://www.lamsade.dauphine.fr/~bnegrevergne/ens/Unix/static/TP_Shell_Unix.pdf",
+        "sources": [
+            "Git/Shell.adoc"
+        ],
+        "response": 200,
+        "satisfied": true,
+        "when": "2021-03-04T14:56:51.295254Z"
     }
 ]
