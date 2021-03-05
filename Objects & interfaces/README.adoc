@@ -76,6 +76,3 @@ Diagram https://raw.githubusercontent.com/oliviercailloux/Simple-Papyrus-project
 * Add a static method `show` that admits any kind of pair as parameter and prints its content (by calling `toString()` on the left and then on the right content of the pair). Use `show` from your main for each of your instances of pair.
 * Finally, still from your `main`, create a pair that contains each of your instances of pairs, and give it as an argument to `show`.
 
-== Exercice: Predicate
-Implement a `Predicate<String>` to represent a function that associates to a String the value `true` iff its length is even.
-
