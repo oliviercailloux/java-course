@@ -101,7 +101,7 @@ Prerequisites: https://github.com/oliviercailloux/java-course/blob/master/Best%2
 * https://github.com/oliviercailloux/java-course/blob/master/Syntax/README.adoc#varargs[Varargs] syntax & exercice
 * Primitive types (autoboxing); optional; give guarantees: https://github.com/oliviercailloux/java-course/blob/master/Style/Null.adoc[Protect against null references]
 * https://github.com/oliviercailloux/java-course/blob/master/Style/README.adoc[Favor static factory methods]
-* Files and https://github.com/oliviercailloux/java-course/blob/master/Flows.adoc[flows]: Overview & Exercices : _Read using a byte flow_ and _Determine encoding_
+* Files and https://github.com/oliviercailloux/java-course/blob/master/Flows.adoc[flows]: Overview & Exercices _Read using a byte flow_ and _Determine encoding_
 
 // Delivery 1: before end of 20 April. See instructions.
 
