@@ -23,7 +23,7 @@ Classes that represent flows (such as the four above) implement `Closeable`. Thi
 
 NOTE: Many examples on the internet still use the `File` class. This approach should now be considered https://docs.oracle.com/javase/tutorial/essential/io/legacy.html[deprecated]. Using `Path` and `Files`, as illustrated here, should be favored: it is a simpler API altogether, and readily adapts to other kinds of file systems such as https://github.com/google/jimfs[in-memory file systems], as explained below.
 
-== Exercice: read using a byte flow
+== Exercice: Read using a byte flow
 * Create a file `in.txt` in your project directory, containing `Hello, world`. 
 * In Java, create a `Path` object designating that file.
 * Use the appropriate static method from the `Files` class to obtain an `InputStream` representing the content of that file.
@@ -36,7 +36,7 @@ Here is a https://github.com/oliviercailloux/sample-flows/tree/master/src/main/j
 
 In this example, the specific encoding used for encoding characters to bytes does not matter much, because all encodings used in practice encode the basic latin alphabet in the same way. Problems can arise when using “more exotic” characters. For example, the character `é` is encoded as the bytes https://www.fileformat.info/info/unicode/char/00e9/index.htm[_C3_, _A9_] under `UTF-8`, but as https://en.wikipedia.org/wiki/%C3%89#Character_mappings[_E9_] under `ISO-8859-1`.
 
-== Exercice
+== Exercice: Determine encoding
 Create a text file containing `Hé !` using your favorite text editor, and print its byte content using a stream, as previously. From this, determine whether your editor possibly used the `UTF-8` encoding.
 
 == Reading from character flows
