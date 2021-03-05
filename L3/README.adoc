@@ -101,7 +101,6 @@ Prerequisites: https://github.com/oliviercailloux/java-course/blob/master/Best%2
 * https://github.com/oliviercailloux/java-course/blob/master/Syntax/README.adoc#varargs[Varargs] syntax & exercice
 * Primitive types (autoboxing); optional; give guarantees: https://github.com/oliviercailloux/java-course/blob/master/Style/Null.adoc[Protect against null references]
 * https://github.com/oliviercailloux/java-course/blob/master/Style/README.adoc[Favor static factory methods]
-* No https://mycore.core-cloud.net/index.php/s/jDdn1OcEfjjj8NU[plagiarism], but reuse! (Link to audio track from https://fr.wikipedia.org/wiki/Le_Jeu_des_dictionnaires[Le Jeu des Dictionnaires], included with permission from geluck.com.)
 * Files and https://github.com/oliviercailloux/java-course/blob/master/Flows.adoc[flows]
 
 // Delivery 1: before end of 20 April. See instructions.
@@ -121,6 +120,7 @@ Prerequisites: https://github.com/oliviercailloux/java-course/blob/master/Best%2
 ** *TODO home* https://math.hws.edu/javanotes/c10/exercises.html[EE10.3] (you may use `List` implementations, but not `Map`, of course)
 // TreeMap<String, TreeSet<Integer>>  concordance
 ** https://math.hws.edu/javanotes/c10/exercises.html[EE10.6]
+* No https://mycore.core-cloud.net/index.php/s/jDdn1OcEfjjj8NU[plagiarism], but reuse! (Link to audio track from https://fr.wikipedia.org/wiki/Le_Jeu_des_dictionnaires[Le Jeu des Dictionnaires], included with permission from geluck.com.)
 
 //* https://www.youtube.com/watch?v=lcYkOh4nweE&t=1m21s[Mars Climate Orbiter] (1m21 to 5m18; small mistake in the video: it’s Newton times second, not Newton force per second; see also https://en.wikipedia.org/wiki/Mars_Climate_Orbiter[Wikipedia]; similarly https://www-users.math.umn.edu/~arnold/disasters/ariane.html[sad] https://www.youtube.com/watch?v=gp_D8r-2hwk[story]{emptyattribute})
 
