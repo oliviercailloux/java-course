@@ -103,7 +103,6 @@ Prerequisites: https://github.com/oliviercailloux/java-course/blob/master/Best%2
 * https://github.com/oliviercailloux/java-course/blob/master/Style/README.adoc[Favor static factory methods]
 * No https://mycore.core-cloud.net/index.php/s/jDdn1OcEfjjj8NU[plagiarism], but reuse! (Link to audio track from https://fr.wikipedia.org/wiki/Le_Jeu_des_dictionnaires[Le Jeu des Dictionnaires], included with permission from geluck.com.)
 * Files and https://github.com/oliviercailloux/java-course/blob/master/Flows.adoc[flows]
-* Projects discussion
 
 // Delivery 1: before end of 20 April. See instructions.
 
