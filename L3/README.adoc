@@ -103,12 +103,12 @@ Prerequisites: https://github.com/oliviercailloux/java-course/blob/master/Best%2
 * https://github.com/oliviercailloux/java-course/blob/master/Style/README.adoc[Favor static factory methods]
 * Files and https://github.com/oliviercailloux/java-course/blob/master/Flows.adoc[flows]: Overview & Exercices _Read using a byte flow_ and _Determine encoding_
 
-// Delivery 1: before end of 20 April. See instructions.
-
 [[S9]]
 === S9 (17 Mar)
 
-* Graded exercice, _at Dauphine_: mainly about the contents of S7 and S8. As usual, you will have to accept an assignment to create your own remote repository; clone one of my repositories; connect your local repository to your own remote repository; and push your commits there. Make sure you can do this easily. *This test will count for three of the previous tests.*
+* Graded exercice, _at Dauphine_: mainly about the contents of S7 and S8. You will have to accept an assignment to create your own remote repository and push your commits there; this repository will be initialized with a project and the instructions for this test. *This test will count for three of the previous tests.*
+
+Release 1: before end of 4 April.
 
 * Files and flows: https://github.com/oliviercailloux/java-course/blob/master/Flows.adoc#path-operations[Path operations] and providers.
 * Comparator and sorting, (Comparable), Maps
@@ -124,7 +124,7 @@ Prerequisites: https://github.com/oliviercailloux/java-course/blob/master/Best%2
 
 //* https://www.youtube.com/watch?v=lcYkOh4nweE&t=1m21s[Mars Climate Orbiter] (1m21 to 5m18; small mistake in the video: it’s Newton times second, not Newton force per second; see also https://en.wikipedia.org/wiki/Mars_Climate_Orbiter[Wikipedia]; similarly https://www-users.math.umn.edu/~arnold/disasters/ariane.html[sad] https://www.youtube.com/watch?v=gp_D8r-2hwk[story]{emptyattribute})
 
-Delivery 2: before end of 5 May. Recall: 10 hours of efficient work / person expected for each delivery. Focus on quality rather than on quantity.
+//Delivery 2: before end of 5 May. Recall: 10 hours of efficient work / person expected for each delivery. Focus on quality rather than on quantity.
 
 [[S10]]
 === S10 ()
