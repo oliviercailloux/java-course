@@ -28,6 +28,7 @@ You can use at least one of the three major operating systems (Windows, a Linux 
 * Java API https://docs.oracle.com/en/java/javase/11/docs[Javadoc]
 * https://teams.microsoft.com/l/meetup-join/19%3Aaaa1a5bbda774320a271ee4b5ba402e4@thread.tacv2/1609694419561[Teams]
 * https://github.com/oliviercailloux/Teaching/blob/main/README.adoc#take-notes[Take notes]!
+* https://github.com/oliviercailloux/java-course/blob/master/L3/Exercices%20notés.adoc[Exercices notés]
 
 //* https://whiteboard.fi/g67kd
 
