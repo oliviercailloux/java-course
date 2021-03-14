@@ -38,6 +38,15 @@ Program an interface `MovableObject` with methods `canAccelerate(): boolean`, `a
 == Exercice: Coffee
 Clone https://github.com/oliviercailloux/coffee/[this repository]. Implement the classes `DripCoffeeMaker` and `MyEspressoMachine`, making sure they satisfy their contracts. You are encouraged to discuss your ideas or doubt with classmates.
 
+.Elements of correction
+[%collapsible]
+====
+* After `dripMachine.produceCoffee(0.3d)`, `dripMachine.getEnergySpent()` should return `83d` [Energy non zero]
+* After `dripMachine.produceCoffee(0.3d)`, `dripMachine.getEnergySpent()` should not throw, and after `dripMachine.produceCoffee(0d)`, `dripMachine.getEnergySpent()` should return `0d` [Energy zero]
+* `dripMachine.getTimeForCoffee(0.8d)` should return 120 [Time non zero]
+* `dripMachine.getTimeForCoffee(10.2d)` should throw an instance of `IllegalArgumentException` [Time throws]
+====
+
 == Inheritance
 See: https://github.com/oliviercailloux/java-course/blob/master/Syntax/Inheritance.adoc[Inheritance], or read https://math.hws.edu/javanotes/contents-with-subsections.html[ES5.5] to 5.8
 
