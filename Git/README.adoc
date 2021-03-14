@@ -28,6 +28,10 @@ Hint: do not try to remember all the shortcut commands and options git provides.
 == Useful command
 * Use `git log --graph --decorate --oneline --all` to see where you are
 
+== Ends of line
+Unfortunately, there exists two ways of encoding https://en.wikipedia.org/wiki/Newline[ends of line] that are widely found in practice: LF (\n) and CR LF (\r\n).
+Make sure you team use the encoding for end of lines that is used in the project you contribute to. Otherwise, git (and other tools) will report differences where only the end of line has changed, which are not differences we want to care about (https://github.com/oliviercailloux/testrel/commit/9de13b11df17a598b296f4dd020589e697398d19[example]). (See also: https://www.edwardthomson.com/blog/git_for_windows_line_endings.html[some explanations]; https://stackoverflow.com/questions/1967370/git-replacing-lf-with-crlf[SO]; https://gist.github.com/shiftkey/b51f29301e52a3bc74d9[more details].)
+
 == References
 * https://git-scm.com/[Git-SCM]: Videos; Cheat Sheets; Book https://git-scm.com/book[Pro Git] (free, as in speech and beer); tryGit
 * https://try.github.io/[Resources to learn Git]
