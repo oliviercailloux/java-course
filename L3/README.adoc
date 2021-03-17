@@ -111,7 +111,7 @@ Prerequisites: https://github.com/oliviercailloux/java-course/blob/master/Best%2
 
 Release 1: before end of 4 April.
 
-* Equality and hash codes (and exercice)
+* https://github.com/oliviercailloux/java-course/blob/master/Objects%20%26%20interfaces/Equals.adoc[Equality and hash codes] (and exercice)
 * Files and flows: https://github.com/oliviercailloux/java-course/blob/master/Flows.adoc#reading-from-character-flows[Reading from character flows] to end (except for the last exercice about the abstract path concept).
 * Projets : https://github.com/oliviercailloux/java-course/blob/master/L3/Projets%20-%20Instructions%20Java.adoc[Instructions Java]
 
