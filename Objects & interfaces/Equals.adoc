@@ -1,0 +1,32 @@
+= Equality and hash codes
+
+Two objects can be distinct in memory but represent the same thing. So we must override `equals(…)`.
+
+To sort things efficiently, we often need to attribute numbers to objects. This is done using `hashCode()`.
+One of its use is to choose the buckets where objects are stored.
+Thus, we must always ensure that two objects that are equal (according to `equals(…)`) have the same hash code.
+
+== Exercice
+Override `equals` on a class `Sock` that contains `color` and `size` fields. Test using a unit test that two socks are equal exactly when they should. Override `hashCode`. Test using a unit test that two equal socks have the same hashCode. Explain how you guarantee (by a reasoning, not by code) that this is true in general for your `Sock` class (not only in the case under test)? In another unit test, create three sock instances `a`, `b`, `c`, two being (semantically) equal, so that `a.equals(b)` and `!a.equals(c)`. Put `a` and `c` in a `LinkedHashSet`. Imagine that `LinkedHashSet` uses an array of size 10 and explain how Java could have decided in which compartment to put `a` and `c`. Are they possibly / necessarily in the same compartment? Check that `contains(a)`, `contains(b)`, `contains(c)` (on the set) returns `true`. Explain why and how it returns `true` in the case of `b`.
+
+== The `#equals(Object)` method
+Consider overriding `#equals(Object)` on your model classes. Use the following idiom.
+
+[source,java]
+----
+@Override
+public boolean equals(Object o2) {
+	if (!(o2 instanceof Person)) {
+		return false;
+	}
+	Person p2 = (Person) o2;
+	return firstName.equals(p2.firstName) && secondName.equals(p2.secondName);
+}
+----
+
+If the fields may be `null`, use https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Objects.html#equals(java.lang.Object,java.lang.Object){emptyattribute}[`Objects.equals(Object, Object)`] instead.
+
+== The `#hashCode()` method
+If you override `#equals(Object)`, you must override `#hashCode()` as well. And remember that if `a.equals(b)`, then `a.hashCode()` must equal `b.hashCode()`. Use simply something like: `return Objects.link:https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Objects.html#hash(java.lang.Object.%2E.)[hash](firstName, secondName)`.
+
+

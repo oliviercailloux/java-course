@@ -53,9 +53,7 @@ We now want to test this method. We could create a file, let the method read fro
 * Create a unit test that creates a `String` equal to `firstname\nlastname`. The test gives the string to your `readPersons` method created in the previous exercice. To do this, use a https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/StringReader.html[`StringReader`]. The test asserts that the created person has the right first and last names.
 
 == Path operations
-A `Path` represents a path in a tree, and that tree represents a “file” system. Read https://docs.oracle.com/javase/tutorial/essential/io/path.html[here] about this important concept.
-
-From a given `Path` instance (representing, thus, a path in a file system), you can obtain other `Path` instances, representing relative or absolute paths that relate to that first path. See https://docs.oracle.com/javase/tutorial/essential/io/pathOps.html[here] for the essentials about this. 
+A `Path` represents a path in a tree, and that tree represents a “file” system. From a given `Path` instance (representing, thus, a path in a file system), you can obtain other `Path` instances, representing relative or absolute paths that relate to that first path. See https://docs.oracle.com/javase/tutorial/essential/io/pathOps.html[here] for the essentials about this. 
 
 == File system providers
 Each `Path` instance is bound to a `FileSystemProvider`. The _default_ file system provider permits to access the “normal” file system, thus, the files and folders sitting on the hard disk where your code runs. When building a path from `String` instances, using the `https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/nio/file/Path.html#of(java.lang.String,java.lang.String...)[Path.of(String, String…)]` method, the returned instance is bound to that (default) file system provider. For example, `Path.of("/home/user/stuff.txt")` represents the file `stuff.txt` sitting in the folder `/home/user`. 
@@ -65,12 +63,16 @@ The `Path` mechanism in Java is actually more general than this, as it can repre
 == Constructing paths from other paths
 There are two important ways of obtaining a `Path` instance. One is to build it from `String` instances, as illustrated here above. Another is to obtain a path _from another path_. The crucial difference is that when you obtain your instance from another path, _your instance is bound to the same provider as the other path provider_. Thus, if you receive a `Path` instance that is bound to an in-memory file system, and obtain, say, a child of that path (by calling `resolve(String)` on that path), you obtain another `Path` instance bound to this same in-memory file system. This is very handy: in this way, you can create general code that deals with any file system given by your user, even if you know nothing about the specifics of those other file systems.
 
-== Exercice
-In this exercice we will create a unique general code that writes two files, `hello.txt` and `subfolder/bye.txt`, and will use it to write at different places in our default file system and to a zip file.
+== Exercice: Write two files
+In this exercice we will write code that writes two files, `hello.txt` and `subfolder/bye.txt`.
 
 * Define a method `helloBye(Path)` that accepts a `Path` (considered to represent a folder). Define another path instance from that path, representing the file `hello.txt` sitting in the folder represented by that path (thus, for example, if given a path representing `/home/user/afolder/`, your new path instance should represent `/home/user/afolder/hello.txt`). Write the string `Hello, world` in that file. Check that it works.
 * Extend your method so that it creates a path representing the folder `subfolder` as a child folder of the path received as argument, create that folder, and in that folder, create a file `bye.txt` containing `Bye bye!`. Check that this works.
 * Create somewhere (manually, with your file browser) some folders `test1/` and `test2/asubfolder/`. Define a `main` method that calls `helloBye()` twice, giving it paths representing `test1/` and then `test2/asubfolder/`. Check that your code has created the four expected files.
+
+== Exercice: abstract path concept
+Here we will reuse our previous code to write at different places in our default file system and to a zip file.
+
 * Create a new `zip` file and obtain the `FileSystem` instance that represents it, thanks to this https://github.com/oliviercailloux/sample-flows/blob/zipfile/src/main/java/io/github/oliviercailloux/sample_flows/ZipFileCreator.java[sample code]. Obtain the root path of this file system with `https://docs.oracle.com/en/java/javase/12/docs/api/java.base/java/nio/file/FileSystem.html#getPath(java.lang.String,java.lang.String...)[getPath("")]`. Pass this path to `helloBye()`. Check (manually) that you have successfully created a zip file containing the expected files. Modify the code of the `main` method (but not the one of `helloBye`) so that the zip file will contain files `myfolder/hello.txt` and `myfolder/subfolder/bye.txt`.
 * Assume that you modify `helloBye` so that it creates the paths it needs using `Path.of` (and using strings, converting the path given as argument to a string by using `toString()`) instead of by creating the paths it needs from the path instance given as argument. What would continue to work, among what we did so far, and what would fail? Explain, using the explanations given in the section here above, why it is impossible to make this whole exercice work if creating path instances using `Path.of`.
 
