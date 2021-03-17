@@ -107,7 +107,7 @@ Prerequisites: https://github.com/oliviercailloux/java-course/blob/master/Best%2
 [[S9]]
 === S9 (17 Mar)
 
-* Graded exercice, _at Dauphine_: https://classroom.github.com/a/taDEGaJA[persons-manager]. Accept the assignment. This creates a private repository for you with code already there. You have to provide an implementation of the class `MyPersonsManager` according to the contracts you will find there. Clone this, work locally, and push your implementation. Do not forget to use the provided unit tests to help you check your implementation. This test will count for three of the previous tests.
+* Graded exercice, _at Dauphine_: https://classroom.github.com/a/taDEGaJA[persons-manager]. Accept the assignment. This creates a private repository for you with code already there. You have to provide an implementation of the class `MyPersonsManager` according to the contracts you will find there. Clone this, work locally, and push your implementation. Do not forget to use the provided unit tests to help you check your implementation. This test will count for three of the previous tests. Deadline: 15:00 (+ 5 min for late commits.)
 
 Release 1: before end of 4 April.
 
