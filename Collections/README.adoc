@@ -39,6 +39,20 @@ For this course, use by default: `ArrayList` / `ImmutableList`; `LinkedHashSet` 
 //.. (micro) pas de comparaison à `true` (`if(isBig == true)`)
 //.. vous arrivez à voir le résultat de votre code javadoc (exemple: `@param truc of type String` inutile)
 
+== Maps and comparators
+More info: https://math.hws.edu/eck/cs124/javanotes7/c10/[ES10.3] to 10.5, https://math.hws.edu/eck/cs124/javanotes7/c8/[ES8] intro to 8.4, Airiau https://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours6.pdf[C6]
+
+Exercice:
+
+* Define an interface `EasyMap` with two methods: a method that puts a pair of key (`String`, the last name of a person, here supposed to be unique) and value (`Person`, having a first name and a last name) into a map, and a method that returns an `Optional` containing the value corresponding to the given key (parameter of the method) or that returns an empty `Optional` if there is no such value. Implement this interface in a class `EasyMapImpl`. Provide a static factory method in the interface `EasyMap` (it declares that it returns an `EasyMap`, and does it by instanciating your `EasyMapImpl`). Minimize the number of lines of code (but not at the price of readability). Note that this exercice implements a part of the https://en.wikipedia.org/wiki/Forwarding_(object-oriented_programming)[forwarding] pattern.
+* Define `MyComparator`, a class that implements a comparator over `Person`: it considers a person as “smaller” (or “coming before”) another person according to the dictionary ordering of their last name. Add a third method to `EasyMap`, that returns a list of values ordered by that comparator.
+
+// implement a hashmap with a list of lists
+https://math.hws.edu/javanotes/c10/exercises.html[EE10.3] (you may use `List` implementations, but not `Map`, of course)
+
+// TreeMap<String, TreeSet<Integer>>  concordance
+https://math.hws.edu/javanotes/c10/exercises.html[EE10.6]
+
 == References
 * https://math.hws.edu/javanotes/contents-with-subsections.html[ES10] to 10.2
 

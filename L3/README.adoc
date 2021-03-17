@@ -112,15 +112,6 @@ Prerequisites: https://github.com/oliviercailloux/java-course/blob/master/Best%2
 Release 1: before end of 4 April.
 
 * Files and flows: https://github.com/oliviercailloux/java-course/blob/master/Flows.adoc#path-operations[Path operations] and providers.
-* Comparator and sorting, (Comparable), Maps
-** More info: https://math.hws.edu/eck/cs124/javanotes7/c10/[ES10.3] to 10.5, https://math.hws.edu/eck/cs124/javanotes7/c8/[ES8] intro to 8.4, Airiau https://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours6.pdf[C6]
-* *Exercices*:
-** Define an interface `EasyMap` with two methods: a method that puts a pair of key (`String`, the last name of a person, here supposed to be unique) and value (`Person`, having a first name and a last name) into a map, and a method that returns an `Optional` containing the value corresponding to the given key (parameter of the method) or that returns an empty `Optional` if there is no such value. Implement this interface in a class `EasyMapImpl`. Provide a static factory method in the interface `EasyMap` (it declares that it returns an `EasyMap`, and does it by instanciating your `EasyMapImpl`). Minimize the number of lines of code (but not at the price of readability). Note that this exercice implements a part of the https://en.wikipedia.org/wiki/Forwarding_(object-oriented_programming)[forwarding] pattern.
-** Define `MyComparator`, a class that implements a comparator over `Person`: it considers a person as “smaller” (or “coming before”) another person according to the dictionary ordering of their last name. Add a third method to `EasyMap`, that returns a list of values ordered by that comparator.
-// implement a hashmap with a list of lists
-** *TODO home* https://math.hws.edu/javanotes/c10/exercises.html[EE10.3] (you may use `List` implementations, but not `Map`, of course)
-// TreeMap<String, TreeSet<Integer>>  concordance
-** https://math.hws.edu/javanotes/c10/exercises.html[EE10.6]
 * No https://mycore.core-cloud.net/index.php/s/jDdn1OcEfjjj8NU[plagiarism], but reuse! (Link to audio track from https://fr.wikipedia.org/wiki/Le_Jeu_des_dictionnaires[Le Jeu des Dictionnaires], included with permission from geluck.com.)
 
 //* https://www.youtube.com/watch?v=lcYkOh4nweE&t=1m21s[Mars Climate Orbiter] (1m21 to 5m18; small mistake in the video: it’s Newton times second, not Newton force per second; see also https://en.wikipedia.org/wiki/Mars_Climate_Orbiter[Wikipedia]; similarly https://www-users.math.umn.edu/~arnold/disasters/ariane.html[sad] https://www.youtube.com/watch?v=gp_D8r-2hwk[story]{emptyattribute})
@@ -130,7 +121,8 @@ Release 1: before end of 4 April.
 [[S10]]
 === S10 ()
 
-* Graded test: string-files. About `Set`, `List`, files, flows, paths, providers, and the methods `https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/nio/file/Files.html[Files]#copy`, `createFile`, `delete`, `exists`, `isDirectory`, `readAllLines`, `readString`, `write`, `writeString`. Some (incomplete) unit tests are already provided, to help you test your implementation (look under `src/test/`). You have 30 minutes. Hint: use up to 10 minutes to make sure you understand the contract, including by reading the unit tests. Hint 2: implement the methods in the order they are defined in the interface.
+//* Comparator and sorting, (Comparable), Maps
+//* Graded test: string-files. About `Set`, `List`, files, flows, paths, providers, and the methods `https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/nio/file/Files.html[Files]#copy`, `createFile`, `delete`, `exists`, `isDirectory`, `readAllLines`, `readString`, `write`, `writeString`. Some (incomplete) unit tests are already provided, to help you test your implementation (look under `src/test/`). You have 30 minutes. Hint: use up to 10 minutes to make sure you understand the contract, including by reading the unit tests. Hint 2: implement the methods in the order they are defined in the interface.
 * Override https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Local%20design.adoc#the-equalsobject-method[`equals`] and `hashcode`
 ** Exercice: override `equals` on a class `Sock` that contains `color` and `size` fields. Test using a unit test that two socks are equal exactly when they should. Override `hashCode`. Test using a unit test that two equal socks have the same hashCode. Explain how you guarantee (by a reasoning, not by code) that this is true in general for your `Sock` class (not only in the case under test)? In another unit test, create three sock instances `a`, `b`, `c`, two being (semantically) equal, so that `a.equals(b)` and `!a.equals(c)`. Put `a` and `c` in a `LinkedHashSet`. Imagine that `LinkedHashSet` uses an array of size 10 and explain how Java could have decided in which compartment to put `a` and `c`. Are they possibly / necessarily in the same compartment? Check that `contains(a)`, `contains(b)`, `contains(c)` (on the set) returns `true`. Explain why and how it returns `true` in the case of `b`.
 * https://github.com/oliviercailloux/java-course/blob/master/Execution/README.adoc[Search path] (packages, classes and directories).
