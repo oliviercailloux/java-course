@@ -29,7 +29,7 @@ Check this very clear https://www.vogella.com/tutorials/Eclipse/article.html[tut
 == Configuration
 Configure Eclipse to show more errors and warnings in order to help spot mistakes and code smells early.
 
-* From Eclipse, import this https://raw.githubusercontent.com/oliviercailloux/java-course/master/Best%20practices/Eclipse-prefs.epf[epf] (Eclipse Preference File) (save it on your computer first), with `File` / `Import…` / `General` / `Preferences`.
+* From Eclipse, import this https://raw.githubusercontent.com/oliviercailloux/java-course/master/Dev%20tools/Eclipse-prefs.epf[epf] (Eclipse Preference File) (save it on your computer first), with `File` / `Import…` / `General` / `Preferences`.
 ** You can look at the text in the file to see what this changes to your Eclipse configuration.
 * Check in `Windows` / `Preferences` whether the changes were applied. For example, check in `Java` / `Code Style` / `Code Templates` that the `Catch block body` contains `throw new IllegalStateException(e);`.
 * Check in your project properties, `Java Compiler` / `Errors/Warnings` that the project uses your global Eclipse compiler settings.
