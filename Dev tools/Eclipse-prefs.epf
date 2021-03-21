@@ -28,9 +28,7 @@ file_export_version=3.0
 /instance/org.eclipse.jdt.core/org.eclipse.jdt.core.incompatibleJDKLevel=warning
 
 #→Compiler / Errors/Warnings
-#should not be fatal, in order to still be able to compile foreign code without having to fix it first or change manually the option
-#/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.fatalOptionalError=enabled
-#now warnings instead of errors: permits to let “real” errors stand out, in the sense of a statement non-compliant with the Java language grammar
+#warnings instead of errors: permits to let “real” errors stand out, in the sense of a statement non-compliant with the Java language grammar
 #→→Code style
 /instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.explicitlyClosedAutoCloseable=warning
 /instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.indirectStaticAccess=warning
