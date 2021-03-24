@@ -2,6 +2,7 @@
 
 Here is how I automate my Eclipse installation.
 
+//* Uncompress `eclipse-java-2021-03-R-linux-gtk-x86_64.tar.gz`
 * Uncompress `eclipse-jee-2020-12-R-linux-gtk-x86_64.tar.gz`
 * `sudo mv eclipse-jee-2020-12-R-linux-gtk-x86_64/eclipse/ /usr/local/share/eclipse-jee-2020-12-R-linux-gtk-x86_64`
 * Install any desired shared plugins (optional, see below)
@@ -25,8 +26,6 @@ mkdir -p ".eclipse/org.eclipse.platform_4.14.0_1448112854_linux_gtk_x86_64/confi
 
 == Shared plugins
 This uses the https://help.eclipse.org/2019-12/index.jsp?topic=/org.eclipse.platform.doc.isv/reference/misc/multi_user_installs.html[shared configuration] approach.
-
-To install https://checkstyle.org/eclipse-cs/[Eclipse Checkstyle Plug-in] and “Checkstyle configuration plugin for M2Eclipse” (part of https://marketplace.eclipse.org/content/m2e-code-quality[`m2e-code-quality`]): `"/usr/local/share/eclipse-jee-2020-12-R-linux-gtk-x86_64/eclipse" -nosplash -application "org.eclipse.equinox.p2.director" -repository "http://checkstyle.org/eclipse-cs/update/, http://m2e-code-quality.github.io/m2e-code-quality/site/latest/" -installIU "net.sf.eclipsecs.feature.group, com.basistech.m2e.code.quality.checkstyle.feature.feature.group"`. (The installation process seems to hang for about one minute.) This installs 2 features in `/usr/local/share/eclipse-jee-2020-12-R-linux-gtk-x86_64/features` and 7 plugins in the `plugins` subfolder, so that they are available for all users in the system. 
 
 To install Papyrus: `"/usr/local/share/eclipse-jee-2020-12-R-linux-gtk-x86_64/eclipse" -nosplash -application "org.eclipse.equinox.p2.director" -repository "https://download.eclipse.org/releases/2020-12" -installIU "org.eclipse.papyrus.sdk.feature.feature.group"`. This installs 42 papyrus features and 477 plugins (among which 344 papyrus-specific plugins, gmf, apache batik, …). (Installing `org.eclipse.papyrus.uml.feature.feature.group` instead of `org.eclipse.papyrus.sdk.feature.feature.group`, which installs only 18 papyrus features and 360 plugins, does not seem to be sufficient, for example Papyrus project files do not open in that case.)
 
