@@ -115,7 +115,7 @@ Prerequisites: https://github.com/oliviercailloux/java-course/blob/master/Best%2
 
 Release 1: before end of 18 April (*modified*, was 4 April).
 
-Homework (graded): persons-manager-home. Same instructions as the initial persons-manager, and same repository for sending your code to me. This will replace the original grade of persons-manager. This test will count for three of the previous tests. *Due before end of Wednesday 31 March.*
+Homework (graded): persons-manager-home. Same instructions as the initial persons-manager, and same repository for sending your code to me. This will replace the original grade of persons-manager. This test will count for three of the previous tests. *Due before end of Wednesday 31 March.* (Instructions have been https://github.com/oliviercailloux-org/persons-manager/compare/a725bb7f4410816977941f82884709a573003be0..main[slightly clarified].)
 
 //* https://www.youtube.com/watch?v=lcYkOh4nweE&t=1m21s[Mars Climate Orbiter] (1m21 to 5m18; small mistake in the video: it’s Newton times second, not Newton force per second; see also https://en.wikipedia.org/wiki/Mars_Climate_Orbiter[Wikipedia]; similarly https://www-users.math.umn.edu/~arnold/disasters/ariane.html[sad] https://www.youtube.com/watch?v=gp_D8r-2hwk[story]{emptyattribute})
 
