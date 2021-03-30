@@ -1,0 +1,3 @@
+[submodule "L3/persons-manager"]
+	path = L3/persons-manager
+	url = ssh://git@github.com/oliviercailloux/persons-manager.git
