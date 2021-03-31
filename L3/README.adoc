@@ -128,7 +128,7 @@ Homework (graded): persons-manager-home. Same instructions as the initial person
 //* Graded test: string-files. About `Set`, `List`, files, flows, paths, providers, and the methods `https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/nio/file/Files.html[Files]#copy`, `createFile`, `delete`, `exists`, `isDirectory`, `readAllLines`, `readString`, `write`, `writeString`. Some (incomplete) unit tests are already provided, to help you test your implementation (look under `src/test/`). You have 30 minutes. Hint: use up to 10 minutes to make sure you understand the contract, including by reading the unit tests. Hint 2: implement the methods in the order they are defined in the interface.
 * https://github.com/oliviercailloux/java-course/blob/master/Execution/README.adoc[Search path] (packages, classes and directories).
 * https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Resources.adoc[Resources]; exercice: read a file from the class path.
-* No https://mycore.core-cloud.net/index.php/s/jDdn1OcEfjjj8NU[plagiarism], but reuse! (Link to audio track from https://fr.wikipedia.org/wiki/Le_Jeu_des_dictionnaires[Le Jeu des Dictionnaires], included with permission from geluck.com.)
+* No https://github.com/oliviercailloux/Teaching/blob/main/Plagiat.adoc[plagiarism], but reuse! (https://mycore.core-cloud.net/index.php/s/jDdn1OcEfjjj8NU[Audio track] from https://fr.wikipedia.org/wiki/Le_Jeu_des_dictionnaires[Le Jeu des Dictionnaires], included with permission from geluck.com, use authorized only in the context of this course.)
 
 [[S11]]
 === S11 ()
