@@ -20,13 +20,13 @@ I did a very quick comparison for attempting to measure the popularity of each a
 * https://github.com/search?l=java&q=%22org.slf4j%22&type=Code[SLF4J]: 6M (or https://github.com/search?l=java&q=%22org.slf4j.Logger%22&type=Code[org.slf4j.Logger]: 6M)
 * https://github.com/search?l=java&q=%22java.util.logging%22&type=Code[JUL]: 4M (or https://github.com/search?l=java&q=%22java.util.logging.Logger%22&type=Code[java.util.logging.Logger]: 2.5M)
 
-This is of course very crude. A more solid comparison would attempt to estimate how many “big” and “recent” projects use each one, for example. (But at this stage I honestly do not think it is worth the effort, see below.)
+This is of course very crude. A more solid comparison would attempt to estimate how many “big” and “recent” projects use each one, for example. But this seems enough to show that SLF4J is at least very popular, if not dominant, so it is arguably a “de facto standard”, though not the “official” one. (And at this stage I honestly do not think a more in-depth study would be worth the effort, see below.)
 
 == Conclusion
-I usually favor standards, but in this case, I think SLF4J is to be preferred for technical reasons (which you can read elsewhere, see e.g. the Stack Overflow post below). It also helps that it seems to be hugely popular, so it is arguably a “de facto standard”, though not the “official” one.
+I usually favor standards, but in this case, I think SLF4J is superior for technical reasons (which you can read elsewhere, see e.g. “Why not use java.util.logging?”, below), and is very popular. So, I think it has to be adopted, barring strong contrary reasons.
 
 == More information
-* https://stackoverflow.com/questions/11359187/why-not-use-java-util-logging
+* https://stackoverflow.com/questions/11359187/why-not-use-java-util-logging[Why not use java.util.logging?], Stack Overflow
 * Antonio Goncalves’ https://antoniogoncalves.org/2012/09/06/i-need-you-for-logging-api-spec-lead/[blog post] about the sad multiplicity of logging frameworks in Java
-* https://www.overops.com/blog/is-standard-java-logging-dead-log4j-vs-log4j2-vs-logback-vs-java-util-logging/
+* https://www.overops.com/blog/is-standard-java-logging-dead-log4j-vs-log4j2-vs-logback-vs-java-util-logging/[Is Standard Java Logging Dead?], OverOps
 
