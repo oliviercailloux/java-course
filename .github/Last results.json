@@ -1,131 +1,5 @@
 [
     {
-        "url": "https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Iterable.html",
-        "sources": [
-            "Collections/README.adoc"
-        ],
-        "response": 200,
-        "satisfied": true,
-        "when": "2021-03-03T10:56:50.116647Z"
-    },
-    {
-        "url": "https://super-csv.github.io/super-csv/index.html",
-        "sources": [
-            "Libs.adoc"
-        ],
-        "response": 200,
-        "satisfied": true,
-        "when": "2021-03-03T10:56:50.531318Z"
-    },
-    {
-        "url": "https://graphstream-project.org/",
-        "sources": [
-            "Libs.adoc"
-        ],
-        "response": 200,
-        "satisfied": true,
-        "when": "2021-03-03T10:56:50.934559Z"
-    },
-    {
-        "url": "https://github.com/apache/commons-graph/",
-        "sources": [
-            "Libs.adoc"
-        ],
-        "response": 200,
-        "satisfied": true,
-        "when": "2021-03-03T10:56:51.790908Z"
-    },
-    {
-        "url": "https://github.com/apache/commons-graph/commits/master",
-        "sources": [
-            "Libs.adoc"
-        ],
-        "response": 200,
-        "satisfied": true,
-        "when": "2021-03-03T10:56:52.713434Z"
-    },
-    {
-        "url": "https://www.mail-archive.com/dev@commons.apache.org/msg68827.html",
-        "sources": [
-            "Libs.adoc"
-        ],
-        "response": 200,
-        "satisfied": true,
-        "when": "2021-03-03T10:56:53.545756Z"
-    },
-    {
-        "url": "https://www.mail-archive.com/dev@commons.apache.org/msg68844.html",
-        "sources": [
-            "Libs.adoc"
-        ],
-        "response": 200,
-        "satisfied": true,
-        "when": "2021-03-03T10:56:53.783214Z"
-    },
-    {
-        "url": "https://www.mail-archive.com/dev@commons.apache.org/msg68914.html",
-        "sources": [
-            "Libs.adoc"
-        ],
-        "response": 200,
-        "satisfied": true,
-        "when": "2021-03-03T10:56:54.043419Z"
-    },
-    {
-        "url": "https://www.mail-archive.com/dev@commons.apache.org/msg68955.html",
-        "sources": [
-            "Libs.adoc"
-        ],
-        "response": 200,
-        "satisfied": true,
-        "when": "2021-03-03T10:56:54.350155Z"
-    },
-    {
-        "url": "https://github.com/monora/jgraphl/commits/master",
-        "sources": [
-            "Libs.adoc"
-        ],
-        "response": 200,
-        "satisfied": true,
-        "when": "2021-03-03T10:56:55.479116Z"
-    },
-    {
-        "url": "https://github.com/oshi/oshi",
-        "sources": [
-            "Libs.adoc"
-        ],
-        "response": 200,
-        "satisfied": true,
-        "when": "2021-03-03T10:56:55.989700Z"
-    },
-    {
-        "url": "https://classroom.github.com/a/M-4KNbQC",
-        "sources": [
-            "L3/README.adoc"
-        ],
-        "response": 302,
-        "satisfied": true,
-        "when": "2021-03-03T10:56:56.607660Z"
-    },
-    {
-        "url": "https://download.eclipse.org/modeling/mdt/papyrus/components/designer/",
-        "sources": [
-            "Dev tools/Automated Eclipse install.adoc"
-        ],
-        "response": 200,
-        "satisfied": true,
-        "when": "2021-03-03T10:56:57.627399Z"
-    },
-    {
-        "url": "https://download.eclipse.org/modeling/mdt/papyrus/components/marte/",
-        "sources": [
-            "Dev tools/Automated Eclipse install.adoc"
-        ],
-        "response": 200,
-        "satisfied": true,
-        "when": "2021-03-03T10:56:57.934223Z"
-    },
-    {
         "url": "https://github.com/oliviercailloux/Sample-JUnit-5/",
         "sources": [
             "JUnit/Overview.adoc"
@@ -995,16 +869,6 @@
         "when": "2021-03-20T20:25:05.795497Z"
     },
     {
-        "url": "https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Resources.adoc",
-        "sources": [
-            "Execution/README.adoc",
-            "L3/README.adoc"
-        ],
-        "response": 200,
-        "satisfied": true,
-        "when": "2021-03-20T20:25:06.173744Z"
-    },
-    {
         "url": "https://docs.oracle.com/en/java/javase/11/tools/main-tools-create-and-build-applications.html",
         "sources": [
             "Execution/README.adoc"
@@ -1810,6 +1674,7 @@
     {
         "url": "https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Maven.adoc",
         "sources": [
+            "Execution/Resources.adoc",
             "Maven/README.adoc",
             "Best practices/Style.adoc",
             "Objects & interfaces/Local/Extractor full (not done).adoc",
@@ -3001,18 +2866,9 @@
         "when": "2021-03-20T20:26:55.181988Z"
     },
     {
-        "url": "Best%20practices/Maven.adoc",
-        "sources": [
-            "Best practices/Resources.adoc"
-        ],
-        "response": 1,
-        "satisfied": true,
-        "when": "2021-03-20T20:26:55.188902Z"
-    },
-    {
         "url": "https://github.com/oliviercailloux/java-course/blob/master/Flows.adoc",
         "sources": [
-            "Best practices/Resources.adoc",
+            "Execution/Resources.adoc",
             "L3/README.adoc"
         ],
         "response": 200,
@@ -5598,33 +5454,6 @@
         "when": "2021-03-20T20:28:10.461292Z"
     },
     {
-        "url": "https://checkstyle.org/eclipse-cs/",
-        "sources": [
-            "Dev tools/Automated Eclipse install.adoc"
-        ],
-        "response": 200,
-        "satisfied": true,
-        "when": "2021-03-20T20:28:10.822755Z"
-    },
-    {
-        "url": "https://marketplace.eclipse.org/content/m2e-code-quality",
-        "sources": [
-            "Dev tools/Automated Eclipse install.adoc"
-        ],
-        "response": 200,
-        "satisfied": true,
-        "when": "2021-03-20T20:28:13.222893Z"
-    },
-    {
-        "url": "http://m2e-code-quality.github.io/m2e-code-quality/site/latest/",
-        "sources": [
-            "Dev tools/Automated Eclipse install.adoc"
-        ],
-        "response": 200,
-        "satisfied": true,
-        "when": "2021-03-20T20:28:13.487720Z"
-    },
-    {
         "url": "https://stackoverflow.com/a/38956772",
         "sources": [
             "Dev tools/Automated Eclipse install.adoc"
@@ -6482,7 +6311,7 @@
     {
         "url": "https://antoniogoncalves.org/2012/09/06/i-need-you-for-logging-api-spec-lead/",
         "sources": [
-            "Log/README.adoc"
+            "Log/Usage.adoc"
         ],
         "response": 200,
         "satisfied": true,
@@ -6554,7 +6383,7 @@
     {
         "url": "https://docs.oracle.com/javase/8/docs/technotes/guides/logging/index.html",
         "sources": [
-            "Log/README.adoc"
+            "Log/Usage.adoc"
         ],
         "response": 200,
         "satisfied": true,
@@ -6563,7 +6392,7 @@
     {
         "url": "https://stackoverflow.com/questions/11359187/why-not-use-java-util-logging",
         "sources": [
-            "Log/README.adoc"
+            "Log/Usage.adoc"
         ],
         "response": 200,
         "satisfied": true,
@@ -9538,5 +9367,222 @@
         "response": 200,
         "satisfied": true,
         "when": "2021-03-20T20:31:05.825384Z"
+    },
+    {
+        "url": "https://github.com/oliviercailloux/java-course/blob/master/Execution/Resources.adoc",
+        "sources": [
+            "Execution/README.adoc",
+            "L3/README.adoc"
+        ],
+        "response": 404,
+        "satisfied": false,
+        "when": "2021-04-03T09:41:15.373324Z"
+    },
+    {
+        "url": "https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Iterable.html",
+        "sources": [
+            "Collections/README.adoc"
+        ],
+        "response": 200,
+        "satisfied": true,
+        "when": "2021-04-03T09:41:15.816275Z"
+    },
+    {
+        "url": "https://download.eclipse.org/modeling/mdt/papyrus/components/designer/",
+        "sources": [
+            "Dev tools/Automated Eclipse install.adoc"
+        ],
+        "response": 200,
+        "satisfied": true,
+        "when": "2021-04-03T09:41:16.683686Z"
+    },
+    {
+        "url": "https://download.eclipse.org/modeling/mdt/papyrus/components/marte/",
+        "sources": [
+            "Dev tools/Automated Eclipse install.adoc"
+        ],
+        "response": 200,
+        "satisfied": true,
+        "when": "2021-04-03T09:41:16.922356Z"
+    },
+    {
+        "url": "Flows.adoc#_make_sure_your_methods_that_write_data_can_write_anywhere",
+        "sources": [
+            "Flows.adoc"
+        ],
+        "response": 1,
+        "satisfied": true,
+        "when": "2021-04-03T09:41:16.982473Z"
+    },
+    {
+        "url": "https://super-csv.github.io/super-csv/index.html",
+        "sources": [
+            "Libs.adoc"
+        ],
+        "response": 200,
+        "satisfied": true,
+        "when": "2021-04-03T09:41:17.376068Z"
+    },
+    {
+        "url": "https://graphstream-project.org/",
+        "sources": [
+            "Libs.adoc"
+        ],
+        "response": 200,
+        "satisfied": true,
+        "when": "2021-04-03T09:41:17.782151Z"
+    },
+    {
+        "url": "https://github.com/apache/commons-graph/",
+        "sources": [
+            "Libs.adoc"
+        ],
+        "response": 200,
+        "satisfied": true,
+        "when": "2021-04-03T09:41:18.211819Z"
+    },
+    {
+        "url": "https://github.com/apache/commons-graph/commits/master",
+        "sources": [
+            "Libs.adoc"
+        ],
+        "response": 200,
+        "satisfied": true,
+        "when": "2021-04-03T09:41:19.391869Z"
+    },
+    {
+        "url": "https://www.mail-archive.com/dev@commons.apache.org/msg68827.html",
+        "sources": [
+            "Libs.adoc"
+        ],
+        "response": 200,
+        "satisfied": true,
+        "when": "2021-04-03T09:41:20.736827Z"
+    },
+    {
+        "url": "https://www.mail-archive.com/dev@commons.apache.org/msg68844.html",
+        "sources": [
+            "Libs.adoc"
+        ],
+        "response": 200,
+        "satisfied": true,
+        "when": "2021-04-03T09:41:20.967622Z"
+    },
+    {
+        "url": "https://www.mail-archive.com/dev@commons.apache.org/msg68914.html",
+        "sources": [
+            "Libs.adoc"
+        ],
+        "response": 200,
+        "satisfied": true,
+        "when": "2021-04-03T09:41:21.203332Z"
+    },
+    {
+        "url": "https://www.mail-archive.com/dev@commons.apache.org/msg68955.html",
+        "sources": [
+            "Libs.adoc"
+        ],
+        "response": 200,
+        "satisfied": true,
+        "when": "2021-04-03T09:41:21.547537Z"
+    },
+    {
+        "url": "https://github.com/monora/jgraphl/commits/master",
+        "sources": [
+            "Libs.adoc"
+        ],
+        "response": 200,
+        "satisfied": true,
+        "when": "2021-04-03T09:41:22.589318Z"
+    },
+    {
+        "url": "https://github.com/oshi/oshi",
+        "sources": [
+            "Libs.adoc"
+        ],
+        "response": 200,
+        "satisfied": true,
+        "when": "2021-04-03T09:41:23.086865Z"
+    },
+    {
+        "url": "https://classroom.github.com/a/M-4KNbQC",
+        "sources": [
+            "L3/README.adoc"
+        ],
+        "response": 302,
+        "satisfied": true,
+        "when": "2021-04-03T09:41:23.870647Z"
+    },
+    {
+        "url": "https://github.com/oliviercailloux-org/persons-manager/compare/a725bb7f4410816977941f82884709a573003be0..main",
+        "sources": [
+            "L3/README.adoc"
+        ],
+        "response": 200,
+        "satisfied": true,
+        "when": "2021-04-03T09:41:24.452432Z"
+    },
+    {
+        "url": "https://github.com/oliviercailloux/Teaching/blob/main/Plagiat.adoc",
+        "sources": [
+            "L3/README.adoc"
+        ],
+        "response": 200,
+        "satisfied": true,
+        "when": "2021-04-03T09:41:24.894118Z"
+    },
+    {
+        "url": "https://github.com/oliviercailloux/java-course/blob/master/Log/Usage.adoc",
+        "sources": [
+            "Log/README.adoc"
+        ],
+        "response": 404,
+        "satisfied": false,
+        "when": "2021-04-03T10:42:53.001032Z"
+    },
+    {
+        "url": "https://github.com/search?l=java&q=%22org.slf4j%22&type=Code",
+        "sources": [
+            "Log/Usage.adoc"
+        ],
+        "response": 302,
+        "satisfied": true,
+        "when": "2021-04-03T10:42:53.307042Z"
+    },
+    {
+        "url": "https://github.com/search?l=java&q=%22org.slf4j.Logger%22&type=Code",
+        "sources": [
+            "Log/Usage.adoc"
+        ],
+        "response": 302,
+        "satisfied": true,
+        "when": "2021-04-03T10:42:53.576836Z"
+    },
+    {
+        "url": "https://github.com/search?l=java&q=%22java.util.logging%22&type=Code",
+        "sources": [
+            "Log/Usage.adoc"
+        ],
+        "response": 302,
+        "satisfied": true,
+        "when": "2021-04-03T10:42:53.815416Z"
+    },
+    {
+        "url": "https://github.com/search?l=java&q=%22java.util.logging.Logger%22&type=Code",
+        "sources": [
+            "Log/Usage.adoc"
+        ],
+        "response": 302,
+        "satisfied": true,
+        "when": "2021-04-03T10:42:54.082167Z"
+    },
+    {
+        "url": "https://www.overops.com/blog/is-standard-java-logging-dead-log4j-vs-log4j2-vs-logback-vs-java-util-logging/",
+        "sources": [
+            "Log/Usage.adoc"
+        ],
+        "response": 200,
+        "satisfied": true,
+        "when": "2021-04-03T10:42:56.501068Z"
     }
 ]
