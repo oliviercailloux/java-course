@@ -20,19 +20,19 @@ Declare your class `MyMathClass` in a package `myclasses.mymathpackage`, and you
 === Search path, module path and class path
 The search path is the set of places where the JVM will look for your classes and other resources.
 
-Essentially two mechanisms are used: the class path and the module path. This course focuses on the class path mechanism. It is anyway necessary to understand it in order to understand the (slightly more advanced) module path mechanism. Thus, the description here pretends that search path equals class path, although this is an oversimplification.
+Essentially two mechanisms are used: the class path and the module path. This course focuses on the class path mechanism. It is anyway necessary to understand it in order to understand the (more advanced) module path mechanism. Thus, the description here pretends that search path equals class path, although this is an oversimplification.
 
 === Quick facts to remember
 * A class has a simple name (for example, `MyClass`), and a full name (for example, `somepackage.somesubpackage.MyClass`)
-* A (top-level) class is defined in a source file whose relative path must reflect its full name, for example, `somepackage/somesubpackage/MyClass.java`; relative to some base folder where you put your source code (for example, `/home/me/My project/My source code/`)
-* A class is compiled in a file whose relative path must reflect its full name, for example, `somepackage/somesubpackage/MyClass.class`; relative to some base folder where you put your compiled code (for example, `/home/me/My project/My compiled code/`)
+* A (top-level) class is typically defined in a source file whose relative path reflects its full name, for example, `somepackage/somesubpackage/MyClass.java`; relative to some base folder where you put your source code (for example, `/home/me/My project/My source code/`)
+* A class is typically compiled into a file whose relative path reflects its full name, for example, `somepackage/somesubpackage/MyClass.class`; relative to some base folder where you put your compiled code (for example, `/home/me/My project/My compiled code/`)
 * When using `javac` to compile, you give _files_ as arguments
 * When using `java` to execute, you give a _full class name_ as argument (the one whose `main` method you want to run)
 * For both `javac` and `java`, the program must be able to find the adequate dependencies. To enable this, give it your _class path_: the paths to the base folders containing your compiled classes
 * Example: `java -cp "/home/me/My project/My compiled code/" "somepackage.somesubpackage.MyClass" "argument 1" "argument 2"` will search for classes from the folder `/home/me/My project/My compiled code/`, and will attempt to run the `main` method defined in the class `somepackage.somesubpackage.MyClass`, giving it the arguments `argument 1` and `argument 2`
 
 === More about the class path
-For more information about the class path, see: https://github.com/oliviercailloux/java-course/blob/master/Execution/Pr%C3%A9sentation%20class%20path/presentation.pdf[Présentation class path], https://github.com/oliviercailloux/java-course/blob/master/Execution/Overview.adoc[Overview], https://github.com/oliviercailloux/java-course/blob/master/Execution/Exercices.adoc[Exercices], BP https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Resources.adoc[resources].
+For more information about the class path, see: https://github.com/oliviercailloux/java-course/blob/master/Execution/Pr%C3%A9sentation%20class%20path/presentation.pdf[Présentation class path], https://github.com/oliviercailloux/java-course/blob/master/Execution/Overview.adoc[Overview], https://github.com/oliviercailloux/java-course/blob/master/Execution/Exercices.adoc[Exercices], https://github.com/oliviercailloux/java-course/blob/master/Execution/Resources.adoc[resources].
 
 //TODO binary name as defined in The Java™ Language Specification, section 13.1 "The Form of a Binary".
 

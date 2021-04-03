@@ -76,6 +76,13 @@ Here we will reuse our previous code to write at different places in our default
 * Create a new `zip` file and obtain the `FileSystem` instance that represents it, thanks to this https://github.com/oliviercailloux/sample-flows/blob/zipfile/src/main/java/io/github/oliviercailloux/sample_flows/ZipFileCreator.java[sample code]. Obtain the root path of this file system with `https://docs.oracle.com/en/java/javase/12/docs/api/java.base/java/nio/file/FileSystem.html#getPath(java.lang.String,java.lang.String...)[getPath("")]`. Pass this path to `helloBye()`. Check (manually) that you have successfully created a zip file containing the expected files. Modify the code of the `main` method (but not the one of `helloBye`) so that the zip file will contain files `myfolder/hello.txt` and `myfolder/subfolder/bye.txt`.
 * Assume that you modify `helloBye` so that it creates the paths it needs using `Path.of` (and using strings, converting the path given as argument to a string by using `toString()`) instead of by creating the paths it needs from the path instance given as argument. What would continue to work, among what we did so far, and what would fail? Explain, using the explanations given in the section here above, why it is impossible to make this whole exercice work if creating path instances using `Path.of`.
 
+== Make sure your methods that write data can write anywhere
+A method that writes data (for example, converts some object to an XML representation) should be able to write not only on a file sitting on a hard disk, but also in memory or generally on any output stream: this makes it more general, at no cost. 
+
+For example, instead of `asXml(String fileName)`, design your class with a method `asXml(Path outputPath)` and `asXml(OutputStream stream)` (just the first one is a better choice if your data size is small; the second one should accept a `Writer` instead of an `OutputStream` for character based flows).
+
+In particular, it often happens that some unit test needs to call a method that writes data, then needs to re-read the data just written, to check for correctness. In that case, writing to a physical file is inelegant: creating a physical file just to read it and deleting it afterwards is a waste of time and resources, and practically speaking, it requires to find some place on the hard disk where your code has write access, then make sure that somehow the file gets deleted afterwards. It is much better to write in memory. 
+
 == References
 See Oracle’s https://docs.oracle.com/javase/tutorial/essential/io/index.html[Basic I/O] tutorial.
 
