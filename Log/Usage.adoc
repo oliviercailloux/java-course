@@ -23,7 +23,7 @@ I did a very quick comparison for attempting to measure the popularity of each a
 This is of course very crude. A more solid comparison would attempt to estimate how many “big” and “recent” projects use each one, for example. But this seems enough to show that SLF4J is at least very popular, if not dominant, so it is arguably a “de facto standard”, though not the “official” one. (And at this stage I honestly do not think a more in-depth study would be worth the effort, see below.)
 
 == Conclusion
-I usually favor standards, but in this case, I think SLF4J is superior for technical reasons (which you can read elsewhere, see e.g. “Why not use java.util.logging?”, below), and is very popular. So, I think it has to be adopted, barring strong contrary reasons.
+I usually favor standards, but in this case, I think SLF4J is superior for technical reasons (which you can read elsewhere, see e.g. “Why not use java.util.logging?”, below), and is very popular. So, I recommend adopting it for your projects, barring strong contrary reasons.
 
 == More information
 * https://stackoverflow.com/questions/11359187/why-not-use-java-util-logging[Why not use java.util.logging?], Stack Overflow
