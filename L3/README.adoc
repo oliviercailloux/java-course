@@ -124,13 +124,15 @@ Homework (graded): persons-manager-home. Same instructions as the initial person
 
 //* Comparator and sorting, (Comparable), Maps
 //* Graded test: string-files. About `Set`, `List`, files, flows, paths, providers, and the methods `https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/nio/file/Files.html[Files]#copy`, `createFile`, `delete`, `exists`, `isDirectory`, `readAllLines`, `readString`, `write`, `writeString`. Some (incomplete) unit tests are already provided, to help you test your implementation (look under `src/test/`). You have 30 minutes. Hint: use up to 10 minutes to make sure you understand the contract, including by reading the unit tests. Hint 2: implement the methods in the order they are defined in the interface.
+* Sol persons-manager https://github.com/oliviercailloux-org/persons-manager/tree/sol-no-streams[here] (advanced and more compact version https://github.com/oliviercailloux-org/persons-manager/tree/sol-streams[here]). Stats: 25/27 > 0; Static factories 6; toMap throwing 6; toString 7 (others: 17 to 24).
 * No https://github.com/oliviercailloux/Teaching/blob/main/Plagiat.adoc[plagiarism], but reuse! (https://mycore.core-cloud.net/index.php/s/jDdn1OcEfjjj8NU[Audio track] from https://fr.wikipedia.org/wiki/Le_Jeu_des_dictionnaires[Le Jeu des Dictionnaires], included with permission from geluck.com, use authorized only in the context of this course.)
 * https://github.com/oliviercailloux/java-course/blob/master/Execution/Resources.adoc[Resources]; exercice.
 * https://github.com/oliviercailloux/java-course/blob/master/Log/README.adoc[Logging]
 
 [[S11]]
-=== S11 ()
+=== S11 (5 May)
 
+* Graded test about `Set`, `List`, iterators, and the like.
 * https://github.com/oliviercailloux/java-course/raw/master/Annotations/presentation.pdf[Annotations]
 * https://github.com/oliviercailloux/java-course/tree/master/SWT[SWT]
 
