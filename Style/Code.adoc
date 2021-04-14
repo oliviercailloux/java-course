@@ -1,0 +1,44 @@
+= Formatting and commenting code
+
+== Follow the Google Java Style Guide
+I recommend following the http://google.github.io/styleguide/javaguide.html[GJSG]: Google Java Style Guide! It is a well designed set of guidelines.
+Most importantly:
+
+* GJSG http://google.github.io/styleguide/javaguide.html#s5.2-specific-identifier-names[5.2], Rules by identifier type
+* GJSG http://google.github.io/styleguide/javaguide.html#s2.2-file-encoding[2.2], File encoding: UTF-8
+* “Tip: Never make your code less readable simply out of fear that some programs might not handle non-ASCII characters properly. If that should happen, those programs are broken and they must be fixed.” (GJSG http://google.github.io/styleguide/javaguide.html#s2.3.3-non-ascii-characters[2.3.3]{emptyattribute})
+
+I disagree with this point in the GJSG: http://google.github.io/styleguide/javaguide.html#s5.2.1-package-names[5.2.1], “Package names are all lowercase, with consecutive words simply concatenated together (no underscores)”. I use underscores to separate words in packages (see https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Maven.adoc[Maven]).
+
+== Formatting
+Use your IDE mechanisms to format your source code systematically and automatically. Make sure everybody use the same conventions in your team. This reduces the number of conflicts when merging concurrent modifications; and ensures that git comparison works (otherwise, for example, git sees modifications when only the spaces have been changed to tabs, and thus real modifications become hard to find).
+
+If you modify an existing project, make sure you use the same formatting conventions as the existing project, or start with re-formatting everything systematically if you want to change the conventions.
+
+Similarly, make sure you use only one encoding for end of lines throughout your team (either `\n` or `\r\n`). Otherwise, git will see differences where in reality only the end of line has changed.
+
+(Google-java-format is probably able to help with this, and its https://github.com/google/google-java-format/issues/504[issues] with Eclipse will hopefully be solved someday…)
+
+== No code disabled using comments
+Do not use comments to comment out code (`//object.someMethod()`), unless very temporarily when trying out something. This hinders readability and increases the length of the code, and quickly becomes completely unuseful as commented code accumulate. Use https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Git.adoc#no-old-files[this] strategy. Code commented out should not reach your git repository.
+
+== Use “bloc” style comments
+Use “bloc” style comments to comment your code : `/* This explains the code that follows. */`. Put the comment just before the code that it comments (not next to it as the auto-formatter will generally make it hard to read). Bloc style is used for multi-line comments that contain free-flowing text, which your IDE will thus reformat to respect margin boundaries. On the contrary, C-style comments (`//comment`) are normally used to disable code (which you should not do, see above). Your IDE will typically consider itself not authorized to reformat C-style comments by changing the line feed characters.
+
+== Javadoc
+If your comments are general comments about your class (its goal, how to use it, general restrictions…), it should go on top of the class. Comments on a constructor should only explain what is specific to that constructor.
+
+A Javadoc style comment that is not inside a method is considered as bound to the element that just follows the comment (you can see this by looking at the Eclipse Javadoc view). In other words, a comment inside a class comments either a method or a field of the class, unless it is inside a method. Avoid free-floating comments that should be attached to nothing in particular (perhaps your comment belongs to the class header?)
+
+Omit tags that you have nothing to say about, at least in a draft version of your API. For example, it is often reasonable to omit `@throws IOException` tag.
+
+Omit comments that bring no information: they hide the important comments and use your precious time. For example, do not add Javadoc on `getFirstName()` if it simply reads: `Returns the first name`. Omitting the Javadoc entirely is better, if the method is clear from its header, at least in a draft version of your API.
+
+Get inspiration from well written documentation such as the one on https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/util/List.html[`List`].
+
+== Outdated references
+* https://www.oracle.com/java/technologies/naming-conventions.html[Oracle J2EE] (I don’t think this should be taken seriously as it is very old, apparently unmaintained, and not included in recent documentation of Oracle).
+* Code https://www.oracle.com/java/technologies/javase/codeconventions-contents.html[Conventions] for the Java Programming Language contains many https://www.javacodegeeks.com/2012/10/java-coding-conventions-considered-harmful.html[incorrect] suggestions
+
+
+
