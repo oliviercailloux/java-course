@@ -2,14 +2,16 @@
 
 Here is how I automate my Eclipse installation.
 
-//* Uncompress `eclipse-java-2021-03-R-linux-gtk-x86_64.tar.gz`
-* Uncompress `eclipse-jee-2020-12-R-linux-gtk-x86_64.tar.gz`
-* `sudo mv eclipse-jee-2020-12-R-linux-gtk-x86_64/eclipse/ /usr/local/share/eclipse-jee-2020-12-R-linux-gtk-x86_64`
+* Uncompress `eclipse-java-2021-03-R-linux-gtk-x86_64.tar.gz`
+* `sudo mv eclipse-java-2021-03-R-linux-gtk-x86_64/eclipse/ /usr/local/share/eclipse-java-2021-03-R-linux-gtk-x86_64`
 * Install any desired shared plugins (optional, see below)
-* `sudo chown -R root:staff /usr/local/share/eclipse-jee-2020-12-R-linux-gtk-x86_64/`
+* `sudo chown -R root:staff /usr/local/share/eclipse-java-2021-03-R-linux-gtk-x86_64/`
 * Delete your `.eclipse` folder and your previous Eclipse workspace to forget possible unwanted residuals from previous installations
 
-// 163 features, 920 plugins
+// 46 features, 434 plugins
+// 88 features, 926 plugins after Papyrus SDK: 42 features and 345 plugins with papyrus in the name; gmf; apache batik; and so on.
+// 90 features, 954 plugins after Papyrus Java: 44, 372 whose name contain papyrus.
+// jee-2020-12: 163 features, 920 plugins
 // 165 features, 927 plugins after checkstyle
 // 183 features, 1287 plugins after papyrus uml: 18 features and 229 plugins with papyrus in the name; gmf; apache batik; and so on.
 // 207 (206 now!) features, 1404 (1403 now!) plugins after papyrus sdk: 42 features and 344 plugins with papyrus in the name; gmf; apache batik; and so on.
@@ -27,9 +29,9 @@ mkdir -p ".eclipse/org.eclipse.platform_4.14.0_1448112854_linux_gtk_x86_64/confi
 == Shared plugins
 This uses the https://help.eclipse.org/2019-12/index.jsp?topic=/org.eclipse.platform.doc.isv/reference/misc/multi_user_installs.html[shared configuration] approach.
 
-To install Papyrus: `"/usr/local/share/eclipse-jee-2020-12-R-linux-gtk-x86_64/eclipse" -nosplash -application "org.eclipse.equinox.p2.director" -repository "https://download.eclipse.org/releases/2020-12" -installIU "org.eclipse.papyrus.sdk.feature.feature.group"`. This installs 42 papyrus features and 477 plugins (among which 344 papyrus-specific plugins, gmf, apache batik, …). (Installing `org.eclipse.papyrus.uml.feature.feature.group` instead of `org.eclipse.papyrus.sdk.feature.feature.group`, which installs only 18 papyrus features and 360 plugins, does not seem to be sufficient, for example Papyrus project files do not open in that case.)
+To install Papyrus: `"/usr/local/share/eclipse-java-2021-03-R-linux-gtk-x86_64/eclipse" -nosplash -application "org.eclipse.equinox.p2.director" -repository "https://download.eclipse.org/releases/2021-03" -installIU "org.eclipse.papyrus.sdk.feature.feature.group"`. This installs 42 papyrus features and 477 plugins (among which 344 papyrus-specific plugins, gmf, apache batik, …). (Installing `org.eclipse.papyrus.uml.feature.feature.group` instead of `org.eclipse.papyrus.sdk.feature.feature.group`, which installs only 18 papyrus features and 360 plugins, does not seem to be sufficient, for example Papyrus project files do not open in that case.)
 
-To install Papyrus Java profile, library and code generation (Incubation): `"/usr/local/share/eclipse-jee-2020-12-R-linux-gtk-x86_64/eclipse" -nosplash -application "org.eclipse.equinox.p2.director" -repository "https://download.eclipse.org/releases/2020-12, https://download.eclipse.org/modeling/mdt/papyrus/components/designer/, https://download.eclipse.org/modeling/mdt/papyrus/components/marte/" -installIU "org.eclipse.papyrus.designer.languages.java.feature.feature.group"`.
+To install Papyrus Java profile, library and code generation (Incubation): `"/usr/local/share/eclipse-java-2021-03-R-linux-gtk-x86_64/eclipse" -nosplash -application "org.eclipse.equinox.p2.director" -repository "https://download.eclipse.org/releases/2021-03, https://download.eclipse.org/modeling/mdt/papyrus/components/designer/, https://download.eclipse.org/modeling/mdt/papyrus/components/marte/" -installIU "org.eclipse.papyrus.designer.languages.java.feature.feature.group"`.
 
 https://stackoverflow.com/a/38956772[This] lets you find the data for other plugins.
 
