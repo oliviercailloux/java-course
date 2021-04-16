@@ -2,7 +2,7 @@
 
 Various suggestions about adopting a good coding style in Java.
 
-See: https://github.com/oliviercailloux/java-course/blob/master/Style/Null.adoc[Avoid nulls], https://github.com/oliviercailloux/java-course/blob/master/Style/Code.adoc[Formatting and commenting code], and read the suggestion below about static factory methods.
+See: https://github.com/oliviercailloux/java-course/blob/master/Style/Code.adoc[Formatting and commenting code], https://github.com/oliviercailloux/java-course/blob/master/Style/Null.adoc[Avoid nulls], and read the suggestion below about static factory methods.
 
 == Favor static factory methods
 Static factory methods are static methods that play the role of constructors (hence the name factory) from the point of view of the user of your class.
