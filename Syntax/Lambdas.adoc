@@ -1,0 +1,10 @@
+= Method references and lambdas
+
+See: https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html[Method references].
+
+== Exercice: Person and predicates
+* Define a class `Person` with a name and a height. Define a class `IsNameAToG` which implements `Predicate<Person>` and whose `test` method returns `true` iff the name of the person, upper cased, starts with a letter between `A` and `G`. In a unit test, define a set of persons, and use `stream()` on the set, then `filter` and `count` on the resulting stream, to count the number of persons in your set whose name match the predicate. In the unit test, make sure you have a line looking like `Predicate<Person> myPredicate = …`.
+* Define a class `IsGreaterThan` which implements `Predicate<Person>`. Its constructor receives an height. Its `test` method returns `true` iff the person is greater than the height given when building it. Test it similarly in a unit test. Similarly, make sure your test includes a line such as `Predicate<Person> myPredicate = …`.
+* Replace in your first unit test the right hand side of `Predicate<Person> myPredicate = …` by a lambda expression: do not use your `IsNameAToG` class any more. You should now be able to delete your class, and the unit test should still pass.
+* Proceed similarly for the second unit test.
+
