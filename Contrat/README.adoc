@@ -8,10 +8,8 @@ See: https://github.com/oliviercailloux/java-course/raw/master/Contrat/Pr%C3%A9s
 
 == Technical hints
 * Generate Javadoc from Eclipse: `Source` / `Generate Element Comment` (on methods and classes!); use the `Javadoc` view
-* Append `throw IllegalArgumentException` (for example) on your method header when you want to raise attention to it, and document it in Javadoc
 
 == Exercices
-
 . Implement a method `randomFail()` that throws an `IllegalStateException` with one chance on two. Call this method three times in a row from your main (without looping). Run your program until it fails. Determine how to find which of the three call raised the exception, just by looking at the stack trace.
 ** Hint: if you are uncomfortable with generating random data in Java, you might want to check again the exercices in https://github.com/oliviercailloux/java-course/blob/master/Overview/README.adoc[Overview]
 . Implement a method that calls `randomFail()`, then, throws itself an `IllegalStateException` with one chance on two. Call this method repeatedly, in an infinite loop, from your main. Run your program. Determine how to find if the exception was raised in the `randomFail()` method or in the other one, just by looking at the method names on the stack trace. Click on the stack trace and observe the result.
