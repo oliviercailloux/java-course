@@ -22,10 +22,9 @@ Similarly, make sure you use only one encoding for end of lines throughout your 
 == No code disabled using comments
 Do not use comments to comment out code (`//object.someMethod()`), unless very temporarily when trying out something. This hinders readability and increases the length of the code, and quickly becomes completely unuseful as commented code accumulate. Use https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Git.adoc#no-old-files[this] strategy. Code commented out should not reach your git repository.
 
-== Use “bloc” style comments
-Use “bloc” style comments to comment your code : `/* This explains the code that follows. */`. Put the comment just before the code that it comments (not next to it as the auto-formatter will generally make it hard to read). Bloc style is used for multi-line comments that contain free-flowing text, which your IDE will thus reformat to respect margin boundaries. On the contrary, C-style comments (`//comment`) are normally used to disable code (which you should not do, see above). Your IDE will typically consider itself not authorized to reformat C-style comments by changing the line feed characters.
+== Javadoc for externally visible comments
+Use Javadoc to document your contracts or usage of your classes and methods: Javadoc is for comments that the *users* of your code should see.
 
-== Javadoc
 If your comments are general comments about your class (its goal, how to use it, general restrictions…), it should go on top of the class. Comments on a constructor should only explain what is specific to that constructor.
 
 A Javadoc style comment that is not inside a method is considered as bound to the element that just follows the comment (you can see this by looking at the Eclipse Javadoc view). In other words, a comment inside a class comments either a method or a field of the class, unless it is inside a method. Avoid free-floating comments that should be attached to nothing in particular (perhaps your comment belongs to the class header?)
@@ -35,6 +34,9 @@ Omit tags that you have nothing to say about, at least in a draft version of you
 Omit comments that bring no information: they hide the important comments and use your precious time. For example, do not add Javadoc on `getFirstName()` if it simply reads: `Returns the first name`. Omitting the Javadoc entirely is better, if the method is clear from its header, at least in a draft version of your API.
 
 Get inspiration from well written documentation such as the one on https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/util/List.html[`List`].
+
+== Use “bloc” style comments for internal comments
+Use “bloc” style comments to comment your code, when the comment is useful only for the *programmer* of the class or method which it comments : `/* This explains the code that follows. */`. Put the comment just before the code that it comments (not next to it as the auto-formatter will generally make it hard to read), in the relevant method, or in the constructor if it is an internal comment about the whole class. Bloc style is used for multi-line comments that contain free-flowing text, which your IDE will thus reformat to respect margin boundaries. On the contrary, C-style comments (`//comment`) are normally used to disable code (which you should not do, see above). Your IDE will typically consider itself not authorized to reformat C-style comments by changing the line feed characters.
 
 == Outdated references
 * https://www.oracle.com/java/technologies/naming-conventions.html[Oracle J2EE] (I don’t think this should be taken seriously as it is very old, apparently unmaintained, and not included in recent documentation of Oracle).
