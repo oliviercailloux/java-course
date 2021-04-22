@@ -27,7 +27,7 @@ Check this very clear https://www.vogella.com/tutorials/Eclipse/article.html[tut
 
 [[Eclipse-strict]]
 == Configuration
-Configure Eclipse to show more errors and warnings in order to help spot mistakes and code smells early.
+Configure Eclipse to show more errors and warnings in order to help spot mistakes and code smells early (and add a “GoogleStyle + block + braced” formatter style).
 
 * From Eclipse, import this https://raw.githubusercontent.com/oliviercailloux/java-course/master/Dev%20tools/Eclipse-prefs.epf[epf] (Eclipse Preference File) (save it on your computer first), with `File` / `Import…` / `General` / `Preferences`.
 ** You can look at the text in the file to see what this changes to your Eclipse configuration.
@@ -40,6 +40,8 @@ Configure Eclipse to show more errors and warnings in order to help spot mistake
 [%collapsible]
 ====
 As an exception to strict checking, I authorize boxing and unboxing without warnings. This is because first, the warning has drawbacks and second, it is not very effective. First, this warning sometimes encourage writing more obscure code, for example `myMap.put(Integer.valueOf(myInt), myValue)` instead of `myMap.put(myInt, myValue)`. (And stuffing your code with `@SuppressWarnings("boxing")` instructions is equally inelegant.) Second, this warning only helps avoiding possible null pointer exceptions (when unboxing), and this anyway is a problem that happens when dealing with objects. It feels unjustified to spend so much energy on this risk specifically when dealing with numeric types.
+
+https://github.com/oliviercailloux/Relaxed-google-style/blob/master/Eclipse.adoc[Some details about the formatter style].
 ====
 
 == Start project
