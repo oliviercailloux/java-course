@@ -132,7 +132,7 @@ Homework (graded): persons-manager-home. Same instructions as the initial person
 [[S11]]
 === S11 (5 May)
 
-* Graded test about `Set`, `List`, `Map`, and other classes and interfaces related to the collections in Java; Loggers; and Optionals. To review some of these aspects, answer the https://github.com/oliviercailloux/java-course/blob/master/Objects%20%26%20interfaces/README.adoc[Chess] exercice. Weight: 2.
+* Graded test: https://classroom.github.com/a/plKCWX3X[workers]. Weight: 2.
 * https://github.com/oliviercailloux/java-course/raw/master/Annotations/presentation.pdf[Annotations]
 * https://github.com/oliviercailloux/java-course/tree/master/SWT[SWT]
 
