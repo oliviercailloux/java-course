@@ -26,7 +26,7 @@ You can use at least one of the three major operating systems (Windows, a Linux 
 * Stéphane Airiau’s https://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/[course] (in French)
 * The https://app.gosoapbox.com/event/290081765/[confusion barometer]
 * Java API https://docs.oracle.com/en/java/javase/11/docs[Javadoc]
-* https://teams.microsoft.com/l/meetup-join/19%3Aaaa1a5bbda774320a271ee4b5ba402e4@thread.tacv2/1609694419561[Teams]
+* https://teams.microsoft.com/l/meetup-join/19%3Aaaa1a5bbda774320a271ee4b5ba402e4%40thread.tacv2/1620042250895?context=%7B%22Tid%22%3A%2281e7c4de-26c9-4531-b076-b70e2d75966e%22%2C%22Oid%22%3A%22db290b1a-6988-4d6b-91c6-9ddd729313f6%22%7D[Teams] (https://teams.microsoft.com/l/meetup-join/19%3Aaaa1a5bbda774320a271ee4b5ba402e4@thread.tacv2/1609694419561[old link])
 * https://github.com/oliviercailloux/Teaching/blob/main/README.adoc#take-notes[Take notes]!
 * https://github.com/oliviercailloux/java-course/blob/master/L3/Exercices%20notés.adoc[Exercices notés]
 
@@ -133,25 +133,29 @@ Homework (graded): persons-manager-home. Same instructions as the initial person
 === S11 (5 May)
 
 * Graded test: https://classroom.github.com/a/plKCWX3X[workers]. Weight: 2.
-* https://github.com/oliviercailloux/java-course/raw/master/Annotations/presentation.pdf[Annotations]
-* https://github.com/oliviercailloux/java-course/tree/master/SWT[SWT]
+* https://github.com/oliviercailloux/java-course/blob/master/SWT/README.adoc[SWT]
 
 Release 2 / 4: before end of 9 May.
 
 [[S12]]
-=== S12 ()
+=== S12 (17 May)
 
+Release 3 / 4: before end of 6 June.
+
+* https://github.com/oliviercailloux/java-course/raw/master/Annotations/presentation.pdf[Annotations]
 // Style/Method references
 
 //*Graded homework*: string-files-homework. Your last commit before the end of the 10th of May will be graded again, using the same set of tests as the graded test. This will count for 70% of a normal test. The string-files graded test counts for 30% or a normal test. Please commit on the same repository as the one already used (string-files).
 
 [[S13]]
-=== S13 ()
-* https://github.com/oliviercailloux/java-course/blob/master/Dev%20tools/CI.adoc[CI]: GitHub Workflows, by Avi Mimoun
+=== S13 (19 May)
+* https://github.com/oliviercailloux/java-course/blob/master/Dev%20tools/CI.adoc[CI]: GitHub Workflows
 * Work on project
 
 [[S14]]
-=== S14 ()
+=== S14 (2 June)
+
+(To update)
 
 * Graded test: score-keeper. About referring to objects from other objects. You will have 60 minutes (push before 9:35). There will be several interfaces, you only have to implement `MyScoreManager`. (You may need to implement other classes to achieve this.) There is no documentation in this project: you will have to read the unit tests to understand what the class is supposed to do.
 * Licenses and philosophy: https://www.gnu.org/philosophy/philosophy.html[GNU]; https://opensource.org/[OSI]; Copyleft (GNU https://opensource.org/licenses/GPL-3.0[GPL]); Non-copyleft (https://opensource.org/licenses/MIT[MIT])
@@ -163,7 +167,9 @@ Release 2 / 4: before end of 9 May.
 Third release before the end of the 14th of June.
 
 [[S15]]
-=== S15 ()
+=== S15 (14 June)
+
+(To update)
 
 * Answer for chess and https://github.com/oliviercailloux/samples-scorers[scorers]: look at the `impl` branch.
 * Work on project
@@ -171,7 +177,9 @@ Third release before the end of the 14th of June.
 // https://github.com/oliviercailloux/samples-chess
 
 [[S16]]
-=== S16 ()
+=== S16 (16 June)
+
+(To update)
 
 * Work on project
 * Presentation before end of the 2nd of July, directly in `master`, in your documentation folder, named `Présentation 2020.pdf`.
@@ -179,7 +187,9 @@ Third release before the end of the 14th of June.
 Fourth and last release before the end of the 28th of June.
 
 [[S17]]
-=== S17 ()
+=== S17 (30 June)
+
+(To update)
 
 * Présentations : 
 https://github.com/Julienchilhagopian/J-Voting/raw/master/Doc/Pr%C3%A9sentation%202020.pdf[J-Voting], 

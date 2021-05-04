@@ -14,7 +14,7 @@ Eclipse publishes its artifacts to Maven Central for standalone reuse. It is sti
 <dependency>
 	<groupId>org.eclipse.platform</groupId>
 	<artifactId>org.eclipse.swt.gtk.linux.x86_64</artifactId>
-	<version>3.114.0</version>
+	<version>3.116.0</version>
 	<optional>true</optional>
 	<exclusions>
 		<exclusion>
@@ -33,7 +33,7 @@ You need to replace the artifactId with the one corresponding to your platform (
 <dependency>
 	<groupId>org.eclipse.platform</groupId>
 	<artifactId>org.eclipse.jface</artifactId>
-	<version>3.19.0</version>
+	<version>3.22.100</version>
 	<exclusions>
 		<exclusion>
 			<groupId>org.eclipse.platform</groupId>
@@ -56,6 +56,11 @@ Further notes:
 // https://bugs.eclipse.org/bugs/show_bug.cgi?id=520337 - My suggestion
 
 // 515137 - publish a pom as a kind of target platform definition for maven consumers
+
+== Exercice: Hello button
+* Configure a project for SWT as indicated here above.
+* Follow Vogella’s tutorial on SWT, section 1.3. “Event loop”, to open a window. Test that it works.
+* Follow his section 4.2. “Constructing and configuring widgets” to add a button to the shell. Name it `hello`. Add a selection listener on the button that logs the text `Hello!` when the button is pressed. Test that it works.
 
 == References
 
