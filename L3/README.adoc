@@ -133,7 +133,6 @@ Homework (graded): persons-manager-home. Same instructions as the initial person
 === S11 (5 May)
 
 * Graded test: https://classroom.github.com/a/plKCWX3X[workers]. Weight: 2.
-* https://github.com/oliviercailloux/java-course/blob/master/SWT/README.adoc[SWT]
 
 Release 2 / 4: before end of 9 May.
 
@@ -142,6 +141,7 @@ Release 2 / 4: before end of 9 May.
 
 Release 3 / 4: before end of 6 June.
 
+* https://github.com/oliviercailloux/java-course/blob/master/SWT/README.adoc[SWT]
 * https://github.com/oliviercailloux/java-course/raw/master/Annotations/presentation.pdf[Annotations]
 // Style/Method references
 
