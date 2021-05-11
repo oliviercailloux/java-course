@@ -28,3 +28,6 @@ Assuming you have implemented a class `Pair` as requested https://github.com/oli
 
 Create two static factory methods for your class `Pair`. One that creates a pair holding twice the same element, and one that creates a pair with elements that are guaranteed to be different.
 
+== Design a simple, unique constructor
+A class should have a unique private constructor that should be guaranteed to succeed and return reasonably quickly. Thus, it should not throw exceptions and should not engage in lengthy computations, spawn new threads, or anything fancy of that sort. If your class should do something risky or fancy, do it in another method than its constructor, and call that method (from the static factory method, possibly). This separates concerns clearly, and permits to decompose object creation and object use.
+
