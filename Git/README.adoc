@@ -6,7 +6,7 @@ Prerequisites:
 - We will start learning with the command line interface of git. If you are not used to using a shell, read the https://github.com/oliviercailloux/java-course/blob/master/Git/Shell.adoc[Shell] document.
 Under Windows, use Git BASH (included in git https://gitforwindows.org/[for Windows]). As Git BASH emulates a Linux environment, you use Linux-like commands there. (Power users may prefer to use https://www.develves.net/blogs/asd/articles/using-git-with-powershell-on-windows-10/[PowerShell].)
 
-Then see https://raw.githubusercontent.com/oliviercailloux/java-course/master/Git/Pr%C3%A9sentation/presentation.pdf[présentation] (or read below) and https://github.com/oliviercailloux/java-course/blob/master/Git/Exercices.adoc[exercices].
+Then see https://raw.githubusercontent.com/oliviercailloux/java-course/master/Git/Pr%C3%A9sentation/presentation.pdf[présentation] (or read below), https://github.com/oliviercailloux/java-course/blob/master/Git/Exercices.adoc[exercices], and https://github.com/oliviercailloux/java-course/blob/master/Git/Best%20practices.adoc[best practices].
 
 == Learning the basics
 There are two ways to learn the basics of Git: the frustrating and long way, and the nice and short way. The frustrating and long way is the one you find yourself into if you do not read anything about git (because you do not have time) and just try to deal with it by running commands that you found on the web, that you do not fully understand, that you supposed would achieve just what you need, and that instead created a mess that you ignore how to repair.
