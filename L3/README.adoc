@@ -141,8 +141,8 @@ Release 2 / 4: before end of 9 May.
 
 Release 3 / 4: before end of 6 June.
 
-* https://github.com/oliviercailloux/java-course/blob/master/SWT/README.adoc[SWT]
 * https://github.com/oliviercailloux/java-course/raw/master/Annotations/presentation.pdf[Annotations]
+* https://github.com/oliviercailloux/java-course/blob/master/SWT/README.adoc[SWT]
 // Style/Method references
 
 //*Graded homework*: string-files-homework. Your last commit before the end of the 10th of May will be graded again, using the same set of tests as the graded test. This will count for 70% of a normal test. The string-files graded test counts for 30% or a normal test. Please commit on the same repository as the one already used (string-files).
