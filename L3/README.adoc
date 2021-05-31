@@ -155,26 +155,14 @@ Release 3 / 4: before end of 6 June.
 [[S14]]
 === S14 (2 June)
 
-(To update)
-
-* Graded test: score-keeper. About referring to objects from other objects. You will have 60 minutes (push before 9:35). There will be several interfaces, you only have to implement `MyScoreManager`. (You may need to implement other classes to achieve this.) There is no documentation in this project: you will have to read the unit tests to understand what the class is supposed to do.
 * Licenses and philosophy: https://www.gnu.org/philosophy/philosophy.html[GNU]; https://opensource.org/[OSI]; Copyleft (GNU https://opensource.org/licenses/GPL-3.0[GPL]); Non-copyleft (https://opensource.org/licenses/MIT[MIT])
-* Parsing HTML: https://github.com/oliviercailloux/java-course/blob/master/DOM.adoc[DOM]
-* Accessing REST web services: https://github.com/oliviercailloux/java-course/blob/master/WS%20client/JAX-RS%20client.adoc[JAX-RS client]
-
-*Graded homework*: chess-homework. Your last commit before the end of the 24th of May will be graded again, using the same set of tests as the graded test. This will count for 70% of a normal test. The chess graded test counts for 30% or a normal test. Please commit on the same repository as the one already used (chess).
-
-Third release before the end of the 14th of June.
+* Parsing HTML (info): https://github.com/oliviercailloux/java-course/blob/master/DOM.adoc[DOM]
+* Accessing REST web services (info): https://github.com/oliviercailloux/java-course/blob/master/WS%20client/JAX-RS%20client.adoc[JAX-RS client]
 
 [[S15]]
 === S15 (14 June)
 
-(To update)
-
-* Answer for chess and https://github.com/oliviercailloux/samples-scorers[scorers]: look at the `impl` branch.
-* Work on project
-
-// https://github.com/oliviercailloux/samples-chess
+Release 4: before end of 27 June.
 
 [[S16]]
 === S16 (16 June)
@@ -182,7 +170,7 @@ Third release before the end of the 14th of June.
 (To update)
 
 * Work on project
-* Presentation before end of the 2nd of July, directly in `master`, in your documentation folder, named `Présentation 2020.pdf`.
+* Presentation before end of 27 June, directly in `master`, in your documentation folder, named `Présentation 2021.pdf`.
 
 Fourth and last release before the end of the 28th of June.
 
