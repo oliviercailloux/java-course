@@ -155,7 +155,7 @@ Release 3 / 4: before end of 6 June.
 [[S14]]
 === S14 (2 June)
 
-* Licenses and philosophy: https://www.gnu.org/philosophy/philosophy.html[GNU]; https://opensource.org/[OSI]; Copyleft (GNU https://opensource.org/licenses/GPL-3.0[GPL]); Non-copyleft (https://opensource.org/licenses/MIT[MIT])
+* Info about https://github.com/oliviercailloux/projets/raw/master/Licences/Declaration%20of%20licensing.odt[Declarations of licensing]. Licenses and philosophy: https://www.gnu.org/philosophy/philosophy.html[GNU]; https://opensource.org/[OSI]; Copyleft (GNU https://opensource.org/licenses/GPL-3.0[GPL]); Non-copyleft (https://opensource.org/licenses/MIT[MIT])
 * Parsing HTML (info): https://github.com/oliviercailloux/java-course/blob/master/DOM.adoc[DOM]
 * Accessing REST web services (info): https://github.com/oliviercailloux/java-course/blob/master/WS%20client/JAX-RS%20client.adoc[JAX-RS client]
 
