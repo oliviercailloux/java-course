@@ -169,7 +169,7 @@ Release 4: before end of 27 June.
 
 * Work on project
 
-Presentation before end of 27 June, directly in `master`, in your documentation folder, named `Présentation 2021.pdf`.
+Presentation before end of 27 June, directly in `master`, in your documentation folder, named `Présentation 2021.pdf`. This may be a non-entirely final version, to be finalized, if required, on the 28th, depending on what will be merged effectively.
 
 [[S17]]
 === S17 (30 June)
