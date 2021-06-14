@@ -187,8 +187,8 @@ Presentation before end of 27 June, directly in `master`, in your documentation 
 ** Depuis l’ordinateur de présentation, *pas* le vôtre (prévoyez des captures d’écran en plan B)
 ** Noté : intérêt pour l’audience ; compréhension par l’audience du contexte et de l’objectif du projet ; compréhension par l’audience de l’architecture du code et des aspects techniques ; distinction claire des fcts déjà présentes VS ajoutées ; originalité & créativité éventuelle ; …
 * Votes pour la meilleure amélioration
-* Evals, et https://github.com/oliviercailloux/projets/raw/master/Licences/Declaration%20of%20licensing.odt[Declarations of licensing] : à votre délégué, Maxime.
+* Evals, et déclarations de licences : à votre délégué, Maxime.
 ** Envoyer un fichier texte (format Asciidoctor ou simple texte) contenant votre évaluation du cours Java et du cours UML (https://github.com/oliviercailloux/java-course/raw/master/L3/Appr%C3%A9ciation%20Java.pdf[inspiration]), ou remettre une version papier. Sujet : « Fin cours Java ».
-** Remettre la déclaration de licence papier avec toutes les signatures de l’équipe, ou votre décision collective de ne pas signer.
+** Remettre la https://github.com/oliviercailloux/projets/raw/master/Licences/Declaration%20of%20licensing.odt[déclaration de licence] papier avec toutes les signatures de l’équipe, ou votre décision collective de ne pas signer.
 ** Il me transmettra vos déclarations et évaluations *après remise des notes finales*.
 
