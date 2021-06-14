@@ -132,7 +132,7 @@ Homework (graded): persons-manager-home. Same instructions as the initial person
 [[S11]]
 === S11 (5 May)
 
-* Graded test: https://classroom.github.com/a/plKCWX3X[workers]. Weight: 2.
+* Graded test: https://classroom.github.com/a/plKCWX3X[workers]. Deadline at 14:48, plus five minutes for penalized late commits. Weight: 2.
 
 Release 2 / 4: before end of 9 May.
 
@@ -155,7 +155,7 @@ Release 3 / 4: before end of 6 June.
 [[S14]]
 === S14 (2 June)
 
-* Info about https://github.com/oliviercailloux/projets/raw/master/Licences/Declaration%20of%20licensing.odt[Declarations of licensing]. Licenses and philosophy: https://www.gnu.org/philosophy/philosophy.html[GNU]; https://opensource.org/[OSI]; Copyleft (GNU https://opensource.org/licenses/GPL-3.0[GPL]); Non-copyleft (https://opensource.org/licenses/MIT[MIT])
+* Info about https://github.com/oliviercailloux/projets/raw/master/Licences/Declaration%20of%20licensing.odt[Declarations of licensing]. https://github.com/oliviercailloux/projets/blob/master/Licences/Licence.adoc[Licences] and philosophy: https://www.gnu.org/philosophy/philosophy.html[GNU]; https://opensource.org/[OSI]; Copyleft (GNU https://opensource.org/licenses/GPL-3.0[GPL]); Non-copyleft (https://opensource.org/licenses/MIT[MIT])
 * Parsing HTML (info): https://github.com/oliviercailloux/java-course/blob/master/DOM.adoc[DOM]
 * Accessing REST web services (info): https://github.com/oliviercailloux/java-course/blob/master/WS%20client/JAX-RS%20client.adoc[JAX-RS client]
 
@@ -167,36 +167,28 @@ Release 4: before end of 27 June.
 [[S16]]
 === S16 (16 June)
 
-(To update)
-
 * Work on project
-* Presentation before end of 27 June, directly in `master`, in your documentation folder, named `Présentation 2021.pdf`.
 
-Fourth and last release before the end of the 28th of June.
+Presentation before end of 27 June, directly in `master`, in your documentation folder, named `Présentation 2021.pdf`.
 
 [[S17]]
 === S17 (30 June)
 
 *At Dauphine*
 
-(To update)
-
-* Présentations : 
-https://github.com/Julienchilhagopian/J-Voting/raw/master/Doc/Pr%C3%A9sentation%202020.pdf[J-Voting], 
-https://github.com/Sarah-Elhelw/teach_spreadsheets/raw/master/Doc/Presentation%202020.pdf[Teach-Spreadsheets], 
-https://github.com/av1m/Apartments/raw/master/Doc/Pr%C3%A9sentation%202020.pdf[Apartments], 
-https://github.com/sebastienbourg/J-Confs/raw/master/Doc/Pr%C3%A9sentation%202020.pdf[J-Confs], 
-https://github.com/marcellinodour/MIDO-SVG/raw/master/Doc/Pr%C3%A9sentation%202020.pdf[MIDO-SVG]
-** Démo *obligatoirement uniquement* de votre branche master (mais vous pouvez parler et montrer des diagrammes – ou d’autres informations – du reste du programme également)
+* Présentations (liste à mettre à jour) : 
+** https://github.com/Julienchilhagopian/J-Voting/raw/master/Doc/Pr%C3%A9sentation%202020.pdf[J-Voting], 
+** https://github.com/Sarah-Elhelw/teach_spreadsheets/raw/master/Doc/Presentation%202020.pdf[Teach-Spreadsheets], 
+** https://github.com/av1m/Apartments/raw/master/Doc/Pr%C3%A9sentation%202020.pdf[Apartments], 
+** https://github.com/sebastienbourg/J-Confs/raw/master/Doc/Pr%C3%A9sentation%202020.pdf[J-Confs], 
+** https://github.com/marcellinodour/MIDO-SVG/raw/master/Doc/Pr%C3%A9sentation%202020.pdf[MIDO-SVG]
+** Démo *obligatoirement uniquement* de votre branche master (mais vous pouvez parler et montrer des informations d’autres branches)
 ** 15 à 30 minutes
+** Depuis l’ordinateur de présentation, *pas* le vôtre (prévoyez des captures d’écran en plan B)
 ** Noté : intérêt pour l’audience ; compréhension par l’audience du contexte et de l’objectif du projet ; compréhension par l’audience de l’architecture du code et des aspects techniques ; distinction claire des fcts déjà présentes VS ajoutées ; originalité & créativité éventuelle ; …
-* Votes
-* Evals, and https://github.com/oliviercailloux/projets/blob/master/Licences/Licence.adoc[Licences]: https://github.com/oliviercailloux/projets/raw/master/Licences/Declaration%20of%20licensing.odt[Decl] : envoyer à votre délégué, Marcellino, vos évaluations et votre déclaration de licence. Sujet : « Fin cours Java ».
-** Envoyer un fichier texte (format Asciidoctor ou simple texte) contenant votre évaluation du cours Java et UML (https://github.com/oliviercailloux/java-course/raw/master/L3/Appr%C3%A9ciation%20Java.pdf[inspiration]).
-** Envoyer un PDF scanné (ou photographié) avec toutes les signatures de l’équipe.
-** Si pas possible : lui envoyer un PDF signé et scanné (ou photographié) par membre pour ceux qui peuvent et une déclaration d’intention écrite par e-mail. Vous vous engagez à signer cette déclaration dès que possible. Laissez-moi un moyen de vous contacter !
-** Ou lui indiquer par e-mail votre décision collective de ne pas signer.
-** Il me transmettra vos déclarations et évaluations après remise des notes finales.
-
-//** Code & diapos sur ordinateur de présentation
+* Votes pour la meilleure amélioration
+* Evals, et https://github.com/oliviercailloux/projets/raw/master/Licences/Declaration%20of%20licensing.odt[Declarations of licensing] : à votre délégué, Maxime.
+** Envoyer un fichier texte (format Asciidoctor ou simple texte) contenant votre évaluation du cours Java et du cours UML (https://github.com/oliviercailloux/java-course/raw/master/L3/Appr%C3%A9ciation%20Java.pdf[inspiration]), ou remettre une version papier. Sujet : « Fin cours Java ».
+** Remettre la déclaration de licence papier avec toutes les signatures de l’équipe, ou votre décision collective de ne pas signer.
+** Il me transmettra vos déclarations et évaluations *après remise des notes finales*.
 
