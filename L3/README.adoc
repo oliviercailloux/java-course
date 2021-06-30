@@ -191,4 +191,5 @@ Presentation before end of 27 June, directly in `master`, in your documentation 
 ** Envoyer un fichier texte (format Asciidoctor ou simple texte) contenant votre évaluation du cours Java et du cours UML (https://github.com/oliviercailloux/java-course/raw/master/L3/Appr%C3%A9ciation%20Java.pdf[inspiration]), ou remettre une version papier. Sujet : « Fin cours Java ».
 ** Remettre la https://github.com/oliviercailloux/projets/raw/master/Licences/Declaration%20of%20licensing.odt[déclaration de licence] papier avec toutes les signatures de l’équipe, ou votre décision collective de ne pas signer.
 ** Il me transmettra vos déclarations et évaluations *après remise des notes finales*.
+* http://whale.imag.fr/polls/vote/cc43561b-7545-4ee3-9844-8530c621a44a
 
