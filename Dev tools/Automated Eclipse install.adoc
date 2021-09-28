@@ -8,16 +8,6 @@ Here is how I automate my Eclipse installation.
 * `sudo chown -R root:staff /usr/local/share/eclipse-java-2021-09-R-linux-gtk-x86_64/`
 * Delete your `.eclipse` folder and your previous Eclipse workspace to forget possible unwanted residuals from previous installations
 
-// 2021-09-R:
-// 46 features, 433 plugins
-// 88 features, 926 plugins after Papyrus SDK: 42 features and 345 plugins with papyrus in the name; gmf; apache batik; and so on.
-// 90 features, 954 plugins after Papyrus Java: 44, 372 whose name contain papyrus.
-// jee-2020-12: 163 features, 920 plugins
-// 165 features, 927 plugins after checkstyle
-// 183 features, 1287 plugins after papyrus uml: 18 features and 229 plugins with papyrus in the name; gmf; apache batik; and so on.
-// 207 (206 now!) features, 1404 (1403 now!) plugins after papyrus sdk: 42 features and 344 plugins with papyrus in the name; gmf; apache batik; and so on.
-// 208 features (plus org.eclipse.papyrus.designer.languages.{common, java}), 1431 plugins (+ 28) after papyrus Java: 44 features and 371 plugins with papyrus in the name, plus org.eclipse.cdt.core_7.1.100.202012020953
-
 ////
 == Automatic workspace selection
 Tried the following; fails at start, Eclipse seems confused.
@@ -35,51 +25,21 @@ mkdir -p ".eclipse/org.eclipse.platform_4.14.0_1448112854_linux_gtk_x86_64/confi
 == Shared plugins
 This uses the https://help.eclipse.org/2019-12/index.jsp?topic=/org.eclipse.platform.doc.isv/reference/misc/multi_user_installs.html[shared configuration] approach.
 
-To install Papyrus: `"/usr/local/share/eclipse-java-2021-09-R-linux-gtk-x86_64/eclipse" -nosplash -application "org.eclipse.equinox.p2.director" -repository "https://download.eclipse.org/releases/2021-03" -installIU "org.eclipse.papyrus.sdk.feature.feature.group"`. This installs 42 papyrus features and 477 plugins (among which 344 papyrus-specific plugins, gmf, apache batik, …). (Installing `org.eclipse.papyrus.uml.feature.feature.group` instead of `org.eclipse.papyrus.sdk.feature.feature.group`, which installs only 18 papyrus features and 360 plugins, does not seem to be sufficient, for example Papyrus project files do not open in that case.)
+To install Papyrus: `"/usr/local/share/eclipse-java-2021-09-R-linux-gtk-x86_64/eclipse" -nosplash -application "org.eclipse.equinox.p2.director" -repository "https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2021-09, https://download.eclipse.org/releases/2021-09, https://download.eclipse.org/xwt/milestones-1.7.0/1.7.0-S/" -installIU "org.eclipse.papyrus.sdk.feature.feature.group"`. 
 
-// Fails to find org.eclipse.papyrus.infra.feature.feature.group [3.1.0.202109161249,3.1.0.202109161249]
-// Works:
-// "/usr/local/share/eclipse-java-2021-09-R-linux-gtk-x86_64/eclipse" -nosplash -application "org.eclipse.equinox.p2.director" -repository "https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2021-09, https://download.eclipse.org/releases/2021-09, https://download.eclipse.org/cbi/tpd/3.0.0-SNAPSHOT/, https://download.eclipse.org/tools/orbit/downloads/drops/R20180206163158/repository/, https://download.eclipse.org/xwt/milestones-1.7.0/1.7.0-S/, https://download.eclipse.org/technology/epp/packages/latest/, https://download.eclipse.org/releases/latest" -installIU "org.eclipse.papyrus.sdk.feature.feature.group"
+.Further technicalities
+[%collapsible]
+====
+This installs 42 papyrus features, the `org.eclipse.xwt.feature_1.6.0.202105260718` feature, 348 papyrus plugins, and 154 other plugins (among which some related to gmf and apache batik, for example). 
 
-// Fails to find org.eclipse.papyrus.infra.feature.feature.group [3.1.0.202109161249,3.1.0.202109161249]:
-// "/usr/local/share/eclipse-java-2021-09-R-linux-gtk-x86_64/eclipse" -nosplash -application "org.eclipse.equinox.p2.director" -repository "https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2021-09" -installIU "org.eclipse.papyrus.sdk.feature.feature.group"
-// Fails to find org.eclipse.papyrus.infra.feature.feature.group [3.1.0.202109161249,3.1.0.202109161249]:
-// "/usr/local/share/eclipse-java-2021-09-R-linux-gtk-x86_64/eclipse" -nosplash -application "org.eclipse.equinox.p2.director" -repository "https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2021-09, https://download.eclipse.org/releases/2021-09" -installIU "org.eclipse.papyrus.sdk.feature.feature.group"
-// Fails to find org.eclipse.papyrus.infra.feature.feature.group [3.1.0.202109161249,3.1.0.202109161249]:
-// "/usr/local/share/eclipse-java-2021-09-R-linux-gtk-x86_64/eclipse" -nosplash -application "org.eclipse.equinox.p2.director" -repository "https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2021-09, https://download.eclipse.org/cbi/tpd/3.0.0-SNAPSHOT/" -installIU "org.eclipse.papyrus.sdk.feature.feature.group"
-// Fails to find org.eclipse.papyrus.infra.feature.feature.group [3.1.0.202109161249,3.1.0.202109161249]:
-// "/usr/local/share/eclipse-java-2021-09-R-linux-gtk-x86_64/eclipse" -nosplash -application "org.eclipse.equinox.p2.director" -repository "https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2021-09, https://download.eclipse.org/tools/orbit/downloads/drops/R20180206163158/repository/" -installIU "org.eclipse.papyrus.sdk.feature.feature.group"
-// Fails to find org.eclipse.papyrus.infra.feature.feature.group [3.1.0.202109161249,3.1.0.202109161249]:
-// "/usr/local/share/eclipse-java-2021-09-R-linux-gtk-x86_64/eclipse" -nosplash -application "org.eclipse.equinox.p2.director" -repository "https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2021-09, https://download.eclipse.org/xwt/milestones-1.7.0/1.7.0-S/" -installIU "org.eclipse.papyrus.sdk.feature.feature.group"
-// Fails to find org.eclipse.papyrus.infra.feature.feature.group [3.1.0.202109161249,3.1.0.202109161249]:
-// "/usr/local/share/eclipse-java-2021-09-R-linux-gtk-x86_64/eclipse" -nosplash -application "org.eclipse.equinox.p2.director" -repository "https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2021-09, https://download.eclipse.org/technology/epp/packages/latest/" -installIU "org.eclipse.papyrus.sdk.feature.feature.group"
-// Fails to find org.eclipse.papyrus.infra.feature.feature.group [3.1.0.202109161249,3.1.0.202109161249]:
-// "/usr/local/share/eclipse-java-2021-09-R-linux-gtk-x86_64/eclipse" -nosplash -application "org.eclipse.equinox.p2.director" -repository "https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2021-09, https://download.eclipse.org/releases/latest" -installIU "org.eclipse.papyrus.sdk.feature.feature.group"
-// Fails to find org.eclipse.papyrus.infra.feature.feature.group [3.1.0.202109161249,3.1.0.202109161249]:
-// "/usr/local/share/eclipse-java-2021-09-R-linux-gtk-x86_64/eclipse" -nosplash -application "org.eclipse.equinox.p2.director" -repository "https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2021-09, https://download.eclipse.org/eclipse/updates/4.21" -installIU "org.eclipse.papyrus.sdk.feature.feature.group"
+“Papyrus uses XWT to generate the "Properties View" for UML model editing” -- https://projects.eclipse.org/projects/technology.xwt. Oddly enough, both the releases/2021-09 and the xwt repositories are required for finding org.eclipse.papyrus.infra.feature.feature.group 3.1.0.202109161249.
 
-// Fails, “The installable unit org.eclipse.papyrus.sdk.feature.feature.group has not been found.”:
-// "/usr/local/share/eclipse-java-2021-09-R-linux-gtk-x86_64/eclipse" -nosplash -application "org.eclipse.equinox.p2.director" -repository "https://download.eclipse.org/releases/2021-09, https://download.eclipse.org/cbi/tpd/3.0.0-SNAPSHOT/, https://download.eclipse.org/tools/orbit/downloads/drops/R20180206163158/repository/, https://download.eclipse.org/xwt/milestones-1.7.0/1.7.0-S/, https://download.eclipse.org/technology/epp/packages/latest/, https://download.eclipse.org/releases/latest, https://download.eclipse.org/eclipse/updates/4.21" -installIU "org.eclipse.papyrus.sdk.feature.feature.group"
+On Eclipse version 2021-03, installing `org.eclipse.papyrus.uml.feature.feature.group` instead of `org.eclipse.papyrus.sdk.feature.feature.group`, which installs fewer features and plugins (18 and 360 instead of 42 and 477 on that version), does not seem to be sufficient, for example, Papyrus project files do not open in that case.
 
-// Fails to find org.eclipse.papyrus.infra.feature.feature.group [3.1.0.202109161249,3.1.0.202109161249]:
-// "/usr/local/share/eclipse-java-2021-09-R-linux-gtk-x86_64/eclipse" -nosplash -application "org.eclipse.equinox.p2.director" -repository "https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2021-09, https://download.eclipse.org/releases/2021-09, https://download.eclipse.org/cbi/tpd/3.0.0-SNAPSHOT/, https://download.eclipse.org/tools/orbit/downloads/drops/R20180206163158/repository/" -installIU "org.eclipse.papyrus.sdk.feature.feature.group"
-// Fails to find org.eclipse.papyrus.infra.feature.feature.group [3.1.0.202109161249,3.1.0.202109161249]:
-// "/usr/local/share/eclipse-java-2021-09-R-linux-gtk-x86_64/eclipse" -nosplash -application "org.eclipse.equinox.p2.director" -repository "https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2021-09, https://download.eclipse.org/releases/2021-09, https://download.eclipse.org/tools/orbit/downloads/drops/R20180206163158/repository/, https://download.eclipse.org/technology/epp/packages/latest/" -installIU "org.eclipse.papyrus.sdk.feature.feature.group"
-// Fails to find org.eclipse.papyrus.infra.feature.feature.group [3.1.0.202109161249,3.1.0.202109161249]:
-// "/usr/local/share/eclipse-java-2021-09-R-linux-gtk-x86_64/eclipse" -nosplash -application "org.eclipse.equinox.p2.director" -repository "https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2021-09, https://download.eclipse.org/releases/2021-09, https://download.eclipse.org/tools/orbit/downloads/drops/R20180206163158/repository/, https://download.eclipse.org/technology/epp/packages/latest/, https://download.eclipse.org/releases/latest" -installIU "org.eclipse.papyrus.sdk.feature.feature.group"
-// Fails to find org.eclipse.papyrus.infra.feature.feature.group [3.1.0.202109161249,3.1.0.202109161249]:
-// "/usr/local/share/eclipse-java-2021-09-R-linux-gtk-x86_64/eclipse" -nosplash -application "org.eclipse.equinox.p2.director" -repository "https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2021-09, https://download.eclipse.org/releases/2021-09, https://download.eclipse.org/technology/epp/packages/latest/" -installIU "org.eclipse.papyrus.sdk.feature.feature.group"
-
-Seems to work:
-"/usr/local/share/eclipse-java-2021-09-R-linux-gtk-x86_64/eclipse" -nosplash -application "org.eclipse.equinox.p2.director" -repository "https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2021-09, https://download.eclipse.org/releases/2021-09, https://download.eclipse.org/cbi/tpd/3.0.0-SNAPSHOT/, https://download.eclipse.org/xwt/milestones-1.7.0/1.7.0-S/, https://download.eclipse.org/technology/epp/packages/latest/" -installIU "org.eclipse.papyrus.sdk.feature.feature.group"
-
-// Fails to find org.eclipse.papyrus.infra.feature.feature.group [3.1.0.202109161249,3.1.0.202109161249]:
-// "/usr/local/share/eclipse-java-2021-09-R-linux-gtk-x86_64/eclipse" -nosplash -application "org.eclipse.equinox.p2.director" -repository "https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2021-09, https://download.eclipse.org/releases/2021-09, https://download.eclipse.org/cbi/tpd/3.0.0-SNAPSHOT/" -installIU "org.eclipse.papyrus.sdk.feature.feature.group"
-
-// “Papyrus uses XWT to generate the "Properties View" for UML model editing” -- https://projects.eclipse.org/projects/technology.xwt. Oddly enough, both the releases/2021-09 and the xwt repositories are required for finding org.eclipse.papyrus.infra.feature.feature.group 3.1.0.202109161249.
-"/usr/local/share/eclipse-java-2021-09-R-linux-gtk-x86_64/eclipse" -nosplash -application "org.eclipse.equinox.p2.director" -repository "https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2021-09, https://download.eclipse.org/releases/2021-09, https://download.eclipse.org/xwt/milestones-1.7.0/1.7.0-S/" -installIU "org.eclipse.papyrus.sdk.feature.feature.group"
-
-To install Papyrus Java profile, library and code generation (Incubation): `"/usr/local/share/eclipse-java-2021-09-R-linux-gtk-x86_64/eclipse" -nosplash -application "org.eclipse.equinox.p2.director" -repository "https://download.eclipse.org/releases/2021-03, https://download.eclipse.org/modeling/mdt/papyrus/components/designer/, https://download.eclipse.org/modeling/mdt/papyrus/components/marte/" -installIU "org.eclipse.papyrus.designer.languages.java.feature.feature.group"`.
+// 2021-09-R:
+// 45 features, 432 plugins; visible in “Eclipse IDE Installation Details”: 27 features, 432 plugins.
+// 88 features, 934 plugins after Papyrus SDK: 42 features and 348 plugins whose name start with “org.eclipse.papyrus.”; plus gmf; apache batik; and so on.
+====
 
 https://stackoverflow.com/a/38956772[This] lets you find the data for other plugins.
 
