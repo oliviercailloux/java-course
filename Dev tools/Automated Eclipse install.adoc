@@ -23,7 +23,7 @@ To install Papyrus: `"/usr/local/share/eclipse-java-2021-09-R-linux-gtk-x86_64/e
 .Further technicalities
 [%collapsible]
 ====
-This installs 42 papyrus features, the `org.eclipse.xwt.feature_1.6.0.202105260718` feature, 348 papyrus plugins, and 154 other plugins (among which some related to gmf and apache batik, for example). The installer may appear stuck as it does not show its progress (for me, it takes about 10 minutes); you can track it with `ls /usr/local/share/eclipse-java-2021-09-R-linux-gtk-x86_64/plugins/ | wc -l`.
+This installs 42 papyrus features, the `org.eclipse.xwt.feature_1.6.0.202105260718` feature, 348 papyrus plugins, and 154 other plugins (among which some related to gmf and apache batik, for example). The installer may appear stuck as it does not show its progress, you can track it with `ls /usr/local/share/eclipse-java-2021-09-R-linux-gtk-x86_64/plugins/ | wc -l`. Installation should take about 8 minutes.
 
 “Papyrus uses XWT to generate the "Properties View" for UML model editing” -- https://projects.eclipse.org/projects/technology.xwt. Oddly enough, both the releases/2021-09 and the xwt repositories are required for finding `org.eclipse.papyrus.infra.feature.feature.group` 3.1.0.202109161249.
 
@@ -43,10 +43,10 @@ To install JavaScript, XML, HTML editors: `"/usr/local/share/eclipse-java-2021-0
 .Further technicalities
 [%collapsible]
 ====
-Installing only `org.eclipse.wst.web_ui.feature.feature.group` also installs the dependent plugins `org.eclipse.wst.json_ui.feature`; `org.eclipse.wst.xml_ui.feature` and more, but does not by itself permit to edit JS or HTML files with Eclipe support.
+Installing only `org.eclipse.wst.web_ui.feature.feature.group` also installs the dependent features `org.eclipse.wst.json_ui.feature`, `org.eclipse.wst.xml_ui.feature` and more, but does not by itself permit to edit JS or HTML files with Eclipse support.
 Installing only `org.eclipse.wildwebdeveloper.feature.feature.group` does add support to edit JS and HTML files, but without even basic validation (such as matching tags).
 
-I believe that installing manually the required components from Eclipse WDT 3.23 from the Market platform (Eclipse JSON Editor and Tools; Eclipse WDT; Eclipse Web JS DT; Eclipse XML Editors and Tools; Wild Web Developer) is equivalent to this command.
+I believe that installing manually the required components from Eclipse WDT 3.23 from the Market platform (namely, Eclipse JSON Editor and Tools; Eclipse WDT; Eclipse Web JS DT; Eclipse XML Editors and Tools; Wild Web Developer) is equivalent to this command.
 
 ////
 JS:
