@@ -13,14 +13,7 @@ Here is how I automate my Eclipse installation.
 Tried the following; fails at start, Eclipse seems confused.
 mkdir -p ".eclipse/org.eclipse.platform_4.14.0_1448112854_linux_gtk_x86_64/configuration/.settings" ; printf "RECENT_WORKSPACES=/home/olivier/Local/eclipse-workspace\nSHOW_WORKSPACE_SELECTION_DIALOG=false" > ".eclipse/org.eclipse.platform_4.14.0_1448112854_linux_gtk_x86_64/configuration/.settings/org.eclipse.ui.ide.prefs"
 mkdir -p ".eclipse/org.eclipse.platform_4.14.0_1448112854_linux_gtk_x86_64/configuration/.settings" ; echo "SHOW_WORKSPACE_SELECTION_DIALOG=false" > ".eclipse/org.eclipse.platform_4.14.0_1448112854_linux_gtk_x86_64/configuration/.settings/org.eclipse.ui.ide.prefs"
-
-// tried to “install” again the Checkstyle plug-in for the local user. This creates ".eclipse/org.eclipse.platform_4.14.0_1448112854_linux_gtk_x86_64/configuration/", but not …/.settings.
 ////
-
-//TODO set up JavaScript Development Tools in Eclipse Web Tools Platform, perhaps, Eclipse Web Tools Platform JavaScript Development Tools Core 2.0.303.v202007221940 org.eclipse.wst.jsdt.core, for having the Generic Text Editor which highlights js.
-
-// https://github.com/google/google-java-format#eclipse
-// sudo mv google-java-format-eclipse-plugin-1.11.0.jar "/usr/local/share/eclipse-java-2021-09-R-linux-gtk-x86_64/dropins"
 
 == Shared plugins
 This uses the https://help.eclipse.org/2019-12/index.jsp?topic=/org.eclipse.platform.doc.isv/reference/misc/multi_user_installs.html[shared configuration] approach.
@@ -36,11 +29,35 @@ This installs 42 papyrus features, the `org.eclipse.xwt.feature_1.6.0.2021052607
 
 On Eclipse version 2021-03, installing `org.eclipse.papyrus.uml.feature.feature.group` instead of `org.eclipse.papyrus.sdk.feature.feature.group`, which installs fewer features and plugins (18 and 360 instead of 42 and 477 on that version), does not seem to be sufficient, for example, Papyrus project files do not open in that case.
 
-// 2021-09-R:
-// 45 features, 432 plugins; visible in “Eclipse IDE Installation Details”: 27 features, 432 plugins.
-// 88 features, 934 plugins after Papyrus SDK: 42 features and 348 plugins whose name start with “org.eclipse.papyrus.”; plus gmf; apache batik; and so on.
+////
+2021-09-R:
+ 45 features, 432 plugins; visible in “Eclipse IDE Installation Details”: 27 features, 432 plugins.
+ 88 features, 934 plugins after Papyrus SDK: 42 features and 348 plugins whose name start with “org.eclipse.papyrus.”; plus gmf; apache batik; and so on.
+ After Papyrus & Eclipse WDT: 104 features, 999 plugins.
+ After web_ui (alone): 59 features, 492 plugins.
+////
 ====
 
+To install JavaScript, XML, HTML editors: `"/usr/local/share/eclipse-java-2021-09-R-linux-gtk-x86_64/eclipse" -nosplash -application "org.eclipse.equinox.p2.director" -repository "https://download.eclipse.org/releases/2021-09" -installIU "org.eclipse.wildwebdeveloper.feature.feature.group, org.eclipse.wst.web_ui.feature.feature.group"`
+
+.Further technicalities
+[%collapsible]
+====
+Installing only `org.eclipse.wst.web_ui.feature.feature.group` also installs the dependent plugins `org.eclipse.wst.json_ui.feature`; `org.eclipse.wst.xml_ui.feature` and more, but does not by itself permit to edit JS or HTML files with Eclipe support.
+Installing only `org.eclipse.wildwebdeveloper.feature.feature.group` does add support to edit JS and HTML files, but without even basic validation (such as matching tags).
+
+I believe that installing manually the required components from Eclipse WDT 3.23 from the Market platform (Eclipse JSON Editor and Tools; Eclipse WDT; Eclipse Web JS DT; Eclipse XML Editors and Tools; Wild Web Developer) is equivalent to this command.
+
+////
+JS:
+	- Eclipse Java WDT - JS Support 3.23.0; org.eclipse.jst.web_js_support.feature.feature.group
+	- Eclipse Web JS DT 3.22.0; org.eclipse.wst.web_js_support.feature.feature.group
+	- JS DT; org.eclipse.wst.jsdt.feature.f.g => non, n’édite ni HTML ni JS.
+	- Wild Web Developer; org.eclipse.wildwebdeveloper.feature.feature.group
+	Proposes to install Eclipse WDT 3.23 from /releases/latest when opening a JS file.
+////
+====
+	
 https://stackoverflow.com/a/38956772[This] lets you find the data for other plugins.
 
 == Others
