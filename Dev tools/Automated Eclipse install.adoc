@@ -18,7 +18,7 @@ mkdir -p ".eclipse/org.eclipse.platform_4.14.0_1448112854_linux_gtk_x86_64/confi
 == Shared plugins
 This uses the https://help.eclipse.org/2019-12/index.jsp?topic=/org.eclipse.platform.doc.isv/reference/misc/multi_user_installs.html[shared configuration] approach.
 
-To install Papyrus: `"/usr/local/share/eclipse-java-2021-09-R-linux-gtk-x86_64/eclipse" -nosplash -application "org.eclipse.equinox.p2.director" -repository "https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2021-09, \https://download.eclipse.org/releases/2021-09, https://download.eclipse.org/xwt/milestones-1.7.0/1.7.0-S/" -installIU "org.eclipse.papyrus.sdk.feature.feature.group"`. 
+To install Papyrus: `"/usr/local/share/eclipse-java-2021-09-R-linux-gtk-x86_64/eclipse" -nosplash -application "org.eclipse.equinox.p2.director" -repository "https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2021-09, \https://download.eclipse.org/releases/2021-09, \https://download.eclipse.org/xwt/milestones-1.7.0/1.7.0-S/" -installIU "org.eclipse.papyrus.sdk.feature.feature.group"`. 
 
 .Further technicalities
 [%collapsible]
