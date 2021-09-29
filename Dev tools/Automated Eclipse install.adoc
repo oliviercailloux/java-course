@@ -18,14 +18,14 @@ mkdir -p ".eclipse/org.eclipse.platform_4.14.0_1448112854_linux_gtk_x86_64/confi
 == Shared plugins
 This uses the https://help.eclipse.org/2019-12/index.jsp?topic=/org.eclipse.platform.doc.isv/reference/misc/multi_user_installs.html[shared configuration] approach.
 
-To install Papyrus: `"/usr/local/share/eclipse-java-2021-09-R-linux-gtk-x86_64/eclipse" -nosplash -application "org.eclipse.equinox.p2.director" -repository "https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2021-09, https://download.eclipse.org/releases/2021-09, https://download.eclipse.org/xwt/milestones-1.7.0/1.7.0-S/" -installIU "org.eclipse.papyrus.sdk.feature.feature.group"`. 
+To install Papyrus: `"/usr/local/share/eclipse-java-2021-09-R-linux-gtk-x86_64/eclipse" -nosplash -application "org.eclipse.equinox.p2.director" -repository "https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2021-09, \https://download.eclipse.org/releases/2021-09, https://download.eclipse.org/xwt/milestones-1.7.0/1.7.0-S/" -installIU "org.eclipse.papyrus.sdk.feature.feature.group"`. 
 
 .Further technicalities
 [%collapsible]
 ====
-This installs 42 papyrus features, the `org.eclipse.xwt.feature_1.6.0.202105260718` feature, 348 papyrus plugins, and 154 other plugins (among which some related to gmf and apache batik, for example). 
+This installs 42 papyrus features, the `org.eclipse.xwt.feature_1.6.0.202105260718` feature, 348 papyrus plugins, and 154 other plugins (among which some related to gmf and apache batik, for example). The installer may appear stuck as it does not show its progress (for me, it takes about 10 minutes); you can track it with `ls /usr/local/share/eclipse-java-2021-09-R-linux-gtk-x86_64/plugins/ | wc -l`.
 
-“Papyrus uses XWT to generate the "Properties View" for UML model editing” -- https://projects.eclipse.org/projects/technology.xwt. Oddly enough, both the releases/2021-09 and the xwt repositories are required for finding org.eclipse.papyrus.infra.feature.feature.group 3.1.0.202109161249.
+“Papyrus uses XWT to generate the "Properties View" for UML model editing” -- https://projects.eclipse.org/projects/technology.xwt. Oddly enough, both the releases/2021-09 and the xwt repositories are required for finding `org.eclipse.papyrus.infra.feature.feature.group` 3.1.0.202109161249.
 
 On Eclipse version 2021-03, installing `org.eclipse.papyrus.uml.feature.feature.group` instead of `org.eclipse.papyrus.sdk.feature.feature.group`, which installs fewer features and plugins (18 and 360 instead of 42 and 477 on that version), does not seem to be sufficient, for example, Papyrus project files do not open in that case.
 
