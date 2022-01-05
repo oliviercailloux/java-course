@@ -26,7 +26,7 @@ You can use at least one of the three major operating systems (Windows, a Linux 
 * Java API https://docs.oracle.com/en/java/javase/11/docs[Javadoc]
 * https://teams.microsoft.com/l/meetup-join/19%3Aaaa1a5bbda774320a271ee4b5ba402e4%40thread.tacv2/1620042250895?context=%7B%22Tid%22%3A%2281e7c4de-26c9-4531-b076-b70e2d75966e%22%2C%22Oid%22%3A%22db290b1a-6988-4d6b-91c6-9ddd729313f6%22%7D[Teams] (https://teams.microsoft.com/l/meetup-join/19%3Aaaa1a5bbda774320a271ee4b5ba402e4@thread.tacv2/1609694419561[old link])
 * https://github.com/oliviercailloux/Teaching/blob/main/README.adoc#take-notes[Take notes]!
-* https://github.com/oliviercailloux/java-course/blob/master/L3/Exercices%20notés.adoc[Exercices notés]
+* https://github.com/oliviercailloux/java-course/blob/master/L3/Exercices%20not%C3%A9s.adoc[Exercices notés]
 
 //* https://whiteboard.fi/g67kd
 
