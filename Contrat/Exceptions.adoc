@@ -14,7 +14,7 @@ A method must (by the rules of Java) declare all exceptions that it can possibly
 
 == Throw appropriate exceptions
 === Throw `IllegalStateException` when the state is incorrect
-When your object, or the external environment, is in a state that does not permit to call the current method, throw `IllegalStateException`. Even if the problem is that some internal reference is `null`. For example, your `Database` class requires the `connection` field to be not `null` before calling `requestData()`. If the user breaks this requirement, the method `requestData()` should throw `IllegalStateException`, not `NullPointerException` (which, by convention, indicates that a received _argument_ is `null` and should not be). There is no incorrect argument here! Thus, you may not use `https://guava.dev/releases/snapshot/api/docs/com/google/common/base/Preconditions.html#checkNotNull-T-{emptyattribute}[checkNotNull](connection)` in that case.
+When your object, or the external environment, is in a state that does not permit to call the current method, throw `IllegalStateException`. Even if the problem is that some internal reference is `null`. For example, your `Database` class requires the `connection` field to be not `null` before calling `requestData()`. If the user breaks this requirement, the method `requestData()` should throw `IllegalStateException`, not `NullPointerException` (which, by convention, indicates that a received _argument_ is `null` and should not be). There is no incorrect argument here! Thus, you may not use `https://guava.dev/releases/snapshot/api/docs/com/google/common/base/Preconditions.html#checkNotNull(T)[checkNotNull](connection)` in that case.
 
 === Throw `IllegalArgumentException` when an argument is incorrect
 When an argument received in your method is incorrect, throw `IllegalArgumentException` (except when the argument is `null`, see below). Even if the problem is that this incorrect argument yields a `null` reference in some internal call. For example, if you require an existing key as an argument, and you call `map.get(arg)` and this returns `null` because there is no key corresponding to `arg` in `map`, you should throw `IllegalArgumentException` and `NullPointerException`.
@@ -27,7 +27,7 @@ The argument in favor of the latter is that it is clear to the caller that a fau
 Thus, I consider it sensible to follow the standard. And the standard is to throw `NullPointerException`.
 
 * Many APIs in the JDK pro-actively throws `NullPointerException`, e.g. https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html#containsKey(java.lang.Object){emptyattribute}[`Map.containsKey`], https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Objects.html#requireNonNull(T){emptyattribute}[`Objects.requireNonNull`] (https://stackoverflow.com/questions/3881/illegalargumentexception-or-nullpointerexception-for-a-null-parameter/6358#6358[thanks]{emptyattribute}.)
-* https://guava.dev/releases/snapshot/api/docs/com/google/common/base/Preconditions.html#checkNotNull-T-[Guava] also favors `NullPointerException` over `IllegalArgumentException`.
+* https://guava.dev/releases/snapshot/api/docs/com/google/common/base/Preconditions.html#checkNotNull(T)[Guava] also favors `NullPointerException` over `IllegalArgumentException`.
 * “Effective Java” agrees, see https://stackoverflow.com/a/6358[SO].
 
 === Throw `VerifyException` when some internal verification fails
