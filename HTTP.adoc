@@ -86,15 +86,19 @@ Quick help:
 
 == Appendices
 === Various
-* HTTP/2 is standardized by W3C as https://tools.ietf.org/html/rfc7540[RFC 7540] (HTTP/1.1 was previously defined under https://pretty-rfc.herokuapp.com/RFC2616[RFC 2616], now obsolete).
+* HTTP/2 is standardized by W3C as https://www.greenbytes.de/tech/webdav/rfc7540.html[RFC 7540] (HTTP/1.1 was previously defined under https://www.greenbytes.de/tech/webdav/rfc2616.html[RFC 2616], now obsolete).
 * A https://www.youtube.com/watch?v=aHxv_2BMJfw[presentation] (in French) about Open Data: L’Open Data à la loupe.
 * Some web sites voluntarily do not make their data automatically extractable: https://info.pagesjaunes.fr/infoslegales/mentionslegales/[example]. Check legal conditions before collecting data.
 * HTTP conventions for the representation in query strings as &-separated pairs relate to the HTML form element when used as a GET method.
 
 === URIs
-* https://pretty-rfc.herokuapp.com/RFC3986[RFC 3986]: Uniform Resource Identifier (URI) Generic Syntax, 2005 (obsoletes RFC 2396).
-* A URI with authority has the https://pretty-rfc.herokuapp.com/RFC3986#components[form] scheme://authority path [?query][#fragment] (URIs also exist with different forms such as `mailto:John.Doe@example.com`, `tel:+1-816-555-1212`, ``urn:oasis:names:specification:docbook:dtd:xml:4.1.2``…)
+* https://www.greenbytes.de/tech/webdav/rfc3986.html[RFC 3986]: Uniform Resource Identifier (URI) Generic Syntax, 2005 (obsoletes RFC 2396).
+* A URI with authority has the https://www.greenbytes.de/tech/webdav/rfc3986.html#components[form] scheme://authority path [?query][#fragment] (URIs also exist with different forms such as `mailto:John.Doe@example.com`, `tel:+1-816-555-1212`, ``urn:oasis:names:specification:docbook:dtd:xml:4.1.2``…)
 * Characters in [letters of the basic latin alphabet, digits, and “unreserved characters” `-._~`] must not be percent-encoded
 * “Reserved characters” `:$&'()*+,;=` that are explicitly allowed for in the specification of the chosen scheme when used accordingly (thus including `&` and `+` in a query string in the http scheme) must not be percent-encoded
 * Other characters must be percent-encoded
 
+//Online RFCs:
+//https://www.greenbytes.de/tech/webdav/rfc3986.html but links to other RFCs refer to https://www.rfc-editor.org/rfc/rfc6874.html and URL schema is not nice
+//https://www.rfcreader.com/#rfc3986 but seems impossible to link to a specific section by name such as https://www.rfcreader.com/#rfc3986_components, rather accepts https://www.rfcreader.com/#rfc3986_line678, also, changing the fragment does not seem to trigger a reaction.
+//https://xml2rfc.tools.ietf.org/rfc7749.html but https://xml2rfc.tools.ietf.org/rfc3986.html fails

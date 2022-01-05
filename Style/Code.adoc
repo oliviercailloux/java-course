@@ -20,7 +20,7 @@ Similarly, make sure you use only one encoding for end of lines throughout your 
 (Google-java-format is probably able to help with this, and its https://github.com/google/google-java-format/issues/504[issues] with Eclipse will hopefully be solved someday…)
 
 == No code disabled using comments
-Do not use comments to comment out code (`//object.someMethod()`), unless very temporarily when trying out something. This hinders readability and increases the length of the code, and quickly becomes completely unuseful as commented code accumulate. Use https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Git.adoc#no-old-files[this] strategy. Code commented out should not reach your git repository.
+Do not use comments to comment out code (`//object.someMethod()`), unless very temporarily when trying out something. This hinders readability and increases the length of the code, and quickly becomes completely unuseful as commented code accumulate. Use https://github.com/oliviercailloux/java-course/blob/master/Git/Best%20practices.adoc#no-old-files[this] strategy. Code commented out should not reach your git repository.
 
 == Javadoc for externally visible comments
 Use Javadoc to document your contracts or usage of your classes and methods: Javadoc is for comments that the *users* of your code should see.

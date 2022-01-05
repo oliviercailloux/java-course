@@ -3,8 +3,6 @@
 Voir aussi : https://github.com/oliviercailloux/UML/blob/master/Projets%20-%20D%C3%A9marrage.adoc[Démarrage] ; https://github.com/oliviercailloux/java-course/blob/master/L3/Projets.adoc[Instructions générales].
 Ce document contient les instructions spécifiques au cours de Java.
 
-Commencez par lire et appliquer les bonnes pratiques de https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Style.adoc[style].
-
 * Vos fonctionnalités doivent être couvertes par des tests unitaires, considérés comme partie intégrante de chaque tâche et soumis en même temps que le code testé.
 * Pensez à découper vos ajouts en tâches simples. Exemple : coder une classe pour enregistrer des commandes de produit, plutôt que coder un GUI qui permet de commander des produits.
 * [[SEP]] Je dois voir vos changements facilement et les distinguer de code auto-généré ou importé sans changements de votre part et de simples modifications de formatage. Si par exemple vous ajoutez un canevas HTML de 100 fichiers, ou si vous modifiez le formatage du code, faites-le dans une tâche dédiée, et créez une autre tâche pour vos modifications de contenu (SEP).
