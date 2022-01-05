@@ -1,8 +1,6 @@
 = WSDL in brief
 :toc: preamble
 :sectanchors:
-//works around awesome_bot bug that used to be published at github.com/dkhamsing/awesome_bot/issues/182.
-:emptyattribute:
 
 This document gives a _rough_ and _incomplete_ overview of WSDL 1.1. (WSDL 2.0 being not much supported at the moment.)
 
@@ -62,7 +60,7 @@ The `binding` element is used to specify how abstract messages sent to or from a
 * The `binding` indicates that the link-type is SOAP by including as a sub-element the element `soap:binding`, where the `soap` prefix corresponds to the WSDL namespace for WSDL SOAP link-type [small]#(\http://schemas.xmlsoap.org/wsdl/soap12/)#.
 * The `soap:binding` sub-element has a `transport` attribute, whose value is typically `\http://schemas.xmlsoap.org/soap/http`, to indicate that the HTTP binding is chosen as a SOAP binding.
 * The `soap:binding` sub-element has a `style` attribute, whose value may be `document` (default) or `rpc`. [small]#(The `style` may also be set per-operation instead of for a whole `portType`.)#
-* The `binding` element has one `operation` sub-element per operation that is to be reachable by SOAP. That sub-element specifies linking information for the _abstract_ operation with the same name within the related `portType`. Each such `operation` element has a `<soap:operation soapAction="uri"/>` sub-element that specifies the SOAP action to use to target that operation. Each `operation` also has sub-elements for each of the input, output and faults defined in the corresponding abstract operation, with for each of those a sub-element `soap:body` that, for `rpc` style, specifies a namespace (BP). Unbound parts are discouraged and should be ignored (BP http://ws-i.org/Profiles/BasicProfile-2.0-2010-11-09.html#R2209[R2209]{emptyattribute}).
+* The `binding` element has one `operation` sub-element per operation that is to be reachable by SOAP. That sub-element specifies linking information for the _abstract_ operation with the same name within the related `portType`. Each such `operation` element has a `<soap:operation soapAction="uri"/>` sub-element that specifies the SOAP action to use to target that operation. Each `operation` also has sub-elements for each of the input, output and faults defined in the corresponding abstract operation, with for each of those a sub-element `soap:body` that, for `rpc` style, specifies a namespace (BP). Unbound parts are discouraged and should be ignored (BP http://ws-i.org/Profiles/BasicProfile-2.0-2010-11-09.html#R2209[R2209]).
 
 Here is how to interpret these informations (BP).
 

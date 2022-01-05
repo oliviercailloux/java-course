@@ -1,11 +1,9 @@
 = JSON-B
-//works around awesome_bot bug that used to be published at github.com/dkhamsing/awesome_bot/issues/182.
-:emptyattribute:
 
 A short document about (de-)serialization of JSON using the JSON-B API. (See also JSON on https://en.wikipedia.org/wiki/JSON[Wikipedia] for a good introduction, JSON https://github.com/oliviercailloux/java-course/blob/master/JSON.adoc[Processing] for manipulation of JSON content.)
 
 == Dependency
-If you use Java SE, you need to add the required dependencies (http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22jakarta.json%22%20AND%20a%3A%22jakarta.json-api%22[jakarta.json-api], http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.glassfish%22%20AND%20a%3A%22jakarta.json%22[jakarta.json], http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22jakarta.json.bind%22%20AND%20a%3A%22jakarta.json.bind-api%22[jakarta.json.bind-api], http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.eclipse%22%20AND%20a%3A%22yasson%22[yasson]{emptyattribute}). 
+If you use Java SE, you need to add the required dependencies (http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22jakarta.json%22%20AND%20a%3A%22jakarta.json-api%22[jakarta.json-api], http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.glassfish%22%20AND%20a%3A%22jakarta.json%22[jakarta.json], http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22jakarta.json.bind%22%20AND%20a%3A%22jakarta.json.bind-api%22[jakarta.json.bind-api], http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.eclipse%22%20AND%20a%3A%22yasson%22[yasson]). 
 
 //(Note that `org.eclipse:yasson:1.0.2` https://search.maven.org/artifact/org.eclipse/yasson/1.0.2/jar[depends] on `org.glassfish:javax.json:1.1.3`; WildFly 14.0.1 depends on `org.eclipse:yasson:1.0.1`; WildFly 15.0.0 depends on `org.eclipse:yasson:1.0.2`.)
 

@@ -1,7 +1,5 @@
 = Maven
 :sectanchors:
-//works around awesome_bot bug that used to be published at github.com/dkhamsing/awesome_bot/issues/182.
-:emptyattribute:
 
 Simple exercices for Maven. The reader is supposed to know already the basics of Maven (see slides in this course).
 
@@ -32,7 +30,7 @@ Your project gets created in a sub-directory of your current position.
 
 * Which files has Maven created? What are their purpose?
 * In the terminal, move into the newly created project.
-* Type `mvn compile`. What does it do, and why (how does it work)? Is `compile` a phase, or a plugin goal (http://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html#Lifecycle_Reference{emptyattribute}[answer])?
+* Type `mvn compile`. What does it do, and why (how does it work)? Is `compile` a phase, or a plugin goal (http://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html#Lifecycle_Reference[answer])?
 * What has changed in your project directory?
 * Run the compiled application from the shell (go into the `target/classes` directory and use the _full name_ of the class you want to run). What does it do?
 
