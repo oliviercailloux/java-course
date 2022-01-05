@@ -31,18 +31,8 @@ This (for version 2021-09) installs 42 papyrus features, the `org.eclipse.xwt.fe
 On Eclipse version 2021-03, installing `org.eclipse.papyrus.uml.feature.feature.group` instead of `org.eclipse.papyrus.sdk.feature.feature.group`, which installs fewer features and plugins (18 and 360 instead of 42 and 477 on that version), does not seem to be sufficient; for example, Papyrus project files do not open in that case.
 ====
 
-To install JavaScript, XML, HTML editors: `"/usr/local/share/eclipse-java-2021-12-R-linux-gtk-x86_64/eclipse" -nosplash -application "org.eclipse.equinox.p2.director" -repository "https://download.eclipse.org/releases/2021-12" -installIU "org.eclipse.wildwebdeveloper.feature.feature.group"`
+To install HTML, CSS, JavaScript editors: `"/usr/local/share/eclipse-java-2021-12-R-linux-gtk-x86_64/eclipse" -nosplash -application "org.eclipse.equinox.p2.director" -repository "https://download.eclipse.org/releases/2021-12" -installIU "org.eclipse.wildwebdeveloper.feature.feature.group"`
 
-.Further technicalities
-[%collapsible]
-====
-This (for version 2021-09) installs 16 more features and 65 more plugins (as compared to the state after having installed the papyrus.sdk feature group).
-
-Installing `org.eclipse.wst.web_ui.feature.feature.group` in supplement to `org.eclipse.wildwebdeveloper.feature.feature.group`, or installing manually the required components from Eclipse WDT 3.24 from the Market platform (namely, Eclipse WDT; Eclipse Web JS DT; Eclipse XML Editors and Tools; Wild Web Developer; WST Server UI) leads to Eclipse crashing with the Outline view showing Computing symbols.
-
-I believe that installing manually Wild Web Developer is equivalent to this command.
-====
-	
 https://stackoverflow.com/a/38956772[This] lets you find the data for other plugins.
 
 == Others
