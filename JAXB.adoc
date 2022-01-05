@@ -68,7 +68,7 @@ JAXB specification 2.3 defines `\http://java.sun.com/xml/ns/jaxb` as the namespa
 * In Eclipse, you should probably disable the validator (see https://bugs.eclipse.org/bugs/show_bug.cgi?id=437635[bug]).
 * https://javaee.github.io/jaxb-v2/doc/user-guide/index.html
 * https://jcp.org/en/jsr/detail?id=222[JCP 222], http://download.oracle.com/otn-pub/jcp/jaxb-2_3-mrel3-eval-spec/JAXB-2.3-spec.pdf[spec 2.3]
-* Package javax.xml.bind was still in the https://docs.oracle.com/javase/10/docs/api/javax/xml/bind/package-summary.html[JRE 10] but was http://openjdk.java.net/jeps/320[removed] https://bugs.openjdk.java.net/browse/JDK-8189188[afterwards]. 
+* Package javax.xml.bind was still in the https://docs.oracle.com/javase/10/docs/api/javax/xml/bind/package-summary.html[JRE 10] but https://www.oracle.com/java/technologies/javase/11-relnote-issues.html#JDK-8190378[was] https://openjdk.java.net/jeps/320[removed] https://bugs.openjdk.java.net/browse/JDK-8189188[afterwards]. 
 // https://www.oracle.com/technetwork/java/javase/11-relnote-issues-5012449.html outdated
 * https://github.com/eclipse-ee4j/jaxb-api/issues/137[Issue about validation]
 
