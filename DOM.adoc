@@ -120,6 +120,7 @@ If you want something more powerful than the W3C DOM API included in the JDK, ch
 == Refs
 
 * Parsing from DOM and related technologies in Java: see https://docs.oracle.com/javase/tutorial/jaxp/TOC.html[JAXP] tutorial (focus on the parts related to the DOM)
+//https://www.oracle.com/java/technologies/jaxp-introduction.html+}
 ** (JAXP (https://jcp.org/en/jsr/detail?id=206[JSR 206]) has been withdrawn as a standalone project following its inclusion in OpenJDK 7, see section 11.5 in the specification PDF of JAXP 1.6 (Maintenance Release 3, 4 March 2014).)
 * https://dom4j.github.io/[<dom4j>], a well-written library for simpler DOM manipulation
 * https://en.wikipedia.org/wiki/Comparison_of_HTML_parsers[Comparison] of HTML parsers (Wikipedia)
