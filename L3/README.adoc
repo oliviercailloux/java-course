@@ -33,7 +33,11 @@ You can use at least one of the three major operating systems (Windows, a Linux 
 == Planning
 
 [[S1]]
-=== S1 (6 January 2021)
+=== S1 
+
+* https://github.com/oliviercailloux/java-course/blob/master/Git/README.adoc[Git]
+* Get some training with the https://github.com/oliviercailloux/java-course/blob/master/Git/Assignments.adoc[assignments] procedure
+* Train with the more serious assignments: https://github.com/oliviercailloux/java-course/blob/master/Git/Git%20branching.adoc[Git branching]; https://github.com/oliviercailloux/java-course/blob/master/Git/Git-br-2018.adoc[Git-br-2018]; https://github.com/oliviercailloux/java-course/blob/master/Git/Git-br-2019.adoc[Git-br-2019]
 
 Prerequisites: https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Various.adoc#installing-the-jdk[JDK]
 
@@ -48,19 +52,17 @@ Prerequisites: https://github.com/oliviercailloux/java-course/blob/master/Best%2
 * At end: random questions involving jshell, javac & java
 
 [[S2]]
-=== S2a (12)
+=== S2
 
 * https://github.com/oliviercailloux/java-course/blob/master/Dev%20tools/Eclipse.adoc[Eclipse & Java]
 
 * At end: random questions involving Eclipse, javac & java
 
-=== S2b (13)
-
-* Graded exercice https://github.com/oliviercailloux/java-course/blob/master/Git/Git%20branching.adoc[Git branching]: similar to the exercices related to https://github.com/oliviercailloux/java-course/blob/master/Git/README.adoc[Git] (see also https://github.com/oliviercailloux/java-course/blob/master/Git/Git-br-2018.adoc[Git-br-2018] and https://github.com/oliviercailloux/java-course/blob/master/Git/Git-br-2019.adoc[Git-br-2019]). 25 minutes: 13:52 to 14:17 (or 14:22 max for late commits).
+* Graded exercice ). 25 minutes: 13:52 to 14:17 (or 14:22 max for late commits).
 * https://github.com/oliviercailloux/java-course/blob/master/Overview/README.adoc[Basics of objects]
 
 [[S3]]
-=== S3 (13 and 14)
+=== S3
 
 * Graded exercice https://github.com/oliviercailloux/java-course/blob/master/Dev%20tools/Exercice.adoc[Eclipse]: about refactoring, navigating, formatting… You have 12 minutes (17:29 to 17:41 or max 17:46 for late commits).
 * Two major aspects of software engineering: https://github.com/oliviercailloux/java-course/blob/master/Contrat/README.adoc[contract] and fail-fast.

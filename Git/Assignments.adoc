@@ -1,0 +1,26 @@
+= Assignments
+
+This document explains how to work with assignments for this course.
+
+* Each assignment has its own name and link. Start by clicking the link and accept the assignment
+** This creates a GitHub repository that you own in my GitHub “organisation”, `oliviercailloux-org`
+** Your repository will be created as `+https://github.com/oliviercailloux-org/assignmentName-yourGitHubUserName+`
+** This repository will be initialized with some data
+* Clone your new repository
+** You have to work on your local repository, and regularly push your additions to the remote
+** Both you and I have access to your remote repository. I use this access to grade your work
+** I have of course no access to your local repository, so, whatever you do not push, I cannot grade
+* Do whatever the assignment asks you to do (for example, add some code to some files, create new files, …) in your local repository
+* Push your work to your remote
+** Push regularly, do not wait the end of the allowed time, so as to prevent last minute problems
+* Hint: Check with the GitHub web interface that your commits and branches have reached the remote repository
+
+== Training assignment
+Let’s practice with an assignment that you can use to get some training.
+Here is https://classroom.github.com/a/uAsNcmqi[the link] for the “training” assignment.
+
+* In this assignment, you start with a file named `hello.txt` which contains `Hello, world.`
+* Your mission is to modify that file to translate this hello message in another language of your choice
+
+If you want to start fresh, https://docs.github.com/en/repositories/creating-and-managing-repositories/deleting-a-repository[delete] your “training” repository.
+
