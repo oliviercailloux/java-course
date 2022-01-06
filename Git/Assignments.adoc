@@ -22,5 +22,5 @@ Let’s practice with an assignment that you can use to get some training.
 * In this assignment, you start with a file named `hello.txt` which contains `Hello, world.`
 * Your mission is to modify that file to translate this hello message in another language of your choice
 
-If you want to start fresh, https://docs.github.com/en/repositories/creating-and-managing-repositories/deleting-a-repository[delete] your “training” repository.
+If you want to start fresh, https://docs.github.com/repositories/creating-and-managing-repositories/deleting-a-repository[delete] your “training” repository.
 
