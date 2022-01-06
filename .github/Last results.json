@@ -111,15 +111,6 @@
         "when": "2022-01-05T17:26:05.720276977Z"
     },
     {
-        "url": "https://help.eclipse.org/2019-12/index.jsp?topic=/org.eclipse.platform.doc.isv/reference/misc/multi_user_installs.html",
-        "sources": [
-            "Dev tools/Automated Eclipse install.adoc"
-        ],
-        "response": 302,
-        "satisfied": true,
-        "when": "2022-01-05T17:26:06.494775987Z"
-    },
-    {
         "url": "https://projects.eclipse.org/projects/technology.xwt",
         "sources": [
             "Dev tools/Automated Eclipse install.adoc"
@@ -4111,15 +4102,6 @@
         "when": "2022-01-05T17:28:27.477095502Z"
     },
     {
-        "url": "http://openjdk.java.net/jeps/320",
-        "sources": [
-            "JAXB.adoc"
-        ],
-        "response": 200,
-        "satisfied": true,
-        "when": "2022-01-05T17:28:27.894850551Z"
-    },
-    {
         "url": "https://github.com/eclipse-ee4j/jaxb-api/issues/137",
         "sources": [
             "JAXB.adoc"
@@ -6758,15 +6740,6 @@
         "response": 200,
         "satisfied": true,
         "when": "2022-01-05T17:30:40.506531263Z"
-    },
-    {
-        "url": "https://github.com/oliviercailloux/java-course/blob/master/L3/Exercices%20notés.adoc",
-        "sources": [
-            "L3/README.adoc"
-        ],
-        "response": 400,
-        "satisfied": false,
-        "when": "2022-01-05T17:30:40.588614322Z"
     },
     {
         "url": "https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Various.adoc#installing-the-jdk",
@@ -9671,5 +9644,50 @@
         "response": 200,
         "satisfied": true,
         "when": "2022-01-05T18:40:23.648227162Z"
+    },
+    {
+        "url": "https://github.com/oliviercailloux/java-course/blob/master/L3/Exercices%20not%C3%A9s.adoc",
+        "sources": [
+            "L3/README.adoc"
+        ],
+        "response": 200,
+        "satisfied": true,
+        "when": "2022-01-05T18:45:13.170419650Z"
+    },
+    {
+        "url": "https://openjdk.java.net/jeps/320",
+        "sources": [
+            "JAXB.adoc"
+        ],
+        "response": 200,
+        "satisfied": true,
+        "when": "2022-01-05T19:21:55.360350521Z"
+    },
+    {
+        "url": "https://bugs.openjdk.java.net/browse/JDK-8189188",
+        "sources": [
+            "JAXB.adoc"
+        ],
+        "response": 200,
+        "satisfied": true,
+        "when": "2022-01-05T19:21:56.743885418Z"
+    },
+    {
+        "url": "https://www.greenbytes.de/tech/webdav/rfc7231.html",
+        "sources": [
+            "WS client/README.adoc"
+        ],
+        "response": 200,
+        "satisfied": true,
+        "when": "2022-01-05T19:21:57.372117307Z"
+    },
+    {
+        "url": "https://help.eclipse.org/latest/topic/org.eclipse.platform.doc.isv/reference/misc/multi_user_installs.html",
+        "sources": [
+            "Dev tools/Automated Eclipse install.adoc"
+        ],
+        "response": 200,
+        "satisfied": true,
+        "when": "2022-01-05T19:41:33.411595831Z"
     }
 ]
