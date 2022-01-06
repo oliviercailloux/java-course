@@ -17,8 +17,8 @@ This document explains how to work with assignments for this course.
 
 == Training assignment
 Let’s practice with an assignment that you can use to get some training.
-Here is https://classroom.github.com/a/uAsNcmqi[the link] for the “training” assignment.
 
+* Here is https://classroom.github.com/a/uAsNcmqi[the link] for the “training” assignment. You should be able to predict the name of the GitHub repository that will be created when you will accept this assignment.
 * In this assignment, you start with a file named `hello.txt` which contains `Hello, world.`
 * Your mission is to modify that file to translate this hello message in another language of your choice
 
