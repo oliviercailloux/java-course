@@ -13,8 +13,3 @@ This document explains how to populate a repository (thereafter “your reposito
 
 You can push the history of other branches of the `source` project into your `origin` remote by checking them out locally and pushing them to `origin` as usual.
 
-== Exercice: reinitialize the `training` assignment history
-Accept the https://classroom.github.com/a/uAsNcmqi[`training`] assignment and make it so that your resulting remote repository only contains, in its `main` branch, the history of the `master` branch of https://github.com/apache/cordova-plugin-compat[this project]. Second, push the `1.0.x` branch of the source project to your GitHub remote.
-
-If you want to start fresh, https://docs.github.com/repositories/creating-and-managing-repositories/deleting-a-repository[delete] your “training” repository.
-
