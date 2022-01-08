@@ -4,11 +4,11 @@ This document explains how to populate a repository (thereafter “your reposito
 
 . Clone your repository (if you do not have a local clone already)
 ** This creates a local repository with the remote `origin` pointing to your remote repository
-. Add another remote to your local repository, named `source`, pointing the source repository
+. Add another remote to your local repository, named `source`, pointing to the source repository
 . Fetch the commits from the `source` remote into your local repository
 ** Note that your local `main` branch still points to the `origin/main` commit; we want to change this
 . Move your `main` branch to the `source/master` commit with `git reset source/master` (this moves the `HEAD` reference, hence, also moves the `main` reference)
-. Reset your working tree to the state of the `source/master` commit with `git stash`
+. Reset your working tree to the state of the `source/master` commit with `git stash --all` (the `--all` option serves to also delete the files that were in `origin/main` and that are new untracked or might be ignored, depending on the state of `source/master`)
 . Push your new `main` branch state to the `origin` remote with `git push --force origin main`: you need to https://www.scifinow.co.uk/wp-content/uploads/2015/12/Yodapush-616x364.png[use the force] because `origin/main` is not an ancestor of your new local `main` branch position
 
 You can push the history of other branches of the `source` project into your `origin` remote by checking them out locally and pushing them to `origin` as usual.

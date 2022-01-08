@@ -1,12 +1,9 @@
-= Git-Br-2018
+= Git branching 1
 
-Here are the instructions for this graded exercice.
+A modified version of a graded exercice that was given a few years ago.
 
-(NB the link for the repository creation is not available any more. This is provided only for checking the wording of the exercice.)
-
-* Create a repository for your exercice here. Your repository will be created as `+https://github.com/oliviercailloux-org/dep-git-yourGitHubUserName+`. (Sometimes GitHub seems stuck and does not tell you that it has been created, but it probably has been.) Your repository will be created with an existing project in it, your mission is to extend it and push your changes to that same repository.
-* Clone it.
-* Check out the commit `38da901544294bf2b5784e4de1456905a306a341`. We will call this the “starting” commit.
+* Accept the https://classroom.github.com/a/uAsNcmqi[training] assignment and https://github.com/oliviercailloux/java-course/blob/master/Git/Reinitialization.adoc[reinitialize it] with the history of https://github.com/oliviercailloux/google-or-tools-java[this project].
+* Check out the commit whose SHA-1 identifier _ends_ with `6a341`. We will call this the “starting” commit.
 * Create and switch to a new branch, `my-branch`, departing from the starting commit.
 * Change something in the `pom.xml` file. Commit into your branch (so that your commit has the starting commit as parent).
 * Bring the changes of the commit that originally followed the starting commit into `my-branch` (by merging).
