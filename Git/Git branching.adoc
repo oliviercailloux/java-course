@@ -1,10 +1,11 @@
 = Git branching
 :xrefstyle: short
 
+A modified version of a graded exercice that was given a few years ago.
+
 In this graded exercice, we’ll simulate that we go back in time (to correct some problem in a previous version of a software), create two branches (to try two different approaches), and then merge those two branches.
 
-* Accept https://classroom.github.com/a/oIvmOkqa[this assignment]. Your repository will be created as `+https://github.com/oliviercailloux-org/git-br-yourGitHubUserName+`. This repository will be initialized with some history.
-* Clone your new repository (you should work on it locally, then push your additions to the remote).
+* Accept the https://classroom.github.com/a/uAsNcmqi[training] assignment and https://github.com/oliviercailloux/java-course/blob/master/Git/Reinitialization.adoc[reinitialize it] with the history of https://github.com/oliviercailloux/google-or-tools-java[this project].
 * We’ll start with an existing commit that we will name `Start`. That is the commit representing the state of the application on `August 15, 2020, 15:00:00 +0200`, that is, the commit just before that time.
 ** For example, if there is a commit `C1` on that day at 14:30 and a commit `C2` just following it on that day at 15:20, then `Start = C1`.
 * You must create four commits and three branches in total. The history should look like <<Goal>> when you are done. Make sure your pointers are exactly as pictured, and that the branches are named as in the figure.
@@ -14,7 +15,6 @@ In this graded exercice, we’ll simulate that we go back in time (to correct so
 ** Commit `B` adds a file named `first.txt` containing “coucou monde”; its parent is `Start`.
 ** Commit `C` adds a file whose name, relative to the path `a/b/c/`, would be `x/y/../z/some file.txt` containing “2021”; its parent is `B`. Note the space in its name, and create any required intermediate folder.
 ** `D` is the result of merging `A` and `C` (after resolving the conflict). It keeps both the text “hello world” AND the text “coucou monde” (on the next line), thus, commit `D` contains a blob `first.txt` that contains two lines (in addition to the blob whose file name is `some file.txt` that has no change from `C`).
-* When you are done, check (for example, using the GitHub web interface) that your commits and branches have reached the remote repository.
 
 [[Goal]]
 .Desired history at end of the exercice (italicized: your additions to the history)

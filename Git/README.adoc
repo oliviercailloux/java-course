@@ -35,4 +35,7 @@ Hint: do not try to remember all the shortcut commands and options git provides.
 * Git https://stevelosh.com/blog/2013/04/git-koans/[Koans]
 * I’ve been told https://www.gitkraken.com/[GitKraken] is a great GUI complement
 * GitHub specific doc about https://help.github.com/en/github/using-git/setting-your-username-in-git[user.name] and https://help.github.com/en/github/setting-up-and-managing-your-github-user-account/setting-your-commit-email-address[user.email]
-
+* https://longair.net/blog/2009/04/16/git-fetch-and-merge/[Prefer] fetch then merge to pull
+* https://learngitbranching.js.org/[Learn Git Branching]
+* https://rowanj.github.io/gitx/[GitX]
+* http://think-like-a-git.net/sections/testing-out-merges/the-scout-pattern.html[The scout pattern] for merges

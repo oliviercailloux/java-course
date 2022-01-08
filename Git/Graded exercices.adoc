@@ -1,7 +1,8 @@
-= Assignments
+= Graded exercices
 
-This document explains how to work with assignments for this course.
+This document explains how to submit your solutions for the graded exercices of this course.
 
+* Each graded exercice uses its own “GitHub assignment” (a mechanism proposed by GitHub classroom to dispatch exercices in a class).
 * Each assignment has its own name and link. Start by clicking the link and accept the assignment
 ** This creates a GitHub repository that you own in my GitHub “organisation”, `oliviercailloux-org`
 ** Your repository will be created as `+https://github.com/oliviercailloux-org/assignmentName-yourGitHubUserName+`

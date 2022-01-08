@@ -1,0 +1,20 @@
+= Reinitialization
+
+This document explains how to populate your GitHub repository with the history of another project, forgetting the original history of your project. I assume that your repository has only one branch that is the default branch, that it is called `main`, and that you want to get the history lying in the other project’s branch called `master` to replace your `main` history. Adapt the instructions below if the names differ.
+
+. Clone your repository (if you do not have a local clone already)
+** This creates a local repository with the remote `origin` pointing to the just created GitHub repository
+. Add another remote to your local repository, named `source`, pointing to a project whose history you want to copy
+. Fetch the commits from the `source` remote into your local repository
+** Note that your local `main` branch still points to the `origin/main` commit; we want to change this
+. Move your `main` branch to the `source/master` commit with `git reset source/master` (this moves the `HEAD` reference, hence, also moves the `main` reference)
+. Reset your working tree to the state of the `source/master` commit with `git stash`
+. Push your new `main` branch state to the `origin` remote with `git push --force origin main`: you need to https://www.scifinow.co.uk/wp-content/uploads/2015/12/Yodapush-616x364.png[use the force] because `origin/main` is not an ancestor of your new local `main` branch position
+
+You can push the history of other branches of the `source` project into your `origin` remote by checking them out locally and pushing them to `origin` as usual.
+
+== Exercice: reinitialize the `training` assignment history
+Accept the https://classroom.github.com/a/uAsNcmqi[`training`] assignment and make it so that your resulting remote repository only contains, in its `main` branch, the history of the `master` branch of https://github.com/apache/cordova-plugin-compat[this project]. Second, push the `1.0.x` branch of the source project to your GitHub remote.
+
+If you want to start fresh, https://docs.github.com/repositories/creating-and-managing-repositories/deleting-a-repository[delete] your “training” repository.
+
