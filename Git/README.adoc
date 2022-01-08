@@ -7,6 +7,7 @@ Prerequisites:
 Under Windows, use Git BASH (included in git https://gitforwindows.org/[for Windows]). (Power users may prefer to use https://www.develves.net/blogs/asd/articles/using-git-with-powershell-on-windows-10/[PowerShell].) You use Linux-like commands there, as Git BASH emulates a Linux environment (and as PowerShell https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_path_syntax[authorizes] the use of forward slashes to separate paths).
 
 Then see:
+
 * https://raw.githubusercontent.com/oliviercailloux/java-course/master/Git/Pr%C3%A9sentation/presentation.pdf[présentation] (or read below), 
 * the git https://github.github.com/training-kit/[Cheat sheets],
 * https://github.com/oliviercailloux/java-course/blob/master/Git/Step-by-step.adoc[step-by-step exercices], 

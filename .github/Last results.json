@@ -634,16 +634,6 @@
         "when": "2022-01-05T17:26:29.578259663Z"
     },
     {
-        "url": "https://github.com/oliviercailloux/java-course/blob/master/Git/Exercices.adoc",
-        "sources": [
-            "Git/README.adoc",
-            "L3/README.adoc"
-        ],
-        "response": 200,
-        "satisfied": true,
-        "when": "2022-01-05T17:26:29.991876959Z"
-    },
-    {
         "url": "https://github.com/oliviercailloux/java-course/blob/master/Git/Best%20practices.adoc",
         "sources": [
             "Git/README.adoc"
@@ -946,7 +936,7 @@
     {
         "url": "https://github.github.com/training-kit/",
         "sources": [
-            "Git/Exercices.adoc"
+            "Git/README.adoc"
         ],
         "response": 301,
         "satisfied": true,
@@ -9624,8 +9614,6 @@
         "url": "https://classroom.github.com/a/uAsNcmqi",
         "sources": [
             "Git/Reinitialization.adoc",
-            "Git/Git branching 2.adoc",
-            "Git/Git branching 1.adoc",
             "Git/Graded exercices.adoc"
         ],
         "response": 302,
@@ -9635,7 +9623,8 @@
     {
         "url": "https://github.com/apache/cordova-plugin-compat",
         "sources": [
-            "Git/Reinitialization.adoc"
+            "Git/Reinitialization.adoc",
+            "Git/Graded exercices.adoc"
         ],
         "response": 200,
         "satisfied": true,
@@ -9717,9 +9706,9 @@
     {
         "url": "https://github.com/oliviercailloux/java-course/blob/master/Git/Reinitialization.adoc",
         "sources": [
+            "Git/README.adoc",
             "Git/Git branching 2.adoc",
-            "Git/Git branching 1.adoc",
-            "L3/README.adoc"
+            "Git/Git branching 1.adoc"
         ],
         "response": 200,
         "satisfied": true,
@@ -9760,5 +9749,14 @@
         "response": 200,
         "satisfied": true,
         "when": "2022-01-08T17:21:57.630526931Z"
+    },
+    {
+        "url": "https://github.com/oliviercailloux/java-course/blob/master/Git/Step-by-step.adoc",
+        "sources": [
+            "Git/README.adoc"
+        ],
+        "response": 404,
+        "satisfied": false,
+        "when": "2022-01-08T17:49:21.296720914Z"
     }
 ]
