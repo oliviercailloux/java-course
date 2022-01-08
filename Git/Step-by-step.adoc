@@ -7,14 +7,6 @@ Some step by step exercices for git starters.
 
 == Local repository
 
-=== Configure git
-Git can be configured by associating string values to “options”. Here we want to associate your name as a value to the option `user.name`. Git will use this to sign your commits.
-An option can be configured locally (for a given repository) or globally (for every time you use git on that system).
-
-* Type `git config` and read the doc, in particular, consider the options `--global`, `--get` and `--add`.
-* Define globally the option `user.name`. Check with `git config --list` (if this returns nothing, it means that no option is configured yet).
-** See https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup[this] if you need more explanation.
-
 === First commit
 * Create a new directory `project` and put there a file `start.txt` with content `hello`.
 * Initialize a new git repository in your directory.
