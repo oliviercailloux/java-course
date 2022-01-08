@@ -1,9 +1,9 @@
-= git: exercices
+= Git: step by step exercices
 :toc: preamble
 :sectanchors:
 :xrefstyle: short
 
-Some exercices for git starters. Hint: use the git https://github.github.com/training-kit/[Cheat sheets].
+Some step by step exercices for git starters. 
 
 == Local repository
 

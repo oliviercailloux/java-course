@@ -514,34 +514,6 @@
         "when": "2022-01-05T17:26:25.284413253Z"
     },
     {
-        "url": "https://classroom.github.com/a/oIvmOkqa",
-        "sources": [
-            "Git/Git branching.adoc"
-        ],
-        "response": 302,
-        "satisfied": true,
-        "when": "2022-01-05T17:26:25.745728638Z"
-    },
-    {
-        "url": "Git/Git%20branching.adoc#Goal",
-        "sources": [
-            "Git/Git branching.adoc"
-        ],
-        "response": 1,
-        "satisfied": true,
-        "when": "2022-01-05T17:26:25.754528193Z"
-    },
-    {
-        "url": "Git/Git-br-2019.svg",
-        "sources": [
-            "Git/Git branching.adoc",
-            "Git/Git-br-2019.adoc"
-        ],
-        "response": 1,
-        "satisfied": true,
-        "when": "2022-01-05T17:26:25.761711621Z"
-    },
-    {
         "url": "https://docs.microsoft.com/powershell/scripting/install/installing-windows-powershell",
         "sources": [
             "Git/Shell.adoc"
@@ -664,7 +636,8 @@
     {
         "url": "https://github.com/oliviercailloux/java-course/blob/master/Git/Exercices.adoc",
         "sources": [
-            "Git/README.adoc"
+            "Git/README.adoc",
+            "L3/README.adoc"
         ],
         "response": 200,
         "satisfied": true,
@@ -843,24 +816,6 @@
         "when": "2022-01-05T17:26:34.390910158Z"
     },
     {
-        "url": "https://classroom.github.com/a/pNeYO4bv",
-        "sources": [
-            "Git/Git-br-2019.adoc"
-        ],
-        "response": 302,
-        "satisfied": true,
-        "when": "2022-01-05T17:26:34.962925268Z"
-    },
-    {
-        "url": "Git/Git-br-2019.adoc#Goal",
-        "sources": [
-            "Git/Git-br-2019.adoc"
-        ],
-        "response": 1,
-        "satisfied": true,
-        "when": "2022-01-05T17:26:34.971026079Z"
-    },
-    {
         "url": "Git/Best%20practices.adoc#_end_of_lines",
         "sources": [
             "Git/Best practices.adoc"
@@ -980,6 +935,8 @@
     {
         "url": "https://github.com/oliviercailloux/google-or-tools-java",
         "sources": [
+            "Git/Git branching 2.adoc",
+            "Git/Git branching 1.adoc",
             "Git/Best practices.adoc"
         ],
         "response": 200,
@@ -6535,15 +6492,6 @@
         "when": "2022-01-05T17:30:37.413726205Z"
     },
     {
-        "url": "L3/README.adoc#_s2b_13",
-        "sources": [
-            "L3/README.adoc"
-        ],
-        "response": 1,
-        "satisfied": true,
-        "when": "2022-01-05T17:30:37.423139936Z"
-    },
-    {
         "url": "L3/README.adoc#S3",
         "sources": [
             "L3/README.adoc"
@@ -6785,33 +6733,6 @@
         "response": 200,
         "satisfied": true,
         "when": "2022-01-05T17:30:42.967489433Z"
-    },
-    {
-        "url": "https://github.com/oliviercailloux/java-course/blob/master/Git/Git%20branching.adoc",
-        "sources": [
-            "L3/README.adoc"
-        ],
-        "response": 200,
-        "satisfied": true,
-        "when": "2022-01-05T17:30:43.374254324Z"
-    },
-    {
-        "url": "https://github.com/oliviercailloux/java-course/blob/master/Git/Git-br-2018.adoc",
-        "sources": [
-            "L3/README.adoc"
-        ],
-        "response": 200,
-        "satisfied": true,
-        "when": "2022-01-05T17:30:43.759446132Z"
-    },
-    {
-        "url": "https://github.com/oliviercailloux/java-course/blob/master/Git/Git-br-2019.adoc",
-        "sources": [
-            "L3/README.adoc"
-        ],
-        "response": 200,
-        "satisfied": true,
-        "when": "2022-01-05T17:30:44.167033037Z"
     },
     {
         "url": "https://github.com/oliviercailloux/java-course/blob/master/Dev%20tools/Exercice.adoc",
@@ -9689,5 +9610,155 @@
         "response": 200,
         "satisfied": true,
         "when": "2022-01-05T19:41:33.411595831Z"
+    },
+    {
+        "url": "https://www.scifinow.co.uk/wp-content/uploads/2015/12/Yodapush-616x364.png",
+        "sources": [
+            "Git/Reinitialization.adoc"
+        ],
+        "response": 200,
+        "satisfied": true,
+        "when": "2022-01-08T17:21:39.436834301Z"
+    },
+    {
+        "url": "https://classroom.github.com/a/uAsNcmqi",
+        "sources": [
+            "Git/Reinitialization.adoc",
+            "Git/Git branching 2.adoc",
+            "Git/Git branching 1.adoc",
+            "Git/Graded exercices.adoc"
+        ],
+        "response": 302,
+        "satisfied": true,
+        "when": "2022-01-08T17:21:40.033029649Z"
+    },
+    {
+        "url": "https://github.com/apache/cordova-plugin-compat",
+        "sources": [
+            "Git/Reinitialization.adoc"
+        ],
+        "response": 200,
+        "satisfied": true,
+        "when": "2022-01-08T17:21:40.728378648Z"
+    },
+    {
+        "url": "https://docs.github.com/repositories/creating-and-managing-repositories/deleting-a-repository",
+        "sources": [
+            "Git/Reinitialization.adoc",
+            "Git/Graded exercices.adoc"
+        ],
+        "response": 302,
+        "satisfied": true,
+        "when": "2022-01-08T17:21:41.416899536Z"
+    },
+    {
+        "url": "https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_path_syntax",
+        "sources": [
+            "Git/README.adoc"
+        ],
+        "response": 301,
+        "satisfied": true,
+        "when": "2022-01-08T17:21:42.225305005Z"
+    },
+    {
+        "url": "https://github.com/oliviercailloux/java-course/blob/master/Git/Git%20branching%201.adoc",
+        "sources": [
+            "Git/README.adoc"
+        ],
+        "response": 200,
+        "satisfied": true,
+        "when": "2022-01-08T17:21:42.692359663Z"
+    },
+    {
+        "url": "https://github.com/oliviercailloux/java-course/blob/master/Git/Git%20branching%202.adoc",
+        "sources": [
+            "Git/README.adoc"
+        ],
+        "response": 200,
+        "satisfied": true,
+        "when": "2022-01-08T17:21:43.194828436Z"
+    },
+    {
+        "url": "https://longair.net/blog/2009/04/16/git-fetch-and-merge/",
+        "sources": [
+            "Git/README.adoc"
+        ],
+        "response": 200,
+        "satisfied": true,
+        "when": "2022-01-08T17:21:46.061590348Z"
+    },
+    {
+        "url": "https://learngitbranching.js.org/",
+        "sources": [
+            "Git/README.adoc"
+        ],
+        "response": 200,
+        "satisfied": true,
+        "when": "2022-01-08T17:21:49.092024325Z"
+    },
+    {
+        "url": "https://rowanj.github.io/gitx/",
+        "sources": [
+            "Git/README.adoc"
+        ],
+        "response": 200,
+        "satisfied": true,
+        "when": "2022-01-08T17:21:52.494702395Z"
+    },
+    {
+        "url": "http://think-like-a-git.net/sections/testing-out-merges/the-scout-pattern.html",
+        "sources": [
+            "Git/README.adoc"
+        ],
+        "response": 200,
+        "satisfied": true,
+        "when": "2022-01-08T17:21:53.783178950Z"
+    },
+    {
+        "url": "https://github.com/oliviercailloux/java-course/blob/master/Git/Reinitialization.adoc",
+        "sources": [
+            "Git/Git branching 2.adoc",
+            "Git/Git branching 1.adoc",
+            "L3/README.adoc"
+        ],
+        "response": 200,
+        "satisfied": true,
+        "when": "2022-01-08T17:21:55.328866567Z"
+    },
+    {
+        "url": "Git/Git%20branching%202.adoc#Goal",
+        "sources": [
+            "Git/Git branching 2.adoc"
+        ],
+        "response": 1,
+        "satisfied": true,
+        "when": "2022-01-08T17:21:55.364436915Z"
+    },
+    {
+        "url": "Git/Git%20branching%202.svg",
+        "sources": [
+            "Git/Git branching 2.adoc"
+        ],
+        "response": 1,
+        "satisfied": true,
+        "when": "2022-01-08T17:21:55.399435280Z"
+    },
+    {
+        "url": "https://github.com/oliviercailloux/java-course/blob/master/Git/Graded%20exercices.adoc",
+        "sources": [
+            "L3/README.adoc"
+        ],
+        "response": 200,
+        "satisfied": true,
+        "when": "2022-01-08T17:21:56.071096068Z"
+    },
+    {
+        "url": "https://imgs.xkcd.com/comics/git.png",
+        "sources": [
+            "Git/Présentation/presentation.pdf"
+        ],
+        "response": 200,
+        "satisfied": true,
+        "when": "2022-01-08T17:21:57.630526931Z"
     }
 ]

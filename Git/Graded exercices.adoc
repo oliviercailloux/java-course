@@ -16,12 +16,18 @@ This document explains how to submit your solutions for the graded exercices of 
 ** Push regularly, do not wait the end of the allowed time, so as to prevent last minute problems
 * Hint: Check with the GitHub web interface that your commits and branches have reached the remote repository
 
-== Training assignment
-Let’s practice with an assignment that you can use to get some training.
-
-* Here is https://classroom.github.com/a/uAsNcmqi[the link] for the “training” assignment. You should be able to predict the name of the GitHub repository that will be created when you will accept this assignment.
+== The `training` assignment
+* Here is https://classroom.github.com/a/uAsNcmqi[the link] for the “training” assignment. 
+* You should be able to predict the name of the GitHub repository that will be created when you will accept this assignment.
+* You can use this to practice as much as you want. 
+* This repository will not be used to grade your work.
 * In this assignment, you start with a file named `hello.txt` which contains `Hello, world.`
-* Your mission is to modify that file to translate this hello message in another language of your choice
 
-If you want to start fresh, https://docs.github.com/repositories/creating-and-managing-repositories/deleting-a-repository[delete] your “training” repository.
+If you want to start fresh, https://docs.github.com/repositories/creating-and-managing-repositories/deleting-a-repository[delete] your “training” repository. (You should delete it before starting a new exercice, of course.)
+
+== Exercice: hello world
+Accept the https://classroom.github.com/a/uAsNcmqi[`training`] assignment and translate the content of the file `hello.txt` to say hello in another language of your choice. Make sure this is visible on your remote repository.
+
+== Exercice: reinitialize the `training` assignment history
+Accept the https://classroom.github.com/a/uAsNcmqi[`training`] assignment and make it so that your resulting remote repository only contains, in its `main` branch, the history of the `master` branch of https://github.com/apache/cordova-plugin-compat[this project]. Second, push the `1.0.x` branch of the source project to your GitHub remote.
 

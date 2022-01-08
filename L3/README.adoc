@@ -36,7 +36,7 @@ You can use at least one of the three major operating systems (Windows, a Linux 
 === S1 
 
 * https://github.com/oliviercailloux/java-course/blob/master/Git/README.adoc[Git]
-* Read the https://github.com/oliviercailloux/java-course/blob/master/Git/Graded%20exercices.adoc[graded exercices] procedure and take the “training” assignment; Practice with https://github.com/oliviercailloux/java-course/blob/master/Git/Reinitialization.adoc[reinitializing] history and more https://github.com/oliviercailloux/java-course/blob/master/Git/Exercices.adoc[exercices]
+* Read the https://github.com/oliviercailloux/java-course/blob/master/Git/Graded%20exercices.adoc[graded exercices] procedure and take the “training” assignment; Practice with the exercices
 
 Prerequisites: https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Various.adoc#installing-the-jdk[JDK]
 

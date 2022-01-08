@@ -5,7 +5,7 @@ A modified version of a graded exercice that was given a few years ago.
 
 In this graded exercice, we’ll simulate that we go back in time (to correct some problem in a previous version of a software), create two branches (to try two different approaches), and then merge those two branches.
 
-* Accept the https://classroom.github.com/a/uAsNcmqi[training] assignment and https://github.com/oliviercailloux/java-course/blob/master/Git/Reinitialization.adoc[reinitialize it] with the history of https://github.com/oliviercailloux/google-or-tools-java[this project].
+* Create a new repository and https://github.com/oliviercailloux/java-course/blob/master/Git/Reinitialization.adoc[reinitialize it] with the history of https://github.com/oliviercailloux/google-or-tools-java[this project].
 * We’ll start with an existing commit that we will name `Start`. That is the commit representing the state of the application on `August 15, 2018, 15:00:00 +0200`, that is, the commit just before that time.
 ** For example, if there is a commit `C1` on that day at 14:30 and a commit `C2` just following it on that day at 15:20, then `Start = C1`.
 * You must create four commits and three branches in total. The history should look like <<Goal>> when you are done. Make sure your pointers are exactly as pictured, and that the branches are named as in the figure.

@@ -2,7 +2,7 @@
 
 A modified version of a graded exercice that was given a few years ago.
 
-* Accept the https://classroom.github.com/a/uAsNcmqi[training] assignment and https://github.com/oliviercailloux/java-course/blob/master/Git/Reinitialization.adoc[reinitialize it] with the history of https://github.com/oliviercailloux/google-or-tools-java[this project].
+* Create a new repository and https://github.com/oliviercailloux/java-course/blob/master/Git/Reinitialization.adoc[reinitialize it] with the history of https://github.com/oliviercailloux/google-or-tools-java[this project].
 * Check out the commit whose SHA-1 identifier _ends_ with `6a341`. We will call this the “starting” commit.
 * Create and switch to a new branch, `my-branch`, departing from the starting commit.
 * Change something in the `pom.xml` file. Commit into your branch (so that your commit has the starting commit as parent).

@@ -6,7 +6,13 @@ Prerequisites:
 - We will start learning with the command line interface of git. If you are not used to using a shell, read the https://github.com/oliviercailloux/java-course/blob/master/Git/Shell.adoc[Shell] document.
 Under Windows, use Git BASH (included in git https://gitforwindows.org/[for Windows]). (Power users may prefer to use https://www.develves.net/blogs/asd/articles/using-git-with-powershell-on-windows-10/[PowerShell].) You use Linux-like commands there, as Git BASH emulates a Linux environment (and as PowerShell https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_path_syntax[authorizes] the use of forward slashes to separate paths).
 
-Then see https://raw.githubusercontent.com/oliviercailloux/java-course/master/Git/Pr%C3%A9sentation/presentation.pdf[présentation] (or read below), https://github.com/oliviercailloux/java-course/blob/master/Git/Exercices.adoc[exercices], https://github.com/oliviercailloux/java-course/blob/master/Git/Git%20branching%201.adoc[Git branching 1] and https://github.com/oliviercailloux/java-course/blob/master/Git/Git%20branching%202.adoc[Git branching 2]; https://github.com/oliviercailloux/java-course/blob/master/Git/Best%20practices.adoc[best practices].
+Then see:
+* https://raw.githubusercontent.com/oliviercailloux/java-course/master/Git/Pr%C3%A9sentation/presentation.pdf[présentation] (or read below), 
+* the git https://github.github.com/training-kit/[Cheat sheets],
+* https://github.com/oliviercailloux/java-course/blob/master/Git/Step-by-step.adoc[step-by-step exercices], 
+* https://github.com/oliviercailloux/java-course/blob/master/Git/Reinitialization.adoc[reinitializing] history,
+* https://github.com/oliviercailloux/java-course/blob/master/Git/Git%20branching%201.adoc[Git branching 1] and https://github.com/oliviercailloux/java-course/blob/master/Git/Git%20branching%202.adoc[Git branching 2], 
+* https://github.com/oliviercailloux/java-course/blob/master/Git/Best%20practices.adoc[best practices].
 
 == Learning the basics
 There are two ways to learn the basics of Git: the frustrating and long way, and the nice and short way. The frustrating and long way is the one you find yourself into if you do not read anything about git (because you do not have time) and just try to deal with it by running commands that you found on the web, that you do not fully understand, that you supposed would achieve just what you need, and that instead created a mess that you ignore how to repair.
@@ -23,10 +29,7 @@ To save time, read the https://git-scm.com/book[Pro Git] book. For the basics, y
 * https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging[3.2] Git Branching - Basic Branching and Merging
 * https://git-scm.com/book/en/v2/Git-Branching-Remote-Branches[3.5] Git Branching - Remote Branches
 
-Hint: do not try to remember all the shortcut commands and options git provides. You just need those ones: `git config …` (just for the initial configuration); `git clone <url>` or `git init` to start the fun; `git status`, `git diff`, `git add <files>`, `git commit` and `git merge` to enrich your local history; `git log` and `git checkout <commit>` to navigate in your history; `git branch <name>` to create branches; `git fetch` and `git push` to synchronize with your remote repository. You can learn the rest when and if you need it.
-
-== Useful command
-* Use `git log --graph --decorate --oneline --all` to see where you are
+Hint: do not try to remember all the shortcut commands and options git provides. You just need those ones: `git config --global …` (just for the initial configuration); `git clone <url>` or `git init` to start the fun; `git status`, `git diff`, `git add <files>`, `git commit` and `git merge` to enrich your local history; `git log` and `git checkout <commit>` to navigate in your history; `git branch <name>` to create branches; `git fetch` and `git push` to synchronize with your remote repository. You can learn the rest when and if you need it.
 
 == References
 * https://git-scm.com/[Git-SCM]: Videos; Cheat Sheets; Book https://git-scm.com/book[Pro Git] (free, as in speech and beer); tryGit
@@ -39,3 +42,4 @@ Hint: do not try to remember all the shortcut commands and options git provides.
 * https://learngitbranching.js.org/[Learn Git Branching]
 * https://rowanj.github.io/gitx/[GitX]
 * http://think-like-a-git.net/sections/testing-out-merges/the-scout-pattern.html[The scout pattern] for merges
+
