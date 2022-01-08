@@ -1,10 +1,10 @@
 = Reinitialization
 
-This document explains how to populate your GitHub repository with the history of another project, forgetting the original history of your project. I assume that your repository has only one branch that is the default branch, that it is called `main`, and that you want to get the history lying in the other project’s branch called `master` to replace your `main` history. Adapt the instructions below if the names differ.
+This document explains how to populate a repository (thereafter “your repository”) with the history of another repository (thereafter “the source repository”), forgetting the original history of your repository. I assume that your repository has only one branch that is the default branch, that it is called `main`, and that you want to get the history lying in the source repository’s branch called `master` to replace your `main` history. Adapt the instructions below if the names differ.
 
 . Clone your repository (if you do not have a local clone already)
-** This creates a local repository with the remote `origin` pointing to the just created GitHub repository
-. Add another remote to your local repository, named `source`, pointing to a project whose history you want to copy
+** This creates a local repository with the remote `origin` pointing to your remote repository
+. Add another remote to your local repository, named `source`, pointing the source repository
 . Fetch the commits from the `source` remote into your local repository
 ** Note that your local `main` branch still points to the `origin/main` commit; we want to change this
 . Move your `main` branch to the `source/master` commit with `git reset source/master` (this moves the `HEAD` reference, hence, also moves the `main` reference)
