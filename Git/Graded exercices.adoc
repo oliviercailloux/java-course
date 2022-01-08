@@ -17,7 +17,7 @@ This document explains how to submit your solutions for the graded exercices of 
 * Hint: Check with the GitHub web interface that your commits and branches have reached the remote repository
 
 == Configure you user name
-It is important that your git `user.name` https://github.com/oliviercailloux/java-course/blob/master/Git/Readme.adoc#Configure-git[equals] (exactly) your GitHub username, so that I can associate your contributions to you (this will be important when working on projects but I will also grade whether you configured your git correctly even before projects, as part of each graded exercice).
+It is important that your git `user.name` https://github.com/oliviercailloux/java-course/blob/master/Git/README.adoc#Configure-git[equals] (exactly) your GitHub username, so that I can associate your contributions to you (this will be important when working on projects but I will also grade whether you configured your git correctly even before projects, as part of each graded exercice).
 
 == The `training` assignment
 * Here is https://classroom.github.com/a/uAsNcmqi[the link] for the “training” assignment. 
