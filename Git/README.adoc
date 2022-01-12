@@ -11,6 +11,7 @@ Then see:
 
 * https://raw.githubusercontent.com/oliviercailloux/java-course/master/Git/Pr%C3%A9sentation/presentation.pdf[présentation] (or read below), 
 * the git https://github.github.com/training-kit/[Cheat sheets],
+* https://github.com/oliviercailloux/java-course/blob/master/Git/README.adoc#configure-git[configure] git,
 * https://github.com/oliviercailloux/java-course/blob/master/Git/Step-by-step.adoc[step-by-step exercices], 
 * https://github.com/oliviercailloux/java-course/blob/master/Git/Reinitialization.adoc[reinitializing] history,
 * https://github.com/oliviercailloux/java-course/blob/master/Git/Git%20branching%201.adoc[Git branching 1] and https://github.com/oliviercailloux/java-course/blob/master/Git/Git%20branching%202.adoc[Git branching 2], 
