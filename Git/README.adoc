@@ -46,7 +46,7 @@ Git will use this to sign your commits.
 * Type `git config --global --add user.name MyUserName` to associate the value `MyUserName` to the option `user.name`
 * Check again the value currently associated to the option `user.name`
 
-See https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup[this] if you need more explanation.
+See the https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup[Pro Git book] if you need more explanation (and the GitHub doc for the way GitHub uses https://docs.github.com/en/get-started/getting-started-with-git/setting-your-username-in-git#about-git-usernames[`user.name`] and https://help.github.com/en/github/setting-up-and-managing-your-github-user-account/setting-your-commit-email-address[`user.email`]).
 
 == References
 * https://git-scm.com/[Git-SCM]: Videos; Cheat Sheets; Book https://git-scm.com/book[Pro Git] (free, as in speech and beer); tryGit
@@ -54,7 +54,6 @@ See https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup[this] if
 * A quick and useful https://guides.github.com/introduction/flow/[guide] about workflow on GitHub; a branching https://nvie.com/posts/a-successful-git-branching-model/[model]
 * Git https://stevelosh.com/blog/2013/04/git-koans/[Koans]
 * I’ve been told https://www.gitkraken.com/[GitKraken] is a great GUI complement
-* GitHub specific doc about https://help.github.com/en/github/using-git/setting-your-username-in-git[user.name] and https://help.github.com/en/github/setting-up-and-managing-your-github-user-account/setting-your-commit-email-address[user.email]
 * https://longair.net/blog/2009/04/16/git-fetch-and-merge/[Prefer] fetch then merge to pull
 * https://learngitbranching.js.org/[Learn Git Branching]
 * https://rowanj.github.io/gitx/[GitX]
