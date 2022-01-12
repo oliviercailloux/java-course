@@ -742,15 +742,6 @@
         "when": "2022-01-05T17:26:31.625382242Z"
     },
     {
-        "url": "https://try.github.io/",
-        "sources": [
-            "Git/README.adoc"
-        ],
-        "response": 301,
-        "satisfied": true,
-        "when": "2022-01-05T17:26:31.993764615Z"
-    },
-    {
         "url": "https://guides.github.com/introduction/flow/",
         "sources": [
             "Git/README.adoc"
@@ -7939,15 +7930,6 @@
         "when": "2022-01-05T17:31:46.945570263Z"
     },
     {
-        "url": "https://git-school.github.io/visualizing-git/",
-        "sources": [
-            "Git/Présentation/presentation.pdf"
-        ],
-        "response": 200,
-        "satisfied": true,
-        "when": "2022-01-05T17:31:47.272459073Z"
-    },
-    {
         "url": "https://onlywei.github.io/explain-git-with-d3/#fetch",
         "sources": [
             "Git/Présentation/presentation.pdf"
@@ -9781,5 +9763,41 @@
         "response": 200,
         "satisfied": true,
         "when": "2022-01-12T13:43:59.243502985Z"
+    },
+    {
+        "url": "https://git-scm.com/videos",
+        "sources": [
+            "Git/README.adoc"
+        ],
+        "response": 200,
+        "satisfied": true,
+        "when": "2022-01-12T15:52:56.048560122Z"
+    },
+    {
+        "url": "https://www.git-tower.com/learn/git/videos",
+        "sources": [
+            "Git/README.adoc"
+        ],
+        "response": 200,
+        "satisfied": true,
+        "when": "2022-01-12T15:52:56.927271759Z"
+    },
+    {
+        "url": "https://www.gitkraken.com/pricing#git-gui-features",
+        "sources": [
+            "Git/README.adoc"
+        ],
+        "response": 200,
+        "satisfied": true,
+        "when": "2022-01-12T15:52:57.500049516Z"
+    },
+    {
+        "url": "https://learngitbranching.js.org/?NODEMO",
+        "sources": [
+            "L3/README.adoc"
+        ],
+        "response": 200,
+        "satisfied": true,
+        "when": "2022-01-12T15:53:01.225224731Z"
     }
 ]
