@@ -663,8 +663,7 @@
     {
         "url": "https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup",
         "sources": [
-            "Git/README.adoc",
-            "Git/Exercices.adoc"
+            "Git/README.adoc"
         ],
         "response": 200,
         "satisfied": true,
@@ -786,15 +785,6 @@
         "response": 200,
         "satisfied": true,
         "when": "2022-01-05T17:26:33.949286018Z"
-    },
-    {
-        "url": "https://help.github.com/en/github/using-git/setting-your-username-in-git",
-        "sources": [
-            "Git/README.adoc"
-        ],
-        "response": 301,
-        "satisfied": true,
-        "when": "2022-01-05T17:26:34.235639100Z"
     },
     {
         "url": "https://help.github.com/en/github/setting-up-and-managing-your-github-user-account/setting-your-commit-email-address",
@@ -943,90 +933,9 @@
         "when": "2022-01-05T17:26:39.729758316Z"
     },
     {
-        "url": "Git/Exercices.adoc#_local_repository",
-        "sources": [
-            "Git/Exercices.adoc"
-        ],
-        "response": 1,
-        "satisfied": true,
-        "when": "2022-01-05T17:26:39.741997641Z"
-    },
-    {
-        "url": "Git/Exercices.adoc#_configure_git",
-        "sources": [
-            "Git/Exercices.adoc"
-        ],
-        "response": 1,
-        "satisfied": true,
-        "when": "2022-01-05T17:26:39.757830332Z"
-    },
-    {
-        "url": "Git/Exercices.adoc#_first_commit",
-        "sources": [
-            "Git/Exercices.adoc"
-        ],
-        "response": 1,
-        "satisfied": true,
-        "when": "2022-01-05T17:26:39.769823604Z"
-    },
-    {
-        "url": "Git/Exercices.adoc#_first_branch",
-        "sources": [
-            "Git/Exercices.adoc"
-        ],
-        "response": 1,
-        "satisfied": true,
-        "when": "2022-01-05T17:26:39.787028483Z"
-    },
-    {
-        "url": "Git/Exercices.adoc#_second_branch",
-        "sources": [
-            "Git/Exercices.adoc"
-        ],
-        "response": 1,
-        "satisfied": true,
-        "when": "2022-01-05T17:26:39.796077310Z"
-    },
-    {
-        "url": "Git/Exercices.adoc#_merge",
-        "sources": [
-            "Git/Exercices.adoc"
-        ],
-        "response": 1,
-        "satisfied": true,
-        "when": "2022-01-05T17:26:39.805115479Z"
-    },
-    {
-        "url": "Git/Exercices.adoc#_remote_repository",
-        "sources": [
-            "Git/Exercices.adoc"
-        ],
-        "response": 1,
-        "satisfied": true,
-        "when": "2022-01-05T17:26:39.818372679Z"
-    },
-    {
-        "url": "Git/Exercices.adoc#_remote_repository_on_github",
-        "sources": [
-            "Git/Exercices.adoc"
-        ],
-        "response": 1,
-        "satisfied": true,
-        "when": "2022-01-05T17:26:39.826955074Z"
-    },
-    {
-        "url": "Git/Exercices.adoc#C1",
-        "sources": [
-            "Git/Exercices.adoc"
-        ],
-        "response": 1,
-        "satisfied": true,
-        "when": "2022-01-05T17:26:39.836771490Z"
-    },
-    {
         "url": "https://github.com/oliviercailloux/java-course/blob/master/Git/README.adoc",
         "sources": [
-            "Git/Exercices.adoc",
+            "Git/Step-by-step.adoc",
             "L3/README.adoc"
         ],
         "response": 200,
@@ -1034,27 +943,9 @@
         "when": "2022-01-05T17:26:40.312038857Z"
     },
     {
-        "url": "Git/Exercices.adoc#C2",
-        "sources": [
-            "Git/Exercices.adoc"
-        ],
-        "response": 1,
-        "satisfied": true,
-        "when": "2022-01-05T17:26:40.322270500Z"
-    },
-    {
-        "url": "Git/Exercices.adoc#C3",
-        "sources": [
-            "Git/Exercices.adoc"
-        ],
-        "response": 1,
-        "satisfied": true,
-        "when": "2022-01-05T17:26:40.335145313Z"
-    },
-    {
         "url": "https://github.com/oliviercailloux/java-course/blob/master/Git/Merged1.svg",
         "sources": [
-            "Git/Exercices.adoc"
+            "Git/Step-by-step.adoc"
         ],
         "response": 200,
         "satisfied": true,
@@ -1063,7 +954,7 @@
     {
         "url": "https://github.com/oliviercailloux/java-course/blob/master/Git/Merged2.svg",
         "sources": [
-            "Git/Exercices.adoc"
+            "Git/Step-by-step.adoc"
         ],
         "response": 200,
         "satisfied": true,
@@ -1072,7 +963,7 @@
     {
         "url": "https://github.com/",
         "sources": [
-            "Git/Exercices.adoc"
+            "Git/Step-by-step.adoc"
         ],
         "response": 200,
         "satisfied": true,
@@ -1081,7 +972,7 @@
     {
         "url": "Git/C1.svg",
         "sources": [
-            "Git/Exercices.adoc"
+            "Git/Step-by-step.adoc"
         ],
         "response": 1,
         "satisfied": true,
@@ -1090,7 +981,7 @@
     {
         "url": "Git/C2.svg",
         "sources": [
-            "Git/Exercices.adoc"
+            "Git/Step-by-step.adoc"
         ],
         "response": 1,
         "satisfied": true,
@@ -1099,7 +990,7 @@
     {
         "url": "Git/C3.svg",
         "sources": [
-            "Git/Exercices.adoc"
+            "Git/Step-by-step.adoc"
         ],
         "response": 1,
         "satisfied": true,
@@ -3558,15 +3449,6 @@
         "response": 200,
         "satisfied": true,
         "when": "2022-01-05T17:28:10.405435474Z"
-    },
-    {
-        "url": "https://www.virtualbox.org/",
-        "sources": [
-            "Java EE/README.adoc"
-        ],
-        "error": "java.net.SocketException: Connection reset",
-        "satisfied": false,
-        "when": "2022-01-05T17:28:11.801027622Z"
     },
     {
         "url": "https://github.com/oliviercailloux/Deb-9-VM",
@@ -9613,7 +9495,6 @@
     {
         "url": "https://classroom.github.com/a/uAsNcmqi",
         "sources": [
-            "Git/Reinitialization.adoc",
             "Git/Graded exercices.adoc"
         ],
         "response": 302,
@@ -9623,7 +9504,6 @@
     {
         "url": "https://github.com/apache/cordova-plugin-compat",
         "sources": [
-            "Git/Reinitialization.adoc",
             "Git/Graded exercices.adoc"
         ],
         "response": 200,
@@ -9633,7 +9513,6 @@
     {
         "url": "https://docs.github.com/repositories/creating-and-managing-repositories/deleting-a-repository",
         "sources": [
-            "Git/Reinitialization.adoc",
             "Git/Graded exercices.adoc"
         ],
         "response": 302,
@@ -9707,8 +9586,7 @@
         "url": "https://github.com/oliviercailloux/java-course/blob/master/Git/Reinitialization.adoc",
         "sources": [
             "Git/README.adoc",
-            "Git/Git branching 2.adoc",
-            "Git/Git branching 1.adoc"
+            "Git/Graded exercices.adoc"
         ],
         "response": 200,
         "satisfied": true,
@@ -9751,12 +9629,157 @@
         "when": "2022-01-08T17:21:57.630526931Z"
     },
     {
+        "url": "Git/Step-by-step.adoc#_local_repository",
+        "sources": [
+            "Git/Step-by-step.adoc"
+        ],
+        "response": 1,
+        "satisfied": true,
+        "when": "2022-01-12T13:24:30.628717853Z"
+    },
+    {
+        "url": "Git/Step-by-step.adoc#_first_commit",
+        "sources": [
+            "Git/Step-by-step.adoc"
+        ],
+        "response": 1,
+        "satisfied": true,
+        "when": "2022-01-12T13:24:30.675981255Z"
+    },
+    {
+        "url": "Git/Step-by-step.adoc#_first_branch",
+        "sources": [
+            "Git/Step-by-step.adoc"
+        ],
+        "response": 1,
+        "satisfied": true,
+        "when": "2022-01-12T13:24:30.716204816Z"
+    },
+    {
+        "url": "Git/Step-by-step.adoc#_second_branch",
+        "sources": [
+            "Git/Step-by-step.adoc"
+        ],
+        "response": 1,
+        "satisfied": true,
+        "when": "2022-01-12T13:24:30.755360901Z"
+    },
+    {
+        "url": "Git/Step-by-step.adoc#_merge",
+        "sources": [
+            "Git/Step-by-step.adoc"
+        ],
+        "response": 1,
+        "satisfied": true,
+        "when": "2022-01-12T13:24:30.800530796Z"
+    },
+    {
+        "url": "Git/Step-by-step.adoc#_remote_repository",
+        "sources": [
+            "Git/Step-by-step.adoc"
+        ],
+        "response": 1,
+        "satisfied": true,
+        "when": "2022-01-12T13:24:30.839501137Z"
+    },
+    {
+        "url": "Git/Step-by-step.adoc#_remote_repository_on_github",
+        "sources": [
+            "Git/Step-by-step.adoc"
+        ],
+        "response": 1,
+        "satisfied": true,
+        "when": "2022-01-12T13:24:30.884042930Z"
+    },
+    {
+        "url": "Git/Step-by-step.adoc#C1",
+        "sources": [
+            "Git/Step-by-step.adoc"
+        ],
+        "response": 1,
+        "satisfied": true,
+        "when": "2022-01-12T13:24:30.930436584Z"
+    },
+    {
+        "url": "Git/Step-by-step.adoc#C2",
+        "sources": [
+            "Git/Step-by-step.adoc"
+        ],
+        "response": 1,
+        "satisfied": true,
+        "when": "2022-01-12T13:24:30.980370021Z"
+    },
+    {
+        "url": "Git/Step-by-step.adoc#C3",
+        "sources": [
+            "Git/Step-by-step.adoc"
+        ],
+        "response": 1,
+        "satisfied": true,
+        "when": "2022-01-12T13:24:31.022247305Z"
+    },
+    {
+        "url": "https://docs.github.com/en/get-started/quickstart/fork-a-repo",
+        "sources": [
+            "Git/Git branching 2.adoc",
+            "Git/Git branching 1.adoc"
+        ],
+        "response": 200,
+        "satisfied": true,
+        "when": "2022-01-12T13:24:33.184787113Z"
+    },
+    {
+        "url": "https://github.com/oliviercailloux/java-course/blob/master/Git/README.adoc#Configure-git",
+        "sources": [
+            "Git/Graded exercices.adoc"
+        ],
+        "response": 200,
+        "satisfied": true,
+        "when": "2022-01-12T13:24:34.245559617Z"
+    },
+    {
+        "url": "https://insights.dice.com/2021/12/03/top-30-tech-skills-employers-want-from-remote-workers/",
+        "sources": [
+            "L3/Présentation du cours Objet/presentation.pdf"
+        ],
+        "response": 200,
+        "satisfied": true,
+        "when": "2022-01-12T13:24:39.366420531Z"
+    },
+    {
+        "url": "https://docs.github.com/en/get-started/getting-started-with-git/setting-your-username-in-git#about-git-usernames",
+        "sources": [
+            "Git/README.adoc"
+        ],
+        "response": 200,
+        "satisfied": true,
+        "when": "2022-01-12T13:41:07.963031591Z"
+    },
+    {
+        "url": "https://www.virtualbox.org/",
+        "sources": [
+            "Java EE/README.adoc"
+        ],
+        "response": 200,
+        "satisfied": true,
+        "when": "2022-01-12T13:41:12.598272991Z"
+    },
+    {
+        "url": "https://github.com/oliviercailloux/java-course/blob/master/Git/README.adoc#configure-git",
+        "sources": [
+            "Git/README.adoc"
+        ],
+        "response": 200,
+        "satisfied": true,
+        "when": "2022-01-12T13:43:58.674317285Z"
+    },
+    {
         "url": "https://github.com/oliviercailloux/java-course/blob/master/Git/Step-by-step.adoc",
         "sources": [
             "Git/README.adoc"
         ],
-        "response": 404,
-        "satisfied": false,
-        "when": "2022-01-08T17:49:21.296720914Z"
+        "response": 200,
+        "satisfied": true,
+        "when": "2022-01-12T13:43:59.243502985Z"
     }
 ]
