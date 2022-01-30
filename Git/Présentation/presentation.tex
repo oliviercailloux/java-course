@@ -38,9 +38,10 @@
 \addtocounter{framenumber}{-1}
 
 \section{Présentation}
-\begin{frame}%
-%	\rule{1cm}{3cm}%
-	\centering\href{https://imgs.xkcd.com/comics/git.png}{\includegraphics[width = \textwidth, height = \textheight, keepaspectratio]{xkcd.png}}%
+\begin{frame}
+	\nointerlineskip
+%	\rule{1cm}{\textheight}%
+	\centering\href{https://imgs.xkcd.com/comics/git.png}{\includegraphics[width = \textwidth, height = \textheight, keepaspectratio, trim = {3pt 3pt 3pt 3pt}, clip]{xkcd.png}}
 %	\href{https://imgs.xkcd.com/comics/git.png}{XKCD}
 \end{frame}
 
@@ -92,7 +93,7 @@
 		\item Branche : pointe un commit
 		\item HEAD : pointe un commit, et généralement une branche ; appelés \emph{actuels}
 		\item Indique le commit d’où est issu la version actuelle
-		\item Circuler en utilisant la commande \texttt{switch <branche>} {\tiny (anciennement \texttt{checkout})}
+		\item Circuler en utilisant la commande \texttt{checkout <branche>}
 	\end{itemize}
 	{
 		\centering
@@ -205,7 +206,7 @@
 	\begin{itemize}
 		\item commit : avance HEAD et branche actuelle
 		\item \texttt{git branch truc} : crée branche \texttt{truc}. HEAD inchangé !
-		\item \texttt{git switch truc} : change HEAD et met à jour WD
+		\item \texttt{git checkout truc} : change HEAD et met à jour WD
 	\end{itemize}
 \end{frame}
 
@@ -227,7 +228,7 @@
 		\item \texttt{git merge autrebranche} : fusionne changements de \texttt{autrebranche} dans branche actuelle
 		\item Si \texttt{autrebranche} est en avant de l’actuelle : \og{}fast-forward\fg{}
 		\item Sinon, \og{}merge conflict\fg{} possible. Modifier les fichiers à la main et les ajouter à l’index puis commit pour créer un merge. 
-		\item switch --detach d’un commit {\tiny (ou tag)} sans branche {\tiny (detached head state)} : lecture !
+		\item checkout d’un commit {\tiny (ou tag)} sans branche {\tiny (detached head state)} : lecture !
 	\end{itemize}
 \end{frame}
 
@@ -243,7 +244,7 @@
 		\item \texttt{git branch -vv} : branches et leurs correspondants distants
 		\item \texttt{git push origin mabranche} : sinon, nouvelles branches restent locales
 		\item \texttt{git remote show origin} : voir les réf. distantes
-		\item Suivre une branche distante \texttt{origin/br} : \texttt{switch br}
+		\item Suivre une branche distante \texttt{origin/br} : \texttt{checkout br}
 	\end{itemize}
 	\href{https://onlywei.github.io/explain-git-with-d3/\#fetch}{Illustration}
 \end{frame}

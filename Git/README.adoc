@@ -32,7 +32,7 @@ To save time, read the https://git-scm.com/book[Pro Git] book. For the basics, y
 * https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging[3.2] Git Branching - Basic Branching and Merging
 * https://git-scm.com/book/en/v2/Git-Branching-Remote-Branches[3.5] Git Branching - Remote Branches
 
-Hint: do not try to remember all the shortcut commands and options git provides. You just need those ones: `git config --global …` (just for the initial configuration); `git clone <url>` or `git init` to start the fun; `git status`, `git diff`, `git add <files>`, `git commit` and `git merge` to enrich your local history; `git branch <name>` to create branches; `git log` and `git switch <branch>` (or `git switch --detach <commit>`) to navigate your history; `git fetch` and `git push` to synchronize with your remote repository. You can learn the rest when and if you need it.
+Hint: do not try to remember all the shortcut commands and options git provides. You just need those ones: `git config --global …` (just for the initial configuration); `git clone <url>` or `git init` to start the fun; `git status`, `git diff`, `git add <files>`, `git commit` and `git merge` to enrich your local history; `git branch <name>` to create branches; `git log` and `git checkout <branch/commit>` to navigate your history; `git fetch` and `git push` to synchronize with your remote repository. You can learn the rest when and if you need it.
 
 == Configure git
 Git can be configured by associating string values to “options”. 
