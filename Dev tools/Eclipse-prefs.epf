@@ -76,9 +76,11 @@ file_export_version=3.0
 /instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.redundantSpecificationOfTypeArguments=warning
 /instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.unavoidableGenericTypeProblems=disabled
 #→→Annotations
-/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.missingDeprecatedAnnotation=warning
 /instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.missingOverrideAnnotation=warning
+/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.missingDeprecatedAnnotation=warning
 /instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.unusedWarningToken=ignore
+# Because my Checkstyle config allows using checkstyle specific @SuppressWarnings tokens (https://github.com/oliviercailloux/Practical-Google-style/blob/master/README.adoc), and Eclipse does not like that (https://bugs.eclipse.org/bugs/show_bug.cgi?id=392045)
+/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.unhandledWarningToken=ignore
 #→→Null analysis
 /instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.includeNullInfoFromAsserts=enabled
 /instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.nullReference=warning
