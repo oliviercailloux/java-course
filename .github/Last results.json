@@ -9799,5 +9799,14 @@
         "response": 200,
         "satisfied": true,
         "when": "2022-01-12T15:53:01.225224731Z"
+    },
+    {
+        "url": "https://news.ycombinator.com/item?id=5512119",
+        "sources": [
+            "Git/README.adoc"
+        ],
+        "response": 405,
+        "satisfied": true,
+        "when": "2022-01-30T17:30:29.398358412Z"
     }
 ]
