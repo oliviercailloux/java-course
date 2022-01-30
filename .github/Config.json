@@ -1,0 +1,87 @@
+{
+	"check-interval": "P30D",
+	"requirements": [
+		{
+			"pattern": "https://news.ycombinator.com/item\\?id=5512119",
+			"accept": [
+				405
+			]
+		},
+		{
+			"pattern": "https://universitedauphine-my.sharepoint.com/:x:/g/personal/.*",
+			"accept": [
+				403
+			]
+		},
+		{
+			"pattern": "https://github.com/oliviercailloux/java-course/raw/.*",
+			"accept": [
+				302
+			]
+		},
+		{
+			"pattern": "https://help.eclipse.org/latest/topic/.*",
+			"accept": [
+				200, 302
+			]
+		},
+		{
+			"pattern": "https://doi.org/.*",
+			"accept": [
+				302
+			]
+		},
+		{
+			"pattern": "https://teams.microsoft.com/l/meetup-join/.*",
+			"accept": [
+				302
+			]
+		},
+		{
+			"pattern": "https://classroom.github.com/.*",
+			"accept": [
+				302
+			]
+		},
+		{
+			"pattern": "https://stackoverflow.com/a/.*",
+			"accept": [
+				302
+			]
+		},
+		{
+			"pattern": "https://www.oracle.com/.*",
+			"ignore": true
+		},
+		{
+			"pattern": "http://192.168.0.1:8080",
+			"ignore": true
+		},
+		{
+			"pattern": "https?://localhost(:[0-9]+)?(/.*)?",
+			"ignore": true
+		},
+		{
+			"pattern": "mailto:.*",
+			"ignore": true
+		},
+		{
+			"pattern": "https?://.*",
+			"accept": [
+				200, 302, 301
+			]
+		},
+		{
+			"pattern": "file:/.*",
+			"accept": [
+				1
+			]
+		},
+		{
+			"pattern": "[^:]+",
+			"accept": [
+				1
+			]
+		}
+	]
+}
