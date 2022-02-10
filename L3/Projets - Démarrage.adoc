@@ -1,0 +1,38 @@
+= Projets : démarrage
+
+== Affectation initiale
+* https://universitedauphine-my.sharepoint.com/:x:/g/personal/olivier_cailloux_lamsade_dauphine_fr/Edx2GVhss0dFk1cq3LtScj8BnvsPy6_d50sYeCcrFZpBnw?e=qCjocf[Affectation]
+* Max. une équipe par sujet
+* Équipes de 4 à 7
+* Obligation d’accepter membres supplémentaires à la demande si < 7
+* Inscription dans colonne : noter tous les noms. Il faut être au moins 4 pour noter son nom. S’effacer d’une colonne si on s’inscrit dans une autre.
+* Si conflit : plus grosse équipe prioritaire ; puis première équipe inscrite (lexicographiquement)
+
+Les énoncés contiennent _beaucoup_ plus de propositions que ce que vous serez capables d’implémenter cette année. Placez l’emphase sur ce qui vous intéresse.
+
+== Choix
+* https://github.com/oliviercailloux/2D-Library[2D Library]
+* https://github.com/oliviercailloux/Apartments[Apartments]
+* https://github.com/oliviercailloux/Assisted-Board-Games[Assisted Board Games]
+* https://github.com/oliviercailloux/J-Confs[J-Confs]
+* https://github.com/oliviercailloux/J-Voting[J-Voting]
+* https://github.com/oliviercailloux/MIDO-SVG[MIDO SVG]
+* https://github.com/oliviercailloux/Teach-spreadsheets[Teach spreadsheets]
+* https://github.com/oliviercailloux/XM-GUI[XM-GUI]
+
+== Démarrage
+Une personne de votre groupe doit effectuer les étapes suivantes pour initialiser le projet.
+
+* Acceptez https://classroom.github.com/g/kQjleEgF[cette mission], avec le nom d’équipe précisément égal au nom du dépôt existant (le nom technique du projet). Cela crée un nouveau « remote » pour votre projet.
+* Clonez le projet dont vous partez sur votre machine pour créer un dépôt local contenant l’historique actuel du projet.
+* Utilisez la commande `git remote` pour renommer le « remote » `origin` en `cailloux` sur votre dépôt local (vous pouvez aussi l’effacer, mais le conserver avec un autre nom peut être utile plus tard).
+* Ajoutez le nouveau « remote » que vous venez de créer à votre dépôt local, nommez-le `origin` (cf. instructions de GitHub, utilisez `git remote add origin`).
+* M’ajouter comme collaborateur à votre projet pour pouvoir m’indiquer comme https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-request-reviews[Reviewer] lors de vos itérations.
+
+Chaque membre du groupe pourra ensuite cloner le projet ainsi créé sur sa machine locale et contribuer ses commits.
+
+Prenez le temps de réfléchir ensemble globalement au projet et tracez les grandes lignes de votre ambition à la fin de l’année. 
+Placez l’emphase en fonction de vos intérêts (plutôt GUI, plutôt manipulation de fichiers, plutôt web, …).
+Ceci est utile pour construire un sens commun de votre objectif global.
+Inutile d’élaborer un plan détaillé ! 
+
