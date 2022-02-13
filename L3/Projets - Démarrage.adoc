@@ -3,9 +3,9 @@
 == Affectation initiale
 * https://universitedauphine-my.sharepoint.com/:x:/g/personal/olivier_cailloux_lamsade_dauphine_fr/Edx2GVhss0dFk1cq3LtScj8BnvsPy6_d50sYeCcrFZpBnw?e=qCjocf[Affectation]
 * Max. une équipe par sujet
-* Équipes de 4 à 7
+* Équipes de 3 à 7
 * Obligation d’accepter membres supplémentaires à la demande si < 7
-* Inscription dans colonne : noter tous les noms. Il faut être au moins 4 pour noter son nom. S’effacer d’une colonne si on s’inscrit dans une autre.
+* Inscription dans colonne : noter tous les noms. Il faut être au moins 3 pour noter son nom. S’effacer d’une colonne si on s’inscrit dans une autre.
 * Si conflit : plus grosse équipe prioritaire ; puis première équipe inscrite (lexicographiquement)
 
 Les énoncés contiennent _beaucoup_ plus de propositions que ce que vous serez capables d’implémenter cette année. Placez l’emphase sur ce qui vous intéresse.
