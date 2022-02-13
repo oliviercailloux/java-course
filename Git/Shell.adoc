@@ -1,7 +1,10 @@
 = Shell
 
 == Introduction
-A shell (also called a terminal or a command line interface) permits to invoke programs by typing commands. Under Linux, use BASH (Bourne-again Shell), for example. Under Windows, use https://docs.microsoft.com/powershell/scripting/install/installing-windows-powershell[PowerShell], or Git BASH, which emulates a Linux shell. (Different shells admit slightly different syntax and provide slightly different capabilities, and commands sometimes differ, but the commands we will need for this course are the same in most classical shells, except when indicated.)
+A shell (also called a terminal or a command line interface) permits to invoke programs by typing commands.
+* Under Linux, use BASH (Bourne-again Shell), for example.
+* Under Windows, use https://docs.microsoft.com/powershell/scripting/install/installing-windows-powershell[PowerShell], or Git BASH, which emulates a Linux shell.
+* (Different shells admit slightly different syntax and provide slightly different capabilities, and commands sometimes differ, but the commands we will need for this course are the same in most classical shells, except when indicated.)
 
 See https://tutorial.djangogirls.org/en/intro_to_command_line/[Introduction to command line] for the very basics of using a shell. Use ↑ (keyboard up https://en.wikipedia.org/wiki/Arrow_keys[arrow]) to reuse previous commands. https://www.lamsade.dauphine.fr/~bnegrevergne/ens/Unix/static/TP_Shell_Unix.pdf[This tutorial] could help as well.
 
