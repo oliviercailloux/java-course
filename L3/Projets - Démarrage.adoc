@@ -11,6 +11,9 @@
 Les énoncés contiennent _beaucoup_ plus de propositions que ce que vous serez capables d’implémenter cette année. Placez l’emphase sur ce qui vous intéresse.
 
 == Choix
+En regardant les projets ci-dessous, parcourez rapidement la description globale ou la documentation pour comprendre le contexte (mais ne vous focalisez pas sur les détails), et voyez le fichier TODO.adoc pour vous faire une idée approximative des tâches auxquelles vous serez confrontés. Les énoncés sont parfois très vagues, ne vous en inquiétez pas : ils seront peaufinés au fur et à mesure de l’année, en fonction du rythme d’avancement et de vos intérêts.
+En outre, il y a, pour chacun de ces projets, bien plus de choses qui peuvent être faites que vous ne pourrez faire en un an. N’imaginez pas arriver au bout, voyez plutôt votre travail comme une contribution àun édifice en cours construction.
+
 * https://github.com/oliviercailloux/2D-Library[2D Library]
 * https://github.com/oliviercailloux/Apartments[Apartments]
 * https://github.com/oliviercailloux/Assisted-Board-Games[Assisted Board Games]
