@@ -18,7 +18,7 @@ Les énoncés contiennent _beaucoup_ plus de propositions que ce que vous serez 
 * https://github.com/oliviercailloux/J-Voting[J-Voting]
 * https://github.com/oliviercailloux/MIDO-SVG[MIDO SVG]
 * https://github.com/oliviercailloux/Teach-spreadsheets[Teach spreadsheets]
-* https://github.com/oliviercailloux/XM-GUI[XM-GUI]
+* https://github.com/oliviercailloux/projets/blob/master/J-XMCDA.adoc[J-XMCDA]
 
 == Démarrage
 Une personne de votre groupe doit effectuer les étapes suivantes pour initialiser le projet.
