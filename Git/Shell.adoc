@@ -18,9 +18,10 @@ Any argument can be surrounded by quotes, thus, the commands `touch "afile" "ano
 _However_, to form a single argument containing spaces, quotes are _mandatory_.
 Example: `touch "a file" "another file"` contains two arguments: `a file` and `another file`. Thus, this command creates two files, named `a file` and `another file`, with spaces in their names. The command `touch a file another file` (without quotes) would instead create four files. 
 
-Exercice: open a shell, navigate (using `cd`) to some different place of your choice on your hard disk, create a file `my file.txt` there, delete it with your graphical file explorer, check in the terminal that it has disappeared (using `ls`).
-
 Here are other examples for better understanding what an argument is: the command `ls -a` has one argument, `-a`. It is equivalent to `ls "-a"`. The command `ls --color=always "a file"` has two arguments. It is equivalent to `ls "--color=always" "a file"`. The https://git-scm.com/docs/git-config[command] `git config --type bool --get core.filemode` has five arguments (considering `git` as the program name and `config` as its first argument).
+
+== Exercice
+Open a shell, navigate (using `cd`) to some different place of your choice on your hard disk, create a file `my file.txt` there, delete it with your graphical file explorer, check in the terminal that it has disappeared (using `ls`).
 
 [[Paths]]
 == Relative and absolute paths
