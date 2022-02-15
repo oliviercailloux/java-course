@@ -23,32 +23,25 @@ You can use at least one of the three major operating systems (Windows, a Linux 
 * Eck’s https://math.hws.edu/javanotes/[book]
 * Stéphane Airiau’s https://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/[course] (in French)
 * The https://app.gosoapbox.com/event/290081765/[confusion barometer]
-* Java API https://docs.oracle.com/en/java/javase/11/docs[Javadoc]
-* https://teams.microsoft.com/l/meetup-join/19%3Aaaa1a5bbda774320a271ee4b5ba402e4%40thread.tacv2/1620042250895?context=%7B%22Tid%22%3A%2281e7c4de-26c9-4531-b076-b70e2d75966e%22%2C%22Oid%22%3A%22db290b1a-6988-4d6b-91c6-9ddd729313f6%22%7D[Teams] (https://teams.microsoft.com/l/meetup-join/19%3Aaaa1a5bbda774320a271ee4b5ba402e4@thread.tacv2/1609694419561[old link])
+* Java API https://docs.oracle.com/en/java/javase/17/docs[Javadoc]
 * https://github.com/oliviercailloux/Teaching/blob/main/README.adoc#take-notes[Take notes]!
 * https://github.com/oliviercailloux/java-course/blob/master/L3/Exercices%20not%C3%A9s.adoc[Exercices notés]
-
-//* https://whiteboard.fi/g67kd
 
 == Planning
 
 [[S1]]
 === S1 
 
-* https://github.com/oliviercailloux/java-course/blob/master/Git/README.adoc[Git], https://learngitbranching.js.org/?NODEMO[Live demo]
-* Read the https://github.com/oliviercailloux/java-course/blob/master/Git/Graded%20exercices.adoc[graded exercices] procedure and take the “training” assignment; Practice with the exercices
-
-Prerequisites: https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Various.adoc#installing-the-jdk[JDK]
-
 * https://github.com/oliviercailloux/java-course/raw/master/L3/Pr%C3%A9sentation%20du%20cours%20Objet/presentation.pdf[Pres course]
+* https://github.com/oliviercailloux/java-course/blob/master/Git/README.adoc[Git]: remotes, https://learngitbranching.js.org/?NODEMO[Live demo]
+* Install the https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Various.adoc#installing-the-jdk[JDK]
+* Read the https://github.com/oliviercailloux/java-course/blob/master/Git/Graded%20exercices.adoc[graded exercices] procedure and take the “training” assignment; Practice with the exercices
 * https://github.com/oliviercailloux/java-course/blob/master/Syntax/README.adoc[Syntax]: basics; exercices (Shorts and Methods); then Classes
 
 // *Second slot*
 
 * https://github.com/oliviercailloux/java-course/blob/master/Execution/README.adoc[Execution]
 * Syntax: packages ; more exercices
-
-* At end: random questions involving jshell, javac & java
 
 [[S2]]
 === S2
