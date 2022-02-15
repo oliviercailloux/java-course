@@ -11,11 +11,11 @@ Consider using https://javadoc.io/doc/jakarta.ws.rs/jakarta.ws.rs-api/2.1.6/java
 Use `@SuppressWarnings("serial")` rather than adding a `serialVersionUID` field to your class when you do not want to support serialization: it documents your intent better. (See https://stackoverflow.com/a/7636578[SO].)
 
 == Installing the JDK
-For this course, you need Java 11 or more recent.
+For this course, you need Java 17 or more recent.
 
 Important advice. Uninstall every version of Java you have, keep only one: the latest JDK (which includes a JRE). This prevents problems with tools selecting the wrong JDK or JRE.
 
-* On Debian, install https://packages.debian.org/search?keywords=openjdk-11-jdk&searchon=names&exact=1&suite=all&section=all[openjdk-11-jdk] (and https://packages.debian.org/search?keywords=openjdk-11-source&searchon=names&exact=1&suite=all&section=all[openjdk-11-source] to have the Javadoc accessible even when coding offline).
+* On Debian, install https://packages.debian.org/search?keywords=openjdk-17-jdk&searchon=names&exact=1&suite=all&section=all[openjdk-17-jdk] (and https://packages.debian.org/search?keywords=openjdk-17-source&searchon=names&exact=1&suite=all&section=all[openjdk-17-source] to have the Javadoc accessible even when coding offline).
 * On Windows or MacOS, install the https://adoptopenjdk.net[AdoptOpenJDK] package: choose the latest OpenJDK version and any JVM (HotSpot or OpenJ9). You should obtain a `.msi` file for Windows or a `.pkg` file for MacOS, that installs easily and configures the system correctly.
 
 To check that it is correctly installed, open a https://github.com/oliviercailloux/java-course/blob/master/Git/Shell.adoc[shell], and verify that both the `java --version` and `javac --version` commands print the correct java version; then, verify that typing `jshell` does start jshell (it should say something like "Welcome to JShell" and display a jshell prompt; type `/exit` to exit).
