@@ -1,5 +1,4 @@
 = Planning
-:toc: preamble
 :sectanchors:
 
 The entry page of the Java course in L3.
