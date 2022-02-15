@@ -8,17 +8,6 @@ The entry page of the Java course in L3.
 You know algorithmics: you know how to design algorithms to solve problems, using data structures, if required, such as lists or stacks. 
 You can use at least one of the three major operating systems (Windows, a Linux variant or Mac OS) to compile and run a program in at least one language, and are generally at ease with that OS: you know how to edit files and move them around, install and use basic programs, …
 
-== Abbreviations
-
-* [I]: Important
-* [O]: Optional (do it if you are specifically interested in the related aspect)
-* ESx.y (or ESx.y.z): designates section x.y (or x.y.z) in Eck’s https://math.hws.edu/javanotes/[book] (in chapter x)
-* EQx: quiz chapter x
-* EQx.y: question number y in Eck’s book, from quiz chapter x
-* EEx.y: exercice number y in Eck’s book, from exercices chapter x
-* Ranges are always given with ends included (EQ1.3 to 1.9 means 3 and 9 included)
-* Markers apply to the whole line. Example: "4.3 intro to 4.3.2, 4.6.1 [I]" means that everything in between 4.3 and 4.3.2 plus 4.6.1 are important.
-
 == General references
 * Eck’s https://math.hws.edu/javanotes/[book]
 * Stéphane Airiau’s https://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/[course] (in French)
