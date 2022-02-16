@@ -21,10 +21,12 @@ You can use at least one of the three major operating systems (Windows, a Linux 
 * Install the https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Various.adoc#installing-the-jdk[JDK]
 * Git step-by-step (end). Read the https://github.com/oliviercailloux/java-course/blob/master/Git/Graded%20exercices.adoc[graded exercices] procedure and take the “training” assignment; Practice with the other exercices on the Git page
 * https://github.com/oliviercailloux/java-course/blob/master/Syntax/README.adoc[Syntax]: basics; exercices (Shorts and Methods); then Classes
-* https://github.com/oliviercailloux/java-course/blob/master/Execution/README.adoc[Execution]
+
+TODO @ home: Git step-by-step (entirely); “graded exercices” and “training” (see above); Exercices of “Syntax” until “Classes” (not: “More about classes”).
 
 == Next
 
+* https://github.com/oliviercailloux/java-course/blob/master/Execution/README.adoc[Execution]
 * https://github.com/oliviercailloux/java-course/blob/master/L3/Exercices%20not%C3%A9s.adoc[Exercices notés]
 * Syntax: packages ; more exercices
 * https://github.com/oliviercailloux/java-course/blob/master/Dev%20tools/Eclipse.adoc[Eclipse & Java]
