@@ -24,6 +24,12 @@ You can use at least one of the three major operating systems (Windows, a Linux 
 
 TODO @ home: Git step-by-step (entirely); “graded exercices” and “training” (see above); Exercices of “Syntax” until “Classes” (not: “More about classes”).
 
+
+[[S2]]
+== S2
+
+* Training about a Graded exercice
+
 == Next
 
 * https://github.com/oliviercailloux/java-course/blob/master/Execution/README.adoc[Execution]
