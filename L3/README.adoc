@@ -28,13 +28,15 @@ TODO @ home: Git step-by-step (entirely); “graded exercices” and “training
 [[S2]]
 == S2
 
-* Training about a Graded exercice
+* Training about a “Graded” exercice
+* More git exercices
+* Syntax: More about classes
+* https://github.com/oliviercailloux/java-course/blob/master/Execution/README.adoc[Execution]
+* Syntax: packages ; more exercices
 
 == Next
 
-* https://github.com/oliviercailloux/java-course/blob/master/Execution/README.adoc[Execution]
 * https://github.com/oliviercailloux/java-course/blob/master/L3/Exercices%20not%C3%A9s.adoc[Exercices notés]
-* Syntax: packages ; more exercices
 * https://github.com/oliviercailloux/java-course/blob/master/Dev%20tools/Eclipse.adoc[Eclipse & Java]
 * https://github.com/oliviercailloux/java-course/blob/master/Overview/README.adoc[Basics of objects]
 * Graded exercice https://github.com/oliviercailloux/java-course/blob/master/Dev%20tools/Exercice.adoc[Eclipse]
