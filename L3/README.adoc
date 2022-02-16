@@ -28,7 +28,7 @@ TODO @ home: Git step-by-step (entirely); “graded exercices” and “training
 [[S2]]
 == S2
 
-* Training about a “Graded” exercice
+* https://classroom.github.com/a/468J9GCl[Training] about a “Graded” exercice
 * More git exercices
 * Syntax: More about classes
 * https://github.com/oliviercailloux/java-course/blob/master/Execution/README.adoc[Execution]
