@@ -26,7 +26,11 @@ TODO @ home: Git step-by-step (entirely); “graded exercices” and “training
 
 
 [[S2]]
-== S2
+== S2: 18 February 2022
+
+// On https://teams.microsoft.com/l/meetup-join/19%3Ameeting_YmVjYzM0ZjgtNGY0Yy00OGUxLWIzODktNjRkNTYwYTMyMDNl%40thread.v2/0?context=%7B%22Tid%22%3A%2281e7c4de-26c9-4531-b076-b70e2d75966e%22%2C%22Oid%22%3A%22db290b1a-6988-4d6b-91c6-9ddd729313f6%22%2C%22MessageId%22%3A%220%22%7D[Teams]!
+On https://teams.microsoft.com/l/meetup-join/19%3Ameeting_YmVjYzM0ZjgtNGY0Yy00OGUxLWIzODktNjRkNTYwYTMyMDNl%40thread.v2[Teams]!
+(The training exercice will happen as planned.)
 
 * “https://classroom.github.com/a/468J9GCl[fake]” (not-really) “graded” exercice
 * More git exercices
