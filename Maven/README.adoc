@@ -2,7 +2,7 @@
 
 Prerequisites: install https://maven.apache.org/download.cgi[Maven] (https://stackoverflow.com/questions/8826881/maven-install-on-mac-os-x[this] might be useful for Mac OS; I didn’t test it)
 
-See https://github.com/oliviercailloux/java-course/raw/master/Maven/Pr%C3%A9sentation/presentation.pdf[présentation].
+See https://github.com/oliviercailloux/java-course/raw/main/Maven/Pr%C3%A9sentation/presentation.pdf[présentation].
 
 In the https://github.com/oliviercailloux/java-course/blob/master/Maven/Exercices.adoc[exercices], we learn about starting Maven projects from archetypes.
 
