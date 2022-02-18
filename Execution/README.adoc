@@ -9,8 +9,10 @@ Here we learn how to compile and execute Java code, first in a simple case, then
 * Define a class `MyMathClass` containing the method `greatestDivisor` and a method that returns the smallest divisor (greater than one) of its parameter; and a class `MyBooleanClass` containing a method `xor` returning `true` iff exactly one of its parameter is `true`.
 * Add a `main` method to your `MyBooleanClass` that prints “Hello, this is my boolean class.” Use `System.out.println("…")` to print.
 * Compile `MyBooleanClass` with `javac`, move the resulting file into its own directory, execute it from the source directory.
-* Find out _in the official documentation_ how to compile the class and let the resulting class be placed in its own directory, in a single step (without you having to move the file afterwards)
-* Add a `main` method to you `MyMathClass` that accepts two arguments that can each be either `"true"` or `"false"`; the method converts these parameters from `String` to `boolean`, calls your `xor` method with the corresponding parameters and prints the result.
+* Find out _in the javac documentation_ how to compile the class and let the resulting class be placed in its own directory, in a single step (without you having to move the file afterwards). Type just `javac` to see its documentation.
+* Add a `main` method to `MyMathClass` that writes “Hello, world.” Compile and invoke the class to check that it works.
+* Change the `main` method so that it prints the first two elements of its `args` array. Compile and invoke your class with two arguments to check that it works (`java MyMathClass arg1 arg2`).
+* Change the `main` method so that it accepts two arguments that can each be either `"true"` or `"false"`; the method converts these parameters from `String` to `boolean`, calls your `xor` method with the corresponding parameters and prints the result.
 * Compile `MyMathClass`, move the resulting file into its own directory (alone), and execute it from the source directory. Why does it fail? What does the error message indicate, and how is it related to the problem? Fix the problem and execute it, first by grouping the class files, second, while keeping both class files in distinct directories.
 
 == Exercice: with packages
