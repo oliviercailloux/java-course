@@ -17,9 +17,9 @@ This document explains how to submit your solutions for the graded exercices of 
 * Hint: Check with the GitHub web interface that your commits and branches have reached the remote repository
 
 == Configuration
-It is important that your git `user.name` https://github.com/oliviercailloux/java-course/blob/master/Git/README.adoc#Configure-git[equals] (exactly) your GitHub username, so that I can associate your contributions to you (this will be important when working on projects but I will also grade whether you configured your git correctly even before projects, as part of each graded exercice).
+It is important that your git `user.name` https://github.com/oliviercailloux/java-course/blob/main/Git/README.adoc#Configure-git[equals] (exactly) your GitHub username, so that I can associate your contributions to you (this will be important when working on projects but I will also grade whether you configured your git correctly even before projects, as part of each graded exercice).
 
-You must also apply https://github.com/oliviercailloux/java-course/blob/master/Git/README.adoc#About-authentication-on-GitHub[About authentication on GitHub].
+You must also apply https://github.com/oliviercailloux/java-course/blob/main/Git/README.adoc#About-authentication-on-GitHub[About authentication on GitHub].
 
 == The `training` assignment
 * Here is https://classroom.github.com/a/uAsNcmqi[the link] for the “training” assignment. 
@@ -34,6 +34,6 @@ If you want to start fresh, https://docs.github.com/repositories/creating-and-ma
 Accept the https://classroom.github.com/a/uAsNcmqi[`training`] assignment and translate the content of the file `hello.txt` to say hello in another language of your choice. Make sure this is visible on your remote repository.
 
 == Exercice: reinitialize the `training` assignment history
-Read https://github.com/oliviercailloux/java-course/blob/master/Git/Reinitialization.adoc[Reinitialization].
+Read https://github.com/oliviercailloux/java-course/blob/main/Git/Reinitialization.adoc[Reinitialization].
 Accept the https://classroom.github.com/a/uAsNcmqi[`training`] assignment and make it so that your resulting remote repository only contains, in its `main` branch, the history of the `master` branch of https://github.com/apache/cordova-plugin-compat[this project]. Second, push the `1.0.x` branch of the source project to your GitHub remote.
 

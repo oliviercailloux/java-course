@@ -13,7 +13,7 @@ Some step by step exercices for git starters.
 ** Hint: check in the slides, or in the Cheat sheets, how to do this.
 * Put `start.txt` in the index. Modify its content so that it contains `hello2`. Observe (using a git command) the difference between the version of this file in the workdir, in the index, and in the repository (all three should be different). Now place your new version of `start.txt` in the index.
 * Send your first commit. (Where is it sent?) Check that your current situation conforms to <<C1>>.
-** Hint: it’s time to use this big `git log` command suggested https://github.com/oliviercailloux/java-course/blob/master/Git/README.adoc[here], or to use a graphical interface.
+** Hint: it’s time to use this big `git log` command suggested https://github.com/oliviercailloux/java-course/blob/main/Git/README.adoc[here], or to use a graphical interface.
 
 [[C1]]
 .Right after the first commit
@@ -43,7 +43,7 @@ Thinking about it, you decide to merge both your ideas into `master`.
 * Go back to branch `master` and merge `dev` into it. Before doing it, try to predict the resulting situation, and whether it will produce a fast-forward.
 * Now let’s merge `dev2` into `master` (now containing the changes from `dev`). First predict what situation will result. Try it and obtain a final result with everything merged into the `master` branch.
 
-(Solutions diagrams are here: https://github.com/oliviercailloux/java-course/blob/master/Git/Merged1.svg[Merged1], https://github.com/oliviercailloux/java-course/blob/master/Git/Merged2.svg[Merged2]. Don’t cheat! Solve the exercice before looking.)
+(Solutions diagrams are here: https://github.com/oliviercailloux/java-course/blob/main/Git/Merged1.svg[Merged1], https://github.com/oliviercailloux/java-course/blob/master/Git/Merged2.svg[Merged2]. Don’t cheat! Solve the exercice before looking.)
 
 == Remote repository
 
