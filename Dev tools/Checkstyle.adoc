@@ -1,7 +1,7 @@
 = Checkstyle
 
 A brief document for including automated style checks for your source code.
-I assume your project uses https://github.com/oliviercailloux/java-course/tree/master/Maven[Maven].
+I assume that your project uses https://github.com/oliviercailloux/java-course/blob/main/Maven/README.adoc[Maven].
 
 == Motivation
 When working in a team, it is important that every team member respects the same formatting and naming conventions. It improves clarity, and importantly, it ensures that differences found by `git` are due to real code change, not just differences in how different team members configured their editors. Otherwise, many differences spring in source code just because of formatting differences. And thus merge operations become a nightmare, and more generally reviewing history of what changed in your code is made difficult.
