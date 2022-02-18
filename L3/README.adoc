@@ -98,11 +98,11 @@ TODO @ home: Train with as many Git exercices as you need to be very comfortable
 * Presentation before end of 27 June, directly in `master`, in your documentation folder, named `Présentation 2021.pdf`. This may be a non-entirely final version, to be finalized, if required, on the 28th, depending on what will be merged effectively.
 
 * Présentations (liste à mettre à jour) : 
-** https://github.com/Julienchilhagopian/J-Voting/raw/main/Doc/Pr%C3%A9sentation%202020.pdf[J-Voting], 
-** https://github.com/Sarah-Elhelw/teach_spreadsheets/raw/main/Doc/Presentation%202020.pdf[Teach-Spreadsheets], 
-** https://github.com/av1m/Apartments/raw/main/Doc/Pr%C3%A9sentation%202020.pdf[Apartments], 
-** https://github.com/sebastienbourg/J-Confs/raw/main/Doc/Pr%C3%A9sentation%202020.pdf[J-Confs], 
-** https://github.com/marcellinodour/MIDO-SVG/raw/main/Doc/Pr%C3%A9sentation%202020.pdf[MIDO-SVG]
+** \https://github.com/Julienchilhagopian/J-Voting/raw/main/Doc/Pr%C3%A9sentation%202020.pdf[J-Voting], 
+** \https://github.com/Sarah-Elhelw/teach_spreadsheets/raw/main/Doc/Presentation%202020.pdf[Teach-Spreadsheets], 
+** \https://github.com/av1m/Apartments/raw/main/Doc/Pr%C3%A9sentation%202020.pdf[Apartments], 
+** \https://github.com/sebastienbourg/J-Confs/raw/main/Doc/Pr%C3%A9sentation%202020.pdf[J-Confs], 
+** \https://github.com/marcellinodour/MIDO-SVG/raw/main/Doc/Pr%C3%A9sentation%202020.pdf[MIDO-SVG]
 ** Démo *obligatoirement uniquement* de votre branche master (mais vous pouvez parler et montrer des informations d’autres branches)
 ** 15 à 30 minutes
 ** Depuis l’ordinateur de présentation, *pas* le vôtre (prévoyez des captures d’écran en plan B)

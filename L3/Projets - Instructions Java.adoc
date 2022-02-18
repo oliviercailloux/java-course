@@ -1,6 +1,6 @@
 = Projets : Instructions Java
 
-Voir aussi : https://github.com/oliviercailloux/UML/blob/master/Projets%20-%20D%C3%A9marrage.adoc[Démarrage] ; https://github.com/oliviercailloux/java-course/blob/main/L3/Projets.adoc[Instructions générales].
+Voir aussi : https://github.com/oliviercailloux/java-course/blob/main/Projets%20-%20D%C3%A9marrage.adoc[Démarrage] ; https://github.com/oliviercailloux/java-course/blob/main/L3/Projets.adoc[Instructions générales].
 Ce document contient les instructions spécifiques au cours de Java.
 
 * Vos fonctionnalités doivent être couvertes par des tests unitaires, considérés comme partie intégrante de chaque tâche et soumis en même temps que le code testé.
