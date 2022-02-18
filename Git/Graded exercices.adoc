@@ -16,8 +16,10 @@ This document explains how to submit your solutions for the graded exercices of 
 ** Push regularly, do not wait the end of the allowed time, so as to prevent last minute problems
 * Hint: Check with the GitHub web interface that your commits and branches have reached the remote repository
 
-== Configure you user name
+== Configuration
 It is important that your git `user.name` https://github.com/oliviercailloux/java-course/blob/master/Git/README.adoc#Configure-git[equals] (exactly) your GitHub username, so that I can associate your contributions to you (this will be important when working on projects but I will also grade whether you configured your git correctly even before projects, as part of each graded exercice).
+
+You must also apply https://github.com/oliviercailloux/java-course/blob/master/Git/README.adoc#About-authentication-on-GitHub[About authentication on GitHub].
 
 == The `training` assignment
 * Here is https://classroom.github.com/a/uAsNcmqi[the link] for the “training” assignment. 
