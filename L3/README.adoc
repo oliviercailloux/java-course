@@ -32,7 +32,7 @@ On https://teams.microsoft.com/l/meetup-join/19%3ASHAR4b7_mFyD9zNK4avJoS_UsMraSm
 (The training exercice will happen as planned.)
 
 * https://oliviercailloux.github.io/Exams/[Multiple choice questions] (not graded)
-* “https://classroom.github.com/a/468J9GCl[fake]” (not-really) “graded” exercice. Create a commit that contains, in `Some file.txt`, the original content of `Some file.txt` together with the original content of `Another file.txt` (thus, two lines of text in total). Then create a commit that contains only `Some file.txt` (unchanged, thus, with these same two lines of text), thus, with `Another file.txt` removed. (This will also remove the containing folder, as git does not store empty folders.) (You may have supplementary commits, the important point is that at least these two commits must exist.)
+* https://classroom.github.com/a/468J9GCl[fake] (not-really) “graded” exercice. Create a commit that contains, in `Some file.txt`, the original content of `Some file.txt` together with the original content of `Another file.txt` (thus, two lines of text in total). Then create a commit that contains only `Some file.txt` (unchanged, thus, with these same two lines of text), thus, with `Another file.txt` removed. (This will also remove the containing folder, as git does not store empty folders.) (You may have supplementary commits, the important point is that at least these two commits must exist.)
 * More git exercices (see above, Git and the graded exercices)
 * Syntax: More about classes
 * https://github.com/oliviercailloux/java-course/blob/master/Execution/README.adoc[Execution]
