@@ -38,6 +38,8 @@ On https://teams.microsoft.com/l/meetup-join/19%3ASHAR4b7_mFyD9zNK4avJoS_UsMraSm
 * https://github.com/oliviercailloux/java-course/blob/main/Execution/README.adoc[Execution]
 * Syntax: packages ; more exercices
 
+TODO @ home: Train with as many Git exercices as you need to be very comfortable (including accepting GitHub assignments). Execute the main exercices in Execution (without packages).
+
 == Next
 
 * https://github.com/oliviercailloux/java-course/blob/main/L3/Exercices%20not%C3%A9s.adoc[Exercices notés]
