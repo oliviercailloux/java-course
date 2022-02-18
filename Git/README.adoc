@@ -49,6 +49,9 @@ Git will use this to sign your commits.
 
 For more info: https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup[initial setup]; GitHub usage of https://docs.github.com/en/get-started/getting-started-with-git/setting-your-username-in-git#about-git-usernames[`user.name`] and https://help.github.com/en/github/setting-up-and-managing-your-github-user-account/setting-your-commit-email-address[`user.email`]
 
+== About authentication on GitHub
+Authentication fails if you use your GitHub password. You must use a personal access token instead. See https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls[Cloning with HTTPS URLs].
+
 == References
 * https://learngitbranching.js.org/[Learn Git Branching]
 // alternative: https://git-school.github.io/visualizing-git/[visualizing-git], but flaws (master, git checkout, HEAD pointer unclear)
