@@ -32,7 +32,8 @@ TODO @ home: Git step-by-step (entirely); “graded exercices” and “training
 On https://teams.microsoft.com/l/meetup-join/19%3Ameeting_YmVjYzM0ZjgtNGY0Yy00OGUxLWIzODktNjRkNTYwYTMyMDNl%40thread.v2[Teams]!
 (The training exercice will happen as planned.)
 
-* Training about a “Graded” exercice
+* https://oliviercailloux.github.io/Exams/[Multiple choice questions] (not graded)
+* Training about a “Graded” exercice (not graded)
 * More git exercices
 * Syntax: More about classes
 * https://github.com/oliviercailloux/java-course/blob/master/Execution/README.adoc[Execution]
