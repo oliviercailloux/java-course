@@ -17,8 +17,8 @@ In jshell, as with many shells, use ↑ (keyboard up https://en.wikipedia.org/wi
 
 == Methods
 . Assign 4659 and 23 to variables, and show the result of multiplying these variables
-. Compute and show the greatest divisor of 4659 that is different than 4659 (use the `%` operator and a loop)
-. Define a method that computes and show the greatest divisor of 4659 that is different than 4659
+. Compute the greatest divisor of 4659 that is different than 4659 (use the `%` operator and a loop) (to check your answer, look at https://www.wolframalpha.com/input?i2d=true&i=factor%5C%2840%294659%5C%2841%29[its factors])
+. Define a method that returns the greatest divisor of 4659 that is different than 4659
 . Define a method that accepts an integer parameter and returns its greatest divisor except itself; use it to show the greatest divisor of 4659.
 
 == Classes
