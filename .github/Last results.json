@@ -7049,51 +7049,6 @@
         "when": "2022-02-18T16:56:14.849681679Z"
     },
     {
-        "url": "https://github.com/Julienchilhagopian/J-Voting/raw/main/Doc/Pr%C3%A9sentation%202020.pdf",
-        "sources": [
-            "L3/README.adoc"
-        ],
-        "response": 404,
-        "satisfied": false,
-        "when": "2022-02-18T16:56:15.346953522Z"
-    },
-    {
-        "url": "https://github.com/Sarah-Elhelw/teach_spreadsheets/raw/main/Doc/Presentation%202020.pdf",
-        "sources": [
-            "L3/README.adoc"
-        ],
-        "response": 404,
-        "satisfied": false,
-        "when": "2022-02-18T16:56:15.907007785Z"
-    },
-    {
-        "url": "https://github.com/av1m/Apartments/raw/main/Doc/Pr%C3%A9sentation%202020.pdf",
-        "sources": [
-            "L3/README.adoc"
-        ],
-        "response": 404,
-        "satisfied": false,
-        "when": "2022-02-18T16:56:16.510065028Z"
-    },
-    {
-        "url": "https://github.com/sebastienbourg/J-Confs/raw/main/Doc/Pr%C3%A9sentation%202020.pdf",
-        "sources": [
-            "L3/README.adoc"
-        ],
-        "response": 404,
-        "satisfied": false,
-        "when": "2022-02-18T16:56:17.059436832Z"
-    },
-    {
-        "url": "https://github.com/marcellinodour/MIDO-SVG/raw/main/Doc/Pr%C3%A9sentation%202020.pdf",
-        "sources": [
-            "L3/README.adoc"
-        ],
-        "response": 404,
-        "satisfied": false,
-        "when": "2022-02-18T16:56:17.598456788Z"
-    },
-    {
         "url": "https://github.com/oliviercailloux/java-course/raw/main/L3/Appr%C3%A9ciation%20Java.pdf",
         "sources": [
             "L3/README.adoc"
@@ -7101,15 +7056,6 @@
         "response": 302,
         "satisfied": true,
         "when": "2022-02-18T16:56:18.124403330Z"
-    },
-    {
-        "url": "https://github.com/oliviercailloux/UML/blob/master/Projets%20-%20D%C3%A9marrage.adoc",
-        "sources": [
-            "L3/Projets - Instructions Java.adoc"
-        ],
-        "response": 404,
-        "satisfied": false,
-        "when": "2022-02-18T16:56:18.850844250Z"
     },
     {
         "url": "L3/",
@@ -9747,5 +9693,14 @@
         "response": 200,
         "satisfied": true,
         "when": "2022-02-18T17:13:38.555188364Z"
+    },
+    {
+        "url": "https://github.com/oliviercailloux/java-course/blob/main/Projets%20-%20D%C3%A9marrage.adoc",
+        "sources": [
+            "L3/Projets - Instructions Java.adoc"
+        ],
+        "response": 404,
+        "satisfied": false,
+        "when": "2022-02-18T17:20:35.041028154Z"
     }
 ]
