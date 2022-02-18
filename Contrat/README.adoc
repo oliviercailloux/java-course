@@ -4,7 +4,7 @@ Here we learn about the two most important principles of software engineering: d
 
 We will learn about the following mechanisms, that implement these principles: interface; black box; preconditions and postconditions; javadoc; exceptions.
 
-See: https://github.com/oliviercailloux/java-course/raw/master/Contrat/Pr%C3%A9sentation/presentation.pdf[présentation].
+See: https://github.com/oliviercailloux/java-course/raw/main/Contrat/Pr%C3%A9sentation/presentation.pdf[présentation].
 
 == Technical hints
 * Generate Javadoc from Eclipse: `Source` / `Generate Element Comment` (on methods and classes!); use the `Javadoc` view
@@ -33,5 +33,5 @@ From Eck’s book:
 
 Javadoc, from Stéphane Airiau’s course (in French): https://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours3.pdf[Airiau C3], pp. 12 to 19.
 
-Slightly more advanced material for the curious reader: https://github.com/oliviercailloux/java-course/raw/master/Assert/presentation.pdf[assertions]
+Slightly more advanced material for the curious reader: https://github.com/oliviercailloux/java-course/raw/main/Assert/presentation.pdf[assertions]
 

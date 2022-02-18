@@ -2,7 +2,7 @@
 
 NOTE: The reader is supposed to have a minimal knowledge of the https://github.com/oliviercailloux/java-course/blob/master/Git/Shell.adoc[shell], in particular, understand how shell commands are given arguments, understand relative and absolute paths, and have solved the exercices there.
 
-Here we learn how to compile and execute Java code, first in a simple case, then, in more general cases such as when using non-default packages. See: https://github.com/oliviercailloux/java-course/raw/master/Execution/Pr%C3%A9sentation/presentation.pdf[présentation].
+Here we learn how to compile and execute Java code, first in a simple case, then, in more general cases such as when using non-default packages. See: https://github.com/oliviercailloux/java-course/raw/main/Execution/Pr%C3%A9sentation/presentation.pdf[présentation].
 
 == Exercice
 * Define a method `greatestDivisor` that accepts an integer parameter and returns its greatest divisor except itself; use it to show the greatest divisor of 4659.
