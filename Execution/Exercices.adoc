@@ -21,5 +21,5 @@
 * Run the program using a terminal, with `java`. Check that it says Hello twice.
 
 == Solution
-The https://github.com/oliviercailloux/java-course/blob/main/Execution/Solution/README.adoc[solution] is available as a bash script and two folders containing the source code.
+The https://github.com/oliviercailloux/java-course/tree/main/Execution/Solution/[solution] is available as a bash script and two folders containing the source code.
 
