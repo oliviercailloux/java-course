@@ -1621,16 +1621,6 @@
         "when": "2022-02-16T09:51:31.044723657Z"
     },
     {
-        "url": "https://github.com/oliviercailloux/java-course/tree/master/Maven",
-        "sources": [
-            "Dev tools/SonarCloud.adoc",
-            "Dev tools/Checkstyle.adoc"
-        ],
-        "response": 200,
-        "satisfied": true,
-        "when": "2022-02-16T09:51:31.377275613Z"
-    },
-    {
         "url": "https://github.com/oliviercailloux/JLP/blob/master/pom.xml",
         "sources": [
             "Dev tools/Checkstyle.adoc"
@@ -1665,16 +1655,6 @@
         "response": 200,
         "satisfied": true,
         "when": "2022-02-16T09:51:36.461862215Z"
-    },
-    {
-        "url": "https://github.com/oliviercailloux/java-course/blob/master/Dev%20tools/CI.adoc",
-        "sources": [
-            "Dev tools/SonarCloud.adoc",
-            "Dev tools/Checkstyle.adoc"
-        ],
-        "response": 200,
-        "satisfied": true,
-        "when": "2022-02-16T09:51:36.879135408Z"
     },
     {
         "url": "https://maven.apache.org/plugins/maven-checkstyle-plugin/index.html",
@@ -1775,15 +1755,6 @@
         "response": 301,
         "satisfied": true,
         "when": "2022-02-16T09:51:42.878130491Z"
-    },
-    {
-        "url": "https://github.com/oliviercailloux/java-course/blob/master/Execution/README.adoc#modules",
-        "sources": [
-            "Dev tools/Eclipse.adoc"
-        ],
-        "response": 200,
-        "satisfied": true,
-        "when": "2022-02-16T09:51:43.573203306Z"
     },
     {
         "url": "https://help.eclipse.org/latest/topic/org.eclipse.platform.doc.user/tips/platform_tips.html",
@@ -4463,15 +4434,6 @@
         "response": 200,
         "satisfied": true,
         "when": "2022-02-16T09:56:02.550644907Z"
-    },
-    {
-        "url": "https://github.com/oliviercailloux/java-course/tree/master/Execution/Solution/",
-        "sources": [
-            "Execution/Exercices.adoc"
-        ],
-        "response": 200,
-        "satisfied": true,
-        "when": "2022-02-16T09:56:02.857409264Z"
     },
     {
         "url": "https://github.com/oliviercailloux/java-course/blob/master/Execution/Pr%C3%A9sentation%20class%20path/presentation.pdf",
@@ -9468,6 +9430,8 @@
     {
         "url": "https://github.com/oliviercailloux/java-course/blob/main/Maven/README.adoc",
         "sources": [
+            "Dev tools/SonarCloud.adoc",
+            "Dev tools/Checkstyle.adoc",
             "L3/README.adoc"
         ],
         "response": 200,
@@ -9648,6 +9612,8 @@
     {
         "url": "https://github.com/oliviercailloux/java-course/blob/main/Dev%20tools/CI.adoc",
         "sources": [
+            "Dev tools/SonarCloud.adoc",
+            "Dev tools/Checkstyle.adoc",
             "L3/README.adoc"
         ],
         "response": 200,
@@ -9788,5 +9754,23 @@
         "response": 302,
         "satisfied": true,
         "when": "2022-02-18T16:34:59.668150471Z"
+    },
+    {
+        "url": "https://github.com/oliviercailloux/java-course/blob/main/Execution/README.adoc#modules",
+        "sources": [
+            "Dev tools/Eclipse.adoc"
+        ],
+        "response": 200,
+        "satisfied": true,
+        "when": "2022-02-18T16:46:29.813655313Z"
+    },
+    {
+        "url": "https://github.com/oliviercailloux/java-course/tree/main/Execution/Solution/",
+        "sources": [
+            "Execution/Exercices.adoc"
+        ],
+        "response": 200,
+        "satisfied": true,
+        "when": "2022-02-18T16:46:30.242540086Z"
     }
 ]
