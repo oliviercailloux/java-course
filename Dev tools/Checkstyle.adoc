@@ -63,7 +63,7 @@ Download https://github.com/oliviercailloux/JLP/blob/master/checkstyle.xml[this]
 
 Eclipse will rant that it does not know what to do with checkstyle as applied to the validate phase. Just auto-fix it by letting Eclipse configure itself and ignore this plugin.
 
-Configure https://github.com/oliviercailloux/java-course/blob/master/Dev%20tools/CI.adoc[Travis] (if not done already) so that your project is built automatically after each push. If someone mistakenly commits code that fails the checkstyle tests, it will be visible immediately as the build will now fail, and the erroneous commits can be dealt with.
+Configure https://github.com/oliviercailloux/java-course/blob/main/Dev%20tools/CI.adoc[Travis] (if not done already) so that your project is built automatically after each push. If someone mistakenly commits code that fails the checkstyle tests, it will be visible immediately as the build will now fail, and the erroneous commits can be dealt with.
 
 In case of build failing for style issues, you can see what is wrong in the Maven output, but it’s better to run `mvn jxr:jxr checkstyle:checkstyle`, which creates a readable html report in the `target/site/` folder.
 
