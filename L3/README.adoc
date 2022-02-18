@@ -16,11 +16,11 @@ You can use at least one of the three major operating systems (Windows, a Linux 
 [[S1]]
 == S1: 16 February 2022
 
-* https://github.com/oliviercailloux/java-course/raw/master/L3/Pr%C3%A9sentation%20du%20cours%20Objet/presentation.pdf[Pres course]
-* https://github.com/oliviercailloux/java-course/blob/master/Git/README.adoc[Git]: remotes, https://learngitbranching.js.org/?NODEMO[Live demo]
-* Install the https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Various.adoc#installing-the-jdk[JDK]
-* Git step-by-step (end). Read the https://github.com/oliviercailloux/java-course/blob/master/Git/Graded%20exercices.adoc[graded exercices] procedure and take the “training” assignment; Practice with the other exercices on the Git page
-* https://github.com/oliviercailloux/java-course/blob/master/Syntax/README.adoc[Syntax]: basics; exercices (Shorts and Methods); then Classes
+* https://github.com/oliviercailloux/java-course/raw/main/L3/Pr%C3%A9sentation%20du%20cours%20Objet/presentation.pdf[Pres course]
+* https://github.com/oliviercailloux/java-course/blob/main/Git/README.adoc[Git]: remotes, https://learngitbranching.js.org/?NODEMO[Live demo]
+* Install the https://github.com/oliviercailloux/java-course/blob/main/Best%20practices/Various.adoc#installing-the-jdk[JDK]
+* Git step-by-step (end). Read the https://github.com/oliviercailloux/java-course/blob/main/Git/Graded%20exercices.adoc[graded exercices] procedure and take the “training” assignment; Practice with the other exercices on the Git page
+* https://github.com/oliviercailloux/java-course/blob/main/Syntax/README.adoc[Syntax]: basics; exercices (Shorts and Methods); then Classes
 
 TODO @ home: Git step-by-step (entirely); “graded exercices” and “training” (see above); Exercices of “Syntax” until “Classes” (not: “More about classes”).
 
@@ -35,40 +35,40 @@ On https://teams.microsoft.com/l/meetup-join/19%3ASHAR4b7_mFyD9zNK4avJoS_UsMraSm
 * https://classroom.github.com/a/468J9GCl[fake] (not-really) “graded” exercice. Create a commit that contains, in `Some file.txt`, the original content of `Some file.txt` together with the original content of `Another file.txt` (thus, two lines of text in total). Then create a commit that contains only `Some file.txt` (unchanged, thus, with these same two lines of text), thus, with `Another file.txt` removed. (This will also remove the containing folder, as git does not store empty folders.) (You may have supplementary commits, the important point is that at least these two commits must exist.)
 * More git exercices (see above, Git and the graded exercices)
 * Syntax: More about classes
-* https://github.com/oliviercailloux/java-course/blob/master/Execution/README.adoc[Execution]
+* https://github.com/oliviercailloux/java-course/blob/main/Execution/README.adoc[Execution]
 * Syntax: packages ; more exercices
 
 == Next
 
-* https://github.com/oliviercailloux/java-course/blob/master/L3/Exercices%20not%C3%A9s.adoc[Exercices notés]
-* https://github.com/oliviercailloux/java-course/blob/master/Dev%20tools/Eclipse.adoc[Eclipse & Java]
-* https://github.com/oliviercailloux/java-course/blob/master/Overview/README.adoc[Basics of objects]
-* Graded exercice https://github.com/oliviercailloux/java-course/blob/master/Dev%20tools/Exercice.adoc[Eclipse]
-* Two major aspects of software engineering: https://github.com/oliviercailloux/java-course/blob/master/Contrat/README.adoc[contract] and fail-fast.
-* https://github.com/oliviercailloux/java-course/blob/master/Contrat/README.adoc[Contract]: end; exercices
-* https://github.com/oliviercailloux/java-course/blob/master/Maven/README.adoc[Maven]: overview
-* https://github.com/oliviercailloux/java-course/blob/master/Objects%20%26%20interfaces/README.adoc[Objects & interfaces]. Exercices: EE5.1, 5.2, EE5.3, Three dice
+* https://github.com/oliviercailloux/java-course/blob/main/L3/Exercices%20not%C3%A9s.adoc[Exercices notés]
+* https://github.com/oliviercailloux/java-course/blob/main/Dev%20tools/Eclipse.adoc[Eclipse & Java]
+* https://github.com/oliviercailloux/java-course/blob/main/Overview/README.adoc[Basics of objects]
+* Graded exercice https://github.com/oliviercailloux/java-course/blob/main/Dev%20tools/Exercice.adoc[Eclipse]
+* Two major aspects of software engineering: https://github.com/oliviercailloux/java-course/blob/main/Contrat/README.adoc[contract] and fail-fast.
+* https://github.com/oliviercailloux/java-course/blob/main/Contrat/README.adoc[Contract]: end; exercices
+* https://github.com/oliviercailloux/java-course/blob/main/Maven/README.adoc[Maven]: overview
+* https://github.com/oliviercailloux/java-course/blob/main/Objects%20%26%20interfaces/README.adoc[Objects & interfaces]. Exercices: EE5.1, 5.2, EE5.3, Three dice
 * Interfaces. Exercice: I like to move it move it; Coffee
 * Polymorphism: inheritance
 * The `Object` class and its methods: `toString()`, `equals`, `hashcode`. Exercice: Car string
-* https://github.com/oliviercailloux/java-course/blob/master/Contrat/Exceptions.adoc[Exceptions]. Exercice: Checked exceptions
+* https://github.com/oliviercailloux/java-course/blob/main/Contrat/Exceptions.adoc[Exceptions]. Exercice: Checked exceptions
 
 // * Graded exercice about: Eclipse, Contract, Objects, Interfaces, Exceptions. Accept https://classroom.github.com/a/M-4KNbQC[this assignment] to create your remote repository for this exercice. Clone my https://github.com/oliviercailloux/coffee/[Coffee] repository. Connect your local resulting repository to your remote repository for this exercice (instead of, or in supplement to, my Coffee repository). Implement the classes `DripCoffeeMaker` and `MyEspressoMachine`, making sure they satisfy their contracts. Do _not_ _change_ any provided code, you may only _add_ new code (thus, leave the package declarations untouched). Push your work frequently to your remote repository for this exercice, making sure that it compiles. You have 45 minutes: the deadline is at 14:31.
 // ** As usual, you must configure Eclipse as expected in this course.
 
-* https://github.com/oliviercailloux/java-course/blob/master/Objects%20%26%20interfaces/README.adoc#generics[Generics]
-* https://github.com/oliviercailloux/java-course/blob/master/Collections/README.adoc[Collections]
-* https://github.com/oliviercailloux/java-course/blob/master/JUnit/README.adoc[Unit testing]
-* https://github.com/oliviercailloux/java-course/blob/master/Syntax/README.adoc#varargs[Varargs] syntax & exercice
-* Primitive types (autoboxing); optional; give guarantees: https://github.com/oliviercailloux/java-course/blob/master/Style/Null.adoc[Protect against null references]
-* https://github.com/oliviercailloux/java-course/blob/master/Style/README.adoc[Favor static factory methods]
-* Files and https://github.com/oliviercailloux/java-course/blob/master/Flows.adoc[flows]: Overview & Exercices _Read using a byte flow_ and _Determine encoding_
+* https://github.com/oliviercailloux/java-course/blob/main/Objects%20%26%20interfaces/README.adoc#generics[Generics]
+* https://github.com/oliviercailloux/java-course/blob/main/Collections/README.adoc[Collections]
+* https://github.com/oliviercailloux/java-course/blob/main/JUnit/README.adoc[Unit testing]
+* https://github.com/oliviercailloux/java-course/blob/main/Syntax/README.adoc#varargs[Varargs] syntax & exercice
+* Primitive types (autoboxing); optional; give guarantees: https://github.com/oliviercailloux/java-course/blob/main/Style/Null.adoc[Protect against null references]
+* https://github.com/oliviercailloux/java-course/blob/main/Style/README.adoc[Favor static factory methods]
+* Files and https://github.com/oliviercailloux/java-course/blob/main/Flows.adoc[flows]: Overview & Exercices _Read using a byte flow_ and _Determine encoding_
 
 // * Graded exercice, _at Dauphine_: https://classroom.github.com/a/taDEGaJA[persons-manager]. Accept the assignment. This creates a private repository for you with code already there. You have to provide an implementation of the class `MyPersonsManager` according to the contracts you will find there. Clone this, work locally, and push your implementation. Do not forget to use the provided unit tests to help you check your implementation. This test will count for three of the previous tests. Deadline: 15:00 (+ 5 min for late commits.)
 
-* https://github.com/oliviercailloux/java-course/blob/master/Objects%20%26%20interfaces/Equals.adoc[Equality and hash codes] (and exercice)
-* Files and flows: https://github.com/oliviercailloux/java-course/blob/master/Flows.adoc#reading-from-character-flows[Reading from character flows] to end (except for the last exercice about the abstract path concept).
-* Projets : https://github.com/oliviercailloux/java-course/blob/master/L3/Projets%20-%20Instructions%20Java.adoc[Instructions Java]
+* https://github.com/oliviercailloux/java-course/blob/main/Objects%20%26%20interfaces/Equals.adoc[Equality and hash codes] (and exercice)
+* Files and flows: https://github.com/oliviercailloux/java-course/blob/main/Flows.adoc#reading-from-character-flows[Reading from character flows] to end (except for the last exercice about the abstract path concept).
+* Projets : https://github.com/oliviercailloux/java-course/blob/main/L3/Projets%20-%20Instructions%20Java.adoc[Instructions Java]
 
 //* https://www.youtube.com/watch?v=lcYkOh4nweE&t=1m21s[Mars Climate Orbiter] (1m21 to 5m18; small mistake in the video: it’s Newton times second, not Newton force per second; see also https://en.wikipedia.org/wiki/Mars_Climate_Orbiter[Wikipedia]; similarly https://www-users.math.umn.edu/~arnold/disasters/ariane.html[sad] https://www.youtube.com/watch?v=gp_D8r-2hwk[story])
 
@@ -77,38 +77,38 @@ On https://teams.microsoft.com/l/meetup-join/19%3ASHAR4b7_mFyD9zNK4avJoS_UsMraSm
 // * Sol persons-manager https://github.com/oliviercailloux-org/persons-manager/tree/sol-no-streams[here] (advanced and more compact version https://github.com/oliviercailloux-org/persons-manager/tree/sol-streams[here]). Stats: Static factories 6; toMap throwing 6; toString 7 (others: 17 to 24 / 25).
 
 * No https://github.com/oliviercailloux/Teaching/blob/main/Plagiat.adoc[plagiarism], but reuse! (https://mycore.core-cloud.net/index.php/s/jDdn1OcEfjjj8NU[Audio track] from https://fr.wikipedia.org/wiki/Le_Jeu_des_dictionnaires[Le Jeu des Dictionnaires], included with permission from geluck.com, use authorized only in the context of this course.)
-* https://github.com/oliviercailloux/java-course/blob/master/Execution/Resources.adoc[Resources]; exercice.
-* https://github.com/oliviercailloux/java-course/blob/master/Log/README.adoc[Logging]
+* https://github.com/oliviercailloux/java-course/blob/main/Execution/Resources.adoc[Resources]; exercice.
+* https://github.com/oliviercailloux/java-course/blob/main/Log/README.adoc[Logging]
 
 // * Graded test: https://classroom.github.com/a/plKCWX3X[workers]. Deadline at 14:48, plus five minutes for penalized late commits. Weight: 2.
-* https://github.com/oliviercailloux/java-course/raw/master/Annotations/presentation.pdf[Annotations]
-* https://github.com/oliviercailloux/java-course/blob/master/SWT/README.adoc[SWT]
+* https://github.com/oliviercailloux/java-course/raw/main/Annotations/presentation.pdf[Annotations]
+* https://github.com/oliviercailloux/java-course/blob/main/SWT/README.adoc[SWT]
 
 // Style/Method references
 //*Graded homework*: string-files-homework. Your last commit before the end of the 10th of May will be graded again, using the same set of tests as the graded test. This will count for 70% of a normal test. The string-files graded test counts for 30% or a normal test. Please commit on the same repository as the one already used (string-files).
 
-* https://github.com/oliviercailloux/java-course/blob/master/Dev%20tools/CI.adoc[CI]: GitHub Workflows
+* https://github.com/oliviercailloux/java-course/blob/main/Dev%20tools/CI.adoc[CI]: GitHub Workflows
 
-* https://github.com/oliviercailloux/projets/raw/master/Licences/Declaration%20of%20licensing.odt[Declarations of licensing]. https://github.com/oliviercailloux/projets/blob/master/Licences/Licence.adoc[Licences] and philosophy: https://www.gnu.org/philosophy/philosophy.html[GNU]; https://opensource.org/[OSI]; Copyleft (GNU https://opensource.org/licenses/GPL-3.0[GPL]); Non-copyleft (https://opensource.org/licenses/MIT[MIT])
-* Parsing HTML (info): https://github.com/oliviercailloux/java-course/blob/master/DOM.adoc[DOM]
-* Accessing REST web services (info): https://github.com/oliviercailloux/java-course/blob/master/WS%20client/JAX-RS%20client.adoc[JAX-RS client]
+* https://github.com/oliviercailloux/projets/raw/main/Licences/Declaration%20of%20licensing.odt[Declarations of licensing]. https://github.com/oliviercailloux/projets/blob/main/Licences/Licence.adoc[Licences] and philosophy: https://www.gnu.org/philosophy/philosophy.html[GNU]; https://opensource.org/[OSI]; Copyleft (GNU https://opensource.org/licenses/GPL-3.0[GPL]); Non-copyleft (https://opensource.org/licenses/MIT[MIT])
+* Parsing HTML (info): https://github.com/oliviercailloux/java-course/blob/main/DOM.adoc[DOM]
+* Accessing REST web services (info): https://github.com/oliviercailloux/java-course/blob/main/WS%20client/JAX-RS%20client.adoc[JAX-RS client]
 
 * Presentation before end of 27 June, directly in `master`, in your documentation folder, named `Présentation 2021.pdf`. This may be a non-entirely final version, to be finalized, if required, on the 28th, depending on what will be merged effectively.
 
 * Présentations (liste à mettre à jour) : 
-** https://github.com/Julienchilhagopian/J-Voting/raw/master/Doc/Pr%C3%A9sentation%202020.pdf[J-Voting], 
-** https://github.com/Sarah-Elhelw/teach_spreadsheets/raw/master/Doc/Presentation%202020.pdf[Teach-Spreadsheets], 
-** https://github.com/av1m/Apartments/raw/master/Doc/Pr%C3%A9sentation%202020.pdf[Apartments], 
-** https://github.com/sebastienbourg/J-Confs/raw/master/Doc/Pr%C3%A9sentation%202020.pdf[J-Confs], 
-** https://github.com/marcellinodour/MIDO-SVG/raw/master/Doc/Pr%C3%A9sentation%202020.pdf[MIDO-SVG]
+** https://github.com/Julienchilhagopian/J-Voting/raw/main/Doc/Pr%C3%A9sentation%202020.pdf[J-Voting], 
+** https://github.com/Sarah-Elhelw/teach_spreadsheets/raw/main/Doc/Presentation%202020.pdf[Teach-Spreadsheets], 
+** https://github.com/av1m/Apartments/raw/main/Doc/Pr%C3%A9sentation%202020.pdf[Apartments], 
+** https://github.com/sebastienbourg/J-Confs/raw/main/Doc/Pr%C3%A9sentation%202020.pdf[J-Confs], 
+** https://github.com/marcellinodour/MIDO-SVG/raw/main/Doc/Pr%C3%A9sentation%202020.pdf[MIDO-SVG]
 ** Démo *obligatoirement uniquement* de votre branche master (mais vous pouvez parler et montrer des informations d’autres branches)
 ** 15 à 30 minutes
 ** Depuis l’ordinateur de présentation, *pas* le vôtre (prévoyez des captures d’écran en plan B)
 ** Noté : intérêt pour l’audience ; compréhension par l’audience du contexte et de l’objectif du projet ; compréhension par l’audience de l’architecture du code et des aspects techniques ; distinction claire des fcts déjà présentes VS ajoutées ; originalité & créativité éventuelle ; …
 * Votes pour la meilleure amélioration
 * Evals, et déclarations de licences : à votre délégué, Maxime.
-** Envoyer un fichier texte (format Asciidoctor ou simple texte) contenant votre évaluation du cours Java et du cours UML (https://github.com/oliviercailloux/java-course/raw/master/L3/Appr%C3%A9ciation%20Java.pdf[inspiration]), ou remettre une version papier. Sujet : « Fin cours Java ».
-** Remettre la https://github.com/oliviercailloux/projets/raw/master/Licences/Declaration%20of%20licensing.odt[déclaration de licence] papier avec toutes les signatures de l’équipe, ou votre décision collective de ne pas signer.
+** Envoyer un fichier texte (format Asciidoctor ou simple texte) contenant votre évaluation du cours Java et du cours UML (https://github.com/oliviercailloux/java-course/raw/main/L3/Appr%C3%A9ciation%20Java.pdf[inspiration]), ou remettre une version papier. Sujet : « Fin cours Java ».
+** Remettre la https://github.com/oliviercailloux/projets/raw/main/Licences/Declaration%20of%20licensing.odt[déclaration de licence] papier avec toutes les signatures de l’équipe, ou votre décision collective de ne pas signer.
 ** Il me transmettra vos déclarations et évaluations *après remise des notes finales*.
 // * http://whale.imag.fr/polls/vote/cc43561b-7545-4ee3-9844-8530c621a44a
 
