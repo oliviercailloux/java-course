@@ -4,7 +4,7 @@
 
 This document gives a (rough and incomplete) overview of Servlets in Java EE application servers.
 
-NOTE: The reader supposedly has basic knowledge of https://github.com/oliviercailloux/java-course/blob/master/HTTP.adoc[HTTP], https://github.com/oliviercailloux/java-course/blob/master/Maven/README.adoc[Maven] and https://github.com/oliviercailloux/java-course/blob/master/Java%20EE/WildFly.adoc[application servers]. (You are not obliged to use WildFly, though.)
+NOTE: The reader supposedly has basic knowledge of https://github.com/oliviercailloux/java-course/blob/main/HTTP.adoc[HTTP], https://github.com/oliviercailloux/java-course/blob/main/Maven/README.adoc[Maven] and https://github.com/oliviercailloux/java-course/blob/master/Java%20EE/WildFly.adoc[application servers]. (You are not obliged to use WildFly, though.)
 
 == Overview
 A servlet is a piece of software that, given some web request parameters, returns some response to the request. You, the web application developer, write the code that, given the request parameters, computes the response. That code gets embedded into the “web” container of your application server.
@@ -47,7 +47,7 @@ include::https://github.com/oliviercailloux/JavaEE-Servlets/raw/master/src/main/
 You then package your application as a WAR (Web ARchive format), and deploy it to your application server.
 
 * Do it first with no help from your IDE: use `mvn package`, then move the resulting WAR file into the appropriate deployment folder.
-* See https://github.com/oliviercailloux/java-course/blob/master/Java%20EE/App%20servers%20from%20Eclipse.adoc[here] for automatic deployment using Eclipse.
+* See https://github.com/oliviercailloux/java-course/blob/main/Java%20EE/App%20servers%20from%20Eclipse.adoc[here] for automatic deployment using Eclipse.
 
 Each Java EE application has a context root, the root URI at which your application is reachable on the server. If your application context root is `MyContextRoot` and your application is deployed on a server reachable at `+http://example.com+`, then your application is reachable at the `+http://example.com/MyContextRoot+` root URI. (The context root can be configured on your application server, by default it is usually the name of your WAR file without the extension. You will usually use `localhost` as a host name while developing.)
 
@@ -62,9 +62,9 @@ The container will then instanciate your class and execute your code, under the 
 Observe that the container makes your life as web developer much simpler: you do not have to listen to ports, spawn threads to process incoming requests, decode and encode requests and responses on the wire, manage sockets, parse HTTP headers, and so on. The container does this for you. This is an example of the services that Java EE application servers provide to the developers. [small]#(Of course, other frameworks than Java EE provide this kind of services to developers in Java or other languages.)#
 
 == Test servlets from command line
-Once you have written your servlet, you want to easily test it. See https://github.com/oliviercailloux/java-course/blob/master/HTTP.adoc#curl[HTTP].
+Once you have written your servlet, you want to easily test it. See https://github.com/oliviercailloux/java-course/blob/main/HTTP.adoc#curl[HTTP].
 
-If you use GlassFish, some useful debugging tips are https://github.com/oliviercailloux/java-course/blob/master/Java%20EE/GlassFish.adoc[there].
+If you use GlassFish, some useful debugging tips are https://github.com/oliviercailloux/java-course/blob/main/Java%20EE/GlassFish.adoc[there].
 
 == Your turn
 * Write (and test) a servlet that says: “Hello world” in plain text, as response to a GET request.

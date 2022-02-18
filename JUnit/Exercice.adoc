@@ -1,6 +1,6 @@
 = JUnit: Exercice
 
-This exercice assumes you have defined the `PairIterator` class as requested in the exercice about https://github.com/oliviercailloux/java-course/blob/master/Collections/README.adoc#exercices-defining-iterables[defining iterables].
+This exercice assumes you have defined the `PairIterator` class as requested in the exercice about https://github.com/oliviercailloux/java-course/blob/main/Collections/README.adoc#exercices-defining-iterables[defining iterables].
 
 Define a class `PairIteratorTests` and a test that creates a pair of integers _(2, 3)_ and a `PairIterator` object to iterate over this pair, and verifies that the iterator gives elements _2_, _3_, and that its `hasNext()` method returns `false` only after the second step.
 

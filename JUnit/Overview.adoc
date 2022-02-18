@@ -12,7 +12,7 @@ Instead of running your program with various input parameters manually, test a s
 * Improve your code by making sure you can test it in isolated parts, which thus require that you program using loosely coupled blocks.
 
 == Basics
-Define a new https://github.com/oliviercailloux/java-course/blob/master/Maven/README.adoc[Maven] project by using the `io.github.oliviercailloux:java-archetype` archetype (this already includes the dependency to JUnit Jupiter that we require for this tutorial), OR clone https://github.com/oliviercailloux/Sample-JUnit-5/[this project].
+Define a new https://github.com/oliviercailloux/java-course/blob/main/Maven/README.adoc[Maven] project by using the `io.github.oliviercailloux:java-archetype` archetype (this already includes the dependency to JUnit Jupiter that we require for this tutorial), OR clone https://github.com/oliviercailloux/Sample-JUnit-5/[this project].
 
 Say you have a class `SuperComputer` with a method declared as `public int complicatedComputation(int parameter)`. (You can copy https://github.com/oliviercailloux/Sample-JUnit-5/blob/master/src/main/java/io/github/oliviercailloux/sample_junit_5/SuperComputer.java[this], or you will find it in the project you just cloned.)
 

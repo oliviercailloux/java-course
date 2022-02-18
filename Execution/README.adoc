@@ -1,6 +1,6 @@
 = Execution
 
-NOTE: The reader is supposed to have a minimal knowledge of the https://github.com/oliviercailloux/java-course/blob/master/Git/Shell.adoc[shell], in particular, understand how shell commands are given arguments, understand relative and absolute paths, and have solved the exercices there.
+NOTE: The reader is supposed to have a minimal knowledge of the https://github.com/oliviercailloux/java-course/blob/main/Git/Shell.adoc[shell], in particular, understand how shell commands are given arguments, understand relative and absolute paths, and have solved the exercices there.
 
 Here we learn how to compile and execute Java code, first in a simple case, then, in more general cases such as when using non-default packages. See: https://github.com/oliviercailloux/java-course/raw/main/Execution/Pr%C3%A9sentation/presentation.pdf[présentation].
 
@@ -34,7 +34,7 @@ Essentially two mechanisms are used: the class path and the module path. This co
 * Example: `java -cp "/home/me/My project/My compiled code/" "somepackage.somesubpackage.MyClass" "argument 1" "argument 2"` will search for classes from the folder `/home/me/My project/My compiled code/`, and will attempt to run the `main` method defined in the class `somepackage.somesubpackage.MyClass`, giving it the arguments `argument 1` and `argument 2`
 
 === More about the class path
-For more information about the class path, see: https://github.com/oliviercailloux/java-course/blob/master/Execution/Pr%C3%A9sentation%20class%20path/presentation.pdf[Présentation class path], https://github.com/oliviercailloux/java-course/blob/master/Execution/Overview.adoc[Overview], https://github.com/oliviercailloux/java-course/blob/master/Execution/Exercices.adoc[Exercices], https://github.com/oliviercailloux/java-course/blob/master/Execution/Resources.adoc[resources].
+For more information about the class path, see: https://github.com/oliviercailloux/java-course/blob/main/Execution/Pr%C3%A9sentation%20class%20path/presentation.pdf[Présentation class path], https://github.com/oliviercailloux/java-course/blob/master/Execution/Overview.adoc[Overview], https://github.com/oliviercailloux/java-course/blob/master/Execution/Exercices.adoc[Exercices], https://github.com/oliviercailloux/java-course/blob/master/Execution/Resources.adoc[resources].
 
 //TODO binary name as defined in The Java™ Language Specification, section 13.1 "The Form of a Binary".
 

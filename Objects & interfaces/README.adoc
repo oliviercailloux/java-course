@@ -5,7 +5,7 @@ Prerequisites: contract and fail fast.
 See: https://github.com/oliviercailloux/java-course/raw/main/Objects%20%26%20interfaces/Pr%C3%A9sentation/presentation.pdf[présentation]; or read https://math.hws.edu/javanotes/c5/[ES5] intro to 5.4. See also https://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours5.pdf[Airiau C5].
 
 == Instance variables and methods: syntax
-See https://github.com/oliviercailloux/java-course/blob/master/Syntax/Classes%20as%20concept.adoc[Classes as concept] for the syntax about instance variables and instance methods
+See https://github.com/oliviercailloux/java-course/blob/main/Syntax/Classes%20as%20concept.adoc[Classes as concept] for the syntax about instance variables and instance methods
 
 == Exercices from the book
 
@@ -25,10 +25,10 @@ See https://github.com/oliviercailloux/java-course/blob/master/Syntax/Classes%20
 * Create a class `io.github.yourgithubusername.DiceUser` having a static method `rollOnce(): TripletOfDice`. It creates a triplet of six-sided dice, rolls them once, and returns the object representing the triplet.
 * In the `DiceUser` class, create a `main` method. It calls `rollOnce()` and prints the result on three lines, as follows (example for a result of 4, 2 and 1): `The die number 1 is a 4`, second line `The die number 2 is a 2`, third line `The die number 3 is a 1`.
 
-Hints for self-correction https://github.com/oliviercailloux/java-course/blob/master/Objects%20%26%20interfaces/Correction%20of%20Three%20dice.adoc[here]. Do not look at it before having implemented your own version!
+Hints for self-correction https://github.com/oliviercailloux/java-course/blob/main/Objects%20%26%20interfaces/Correction%20of%20Three%20dice.adoc[here]. Do not look at it before having implemented your own version!
 
 == Interfaces: syntax and example
-* See https://github.com/oliviercailloux/java-course/blob/master/Syntax/Interfaces.adoc[here] for the syntax related to interfaces in Java
+* See https://github.com/oliviercailloux/java-course/blob/main/Syntax/Interfaces.adoc[here] for the syntax related to interfaces in Java
 * Import https://github.com/oliviercailloux/sample-interface[this sample interface project] into Eclipse for an example with one `Computer` interface implemented as an `EcologicalComputer` and as a `CryptographyComputer`, and used by a `CryptographyService`.
 * Another example using Java interfaces: see this https://raw.githubusercontent.com/oliviercailloux/Simple-Papyrus-project/interface/An%20interface%20and%20two%20realizations.svg[example diagram] and the corresponding https://github.com/oliviercailloux/sample-interface[project] (to be imported in Eclipse)
 
@@ -53,7 +53,7 @@ Clone https://github.com/oliviercailloux/coffee/[this repository]. Implement the
 ====
 
 == Inheritance
-See: https://github.com/oliviercailloux/java-course/blob/master/Syntax/Inheritance.adoc[Inheritance], or read https://math.hws.edu/javanotes/contents-with-subsections.html[ES5.5] to 5.8
+See: https://github.com/oliviercailloux/java-course/blob/main/Syntax/Inheritance.adoc[Inheritance], or read https://math.hws.edu/javanotes/contents-with-subsections.html[ES5.5] to 5.8
 
 Remember that Interfaces may _extend_ other interfaces; classes may _implement_ interfaces and _extend_ other classes
 

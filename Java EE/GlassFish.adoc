@@ -7,7 +7,7 @@ This document gives a (rough and incomplete) overview of GlassFish, a Java EE ap
 == Application servers
 Java EE defines a https://www.oracle.com/java/technologies/java-ee-glance.html#javaee8[set] of specifications, known as Java Specification Requests (JSR). Application servers have to implement [small]#(parts of)# these standards in order to be compliant with [small]#(a subset of)# Java EE. An important standard among those is the Servlet API, or https://www.jcp.org/en/jsr/detail?id=369[JSR 369].
 
-A Java EE application server is a piece of software that ease the development of web applications, by providing services to the Java web developer. Your application server provides containers in which you, the web developer, embed your code. The container calls your code whenever adequate. For example, we use the web container in the https://github.com/oliviercailloux/java-course/blob/master/Java%20EE/Servlets.adoc[Servlets] document.
+A Java EE application server is a piece of software that ease the development of web applications, by providing services to the Java web developer. Your application server provides containers in which you, the web developer, embed your code. The container calls your code whenever adequate. For example, we use the web container in the https://github.com/oliviercailloux/java-course/blob/main/Java%20EE/Servlets.adoc[Servlets] document.
 
 Examples of Java EE compliant application servers: GlassFish (Oracle, open source, reference implementation of Java EE), WildFly (Red Hat / JBoss, open source), WebSphere AS (IBM)…
 

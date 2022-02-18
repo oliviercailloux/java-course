@@ -74,7 +74,7 @@ Further notes:
 * SWT Widget https://wiki.eclipse.org/SWT_Widget_Style_Bits[Style Bits]
 * SWT Widgets https://www.eclipse.org/swt/widgets/[by screenshot]
 * Javadoc: Package https://help.eclipse.org/latest/topic/org.eclipse.platform.doc.isv/reference/api/org/eclipse/swt/widgets/package-summary.html[org.eclipse.swt.widgets]
-* Using an SWT/JFace https://github.com/oliviercailloux/java-course/blob/master/SWT/Table.adoc[Table]
+* Using an SWT/JFace https://github.com/oliviercailloux/java-course/blob/main/SWT/Table.adoc[Table]
 * https://wiki.eclipse.org/JFace_Data_Binding[JFace Data Binding]
 
 === Further references

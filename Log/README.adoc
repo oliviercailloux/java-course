@@ -2,7 +2,7 @@
 
 Logging is tracing what your program is doing with statements that indicate which instructions have been executed and the values of important variables.
 
-This document shortly presents https://www.slf4j.org/[SLF4J] and https://logback.qos.ch/[logback], an API and an implementation to log in Java. It is not the only possible choice, but it is my favorite one, and probably the approach adopted by a https://github.com/oliviercailloux/java-course/blob/master/Log/Usage.adoc[majority of developers], as far as I can judge.
+This document shortly presents https://www.slf4j.org/[SLF4J] and https://logback.qos.ch/[logback], an API and an implementation to log in Java. It is not the only possible choice, but it is my favorite one, and probably the approach adopted by a https://github.com/oliviercailloux/java-course/blob/main/Log/Usage.adoc[majority of developers], as far as I can judge.
 
 See this https://github.com/oliviercailloux/java-course/raw/main/Log/SLF4J/presentation.pdf[presentation] about SLF4J.
 

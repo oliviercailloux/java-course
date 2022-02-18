@@ -1,7 +1,7 @@
 = Inheritance
 
 == Interface extension
-Prerequisite: read and understand https://github.com/oliviercailloux/java-course/blob/master/Syntax/Interfaces.adoc[Interfaces].
+Prerequisite: read and understand https://github.com/oliviercailloux/java-course/blob/main/Syntax/Interfaces.adoc[Interfaces].
 
 A Java interface can _extend_ another interface. When an interface `B` extends an interface `A`, it declares that anything that satisfies the contract of `B` also satisfies the contract of `A`.
 
@@ -19,7 +19,7 @@ When a variable is declared as `FlexibleRobot`, it can do anything a `Robot` can
 Given a variable `b` declared as `Robot`, the compiler will accept `b.accelerate();` but reject `b.break();`.
 
 == Class extension
-Prerequisite: read and understand https://github.com/oliviercailloux/java-course/blob/master/Syntax/Classes%20as%20concept.adoc[Classes as concept].
+Prerequisite: read and understand https://github.com/oliviercailloux/java-course/blob/main/Syntax/Classes%20as%20concept.adoc[Classes as concept].
 
 A Java class can _extend_ another class. Similarly to interfaces, when a class `B` extends a class `A`, it says that any instance of `B` can do anything an instance of `A` can do, and possibly more. 
 

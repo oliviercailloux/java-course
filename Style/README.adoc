@@ -2,7 +2,7 @@
 
 Various suggestions about adopting a good coding style in Java.
 
-See: https://github.com/oliviercailloux/java-course/blob/master/Style/Code.adoc[Formatting and commenting code], https://github.com/oliviercailloux/java-course/blob/master/Style/Null.adoc[Avoid nulls], and read the suggestion below about static factory methods.
+See: https://github.com/oliviercailloux/java-course/blob/main/Style/Code.adoc[Formatting and commenting code], https://github.com/oliviercailloux/java-course/blob/master/Style/Null.adoc[Avoid nulls], and read the suggestion below about static factory methods.
 
 == Favor static factory methods
 Static factory methods are static methods that play the role of constructors (hence the name factory) from the point of view of the user of your class.
@@ -24,7 +24,7 @@ public class MyClass {
 ----
 
 === Exercice
-Assuming you have implemented a class `Pair` as requested https://github.com/oliviercailloux/java-course/blob/master/Objects%20%26%20interfaces/README.adoc#exercice-generic-pair[here].
+Assuming you have implemented a class `Pair` as requested https://github.com/oliviercailloux/java-course/blob/main/Objects%20%26%20interfaces/README.adoc#exercice-generic-pair[here].
 
 Create two static factory methods for your class `Pair`. One that creates a pair holding twice the same element, and one that creates a pair with elements that are guaranteed to be different.
 

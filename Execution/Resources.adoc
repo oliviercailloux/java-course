@@ -5,7 +5,7 @@ Scenario: your class `MyClass` requires a resource `data_file.csv` to work. Wher
 You first decision is to either access the resource through the file system, or through the class path. I favor class path access. Here we assume the resource is accessed through the class path.
 
 == Use unique names
-You need to give your resource a unique name. Otherwise, conflicts may happen with other packages (another package might come with a resource named like yours). The full name of a resource is its package name, a dot, and its file name. For example, a resource with package name `com.mydomain.myproject.mysubpackage` and file name `data_file.csv` has the full name `com.mydomain.myproject.mysubpackage.data_file.csv`. To get things nicely sorted out, I suggest to use the package name of the (main) class that uses the resource. (Remember that your class must also have a https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Maven.adoc[unique package name].)
+You need to give your resource a unique name. Otherwise, conflicts may happen with other packages (another package might come with a resource named like yours). The full name of a resource is its package name, a dot, and its file name. For example, a resource with package name `com.mydomain.myproject.mysubpackage` and file name `data_file.csv` has the full name `com.mydomain.myproject.mysubpackage.data_file.csv`. To get things nicely sorted out, I suggest to use the package name of the (main) class that uses the resource. (Remember that your class must also have a https://github.com/oliviercailloux/java-course/blob/main/Best%20practices/Maven.adoc[unique package name].)
 
 Example: the resource is processed by some class `MyClass` in the package `com.mydomain.myproject.mysubpackage`, and therefore you adopt the full name `com.mydomain.myproject.mysubpackage.data_file.csv` for your resource.
 
@@ -21,10 +21,10 @@ Here is a simple way to access your resource.
 ----
 URL resourceUrl = MyClass.class.getResource("data_file.csv");
 ----
-With this statement you ask the class loader to get your resource from the class path, relative to the path of `MyClass`. You obtain a reference to the said resource. You can then invoke `resourceUrl.openStream()`, for example. (See https://github.com/oliviercailloux/java-course/blob/master/Flows.adoc[Flows] about reading from byte or character streams.)
+With this statement you ask the class loader to get your resource from the class path, relative to the path of `MyClass`. You obtain a reference to the said resource. You can then invoke `resourceUrl.openStream()`, for example. (See https://github.com/oliviercailloux/java-course/blob/main/Flows.adoc[Flows] about reading from byte or character streams.)
 
 == Do not write in your class path or in your source folder
-By design, the class path contains data that your program can *read*, but not write. If you want to write data, this should not be on the class path. Rather write into memory; on the user’s hard disk; on the network… (See https://github.com/oliviercailloux/java-course/blob/master/Flows.adoc[Flows] about writing byte or character streams.)
+By design, the class path contains data that your program can *read*, but not write. If you want to write data, this should not be on the class path. Rather write into memory; on the user’s hard disk; on the network… (See https://github.com/oliviercailloux/java-course/blob/main/Flows.adoc[Flows] about writing byte or character streams.)
 
 Similarly, do not write in your source folder (for example, do not write to `src/test/resources`). Your *source* folder, by convention, is there to hold resources that serve as sources for your program, not as a place to store data or to write temporary data.
 

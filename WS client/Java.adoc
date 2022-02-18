@@ -3,7 +3,7 @@
 
 It is important to understand how web services that you develop will be used by your clients. Here we will adopt the role of the client and get some training at using web services. It will also be useful when you will want to test your own web services.
 
-NOTE: The reader supposedly has basic knowledge of https://github.com/oliviercailloux/java-course/blob/master/HTTP.adoc[HTTP] and has finished the exercices https://github.com/oliviercailloux/java-course/blob/master/WS%20client/Curl.adoc[using curl]. The reader has read https://github.com/oliviercailloux/java-course/blob/master/WS%20client/JAX-RS%20client.adoc[JAX-RS client].
+NOTE: The reader supposedly has basic knowledge of https://github.com/oliviercailloux/java-course/blob/main/HTTP.adoc[HTTP] and has finished the exercices https://github.com/oliviercailloux/java-course/blob/master/WS%20client/Curl.adoc[using curl]. The reader has read https://github.com/oliviercailloux/java-course/blob/master/WS%20client/JAX-RS%20client.adoc[JAX-RS client].
 
 == From Java
 We will access those same web services we practiced with in the exercice using Curl, now from Java, and more specifically using the JAX-RS standard.

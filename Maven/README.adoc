@@ -4,11 +4,11 @@ Prerequisites: install https://maven.apache.org/download.cgi[Maven] (https://sta
 
 See https://github.com/oliviercailloux/java-course/raw/main/Maven/Pr%C3%A9sentation/presentation.pdf[présentation].
 
-In the https://github.com/oliviercailloux/java-course/blob/master/Maven/Exercices.adoc[exercices], we learn about starting Maven projects from archetypes.
+In the https://github.com/oliviercailloux/java-course/blob/main/Maven/Exercices.adoc[exercices], we learn about starting Maven projects from archetypes.
 
-See also: https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Maven.adoc[best practices]. 
+See also: https://github.com/oliviercailloux/java-course/blob/main/Best%20practices/Maven.adoc[best practices]. 
 
-When you’re ready, publish your open source artifacts to https://github.com/oliviercailloux/java-course/blob/master/Maven/Maven%20central.adoc[Maven central]!
+When you’re ready, publish your open source artifacts to https://github.com/oliviercailloux/java-course/blob/main/Maven/Maven%20central.adoc[Maven central]!
 
 == Eclipse
 To import a (Maven) project into Eclipse, use `File` / `Open Projects from File System`.

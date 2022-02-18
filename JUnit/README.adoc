@@ -2,5 +2,5 @@
 
 Unit testing in Java with JUnit Jupiter.
 
-See: https://github.com/oliviercailloux/java-course/blob/master/JUnit/Overview.adoc[overview]; https://github.com/oliviercailloux/java-course/blob/master/JUnit/Exercice.adoc[exercice].
+See: https://github.com/oliviercailloux/java-course/blob/main/JUnit/Overview.adoc[overview]; https://github.com/oliviercailloux/java-course/blob/master/JUnit/Exercice.adoc[exercice].
 

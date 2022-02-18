@@ -3,7 +3,7 @@
 How to deploy Maven artifacts to OSSRH and to Maven central.
 
 == Prerequisites
-You know how to build a https://github.com/oliviercailloux/java-course/blob/master/Maven/README.adoc[Maven] package.
+You know how to build a https://github.com/oliviercailloux/java-course/blob/main/Maven/README.adoc[Maven] package.
 
 == Overview
 Maven artifacts can be deployed to remote repositories, or repository hosting (RH) locations, to make them accessible to other developers. 
@@ -22,7 +22,7 @@ You need to get your project authorized in OSSRH. (Sonatype essentially checks t
 
 == POM
 
-. Make sure your Maven coordinates are https://github.com/oliviercailloux/java-course/blob/master/Best%20practices/Maven.adoc#naming-conventions[right]. Make sure your version ends with `-SNAPSHOT` (the suggested initial version number being `0.0.1-SNAPSHOT`): for the moment we’ll practice deployment using snapshots.
+. Make sure your Maven coordinates are https://github.com/oliviercailloux/java-course/blob/main/Best%20practices/Maven.adoc#naming-conventions[right]. Make sure your version ends with `-SNAPSHOT` (the suggested initial version number being `0.0.1-SNAPSHOT`): for the moment we’ll practice deployment using snapshots.
 . Provide metadata to your project: project name, description, url, license, developer information, scm information (see https://central.sonatype.org/pages/requirements.html#sufficient-metadata[metadata requirements]). You can simply copy and adapt the relevant XML elements in this https://github.com/oliviercailloux/pom/blob/master/pom.xml[sample].
 ** Apache Guide insists that providing good quality metadata is important. “The POM being deployed with the artifact is part of the process to make transitive dependencies a reality in Maven. The logic for getting transitive dependencies working is really not that hard, the problem is getting the data. The other applications that are made possible by having all the POMs available for artifacts are vast, so by placing them into the repository as part of the process we open up the doors to new ideas that involve unified access to project POMs.” From the Apache Metadata https://maven.apache.org/project-faq.html[FAQ]: “The quality of the metadata in the Maven repository is important to your users as they list dependencies on your metadata, and link in the information into their own projects.” (That FAQ is otherwise outdated.)
 ** I recommend using only the `scm/connection` and `scm/url` elements, and not the `scm/developerConnection` one, because the first two permit to read your source code and thus is precious metadata; whereas the latter gives write access, and is therefore not useful for persons external to your project, and furthermore only serves with the `maven-scm-plugin` and `maven-release-plugin`, which I do not recommend to use.

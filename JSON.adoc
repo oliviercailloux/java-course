@@ -1,6 +1,6 @@
 = JSON
 
-A short document about simple manipulation of JSON using the Java API for JSON Processing 1.1. (See also https://github.com/oliviercailloux/java-course/blob/master/JSON-B.adoc[JSON-B] for (de-)serialization; https://developer.ibm.com/articles/j-javaee8-json-binding-4/
+A short document about simple manipulation of JSON using the Java API for JSON Processing 1.1. (See also https://github.com/oliviercailloux/java-course/blob/main/JSON-B.adoc[JSON-B] for (de-)serialization; https://developer.ibm.com/articles/j-javaee8-json-binding-4/
 (and https://www.e4developer.com/2018/03/04/introducing-json-b-with-spring-boot-2-0/).)
 
 == Dependency

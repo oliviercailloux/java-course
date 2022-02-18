@@ -2,7 +2,7 @@
 
 A short document that recalls the main points about the class path in Java.
 
-Prerequisite: you know how to https://github.com/oliviercailloux/java-course/blob/master/Git/Shell.adoc#Paths[refer to a file by its absolute or relative path] in a shell.
+Prerequisite: you know how to https://github.com/oliviercailloux/java-course/blob/main/Git/Shell.adoc#Paths[refer to a file by its absolute or relative path] in a shell.
 
 == Source code
 * A class in package `a.b` and named `MyClass` has a fully qualified name `a.b.MyClass`: this is the non-ambiguous name by which you can access it (you rather usually use the short form `MyClass` and use an `import` statement in your code).
