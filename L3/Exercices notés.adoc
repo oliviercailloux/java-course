@@ -1,13 +1,16 @@
 = Procédure pour nouvelle correction d’un exercice noté
+J’utilise fréquemment des éléments de corrections automatisées, ce qui me permet de voir systématiquement et précisément les proportions d’étudiants qui réussissent chaque question, d’assurer l’équité et d’assurer une fréquence d’exercices notés élevée.
 
-== La correction automatique a fonctionné correctement mais votre code n’a pas été corrigé
-Il peut arriver, si votre rendu ne respecte pas le format attendu, que vous estimiez que le code de correction automatique vous a fourni une note bien plus mauvaise que s’il avait corrigé ce que vous aviez (d’après vous) l’intention de rendre. Par exemple, les consignes demandaient d’envoyer votre rendu dans la branche Truc, le bot a donc corrigé votre code remis dans la branche Truc, alors que le rendu que vous auriez aimé voir corrigé est dans la branche Bidule. Voici la procédure à suivre pour bénéficier d’une nouvelle correction.
+Si vous pensez qu’une correction est incorrecte, veuillez prendre le temps de relire l’énoncé, de bien lire les commentaires dans la correction, de partager avec d’autres étudiants, afin de comprendre ce qui est attendu et la différence par rapport à votre rendu. C’est un excellent exercice pour s’améliorer. Cependant, il n’est bien sûr pas impossible qu’une erreur se soit produite lors de la correction. Je reste donc à l’écoute. Faites-moi de vos interrogations (de préférence de vive voix à un inter-séances) en suivant l’une des procédures ci-dessous, après avoir fait l’effort de réflexion demandé.
 
-Envoyez-moi un e-mail en expliquant ce qui d’après vous n’a pas fonctionné et pourquoi vous souhaitez bénéficier d’une nouvelle correction. Je vous indiquerai si vous pouvez continuer la procédure ou si la sanction me parait méritée.
+== La correction automatique a fonctionné correctement mais votre code n’a pas été pris en compte
+Il peut arriver, si votre rendu ne respecte pas le format attendu, que vous estimiez que le code de correction automatique vous a fourni une note bien plus mauvaise que s’il avait corrigé ce que vous aviez (d’après vous) l’intention de rendre. Par exemple, les consignes demandaient d’envoyer votre rendu dans la branche Truc, le bot a donc corrigé votre code remis dans la branche Truc, alors que le rendu que vous auriez aimé voir corrigé est dans la branche Bidule. Voici la procédure à suivre pour bénéficier d’une nouvelle correction dans ce genre de cas.
+
+Expliquez-moi ce qui d’après vous n’a pas fonctionné et pourquoi vous souhaitez bénéficier d’une nouvelle correction. Je vous indiquerai si vous pouvez continuer la procédure ou si la sanction me parait méritée.
 
 Dans le premier cas, effectuez un nouveau push avec une correction de votre rendu, de façon à permettre au code de correction automatique de trouver votre rendu correctement. Dans l’exemple précédent, il s’agirait sans-doute de fusionner votre branche Bidule vers votre branche Truc. Vous ne pouvez bien sûr *pas* à cette occasion corriger plus que le strict nécessaire à la prise en compte de votre contribution. Par exemple, il est trop tard pour améliorer votre code s’il présente des imperfections.
 
-Ensuite, répondez à ma réponse par e-mail en m’indiquant que vous avez procédé au push, en indiquant précisément ce que vous avez changé par rapport à l’état qui a été corrigé précédemment, et en indiquant un lien vers une https://docs.github.com/en/github/committing-changes-to-your-project/comparing-commits[différence sur GitHub] entre ces deux états. Privilégiez pour ce lien des différences entre branches, si possible, plutôt qu’entre commits, ce qui me permet de voir ce que vous comparez plus facilement.
+Ensuite, envoyez-moi un e-mail m’indiquant que vous avez procédé au push, en indiquant précisément ce que vous avez changé par rapport à l’état qui a été corrigé précédemment, et en indiquant un lien vers une https://docs.github.com/en/github/committing-changes-to-your-project/comparing-commits[différence sur GitHub] entre ces deux états. Privilégiez pour ce lien des différences entre branches, si possible, plutôt qu’entre commits, ce qui me permet de voir ce que vous comparez plus facilement.
 
 Je relancerai alors la correction, et vous attribuerai comme note une combinaison de l’ancienne et de la nouvelle note.
 
@@ -16,6 +19,5 @@ Si vous pensez que le code de correction s’est trompé, c-à-d qu’il ne vous
 
 Si vous avez raison, vous ne devez pas suivre la procédure ci-dessus : je corrigerai mon code et vous octroierai une nouvelle note.
 
-== Suivi des instructions
-Comme d’habitude, si une de ces instructions n’est pas claire ou ne vous semble pas applicable, je vous prie de m’en faire part. Si vous n’indiquez rien, je supposerai que vous n’avez pas bien lu les instructions, et vous renverrai à ce document.
-
+// == Suivi des instructions
+// Comme d’habitude, si une de ces instructions n’est pas claire ou ne vous semble pas applicable, je vous prie de m’en faire part. Si vous n’indiquez rien, je supposerai que vous n’avez pas bien lu les instructions, et vous renverrai à ce document.
