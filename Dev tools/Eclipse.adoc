@@ -1,6 +1,6 @@
 = Eclipse
 
-For this course you will need the 2020-12 version of the https://www.eclipse.org/downloads/packages/[Eclipse IDE] “for Java Developers”.
+For this course you will need the 2021-12 version of the https://www.eclipse.org/downloads/packages/[Eclipse IDE] “for Java Developers”.
 
 == Basics
 To exploit the power of Eclipse, at the very minimum, you must understand the notion of perspectives and views, and know how to easily navigate within resources.
