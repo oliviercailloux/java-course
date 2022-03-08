@@ -12,7 +12,7 @@ In the Workbench User Guide, https://help.eclipse.org/latest/topic/org.eclipse.p
 * In the `Resource` perspective, open the `Error Log` view
 * Switch to the `Java` perspective; open the `Javadoc` and the `Problems` views
 * Clone the the https://github.com/JodaOrg/joda-money[Joda-Money] repository
-* Import it into Eclipse using `File` / `Open Projects from File System`
+* Import it into Eclipse using `File` / `Open Projects from File System` (you may cancel the step about maven plugin setup)
 * Go directly to the class `Money` using a keyboard shortcut that you just learned, then, using the relevant view (which one?)
 * Using the `Outline` view, go to the method `convertedTo`
 * Focus on the text `withCurrencyScale`, in the method implementation. Make sure your `Javadoc` view shows the documentation of that method.
