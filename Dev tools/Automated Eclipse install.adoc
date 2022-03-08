@@ -24,7 +24,7 @@ To install Papyrus: `"/usr/local/share/eclipse-java-2021-12-R-linux-gtk-x86_64/e
 .Further technicalities
 [%collapsible]
 ====
-This (for version 2021-09) installs 42 papyrus features, the `org.eclipse.xwt.feature_1.6.0.202105260718` feature, 348 papyrus plugins, and 154 other plugins (among which some related to gmf and apache batik, for example). The installer may appear stuck; you can track its progress with `ls "/usr/local/share/eclipse-java-2021-09-R-linux-gtk-x86_64/plugins/" | wc -l`. Installation takes about 2 to 8 minutes.
+This (for version 2021-09) installs 42 papyrus features, the `org.eclipse.xwt.feature_1.6.0.202105260718` feature, 348 papyrus plugins, and 154 other plugins (some of which related to gmf and apache batik, for example). The installer may appear stuck; you can track its progress with `ls "/usr/local/share/eclipse-java-2021-09-R-linux-gtk-x86_64/plugins/" | wc -l`. Installation takes about 2 to 8 minutes.
 
 “Papyrus uses XWT to generate the "Properties View" for UML model editing” -- https://projects.eclipse.org/projects/technology.xwt. Oddly enough, both the releases/2021-09 and the `\https://download.eclipse.org/xwt/milestones-1.7.0/1.7.0-S/` repositories were required for finding `org.eclipse.papyrus.infra.feature.feature.group` 3.1.0.202109161249.
 
