@@ -51,8 +51,9 @@ TODO @ home: Train with as many Git exercices as you need to be very comfortable
 TODO @ home:
 
 * read https://github.com/oliviercailloux/java-course/blob/main/L3/Exercices%20not%C3%A9s.adoc[Exercices notés]
-* Finish the vogella tutorial (see link in Eclipse & Java, above)
-* read the Workbench User Guide, Tips and Tricks (see link in Eclipse & Java, above), Workbench and Editing sections
+* Finish the execution exercice with packages
+// * Finish the vogella tutorial (see link in Eclipse & Java, above)
+// * read the Workbench User Guide, Tips and Tricks (see link in Eclipse & Java, above), Workbench and Editing sections
 
 == Next
 
