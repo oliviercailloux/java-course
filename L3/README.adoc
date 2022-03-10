@@ -45,15 +45,22 @@ TODO @ home: Train with as many Git exercices as you need to be very comfortable
 * Git graded exercice: https://github.com/oliviercailloux/java-course/blob/main/Git/Git%20branching%203.adoc[branching]
 * Packages: Syntax (see above) and Execution, exercice with packages (see above)
 * Multiple choice questions (not graded)
-* https://github.com/oliviercailloux/java-course/blob/main/Dev%20tools/Eclipse.adoc[Eclipse & Java] (and Configuration, Start project)
-* https://github.com/oliviercailloux/java-course/blob/main/Overview/README.adoc[Basics of objects]
 
 TODO @ home:
 
 * read https://github.com/oliviercailloux/java-course/blob/main/L3/Exercices%20not%C3%A9s.adoc[Exercices notés]
 * Finish the execution exercice with packages
-// * Finish the vogella tutorial (see link in Eclipse & Java, above)
-// * read the Workbench User Guide, Tips and Tricks (see link in Eclipse & Java, above), Workbench and Editing sections
+
+[[S4]]
+== S4: 11 March
+
+* https://github.com/oliviercailloux/java-course/blob/main/Dev%20tools/Eclipse.adoc[Eclipse & Java] (and Configuration, Start project)
+* https://github.com/oliviercailloux/java-course/blob/main/Overview/README.adoc[Basics of objects]
+
+TODO @ home:
+
+* Finish the vogella tutorial (see link in Eclipse & Java, above)
+* read the Workbench User Guide, Tips and Tricks (see link in Eclipse & Java, above), Workbench and Editing sections
 
 == Next
 
