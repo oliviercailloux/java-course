@@ -1,25 +1,23 @@
 = Graded exercice: Eclipse
 
-In this graded exercice, we’ll clone an existing non-trivial project, modify it using Eclipse, and push our changes back to GitHub.
+In this graded exercice, we’ll clone an existing non-trivial project and modify it using Eclipse.
+// , and push our changes back to GitHub.
 
-* Accept https://classroom.github.com/a/FFmv9z_l[this assignment]. Your repository will be created as `+https://github.com/oliviercailloux-org/eclipse-yourGitHubUserName+`. 
-
+// * Accept https://classroom.github.com/a/FFmv9z_l[this assignment]. Your repository will be created as `+https://github.com/oliviercailloux-org/eclipse-yourGitHubUserName+`. 
 // This repository will be initialized with the content of an existing project.
 
 * Clone https://github.com/oliviercailloux-org/minimax-ex to a new local repository.
-* Connect this local repository to your remote GitHub repository by following GitHub’s instructions.
+// * Connect this local repository to your remote GitHub repository by following GitHub’s instructions.
 * Import the local project into Eclipse. Use `File` / `Open Projects from File System` (rather than “import”) so that Eclipse will use the right settings when importing it. You will need to wait a bit that Eclipse downloads the required dependencies.
 
-. Observe that this project suffers from a compilation error. Correct this error by adding the missing character. Commit your (single) change. (Advice: push it to the remote right now.)
-. Observe that Eclipse shows a compile warning. Correct this warning by replacing the instruction that creates a problem as indicated in the comment next to it (you can leave or remove the comment, this does not matter). Commit your change. (Advice: push…)
-. Find the class `StrategyHelper`, rename it, everywhere in the code, to `Helper`. Commit. (…)
+. Observe that this project suffers from a compilation error. Correct this error by adding the missing character. Commit your (single) change.
+. Observe that Eclipse shows a compile warning. Correct this warning by replacing the instruction that creates a problem as indicated in the comment next to it (you can leave or remove the comment, this does not matter). Commit your change.
+. Find the class `StrategyHelper`, rename it, everywhere in the code, to `Helper`. Commit.
 . In the file `courses.soc` (hint: Eclipse considers it as a resource), change in the first line the `9` to an `8`. Commit.
 . Search, in the whole project, for the text `0.8588174124160426`, and change the `5` to a `3`, thus, make it a `0.8388174124160426`. Commit.
 . Format systematically the whole code lying in `src/main/java`, to avoid undue differences of indentation. Commit.
 
-Check that all your commits reached the remote repository!
-
-NB: used 23:00 as a deadline considering subtelty with cloning.
-
-Stats: 27 > 0; 23 Compile; 21 Single change compile; 8 Warning; 16 StrategyHelper; 19 course; 19 Number; 9 Formatting.
+// Check that all your commits reached the remote repository!
+// NB: used 23:00 as a deadline considering subtelty with cloning.
+// Stats: 27 > 0; 23 Compile; 21 Single change compile; 8 Warning; 16 StrategyHelper; 19 course; 19 Number; 9 Formatting.
 
