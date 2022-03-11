@@ -60,6 +60,7 @@ TODO @ home:
 TODO @ home:
 
 * Finish the vogella tutorial (see link in Eclipse & Java, above)
+* Finish the Basics of objects exercices, most importantly EE3.4 and 3.6
 * read the Workbench User Guide, Tips and Tricks (see link in Eclipse & Java, above), Workbench and Editing sections
 
 == Next
