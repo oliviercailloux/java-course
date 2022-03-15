@@ -5,7 +5,7 @@ For this course you will need the 2021-12 version of the https://www.eclipse.org
 == Basics
 To exploit the power of Eclipse, at the very minimum, you must understand the notion of perspectives and views, and know how to easily navigate within resources.
 
-In the Workbench User Guide, https://help.eclipse.org/latest/topic/org.eclipse.platform.doc.user/gettingStarted/qs-02a.htm[Basic tutorial], follow the first few sections of the tutorial: `The Workbench`, `Editors and views`, `A simple project`, `Closing an editor` and `Navigating resources`; then read `Rearranging views and editors`.
+In the Workbench User Guide, https://help.eclipse.org/latest/topic/org.eclipse.platform.doc.user/gettingStarted/qs-02a.htm[Basic tutorial], follow the first few sections of the tutorial: `The Workbench`, `Editors and views`, `A simple project`, `Closing an editor` and `Navigating resources`; then read `Rearranging views and editors`. (Click on the plus icon to read the subsections.)
 
 == Basic exercices
 
