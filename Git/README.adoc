@@ -14,7 +14,7 @@ Then see:
 * https://github.com/oliviercailloux/java-course/blob/main/Git/README.adoc#configure-git[configure] git,
 * https://github.com/oliviercailloux/java-course/blob/main/Git/Step-by-step.adoc[step-by-step exercices], 
 * https://github.com/oliviercailloux/java-course/blob/main/Git/Reinitialization.adoc[reinitializing] history,
-* https://github.com/oliviercailloux/java-course/blob/main/Git/Git%20branching%201.adoc[Git branching 1] and https://github.com/oliviercailloux/java-course/blob/main/Git/Git%20branching%202.adoc[Git branching 2], 
+* https://github.com/oliviercailloux/java-course/blob/main/Git/Git%20branching%201.adoc[Git branching 1], https://github.com/oliviercailloux/java-course/blob/main/Git/Git%20branching%202.adoc[Git branching 2],  https://github.com/oliviercailloux/java-course/blob/main/Git/Git%20branching%203.adoc[Git branching 3]
 * https://github.com/oliviercailloux/java-course/blob/main/Git/Best%20practices.adoc[best practices].
 
 == Learning the basics
