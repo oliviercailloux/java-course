@@ -1,0 +1,21 @@
+= Git branching 4
+:xrefstyle: short
+
+In this graded exercice, we’ll simulate that we create several branches (to try different approaches) and merge some of them.
+
+// Deadline: 14h11. If you are late, the penalty increases linearly until 14h16.
+
+* Accept the graded exercice: https://classroom.github.com/a/lV2GDdGT[branching bis]
+* Start with a first commit, that we will name `Start`, that contains a single file, `starting point.txt`, containing “A starting point”
+* Create the branches so as to end up as illustated in the figure below (<<Goal>>). (You may have to create branches along the way, not necessarily now.)
+* Commit `A` adds a file named `first file.txt` containing “Hello!”; its parent is `Start`.
+* Commit `B` adds a file whose relative path is `My folder/second file.txt` containing “Second”; its parent is `A`. You must thus create the required intermediate folder.
+* Commit `C` adds a file named `first file.txt` containing “Coucou !”; its parent is `Start`.
+* Commit `D` is the result of merging `B` and `C` (after resolving the conflict). It keeps both the text “Hello!” AND the text “Coucou !” (on the next line), thus, commit `D` contains a blob `first file.txt` that contains two lines (in addition to the other blobs coming from its parents).
+
+To recap, you must create five commits and three branches in total. The history should look like <<Goal>> when you are done. Make sure your pointers are exactly as pictured, and that the branches are named as in the figure. (You may have more branches, and the only thing that matters with respect to branches is their final positions, not how they moved.)
+
+[[Goal]]
+.Desired history at end of the exercice
+image::Git%20branching%203.svg[opts="inline"]
+

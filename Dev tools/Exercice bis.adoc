@@ -1,0 +1,19 @@
+= Graded exercice: Eclipse
+
+In this graded exercice, we’ll clone an existing non-trivial project and modify it using Eclipse.
+
+* Accept https://classroom.github.com/a/gwIn1Lfn[this assignment].
+This repository will be initialized with the content of an existing project.
+
+* Import the local project into Eclipse. In the project context menu, click `Configure / Convert to Maven Project` (if this option does not appear, the project is already recognized as a Maven Project and you do not need to do this).
+
+* After each of these steps, you must commit the resulting state of the project. (You may remove or leave the comments, it does not matter.) You also must push your changes to the remote repository, of course (I recommend to push after each commit).
+*. Observe that this project suffers from a compilation error. Correct this error by adding the missing character.
+*. Observe that Eclipse shows a compile warning. Correct this warning by deleting the instruction that creates the problem as indicated.
+*. Find the class `FactoryAdapter`, rename it, everywhere in the code, to `MyFactoryAdapter`. (The name of related classes must not change.)
+*. In the file `courses.soc` (hint: Eclipse considers it as a resource), change in the first line the `9` to an `8`.
+*. Search, in the whole project, for the text `0.5298073577203555`, and change the `5` to a `3`, thus, make it a `0.3298073577203555`. Commit.
+*. In the project properties, `Java Code Style` / `Formatter`, enable the project specific settings and choose `GoogleStyle patched` as an active profile. Format systematically the whole code lying in `src/main/java`, to avoid undue differences of indentation. Commit.
+
+Check that all your commits reached the remote repository!
+
