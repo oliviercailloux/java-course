@@ -2,7 +2,7 @@
 
 JAX-RS Client API permits to easily access RESTful web services. This page provides a simple example use.
 
-NOTE: The reader supposedly has basic knowledge of https://github.com/oliviercailloux/java-course/blob/main/HTTP.adoc[HTTP] and (preferrably) https://github.com/oliviercailloux/java-course/blob/master/Maven/README.adoc[Maven].
+NOTE: The reader supposedly has basic knowledge of https://github.com/oliviercailloux/java-course/blob/main/HTTP.adoc[HTTP] and https://github.com/oliviercailloux/java-course/blob/master/Maven/README.adoc[Maven].
 
 == Dependency
 If you use Java SE, you need to add the https://search.maven.org/search?q=g:jakarta.ws.rs%20AND%20a:jakarta.ws.rs-api&core=gav[JAX-RS API] and a JAX-RS https://search.maven.org/search?q=g:org.glassfish.jersey.bundles%20AND%20a:jaxrs-ri&core=gav[implementation] to your Maven dependencies: you’ll need https://search.maven.org/search?q=g:org.glassfish.jersey.core%20AND%20a:jersey-client&core=gav[Jersey client] as well as https://search.maven.org/search?q=g:jakarta.activation%20AND%20a:jakarta.activation-api&core=gav[jakarta.activation-api] and https://search.maven.org/search?q=g:org.glassfish.jersey.inject%20AND%20a:jersey-hk2&core=gav[jersey-hk2] which jersey client seem to require at runtime. (Alternatively there’s the Jersey https://search.maven.org/search?q=g:org.glassfish.jersey.bundles%20AND%20a:jaxrs-ri&core=gav[bundle] but it brings many supplementary packages such as a JAX-RS server, bindings for Json and XML, and containers. You might also need some https://search.maven.org/search?q=g:org.glassfish.jersey.media[media] bindings.) 
