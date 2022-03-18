@@ -9,7 +9,7 @@
 * Les sous-équipes doivent changer à chaque itération ; le rôle de SM/PO doit être réparti égalitairement
 
 === Responsabilités
-* SM/PO : planifient avec leur équipe les tâches à délivrer et le respect des instructions de livraison ; réorientent les tâches en cas de problème de prérequis ; vérifient la qualité des rendus, entre autres, en relisant les propositions avant soumission ; fusionnent les tâches approuvées en fin d’itération et vérifient que le projet fonctionne toujours après fusion ; sont responsables de la cohérence du tout
+* SM/PO : planifient avec leur équipe les tâches à délivrer et le respect des instructions de livraison ; réorientent les tâches en cas de problème de prérequis ; vérifient la qualité des rendus, entre autres, en relisant les propositions avant soumission ; fusionnent les tâches approuvées en début d’itération et vérifient que le projet fonctionne toujours après fusion ; sont responsables de la cohérence du tout
 * Un binôme travaille sur une ou plusieurs tâches dans une itération. Une tâche peut consister à compléter une tâche précédente (ajout de tests unitaires, correction bugs, …).
 
 === Plan
