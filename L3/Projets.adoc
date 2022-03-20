@@ -4,12 +4,12 @@
 
 === Rôles
 * Une équipe de _n_ personnes est constituée de _n/2_ sous-équipes, arrondi au-dessus
-** une sous-équipe est constituée de une (si _n_ est impair) ou deux (si _n_ est pair) personnes, les Scrum Master / Product Owner, nommés ci-après « les SM/PO » pour désigner la sous-équipe, même quand une seule personne la constitue
+** une des sous-équipe est particulière. Elle est constituée de une (si _n_ est impair) ou deux (si _n_ est pair) personnes, appelées les Scrum Master / Product Owner. Cette sous-équipe est désignée ci-après par le terme « les SM/PO », même quand une seule personne la constitue
 ** les autres sous-équipes sont constituées de binômes d’architectes développeuses et architectes développeurs (« binôme », ci-après)
 * Les sous-équipes doivent changer à chaque itération ; le rôle de SM/PO doit être réparti égalitairement
 
 === Responsabilités
-* SM/PO : planifient avec leur équipe les tâches à délivrer et le respect des instructions de livraison ; réorientent les tâches en cas de problème de prérequis ; vérifient la qualité des rendus, entre autres, en relisant les propositions avant soumission ; fusionnent les tâches approuvées en fin d’itération et vérifient que le projet fonctionne toujours après fusion ; sont responsables de la cohérence du tout
+* SM/PO : planifient avec leur équipe les tâches à délivrer et le respect des instructions de livraison ; réorientent les tâches en cas de problème de prérequis ; vérifient la qualité des rendus, entre autres, en relisant les propositions avant soumission ; fusionnent les tâches approuvées en début d’itération et vérifient que le projet fonctionne toujours après fusion ; sont responsables de la cohérence du tout
 * Un binôme travaille sur une ou plusieurs tâches dans une itération. Une tâche peut consister à compléter une tâche précédente (ajout de tests unitaires, correction bugs, …).
 
 === Plan

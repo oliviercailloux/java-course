@@ -66,7 +66,7 @@ TODO @ home:
 [[S5]]
 == S5: 23 March
 
-* Graded exercice about Eclipse, similar to https://github.com/oliviercailloux/java-course/blob/main/Dev%20tools/Exercice.adoc[this one]
+* Graded exercice about Eclipse, similar to https://github.com/oliviercailloux/java-course/blob/main/Dev%20tools/Exercice.adoc[this one]. Prerequisite: configure Eclipse as recommended in this course (see above).
 * Two major aspects of software engineering: https://github.com/oliviercailloux/java-course/blob/main/Contrat/README.adoc[contract] and fail-fast.
 * https://github.com/oliviercailloux/java-course/blob/main/Objects%20%26%20interfaces/README.adoc[Objects & interfaces]. Exercices: EE5.1, 5.2, EE5.3, Three dice
 
