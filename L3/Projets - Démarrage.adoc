@@ -24,7 +24,7 @@ En outre, il y a, pour chacun de ces projets, bien plus de choses qui peuvent ê
 * https://github.com/oliviercailloux/projets/blob/master/J-XMCDA.adoc[J-XMCDA]
 
 == Démarrage
-Une personne de votre groupe doit effectuer les étapes suivantes pour initialiser le projet.
+Une personne de votre groupe (qui fera partie des SM/PO de la première itération) doit effectuer les étapes suivantes pour initialiser le projet.
 
 * Acceptez https://classroom.github.com/g/kQjleEgF[cette mission], avec le nom d’équipe précisément égal au nom du dépôt existant (le nom technique du projet). Cela crée un nouveau « remote » pour votre projet.
 * Clonez le projet dont vous partez sur votre machine pour créer un dépôt local contenant l’historique actuel du projet.
