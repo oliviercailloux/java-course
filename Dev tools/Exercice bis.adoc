@@ -2,6 +2,8 @@
 
 In this graded exercice, we’ll clone an existing non-trivial project and modify it using Eclipse.
 
+Deadline: 14h10. With penalty: 14h15.
+
 * Accept https://classroom.github.com/a/gwIn1Lfn[this assignment].
 This repository will be initialized with the content of an existing project.
 
