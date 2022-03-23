@@ -70,7 +70,7 @@ TODO @ home:
 * Graded exercice: https://github.com/oliviercailloux/java-course/blob/main/Dev%20tools/Exercice%20bis.adoc[eclipse]. Prerequisite: configure Eclipse as recommended in this course (see above).
 * Two major aspects of software engineering: https://github.com/oliviercailloux/java-course/blob/main/Contrat/README.adoc[contract] and fail-fast, and exercices there.
 
-TODO @ home: End exercices
+TODO @ home: End exercices about Random.
 
 [[S6]]
 == S6: 25 March
