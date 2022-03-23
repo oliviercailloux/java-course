@@ -3,7 +3,7 @@
 
 In this graded exercice, we’ll simulate that we create several branches (to try different approaches) and merge some of them.
 
-// Deadline: 14h11. If you are late, the penalty increases linearly until 14h16.
+Deadline: 14h05. If you are late, the penalty increases linearly until 14h10.
 
 * Accept the graded exercice: https://classroom.github.com/a/lV2GDdGT[branching bis]
 * Start with a first commit, that we will name `Start`, that contains a single file, `starting point.txt`, containing “A starting point”
