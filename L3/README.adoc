@@ -78,11 +78,20 @@ TODO @ home: End exercices about Random.
 * Exercices EE4.x
 * https://github.com/oliviercailloux/java-course/blob/main/Objects%20%26%20interfaces/README.adoc[Objects & interfaces]. Exercices: EE5.1, 5.2, EE5.3, Three dice
 
+TODO @ home: EE5.1 and 5.2 (and prerequisites 4.1 to 4.4 if not done yet)
+
+[[S7]]
+== S7
+
+* EE5.3; Three dice (40 minutes)
+* Interfaces. Exercice: I like to move it move it; Coffee
+* https://www.youtube.com/watch?v=lcYkOh4nweE&t=1m21s[Mars Climate Orbiter] (1m21 to 5m18; small mistake in the video: it’s Newton times second, not Newton force per second; see also https://en.wikipedia.org/wiki/Mars_Climate_Orbiter[Wikipedia]; similarly https://www-users.math.umn.edu/~arnold/disasters/ariane.html[sad] https://www.youtube.com/watch?v=gp_D8r-2hwk[story])
+* Projects
+
 == Next
 
 * https://github.com/oliviercailloux/java-course/blob/main/Contrat/README.adoc[Contract]: end; exercices
 * https://github.com/oliviercailloux/java-course/blob/main/Maven/README.adoc[Maven]: overview
-* Interfaces. Exercice: I like to move it move it; Coffee
 * Polymorphism: inheritance
 * The `Object` class and its methods: `toString()`, `equals`, `hashcode`. Exercice: Car string
 * https://github.com/oliviercailloux/java-course/blob/main/Contrat/Exceptions.adoc[Exceptions]. Exercice: Checked exceptions
@@ -104,7 +113,7 @@ TODO @ home: End exercices about Random.
 * Files and flows: https://github.com/oliviercailloux/java-course/blob/main/Flows.adoc#reading-from-character-flows[Reading from character flows] to end (except for the last exercice about the abstract path concept).
 * Projets : https://github.com/oliviercailloux/java-course/blob/main/L3/Projets%20-%20Instructions%20Java.adoc[Instructions Java]
 
-//* https://www.youtube.com/watch?v=lcYkOh4nweE&t=1m21s[Mars Climate Orbiter] (1m21 to 5m18; small mistake in the video: it’s Newton times second, not Newton force per second; see also https://en.wikipedia.org/wiki/Mars_Climate_Orbiter[Wikipedia]; similarly https://www-users.math.umn.edu/~arnold/disasters/ariane.html[sad] https://www.youtube.com/watch?v=gp_D8r-2hwk[story])
+//* 
 
 //* Comparator and sorting, (Comparable), Maps
 //* Graded test: string-files. About `Set`, `List`, files, flows, paths, providers, and the methods `https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/nio/file/Files.html[Files]#copy`, `createFile`, `delete`, `exists`, `isDirectory`, `readAllLines`, `readString`, `write`, `writeString`. Some (incomplete) unit tests are already provided, to help you test your implementation (look under `src/test/`). You have 30 minutes. Hint: use up to 10 minutes to make sure you understand the contract, including by reading the unit tests. Hint 2: implement the methods in the order they are defined in the interface.
