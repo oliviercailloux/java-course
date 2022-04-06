@@ -1,6 +1,6 @@
 Accept https://classroom.github.com/a/lz8ZVXyE[this exercice]. Clone and import the repository.
 
-You must implement the interface `Game421`. You may name the class as you like. You do not have to implement `DiceRoller`. You may not change the `Game421` or `DiceRoller` interfaces.
+You must implement the interface `Game421`. You may name the class as you like. You do not have to implement `DiceRoller`. You may not change the `Game421` or `DiceRoller` interfaces. Only one class must implement `Game421`.
 
 A class `RandomDiceRoller` is provided that implements `DiceRoller` to help you test your implementation of `Game421`, if you want. You may define more constructs if you like (test classes, helper classes, …) and you may change (or duplicate…) the existing `RandomDiceRoller` class if you so desire.
 
