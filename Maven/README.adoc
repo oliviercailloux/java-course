@@ -6,7 +6,7 @@ See https://github.com/oliviercailloux/java-course/raw/main/Maven/Pr%C3%A9sentat
 
 In the https://github.com/oliviercailloux/java-course/blob/main/Maven/Exercices.adoc[exercices], we learn about starting Maven projects from archetypes.
 
-See also: https://github.com/oliviercailloux/java-course/blob/main/Best%20practices/Maven.adoc[best practices]. 
+See also: https://github.com/oliviercailloux/java-course/blob/main/Maven/Best%20practices.adoc[best practices]. 
 
 When you’re ready, publish your open source artifacts to https://github.com/oliviercailloux/java-course/blob/main/Maven/Maven%20central.adoc[Maven central]!
 

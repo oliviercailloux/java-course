@@ -94,7 +94,7 @@ TODO @ home: finish the exercices.
 == S8: 8 April
 
 * Graded exercice about interfaces and implementations, similar to exercices here above.
-* Projects
+* Projects: https://github.com/oliviercailloux/java-course/blob/main/L3/Projets%20-%20Instructions%20Java.adoc[Instructions Java]
 
 TODO @ home: submit first release, deadline end of 18 April.
 
