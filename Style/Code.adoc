@@ -11,13 +11,13 @@ Most importantly:
 I disagree with this point in the GJSG: http://google.github.io/styleguide/javaguide.html#s5.2.1-package-names[5.2.1], “Package names are all lowercase, with consecutive words simply concatenated together (no underscores)”. I use underscores to separate words in packages (see https://github.com/oliviercailloux/java-course/blob/main/Best%20practices/Maven.adoc[Maven]).
 
 == Formatting
-Use your IDE mechanisms to format your source code systematically and automatically. Make sure everybody use the same conventions in your team. This reduces the number of conflicts when merging concurrent modifications; and ensures that git comparison works (otherwise, for example, git sees modifications when only the spaces have been changed to tabs, and thus real modifications become hard to find).
+Use your IDE mechanisms to format your source code systematically and automatically.
+(For example, see https://github.com/oliviercailloux/Practical-Google-style/blob/master/Eclipse.adoc[this] for configuring Eclipse to follow the https://google.github.io/styleguide/javaguide.htm[Google Java Style Guide].)
+Make sure everybody use the same conventions in your team. This reduces the number of conflicts when merging concurrent modifications; and ensures that git comparison works (otherwise, for example, git sees modifications when only the spaces have been changed to tabs, and thus the meaningful changes become hard to find).
 
 If you modify an existing project, make sure you use the same formatting conventions as the existing project, or start with re-formatting everything systematically if you want to change the conventions.
 
 Similarly, make sure you use only one encoding for end of lines throughout your team (either `\n` or `\r\n`). Otherwise, git will see differences where in reality only the end of line has changed.
-
-(Google-java-format is probably able to help with this, and its https://github.com/google/google-java-format/issues/504[issues] with Eclipse will hopefully be solved someday…)
 
 == No code disabled using comments
 Do not use comments to comment out code (`//object.someMethod()`), unless very temporarily when trying out something. This hinders readability and increases the length of the code, and quickly becomes completely unuseful as commented code accumulate. Use https://github.com/oliviercailloux/java-course/blob/main/Git/Best%20practices.adoc#no-old-files[this] strategy, if appropriate. Code commented out should not reach your git repository.
