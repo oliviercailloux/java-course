@@ -1,6 +1,6 @@
 = Maven
 
-Prerequisites: install https://maven.apache.org/download.cgi[Maven] (https://stackoverflow.com/questions/8826881/maven-install-on-mac-os-x[this] might be useful for Mac OS; I didn’t test it)
+Prerequisites: install https://maven.apache.org/download.cgi[Maven] (https://stackoverflow.com/questions/8826881/maven-install-on-mac-os-x[this] might be useful for Mac OS; I didn’t test it). Then (under Windows), https://superuser.com/q/284342[set the PATH variable] as indicated on the install page. (Look at https://github.com/oliviercailloux/java-course/blob/8f61ac1a6cdc1c9b00237e1a1f26e947d5b26e58/Best%20practices/Various.adoc#installing-the-jdk[this previous version] for details about the required environment variables.)
 
 See https://github.com/oliviercailloux/java-course/raw/main/Maven/Pr%C3%A9sentation/presentation.pdf[présentation].
 
