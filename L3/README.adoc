@@ -106,6 +106,8 @@ TODO @ home: submit first release, deadline end of 18 April.
 * https://github.com/oliviercailloux/java-course/blob/main/Contrat/Exceptions.adoc[Exceptions]. Exercice: Checked exceptions
 * https://github.com/oliviercailloux/java-course/blob/main/Maven/README.adoc[Maven]: overview
 
+TODO @ home: make sure maven works on your computer; finish Maven first exercice.
+
 [[S10]]
 == S10: 22 April
 
