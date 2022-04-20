@@ -101,7 +101,7 @@ TODO @ home: submit first release, deadline end of 18 April.
 [[S9]]
 == S9: 20 April
 
-* Exercice Chess
+* Exercice Chess (see https://github.com/oliviercailloux/java-course/blob/main/Objects%20%26%20interfaces/README.adoc[Objects & interfaces])
 * Polymorphism: inheritance
 * The `Object` class and its methods: `toString()`, `equals`, `hashcode`. Exercice: Car string
 * https://github.com/oliviercailloux/java-course/blob/main/Contrat/Exceptions.adoc[Exceptions]. Exercice: Checked exceptions
