@@ -112,6 +112,7 @@ TODO @ home: make sure maven works on your computer; finish Maven first exercice
 == S10: 22 April
 
 * https://github.com/oliviercailloux/java-course/blob/main/Maven/README.adoc[Maven], end exercices: modern project; your project
+* Objects & interfaces, https://github.com/oliviercailloux/java-course/blob/main/Objects%20%26%20interfaces/README.adoc#supplementary-exercices-from-the-book[supplementary exercices from the book]
 * https://github.com/oliviercailloux/java-course/blob/main/Objects%20%26%20interfaces/README.adoc#generics[Generics]
 * https://github.com/oliviercailloux/java-course/blob/main/Syntax/README.adoc#varargs[Varargs] syntax & exercice
 * Primitive types (autoboxing); optional; give guarantees: https://github.com/oliviercailloux/java-course/blob/main/Style/Null.adoc[Protect against null references]

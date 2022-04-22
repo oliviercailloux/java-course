@@ -61,16 +61,17 @@ Exceptions, checked and unchecked: see this https://www.programcreek.com/2009/02
 . Change the exception to an `IllegalArgumentException`. Observe that you do not have to declare this in either method signature.
 
 == Supplementary exercices from the book
+
+* https://math.hws.edu/javanotes/c5/exercises.html[EE5.4] (use `Scanner` instead of `TextIO`), 5.5
 // simple inheritance (no TextIO depended on, actually), but complex set up
 // implements but no inheritance
-* https://math.hws.edu/javanotes/c5/exercises.html[EE5.7] (the part about anonymous classes is optional)
+* https://math.hws.edu/javanotes/c5/exercises.html[EE5.7] (you need to do or have a look at the required exercices; the part about anonymous classes is optional)
 //** Supplementary requirements: your code must lie in at least two packages;
 //** The idea of this exercice is that you simulate that three different people work on this exercice: one provides some interfaces; another implements the interfaces; a third one uses the interfaces and their implementations to solve the exercice (except you represent all these persons).
 //** Declare at least one interface in another Eclipse project, exported as a Java archive (JAR file);
 //** implement those interfaces in another Eclipse project, exported as a Java archive (JAR file) (will you need the previous JAR file? Why / why not?);
 //** solve the exercices in a third Eclipse project (will you need the previous JAR files? Which ones and why?).
 
-* https://math.hws.edu/javanotes/c5/exercises.html[EE5.4] (use `Scanner` instead of `TextIO`)
 * (https://math.hws.edu/javanotes/c5/exercises.html[EE5] provides more exercices, and https://math.hws.edu/javanotes/c8/exercises.html[EE8] has more advanced ones)
 
 == Generics
