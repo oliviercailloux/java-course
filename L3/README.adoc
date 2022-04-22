@@ -115,7 +115,9 @@ TODO @ home: make sure maven works on your computer; finish Maven first exercice
 * Objects & interfaces, https://github.com/oliviercailloux/java-course/blob/main/Objects%20%26%20interfaces/README.adoc#supplementary-exercices-from-the-book[supplementary exercices from the book]
 * https://github.com/oliviercailloux/java-course/blob/main/Objects%20%26%20interfaces/README.adoc#generics[Generics]
 * https://github.com/oliviercailloux/java-course/blob/main/Syntax/README.adoc#varargs[Varargs] syntax & exercice
-* Primitive types (autoboxing); optional; give guarantees: https://github.com/oliviercailloux/java-course/blob/main/Style/Null.adoc[Protect against null references]
+* Optionals; give guarantees: https://github.com/oliviercailloux/java-course/blob/main/Style/Null.adoc[Protect against null references]
+
+TODO @ home: finish all exercices in https://github.com/oliviercailloux/java-course/blob/main/Objects%20%26%20interfaces/README.adoc[Objects & interfaces], and other exercices of S9 and S10.
 
 == Next
 
@@ -123,8 +125,8 @@ TODO @ home: make sure maven works on your computer; finish Maven first exercice
 // ** As usual, you must configure Eclipse as expected in this course.
 
 * https://github.com/oliviercailloux/java-course/blob/main/Collections/README.adoc[Collections]
+* Primitive types (autoboxing)
 * https://github.com/oliviercailloux/java-course/blob/main/JUnit/README.adoc[Unit testing]
-* Exercice Chess (see https://github.com/oliviercailloux/java-course/blob/main/Objects%20%26%20interfaces/README.adoc[Objects & interfaces])
 * https://github.com/oliviercailloux/java-course/blob/main/Style/README.adoc[Favor static factory methods]
 * Files and https://github.com/oliviercailloux/java-course/blob/main/Flows.adoc[flows]: Overview & Exercices _Read using a byte flow_ and _Determine encoding_
 
