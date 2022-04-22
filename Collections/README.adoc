@@ -53,6 +53,11 @@ https://math.hws.edu/javanotes/c10/exercises.html[EE10.3] (you may use `List` im
 // TreeMap<String, TreeSet<Integer>>  concordance
 https://math.hws.edu/javanotes/c10/exercises.html[EE10.6]
 
+== Exercice: Chess
+Have a look at the https://en.wikipedia.org/wiki/Algebraic_notation_(chess)[algebraic notation] and at the https://en.wikipedia.org/wiki/Chess_piece[chess pieces] if you know nothing about chess. (You do not have to know the rules of the game.)
+
+Clone https://github.com/oliviercailloux/sample-chess/[this repository]. Implement the class `MyChessBoard`, making sure it satisfies its contracts. You are encouraged to discuss your ideas or doubt with classmates. A solution is available in the branch `impl`. Look at it only when you are done and all the tests pass!
+
 == References
 * https://math.hws.edu/javanotes/contents-with-subsections.html[ES10] to 10.2
 
