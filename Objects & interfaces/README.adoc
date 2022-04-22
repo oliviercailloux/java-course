@@ -34,11 +34,6 @@ Hints for self-correction https://github.com/oliviercailloux/java-course/blob/ma
 == Exercice: I like to move it move it
 Program an interface `MovableObject` with methods `canAccelerate(): boolean`, `accelerate(): void` and `getTimeToMove(double): double`; implement it twice in classes `ConstantSpeedMovable` and `GeneralMovable`, in a reasonable way of your choice. In a class `MovableUser`, program a `main` method that instanciates one `ConstantSpeedMovable` and two `GeneralMovable` objects, accelerate one of them, and prints the times to move 1 km for each of these instances. Add a method `brake(): void` to `MovableObject`. Add to `MovableUser` a method `getTotalTime(movable: MovableObject): double` that computes the total time taken for the given movable object to move 1 km then brake then move 100m then accelerate then move 1 km again. Should `getTotalTime` be static? Change your `main` so that it also prints that total time, for each of the three objects created in the method.
 
-== Exercice: Chess
-Have a look at the https://en.wikipedia.org/wiki/Algebraic_notation_(chess)[algebraic notation] and at the https://en.wikipedia.org/wiki/Chess_piece[chess pieces] if you know nothing about chess. (You do not have to know the rules of the game.)
-
-Clone https://github.com/oliviercailloux/sample-chess/[this repository]. Implement the class `MyChessBoard`, making sure it satisfies its contracts. You are encouraged to discuss your ideas or doubt with classmates. A solution is available in the branch `impl`. Look at it only when you are done and all the tests pass!
-
 == Exercice: Coffee
 Clone https://github.com/oliviercailloux/coffee/[this repository]. Implement the classes `DripCoffeeMaker` and `MyEspressoMachine`, making sure they satisfy their contracts. You are encouraged to discuss your ideas or doubt with classmates.
 
@@ -88,4 +83,10 @@ Diagram https://raw.githubusercontent.com/oliviercailloux/Simple-Papyrus-project
 * Use your class in a `main` method that creates two `pairs`: one pair of `String` and `Integer` that holds your name and your age, and one pair of double initialized at random values drawn in [0, 1].
 * Add a static method `show` that admits any kind of pair as parameter and prints its content (by calling `toString()` on the left and then on the right content of the pair). Use `show` from your main for each of your instances of pair.
 * Finally, still from your `main`, create a pair that contains each of your instances of pairs, and give it as an argument to `show`.
+
+== Exercice: Chess
+Have a look at the https://en.wikipedia.org/wiki/Algebraic_notation_(chess)[algebraic notation] and at the https://en.wikipedia.org/wiki/Chess_piece[chess pieces] if you know nothing about chess. (You do not have to know the rules of the game.)
+
+Clone https://github.com/oliviercailloux/sample-chess/[this repository]. Implement the class `MyChessBoard`, making sure it satisfies its contracts. You are encouraged to discuss your ideas or doubt with classmates. A solution is available in the branch `impl`. Look at it only when you are done and all the tests pass!
+
 
