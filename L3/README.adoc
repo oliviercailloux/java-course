@@ -117,6 +117,7 @@ TODO @ home: make sure maven works on your computer; finish Maven first exercice
 * https://github.com/oliviercailloux/java-course/blob/main/Syntax/README.adoc#varargs[Varargs] syntax & exercice
 
 TODO @ home: finish all exercices in https://github.com/oliviercailloux/java-course/blob/main/Objects%20%26%20interfaces/README.adoc[Objects & interfaces], and other exercices of S9 and S10.
+*Also, homework*: 421 again. Follow the instructions https://github.com/oliviercailloux/java-course/blob/main/L3/Exercices%20not%C3%A9s.adoc#nouvelle-chance[here] (no e-mail to me is required in this case). Your grade will be a combination with the original grade, depending on the number of modified lines, as explained on that page. Deadline: *end of 8th of May*. This second chance is optional; if you do not change anything, you will keep your original mark for this exercice.
 
 == Next
 
