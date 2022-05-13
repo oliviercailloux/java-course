@@ -1,6 +1,6 @@
 = Collections
 
-See this https://www.scientecheasy.com/2018/09/collection-hierarchy-in-java-collections-class.html/[Collections] diagram. This document refers to https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Iterable.html[`Iterable`] and the rest of the collection hierarchy; as well as the https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html[`Map`] interface.
+See this https://www.scientecheasy.com/2018/09/collection-hierarchy-in-java-collections-class.html/[Collections] diagram. This document refers to https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Iterable.html[`Iterable`] and the rest of the collection hierarchy; as well as the https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Map.html[`Map`] interface.
 
 Use the https://docs.oracle.com/javase/tutorial/java/nutsandbolts/for.html[enhanced for (for-each) loop] on iterables and arrays!
 
