@@ -128,7 +128,7 @@ Team work about the next release.
 [[S12]]
 == S12: 13 May
 
-* Graded exercice: objects & interfaces.
+* Graded exercice: https://classroom.github.com/a/ychDzzze[dice-roller]. Implement the interface `CyclicDiceRoller`. Your implementation must contain a public no-argument constructor.
 * Optionals; give guarantees: https://github.com/oliviercailloux/java-course/blob/main/Style/Null.adoc[Protect against null references]
 * https://github.com/oliviercailloux/java-course/blob/main/Collections/README.adoc[Collections]
 
