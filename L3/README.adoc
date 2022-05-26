@@ -138,20 +138,25 @@ Team work about the next release.
 
 *Release 2* due end of 25 May
 
+[[S14]]
+== S14: 27 May
+* Collections: exercices; Maps; exercices
+* Primitive types (autoboxing)
+* https://github.com/oliviercailloux/java-course/blob/main/JUnit/README.adoc[Unit testing]; exercices
+
+TODO @ home: finish all those exercices
+
+*Release 3* due end of 22 June; counts as 1.5 other releases
+
 == Next
 
-* Primitive types (autoboxing)
-* https://github.com/oliviercailloux/java-course/blob/main/JUnit/README.adoc[Unit testing]
-* https://github.com/oliviercailloux/java-course/blob/main/Style/README.adoc[Favor static factory methods]
 * Files and https://github.com/oliviercailloux/java-course/blob/main/Flows.adoc[flows]: Overview & Exercices _Read using a byte flow_ and _Determine encoding_
+* https://github.com/oliviercailloux/java-course/blob/main/Style/README.adoc[Favor static factory methods]
 
 // * Graded exercice, _at Dauphine_: https://classroom.github.com/a/taDEGaJA[persons-manager]. Accept the assignment. This creates a private repository for you with code already there. You have to provide an implementation of the class `MyPersonsManager` according to the contracts you will find there. Clone this, work locally, and push your implementation. Do not forget to use the provided unit tests to help you check your implementation. This test will count for three of the previous tests. Deadline: 15:00 (+ 5 min for late commits.)
 
 * https://github.com/oliviercailloux/java-course/blob/main/Objects%20%26%20interfaces/Equals.adoc[Equality and hash codes] (and exercice)
 * Files and flows: https://github.com/oliviercailloux/java-course/blob/main/Flows.adoc#reading-from-character-flows[Reading from character flows] to end (except for the last exercice about the abstract path concept).
-* Projets : https://github.com/oliviercailloux/java-course/blob/main/L3/Projets%20-%20Instructions%20Java.adoc[Instructions Java]
-
-//* 
 
 //* Comparator and sorting, (Comparable), Maps
 //* Graded test: string-files. About `Set`, `List`, files, flows, paths, providers, and the methods `https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/nio/file/Files.html[Files]#copy`, `createFile`, `delete`, `exists`, `isDirectory`, `readAllLines`, `readString`, `write`, `writeString`. Some (incomplete) unit tests are already provided, to help you test your implementation (look under `src/test/`). You have 30 minutes. Hint: use up to 10 minutes to make sure you understand the contract, including by reading the unit tests. Hint 2: implement the methods in the order they are defined in the interface.
