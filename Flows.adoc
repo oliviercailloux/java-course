@@ -23,7 +23,7 @@ Classes that represent flows (such as the four above) implement `Closeable`. Thi
 
 NOTE: Many examples on the internet still use the `File` class. This approach should now be considered https://docs.oracle.com/javase/tutorial/essential/io/legacy.html[deprecated]. Using `Path` and `Files`, as illustrated here, should be favored: it is a simpler API altogether, and readily adapts to other kinds of file systems such as https://github.com/google/jimfs[in-memory file systems], as explained below.
 
-== Exercice: Read using a byte flow
+== Exercice: Byte flows
 * Create a file `in.txt` in your project directory, containing `Hello, world`. 
 * In Java, create a `Path` object designating that file.
 * Use the appropriate static method from the `Files` class to obtain an `InputStream` representing the content of that file.
@@ -42,7 +42,7 @@ Create a text file containing `Hé !` using your favorite text editor, and print
 == Reading from character flows
 Character flows should be used preferably to byte flows when reading or writing text data (as in the exercice above). Such a flow usually reads from (or writes to) a byte flow, decoding from or encoding to bytes as demanded. Note that this conversion will depend on the character set specified to the object representing the character flow.
 
-== Exercice
+== Exercice: Character flows
 Adapt the strategy used in the first exercice in order to use a `Reader` to print the content of your file containing `Hé !`. Use various character sets. Check that it prints `Hé !` or prints something else, depending on the character set your editor uses to encode the characters, and the character set your `Reader` object uses to decode the bytes.
 
 == A more realistic exercice
