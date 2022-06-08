@@ -148,9 +148,12 @@ TODO @ home: finish all those exercices
 
 *Release 3* due end of 22 June; counts as 1.5 other releases
 
+[[S15]]
+== S15: 8 June
+* Files and https://github.com/oliviercailloux/java-course/blob/main/Flows.adoc[flows]: Theory & Exercices (up to and including “Write two files”)
+
 == Next
 
-* Files and https://github.com/oliviercailloux/java-course/blob/main/Flows.adoc[flows]: Overview & Exercices _Read using a byte flow_ and _Determine encoding_
 * https://github.com/oliviercailloux/java-course/blob/main/Style/README.adoc[Favor static factory methods]
 
 // * Graded exercice, _at Dauphine_: https://classroom.github.com/a/taDEGaJA[persons-manager]. Accept the assignment. This creates a private repository for you with code already there. You have to provide an implementation of the class `MyPersonsManager` according to the contracts you will find there. Clone this, work locally, and push your implementation. Do not forget to use the provided unit tests to help you check your implementation. This test will count for three of the previous tests. Deadline: 15:00 (+ 5 min for late commits.)
