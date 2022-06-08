@@ -21,7 +21,7 @@ Here is a simple way to access your resource.
 ----
 URL resourceUrl = MyClass.class.getResource("data_file.csv");
 ----
-With this statement you ask the class loader to get your resource from the class path, relative to the path of `MyClass`. You obtain a reference to the said resource. You can then invoke `resourceUrl.openStream()`, for example. (See https://github.com/oliviercailloux/java-course/blob/main/Flows.adoc[Flows] about reading from byte or character streams.)
+With this statement you ask the class loader to get your resource from the class path, relative to the path of `MyClass`. You obtain a reference to the said resource. You can then use https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/nio/file/Path.html[`Path`] to transform this `URL` into a `Path` instance, or invoke `resourceUrl.openStream()`, for example. (See https://github.com/oliviercailloux/java-course/blob/main/Flows.adoc[Flows] about reading from byte or character streams.)
 
 == Do not write in your class path or in your source folder
 By design, the class path contains data that your program can *read*, but not write. If you want to write data, this should not be on the class path. Rather write into memory; on the user’s hard disk; on the network… (See https://github.com/oliviercailloux/java-course/blob/main/Flows.adoc[Flows] about writing byte or character streams.)
