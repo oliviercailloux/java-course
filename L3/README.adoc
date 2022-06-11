@@ -146,7 +146,7 @@ Team work about the next release.
 
 TODO @ home: finish all those exercices
 
-*Release 3* due end of 22 June; counts as 1.5 other releases
+*Release 3* due end of 22 June; counts as 1.5 other releases. *NOTE*: for this last iteration with bigger time range and weighting more, I expect more work than during the other iterations; the SM/POs should also submit at least one task in supplement to their reviewing work.
 
 [[S15]]
 == S15: 8 June
@@ -162,6 +162,8 @@ TODO @ home: finish all those exercices
 //* No https://github.com/oliviercailloux/Teaching/blob/main/Plagiat.adoc[plagiarism], but reuse! (https://mycore.core-cloud.net/index.php/s/jDdn1OcEfjjj8NU[Audio track] from https://fr.wikipedia.org/wiki/Le_Jeu_des_dictionnaires[Le Jeu des Dictionnaires], included with permission from geluck.com, use authorized only in the context of this course.)
 
 You may submit a “new second chance” to the graded exercice 421. The new grade will replace the previous one. You keep the previous one if you do not submit anything. Deadline: end of 16 June.
+
+*See the added note about the third release, here above.*
 
 [[S17]]
 == S17: 22 June
