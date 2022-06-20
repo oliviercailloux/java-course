@@ -146,7 +146,7 @@ Team work about the next release.
 
 TODO @ home: finish all those exercices
 
-*Release 3* due end of 22 June; counts as 1.5 other releases. *NOTE*: for this last iteration with bigger time range and weighting more, I expect more work than during the other iterations; the SM/POs should also submit at least one task in supplement to their reviewing work.
+*Release 3* due end of 26 June (initially 22 June); counts as 1.5 other releases. *NOTE*: for this last iteration with bigger time range and weighting more, I expect more work than during the other iterations; the SM/POs should also submit at least one task in supplement to their reviewing work.
 
 [[S15]]
 == S15: 8 June
@@ -195,7 +195,6 @@ You may submit a “new second chance” to the graded exercice 421. The new gra
 ** Démo *obligatoirement uniquement* de votre branche master (mais vous pouvez parler et montrer des informations d’autres branches)
 ** 15 à 30 minutes
 ** Depuis l’ordinateur de présentation, *pas* le vôtre (prévoyez des captures d’écran en plan B)
-** Noté : intérêt pour l’audience ; compréhension par l’audience du contexte et de l’objectif du projet ; compréhension par l’audience de l’architecture du code et des aspects techniques ; distinction claire des fcts déjà présentes VS ajoutées ; originalité & créativité éventuelle ; …
 * Votes pour la meilleure amélioration
 * Evals, et déclarations de licences : à votre délégué, Maxime.
 ** Envoyer un fichier texte (format Asciidoctor ou simple texte) contenant votre évaluation du cours Java et du cours UML (https://github.com/oliviercailloux/java-course/raw/main/L3/Appr%C3%A9ciation%20Java.pdf[inspiration]), ou remettre une version papier. Sujet : « Fin cours Java ».
