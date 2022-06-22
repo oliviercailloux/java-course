@@ -186,19 +186,5 @@ You may submit a “new second chance” to the graded exercice 421. The new gra
 
 //* Presentation before end of 27 June, directly in `master`, in your documentation folder, named `Présentation 2021.pdf`. This may be a non-entirely final version, to be finalized, if required, on the 28th, depending on what will be merged effectively.
 
-* Présentations (liste à mettre à jour) : 
-** \https://github.com/Julienchilhagopian/J-Voting/raw/main/Doc/Pr%C3%A9sentation%202020.pdf[J-Voting], 
-** \https://github.com/Sarah-Elhelw/teach_spreadsheets/raw/main/Doc/Presentation%202020.pdf[Teach-Spreadsheets], 
-** \https://github.com/av1m/Apartments/raw/main/Doc/Pr%C3%A9sentation%202020.pdf[Apartments], 
-** \https://github.com/sebastienbourg/J-Confs/raw/main/Doc/Pr%C3%A9sentation%202020.pdf[J-Confs], 
-** \https://github.com/marcellinodour/MIDO-SVG/raw/main/Doc/Pr%C3%A9sentation%202020.pdf[MIDO-SVG]
-** Démo *obligatoirement uniquement* de votre branche master (mais vous pouvez parler et montrer des informations d’autres branches)
-** 15 à 30 minutes
-** Depuis l’ordinateur de présentation, *pas* le vôtre (prévoyez des captures d’écran en plan B)
-* Votes pour la meilleure amélioration
-* Evals, et déclarations de licences : à votre délégué, Maxime.
-** Envoyer un fichier texte (format Asciidoctor ou simple texte) contenant votre évaluation du cours Java et du cours UML (https://github.com/oliviercailloux/java-course/raw/main/L3/Appr%C3%A9ciation%20Java.pdf[inspiration]), ou remettre une version papier. Sujet : « Fin cours Java ».
-** Remettre la https://github.com/oliviercailloux/projets/raw/main/Licences/Declaration%20of%20licensing.odt[déclaration de licence] papier avec toutes les signatures de l’équipe, ou votre décision collective de ne pas signer.
-** Il me transmettra vos déclarations et évaluations *après remise des notes finales*.
 // * http://whale.imag.fr/polls/vote/cc43561b-7545-4ee3-9844-8530c621a44a
 
