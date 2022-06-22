@@ -167,7 +167,7 @@ You may submit a “new second chance” to the graded exercice 421. The new gra
 
 [[S17]]
 == S17: 22 June
-* Graded exercice: https://classroom.github.com/a/a7m6IgaA[various]. You need to complete the VariousClass implementing the Various interface. Double weight. About collections; unit tests; files and flows; logging. 
+* Graded exercice: https://classroom.github.com/a/a7m6IgaA[various]. You need to complete the VariousClass implementing the Various interface. Double weight. About collections; unit tests; files and flows; logging. Deadline: 14h20 plus max five minutes for lateness.
 
 == More
 // * Graded exercice, _at Dauphine_: https://classroom.github.com/a/taDEGaJA[persons-manager]. Accept the assignment. This creates a private repository for you with code already there. You have to provide an implementation of the class `MyPersonsManager` according to the contracts you will find there. Clone this, work locally, and push your implementation. Do not forget to use the provided unit tests to help you check your implementation. This test will count for three of the previous tests. Deadline: 15:00 (+ 5 min for late commits.)
