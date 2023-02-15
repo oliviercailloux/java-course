@@ -9,6 +9,7 @@ Here is how I automate my Eclipse installation.
 * `sudo chown -R root:staff "/usr/local/share/eclipse-java-${RELEASE}-R-linux-gtk-x86_64/"`
 * `sudo chmod -R o+rX "/usr/local/share/eclipse-java-${RELEASE}-R-linux-gtk-x86_64/"`
 * Delete your `.eclipse` folder and your previous Eclipse workspace to forget possible unwanted residuals from previous installations
+* (Optional) https://wiki.archlinux.org/title/desktop_entries[Adjust] desktop entry
 
 ////
 == Automatic workspace selection
@@ -20,7 +21,7 @@ mkdir -p ".eclipse/org.eclipse.platform_4.14.0_1448112854_linux_gtk_x86_64/confi
 == Shared plugins
 This uses the https://help.eclipse.org/latest/topic/org.eclipse.platform.doc.isv/reference/misc/multi_user_installs.html[shared configuration] approach.
 
-To install Papyrus on Eclipse 2021-12-R: `"/usr/local/share/eclipse-java-2021-12-R-linux-gtk-x86_64/eclipse" -nosplash -application "org.eclipse.equinox.p2.director" -repository "https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2021-12, \https://download.eclipse.org/releases/2021-12" -installIU "org.eclipse.papyrus.sdk.feature.feature.group"`. 
+To install Papyrus (tested on Eclipse 2021-12): `"/usr/local/share/eclipse-java-${RELEASE}-R-linux-gtk-x86_64/eclipse" -nosplash -application "org.eclipse.equinox.p2.director" -repository "https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/${RELEASE}, \https://download.eclipse.org/releases/${RELEASE}" -installIU "org.eclipse.papyrus.sdk.feature.feature.group"`. 
 
 .Further technicalities
 [%collapsible]
@@ -31,6 +32,8 @@ This (for version 2021-09) installs 42 papyrus features, the `org.eclipse.xwt.fe
 
 On Eclipse version 2021-03, installing `org.eclipse.papyrus.uml.feature.feature.group` instead of `org.eclipse.papyrus.sdk.feature.feature.group`, which installs fewer features and plugins (18 and 360 instead of 42 and 477 on that version), does not seem to be sufficient; for example, Papyrus project files do not open in that case.
 ====
+
+To install PyDev (tested on Eclipse 2022-06): `"/usr/local/share/eclipse-java-${RELEASE}-R-linux-gtk-x86_64/eclipse" -nosplash -application "org.eclipse.equinox.p2.director" -repository "https://www.pydev.org/updates" -installIU "org.python.pydev.feature.feature.group"` (installing only `org.python.pydev` leads to missing Run option).
 
 To install HTML, CSS, JavaScript editors: `"/usr/local/share/eclipse-java-${RELEASE}-R-linux-gtk-x86_64/eclipse" -nosplash -application "org.eclipse.equinox.p2.director" -repository "https://download.eclipse.org/releases/${RELEASE}" -installIU "org.eclipse.wildwebdeveloper.feature.feature.group"`
 
