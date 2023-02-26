@@ -1,11 +1,11 @@
-= Planning
+= Java L3
 :sectanchors:
 
 The entry page of the Java course in L3.
 
 == Prerequisites
-You know algorithmics: you know how to design algorithms to solve problems, using data structures, if required, such as lists or stacks. 
-You can use at least one of the three major operating systems (Windows, a Linux variant or Mac OS) to compile and run a program in at least one language, and are generally at ease with that OS: you know how to edit files and move them around, install and use basic programs, …
+* You know algorithmics: you know how to design algorithms to solve problems, using data structures, if required, such as lists or stacks. 
+* You can use at least one of the three major operating systems (Windows, a Linux variant or Mac OS) to compile and run a program in at least one language, and are generally at ease with that OS: you know how to edit files and move them around, install and use basic programs, …
 
 == General references
 * Eck’s https://math.hws.edu/javanotes/[book]
