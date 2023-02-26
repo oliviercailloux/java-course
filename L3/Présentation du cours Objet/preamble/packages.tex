@@ -53,7 +53,12 @@
 	\usepackage{hyperref}
 }{
 % option pdfusetitle must be introduced here, not in hypersetup.
-	\usepackage[pdfusetitle]{hyperref}
+%	\usepackage[pdfusetitle]{hyperref}
+	\usepackage[hypertexnames=false, pdfusetitle, linkbordercolor={1 1 1}, citebordercolor={1 1 1}, urlbordercolor={1 1 1}]{hyperref}
+	%https://tex.stackexchange.com/a/466235
+	\pdfstringdefDisableCommands{%
+		\let\thanks\@gobble
+	}
 }
 \nottoggle{LCpres}{
 %seems like authblk wants to be later than hyperref, but sooner than silence

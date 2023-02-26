@@ -72,29 +72,11 @@
 	\end{itemize}
 \end{frame}
 
-\begin{frame}
-	\frametitle{Objectifs pédagogiques : modélisation}
-	\begin{block}{Modélisation}
-		\begin{itemize}
-		\item Réponse à des besoins exprimés vaguement
-		\item Appui sur standards récents
-		\item Réusinage fréquent
-		\item Dosage du réalisme et de l’intérêt des fonctionalités
-		\end{itemize}
-	\end{block}
-	Approche \emph{en partie} agile
-	\begin{itemize}
-		\item Livraisons fréquentes
-		\item Travail en binôme
-		\item Réusinage intense
-	\end{itemize}
-\end{frame}
-
 \subsection{Utilité}
 \begin{frame}
 	\frametitle{Intérêt pratique}
 	\begin{itemize}
-		\item Technologies omniprésentes %(\#4 In-Demand Remote Tech Skills, 2021, \href{https://insights.dice.com/2021/12/03/top-30-tech-skills-employers-want-from-remote-workers/}{Emsi Burning Glass})
+		\item Technologies omniprésentes et très demandées (15 In-Demand Tech-Focused (And Tech-Adjacent) Skills And Specialties, 2022, \href{https://www.forbes.com/sites/forbestechcouncil/2022/07/11/15-in-demand-tech-focused-and-tech-adjacent-skills-and-specialties/?sh=44e82adc38d8}{Forbes Technology Council})
 		\item Qu’on soit programmeur, qu’on discute avec des programmeurs
 		\item Décomposition en responsabilités, en sous-problèmes
 		\item Respect des spécifications
@@ -107,9 +89,9 @@
 	\frametitle{Prérequis}
 	\begin{itemize}
 		\item Notions algorithmiques élémentaires (boucles, structures de listes, d’arbres…)
-		\item Capacité à comprendre des textes en anglais liés à l’informatique
-		\item Manipulation de votre système d’exploitation : installation de logiciels, navigation dans le système de fichiers, démarrage de programmes
 		\item Familiarité avec un langage tel que C++ ou Python
+		\item Manipulation de votre système d’exploitation : installation de logiciels, navigation dans le système de fichiers, démarrage de programmes
+		\item Capacité à comprendre des textes en anglais liés à l’informatique
 	\end{itemize}
 \end{frame}
 
@@ -117,26 +99,24 @@
 \subsection{Évaluation}
 \begin{frame}
 	\frametitle{Évaluation}
-	50\% CC, 50\% projet
+	100\% CC
 	\begin{itemize}
 		\item Tests réguliers en séance (annoncés)
-		\item Note CC : aggrégation des notes reçues au long de l’année
-		\item Fonctionnalités à développer dans le projet évaluées (note pour le binôme)
-		\item Fin d’année : présentation collective de vos projets
-		\item Vote pour la meilleure application (pour le prestige)
-		\item Note projet final prend en compte fonctionnalités durant l’année, qualité de la présentation finale…
+		\item (Possible selon avancement) Devoirs maison / Remises de projet
+		\item (Possible selon avancement)  QCMs
+		\item Aggrégation des notes reçues au long de l’année
+		\item Pondération augmente au fil de l’année
 	\end{itemize}
 \end{frame}
 
 \begin{frame}
-	\frametitle{Aspects pris en compte}
+	\frametitle{Évaluation des tests}
 	\begin{itemize}
-		\item Qualité du code 
-		\item Respect des demandes de l’utilisateur (moi !)
-		\item Mise en œuvre adéquate des technologies dans l’application
-		\item Livraisons régulières
-		\item Qualité générale de l’application
-		\item (Ampleur des fonctionnalités)
+		\item Code doit compiler
+		\item Livraison via git
+		\item Respect précis des instructions
+		\item Évaluation généralement automatique
+		\item Points pour chaque aspect fonctionnel
 	\end{itemize}
 \end{frame}
 
@@ -148,10 +128,11 @@
 		\item Programmation objets : responsabilités ; techniques
 		\item Maven
 		\item Éléments d’ingénierie : programmation par contrat ; patrons de conception…
+		\item Collections
+		\item Tests unitaires
 		\item Utilisation de bibliothèques tierces
-		\item Exceptions
+		\item Exceptions 
 		\item Logging
-		\item Programmation client - serveur ; Javascript (selon projets)
 		\item Et plus selon demandes
 	\end{itemize}
 \end{frame}
@@ -160,14 +141,13 @@
 \begin{frame}
 	\frametitle{Travail attendu}
 	\begin{itemize}
-		\item \{[(27 h / ECTS) × 5 ECTS] − 51 h\} / 16 inter-séances
+		\item \{[(25 h / ECTS) × 5 ECTS] − 51 h\} / 16 inter-séances
 		\pgfmathsetmacro{\mycalcMin}{(25 * 5 - (17 * 3)) / (17 - 1)}
 		\pgfmathsetmacro{\mycalcMax}{(30*5-51)/16}
 		\pgfmathsetmacro{\mycalcEff}{(27*5-51)/16}
-		\item \num[round-mode=places, round-precision=0, mode=text]{\mycalcEff} heures de travail entre chaque séance en moyenne
+		\item \num[round-mode=places, round-precision=0, mode=text]{\mycalcMin} heures de travail entre chaque séance en moyenne
 		\item Prenez des notes
 		\item Poursuivre les exercices chez vous, cf. page GitHub du cours
-		\item Suivre \emph{scrupuleusement} les instructions qui s’y trouvent SVP
 	\end{itemize}
 \end{frame}
 
