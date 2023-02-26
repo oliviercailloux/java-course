@@ -12,7 +12,7 @@ I disagree with this point in the GJSG: http://google.github.io/styleguide/javag
 
 == Formatting
 Use your IDE mechanisms to format your source code systematically and automatically.
-(For example, see https://github.com/oliviercailloux/Practical-Google-style/blob/master/Eclipse.adoc[this] for configuring Eclipse to follow the https://google.github.io/styleguide/javaguide.htm[Google Java Style Guide].)
+(For example, see https://github.com/oliviercailloux/Practical-Google-style/blob/master/Eclipse.adoc[this] for configuring Eclipse to follow the GJSG.)
 Make sure everybody use the same conventions in your team. This reduces the number of conflicts when merging concurrent modifications; and ensures that git comparison works (otherwise, for example, git sees modifications when only the spaces have been changed to tabs, and thus the meaningful changes become hard to find).
 
 If you modify an existing project, make sure you use the same formatting conventions as the existing project, or start with re-formatting everything systematically if you want to change the conventions.

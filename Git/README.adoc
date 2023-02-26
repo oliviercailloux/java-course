@@ -61,5 +61,5 @@ Authentication fails if you use your GitHub password. You must use a personal ac
 * Videos (I haven’t watched any of those): see https://git-scm.com/videos[Git-SCM videos]; https://www.git-tower.com/learn/git/videos[Videos by Tower]
 * Working with git: A quick and useful https://guides.github.com/introduction/flow/[guide] about workflow on GitHub; a branching https://nvie.com/posts/a-successful-git-branching-model/[model]; prefer https://longair.net/blog/2009/04/16/git-fetch-and-merge/[fetch then merge] to pull; http://think-like-a-git.net/sections/testing-out-merges/the-scout-pattern.html[the scout pattern] for merging
 * GUIs: I recommend using the one integrated with your IDE; other options include https://rowanj.github.io/gitx/[GitX]; I’ve been recommended https://www.gitkraken.com/[GitKraken] (but it is https://www.gitkraken.com/pricing#git-gui-features[only free for public repos])
-* Git https://stevelosh.com/blog/2013/04/git-koans/[Koans] (and some https://news.ycombinator.com/item?id=5512119[explanation])
+//* Git https://stevelosh.com/blog/2013/04/git-koans/[Koans] (and some https://news.ycombinator.com/item?id=5512119[explanation])
 

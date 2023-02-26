@@ -8,7 +8,7 @@ Here are the instructions to follow for the graded exercice “Extractor”.
 * This project will build a simple class that is able to extract plain text from a PDF. For this, we will use Apache https://pdfbox.apache.org/[PDFBox]. Add the required dependency to your POM.
 * There is a file already in your repository. It defines an interface `SimpleExtractor`. Move this file in the right folder, corresponding to its declared package (do not change its package).
 * Now your project should compile (and do nothing). Commit your code so far.
-* Implement the interface in a class `MySimpleExtractor`. Its package should be your group id, followed by your artifact id, with hyphens replaced by underscores (following the Maven https://github.com/oliviercailloux/java-course/blob/main/Best%20practices/Maven.adoc[Best practices])
+* Implement the interface in a class `MySimpleExtractor`. Its package should be your group id, followed by your artifact id, with hyphens replaced by underscores (following the Maven https://github.com/oliviercailloux/java-course/blob/main/Maven/Best%20practices.adoc[Best practices])
 ** The method `getAllText` should return a Guava `ImmutableList`. (You will get two third of the mark for the method if you return a normal list.)
 ** Tips: to use PDFBox to extract text from a PDF, you only need to deal with two PDFBox classes: `PDDocument` and `PDFTextStripper`. Keep it simple: only a few lines of code are necessary to implement each method in `SimpleExtractor`. Remember you can use a `StringWriter` to write in memory.
 ** You can use http://www.xmlpdf.com/manualfiles/hello-world.pdf[this] PDF if you want to test your code. The extracted test should be `hello world\n`.

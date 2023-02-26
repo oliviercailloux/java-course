@@ -1,7 +1,7 @@
 = Projets : démarrage
 
 == Affectation initiale
-* https://universitedauphine-my.sharepoint.com/:x:/g/personal/olivier_cailloux_lamsade_dauphine_fr/Edx2GVhss0dFk1cq3LtScj8BnvsPy6_d50sYeCcrFZpBnw?e=qCjocf[Affectation]
+//* https://universitedauphine-my.sharepoint.com/:x:/g/personal/olivier_cailloux_lamsade_dauphine_fr/Edx2GVhss0dFk1cq3LtScj8BnvsPy6_d50sYeCcrFZpBnw?e=qCjocf[Affectation]
 * Max. une équipe par sujet
 * Équipes de 3 à 7
 * Obligation d’accepter membres supplémentaires à la demande si < 7
