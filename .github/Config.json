@@ -8,6 +8,12 @@
 			]
 		},
 		{
+			"pattern": "https://mvnrepository.com/artifact/net.sf.jasperreports/jasperreports/6.20.0",
+			"accept": [
+				403
+			]
+		},
+		{
 			"pattern": "https://universitedauphine-my.sharepoint.com/:x:/g/personal/.*",
 			"accept": [
 				403
