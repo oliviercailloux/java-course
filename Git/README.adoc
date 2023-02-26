@@ -1,5 +1,7 @@
 = Git
 
+The https://git.wiki.kernel.org/index.php/Git_FAQ#Why_the_.27Git.27_name.3F[git name].
+
 Prerequisites:
 
 * Install https://git-scm.com/download[git].
