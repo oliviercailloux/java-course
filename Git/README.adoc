@@ -1,7 +1,5 @@
 = Git
 
-The https://git.wiki.kernel.org/index.php/Git_FAQ#Why_the_.27Git.27_name.3F[git name].
-
 Prerequisites:
 
 * Install https://git-scm.com/download[git].
@@ -55,6 +53,7 @@ For more info: https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Set
 Authentication fails if you use your GitHub password. You must use a personal access token instead. See https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls[Cloning with HTTPS URLs].
 
 == References
+* The https://git.wiki.kernel.org/index.php/Git_FAQ#Why_the_.27Git.27_name.3F[git name].
 * https://learngitbranching.js.org/[Learn Git Branching]
 // alternative: https://git-school.github.io/visualizing-git/[visualizing-git], but flaws (master, git checkout, HEAD pointer unclear)
 * https://git-scm.com/[Git-SCM]: Videos; Cheat Sheets; Book https://git-scm.com/book[Pro Git] (free, as in speech and beer)

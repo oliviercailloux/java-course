@@ -4,8 +4,10 @@
 The entry page of the Java course in L3.
 
 == Prerequisites
-* You know algorithmics: you know how to design algorithms to solve problems, using data structures, if required, such as lists or stacks. 
+* You know algorithmics: you know how to design algorithms to solve problems, using data structures, if required, such as lists or stacks.
+* You can implement such algorithms in C++, Python or some similar language
 * You can use at least one of the three major operating systems (Windows, a Linux variant or Mac OS) to compile and run a program in at least one language, and are generally at ease with that OS: you know how to edit files and move them around, install and use basic programs, …
+* You are able to understand texts in English relating to computer science
 
 == General references
 * Eck’s https://math.hws.edu/javanotes/[book]
@@ -17,8 +19,8 @@ The entry page of the Java course in L3.
 == S1: 16 February 2022
 
 * https://github.com/oliviercailloux/java-course/raw/main/L3/Pr%C3%A9sentation%20du%20cours%20Objet/presentation.pdf[Pres course]
-* https://github.com/oliviercailloux/java-course/blob/main/Git/Shell.adoc[Shell] : 2 exercices
-* https://github.com/oliviercailloux/java-course/blob/main/Git/README.adoc[Git] : Configure & Step by step (and https://learngitbranching.js.org/?NODEMO[Live demo])
+* https://github.com/oliviercailloux/java-course/blob/main/Git/Shell.adoc[Shell]: 2 exercices
+* https://github.com/oliviercailloux/java-course/blob/main/Git/README.adoc[Git]: Configure & Step by step (and https://learngitbranching.js.org/?NODEMO[Live demo])
 * https://github.com/oliviercailloux/java-course/blob/main/Git/README.adoc[Git]: remotes, https://learngitbranching.js.org/?NODEMO[Live demo]
 * Install the https://github.com/oliviercailloux/java-course/blob/main/Best%20practices/Various.adoc#installing-the-jdk[JDK]
 * Git step-by-step (end). Read the https://github.com/oliviercailloux/java-course/blob/main/Git/Graded%20exercices.adoc[graded exercices] procedure and take the “training” assignment; Practice with the other exercices on the Git page
