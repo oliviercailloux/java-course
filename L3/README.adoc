@@ -16,18 +16,31 @@ The entry page of the Java course in L3.
 * https://github.com/oliviercailloux/Teaching/blob/main/README.adoc#take-notes[Take notes]!
 
 [[S1]]
-== S1: 16 February 2022
-
+== S1: 8 March 2023
 * https://github.com/oliviercailloux/java-course/raw/main/L3/Pr%C3%A9sentation%20du%20cours%20Objet/presentation.pdf[Pres course]
 * https://github.com/oliviercailloux/java-course/blob/main/Git/Shell.adoc[Shell]: 2 exercices
-* https://github.com/oliviercailloux/java-course/blob/main/Git/README.adoc[Git]: Configure & Step by step (and https://learngitbranching.js.org/?NODEMO[Live demo])
-* https://github.com/oliviercailloux/java-course/blob/main/Git/README.adoc[Git]: remotes, https://learngitbranching.js.org/?NODEMO[Live demo]
+* https://github.com/oliviercailloux/java-course/blob/main/Git/README.adoc[Git]: Configure & Step by step
+
+TODO at home:
 * Install the https://github.com/oliviercailloux/java-course/blob/main/Best%20practices/Various.adoc#installing-the-jdk[JDK]
+
+[[S2]]
+== S2: 10 March
+* https://github.com/oliviercailloux/java-course/blob/main/Git/README.adoc[Git]: remotes ; Step by step (end)
 * Git step-by-step (end). Read the https://github.com/oliviercailloux/java-course/blob/main/Git/Graded%20exercices.adoc[graded exercices] procedure and take the “training” assignment; Practice with the other exercices on the Git page
 * https://github.com/oliviercailloux/java-course/blob/main/Syntax/README.adoc[Syntax]: basics; exercices (Shorts and Methods); then Classes
 
 TODO @ home: Git step-by-step (entirely); “graded exercices” and “training” (see above); Exercices of “Syntax” until “Classes” (not: “More about classes”).
 
+== UML
+* Graded exercice about git: https://classroom.github.com/a/b4G09FPt[first].
+Create a commit that contains, in `Some file.txt`, the original content of `Some file.txt` together with the original content of `Another file.txt` (thus, two lines of text in that file, and one line in `Another file.txt`).
+Then create a commit with a third file, whose path, relative to the root of your repository, is `a subfolder/A third file.txt`, and that contains `Hello`. Make sure you use the right case.
+(You may have supplementary commits, the important point is that at least these two commits must exist with their expected content.)
+Deadline: 14h08. If you are late, your grade decreases linarily until 14h11.
+* https://github.com/oliviercailloux/java-course/blob/main/Dev%20tools/Eclipse.adoc[Eclipse]: Basics and Basic exercices
+* https://oliviercailloux.github.io/Exams/[QCM]
+* Graded exercice about git branching and merging, similar to the https://github.com/oliviercailloux/java-course/blob/main/Git/README.adoc[Git branching] exercices: https://github.com/oliviercailloux/java-course/blob/main/Git/Git%20branching%204.adoc[branching bis]
 
 [[S2]]
 == S2: 18 February
