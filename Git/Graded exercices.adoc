@@ -33,7 +33,3 @@ If you want to start fresh (for example, before starting a new exercice), https:
 == Exercice: hello world
 Accept the https://classroom.github.com/a/uAsNcmqi[`training`] assignment and translate the content of the file `hello.txt` to say hello in another language of your choice. Make sure this is visible on your remote repository.
 
-== Exercice: reinitialize the `training` assignment history
-Read https://github.com/oliviercailloux/java-course/blob/main/Git/Reinitialization.adoc[Reinitialization].
-Accept the https://classroom.github.com/a/uAsNcmqi[`training`] assignment and make it so that your resulting remote repository only contains, in its `main` branch, the history of the `master` branch of https://github.com/apache/cordova-plugin-compat[this project]. Second, push the `1.0.x` branch of the source project to your GitHub remote.
-
