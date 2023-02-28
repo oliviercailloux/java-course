@@ -4,8 +4,7 @@ Prerequisites:
 
 * Install https://git-scm.com/download[git].
 * We will start learning with the command line interface of git. If you are not used to using a shell, read the https://github.com/oliviercailloux/java-course/blob/main/Git/Shell.adoc[Shell] document.
-Under Windows, use Git BASH (included in git https://gitforwindows.org/[for Windows]). (Power users may prefer to use https://www.develves.net/blogs/asd/articles/using-git-with-powershell-on-windows-10/[PowerShell].)
-** This course uses Linux-like commands (in particular, uses forward slashes to separate paths), which you should be able to use in any of these environments: Git BASH emulates a Linux environment and PowerShell https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_path_syntax[authorizes] this use.
+Under Windows, use Git BASH which provides completion. (Power users may prefer to use https://www.develves.net/blogs/asd/articles/using-git-with-powershell-on-windows-10/[PowerShell] with posh-git.)
 
 Then see:
 
@@ -50,11 +49,11 @@ Git will use this to sign your commits.
 For more info: https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup[initial setup]; GitHub usage of https://docs.github.com/en/get-started/getting-started-with-git/setting-your-username-in-git#about-git-usernames[`user.name`] and https://help.github.com/en/github/setting-up-and-managing-your-github-user-account/setting-your-commit-email-address[`user.email`]
 
 == About authentication on GitHub
-Authentication fails if you use your GitHub password. You must use a personal access token instead. See https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls[Cloning with HTTPS URLs].
+Authentication fails if you use your GitHub password. You must use a personal access token instead. See https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls[Cloning with HTTPS URLs], follow the instructions to create a “fine-grained personal access token”.
 
 == References
 * The https://git.wiki.kernel.org/index.php/Git_FAQ#Why_the_.27Git.27_name.3F[git name].
-* https://learngitbranching.js.org/[Learn Git Branching]
+* Learn Git Branching https://learngitbranching.js.org/[tutorial] and https://learngitbranching.js.org/?NODEMO[live demo]
 // alternative: https://git-school.github.io/visualizing-git/[visualizing-git], but flaws (master, git checkout, HEAD pointer unclear)
 * https://git-scm.com/[Git-SCM]: Videos; Cheat Sheets; Book https://git-scm.com/book[Pro Git] (free, as in speech and beer)
 * Videos (I haven’t watched any of those): see https://git-scm.com/videos[Git-SCM videos]; https://www.git-tower.com/learn/git/videos[Videos by Tower]

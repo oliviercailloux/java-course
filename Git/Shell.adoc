@@ -4,13 +4,15 @@
 A shell (also called a terminal or a command line interface) permits to invoke programs by typing commands.
 
 * Under Linux, use BASH (Bourne-again Shell), for example.
-* Under Windows, use (Windows) https://docs.microsoft.com/powershell/scripting/install/installing-windows-powershell[PowerShell], which is probably installed already (or Git BASH, which emulates a Linux shell).
+* Under Windows, choose one of these routes.
+** Install https://git-scm.com/download[git]; use Git BASH (recommended for beginners);
+** use (Windows) https://docs.microsoft.com/powershell/scripting/install/installing-windows-powershell[PowerShell], which is probably installed already (recommended for power users).
 * (Different shells admit slightly different syntax and provide slightly different capabilities, and commands sometimes differ, but the commands we will need for this course are the same in most classical shells, except when indicated.)
 
 == Basics
 Read https://tutorial.djangogirls.org/en/intro_to_command_line/[Introduction to command line] for the very basics of using a shell. Use ↑ (keyboard up https://en.wikipedia.org/wiki/Arrow_keys[arrow]) to reuse previous commands. (https://www.lamsade.dauphine.fr/~bnegrevergne/ens/Unix/static/TP_Shell_Unix.pdf[This tutorial] could help as well.)
 
-At the end of this part you are supposed to be able to use a shell to change directory and list files.
+At the end of this part you are supposed to be able to use a shell to, at least, change directory and list files.
 
 [[Arguments]]
 == About arguments
@@ -43,6 +45,8 @@ A file or a directory can also be referred to using a path that is _relative_ to
 Referring to some file or directory as an argument of a command typed in a terminal can usually be done using its absolute path or its path relative to your current directory. For example, if you are in the directory `/home/user2/`, you can use both `/home/user2/statusReport` or `statusReport` to refer to the same file.
 
 You can use the special name `.` to refer to the current directory. For example, you can use `ls somepath` to list the content of the directory specified by `somepath`, and thus typing `ls .` lists the content of your current directory.
+
+This course uses Linux-like commands (in particular, uses forward slashes to separate paths), which you should be able to use in any of the environments listed here above: Git BASH emulates a Linux environment and PowerShell https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_path_syntax[authorizes] this use.
 
 === Exercice
 Open a shell, navigate (using `cd`) to some directory of your choice `D1`. Use `ls` to list the content of a directory `D2` that is not a subdirectory of `D1`, using an absolute name for `D2`, then using a relative name. Still from `D1`, create a file in `D2`, using `touch`, by using an absolute file name as argument, then using a relative file name as argument.

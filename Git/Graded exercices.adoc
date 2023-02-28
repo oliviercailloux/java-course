@@ -10,7 +10,7 @@ This document explains how to submit your solutions for the graded exercices of 
 * Clone your new repository
 ** You have to work on your local repository, and regularly push your additions to the remote
 ** Both you and I have access to your remote repository. I use this access to grade your work
-** I have of course no access to your local repository, so, whatever you do not push, I cannot grade
+** Note that I have no access to your local repository, so, whatever you do not push, I cannot grade
 * Do whatever the assignment asks you to do (for example, add some code to some files, create new files, …) in your local repository
 * Push your work to your remote
 ** Push regularly, do not wait the end of the allowed time, so as to prevent last minute problems
@@ -28,7 +28,7 @@ You must also apply https://github.com/oliviercailloux/java-course/blob/main/Git
 * This repository will not be used to grade your work.
 * In this assignment, you start with a file named `hello.txt` which contains `Hello, world.`
 
-If you want to start fresh, https://docs.github.com/repositories/creating-and-managing-repositories/deleting-a-repository[delete] your “training” repository. (You should delete it before starting a new exercice, of course.)
+If you want to start fresh (for example, before starting a new exercice), https://docs.github.com/repositories/creating-and-managing-repositories/deleting-a-repository[delete] your “training” repository.
 
 == Exercice: hello world
 Accept the https://classroom.github.com/a/uAsNcmqi[`training`] assignment and translate the content of the file `hello.txt` to say hello in another language of your choice. Make sure this is visible on your remote repository.
