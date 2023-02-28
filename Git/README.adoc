@@ -9,10 +9,8 @@ Under Windows, use Git BASH which provides completion. (Power users may prefer t
 Then see:
 
 * https://raw.githubusercontent.com/oliviercailloux/java-course/main/Git/Pr%C3%A9sentation/presentation.pdf[présentation] (or read below), 
-* the git https://github.github.com/training-kit/[Cheat sheets],
 * https://github.com/oliviercailloux/java-course/blob/main/Git/README.adoc#configure-git[configure] git,
 * https://github.com/oliviercailloux/java-course/blob/main/Git/Step-by-step.adoc[step-by-step exercices], 
-* https://github.com/oliviercailloux/java-course/blob/main/Git/Reinitialization.adoc[reinitializing] history,
 * https://github.com/oliviercailloux/java-course/blob/main/Git/Git%20branching%201.adoc[Git branching 1], https://github.com/oliviercailloux/java-course/blob/main/Git/Git%20branching%202.adoc[Git branching 2],  https://github.com/oliviercailloux/java-course/blob/main/Git/Git%20branching%203.adoc[Git branching 3]
 * https://github.com/oliviercailloux/java-course/blob/main/Git/Best%20practices.adoc[best practices].
 
@@ -52,12 +50,13 @@ For more info: https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Set
 Authentication fails if you use your GitHub password. You must use a personal access token instead. See https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls[Cloning with HTTPS URLs], follow the instructions to create a “fine-grained personal access token”.
 
 == References
+* The git https://github.github.com/training-kit/[Cheat sheets],
 * The https://git.wiki.kernel.org/index.php/Git_FAQ#Why_the_.27Git.27_name.3F[git name].
 * Learn Git Branching https://learngitbranching.js.org/[tutorial] and https://learngitbranching.js.org/?NODEMO[live demo]
 // alternative: https://git-school.github.io/visualizing-git/[visualizing-git], but flaws (master, git checkout, HEAD pointer unclear)
 * https://git-scm.com/[Git-SCM]: Videos; Cheat Sheets; Book https://git-scm.com/book[Pro Git] (free, as in speech and beer)
 * Videos (I haven’t watched any of those): see https://git-scm.com/videos[Git-SCM videos]; https://www.git-tower.com/learn/git/videos[Videos by Tower]
 * Working with git: A quick and useful https://guides.github.com/introduction/flow/[guide] about workflow on GitHub; a branching https://nvie.com/posts/a-successful-git-branching-model/[model]; prefer https://longair.net/blog/2009/04/16/git-fetch-and-merge/[fetch then merge] to pull; http://think-like-a-git.net/sections/testing-out-merges/the-scout-pattern.html[the scout pattern] for merging
-* GUIs: I recommend using the one integrated with your IDE; other options include https://rowanj.github.io/gitx/[GitX]; I’ve been recommended https://www.gitkraken.com/[GitKraken] (but it is https://www.gitkraken.com/pricing#git-gui-features[only free for public repos])
+* GUIs: I recommend using the one integrated with your IDE; other options include https://git-cola.github.io/[Git Cola] (in particular `git-cola dag`); I’ve been recommended https://www.gitkraken.com/[GitKraken] (but it is https://www.gitkraken.com/pricing#git-gui-features[only free for public repos]; or through https://help.gitkraken.com/gitkraken-client/gitkraken-edu-pack/[GitHub Student Pack])
 //* Git https://stevelosh.com/blog/2013/04/git-koans/[Koans] (and some https://news.ycombinator.com/item?id=5512119[explanation])
 
