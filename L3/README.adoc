@@ -32,175 +32,33 @@ TODO at home:
 
 TODO @ home: Git step-by-step (entirely); “graded exercices” and “training” (see above); Exercices of “Syntax” until “Classes” (not: “More about classes”).
 
-== UML
-* Graded exercice about git: https://classroom.github.com/a/b4G09FPt[first].
-Create a commit that contains, in `Some file.txt`, the original content of `Some file.txt` together with the original content of `Another file.txt` (thus, two lines of text in that file, and one line in `Another file.txt`).
-Then create a commit with a third file, whose path, relative to the root of your repository, is `a subfolder/A third file.txt`, and that contains `Hello`. Make sure you use the right case.
-(You may have supplementary commits, the important point is that at least these two commits must exist with their expected content.)
-Deadline: 14h08. If you are late, your grade decreases linarily until 14h11.
-* https://github.com/oliviercailloux/java-course/blob/main/Dev%20tools/Eclipse.adoc[Eclipse]: Basics and Basic exercices
-* https://oliviercailloux.github.io/Exams/[QCM]
-* Graded exercice about git branching and merging, similar to the https://github.com/oliviercailloux/java-course/blob/main/Git/README.adoc[Git branching] exercices: https://github.com/oliviercailloux/java-course/blob/main/Git/Git%20branching%204.adoc[branching bis]
-
-[[S2]]
-== S2: 18 February
-
-On https://teams.microsoft.com/l/meetup-join/19%3ASHAR4b7_mFyD9zNK4avJoS_UsMraSmtuxuk_GeEwvW41%40thread.tacv2/1645188635810?context=%7B%22Tid%22%3A%2281e7c4de-26c9-4531-b076-b70e2d75966e%22%2C%22Oid%22%3A%22db290b1a-6988-4d6b-91c6-9ddd729313f6%22%7D[Teams]!
-(The training exercice will happen as planned.)
-
-* https://oliviercailloux.github.io/Exams/[Multiple choice questions] (not graded)
-* https://classroom.github.com/a/468J9GCl[fake] (not-really) “graded” exercice. Create a commit that contains, in `Some file.txt`, the original content of `Some file.txt` together with the original content of `Another file.txt` (thus, two lines of text in total). Then create a commit that contains only `Some file.txt` (unchanged, thus, with these same two lines of text), thus, with `Another file.txt` removed. (This will also remove the containing folder, as git does not store empty folders.) (You may have supplementary commits, the important point is that at least these two commits must exist.)
-* More git exercices (see above, Git and the graded exercices)
-* Syntax: More about classes
-* https://github.com/oliviercailloux/java-course/blob/main/Execution/README.adoc[Execution]
-
-TODO @ home: Train with as many Git exercices as you need to be very comfortable (including accepting GitHub assignments). Execute the main exercices in Execution (without packages).
-
 [[S3]]
-== S3: 9 March
+== S3
+* Graded exercice about git: you will be asked to create commits that changes some file, adds some file…
 
-* Git graded exercice: https://github.com/oliviercailloux/java-course/blob/main/Git/Git%20branching%203.adoc[branching]
-* Packages: Syntax (see above) and Execution, exercice with packages (see above)
-* Multiple choice questions (not graded)
-
-TODO @ home:
-
-* read https://github.com/oliviercailloux/java-course/blob/main/L3/Exercices%20not%C3%A9s.adoc[Exercices notés]
-* Finish the execution exercice with packages
-
-[[S4]]
-== S4: 11 March
-
+== Overview
+* Syntax
+* https://github.com/oliviercailloux/java-course/blob/main/Execution/README.adoc[Execution]
 * https://github.com/oliviercailloux/java-course/blob/main/Dev%20tools/Eclipse.adoc[Eclipse & Java] (and Configuration, Start project)
-// NB give example with incorrect POM so that students have to use the Errors view.
-* https://github.com/oliviercailloux/java-course/blob/main/Overview/README.adoc[Basics of objects]
-
-TODO @ home:
-
-* Finish the vogella tutorial (see link in Eclipse & Java, above)
-* Finish the Basics of objects exercices, most importantly EE3.4 and 3.6
-* read the Workbench User Guide, Tips and Tricks (see link in Eclipse & Java, above), Workbench and Editing sections
-
-[[S5]]
-== S5: 23 March
-
-* Graded exercice: https://github.com/oliviercailloux/java-course/blob/main/Dev%20tools/Exercice%20bis.adoc[eclipse]. Prerequisite: configure Eclipse as recommended in this course (see above).
 * Two major aspects of software engineering: https://github.com/oliviercailloux/java-course/blob/main/Contrat/README.adoc[contract] and fail-fast, and exercices there.
-
-TODO @ home: End exercices about Random.
-
-[[S6]]
-== S6: 25 March
-
-* Exercices EE4.x
-* https://github.com/oliviercailloux/java-course/blob/main/Objects%20%26%20interfaces/README.adoc[Objects & interfaces]. Exercices: EE5.1, 5.2, EE5.3, Three dice
-
-TODO @ home: EE5.1 and 5.2 (and prerequisites 4.1 to 4.4 if not done yet)
-
-[[S7]]
-== S7: 6 April
-
-* EE5.3; Three dice (40 minutes)
-* https://www.youtube.com/watch?v=lcYkOh4nweE&t=1m21s[Mars Climate Orbiter] (1m21 to 5m18; small mistake in the video: it’s Newton times second, not Newton force per second; see also https://en.wikipedia.org/wiki/Mars_Climate_Orbiter[Wikipedia]; similarly https://www-users.math.umn.edu/~arnold/disasters/ariane.html[sad] https://www.youtube.com/watch?v=gp_D8r-2hwk[story])
+* https://github.com/oliviercailloux/java-course/blob/main/Objects%20%26%20interfaces/README.adoc[Objects & interfaces].
 * Interfaces. Exercice: I like to move it move it; Coffee
-* Projects
-
-TODO @ home: finish the exercices.
-
-[[S8]]
-== S8: 8 April
-
-* Graded exercice about interfaces and implementations, similar to exercices here above: https://github.com/oliviercailloux/java-course/blob/main/Objects%20%26%20interfaces/421.adoc[421].
-* Projects: https://github.com/oliviercailloux/java-course/blob/main/L3/Projets%20-%20Instructions%20Java.adoc[Instructions Java]
-
-TODO @ home: submit first release, deadline end of 18 April.
-
-[[S9]]
-== S9: 20 April
-
 * Polymorphism: inheritance
 * The `Object` class and its methods: `toString()`, `equals`, `hashcode`. Exercice: Car string
-* https://github.com/oliviercailloux/java-course/blob/main/Contrat/Exceptions.adoc[Exceptions]. Exercice: Checked exceptions
-* https://github.com/oliviercailloux/java-course/blob/main/Maven/README.adoc[Maven]: overview
-
-TODO @ home: make sure maven works on your computer; finish Maven first exercice.
-
-[[S10]]
-== S10: 22 April
-
-* https://github.com/oliviercailloux/java-course/blob/main/Maven/README.adoc[Maven], end exercices: modern project; your project
-* Objects & interfaces, https://github.com/oliviercailloux/java-course/blob/main/Objects%20%26%20interfaces/README.adoc#supplementary-exercices-from-the-book[supplementary exercices from the book]
-* https://github.com/oliviercailloux/java-course/blob/main/Objects%20%26%20interfaces/README.adoc#generics[Generics]
-* https://github.com/oliviercailloux/java-course/blob/main/Syntax/README.adoc#varargs[Varargs] syntax & exercice
-
-TODO @ home: finish all exercices in https://github.com/oliviercailloux/java-course/blob/main/Objects%20%26%20interfaces/README.adoc[Objects & interfaces], and other exercices of S9 and S10.
-*Also, homework*: 421 again. Follow the instructions https://github.com/oliviercailloux/java-course/blob/main/L3/Exercices%20not%C3%A9s.adoc#nouvelle-chance[here] (except that no e-mail to me is required). Your grade will be a combination with the original grade, depending on the number of modified lines, as explained on that page. Deadline: *end of 8th of May*. This second chance is optional; if you do not change anything, you will keep your original mark for this exercice.
-
-[[S11]]
-== S11: 11 May (remote)
-
-Team work about the next release.
-
-[[S12]]
-== S12: 13 May
-
-* Graded exercice: https://classroom.github.com/a/ychDzzze[dice-roller]. Implement the interface `CyclicDiceRoller`. Your implementation must contain a public no-argument constructor. Deadline 14h25, plus maximum five minutes with penalty.
+* https://github.com/oliviercailloux/java-course/blob/main/Contrat/Exceptions.adoc[Exceptions].
+* https://github.com/oliviercailloux/java-course/blob/main/Maven/README.adoc[Maven]
+* https://github.com/oliviercailloux/java-course/blob/main/Syntax/README.adoc#varargs[Varargs]
 * Optionals; give guarantees: https://github.com/oliviercailloux/java-course/blob/main/Style/Null.adoc[Protect against null references]
 * https://github.com/oliviercailloux/java-course/blob/main/Collections/README.adoc[Collections]
-* See: https://github.com/oliviercailloux/java-course/blob/main/L3/Person.java[Person.java], https://github.com/oliviercailloux/java-course/blob/main/L3/PhoneNumber.java[PhoneNumber.java]
-
-[[S13]]
-== S13: 25 May
-
-*Release 2* due end of 25 May
-
-[[S14]]
-== S14: 27 May
-* Collections: exercices; Maps; exercices
 * Primitive types (autoboxing)
-* https://github.com/oliviercailloux/java-course/blob/main/JUnit/README.adoc[Unit testing]; exercices
-
-TODO @ home: finish all those exercices
-
-*Release 3* due end of 26 June (initially 22 June); counts as 1.5 other releases. *NOTE*: for this last iteration with bigger time range and weighting more, I expect more work than during the other iterations; the SM/POs should also submit at least one task in supplement to their reviewing work.
-
-[[S15]]
-== S15: 8 June
-* Files and https://github.com/oliviercailloux/java-course/blob/main/Flows.adoc[flows]: Theory & Exercices (up to and including “Write two files”)
-* https://github.com/oliviercailloux/java-course/blob/main/Execution/Resources.adoc[Resources]; exercice.
-
-[[S16]]
-== S16: 10 June
+* https://github.com/oliviercailloux/java-course/blob/main/JUnit/README.adoc[Unit testing]
+* Files and https://github.com/oliviercailloux/java-course/blob/main/Flows.adoc[flows]
+* https://github.com/oliviercailloux/java-course/blob/main/Execution/Resources.adoc[Resources]
 * https://github.com/oliviercailloux/java-course/blob/main/Style/README.adoc[Favor static factory methods]
-* https://github.com/oliviercailloux/java-course/blob/main/Objects%20%26%20interfaces/Equals.adoc[Equality and hash codes] (and exercice)
+* https://github.com/oliviercailloux/java-course/blob/main/Objects%20%26%20interfaces/Equals.adoc[Equality and hash codes]
 * https://github.com/oliviercailloux/java-course/blob/main/Log/README.adoc[Logging]
-
-//* No https://github.com/oliviercailloux/Teaching/blob/main/Plagiat.adoc[plagiarism], but reuse! (https://mycore.core-cloud.net/index.php/s/jDdn1OcEfjjj8NU[Audio track] from https://fr.wikipedia.org/wiki/Le_Jeu_des_dictionnaires[Le Jeu des Dictionnaires], included with permission from geluck.com, use authorized only in the context of this course.)
-
-You may submit a “new second chance” to the graded exercice 421. The new grade will replace the previous one. You keep the previous one if you do not submit anything. Deadline: end of 16 June.
-
-*See the added note about the third release, here above.*
-
-[[S17]]
-== S17: 22 June
-* Graded exercice: https://classroom.github.com/a/a7m6IgaA[various]. You need to complete the VariousClass implementing the Various interface. Double weight. About collections; unit tests; files and flows; logging. Deadline: 14h20 plus max five minutes for lateness.
-
-== More
-// * Graded exercice, _at Dauphine_: https://classroom.github.com/a/taDEGaJA[persons-manager]. Accept the assignment. This creates a private repository for you with code already there. You have to provide an implementation of the class `MyPersonsManager` according to the contracts you will find there. Clone this, work locally, and push your implementation. Do not forget to use the provided unit tests to help you check your implementation. This test will count for three of the previous tests. Deadline: 15:00 (+ 5 min for late commits.)
-//* Comparator and sorting, (Comparable), Maps
-//* Graded test: string-files. About `Set`, `List`, files, flows, paths, providers, and the methods `https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/nio/file/Files.html[Files]#copy`, `createFile`, `delete`, `exists`, `isDirectory`, `readAllLines`, `readString`, `write`, `writeString`. Some (incomplete) unit tests are already provided, to help you test your implementation (look under `src/test/`). You have 30 minutes. Hint: use up to 10 minutes to make sure you understand the contract, including by reading the unit tests. Hint 2: implement the methods in the order they are defined in the interface.
-// * Sol persons-manager https://github.com/oliviercailloux-org/persons-manager/tree/sol-no-streams[here] (advanced and more compact version https://github.com/oliviercailloux-org/persons-manager/tree/sol-streams[here]). Stats: Static factories 6; toMap throwing 6; toString 7 (others: 17 to 24 / 25).
-// * Graded test: https://classroom.github.com/a/plKCWX3X[workers]. Deadline at 14:48, plus five minutes for penalized late commits. Weight: 2.
-* https://github.com/oliviercailloux/java-course/raw/main/Annotations/presentation.pdf[Annotations]
-* https://github.com/oliviercailloux/java-course/blob/main/SWT/README.adoc[SWT]
-// Style/Method references
-//*Graded homework*: string-files-homework. Your last commit before the end of the 10th of May will be graded again, using the same set of tests as the graded test. This will count for 70% of a normal test. The string-files graded test counts for 30% or a normal test. Please commit on the same repository as the one already used (string-files).
 * https://github.com/oliviercailloux/java-course/blob/main/Dev%20tools/CI.adoc[CI]: GitHub Workflows
 * https://github.com/oliviercailloux/projets/raw/main/Licences/Declaration%20of%20licensing.odt[Declarations of licensing]. https://github.com/oliviercailloux/projets/blob/main/Licences/Licence.adoc[Licences] and philosophy: https://www.gnu.org/philosophy/philosophy.html[GNU]; https://opensource.org/[OSI]; Copyleft (GNU https://opensource.org/licenses/GPL-3.0[GPL]); Non-copyleft (https://opensource.org/licenses/MIT[MIT])
 * Parsing HTML (info): https://github.com/oliviercailloux/java-course/blob/main/DOM.adoc[DOM]
 * Accessing REST web services (info): https://github.com/oliviercailloux/java-course/blob/main/WS%20client/JAX-RS%20client.adoc[JAX-RS client]
-
-//* Presentation before end of 27 June, directly in `master`, in your documentation folder, named `Présentation 2021.pdf`. This may be a non-entirely final version, to be finalized, if required, on the 28th, depending on what will be merged effectively.
-
-// * http://whale.imag.fr/polls/vote/cc43561b-7545-4ee3-9844-8530c621a44a
 
