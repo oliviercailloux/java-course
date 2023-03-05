@@ -40,8 +40,8 @@
     {
         "url": "https://github.com/oliviercailloux/java-course/blob/main/Objects%20%26%20interfaces/README.adoc#exercice-generic-pair",
         "sources": [
-            "Style/README.adoc",
-            "Collections/README.adoc"
+            "Collections/README.adoc",
+            "Style/README.adoc"
         ],
         "response": 200,
         "satisfied": true,
@@ -50,8 +50,8 @@
     {
         "url": "http://google.github.io/styleguide/javaguide.html",
         "sources": [
-            "Style/Code.adoc",
-            "Dev tools/Checkstyle.adoc"
+            "Dev tools/Checkstyle.adoc",
+            "Style/Code.adoc"
         ],
         "response": 301,
         "satisfied": true,
@@ -322,8 +322,8 @@
     {
         "url": "https://docs.oracle.com/javase/tutorial/java/javaOO/arguments.html",
         "sources": [
-            "Flows.adoc",
-            "Syntax/README.adoc"
+            "Syntax/README.adoc",
+            "Flows.adoc"
         ],
         "response": 200,
         "satisfied": true,
@@ -424,9 +424,9 @@
     {
         "url": "https://docs.oracle.com/javase/tutorial/essential/exceptions/tryResourceClose.html",
         "sources": [
+            "JSON-B.adoc",
             "Flows.adoc",
-            "JSON.adoc",
-            "JSON-B.adoc"
+            "JSON.adoc"
         ],
         "response": 200,
         "satisfied": true,
@@ -552,8 +552,8 @@
     {
         "url": "https://en.wikipedia.org/wiki/Arrow_keys",
         "sources": [
-            "Syntax/README.adoc",
-            "Git/Shell.adoc"
+            "Git/Shell.adoc",
+            "Syntax/README.adoc"
         ],
         "response": 200,
         "satisfied": true,
@@ -571,8 +571,8 @@
     {
         "url": "https://math.hws.edu/javanotes/c3/exercises.html",
         "sources": [
-            "Syntax/README.adoc",
-            "Overview/README.adoc"
+            "Overview/README.adoc",
+            "Syntax/README.adoc"
         ],
         "response": 200,
         "satisfied": true,
@@ -631,8 +631,8 @@
     {
         "url": "https://github.com/google/guava",
         "sources": [
-            "Libs.adoc",
-            "JSON.adoc"
+            "JSON.adoc",
+            "Libs.adoc"
         ],
         "response": 200,
         "satisfied": true,
@@ -767,8 +767,8 @@
     {
         "url": "https://github.com/oliviercailloux/java-course/blob/main/DOM.adoc",
         "sources": [
-            "Libs.adoc",
-            "L3/README.adoc"
+            "L3/README.adoc",
+            "Libs.adoc"
         ],
         "response": 200,
         "satisfied": true,
@@ -984,13 +984,13 @@
     {
         "url": "https://github.com/oliviercailloux/java-course/blob/main/HTTP.adoc",
         "sources": [
-            "WS client/Curl.adoc",
-            "WS client/JAX-RS client.adoc",
-            "WS client/Java.adoc",
             "Java EE/Servlets.adoc",
-            "Java EE/WSDL.adoc",
             "Java EE/SOAP.adoc",
-            "Java EE/Local notes JAX-WS.adoc"
+            "Java EE/WSDL.adoc",
+            "Java EE/Local notes JAX-WS.adoc",
+            "WS client/Java.adoc",
+            "WS client/Curl.adoc",
+            "WS client/JAX-RS client.adoc"
         ],
         "response": 200,
         "satisfied": true,
@@ -1080,8 +1080,8 @@
     {
         "url": "https://www.mediawiki.org/wiki/API:Main_page",
         "sources": [
-            "WS client/Curl.adoc",
-            "HTTP.adoc"
+            "HTTP.adoc",
+            "WS client/Curl.adoc"
         ],
         "response": 200,
         "satisfied": true,
@@ -1108,8 +1108,8 @@
     {
         "url": "https://www.programmableweb.com/",
         "sources": [
-            "WS client/Curl.adoc",
-            "HTTP.adoc"
+            "HTTP.adoc",
+            "WS client/Curl.adoc"
         ],
         "response": 301,
         "satisfied": true,
@@ -1462,8 +1462,8 @@
     {
         "url": "https://github.com/oliviercailloux/java-archetype/blob/master/src/main/resources/archetype-resources/pom.xml",
         "sources": [
-            "Log/README.adoc",
-            "Maven/README.adoc"
+            "Maven/README.adoc",
+            "Log/README.adoc"
         ],
         "response": 302,
         "satisfied": true,
@@ -1499,8 +1499,8 @@
     {
         "url": "https://github.com/oliviercailloux/java-archetype",
         "sources": [
-            "Log/README.adoc",
-            "Maven/Exercices.adoc"
+            "Maven/Exercices.adoc",
+            "Log/README.adoc"
         ],
         "response": 200,
         "satisfied": true,
@@ -1644,11 +1644,11 @@
     {
         "url": "https://github.com/oliviercailloux/java-course/blob/main/Maven/README.adoc",
         "sources": [
-            "Dev tools/Checkstyle.adoc",
             "Dev tools/SonarCloud.adoc",
+            "Dev tools/Checkstyle.adoc",
+            "Maven/Maven central.adoc",
             "Java EE/Servlets.adoc",
             "JUnit/Overview.adoc",
-            "Maven/Maven central.adoc",
             "L3/README.adoc"
         ],
         "response": 200,
@@ -1694,8 +1694,8 @@
     {
         "url": "https://github.com/oliviercailloux/java-course/blob/main/Dev%20tools/CI.adoc",
         "sources": [
-            "Dev tools/Checkstyle.adoc",
             "Dev tools/SonarCloud.adoc",
+            "Dev tools/Checkstyle.adoc",
             "L3/README.adoc"
         ],
         "response": 200,
@@ -2481,8 +2481,8 @@
     {
         "url": "Git/Git%20branching%203.svg",
         "sources": [
-            "Git/Git branching 4.adoc",
-            "Git/Git branching 3.adoc"
+            "Git/Git branching 3.adoc",
+            "Git/Git branching 4.adoc"
         ],
         "response": 1,
         "satisfied": true,
@@ -2525,25 +2525,6 @@
         "when": "2023-02-26T16:31:44.765536093Z"
     },
     {
-        "url": "https://github.com/oliviercailloux/java-course/blob/main/Git/Reinitialization.adoc",
-        "sources": [
-            "Git/Graded exercices.adoc",
-            "Git/README.adoc"
-        ],
-        "response": 200,
-        "satisfied": true,
-        "when": "2023-02-26T16:31:45.098793692Z"
-    },
-    {
-        "url": "https://github.com/apache/cordova-plugin-compat",
-        "sources": [
-            "Git/Graded exercices.adoc"
-        ],
-        "response": 200,
-        "satisfied": true,
-        "when": "2023-02-26T16:31:45.586892928Z"
-    },
-    {
         "url": "https://docs.github.com/en/get-started/quickstart/fork-a-repo",
         "sources": [
             "Git/Git branching 2.adoc",
@@ -2557,8 +2538,8 @@
         "url": "https://github.com/oliviercailloux/google-or-tools-java",
         "sources": [
             "Git/Git branching 2.adoc",
-            "Git/Best practices.adoc",
-            "Git/Git branching 1.adoc"
+            "Git/Git branching 1.adoc",
+            "Git/Best practices.adoc"
         ],
         "response": 200,
         "satisfied": true,
@@ -2666,6 +2647,7 @@
     {
         "url": "https://git-scm.com/download",
         "sources": [
+            "Git/Shell.adoc",
             "Git/README.adoc"
         ],
         "response": 200,
@@ -2676,21 +2658,13 @@
         "url": "https://github.com/oliviercailloux/java-course/blob/main/Git/Shell.adoc",
         "sources": [
             "Git/README.adoc",
-            "Execution/README.adoc",
-            "Best practices/Various.adoc"
+            "Best practices/Various.adoc",
+            "L3/README.adoc",
+            "Execution/README.adoc"
         ],
         "response": 200,
         "satisfied": true,
         "when": "2023-02-26T16:31:51.211114902Z"
-    },
-    {
-        "url": "https://gitforwindows.org/",
-        "sources": [
-            "Git/README.adoc"
-        ],
-        "response": 200,
-        "satisfied": true,
-        "when": "2023-02-26T16:31:51.449818776Z"
     },
     {
         "url": "https://www.develves.net/blogs/asd/articles/using-git-with-powershell-on-windows-10/",
@@ -2704,7 +2678,7 @@
     {
         "url": "https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_path_syntax",
         "sources": [
-            "Git/README.adoc"
+            "Git/Shell.adoc"
         ],
         "response": 301,
         "satisfied": true,
@@ -2767,8 +2741,7 @@
     {
         "url": "https://github.com/oliviercailloux/java-course/blob/main/Git/Git%20branching%203.adoc",
         "sources": [
-            "Git/README.adoc",
-            "L3/README.adoc"
+            "Git/README.adoc"
         ],
         "response": 200,
         "satisfied": true,
@@ -2972,15 +2945,6 @@
         "response": 301,
         "satisfied": true,
         "when": "2023-02-26T16:32:04.221361822Z"
-    },
-    {
-        "url": "https://rowanj.github.io/gitx/",
-        "sources": [
-            "Git/README.adoc"
-        ],
-        "response": 200,
-        "satisfied": true,
-        "when": "2023-02-26T16:32:04.630796002Z"
     },
     {
         "url": "https://www.gitkraken.com/",
@@ -3219,7 +3183,6 @@
     {
         "url": "https://github.com/oliviercailloux/java-course/blob/main/Git/README.adoc",
         "sources": [
-            "Git/Step-by-step.adoc",
             "L3/README.adoc"
         ],
         "response": 200,
@@ -3391,10 +3354,10 @@
     {
         "url": "https://math.hws.edu/javanotes/contents-with-subsections.html",
         "sources": [
-            "Objects & interfaces/README.adoc",
-            "Overview/README.adoc",
             "Collections/README.adoc",
-            "Contrat/README.adoc"
+            "Contrat/README.adoc",
+            "Overview/README.adoc",
+            "Objects & interfaces/README.adoc"
         ],
         "response": 200,
         "satisfied": true,
@@ -3467,9 +3430,9 @@
     {
         "url": "http://www.xmlpdf.com/manualfiles/hello-world.pdf",
         "sources": [
+            "JUnit/Test-extractor.adoc",
             "Objects & interfaces/Local/Extractor full (not done).adoc",
-            "Objects & interfaces/Extractor.adoc",
-            "JUnit/Test-extractor.adoc"
+            "Objects & interfaces/Extractor.adoc"
         ],
         "response": 200,
         "satisfied": true,
@@ -3957,8 +3920,8 @@
     {
         "url": "http://www.ws-i.org/",
         "sources": [
-            "Java EE/WSDL.adoc",
-            "Java EE/SOAP.adoc"
+            "Java EE/SOAP.adoc",
+            "Java EE/WSDL.adoc"
         ],
         "response": 200,
         "satisfied": true,
@@ -4677,8 +4640,8 @@
     {
         "url": "https://docs.oracle.com/en/java/javase/11/tools/javac.html",
         "sources": [
-            "Execution/Exercices.adoc",
-            "Execution/Overview.adoc"
+            "Execution/Overview.adoc",
+            "Execution/Exercices.adoc"
         ],
         "response": 200,
         "satisfied": true,
@@ -4750,8 +4713,8 @@
     {
         "url": "https://docs.oracle.com/en/java/javase/13/docs/specs/man/javac.html",
         "sources": [
-            "Execution/README.adoc",
-            "Execution/Overview.adoc"
+            "Execution/Overview.adoc",
+            "Execution/README.adoc"
         ],
         "response": 200,
         "satisfied": true,
@@ -4877,8 +4840,8 @@
     {
         "url": "https://github.com/oliviercailloux/java-course/blob/main/Flows.adoc",
         "sources": [
-            "Execution/Resources.adoc",
-            "L3/README.adoc"
+            "L3/README.adoc",
+            "Execution/Resources.adoc"
         ],
         "response": 200,
         "satisfied": true,
@@ -5320,8 +5283,7 @@
     {
         "url": "https://github.com/oliviercailloux/java-course/blob/main/Overview/README.adoc",
         "sources": [
-            "Contrat/README.adoc",
-            "L3/README.adoc"
+            "Contrat/README.adoc"
         ],
         "response": 200,
         "satisfied": true,
@@ -5410,15 +5372,6 @@
         "when": "2023-02-26T16:33:34.231429707Z"
     },
     {
-        "url": "README.adoc#_main_content",
-        "sources": [
-            "README.adoc"
-        ],
-        "response": 1,
-        "satisfied": true,
-        "when": "2023-02-26T16:33:34.235552362Z"
-    },
-    {
         "url": "https://github.com/oliviercailloux/java-course/blob/main/L3/README.adoc",
         "sources": [
             "README.adoc"
@@ -5428,18 +5381,8 @@
         "when": "2023-02-26T16:33:34.569884518Z"
     },
     {
-        "url": "README.adoc#_see_also",
-        "sources": [
-            "README.adoc"
-        ],
-        "response": 1,
-        "satisfied": true,
-        "when": "2023-02-26T16:33:34.575557838Z"
-    },
-    {
         "url": "https://github.com/oliviercailloux/samples",
         "sources": [
-            "README.adoc",
             "Best practices/JPA.adoc"
         ],
         "response": 200,
@@ -6208,11 +6151,11 @@
     {
         "url": "https://github.com/oliviercailloux/java-course/blob/main/Maven/Best%20practices.adoc",
         "sources": [
+            "Maven/README.adoc",
             "Style/Code.adoc",
             "Objects & interfaces/Local/Extractor full (not done).adoc",
             "Objects & interfaces/Extractor.adoc",
-            "Execution/Resources.adoc",
-            "Maven/README.adoc"
+            "Execution/Resources.adoc"
         ],
         "response": 200,
         "satisfied": true,
@@ -6591,7 +6534,7 @@
     {
         "url": "https://learngitbranching.js.org/?NODEMO",
         "sources": [
-            "L3/README.adoc"
+            "Git/README.adoc"
         ],
         "response": 200,
         "satisfied": true,
@@ -6634,33 +6577,6 @@
         "when": "2023-02-26T16:34:17.657172367Z"
     },
     {
-        "url": "https://teams.microsoft.com/l/meetup-join/19%3ASHAR4b7_mFyD9zNK4avJoS_UsMraSmtuxuk_GeEwvW41%40thread.tacv2/1645188635810?context=%7B%22Tid%22%3A%2281e7c4de-26c9-4531-b076-b70e2d75966e%22%2C%22Oid%22%3A%22db290b1a-6988-4d6b-91c6-9ddd729313f6%22%7D",
-        "sources": [
-            "L3/README.adoc"
-        ],
-        "response": 302,
-        "satisfied": true,
-        "when": "2023-02-26T16:34:17.775779382Z"
-    },
-    {
-        "url": "https://oliviercailloux.github.io/Exams/",
-        "sources": [
-            "L3/README.adoc"
-        ],
-        "response": 200,
-        "satisfied": true,
-        "when": "2023-02-26T16:34:18.160784410Z"
-    },
-    {
-        "url": "https://classroom.github.com/a/468J9GCl",
-        "sources": [
-            "L3/README.adoc"
-        ],
-        "response": 302,
-        "satisfied": true,
-        "when": "2023-02-26T16:34:18.672808581Z"
-    },
-    {
         "url": "https://github.com/oliviercailloux/java-course/blob/main/Execution/README.adoc",
         "sources": [
             "L3/README.adoc"
@@ -6679,24 +6595,6 @@
         "when": "2023-02-26T16:34:19.037592535Z"
     },
     {
-        "url": "https://github.com/oliviercailloux/java-course/blob/main/L3/Exercices%20not%C3%A9s.adoc",
-        "sources": [
-            "L3/README.adoc"
-        ],
-        "response": 200,
-        "satisfied": true,
-        "when": "2023-02-26T16:34:19.677803910Z"
-    },
-    {
-        "url": "L3/README.adoc#S4",
-        "sources": [
-            "L3/README.adoc"
-        ],
-        "response": 1,
-        "satisfied": true,
-        "when": "2023-02-26T16:34:19.683561468Z"
-    },
-    {
         "url": "https://github.com/oliviercailloux/java-course/blob/main/Dev%20tools/Eclipse.adoc",
         "sources": [
             "L3/README.adoc"
@@ -6704,24 +6602,6 @@
         "response": 200,
         "satisfied": true,
         "when": "2023-02-26T16:34:20.042282176Z"
-    },
-    {
-        "url": "L3/README.adoc#S5",
-        "sources": [
-            "L3/README.adoc"
-        ],
-        "response": 1,
-        "satisfied": true,
-        "when": "2023-02-26T16:34:20.049959411Z"
-    },
-    {
-        "url": "https://github.com/oliviercailloux/java-course/blob/main/Dev%20tools/Exercice%20bis.adoc",
-        "sources": [
-            "L3/README.adoc"
-        ],
-        "response": 200,
-        "satisfied": true,
-        "when": "2023-02-26T16:34:21.131200464Z"
     },
     {
         "url": "https://github.com/oliviercailloux/java-course/blob/main/Contrat/README.adoc",
@@ -6733,15 +6613,6 @@
         "when": "2023-02-26T16:34:21.745074680Z"
     },
     {
-        "url": "L3/README.adoc#S6",
-        "sources": [
-            "L3/README.adoc"
-        ],
-        "response": 1,
-        "satisfied": true,
-        "when": "2023-02-26T16:34:21.749847226Z"
-    },
-    {
         "url": "https://github.com/oliviercailloux/java-course/blob/main/Objects%20%26%20interfaces/README.adoc",
         "sources": [
             "L3/README.adoc"
@@ -6749,87 +6620,6 @@
         "response": 200,
         "satisfied": true,
         "when": "2023-02-26T16:34:22.109172528Z"
-    },
-    {
-        "url": "L3/README.adoc#S7",
-        "sources": [
-            "L3/README.adoc"
-        ],
-        "response": 1,
-        "satisfied": true,
-        "when": "2023-02-26T16:34:22.115915535Z"
-    },
-    {
-        "url": "https://www.youtube.com/watch?v=lcYkOh4nweE&t=1m21s",
-        "sources": [
-            "L3/README.adoc"
-        ],
-        "response": 200,
-        "satisfied": true,
-        "when": "2023-02-26T16:34:22.878442403Z"
-    },
-    {
-        "url": "https://en.wikipedia.org/wiki/Mars_Climate_Orbiter",
-        "sources": [
-            "L3/README.adoc"
-        ],
-        "response": 200,
-        "satisfied": true,
-        "when": "2023-02-26T16:34:23.087301687Z"
-    },
-    {
-        "url": "https://www-users.math.umn.edu/~arnold/disasters/ariane.html",
-        "sources": [
-            "L3/README.adoc"
-        ],
-        "response": 301,
-        "satisfied": true,
-        "when": "2023-02-26T16:34:24.509942641Z"
-    },
-    {
-        "url": "https://www.youtube.com/watch?v=gp_D8r-2hwk",
-        "sources": [
-            "L3/README.adoc"
-        ],
-        "response": 200,
-        "satisfied": true,
-        "when": "2023-02-26T16:34:25.176347157Z"
-    },
-    {
-        "url": "L3/README.adoc#S8",
-        "sources": [
-            "L3/README.adoc"
-        ],
-        "response": 1,
-        "satisfied": true,
-        "when": "2023-02-26T16:34:25.183881984Z"
-    },
-    {
-        "url": "https://github.com/oliviercailloux/java-course/blob/main/Objects%20%26%20interfaces/421.adoc",
-        "sources": [
-            "L3/README.adoc"
-        ],
-        "response": 200,
-        "satisfied": true,
-        "when": "2023-02-26T16:34:25.525460861Z"
-    },
-    {
-        "url": "https://github.com/oliviercailloux/java-course/blob/main/L3/Projets%20-%20Instructions%20Java.adoc",
-        "sources": [
-            "L3/README.adoc"
-        ],
-        "response": 200,
-        "satisfied": true,
-        "when": "2023-02-26T16:34:25.945363240Z"
-    },
-    {
-        "url": "L3/README.adoc#S9",
-        "sources": [
-            "L3/README.adoc"
-        ],
-        "response": 1,
-        "satisfied": true,
-        "when": "2023-02-26T16:34:25.950630562Z"
     },
     {
         "url": "https://github.com/oliviercailloux/java-course/blob/main/Contrat/Exceptions.adoc",
@@ -6841,33 +6631,6 @@
         "when": "2023-02-26T16:34:26.400868937Z"
     },
     {
-        "url": "L3/README.adoc#S10",
-        "sources": [
-            "L3/README.adoc"
-        ],
-        "response": 1,
-        "satisfied": true,
-        "when": "2023-02-26T16:34:26.405924909Z"
-    },
-    {
-        "url": "https://github.com/oliviercailloux/java-course/blob/main/Objects%20%26%20interfaces/README.adoc#supplementary-exercices-from-the-book",
-        "sources": [
-            "L3/README.adoc"
-        ],
-        "response": 200,
-        "satisfied": true,
-        "when": "2023-02-26T16:34:26.755655281Z"
-    },
-    {
-        "url": "https://github.com/oliviercailloux/java-course/blob/main/Objects%20%26%20interfaces/README.adoc#generics",
-        "sources": [
-            "L3/README.adoc"
-        ],
-        "response": 200,
-        "satisfied": true,
-        "when": "2023-02-26T16:34:27.172218661Z"
-    },
-    {
         "url": "https://github.com/oliviercailloux/java-course/blob/main/Syntax/README.adoc#varargs",
         "sources": [
             "L3/README.adoc"
@@ -6875,42 +6638,6 @@
         "response": 200,
         "satisfied": true,
         "when": "2023-02-26T16:34:27.222179140Z"
-    },
-    {
-        "url": "https://github.com/oliviercailloux/java-course/blob/main/L3/Exercices%20not%C3%A9s.adoc#nouvelle-chance",
-        "sources": [
-            "L3/README.adoc"
-        ],
-        "response": 200,
-        "satisfied": true,
-        "when": "2023-02-26T16:34:27.273825087Z"
-    },
-    {
-        "url": "L3/README.adoc#S11",
-        "sources": [
-            "L3/README.adoc"
-        ],
-        "response": 1,
-        "satisfied": true,
-        "when": "2023-02-26T16:34:27.278794625Z"
-    },
-    {
-        "url": "L3/README.adoc#S12",
-        "sources": [
-            "L3/README.adoc"
-        ],
-        "response": 1,
-        "satisfied": true,
-        "when": "2023-02-26T16:34:27.283482417Z"
-    },
-    {
-        "url": "https://classroom.github.com/a/ychDzzze",
-        "sources": [
-            "L3/README.adoc"
-        ],
-        "response": 302,
-        "satisfied": true,
-        "when": "2023-02-26T16:34:27.889007626Z"
     },
     {
         "url": "https://github.com/oliviercailloux/java-course/blob/main/Style/Null.adoc",
@@ -6931,42 +6658,6 @@
         "when": "2023-02-26T16:34:28.708089381Z"
     },
     {
-        "url": "https://github.com/oliviercailloux/java-course/blob/main/L3/Person.java",
-        "sources": [
-            "L3/README.adoc"
-        ],
-        "response": 200,
-        "satisfied": true,
-        "when": "2023-02-26T16:34:29.117718607Z"
-    },
-    {
-        "url": "https://github.com/oliviercailloux/java-course/blob/main/L3/PhoneNumber.java",
-        "sources": [
-            "L3/README.adoc"
-        ],
-        "response": 200,
-        "satisfied": true,
-        "when": "2023-02-26T16:34:29.527887238Z"
-    },
-    {
-        "url": "L3/README.adoc#S13",
-        "sources": [
-            "L3/README.adoc"
-        ],
-        "response": 1,
-        "satisfied": true,
-        "when": "2023-02-26T16:34:29.533108483Z"
-    },
-    {
-        "url": "L3/README.adoc#S14",
-        "sources": [
-            "L3/README.adoc"
-        ],
-        "response": 1,
-        "satisfied": true,
-        "when": "2023-02-26T16:34:29.538059396Z"
-    },
-    {
         "url": "https://github.com/oliviercailloux/java-course/blob/main/JUnit/README.adoc",
         "sources": [
             "L3/README.adoc"
@@ -6976,15 +6667,6 @@
         "when": "2023-02-26T16:34:29.907997584Z"
     },
     {
-        "url": "L3/README.adoc#S15",
-        "sources": [
-            "L3/README.adoc"
-        ],
-        "response": 1,
-        "satisfied": true,
-        "when": "2023-02-26T16:34:29.916040362Z"
-    },
-    {
         "url": "https://github.com/oliviercailloux/java-course/blob/main/Execution/Resources.adoc",
         "sources": [
             "L3/README.adoc"
@@ -6992,15 +6674,6 @@
         "response": 200,
         "satisfied": true,
         "when": "2023-02-26T16:34:30.287267967Z"
-    },
-    {
-        "url": "L3/README.adoc#S16",
-        "sources": [
-            "L3/README.adoc"
-        ],
-        "response": 1,
-        "satisfied": true,
-        "when": "2023-02-26T16:34:30.292672755Z"
     },
     {
         "url": "https://github.com/oliviercailloux/java-course/blob/main/Style/README.adoc",
@@ -7028,51 +6701,6 @@
         "response": 200,
         "satisfied": true,
         "when": "2023-02-26T16:34:31.479634960Z"
-    },
-    {
-        "url": "L3/README.adoc#S17",
-        "sources": [
-            "L3/README.adoc"
-        ],
-        "response": 1,
-        "satisfied": true,
-        "when": "2023-02-26T16:34:31.488067937Z"
-    },
-    {
-        "url": "https://classroom.github.com/a/a7m6IgaA",
-        "sources": [
-            "L3/README.adoc"
-        ],
-        "response": 302,
-        "satisfied": true,
-        "when": "2023-02-26T16:34:31.677574529Z"
-    },
-    {
-        "url": "L3/README.adoc#_more",
-        "sources": [
-            "L3/README.adoc"
-        ],
-        "response": 1,
-        "satisfied": true,
-        "when": "2023-02-26T16:34:31.683235416Z"
-    },
-    {
-        "url": "https://github.com/oliviercailloux/java-course/raw/main/Annotations/presentation.pdf",
-        "sources": [
-            "L3/README.adoc"
-        ],
-        "response": 302,
-        "satisfied": true,
-        "when": "2023-02-26T16:34:31.907621333Z"
-    },
-    {
-        "url": "https://github.com/oliviercailloux/java-course/blob/main/SWT/README.adoc",
-        "sources": [
-            "L3/README.adoc"
-        ],
-        "response": 200,
-        "satisfied": true,
-        "when": "2023-02-26T16:34:32.262630132Z"
     },
     {
         "url": "https://github.com/oliviercailloux/projets/raw/main/Licences/Declaration%20of%20licensing.odt",
@@ -7123,23 +6751,23 @@
         "url": "https://opensource.org/licenses/MIT",
         "sources": [
             "L3/README.adoc",
-            "Syntax/Présentation/presentation.pdf",
-            "Log/SLF4J/presentation.pdf",
             "Git/Présentation/presentation.pdf",
-            "Objects & interfaces/Présentation/presentation.pdf",
-            "Java EE/Présentation du cours EE/presentation.pdf",
-            "Java EE/Introduction/presentation.pdf",
-            "Overview/Présentation/presentation.pdf",
-            "Execution/Présentation class path/presentation.pdf",
-            "Execution/Présentation/presentation.pdf",
-            "JPA/Présentation/presentation.pdf",
-            "Contrat/Présentation/presentation.pdf",
-            "DB/Concurrence/presentation.pdf",
-            "DB/JDBC/presentation.pdf",
             "Maven/Présentation/presentation.pdf",
+            "SWT/Presentation/presentation.pdf",
+            "Log/SLF4J/presentation.pdf",
+            "Contrat/Présentation/presentation.pdf",
+            "Java EE/Introduction/presentation.pdf",
+            "Java EE/Présentation du cours EE/presentation.pdf",
+            "Overview/Présentation/presentation.pdf",
+            "Syntax/Présentation/presentation.pdf",
+            "DB/JDBC/presentation.pdf",
+            "DB/Concurrence/presentation.pdf",
             "Annotations/presentation.pdf",
+            "JPA/Présentation/presentation.pdf",
             "L3/Présentation du cours Objet/presentation.pdf",
-            "SWT/Presentation/presentation.pdf"
+            "Objects & interfaces/Présentation/presentation.pdf",
+            "Execution/Présentation/presentation.pdf",
+            "Execution/Présentation class path/presentation.pdf"
         ],
         "response": 301,
         "satisfied": true,
@@ -8562,26 +8190,26 @@
     {
         "url": "http://www.lamsade.dauphine.fr/~ocailloux/",
         "sources": [
-            "Syntax/Présentation/presentation.pdf",
-            "Log/SLF4J/presentation.pdf",
-            "Objects & interfaces/Présentation/presentation.pdf",
-            "Java EE/Présentation du cours EE/presentation.pdf",
-            "Java EE/CDI/Présentation/presentation.pdf",
-            "Java EE/EJB & JNDI/presentation.pdf",
-            "Java EE/Introduction/presentation.pdf",
-            "Overview/Présentation/presentation.pdf",
-            "Execution/Présentation class path/presentation.pdf",
-            "Execution/Présentation/presentation.pdf",
-            "JPA/Présentation/presentation.pdf",
-            "Contrat/Présentation/presentation.pdf",
-            "Assert/presentation.pdf",
-            "DB/Concurrence/presentation.pdf",
-            "DB/JDBC/presentation.pdf",
             "Maven/Présentation/presentation.pdf",
-            "Annotations/presentation.pdf",
-            "L3/Présentation du cours Objet/presentation.pdf",
+            "SWT/Presentation/presentation.pdf",
+            "Log/SLF4J/presentation.pdf",
+            "Contrat/Présentation/presentation.pdf",
             "Sérialisation/presentation.pdf",
-            "SWT/Presentation/presentation.pdf"
+            "Java EE/Introduction/presentation.pdf",
+            "Java EE/CDI/Présentation/presentation.pdf",
+            "Java EE/Présentation du cours EE/presentation.pdf",
+            "Java EE/EJB & JNDI/presentation.pdf",
+            "Overview/Présentation/presentation.pdf",
+            "Syntax/Présentation/presentation.pdf",
+            "DB/JDBC/presentation.pdf",
+            "DB/Concurrence/presentation.pdf",
+            "Annotations/presentation.pdf",
+            "Assert/presentation.pdf",
+            "JPA/Présentation/presentation.pdf",
+            "L3/Présentation du cours Objet/presentation.pdf",
+            "Objects & interfaces/Présentation/presentation.pdf",
+            "Execution/Présentation/presentation.pdf",
+            "Execution/Présentation class path/presentation.pdf"
         ],
         "response": 302,
         "satisfied": true,
@@ -8898,10 +8526,10 @@
     {
         "url": "http://opensource.org/licenses/MIT",
         "sources": [
+            "Sérialisation/presentation.pdf",
             "Java EE/CDI/Présentation/presentation.pdf",
             "Java EE/EJB & JNDI/presentation.pdf",
-            "Assert/presentation.pdf",
-            "Sérialisation/presentation.pdf"
+            "Assert/presentation.pdf"
         ],
         "response": 301,
         "satisfied": true,
@@ -9932,5 +9560,87 @@
         "response": 403,
         "satisfied": true,
         "when": "2023-02-26T17:25:51.218634457Z"
+    },
+    {
+        "url": "https://git-cola.github.io/",
+        "sources": [
+            "Git/Step-by-step.adoc",
+            "Git/README.adoc"
+        ],
+        "response": 200,
+        "satisfied": true,
+        "when": "2023-03-05T18:59:35.821445043Z"
+    },
+    {
+        "url": "https://help.gitkraken.com/gitkraken-client/gitkraken-edu-pack/",
+        "sources": [
+            "Git/README.adoc"
+        ],
+        "response": 200,
+        "satisfied": true,
+        "when": "2023-03-05T18:59:36.569939238Z"
+    },
+    {
+        "url": "https://dauphine.psl.eu/formations/masters/informatique/1ere-annee-de-master-sciences-numeriques-et-management-miage/programme",
+        "sources": [
+            "README.adoc"
+        ],
+        "response": 200,
+        "satisfied": true,
+        "when": "2023-03-05T18:59:37.090594760Z"
+    },
+    {
+        "url": "README.adoc#_l3",
+        "sources": [
+            "README.adoc"
+        ],
+        "response": 1,
+        "satisfied": true,
+        "when": "2023-03-05T18:59:37.189949570Z"
+    },
+    {
+        "url": "README.adoc#_free_navigation",
+        "sources": [
+            "README.adoc"
+        ],
+        "response": 1,
+        "satisfied": true,
+        "when": "2023-03-05T18:59:37.292787370Z"
+    },
+    {
+        "url": "README.adoc#_reuse",
+        "sources": [
+            "README.adoc"
+        ],
+        "response": 1,
+        "satisfied": true,
+        "when": "2023-03-05T18:59:37.402579825Z"
+    },
+    {
+        "url": "https://github.com/oliviercailloux/java-course/issues",
+        "sources": [
+            "README.adoc"
+        ],
+        "response": 200,
+        "satisfied": true,
+        "when": "2023-03-05T18:59:37.891936680Z"
+    },
+    {
+        "url": "L3/README.adoc#_overview",
+        "sources": [
+            "L3/README.adoc"
+        ],
+        "response": 1,
+        "satisfied": true,
+        "when": "2023-03-05T18:59:37.975657446Z"
+    },
+    {
+        "url": "https://www.forbes.com/sites/forbestechcouncil/2022/07/11/15-in-demand-tech-focused-and-tech-adjacent-skills-and-specialties/?sh=44e82adc38d8",
+        "sources": [
+            "L3/Présentation du cours Objet/presentation.pdf"
+        ],
+        "response": 200,
+        "satisfied": true,
+        "when": "2023-03-05T18:59:38.762711915Z"
     }
 ]

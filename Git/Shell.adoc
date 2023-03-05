@@ -26,7 +26,7 @@ Example: `touch "a file" "another file"` contains two arguments: `a file` and `a
 Here are other examples for better understanding what an argument is: the command `ls -a` has one argument, `-a`. It is equivalent to `ls "-a"`. The command `ls --color=always "a file"` has two arguments. It is equivalent to `ls "--color=always" "a file"`. The https://git-scm.com/docs/git-config[command] `git config --type bool --get core.filemode` has five arguments (considering `git` as the program name and `config` as its first argument).
 
 == Exercice
-Open a shell, navigate (using `cd`) to some different place of your choice on your hard disk, create a file `my file.txt` there, delete it with your graphical file explorer, check in the terminal that it has disappeared (using `ls`).
+Open a shell, navigate (using `cd`) to some different place of your choice on your hard disk, create a file `my file.txt` there (using the shell), delete it with your graphical file explorer, check in the terminal that it has disappeared (using the shell).
 
 [[Paths]]
 == Relative and absolute paths

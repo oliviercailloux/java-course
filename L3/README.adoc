@@ -22,6 +22,7 @@ The entry page of the Java course in L3.
 * https://github.com/oliviercailloux/java-course/blob/main/Git/README.adoc[Git]: Configure & Step by step
 
 TODO at home:
+
 * Install the https://github.com/oliviercailloux/java-course/blob/main/Best%20practices/Various.adoc#installing-the-jdk[JDK]
 
 [[S2]]
