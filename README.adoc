@@ -4,16 +4,17 @@
 
 image::.github/Links%20check.svg["Links check status", link="https://github.com/oliviercailloux/java-course/blob/main/.github/Last%20results.json"]
 
-Course about Java SE and Java EE.
+An open source Java course taught at https://dauphine.psl.eu/formations/masters/informatique/1ere-annee-de-master-sciences-numeriques-et-management-miage/programme[Dauphine].
 
-== Main content
+== L3
+The https://github.com/oliviercailloux/java-course/blob/main/L3/README.adoc[entry page] for the L3 course.
 
-The https://github.com/oliviercailloux/java-course/blob/main/L3/README.adoc[entry page] for the L3a course.
+== Free navigation
+The content is organized so as to permit browsing freely by topic of interest (prerequisites are indicated when required).
 
 Look into the various `.adoc` files and sub-folders, depending on your interest.
 
+== Reuse
 Please drop me an e-mail if you use (some of) this content (the license permits you to re-use the content without asking or telling me however).
 
-== See also
-* https://github.com/oliviercailloux/samples[Samples]
-
+PRs are welcome if you want to share any possible correction or improvement. Or open an https://github.com/oliviercailloux/java-course/issues[issue].
