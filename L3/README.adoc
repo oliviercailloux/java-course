@@ -10,6 +10,7 @@ The entry page of the Java course in L3.
 * You are able to understand texts in English relating to computer science
 
 == General references
+* https://github.com/oliviercailloux/java-course/blob/main/L3/Lecture%20notes.adoc[Lecture notes] (https://github.com/oliviercailloux/java-course/blob/main/L3/Lecture%20notes.pdf[PDF])
 * Eck’s https://math.hws.edu/javanotes/[book]
 * Stéphane Airiau’s https://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/[course] (in French)
 * Java API https://docs.oracle.com/en/java/javase/17/docs[Javadoc]
