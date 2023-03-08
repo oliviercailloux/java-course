@@ -1,0 +1,27 @@
+= A Java course
+
+== Presentation
+
+https://github.com/oliviercailloux/java-course/raw/main/L3/Pr%C3%A9sentation%20du%20cours%20Objet/presentation.pdf[Présentation]
+
+ifdef::backend-docbook5[]
+from-pdf::Présentation du cours Objet/presentation.pdf[end=-1]
+endif::[]
+
+include::../Git/Shell.adoc[leveloffset=+1]
+
+== Git
+
+=== Presentation
+
+https://github.com/oliviercailloux/java-course/raw/main/Git/Pr%C3%A9sentation/presentation.pdf[Présentation]
+
+ifdef::backend-docbook5[]
+from-pdf::../Git/Présentation/presentation.pdf[end=-1]
+endif::[]
+
+=== Introduction
+
+include::../Git/README.adoc[leveloffset=+1, lines=3..-1]
+
+
