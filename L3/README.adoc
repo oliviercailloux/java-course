@@ -28,7 +28,7 @@ TODO at home:
 [[S2]]
 == S2: 10 March
 * https://github.com/oliviercailloux/java-course/blob/main/Git/README.adoc[Git]: remotes ; Step by step (end)
-* Git step-by-step (end). Read the https://github.com/oliviercailloux/java-course/blob/main/Git/Graded%20exercices.adoc[graded exercices] procedure and take the “training” assignment; Practice with the other exercices on the Git page
+* Read the https://github.com/oliviercailloux/java-course/blob/main/Git/Graded%20exercices.adoc[graded exercices] procedure and take the “training” assignment; Practice with the other exercices on the Git page
 * https://github.com/oliviercailloux/java-course/blob/main/Syntax/README.adoc[Syntax]: basics; exercices (Shorts and Methods); then Classes
 
 TODO @ home: Git step-by-step (entirely); “graded exercices” and “training” (see above); Exercices of “Syntax” until “Classes” (not: “More about classes”).
