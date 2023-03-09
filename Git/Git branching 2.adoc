@@ -18,5 +18,5 @@ In this graded exercice, we’ll simulate that we go back in time (to correct so
 
 [[Goal]]
 .Desired history at end of the exercice (italicized: your additions to the history)
-image::Git%20branching%202.svg[opts="inline"]
+image::https://raw.githubusercontent.com/oliviercailloux/java-course/main/Git/Git%20branching%202.svg[opts="inline"]
 
