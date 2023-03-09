@@ -7,7 +7,7 @@ Deadline: 14h11. If you are late, the penalty increases linearly until 14h16.
 
 * Accept the graded exercice: https://classroom.github.com/a/BCWfgJNU[branching]
 * Start with a first commit, that we will name `Start`, that contains a single file, `start.txt`, containing “A starting point”
-* Create the branches so as to end up as illustated in the figure below (<<Goal>>). (You may have to create branches along the way, not necessarily now.)
+* Create the branches so as to end up as illustated in the figure below (<<Goal-br3>>). (You may have to create branches along the way, not necessarily now.)
 * Commit `A` adds a file named `first.txt` containing “Hello world”; its parent is `Start`.
 * Commit `B` adds a file whose relative path is `a/some file.txt` containing “Hey”; its parent is `A`. Note the space in its name, and create the required intermediate folder.
 * Commit `C` adds a file named `first.txt` containing “Coucou monde”; its parent is `Start`.
