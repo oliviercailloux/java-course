@@ -18,7 +18,7 @@ Some step by step exercices for git starters.
 
 [[C1]]
 .Right after the first commit
-image::C1.svg[opts="inline"]
+image::https://raw.githubusercontent.com/oliviercailloux/java-course/main/Git/C1.svg[opts="inline"]
 
 === First branch
 You have got a bold idea to solve some problem in your project. But you’re not so sure it will work. You want to create a branch and modify things there in the meantime.
