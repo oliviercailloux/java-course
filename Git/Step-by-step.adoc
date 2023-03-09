@@ -27,7 +27,7 @@ You have got a bold idea to solve some problem in your project. But you’re not
 
 [[C2]]
 .A commit and another commit in a branch
-image::C2.svg[opts="inline"]
+image::https://raw.githubusercontent.com/oliviercailloux/java-course/main/Git/C2.svg[opts="inline"]
 
 === Second branch
 Now that this (huge) work is done, you want to try an alternative approach. You’re also not sure, so you’ll do it in a different branch.
@@ -36,7 +36,7 @@ Now that this (huge) work is done, you want to try an alternative approach. You�
 
 [[C3]]
 .Two branches plus master
-image::C3.svg[opts="inline"]
+image::https://raw.githubusercontent.com/oliviercailloux/java-course/main/Git/C3.svg[opts="inline"]
 
 === Merge
 Thinking about it, you decide to merge both your ideas into `master`.
