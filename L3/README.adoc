@@ -35,16 +35,20 @@ TODO at home:
 TODO @ home: Git step-by-step (entirely); “graded exercices” and “training” (see above); Exercices of “Syntax” until “Classes” (not: “More about classes”).
 
 [[S3]]
-== S3
+== S3: 22 March
 * Graded exercice about git: you will be asked to create commits that changes some file, adds some file…
-
-== Overview
-* Syntax
 * https://github.com/oliviercailloux/java-course/blob/main/Execution/README.adoc[Execution]
+* Syntax: packages; exercices
 * https://github.com/oliviercailloux/java-course/blob/main/Dev%20tools/Eclipse.adoc[Eclipse & Java] (and Configuration, Start project)
+ 
+[[S4]]
+== S4: 24 March
+* Graded exercice about git: you will be asked to create commits and position branches.
 * Two major aspects of software engineering: https://github.com/oliviercailloux/java-course/blob/main/Contrat/README.adoc[contract] and fail-fast, and exercices there.
 * https://github.com/oliviercailloux/java-course/blob/main/Objects%20%26%20interfaces/README.adoc[Objects & interfaces].
 * Interfaces. Exercice: I like to move it move it; Coffee
+
+== Overview
 * Polymorphism: inheritance
 * The `Object` class and its methods: `toString()`, `equals`, `hashcode`. Exercice: Car string
 * https://github.com/oliviercailloux/java-course/blob/main/Contrat/Exceptions.adoc[Exceptions].

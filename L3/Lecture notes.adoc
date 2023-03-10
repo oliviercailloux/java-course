@@ -24,4 +24,25 @@ endif::[]
 
 include::../Git/README.adoc[leveloffset=+1, lines=3..-1]
 
+=== Step-by-step exercices
+
+include::../Git/Step-by-step.adoc[leveloffset=+2, lines=6..-1]
+
+=== Git branching 1 exercice
+
+include::../Git/Git branching 1.adoc[leveloffset=+2, lines=3..-1]
+
+// === Git branching 2 exercice
+
+// include::../Git/Git branching 2.adoc[leveloffset=+2, lines=3..-1]
+
+// === Git branching 3 exercice
+
+// include::../Git/Git branching 3.adoc[leveloffset=+2, lines=3..-1]
+
+== Graded exercices
+
+include::../Git/Graded exercices.adoc[leveloffset=+1, lines=3..-1]
+
+include::../Syntax/README.adoc[leveloffset=+1]
 
