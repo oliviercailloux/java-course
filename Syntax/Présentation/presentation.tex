@@ -134,18 +134,18 @@ nom = valeur;
 	\frametitle{Opérateurs unaires}
 	Opérateurs unaires :
 	\begin{description}
-		\item[\texttt{-}] renvoie le négatif
 		\item[\texttt{!}] Négation logique
+		\item[\texttt{-}] renvoie le négatif
 		\item[\texttt{++}] Incrémente un entier (affectation implicite)
 		\item[\texttt{-{}-}] Décrémente un entier (affectation implicite)
 	\end{description}
 	\begin{block}{Exemples}
 		\begin{lstlisting}
+boolean b = !true;
+boolean c = !b;
 int x = -3;
 int z = -(x - y);
 ++i;
-boolean b = !true;
-boolean c = !b;
 		\end{lstlisting}	
 	\end{block}
 \end{frame}
@@ -252,7 +252,7 @@ for (int v : values) {
 \begin{frame}[fragile]
 	\frametitle{Méthodes : utilité}
 	\begin{itemize}
-		\item Tout code doit se trouver dans une méthode {\tiny (sauf avec jshell)}
+		\item Tout code doit se trouver dans une méthode {\tiny (sauf avec jshell et initialisation statique)}
 		\item Méthode peut renvoyer une valeur
 		\item Peut être réutilisée, clarifie le code
 	\end{itemize}
