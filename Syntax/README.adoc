@@ -8,6 +8,8 @@ See: https://raw.githubusercontent.com/oliviercailloux/java-course/master/Syntax
 In jshell, as with many shells, use ↑ (keyboard up https://en.wikipedia.org/wiki/Arrow_keys[arrow]) to recall previous commands.
 
 == Short exercices
+You can achieve all these tasks with only the syntax seen in this presentation, in particular, without using explicit conversions from String to integer or conversely. Try it!
+
 . Assign your first name to a variable and use it to print `Hello <your-first-name>.`
 . Assign your age to a integer variable and use it to print `<your-age> is my age!`
 . Assign each digit of your age to different integer variables; use them to print `<your-age> is my age!`
@@ -30,10 +32,13 @@ Define a class `MovingThing` that has a static variable `currentSpeed` and a sta
 Once this works, make all your variables private so that nobody but your own class can touch them. Modify your class to make it still useable by providing appropriate methods to get or set their values as required. Make sure to restrict access as much as reasonable, for example, an external user should not be able to modify the `totalLength` directly.
 
 == More exercices
+Our goal here is to reach exercice 3.6 (here below), which requires to print out all numbers that have the maximum number of divisors. This requires to achieve exercices 3.1 and 3.2 first. Optionally, you may also want to attempt exercices 3.8 and 3.9 if you want some more advanced challenges.
 
-* *https://math.hws.edu/javanotes/c3/exercises.html[EE3.1] to 3.2*
-* *3.6 [I]*
-* EE3.8, 3.9 [O]
+* https://math.hws.edu/javanotes/c3/exercises.html[EE3.1] to 3.2
+* 3.6
+* EE3.8, 3.9 (optional)
+
+The following two subsections are here for reference; we will come back to it later in the course.
 
 == Varargs
 See Oracle doc about the varargs syntax: https://docs.oracle.com/javase/tutorial/java/javaOO/arguments.html[Varargs]

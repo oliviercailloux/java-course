@@ -5,7 +5,7 @@ NOTE: The reader is supposed to have a minimal knowledge of the https://github.c
 Here we learn how to compile and execute Java code, first in a simple case, then, in more general cases such as when using non-default packages. See: https://github.com/oliviercailloux/java-course/raw/main/Execution/Pr%C3%A9sentation/presentation.pdf[présentation].
 
 == Exercice
-* Define a method `greatestDivisor` that accepts an integer parameter and returns its greatest divisor except itself; use it to show the greatest divisor of 4659.
+* Define a method `greatestDivisor` that accepts an integer parameter and returns its greatest divisor except itself.
 * Define a class `MyMathClass` containing the method `greatestDivisor` and a method that returns the smallest divisor (greater than one) of its parameter; and a class `MyBooleanClass` containing a method `xor` returning `true` iff exactly one of its parameter is `true`.
 * Add a `main` method to your `MyBooleanClass` that prints “Hello, this is my boolean class.” Use `System.out.println("…")` to print.
 * Compile `MyBooleanClass` with `javac`, move the resulting file into its own directory, execute it from the source directory.
@@ -28,10 +28,10 @@ Essentially two mechanisms are used: the class path and the module path. This co
 * A class has a simple name (for example, `MyClass`), and a full name (for example, `somepackage.somesubpackage.MyClass`)
 * A (top-level) class is typically defined in a source file whose relative path reflects its full name, for example, `somepackage/somesubpackage/MyClass.java`; relative to some base folder where you put your source code (for example, `/home/me/My project/My source code/`)
 * A class is typically compiled into a file whose relative path reflects its full name, for example, `somepackage/somesubpackage/MyClass.class`; relative to some base folder where you put your compiled code (for example, `/home/me/My project/My compiled code/`)
-* When using `javac` to compile, you give _files_ as arguments
-* When using `java` to execute, you give a _full class name_ as argument (the one whose `main` method you want to run)
+* When _compiling_, use `javac` with _files_ as arguments
+* When _executing_, use `java` with a _full class name_ as argument (the one whose `main` method you want to run)
 * For both `javac` and `java`, the program must be able to find the adequate dependencies. To enable this, give it your _class path_: the paths to the base folders containing your compiled classes
-* Example: `java -cp "/home/me/My project/My compiled code/" "somepackage.somesubpackage.MyClass" "argument 1" "argument 2"` will search for classes from the folder `/home/me/My project/My compiled code/`, and will attempt to run the `main` method defined in the class `somepackage.somesubpackage.MyClass`, giving it the arguments `argument 1` and `argument 2`
+* Example: `java -cp "/home/me/My project/My compiled code/" "somepackage.somesubpackage.MyClass" "argument 1" "argument 2"` searches for classes from the folder `/home/me/My project/My compiled code/`, and attempts to run the `main` method defined in the class `somepackage.somesubpackage.MyClass`, passing to your program the arguments `argument 1` and `argument 2`
 
 === More about the class path
 For more information about the class path, see: https://github.com/oliviercailloux/java-course/blob/main/Execution/Pr%C3%A9sentation%20class%20path/presentation.pdf[Présentation class path], https://github.com/oliviercailloux/java-course/blob/master/Execution/Overview.adoc[Overview], https://github.com/oliviercailloux/java-course/blob/master/Execution/Exercices.adoc[Exercices], https://github.com/oliviercailloux/java-course/blob/master/Execution/Resources.adoc[resources].
@@ -57,9 +57,5 @@ If you want to go further, here are references about the module system. It is ad
 * JRebel’s Java Platform Module System https://www.jrebel.com/blog/java-9-modules-cheat-sheet[Cheat Sheet]
 * https://stackoverflow.com/questions/46741907/what-is-an-automatic-module
 * https://stackoverflow.com/questions/43192741/how-should-i-name-my-java-9-module
-* More SO questions tagged https://stackoverflow.com/questions/tagged/java-module?sort=votes[java-module]
 
-//Note the contradiction in these two answers: https://stackoverflow.com/questions/48768879/how-to-access-resource-using-class-loader-in-java-9
-// Eclipse: Photon 4.9RC2 with Java 11 plugin. Maven: 3.5.0. compiler plugin: 3.8.0. surefire and failsafe: 2.22.0
-// See: https://logging.apache.org/log4j/2.0/log4j-slf4j-impl/
 
