@@ -77,6 +77,11 @@
 	}
 	\makeatother%
 
+%Quick recap about beamer’s overlay modes using \command<spec>{text}: \uncover always takes space and \only only takes space when shown; I recommend not using \onslide. Use \zeroboxonly for never taking space.
+	\iftoggle{LCpres}{
+		\NewDocumentCommand{\zeroboxonly}{mm}{\only<#1>{\makebox[0pt]{#2}}}
+	}{
+	}
 %Language options ([french, english]) should be on the document level (last is main); except with tikzposter: put [french, english] options next to \usepackage{babel} to avoid warning. beamer uses the \translate command for the appendix: omitting babel results in a warning, see https://github.com/josephwright/beamer/issues/449. Babel also seems required for \refname.
 	\iftoggle{LCpres}{
 		\usepackage{babel}
