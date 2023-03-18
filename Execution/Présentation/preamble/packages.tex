@@ -11,6 +11,8 @@
 	\usepackage{newunicodechar}
 %Text Companion fonts, much used together with CM-like fonts. Provides \texteuro and commands for text mode characters such as \textminus, \textrightarrow, \textlbrackdbl.
 	\usepackage{textcomp}
+%St Mary’s Road symbol font, used for ⟦ = \llbracket. The \SetSymbolFont command avoids spurious warnings, but also some valid ones, see https://tex.stackexchange.com/a/106719/.
+	%\usepackage{stmaryrd}\SetSymbolFont{stmry}{bold}{U}{stmry}{m}{n}
 %Solves bug in lmodern, https://tex.stackexchange.com/a/261188; probably useful only for unusually big font sizes; and probably better to use exscale instead. Note that the authors of exscale write against this trick.
 	%\DeclareFontShape{OMX}{cmex}{m}{n}{
 		%<-7.5> cmex7
