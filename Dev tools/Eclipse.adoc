@@ -1,6 +1,6 @@
 = Eclipse
 
-For this course you will need the 2021-12 version of the https://www.eclipse.org/downloads/packages/[Eclipse IDE] “for Java Developers”.
+For this course you will need the https://www.eclipse.org/downloads/packages/[Eclipse IDE] “for Java Developers” (2022-06 version or more recent).
 
 == Basics
 To exploit the power of Eclipse, at the very minimum, you must understand the notion of perspectives and views, and know how to easily navigate within resources.
@@ -31,7 +31,7 @@ Check this very clear https://www.vogella.com/tutorials/Eclipse/article.html[tut
 
 [[Eclipse-strict]]
 == Configuration
-Configure Eclipse to show more errors and warnings in order to help spot mistakes and code smells early (and add a “GoogleStyle + block + braced” formatter style).
+Configure Eclipse to show more errors and warnings in order to help spot mistakes and code smells early (and add a “GoogleStyle patched” formatter style).
 
 * From Eclipse, import this https://raw.githubusercontent.com/oliviercailloux/java-course/master/Dev%20tools/Eclipse-prefs.epf[epf] (Eclipse Preference File) (save it on your computer first), with `File` / `Import…` / `General` / `Preferences`.
 ** You can look at the text in the file to see what this changes to your Eclipse configuration.
