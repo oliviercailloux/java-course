@@ -37,16 +37,21 @@ TODO @ home: Git step-by-step (entirely); “graded exercices” and “training
 [[S3]]
 == S3: 22 March
 * Graded exercice about git: you will be asked to create commits that changes some file, adds some file…
-* https://github.com/oliviercailloux/java-course/blob/main/Execution/README.adoc[Execution]
-* Syntax: packages; exercices
+* https://github.com/oliviercailloux/java-course/blob/main/Execution/README.adoc[Execution], without packages, exercices
+* Syntax: packages
+* Execution, with packages, exercices
 * https://github.com/oliviercailloux/java-course/blob/main/Dev%20tools/Eclipse.adoc[Eclipse & Java] (and Configuration, Start project)
+* Unit testing, demo, https://github.com/oliviercailloux/java-course/blob/main/JUnit/Overview.adoc[overview]; exercice: write unit tests for some of the above exercices
  
 [[S4]]
 == S4: 24 March
-* Graded exercice about git: you will be asked to create commits and position branches.
 * Two major aspects of software engineering: https://github.com/oliviercailloux/java-course/blob/main/Contrat/README.adoc[contract] and fail-fast, and exercices there.
 * https://github.com/oliviercailloux/java-course/blob/main/Objects%20%26%20interfaces/README.adoc[Objects & interfaces].
 * Interfaces. Exercice: I like to move it move it; Coffee
+
+[[S5]]
+== S5: 5 April
+* Graded exercice about git: you will be asked to create commits and position branches.
 
 == Overview
 * Polymorphism: inheritance
@@ -56,8 +61,8 @@ TODO @ home: Git step-by-step (entirely); “graded exercices” and “training
 * https://github.com/oliviercailloux/java-course/blob/main/Syntax/README.adoc#varargs[Varargs]
 * Optionals; give guarantees: https://github.com/oliviercailloux/java-course/blob/main/Style/Null.adoc[Protect against null references]
 * https://github.com/oliviercailloux/java-course/blob/main/Collections/README.adoc[Collections]
+* Unit testing exercice about iterators
 * Primitive types (autoboxing)
-* https://github.com/oliviercailloux/java-course/blob/main/JUnit/README.adoc[Unit testing]
 * Files and https://github.com/oliviercailloux/java-course/blob/main/Flows.adoc[flows]
 * https://github.com/oliviercailloux/java-course/blob/main/Execution/Resources.adoc[Resources]
 * https://github.com/oliviercailloux/java-course/blob/main/Style/README.adoc[Favor static factory methods]
