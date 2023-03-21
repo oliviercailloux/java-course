@@ -41,17 +41,17 @@ TODO @ home: Git step-by-step (entirely); “graded exercices” and “training
 * Syntax: packages
 * Execution, with packages, exercices
 * https://github.com/oliviercailloux/java-course/blob/main/Dev%20tools/Eclipse.adoc[Eclipse & Java] (and Configuration, Start project)
-* Unit testing, demo, https://github.com/oliviercailloux/java-course/blob/main/JUnit/Overview.adoc[overview]; exercice: write unit tests for some of the above exercices
  
 [[S4]]
 == S4: 24 March
+* Unit testing, demo, https://github.com/oliviercailloux/java-course/blob/main/JUnit/Overview.adoc[overview]; exercice: write unit tests for some of the above exercices
 * Two major aspects of software engineering: https://github.com/oliviercailloux/java-course/blob/main/Contrat/README.adoc[contract] and fail-fast, and exercices there.
-* https://github.com/oliviercailloux/java-course/blob/main/Objects%20%26%20interfaces/README.adoc[Objects & interfaces].
-* Interfaces. Exercice: I like to move it move it; Coffee
 
 [[S5]]
 == S5: 5 April
 * Graded exercice about git: you will be asked to create commits and position branches.
+* https://github.com/oliviercailloux/java-course/blob/main/Objects%20%26%20interfaces/README.adoc[Objects & interfaces].
+* Interfaces. Exercice: I like to move it move it; Coffee
 
 == Overview
 * Polymorphism: inheritance
