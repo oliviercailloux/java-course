@@ -37,6 +37,7 @@ TODO @ home: Git step-by-step (entirely); “graded exercices” and “training
 [[S3]]
 == S3: 22 March
 * Graded exercice about git: you will be asked to create commits that changes some file, adds some file…
+* Syntax, exercice: More about classes
 * https://github.com/oliviercailloux/java-course/blob/main/Execution/README.adoc[Execution], without packages, exercices
 * Syntax: packages
 * Execution, with packages, exercices
