@@ -36,7 +36,7 @@ TODO @ home: Git step-by-step (entirely); “graded exercices” and “training
 
 [[S3]]
 == S3: 22 March
-* Graded exercice about git: you will be asked to create commits that changes some file, adds some file…
+* Graded exercice about git: accept https://classroom.github.com/a/WAdAuWNU[two-files]; clone your resulting online repository; add a commit that deletes the file `Some file.txt`; add a commit that modifies anything in the file `Some folder/Another file.txt`; add a commit that deletes that file. Push to your online repository frequently. Make sure that your git `user.name` equals your GitHub user account. You will get points according to each of these commits (even if not in the right order). If some of your commits are wrong, you can try again starting from the original `main` branch; spurious commits will not penalize you.
 * Syntax, exercice: More about classes
 * https://github.com/oliviercailloux/java-course/blob/main/Execution/README.adoc[Execution], without packages, exercices
 * Syntax: packages
