@@ -41,7 +41,9 @@ TODO @ home: Git step-by-step (entirely); “graded exercices” and “training
 * https://github.com/oliviercailloux/java-course/blob/main/Execution/README.adoc[Execution], without packages, exercices
 * Syntax: packages
 * Execution, with packages, exercices
- 
+
+TODO @ home: Install Eclipse (see link below).
+
 [[S4]]
 == S4: 24 March
 * https://github.com/oliviercailloux/java-course/blob/main/Dev%20tools/Eclipse.adoc[Eclipse & Java] (and Configuration, Start project)
