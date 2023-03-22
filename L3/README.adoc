@@ -41,10 +41,10 @@ TODO @ home: Git step-by-step (entirely); “graded exercices” and “training
 * https://github.com/oliviercailloux/java-course/blob/main/Execution/README.adoc[Execution], without packages, exercices
 * Syntax: packages
 * Execution, with packages, exercices
-* https://github.com/oliviercailloux/java-course/blob/main/Dev%20tools/Eclipse.adoc[Eclipse & Java] (and Configuration, Start project)
  
 [[S4]]
 == S4: 24 March
+* https://github.com/oliviercailloux/java-course/blob/main/Dev%20tools/Eclipse.adoc[Eclipse & Java] (and Configuration, Start project)
 * Unit testing, demo, https://github.com/oliviercailloux/java-course/blob/main/JUnit/Overview.adoc[overview]; exercice: write unit tests for some of the above exercices
 * Two major aspects of software engineering: https://github.com/oliviercailloux/java-course/blob/main/Contrat/README.adoc[contract] and fail-fast, and exercices there.
 
@@ -69,6 +69,7 @@ TODO @ home: Git step-by-step (entirely); “graded exercices” and “training
 * https://github.com/oliviercailloux/java-course/blob/main/Style/README.adoc[Favor static factory methods]
 * https://github.com/oliviercailloux/java-course/blob/main/Objects%20%26%20interfaces/Equals.adoc[Equality and hash codes]
 * https://github.com/oliviercailloux/java-course/blob/main/Log/README.adoc[Logging]
+* https://github.com/oliviercailloux/java-course/blob/main/Annotations/README.adoc[Annotations]
 * https://github.com/oliviercailloux/java-course/blob/main/Dev%20tools/CI.adoc[CI]: GitHub Workflows
 * https://github.com/oliviercailloux/projets/raw/main/Licences/Declaration%20of%20licensing.odt[Declarations of licensing]. https://github.com/oliviercailloux/projets/blob/main/Licences/Licence.adoc[Licences] and philosophy: https://www.gnu.org/philosophy/philosophy.html[GNU]; https://opensource.org/[OSI]; Copyleft (GNU https://opensource.org/licenses/GPL-3.0[GPL]); Non-copyleft (https://opensource.org/licenses/MIT[MIT])
 * Parsing HTML (info): https://github.com/oliviercailloux/java-course/blob/main/DOM.adoc[DOM]
