@@ -48,13 +48,14 @@ TODO @ home: Install Eclipse (see link below).
 == S4: 24 March
 * https://github.com/oliviercailloux/java-course/blob/main/Dev%20tools/Eclipse.adoc[Eclipse & Java] (and Configuration, Start project). Re-create some classes you did in the Syntax part (see here above) in Eclipse and make sure you can run the `main` method.
 * Unit testing, demo, https://github.com/oliviercailloux/java-course/blob/main/JUnit/Overview.adoc[overview]; exercice: write unit tests for the exercices in Syntax.
-* Two major aspects of software engineering: https://github.com/oliviercailloux/java-course/blob/main/Contrat/README.adoc[contract] and fail-fast, and exercices there.
+* Two major aspects of software engineering: https://github.com/oliviercailloux/java-course/blob/main/Contrat/README.adoc[contract] and fail-fast.
 
-TODO @ home: Syntax, More exercices (up to EE3.6 included), Contract up to EE4.4 included.
+TODO @ home: Syntax, More exercices (up to EE3.6 included); Eclipse and Unit testing (see above).
 
 [[S5]]
 == S5: 5 April
 * Graded exercice about git: you will be asked to create commits and position branches.
+* Contract: exercices
 * https://github.com/oliviercailloux/java-course/blob/main/Objects%20%26%20interfaces/README.adoc[Objects & interfaces].
 * Interfaces. Exercice: I like to move it move it; Coffee
 
