@@ -21,6 +21,7 @@
 		%<9.5-> cmex10
 	%}{}
 	%\SetSymbolFont{largesymbols}{normal}{OMX}{cmex}{m}{n}
+	\usepackage{xstring}
 %More symbols (such as \sum) available in bold version, see https://github.com/latex3/latex2e/issues/71. In article mode (but not in presentation mode), also hides some potentially useful warnings such as when using $\bm{\llbracket}$, see stmaryrd in this document (not sure why).
 	\DeclareFontShape{OMX}{cmex}{bx}{n}{%
 	   <->sfixed*cmexb10%
@@ -35,7 +36,6 @@
 		%\DeclareFontShape{T1}{lmr}{bx}{sc}{<->ssub*cmr/bx/sc}{}%
 		%\DeclareFontShape{T1}{lmr}{bx}{scit}{<->ssub*cmr/bx/scsl}{}%
 	}
-\usepackage{xstring}
 %Warn about missing characters.
 	\tracinglostchars=2
 %Nicer tables: provides \toprule, \midrule, \bottomrule.
@@ -47,8 +47,10 @@
 	%\newcolumntype{L}{>{$}l<{$}}
 %Provides \xpretocmd and loads etoolbox which provides \apptocmd, \patchcmd, \newtoggle… Also loads xparse, which provides \NewDocumentCommand and similar commands intended as replacement of \newcommand in LaTeX3 for defining commands (see https://tex.stackexchange.com/q/98152 and https://github.com/latex3/latex2e/issues/89).
 	\usepackage{xpatch}
-%ntheorem doc says: “empheq provides an enhanced vertical placement of the endmarks”; must be loaded before ntheorem. Loads the mathtools package, which loads and fixes some bugs in amsmath and provides \DeclarePairedDelimiter. amsmath is considered a basic, mandatory package nowadays (Grätzer, More Math Into LaTeX).
-	\usepackage[ntheorem]{empheq}
+%for \nexists and because it is a basic package nowadays, see https://tex.stackexchange.com/q/539592/.
+	\usepackage{amssymb}
+%loads and fixes some bugs in amsmath (a basic, mandatory package nowadays, see Grätzer, More Math Into LaTeX) and provides \DeclarePairedDelimiter. I recommend \begin{equation}, which allows numbering, rather than \[ (and $$ should be avoided), see https://tex.stackexchange.com/questions/503. Relatedly, do not use the displaymath environment: use equation. Do not use the eqnarray environment: use align. This improves spacing. (See l2tabu or amsldoc.)
+	\usepackage{mathtools}
 %Package frenchb asks to load natbib before babel-french. Package hyperref asks to load natbib before hyperref.
 	\usepackage{natbib}
 
@@ -76,26 +78,36 @@
 	}
 	\makeatother%
 
+%Quick recap about beamer’s overlay modes using \command<spec>{text}: \uncover always takes space and \only only takes space when shown; I recommend not using \onslide. Use \zeroboxonly for never taking space.
+	\iftoggle{LCpres}{
+		\NewDocumentCommand{\zeroboxonly}{mm}{\only<#1>{\makebox[0pt]{#2}}}
+	}{
+	}
 %Language options ([french, english]) should be on the document level (last is main); except with tikzposter: put [french, english] options next to \usepackage{babel} to avoid warning. beamer uses the \translate command for the appendix: omitting babel results in a warning, see https://github.com/josephwright/beamer/issues/449. Babel also seems required for \refname.
 	\iftoggle{LCpres}{
 		\usepackage{babel}
 	}{
 	}
 	%\frenchbsetup{AutoSpacePunctuation=false}
+%https://ctan.org/pkg/amsmath recommends ntheorem, which supersedes amsthm, which corrects the spacing of proclamations and allows for theoremstyle, but I decided to switch to amsthm with thmtools (mentioned in amsthm doc) because ntheorem “seems essentially unmaintaned and has severe problems”, see https://tex.stackexchange.com/q/535950. Must be loaded after amsmath (from amsthm doc).
+		\usepackage{amsthm}
+		\usepackage{thmtools}
 %listings (1.7) does not allow multi-byte encodings. listingsutf8 works around this only for characters that can be represented in a known one-byte encoding and only for \lstinputlisting. Other workarounds: use literate mechanism; or escape to LaTeX (but breaks alignment).
 	%\usepackage{listings}
 	%\lstset{tabsize=2, basicstyle=\ttfamily, escapechar=§, literate={é}{{\'e}}1}
 %I favor acro over acronym because the former is more recently updated (2018 VS 2015 at time of writing); has a longer user manual (about 40 pages VS 6 pages if not counting the example and implementation parts); has a command for capitalization; and acronym suffers a nasty bug when ac used in section, see https://tex.stackexchange.com/q/103483 (though this might be the fault of the silence package and might be solved in more recent versions, I do not know) and from a bug when used with cleveref, see https://tex.stackexchange.com/q/71364. However, loading it makes compilation time (one pass on this template) go from 0.6 to 1.4 seconds, see https://bitbucket.org/cgnieder/acro/issues/115.
-	\usepackage[single]{acro}
+	\usepackage{acro}
+	%“All options of acro that have not been mentioned in section 4.1 have to be set up… with… \acsetup{…}” -- acro package doc, cited by the Overleaf support (thanks to them!)
+	\acsetup{single}
 	\input{preamble/acronyms}
 \iftoggle{LCpres}{
-	%I favor fmtcount over nth because it is loaded by datetime anyway; and fmtcount warns about possible conflicts when loaded after nth.
+	%I favor fmtcount over nth because it is loaded by datetime anyway; and fmtcount warns about possible conflicts when loaded after nth (“\ordinal already defined use \FCordinal instead”). See also https://english.stackexchange.com/questions/93008.
 	\usepackage{fmtcount}
 	%For nice input of date of presentation. Must be loaded after the babel package. Has possible problems with srcletter: https://golatex.de/verwendung-von-babel-und-datetime-in-scrlttr2-schlaegt-fehlt-t14779.html.
 	\usepackage[nodayofweek]{datetime}
 }{
 }
-%For presentations, Beamer implicitely uses the pdfusetitle option. ntheorem doc says to load hyperref “before the first use of \newtheorem”. autonum doc mandates option hypertexnames=false. I want to highlight links only if necessary for the reader to recognize it as a link, to reduce distraction. In presentations, this is already taken care of by beamer (https://tex.stackexchange.com/a/262014). If using colorlinks=true in a presentation, see https://tex.stackexchange.com/q/203056. Crashes the first compilation with tikzposter, just compile again and the problem disappears, see https://tex.stackexchange.com/q/254257.
+%For presentations, Beamer implicitely uses the pdfusetitle option. autonum doc mandates option hypertexnames=false. I want to highlight links only if necessary for the reader to recognize it as a link, to reduce distraction. In presentations, this is already taken care of by beamer (https://tex.stackexchange.com/a/262014). If using colorlinks=true in a presentation, see https://tex.stackexchange.com/q/203056. Crashes the first compilation with tikzposter, just compile again and the problem disappears, see https://tex.stackexchange.com/q/254257.
 \makeatletter
 \iftoggle{LCpres}{
 	\usepackage{hyperref}
@@ -121,8 +133,7 @@
 	\NewDocumentCommand{\addhrauthor}{m}{
 		\seq_gput_right:Nn \g_oc_hrauthor_seq { #1 }
 	}
-	%Should be \NewExpandableDocumentCommand, but this is not yet provided by my version of xparse
-	\DeclareExpandableDocumentCommand{\hrauthor}{}{
+	\NewExpandableDocumentCommand{\hrauthor}{}{
 		\seq_use:Nn \g_oc_hrauthor_seq {,~}
 	}
 	\ExplSyntaxOff
@@ -152,11 +163,8 @@
 	%\usepackage{ragged2e}
 %To typeset units by closely following the “official” rules.
 	%\usepackage[strict]{siunitx}
-%Turns the doi provided by some bibliography styles into URLs. However, uses old-style dx.doi url (see 3.8 DOI system Proxy Server technical details, “Users may resolve DOI names that are structured to use the DOI system Proxy Server (https://doi.org (current, preferred) or earlier syntax http://dx.doi.org).”, https://www.doi.org/doi_handbook/3_Resolution.html). The patch solves this.
+%Turns the doi provided by some bibliography styles into URLs.
 	\usepackage{doi}
-	\makeatletter
-	\patchcmd{\@doi}{http://dx.doi.org}{https://doi.org}{}{}
-	\makeatother
 %Makes sure upper case greek letters are italic as well.
 	\usepackage{fixmath}
 %Provides \mathbb; obsoletes latexsym (see http://tug.ctan.org/macros/latex/base/latexsym.dtx). Relatedly, \usepackage{eucal} to change the mathcal font and \usepackage[mathscr]{eucal} (apparently equivalent to \usepackage[mathscr]{euscript}) to supplement \mathcal with \mathscr. This last option is not very useful as both fonts are similar, and the intent of the authors of eucal was to provide a replacement to mathcal (see doc euscript). Also provides \mathfrak for supplementary letters.
@@ -167,16 +175,12 @@
 %“The \boldsymbol command is obtained preferably by using the bm package, which provides a newer, more powerful version than the one provided by the amsmath package. Generally speaking, it is ill-advised to apply \boldsymbol to more than one symbol at a time.” — AMS Short math guide. “If no bold font appears to be available for a particular symbol, \bm will use ‘poor man’s bold’” — bm. It is “best to load the package after any packages that define new symbol fonts” – bm. bm defines \boldsymbol as synonym to \bm. \boldmath accesses the correct font if it exists; it is used by \bm when appropriate. See https://tex.stackexchange.com/a/10643 and https://github.com/latex3/latex2e/issues/71 for some difficulties with \bm.
 	\usepackage{bm}
 	\nottoggle{LCpres}{
-	%https://ctan.org/pkg/amsmath recommends ntheorem, which supersedes amsthm, which corrects the spacing of proclamations and allows for theoremstyle. Option standard loads amssymb and latexsym. Must be loaded after amsmath (from ntheorem doc). From cleveref doc, “ntheorem is fully supported and even recommended”; says to load cleveref after ntheorem. When used with tikzposter, warns about size substitution for the lasy (latexsym) font when using \url, because ntheorem loads latexsym; relatedly (but not directly related to ntheorem), size substitution warning with the cmex font happens when loading amsmath and using \url. According to https://tex.stackexchange.com/q/535950, ntheorem “seems essentially unmaintaned and has severe problems”, but I use it anyway because it is very handy. Yields “! LaTeX Error: Something's wrong--perhaps a missing \item.” if some theorem follows thebibliography.
-		\usepackage[thmmarks, amsmath, standard, hyperref]{ntheorem}
-		%empheq doc says to do this after loading ntheorem
-		\usetagform{default}
-	%Provides \cref. Unfortunately, cref fails when the language is French and referring to a label whose name contains a colon (https://tex.stackexchange.com/q/83798). Use \cref{sec\string:intro} to work around this. cleveref should go “laster” than hyperref.
-		\usepackage{cleveref}
+	%Provides \cref. Unfortunately, cref fails when the language is French and referring to a label whose name contains a colon (https://tex.stackexchange.com/q/83798). Use \cref{sec\string:intro} to work around this. cleveref should go “laster” than hyperref.  Cleveref gets disabled in presentation mode as it do not seem to go well with Beamer, see https://github.com/josephwright/beamer/issues/750.
+		\usepackage[capitalise]{cleveref}
 	}{
 	}
 	\nottoggle{LCposter}{
-	%Equations get numbers iff they are referenced. Loading order should be “amsmath → hyperref → cleveref → autonum”, according to autonum doc. Use this in preference to the showonlyrefs option from mathtools, see https://tex.stackexchange.com/q/459918 and autonum doc. See https://tex.stackexchange.com/a/285953 for the etex line. Incompatible with my version of tikzposter (produces “! Improper \prevdepth”).
+	%Equations get numbers iff they are referenced. Loading order should be “amsmath → hyperref → cleveref → autonum”, according to autonum doc. Use this in preference to the showonlyrefs option from mathtools, see https://tex.stackexchange.com/q/459918 and autonum doc. See https://tex.stackexchange.com/a/285953 for the etex line. Incompatible with my version of tikzposter (produces “! Improper \prevdepth”). This removes the starred versions, such as equation*. Unfortunately, this prevents using \qedhere in an equation ending a proof, see https://tex.stackexchange.com/q/133358/.
 		\expandafter\def\csname ver@etex.sty\endcsname{3000/12/31}\let\globcount\newcount
 		\usepackage{autonum}
 	}{
@@ -206,6 +210,3 @@
 	\setcounter{tocdepth}{10}
 }{
 }
-
-%Do not use the displaymath environment: use equation. Do not use the eqnarray or eqnarray* environments: use align(*). This improves spacing. (See l2tabu or amsldoc.)
-
