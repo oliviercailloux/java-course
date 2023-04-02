@@ -11,7 +11,7 @@ See: https://github.com/oliviercailloux/java-course/raw/main/Contrat/Pr%C3%A9sen
 
 == Exercices
 . Implement a method `randomFail()` that throws an `IllegalStateException` with one chance on two. Call this method three times in a row from your main (without looping). Run your program until it fails. Determine how to find which of the three call raised the exception, just by looking at the stack trace.
-** Hint: if you are uncomfortable with generating random data in Java, you might want to check again the exercices in https://github.com/oliviercailloux/java-course/blob/main/Overview/README.adoc[Overview]
+** Hint: use `Math.random()`. (For a more object-oriented way of generating random data in Java, see the exercices in https://github.com/oliviercailloux/java-course/blob/main/Overview/README.adoc[Overview])
 . Implement a method that calls `randomFail()`, then, throws itself an `IllegalStateException` with one chance on two. Call this method repeatedly, in an infinite loop, from your main. Run your program. Determine how to find if the exception was raised in the `randomFail()` method or in the other one, just by looking at the method names on the stack trace. Click on the stack trace and observe the result.
 
 In the exercices below, comment at least one of the method you develop with proper Javadoc comments. Indicate what the method does, what parameter values are appropriate, which exceptions can be thrown.

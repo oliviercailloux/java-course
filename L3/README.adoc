@@ -15,6 +15,7 @@ The entry page of the Java course in L3.
 * Stéphane Airiau’s https://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/[course] (in French)
 * Java API https://docs.oracle.com/en/java/javase/17/docs[Javadoc]
 * https://github.com/oliviercailloux/Teaching/blob/main/README.adoc#take-notes[Take notes]!
+* The most important exercices are marked with [I]. Make sure you do not skip these ones.
 
 [[S1]]
 == S1: 8 March 2023
