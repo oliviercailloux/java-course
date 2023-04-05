@@ -53,7 +53,7 @@ This is stored in your Eclipse workspace, thus, if you change workspace, you nee
 To start a Java project, use `File` / `New` / `Java Project`, give it a name, then in the next page, uncheck `Create module-info.java file`. If you forgot to uncheck this, you should delete that file (we use the simpler class path mechanism in this course, see https://github.com/oliviercailloux/java-course/blob/main/Execution/README.adoc#modules[here] for references about the module path).
 
 == Train
-To train with graded exercices about Java, accept https://classroom.github.com/a/JvkchND3[this assignment], clone the resulting repository, modify the method `App#sayHello()`, and push your changes. Check that you see them online.
+To train with graded exercices about Java, accept https://classroom.github.com/a/JvkchND3[this assignment], clone the resulting repository, import it in Eclipse, modify the method `App#sayHello()`, run the code to check that it works, and push your changes. Check that you see them online.
 
 == More doc
 Read the following (a piece at a time), for a great increase to your productivity and pleasure of coding.
