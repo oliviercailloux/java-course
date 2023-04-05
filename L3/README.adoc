@@ -55,7 +55,7 @@ TODO @ home: Syntax, More exercices (up to EE3.6 included); Eclipse and Unit tes
 
 [[S5]]
 == S5: 5 April
-* Graded exercice about git: you will be asked to create commits and position branches.
+* Graded exercice about git: https://github.com/oliviercailloux/java-course/blob/main/Git/Git%20branching%203.adoc[branching].
 * Contract: exercices
 * https://github.com/oliviercailloux/java-course/blob/main/Objects%20%26%20interfaces/README.adoc[Objects & interfaces].
 * Interfaces. Exercice: I like to move it move it; Coffee

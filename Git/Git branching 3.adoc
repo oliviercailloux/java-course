@@ -3,9 +3,10 @@
 
 In this graded exercice, we’ll simulate that we create several branches (to try different approaches) and merge some of them.
 
-Deadline: 14h11. If you are late, the penalty increases linearly until 14h16.
+Deadline: 30 minutes after start.
+Late commits incur a linearly increasing penalty until 5 minutes after the deadline (at which point they bring 0 points).
 
-* Accept the graded exercice: https://classroom.github.com/a/BCWfgJNU[branching]
+* Accept the graded exercice: https://classroom.github.com/a/QW3aIJpD[branching]
 * Start with a first commit, that we will name `Start`, that contains a single file, `start.txt`, containing “A starting point”
 * Create the branches so as to end up as illustated in the figure below (<<Goal-br3>>). (You may have to create branches along the way, not necessarily now.)
 * Commit `A` adds a file named `first.txt` containing “Hello world”; its parent is `Start`.
