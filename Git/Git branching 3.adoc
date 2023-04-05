@@ -3,7 +3,7 @@
 
 In this graded exercice, we’ll simulate that we create several branches (to try different approaches) and merge some of them.
 
-Deadline: 30 minutes after start.
+Deadline: 14:15.
 Late commits incur a linearly increasing penalty until 5 minutes after the deadline (at which point they bring 0 points).
 
 * Accept the graded exercice: https://classroom.github.com/a/QW3aIJpD[branching]
