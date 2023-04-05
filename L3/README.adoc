@@ -63,7 +63,7 @@ TODO @ home: Contract EE4.3 and 4.4.
 
 [[S6]]
 == S6: 7 April
-* Graded exercice about syntax and contracts: accept https://classroom.github.com/a/Nx0aPoYm[strings], clone the repo locally, import into an IDE, add the required code, push your changes to the remote. Make sure the code compiles. You may not change the provided method headers. You may add new classes or anything else you want (and these additions will be available when auto-grading your code).
+* Graded exercice about syntax and contracts: accept https://classroom.github.com/a/Nx0aPoYm[strings], clone the repo locally, import into an IDE, add the required code, push your changes to the remote. Make sure the code compiles. Use the provided unit tests to test your code. You may not change the provided method headers. You may add new classes or anything else you want (and these additions will be available when auto-grading your code).
 * Objects. Exercices up to 5.3, then Three dice.
 * Interfaces. Exercice: I like to move it move it; Coffee
 
