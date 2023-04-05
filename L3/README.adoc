@@ -64,7 +64,12 @@ TODO @ home: Contract EE4.3 and 4.4.
 [[S6]]
 == S6: 7 April
 * Graded exercice about syntax and contracts: you will be asked to clone a repository with Java classes and to write code to implement methods.
+* Objects. Exercices up to 5.3, then Three dice.
 * Interfaces. Exercice: I like to move it move it; Coffee
+
+[[S7]]
+== S7: 19 April
+* Graded exercice about objects and interfaces.
 * Polymorphism: inheritance
 * Exercices
 
