@@ -60,6 +60,8 @@ TODO @ home: Syntax, More exercices (up to EE3.6 included); Eclipse and Unit tes
 * https://github.com/oliviercailloux/java-course/blob/main/Objects%20%26%20interfaces/README.adoc[Objects & interfaces].
 * Interfaces. Exercice: I like to move it move it; Coffee
 
+TODO @ home: Contract EE4.3 and 4.4.
+
 [[S6]]
 == S6: 7 April
 * Graded exercice about syntax and contracts: you will be asked to clone a repository with Java classes and to write code to implement methods.
