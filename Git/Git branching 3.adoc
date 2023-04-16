@@ -12,9 +12,9 @@ Late commits incur a linearly increasing penalty until 5 minutes after the deadl
 * Commit `A` adds a file named `first.txt` containing “Hello world”; its parent is `Start`.
 * Commit `B` adds a file whose relative path is `a/some file.txt` containing “Hey”; its parent is `A`. Note the space in its name, and create the required intermediate folder.
 * Commit `C` adds a file named `first.txt` containing “Coucou monde”; its parent is `Start`.
-* Commit `D` is the result of merging `B` and `C` (after resolving the conflict). It keeps both the text “Hello world” AND the text “Coucou monde” (on the next line), thus, commit `D` contains a blob `first.txt` that contains two lines (in addition to the blob whose file name is `some file.txt` that has no change from `C` and the one named `start.txt`).
+* Commit `D` is the result of merging `B` and `C` (after resolving the conflict). It keeps both the text “Hello world” AND the text “Coucou monde” (on the next line), thus, commit `D` contains a blob `first.txt` that contains two lines (in addition to the blob whose file name is `some file.txt` that has no change from `B` and the one named `start.txt`).
 
-To recap, you must create four commits and three branches in total. The history should look like <<Goal-br3>> when you are done. Make sure your pointers are exactly as pictured, and that the branches are named as in the figure. (You may have more branches, and the only thing that matters with respect to branches is their final positions, not how they moved.)
+To recap, you must create five commits and three branches in total. The history should look like <<Goal-br3>> when you are done. Make sure your pointers are exactly as pictured, and that the branches are named as in the figure. (You may have more branches, and the only thing that matters with respect to branches is their final positions, not how they moved.)
 
 [[Goal-br3]]
 .Desired history at end of the exercice
