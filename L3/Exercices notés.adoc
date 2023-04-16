@@ -8,7 +8,7 @@ Si vous souhaitez une nouvelle chance, vous pouvez plaider votre cause (par e-ma
 Voici la procédure à suivre pour bénéficier d’une nouvelle correction si je vous y autorise.
 
 Poussez sur le dépôt GitHub de l’exercice un ou plusieurs nouveaux commits qui corrigent votre rendu. Dans l’exemple précédent, il s’agirait sans-doute de fusionner une branche vers une autre, ou de corriger la faute de frappe.
-*Laissez* les références de branches originales sur leurs positions originales, et *ajoutez* une nouvelle branche, `second-chance`, pointant vers l’état que la nouvelle correction doit considérer.
+*Laissez* les références de branches originales sur leurs positions originales, et *ajoutez* une nouvelle branche (nommée comme vous voulez), pointant vers l’état que la nouvelle correction doit considérer.
 
 Vous devriez minimiser les changements par rapport au code remis initialement, en fonction de l’accord obtenu entre nous. Ainsi, dans l’exemple donné ci-dessus, vous devez vous en tenir à la fusion de branche ou à la correction de la faute de frappe.
 Envoyez-moi un e-mail m’indiquant que vous avez procédé au push, en indiquant précisément ce que vous avez changé par rapport à l’état qui a été corrigé précédemment, et en indiquant un lien vers une https://docs.github.com/en/github/committing-changes-to-your-project/comparing-commits[différence sur GitHub] entre ces deux branches.
@@ -22,3 +22,7 @@ Si vous avez raison, vous ne devez pas suivre la procédure ci-dessus : je corri
 
 // == Suivi des instructions
 // Comme d’habitude, si une de ces instructions n’est pas claire ou ne vous semble pas applicable, je vous prie de m’en faire part. Si vous n’indiquez rien, je supposerai que vous n’avez pas bien lu les instructions, et vous renverrai à ce document.
+
+[[Collective]]
+== Procédure en cas d’octroi à toute la classe d’une nouvelle chance
+La procédure est comme ci-dessus (« Nouvelle chance ») à l’exception du premier paragraphe, puisqu’il n’est pas utile de m’écrire si vous avez déjà obtenu (collectivement) le droit à une nouvelle tentative.
