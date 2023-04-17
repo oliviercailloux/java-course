@@ -1,69 +1,82 @@
-= Projets : Instructions générales
+= Projets : démarrage
 
-== Démarrage d’une itération
+== Choix
+Formez des équipes de 3 à 6 personnes.
 
-=== Rôles
-* Une équipe de _n_ personnes est constituée de _n/2_ sous-équipes, arrondi au-dessus
-** une des sous-équipe est particulière. Elle est constituée de une (si _n_ est impair) ou deux (si _n_ est pair) personnes, appelées les Scrum Master / Product Owner. Cette sous-équipe est désignée ci-après par le terme « les SM/PO », même quand une seule personne la constitue
-** les autres sous-équipes sont constituées de binômes d’architectes développeuses et architectes développeurs (« binôme », ci-après)
-* Les sous-équipes doivent changer à chaque itération ; le rôle de SM/PO doit être réparti égalitairement
+Projet conceptuellement le plus simple : https://github.com/oliviercailloux/java-course/blob/main/L3/7%20wonders.adoc[7 wonders].
 
-=== Responsabilités
-* SM/PO : planifient avec leur équipe les tâches à délivrer et le respect des instructions de livraison ; réorientent les tâches en cas de problème de prérequis ; vérifient la qualité des rendus, entre autres, en relisant les propositions avant soumission ; fusionnent les tâches approuvées en début d’itération et vérifient que le projet fonctionne toujours après fusion ; sont responsables de la cohérence du tout
-* Un binôme travaille sur une ou plusieurs tâches dans une itération. Une tâche peut consister à compléter une tâche précédente (ajout de tests unitaires, correction bugs, …).
+Plus difficile. Choisissez un projet ci-dessous parmi J-Voting ou https://github.com/oliviercailloux/Assisted-Board-Games[Assisted Board Games], ou un autre de la liste si vous me convainquez.
+En regardant les projets ci-dessous, parcourez rapidement la description globale ou la documentation pour comprendre le contexte (mais ne vous focalisez pas sur les détails), et voyez le fichier TODO.adoc pour vous faire une idée approximative des tâches auxquelles vous serez confrontés. Les énoncés sont parfois très vagues, ne vous en inquiétez pas : ils seront peaufinés au fur et à mesure de l’année, en fonction du rythme d’avancement et de vos intérêts.
+En outre, il y a, pour chacun de ces projets, bien plus de choses qui peuvent être faites que vous ne pourrez faire en un an. N’imaginez pas arriver au bout, voyez plutôt votre travail comme une contribution à un édifice en cours de construction.
 
-=== Plan
-* Commencez l’itération en choisissant son contenu, parmi les tâches à effectuer. Vous pouvez proposer des changements ou discuter de leurs priorités avec votre client. Conseil : une découpe en tâches très élémentaires simplifiera grandement votre travail, surtout au début.
-* Répartissez les tâches choisies parmis les binômes. Réfléchissez à un calendrier pour éviter de coincer les sous-équipes qui dépendent des autres et à un plan de repli. C’est la responsabilité principale, mais pas exclusive, des SM/PO.
-* Une mission importante de l’équipe est de s’assurer que le projet converge vers un ensemble cohérent de fonctionnalités exploitables et maintenables dans la branche `main`. Tentez d’améliorer en priorité les tâches à preaufiner, par exemple, avant de commencer de nouvelles choses.
+* https://github.com/oliviercailloux/J-Voting[J-Voting]
+* https://github.com/oliviercailloux/Assisted-Board-Games[Assisted Board Games]
 
-== Instructions de livraison
-Chaque itération se conclut par une livraison.
+* https://github.com/oliviercailloux/2D-Library[2D Library]
+* https://github.com/oliviercailloux/Apartments[Apartments]
+* https://github.com/oliviercailloux/J-Confs[J-Confs]
+* https://github.com/oliviercailloux/MIDO-SVG[MIDO SVG]
+* https://github.com/oliviercailloux/Teach-spreadsheets[Teach spreadsheets]
+* https://github.com/oliviercailloux/projets/blob/master/J-XMCDA.adoc[J-XMCDA]
 
-Dates de livraison précisées dans le programme du cours. https://www.wolframalpha.com/input/?i=Plot%5BPiecewise%5B%7B%7B-1%2F2*x,x%3C+2%7D,%7B-2%2F22*(x-2)-1,+2%3C%3D+x+%3C+24%7D,%7B-1%2F24*x-2,+24%3C%3D+x%7D%7D%5D,+%7Bx,+0,+72%7D%5D[Non respect] des dates : −0.5/20 pour 2h de retard, −3 (en tout) pour 24h de retard puis −1 par jour supplémentaire.
+Les énoncés contiennent _beaucoup_ plus de propositions que ce que vous serez capables d’implémenter cette année. Placez l’emphase sur ce qui vous intéresse.
 
-* Codez et documentez en anglais (ENG).
-* Interdiction de commettre sur votre branche `main` sans mon aval. À part ça, organisation interne libre. Suggestion : une branche par tâche, et demandez-moi une review assez tôt si vous voulez fusionner en avance en cas de liens de prérequis (https://fr.wikipedia.org/wiki/Int%C3%A9gration_continue[intégration continue]).
-* Créez une https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests[pull request] (PR) GitHub pour chaque tâche, dont le nom décrit succinctement la tâche (exemple : « unit-tests-Truc »), d’une de vos branches vers _votre_ branche `main`.
-** https://help.github.com/en/github/managing-your-work-on-github/assigning-issues-and-pull-requests-to-other-github-users[Affectez] la PR aux membres de la sous-équipe responsable de la tâche. Si un membre d’un binôme n’a pas contribué, indiquez-le en affectant un seul membre, j’en tiendrai compte dans mon évaluation (le travail de qualité est plus difficile seul).
-** Affectez votre PR à une https://help.github.com/en/github/managing-your-work-on-github/about-milestones[milestone] « Itération x UML » ou « Itération x Java », avec x = 1 si c’est la première itération, et ainsi de suite. (Respectez l’orthographe précise SVP, sinon mes liens ne fonctionnent pas.)
-** M’ajouter comme Reviewer pour que je sois averti, _uniquement si vous êtes effectivement prêts pour une review_, c-à-d entre autres si la tâche n’a pas de pré-requis à reviewer et fusionner avant, et les auteurs et les SM/PO jugent le rendu de bonne qualité.
-** Les changements visibles dans une PR doivent être tous en rapport avec votre tâche, elle-même focalisée sur un sujet bien défini (FOCUS).
-** [[NICE]] Vous remettez un projet, pas un brouillon mal torché. Imaginez que c’est un rendu à un client. Soignez-le. Votre code, vos documents doivent être propres, https://github.com/oliviercailloux/java-course/blob/main/Style/Code.adoc[bien formatés], vous devez prendre en compte d’éventuelles indications d’erreurs de vos outils (Eclipse, GitHub, …), etc. Faites tout ça _avant_ de m’indiquer comme reviewer sur une PR. (NO DRAFT)
-* Je commente votre tâche pour indiquer les améliorations à effectuer et je vous indique si vous pouvez fusionner en l’état (https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-request-reviews#about-pull-request-reviews[`Request changes` VS `Approve`]).
-** Tant que l’itération est en cours, vous pouvez (et vous devriez, si vos collègues attendent votre tâche) modifier directement sans attendre la prochaine livraison. Dans ce cas, effectuez des commits sur la branche de votre tâche (car vous pouvez compléter une PR après sa création en ajoutant des commit dans la branche associée), commentez, et https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-request-reviews#re-requesting-a-review[re-demandez-moi une review] pour que je sois averti quand vous êtes prêts pour une nouvelle review. 
-** Ne réécrivez jamais l’historique dans `main`, il doit uniquement s’enrichir.
-* [[FOLLOW-UP]] Une tâche est effectuée en une seule itération. Une fois notée, cette tâche doit être considérée comme définitivement terminée (cela permet de s’y retrouver dans les notes). Fermez SVP les PRs correspondantes, pour qu’on voie directement ce qui concerne l’itération en cours. (CLOSE)
-* Enrichissez le document listant les tâches à faire avec des liens vers mes commentaires sur les PRs pour indiquer ce qu’il faut améliorer. Ces améliorations constituent de nouvelles tâches, même si elles poursuivent une tâche d’une livraison précédente.
-* Lorsque vous créez une PR correspondant à une tâche améliorant une PR précédente, indiquez en commentaire que la tâche fait suite à la PR #x, en respectant précisément cette syntaxe pour la liaison automatique de GitHub, et commentez en indiquant ce que vous avez changé par rapport à la version précédente, pour que je retrouve les discussions passées. (FOLLOW-UP)
+== Instructions
+Vous êtes encouragés à travailler par paire (pair programming). Mais vous devez être seul responsable de certaines classes et éventuellement aspects du logiciel final, dans une proportion correspondant à une répartition raisonnablement équitable du travail.
 
-== Communication
-* [[MENTION]] Évitez de me mentionner (`@oliviercailloux`) dans vos PR sur GitHub SVP : cela a pour effet de me noyer de notifications (que GitHub ne permet pas de désactiver facilement), or, je ne peux pas m’investir dans des discussions du tac-au-tac pour chaque groupe d’étudiants que je suis. Re-demandez plutôt une review quand vous êtes prêts, après avoir répondu à autant de points que possibles : je regarderai toutes vos réponses en même temps.
-* Maintenez les conversations focalisées. Ce n’est pas une bonne idée, par exemple, d’indiquer dans un commentaire de la PR #37 que vous avez décidé de changer la PR #22 pour telle et telle raison : quand j’évaluerai la PR #22 par la suite, il est peu probable que je me souvienne de vos explications se trouvant en PR #37.
-* Si vous souhaitez discuter de mon évaluation, ou préciser qqch. au sujet d’une tâche passée, de même que ci-dessus : commentez dans la PR correspondante, et https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-request-reviews#re-requesting-a-review[re-demandez-moi une review] pour que je sois averti de l’existence de nouveaux commentaires.
-* N’hésitez pas à m’écrire si vous êtes bloqués, n’attendez pas d’avoir perdu plusieurs heures. Cependant, je vous demande de faire l’effort de poser des questions raisonnablement claires et complètes, et de m’indiquer ce que vous avez essayé et votre analyse de la situation. Voyez ces https://codeblog.jonskeet.uk/2012/11/24/stack-overflow-question-checklist/[directives] pour vous inspirer. Si votre question peut intéresser les autres membres du groupe ou qu’il est utile de conserver la discussion pour référence future, créez une issue sur votre projet GitHub où vous décrivez votre problème et demandez-moi (par e-mail par exemple) d’y répondre en me donnant le lien. (ISSUE)
-* Envoyez-moi un e-mail sans délai si vous n’avez pas de nouvelles de moi après 48h alors que vous attendez une réaction de ma part. Il est possible qu’une notification de GitHub m’ait échappé.
-* Pour ce qui concerne la communication entre nous (PRs, README, e-mails), vous pouvez communiquer en français. Utilisez exclusivement l’anglais pour la documentation et le code de votre projet, de façon à ce qu’il soit accessible à une audience internationale.
+Vous procéderez à trois livraisons, à la manière agile. Chacune doit fournir un produit utilisable, qui « fait quelque chose ». Vous êtes encouragés à me montrer votre avancement au fur et à mesure des séances.
 
-Lorsque j’utilise des abréviations (termes en majuscules), elles font référence aux documents donnant les consignes pour le projet, tels que celui-ci, ou aux « bonnes pratiques » quand l’abréviation commence par BP (voir document correspondant dans le chapitre correspondant du cours, par exemple https://github.com/oliviercailloux/java-course/blob/main/Git/Best%20practices.adoc[BP Git]).
+. Livraison 1 : fin du dimanche 14 mai
+. Livraison 2 : fin du dimanche 4 juin
+. Livraison 3 : fin du dimanche 25 juin
 
-J’indique (OPT) lorsque mon commentaire a pour but principal de vous indiquer comment vous auriez pu faire mieux. (Il s’agit généralement d’une erreur mineure ou d’une amélioration possible, parfois subjective, de la clarté du code.) Vous êtes invités à modifier si cela ne vous retarde pas outre-mesure, ou vous pouvez l’indiquer comme partie d’une nouvelle tâche, ou simplement laisser tomber si vous trouvez que c’est un détail peu intéressant.
+Chaque livraison doit s’accompagner d’une documentation compacte (c-à-d succincte et éclairante) expliquant la structure et le fonctionnement de votre logiciel et vos contributions. La structure est décrite typiquement via un ou plusieurs diagrammes de classe (qui peuvent être dessinés à la main puis scannés), et éventuellement de diagrammes de séquence. Vos contributions sont indiquées sous forme d’une liste de responsabilités.
 
-Ces instructions de remise précises me permettent de faciliter mon suivi. 
-La correction détaillée de chaque rendu de chaque binôme est, je pense, d’un intérêt significatif pour l’apprentissage, mais est extrêmement chronophage et n’est raisonnable qu’à condition que les étudiants jouent le jeu en essayant sincèrement de suivre les instructions de remise.
-Certaines de ces instructions peuvent paraitre relever du détail. Au contraire, leur respect est souvent nécessaire pour que mes outils partiellement automatisés fonctionnent.
-C’est pourquoi je me permets d’insister pour que vous relisiez attentivement les instructions ici présentes lorsque la réponse à certaines de vos questions me semblent y figurer.
+Vos notes seront individuelles et reflèteront vos contributions telles qu’indiquées dans les responsabilités.
+Je jugerai entre autres des aspects suivants, selon ce qui est applicable.
 
-// Même si le manquement semble parfois relever du détail sans importance aux étudiants, j’insiste sur la lecture des instructions car elle permet une probable meilleure communication pour le reste de l’année, et pour traiter les étudiants égalitairement. Dans ce cas, je vous répondrai comme suit. _Je me permets de vous renvoyer à la lecture des instructions de remise et de communication, et en particulier le paragraphe (COMPLIANCE). Dites-moi SVP si qqch. n’est pas clair. Merci pour votre compréhension._ (Compliance)
+* Correspondance de la doc avec le code (complétude, compacité)
+* Découpe conceptuelle, contrat : clarté des interfaces, javadoc appropriée (non exigée partout).
+* Implémentation technique : algorithmes appropriés, code en anglais compréhensible, programmation défensive
+** Si vous modifiez du code existant, vous êtes responsable d’améliorer raisonnablement le code qui l’entoure là où c’est facile, de corriger les bugs évidents. Ne vous dédouanez pas d’erreurs évidentes sous prétexte que ce n’est pas vous qui avez écrit telle ligne de code.
+** Privilégier des collections (List, Set, etc.) plutôt que des tableaux de types primitifs. Cela simplifie généralement l’extension future, et clarifie le code.
+* Couverture de tests (non nécessairement unitaires), qui doivent couvrir seulement et effectivement les aspects non triviaux
+* Usage approprié de bibliothèques, POM Maven correct
+** Vous devez utiliser autant que possible les technologies vues au cours et les standards ISO, W3C et JSR Java dans votre projet (par exemple, JSON-B ou JSON-P et non Jackson).
+** Ne réinventez pas la roue ! Cela augmente votre base de code, donc rend la maintenance plus difficile. Réutilisez les bibliothèques existantes. Si le problème que vous souhaitez résoudre est raisonnablement commun, il existe sûrement une bibliothèque de bonne qualité prête à être réutilisée.
+* UML doc correct
 
-Vous pouvez bien sûr remettre en question certaines de ces consignes si elles vous semblent non pertinentes : la contestation est très différente de l’ignorance. Mais dans ce cas, je vous demande de me montrer que vous les avez lues en y faisant référence explicitement dans votre discussion avec moi et en m’expliquant pourquoi vous pensez qu’elles ne s’appliquent pas.
+La dernière séance (vendredi 23 juin) sera l’occasion d’une présentation de votre approche et logiciel à la classe. Un vote pour le meilleur logiciel s’ensuivra.
 
-== Évaluation
-* À la date de clôture de la livraison, j’évaluerai vos tâches effectuées durant toute l’itération. Je retarderai la date de livraison à la demande de l’équipe, mais cela induira une pénalité de retard sur tout le projet (cf. ci-dessus). 
-* Chaque binôme reçoit une note par livraison (agrégeant mon évaluation de l’ensemble de ses tâches durant cette itération). Les SM/PO reçoivent une note dépendant de la conduite de l’itération et du respect général des instructions de livraison. (Si une instruction n’est pas respectée par un binome mais que les SM/PO ont indiqué à temps un commentaire dans la PR demandant au binôme de corriger ce point, j’estimerai que les SM/PO ont fait leur travail correctement.)
-* Plus j’ai insisté sur des erreurs à éviter, plus la notation sera sévère si ces erreurs sont commises.
-* Il faut impérativement respecter les pré-requis. Si par exemple, suite à un problème d’organisation dans le groupe, vous livrez une tâche qui n’apporte encore rien parce qu’elle dépend d’un pré-requis qui n’a pas été livré, vous serez sanctionné, même si le retard sur le pré-requis n’est pas de votre faute. Exemple : développement d’un GUI alors que les fonctionnalités manquent. Le code livré doit fonctionner et je dois avoir les éléments en main pour comprendre son intérêt. (Des exceptions légitimes existent, à discuter au cas par cas avec moi au moment de l’élaboration de votre plan.)
-* L’évaluation tient compte particulièrement de la qualité du travail fourni (potentiel de réutilisabilité, facilité d’appropriation par d’autres développeurs, facilité de maintenance à long terme, clarté de la documentation), et en second lieu seulement de la quantité (bonus / malus si le travail accompli prendrait sensiblement plus / moins que le temps attendu pour cette itération si effectué par un étudiant attentif au cours et suivant les recommandations), et prend fortement en compte la difficulté de la tâche (technologies non vues au cours, …).
-* Le poids d’une note dépend de l’ampleur des éléments sur lesquels mon évaluation peut s’appuyer.
-* Note finale projet : moyenne pondérée de vos notes de livraison et de la présentation finale, avec un poids augmenté sur vos deux meilleures notes de livraison.
+Concrètement, vous livrerez en effectuant une PR d’une branche release-1 (ou 2, ou 3) que vous aurez créé vers votre branche `start` (en interne, sur votre dépôt de groupe uniquement).
 
+La branche `start` ne doit bouger qu’avec mon autorisation.
+
+Voici encore quelques instructions et conseils généraux.
+
+* Pensez à découper vos ajouts en tâches simples. Exemple : coder une classe pour enregistrer des commandes de produit, plutôt que coder un GUI qui permet de commander des produits.
+* [[SEP]] Je dois voir vos changements facilement et les distinguer de code auto-généré ou importé sans changements de votre part et de simples modifications de formatage. Si par exemple vous ajoutez un canevas HTML de 100 fichiers, ou si vous modifiez le formatage du code, faites-le dans une branche dédiée, et créez une autre branche pour vos modifications de contenu (SEP).
+* [[PLAGIAT]] Ne https://fr.wikipedia.org/wiki/Plagiat[plagiez] pas ! Lorsque vous intégrez du code d’autrui, il faut indiquer _clairement_ que le code n’est pas de vous, et sa provenance. Par exemple, mentionner dans le README de votre projet la provenance de votre template html. Ou, indiquer la provenance dans la javadoc d’une méthode copiée depuis StackOverflow. Cette règle ne s’applique pas si vous ne copiez que quelques lignes de code triviales.
+* L’usage de moteurs de langue (type Chat GPT) pour vous aider est autorisé. Attention, ces moteurs peuvent être très utiles mais sont aussi très forts pour vous https://www.youtube.com/watch?v=R2fjRbc9Sa0[induire en erreur]. Ne les croyez jamais sur parole.
+
+== Démarrage
+//Effectuez un fork du dépôt de base m’appartenant. Cela vous crée un dépôt personnel sur GitHub que vous utiliserez pour votre groupe et où vous pouvez organiser les contributions comme vous voulez. Faites-en un dépôt privé si vous 
+
+Une personne de votre groupe doit effectuer les étapes suivantes pour initialiser le projet.
+
+* Clonez le projet dont vous partez sur votre machine pour créer un dépôt local contenant l’historique actuel du projet.
+* Utilisez la commande `git remote` pour renommer le « remote » `origin` en `cailloux` sur votre dépôt local. Ignorez ces deux étapes si vous partez de zéro (projet 7 Wonders).
+* Acceptez https://classroom.github.com/g/kQjleEgF[cette mission], choisissez un nom d’équipe. Cela crée un nouveau « remote » pour votre projet.
+* Ajoutez le nouveau « remote » que vous venez de créer à votre dépôt local, nommez-le `origin` (cf. instructions de GitHub, utilisez `git remote add origin` etc.).
+* M’ajouter comme collaborateur à votre projet pour pouvoir m’indiquer comme https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-request-reviews[Reviewer] lors de vos itérations.
+* Créez une branche `start` qui pointe vers l’état de départ de votre projet et une branche `release-1` qui contiendra à terme vos contributions.
+
+Chaque membre doit ensuite faire ceci.
+
+* Cloner le projet ainsi créé sur sa machine locale
+* Accepter la même mission ci-dessus et rejoindre la même équipe (pour devenir admin du projet et donc avoir accès en écriture)
+
+Prenez le temps de réfléchir ensemble globalement au projet et tracez les grandes lignes de votre ambition à la fin de l’année. 
+Placez l’emphase en fonction de vos intérêts (plutôt GUI, plutôt manipulation de fichiers, plutôt web, …).
+Ceci est utile pour construire un sens commun de votre objectif global.
+Inutile d’élaborer un plan détaillé ! 

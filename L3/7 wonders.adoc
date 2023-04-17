@@ -1,0 +1,16 @@
+= 7 wonders
+
+Ce projet propose d’implémenter le jeu 7 wonders.
+
+== Liens utiles
+* https://en.wikipedia.org/wiki/7_Wonders_(board_game)[Présentation]
+* https://boardgamearena.com/gamepanel?game=sevenwonders[Y jouer]
+* https://boardgamegeek.com/boardgame/68448/7-wonders[Plus d’info]
+
+== Livraisons
+. Jouer en ligne de commande à une version (très) simplifiée du jeu
+. Consolider, jouer à une version moins simplifiée
+. Interface graphique sommaire en Java FX
+
+Vous êtes encouragés à simplifier en négligeant certaines règles, en réduisant la diversité des cartes, en considérant seulement deux joueurs, etc.
+
