@@ -69,7 +69,7 @@ TODO @ home: Contract EE4.3 and 4.4.
 
 [[S7]]
 == S7: 19 April
-* Graded exercice about objects and interfaces.
+* Graded exercice about objects and interfaces. The Coffee exercice is good training for it.
 * Polymorphism: inheritance
 * Exercices
 
