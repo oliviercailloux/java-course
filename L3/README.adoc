@@ -69,7 +69,7 @@ TODO @ home: Contract EE4.3 and 4.4.
 
 [[S7]]
 == S7: 19 April
-* Graded exercice about objects and interfaces: https://classroom.github.com/a/O_Hb-4UL[car]. Implement all three classes. 45 minutes, plus 10 minutes with penalty, increasing slowly at first. If you finish early, you must push a branch “end” at your last commit before exitting the room.
+* Graded exercice about objects and interfaces: https://classroom.github.com/a/O_Hb-4UL[car]. Implement all three classes. Deadline: 14h31, plus 10 minutes with penalty, increasing slowly at first. If you finish early, you must push a branch “end” at your last commit before exitting the room.
 * Correct your own exercice with help of teammates.
 * Polymorphism: inheritance
 * Exercices: extend SimpleCar with one that remembers its first three moves. 421.
