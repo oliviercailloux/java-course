@@ -73,16 +73,19 @@ TODO @ home: Contract EE4.3 and 4.4.
 * Correct your own exercice with help of teammates.
 * Polymorphism: inheritance
 * Exercices: extend SimpleCar with one that remembers its first three moves. 421.
-* https://github.com/oliviercailloux/java-course/blob/main/L3/Projets%20-%20D%C3%A9marrage.adoc[Projects]
+* https://github.com/oliviercailloux/java-course/blob/main/L3/Projets%20-%20D%C3%A9marrage.adoc[Projects]: 40 to 60% of the final grade
 
 TODO @ home: you _may_ try again the strings graded exercice. Follow the instructions https://github.com/oliviercailloux/java-course/blob/main/L3/Exercices%20not%C3%A9s.adoc#Collective[here] if you wish to try to improve your grade. Your new aggregated grade will be composed of the original one, with a weight of 30% to 80%, and the new (second chance) one, with the weight _depending on the number of lines that you changed_. Deadline: end of Sunday 23 April (linear penalty up to 100% after 30 minutes lateness).
 
-== Overview
+[[S8]]
+== S8: 21 April
 * The `Object` class and its methods: `toString()`, `equals`, `hashcode`. Exercice: Car string
 * https://github.com/oliviercailloux/java-course/blob/main/Contrat/Exceptions.adoc[Exceptions].
 * https://github.com/oliviercailloux/java-course/blob/main/Maven/README.adoc[Maven]
 * https://github.com/oliviercailloux/java-course/blob/main/Syntax/README.adoc#varargs[Varargs]
 * Optionals; give guarantees: https://github.com/oliviercailloux/java-course/blob/main/Style/Null.adoc[Protect against null references]
+
+== Overview
 * https://github.com/oliviercailloux/java-course/blob/main/Collections/README.adoc[Collections]
 * Unit testing exercice about iterators
 * Primitive types (autoboxing)
