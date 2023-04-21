@@ -46,12 +46,6 @@ Clone https://github.com/oliviercailloux/coffee/[this repository]. Implement the
 * `dripMachine.getTimeForCoffee(10.2d)` should throw an instance of `IllegalArgumentException` [Time throws]
 ====
 
-== Exercice: Car extension
-Assume you have a `SimpleCar` class that implements the interface https://github.com/oliviercailloux-org/car[`Car`] in the simplest possible way.
-Create a `MemorizerCar` that can be used as follows: after calling several times `drive`, the user can query what the positions of the car was after its first move, second move, and third move (in supplement to be able to query its current position). Here position means total travel.
-
-Do it first by modifying some variables from `SimpleCar` from `private` to `protected`. Then do it while keeping every variables in `SimpleCar` `private`. Do it without implementing again the logic that computes the new position when driving for some time (assume that this algorithm is very complex and you do not want to duplicate it).
-
 == Exercice: 421
 Clone https://github.com/oliviercailloux-org/sample-g421[this repository]. Implement the interface `Game421`. You may name the class as you like. Do not change the `Game421` or `DiceRoller` interfaces.
 
@@ -63,6 +57,12 @@ Provide a non random `DiceRoller`.
 See: https://github.com/oliviercailloux/java-course/blob/main/Syntax/Inheritance.adoc[Inheritance], or read https://math.hws.edu/javanotes/contents-with-subsections.html[ES5.5] to 5.8
 
 Remember that Interfaces may _extend_ other interfaces; classes may _implement_ interfaces and _extend_ other classes
+
+== Exercice: Car extension
+Assume you have a `SimpleCar` class that implements the interface https://github.com/oliviercailloux-org/car[`Car`] in the simplest possible way.
+Create a `MemorizerCar` that can be used as follows: after calling several times `drive`, the user can query what the positions of the car was after its first move, second move, and third move (in supplement to be able to query its current position). Here position means total travel.
+
+Do it first by modifying some variables from `SimpleCar` from `private` to `protected`. Then do it while keeping every variables in `SimpleCar` `private`. Do it without implementing again the logic that computes the new position when driving for some time (assume that this algorithm is very complex and you do not want to duplicate it).
 
 == Exercice: Car string
 Create an object `Car extends Object` that does not override `toString()`, call its `toString()` method, explain what happens. Override `toString()` in your class `Car`, call the `toString()` method, explain what happens. Consider the following code: `Object car = new Car(); car.toString()`. Will the method be the one declared in `Object` or in `Car`, and why? What changes if we instead write `Car car = new Car(); …`?
