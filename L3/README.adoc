@@ -81,16 +81,19 @@ TODO @ home: you _may_ try again the strings graded exercice. Follow the instruc
 == S8: 21 April
 * Polymorphism: SimpleCar, 421. (Still: https://github.com/oliviercailloux/java-course/blob/main/Objects%20%26%20interfaces/README.adoc[objects & interfaces].)
 * The `Object` class and its methods: `toString()`, `equals`, `hashcode`. Exercice: Car string
-* https://github.com/oliviercailloux/java-course/blob/main/Contrat/Exceptions.adoc[Exceptions].
-* https://github.com/oliviercailloux/java-course/blob/main/Maven/README.adoc[Maven]
-* https://github.com/oliviercailloux/java-course/blob/main/Syntax/README.adoc#varargs[Varargs]
-* Optionals; give guarantees: https://github.com/oliviercailloux/java-course/blob/main/Style/Null.adoc[Protect against null references]
 
 TODO @ home: Project structure and start.
 
 [[S9]]
 == S9: 10 May
 * Reviews project start
+* https://github.com/oliviercailloux/java-course/blob/main/Contrat/Exceptions.adoc[Exceptions].
+* https://github.com/oliviercailloux/java-course/blob/main/Maven/README.adoc[Maven]
+* https://github.com/oliviercailloux/java-course/blob/main/Syntax/README.adoc#varargs[Varargs]
+* Optionals; give guarantees: https://github.com/oliviercailloux/java-course/blob/main/Style/Null.adoc[Protect against null references]
+
+[[S10]]
+== S10: 12 May
 * https://github.com/oliviercailloux/java-course/blob/main/Collections/README.adoc[Collections]
 
 == Overview
