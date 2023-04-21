@@ -59,8 +59,9 @@ See: https://github.com/oliviercailloux/java-course/blob/main/Syntax/Inheritance
 Remember that Interfaces may _extend_ other interfaces; classes may _implement_ interfaces and _extend_ other classes
 
 == Exercice: Car extension
-Assume you have a `SimpleCar` class that implements the interface https://github.com/oliviercailloux-org/car[`Car`] in the simplest possible way.
-Create a `MemorizerCar` that can be used as follows: after calling several times `drive`, the user can query what the positions of the car was after its first move, second move, and third move (in supplement to be able to query its current position). Here position means total travel.
+Assume you have a `SimpleCar` class that implements the interface https://github.com/oliviercailloux-org/car/blob/user/src/main/java/io/github/oliviercailloux/exercices/car/Car.java[`Car`] in the simplest possible way.
+Create a `MemorizerCar` that can be used as follows: after calling several times `drive`, the user can query what the positions of the car was after its first move, second move, and third move (in supplement to be able to query its current position). Here position means total traveled distance.
+See https://github.com/oliviercailloux-org/car/blob/user/src/main/java/io/github/oliviercailloux/exercices/car/user/CarUser.java[`CarUser`] for an example of use of your class to be built.
 
 Do it first by modifying some variables from `SimpleCar` from `private` to `protected`. Then do it while keeping every variables in `SimpleCar` `private`. Do it without implementing again the logic that computes the new position when driving for some time (assume that this algorithm is very complex and you do not want to duplicate it).
 
