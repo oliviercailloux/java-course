@@ -64,10 +64,13 @@ Voici encore quelques instructions et conseils généraux.
 
 Une personne de votre groupe doit effectuer les étapes suivantes pour initialiser le projet.
 
-* Clonez le projet dont vous partez sur votre machine pour créer un dépôt local contenant l’historique actuel du projet.
-* Utilisez la commande `git remote` pour renommer le « remote » `origin` en `cailloux` sur votre dépôt local. Ignorez ces deux étapes si vous partez de zéro (projet 7 Wonders).
 * Acceptez https://classroom.github.com/g/kQjleEgF[cette mission], choisissez un nom d’équipe. Cela crée un nouveau « remote » pour votre projet.
-* Ajoutez le nouveau « remote » que vous venez de créer à votre dépôt local, nommez-le `origin` (cf. instructions de GitHub, utilisez `git remote add origin` etc.).
+* Si vous partez d’un project existant (projet ≠ 7 Wonders) :
+** Clonez le projet dont vous partez sur votre machine pour créer un dépôt local contenant l’historique actuel du projet.
+** Utilisez la commande `git remote` pour renommer le « remote » `origin` en `cailloux` sur votre dépôt local.
+** Ajoutez le nouveau « remote » que vous venez de créer à votre dépôt local, nommez-le `origin` (cf. instructions de GitHub, utilisez `git remote add origin` etc.).
+* Si vous partez de zéro (projet 7 Wonders) :
+** Clonez le remote localement, effectuez un push initial (un fichier suffit)
 * M’ajouter comme collaborateur à votre projet pour pouvoir m’indiquer comme https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-request-reviews[Reviewer] lors de vos itérations.
 * Créez une branche `start` qui pointe vers l’état de départ de votre projet et une branche `release-1` qui contiendra à terme vos contributions.
 
