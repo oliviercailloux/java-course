@@ -46,6 +46,12 @@ Clone https://github.com/oliviercailloux/coffee/[this repository]. Implement the
 * `dripMachine.getTimeForCoffee(10.2d)` should throw an instance of `IllegalArgumentException` [Time throws]
 ====
 
+== Exercice: Car extension
+Assume you have a `SimpleCar` class that implements the interface https://github.com/oliviercailloux-org/car[`Car`] in the simplest possible way.
+Create a `MemorizerCar` that can be used as follows: after calling several times `drive`, the user can query what the positions of the car was after its first move, second move, and third move (in supplement to be able to query its current position). Here position means total travel.
+
+Do it first by modifying some variables from `SimpleCar` from `private` to `protected`. Then do it while keeping every variables in `SimpleCar` `private`. Do it without implementing again the logic that computes the new position when driving for some time (assume that this algorithm is very complex and you do not want to duplicate it).
+
 == Exercice: 421
 Clone https://github.com/oliviercailloux-org/sample-g421[this repository]. Implement the interface `Game421`. You may name the class as you like. Do not change the `Game421` or `DiceRoller` interfaces.
 

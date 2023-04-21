@@ -79,14 +79,21 @@ TODO @ home: you _may_ try again the strings graded exercice. Follow the instruc
 
 [[S8]]
 == S8: 21 April
+* Polymorphism: SimpleCar, 421.
 * The `Object` class and its methods: `toString()`, `equals`, `hashcode`. Exercice: Car string
 * https://github.com/oliviercailloux/java-course/blob/main/Contrat/Exceptions.adoc[Exceptions].
 * https://github.com/oliviercailloux/java-course/blob/main/Maven/README.adoc[Maven]
 * https://github.com/oliviercailloux/java-course/blob/main/Syntax/README.adoc#varargs[Varargs]
 * Optionals; give guarantees: https://github.com/oliviercailloux/java-course/blob/main/Style/Null.adoc[Protect against null references]
 
-== Overview
+TODO @ home: Project structure and start.
+
+[[S9]]
+== S9: 10 May
+* Reviews project start
 * https://github.com/oliviercailloux/java-course/blob/main/Collections/README.adoc[Collections]
+
+== Overview
 * Unit testing exercice about iterators
 * Primitive types (autoboxing)
 * Files and https://github.com/oliviercailloux/java-course/blob/main/Flows.adoc[flows]
