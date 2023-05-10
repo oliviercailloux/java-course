@@ -1,6 +1,6 @@
 = Exceptions
 
-See: http://journals.ecs.soton.ac.uk/java/tutorial/java/exceptions/throwable.html[hierarchy].
+See: https://rollbar.com/blog/java-exceptions-hierarchy-explained/#[hierarchy].
 
 Here are a few advices for dealing with various kinds of throwables.
 

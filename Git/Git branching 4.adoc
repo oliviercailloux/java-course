@@ -5,7 +5,7 @@ In this graded exercice, we’ll simulate that we create several branches (to tr
 
 Deadline: 14h05. If you are late, the penalty increases linearly until 14h10.
 
-* Accept the graded exercice: https://classroom.github.com/a/lV2GDdGT[branching bis]
+// * Accept the graded exercice: https://classroom.github.com/a/lV2GDdGT[branching bis]
 * Start with a first commit, that we will name `Start`, that contains a single file, `starting point.txt`, containing “A starting point”
 * Create the branches so as to end up as illustated in the figure below (<<Goal>>). (You may have to create branches along the way, not necessarily now.)
 * Commit `A` adds a file named `first file.txt` containing “Hello!”; its parent is `Start`.

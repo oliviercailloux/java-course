@@ -4,7 +4,7 @@ In this graded exercice, we’ll clone an existing non-trivial project and modif
 
 Deadline: 14h10. With penalty: 14h15.
 
-* Accept https://classroom.github.com/a/gwIn1Lfn[this assignment].
+// * Accept https://classroom.github.com/a/gwIn1Lfn[this assignment].
 This repository will be initialized with the content of an existing project.
 
 * Import the local project into Eclipse. In the project context menu, click `Configure / Convert to Maven Project` (if this option does not appear, the project is already recognized as a Maven Project and you do not need to do this).

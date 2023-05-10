@@ -4,7 +4,7 @@
 
 image::.github/Links%20check.svg["Links check status", link="https://github.com/oliviercailloux/java-course/blob/main/.github/Last%20results.json"]
 
-An open source Java course taught at https://dauphine.psl.eu/formations/masters/informatique/1ere-annee-de-master-sciences-numeriques-et-management-miage/programme[Dauphine].
+An open source Java course taught at https://dauphine.psl.eu/formations/masters/informatique/1re-annee-de-master-miage/programme[Dauphine].
 
 == L3
 The https://github.com/oliviercailloux/java-course/blob/main/L3/README.adoc[entry page] for the L3 course.
