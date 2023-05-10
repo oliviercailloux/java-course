@@ -87,8 +87,10 @@ TODO @ home: Project structure and start.
 [[S9]]
 == S9: 10 May
 * Reviews project start
-* https://github.com/oliviercailloux/java-course/blob/main/Contrat/Exceptions.adoc[Exceptions].
+* https://github.com/oliviercailloux/java-course/blob/main/Objects%20%26%20interfaces/README.adoc#checked-exceptions[Exceptions], exercices
+// * https://github.com/oliviercailloux/java-course/blob/main/Contrat/Exceptions.adoc[Exceptions].
 * https://github.com/oliviercailloux/java-course/blob/main/Maven/README.adoc[Maven]
+* Generics (see Objects & interfaces), exercice Generic pair
 * https://github.com/oliviercailloux/java-course/blob/main/Syntax/README.adoc#varargs[Varargs]
 * Optionals; give guarantees: https://github.com/oliviercailloux/java-course/blob/main/Style/Null.adoc[Protect against null references]
 
