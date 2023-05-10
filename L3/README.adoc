@@ -98,6 +98,11 @@ TODO @ home: Project structure and start.
 == S10: 12 May
 * https://github.com/oliviercailloux/java-course/blob/main/Collections/README.adoc[Collections]
 
+[[S11]]
+== S11: 24 May
+* Graded exercice about exceptions, maven, genericity, varargs, collections.
+* Maps
+
 == Overview
 * Unit testing exercice about iterators
 * Primitive types (autoboxing)
