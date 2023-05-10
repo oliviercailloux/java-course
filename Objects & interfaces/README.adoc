@@ -74,6 +74,16 @@ Exceptions, checked and unchecked: see this https://www.programcreek.com/2009/02
 . Program a method that draws a random number and throws a `IOException` with one chance on two. Observe that it compiles only if you declare this exception in the signature. Call this method from another method. Observe that the calling method also must declare the exception.
 . Change the exception to an `IllegalArgumentException`. Observe that you do not have to declare this in either method signature.
 
+. Program a method called `readOrder` that throws a `FileNotFoundException` with one chance on two. Give it an appropriate header.
+. Program a method called `writeOrder` that throws an `IOException` with one chance on two. Give it an appropriate header.
+. Program `order` that throws an `IllegalStateException` with one chance on three and (with the remaining two chances on three) calls `readOrder` then (if this succeeds) `writeOrder`. Think about your options about declaring exceptions. Which one is best?
+
+[%collapsible]
+====
+* You may declare between one and three exceptions on `order`
+* I’d say that the best choice is to declare only one.
+====
+
 == Supplementary exercices from the book
 
 * https://math.hws.edu/javanotes/c5/exercises.html[EE5.4] (use `Scanner` instead of `TextIO`), 5.5
