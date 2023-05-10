@@ -109,8 +109,8 @@ Diagram https://raw.githubusercontent.com/oliviercailloux/Simple-Papyrus-project
 == Exercice: Generic pair
 
 * Program a class `Pair` with generic types `L`, `R` (for Left and Right), that can store a pair of things, one of type `L` and one of type `R`. For example, a `Pair<Double, Integer>` instance can store a `Double` instance and an `Integer` instance.
-* Provide methods `getLeft()`, `getRight()`, that each return the appropriate type, and `setContents()`, that admits two parameters and that set the two elements of the pair.
-* Use your class in a `main` method that creates two `pairs`: one pair of `String` and `Integer` that holds your name and your age, and one pair of double initialized at random values drawn in [0, 1].
+* Provide methods `getLeft()`, `getRight()`, that each return the appropriate type, and `setContents()`, that admits two parameters and that sets the two elements of the pair.
+* Use your class in a `main` method that creates two `pairs`: one pair of `String` and `Integer` that holds your name and your age, and one pair of real values drawn randomly in [0, 1].
 * Add a static method `show` that admits any kind of pair as parameter and prints its content (by calling `toString()` on the left and then on the right content of the pair). Use `show` from your main for each of your instances of pair.
-* Modify the code so that calling `p.toString()`, when `p` is a pair of double and integer, returns a human readable string that describe its contents.
+* Modify the code so that calling `p.toString()`, when `p` is a pair of double and integer, returns a human readable string that describes its contents.
 * Finally, still from your `main`, create a pair that contains each of your instances of pairs, and give it as an argument to `show`.
