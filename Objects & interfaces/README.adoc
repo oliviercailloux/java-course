@@ -71,8 +71,12 @@ Create an object `Car extends Object` that does not override `toString()`, call 
 == Checked exceptions
 Exceptions, checked and unchecked: see this https://www.programcreek.com/2009/02/diagram-for-hierarchy-of-exception-classes/[diagram].
 
+Exercice about syntax
+
 . Program a method that draws a random number and throws a `IOException` with one chance on two. Observe that it compiles only if you declare this exception in the signature. Call this method from another method. Observe that the calling method also must declare the exception.
 . Change the exception to an `IllegalArgumentException`. Observe that you do not have to declare this in either method signature.
+
+Exercice about declaring exceptions
 
 . Program a method called `readOrder` that throws a `FileNotFoundException` with one chance on two. Give it an appropriate header.
 . Program a method called `writeOrder` that throws an `IOException` with one chance on two. Give it an appropriate header.
