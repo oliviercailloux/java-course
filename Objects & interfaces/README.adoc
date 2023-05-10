@@ -80,12 +80,12 @@ Exercice about declaring exceptions
 
 . Program a method called `readOrder` that throws a `FileNotFoundException` with one chance on two. Give it an appropriate header.
 . Program a method called `writeOrder` that throws an `IOException` with one chance on two. Give it an appropriate header.
-. Program `order` that throws an `IllegalStateException` with one chance on three and (with the remaining two chances on three) calls `readOrder` then (if this succeeds) `writeOrder`. Think about your options about declaring exceptions. Which one is best?
+. Program a method called `order` that throws an `IllegalStateException` with one chance on three and (with the remaining two chances on three) calls `readOrder` then (if this succeeds) `writeOrder`. Think about your options about declaring exceptions. Which one is best?
 
 .Answer
 [%collapsible]
 ====
-* You may declare between one and three exceptions on `order`
+* You may declare between one and three exceptions on `order` (which ones? Try it!)
 * I’d say that the best choice is to declare only one.
 ====
 
