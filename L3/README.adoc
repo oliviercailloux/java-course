@@ -95,18 +95,20 @@ TODO @ home: Project structure and start.
 [[S10]]
 == S10: 12 May
 * Exercices Generic pair, Exceptions, Maven
-* https://github.com/oliviercailloux/java-course/blob/main/Collections/README.adoc[Collections]: Iterator, Iterable, Collection, Set, List
-* Optionals; give guarantees: https://github.com/oliviercailloux/java-course/blob/main/Style/Null.adoc[Protect against null references]
+* https://github.com/oliviercailloux/java-course/blob/main/Collections/README.adoc[Collections]: Iterator, Iterable, Collection, Set, List; exercices “defining iterables” and “using collections” (especially EE10.1, 10.2)
+* Unit testing https://github.com/oliviercailloux/java-course/blob/main/JUnit/Exercice.adoc[exercice] about iterators
+
+TODO @ home: finish all those exercices
 
 [[S11]]
 == S11: 24 May
 * Graded exercice about exceptions, maven, genericity, varargs, collections.
+* Primitive types (autoboxing)
+* Optionals; give guarantees: https://github.com/oliviercailloux/java-course/blob/main/Style/Null.adoc[Protect against null references]
 * https://github.com/oliviercailloux/java-course/blob/main/Syntax/README.adoc#varargs[Varargs]
 * Maps
 
 == Overview
-* Unit testing exercice about iterators
-* Primitive types (autoboxing)
 * Files and https://github.com/oliviercailloux/java-course/blob/main/Flows.adoc[flows]
 * https://github.com/oliviercailloux/java-course/blob/main/Execution/Resources.adoc[Resources]
 * https://github.com/oliviercailloux/java-course/blob/main/Style/README.adoc[Favor static factory methods]
