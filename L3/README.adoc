@@ -95,13 +95,13 @@ TODO @ home: Project structure and start.
 [[S10]]
 == S10: 12 May
 * Exercices Generic pair, Exceptions, Maven
-* https://github.com/oliviercailloux/java-course/blob/main/Syntax/README.adoc#varargs[Varargs]
 * https://github.com/oliviercailloux/java-course/blob/main/Collections/README.adoc[Collections]: Iterator, Iterable, Collection, Set, List
 * Optionals; give guarantees: https://github.com/oliviercailloux/java-course/blob/main/Style/Null.adoc[Protect against null references]
 
 [[S11]]
 == S11: 24 May
 * Graded exercice about exceptions, maven, genericity, varargs, collections.
+* https://github.com/oliviercailloux/java-course/blob/main/Syntax/README.adoc#varargs[Varargs]
 * Maps
 
 == Overview
