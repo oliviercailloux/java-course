@@ -33,18 +33,24 @@ Vous procéderez à trois livraisons, à la manière agile. Chacune doit fournir
 Chaque livraison doit s’accompagner d’une documentation compacte (c-à-d succincte et éclairante) expliquant la structure et le fonctionnement de votre logiciel et vos contributions. La structure est décrite typiquement via un ou plusieurs diagrammes de classe (qui peuvent être dessinés à la main puis scannés), et éventuellement de diagrammes de séquence. Vos contributions sont indiquées sous forme d’une liste de responsabilités.
 
 Vos notes seront individuelles et reflèteront vos contributions telles qu’indiquées dans les responsabilités.
-Je jugerai entre autres des aspects suivants, selon ce qui est applicable.
+Je jugerai entre autres des aspects suivants, selon ce qui est applicable. Les intervalles de pondération sont approximatifs.
 
-* Correspondance de la doc avec le code (complétude, compacité)
-* Découpe conceptuelle, contrat : clarté des interfaces, javadoc appropriée (non exigée partout).
-* Implémentation technique : algorithmes appropriés, code en anglais compréhensible, programmation défensive
+* Découpe conceptuelle, contrat : clarté des interfaces, javadoc appropriée (non exigée partout) (jusqu’à 10/20)
+* Implémentation technique : algorithmes appropriés, code en anglais compréhensible, programmation défensive (jusqu’à 7/20)
 ** Si vous modifiez du code existant, vous êtes responsable d’améliorer raisonnablement le code qui l’entoure là où c’est facile, de corriger les bugs évidents. Ne vous dédouanez pas d’erreurs évidentes sous prétexte que ce n’est pas vous qui avez écrit telle ligne de code.
-** Privilégier des collections (List, Set, etc.) plutôt que des tableaux de types primitifs. Cela simplifie généralement l’extension future, et clarifie le code.
-* Couverture de tests (non nécessairement unitaires), qui doivent couvrir seulement et effectivement les aspects non triviaux
-* Usage approprié de bibliothèques, POM Maven correct
+** Privilégier des collections (List, Set, etc.) plutôt que des tableaux de types primitifs. Cela simplifie généralement l’extension future, et clarifie le code. Choisissez bien vos collections !
+* Java (jusqu’à 6/20)
+** Génériques appropriés
+** Interfaces appropriées
+** Usage des collections
+* Couverture de tests (non nécessairement unitaires), qui doivent couvrir seulement et effectivement les aspects non triviaux (jusqu’à −8/20 sinon)
+* Usage approprié de bibliothèques (jusqu’à −3/20 sinon)
 ** Vous devez utiliser autant que possible les technologies vues au cours et les standards ISO, W3C et JSR Java dans votre projet (par exemple, JSON-B ou JSON-P et non Jackson).
 ** Ne réinventez pas la roue ! Cela augmente votre base de code, donc rend la maintenance plus difficile. Réutilisez les bibliothèques existantes. Si le problème que vous souhaitez résoudre est raisonnablement commun, il existe sûrement une bibliothèque de bonne qualité prête à être réutilisée.
-* UML doc correct
+* POM Maven correct (jusqu’à −3/20 sinon)
+* Doc (jusqu’à 5/20)
+** UML doc correct
+** Correspondance de la doc avec le code (complétude, compacité)
 
 La dernière séance (vendredi 23 juin) sera l’occasion d’une présentation de votre approche et logiciel à la classe. Un vote pour le meilleur logiciel s’ensuivra.
 
