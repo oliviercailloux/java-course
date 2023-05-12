@@ -91,12 +91,13 @@ TODO @ home: Project structure and start.
 // * https://github.com/oliviercailloux/java-course/blob/main/Contrat/Exceptions.adoc[Exceptions].
 * https://github.com/oliviercailloux/java-course/blob/main/Maven/README.adoc[Maven]
 * Generics (see Objects & interfaces), exercice Generic pair
-* https://github.com/oliviercailloux/java-course/blob/main/Syntax/README.adoc#varargs[Varargs]
-* Optionals; give guarantees: https://github.com/oliviercailloux/java-course/blob/main/Style/Null.adoc[Protect against null references]
 
 [[S10]]
 == S10: 12 May
-* https://github.com/oliviercailloux/java-course/blob/main/Collections/README.adoc[Collections]
+* Exercices Generic pair, Exceptions, Maven
+* https://github.com/oliviercailloux/java-course/blob/main/Syntax/README.adoc#varargs[Varargs]
+* https://github.com/oliviercailloux/java-course/blob/main/Collections/README.adoc[Collections]: Iterator, Iterable, Collection, Set, List
+* Optionals; give guarantees: https://github.com/oliviercailloux/java-course/blob/main/Style/Null.adoc[Protect against null references]
 
 [[S11]]
 == S11: 24 May
