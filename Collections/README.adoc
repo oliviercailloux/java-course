@@ -19,8 +19,8 @@ For this course, use by default: `ArrayList` / `ImmutableList`; `LinkedHashSet` 
 * https://math.hws.edu/javanotes/c10/exercises.html[EE10.4] 
 // list of words
 * https://math.hws.edu/javanotes/c7/exercises.html[EE7.6] (you may use standard input instead of file input)
-// maps, set (long)
-* https://math.hws.edu/javanotes/c10/exercises.html[EE10.1], https://math.hws.edu/javanotes/c10/exercises.html[EE10.2] [I]
+// set (long)
+* https://math.hws.edu/javanotes/c10/exercises.html[EE10.2] [I]
 // read, sort a list
 * https://math.hws.edu/javanotes/c7/exercises.html[EE7.1], 7.5 (except that you can use built-sorting functions from the Java API).
 
@@ -46,6 +46,9 @@ Exercice:
 
 * Define an interface `EasyMap` with two methods: a method that puts a pair of key (`String`, the last name of a person, here supposed to be unique) and value (`Person`, having a first name and a last name) into a map, and a method that returns an `Optional` containing the value corresponding to the given key (parameter of the method) or that returns an empty `Optional` if there is no such value. Implement this interface in a class `EasyMapImpl`. Provide a static factory method in the interface `EasyMap` (it declares that it returns an `EasyMap`, and does it by instanciating your `EasyMapImpl`). Minimize the number of lines of code (but not at the price of readability). Note that this exercice implements a part of the https://en.wikipedia.org/wiki/Forwarding_(object-oriented_programming)[forwarding] pattern.
 * Define `MyComparator`, a class that implements a comparator over `Person`: it considers a person as “smaller” (or “coming before”) another person according to the dictionary ordering of their last name. Add a third method to `EasyMap`, that returns a list of values ordered by that comparator.
+
+//maps
+https://math.hws.edu/javanotes/c10/exercises.html[EE10.1]
 
 // implement a hashmap with a list of lists
 https://math.hws.edu/javanotes/c10/exercises.html[EE10.3] (you may use `List` implementations, but not `Map`, of course)

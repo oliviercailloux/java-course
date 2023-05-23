@@ -10,6 +10,9 @@ Ce projet propose d’implémenter le jeu 7 wonders.
 == Livraisons
 . Jouer en ligne de commande à une version (très) simplifiée du jeu
 . Consolider, jouer à une version moins simplifiée
+** _Commencez_ par formatter systématiquement votre code avec la https://github.com/oliviercailloux/java-course/blob/main/Dev%20tools/Eclipse.adoc#configuration[configuration recommandée] pour ce cours, « GoogleStyle patched », et taggez le résultat `release-1-formatted`, pour permettre la comparaison avec la suite
+** Implémenter les bonnes pratiques https://github.com/oliviercailloux/java-course/blob/main/Git/Best%20practices.adoc[Git], https://github.com/oliviercailloux/java-course/blob/main/Maven/Best%20practices.adoc[Maven], https://github.com/oliviercailloux/java-course/blob/main/Best%20practices/Local%20design.adoc[Local design], https://github.com/oliviercailloux/java-course/blob/main/Style/Code.adoc[Code], https://github.com/oliviercailloux/java-course/blob/main/Execution/Resources.adoc[Resources]
+** Utiliser au moins une ressource statique (un fichier de données, un gif, une image de démarrage…)
 . Interface graphique sommaire en Java FX
 
 Vous êtes encouragés à simplifier en négligeant certaines règles, en réduisant la diversité des cartes, en considérant seulement deux joueurs, etc.

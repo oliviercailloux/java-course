@@ -54,9 +54,7 @@ Je jugerai entre autres des aspects suivants, selon ce qui est applicable. Les i
 
 La dernière séance (vendredi 23 juin) sera l’occasion d’une présentation de votre approche et logiciel à la classe. Un vote pour le meilleur logiciel s’ensuivra.
 
-Concrètement, vous livrerez en effectuant une PR d’une branche release-1 (ou 2, ou 3) que vous aurez créé vers votre branche `start` (en interne, sur votre dépôt de groupe uniquement).
-
-La branche `start` ne doit bouger qu’avec mon autorisation.
+Concrètement, vous livrerez en livrant un tag release-1 (ou 2, ou 3).
 
 Voici encore quelques instructions et conseils généraux.
 
@@ -78,7 +76,7 @@ Une personne de votre groupe doit effectuer les étapes suivantes pour initialis
 * Si vous partez de zéro (projet 7 Wonders) :
 ** Clonez le remote localement, effectuez un push initial (un fichier suffit)
 * M’ajouter comme collaborateur à votre projet pour pouvoir m’indiquer comme https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-request-reviews[Reviewer] lors de vos itérations.
-* Créez une branche `start` qui pointe vers l’état de départ de votre projet et une branche `release-1` qui contiendra à terme vos contributions.
+* Créez un tag `start` qui pointe vers l’état de départ de votre projet et éventuellement une branche `current-release` qui contiendra à terme vos contributions.
 
 Chaque membre doit ensuite faire ceci.
 

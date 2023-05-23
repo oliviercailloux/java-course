@@ -95,7 +95,7 @@ TODO @ home: Project structure and start.
 [[S10]]
 == S10: 12 May
 * Exercices Generic pair, Exceptions, Maven
-* https://github.com/oliviercailloux/java-course/blob/main/Collections/README.adoc[Collections]: Iterator, Iterable, Collection, Set, List; exercices “defining iterables” and “using collections” (especially EE10.1, 10.2)
+* https://github.com/oliviercailloux/java-course/blob/main/Collections/README.adoc[Collections]: Iterator, Iterable, Collection, Set, List; exercices “defining iterables” and “using collections” (especially 10.2)
 * Unit testing https://github.com/oliviercailloux/java-course/blob/main/JUnit/Exercice.adoc[exercice] about iterators
 
 TODO @ home: finish all those exercices
