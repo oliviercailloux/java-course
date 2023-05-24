@@ -102,7 +102,7 @@ TODO @ home: finish all those exercices
 
 [[S11]]
 == S11: 24 May
-* Graded exercice: https://classroom.github.com/a/C4GFEiYc[colors]. Implement the class CyclingColors as documented. 1h10, plus up to 20 minutes with increasing penalty. For up to three colors without asSetOfColors() and equality: 7pts. More than three colors without asSetOfColors() and equality: 6pts. More than three colors, asSetOfColors(): 4 pts. More than three colors, equality: 3 pts.
+* Graded exercice: https://classroom.github.com/a/C4GFEiYc[colors]. Implement the class CyclingColors as documented. 1h10, plus up to 20 minutes with increasing penalty. For up to three colors without asSetOfColors() and equality: 7pts. More than three colors without asSetOfColors() and equality: 6pts. More than three colors, asSetOfColors(): 4 pts. More than three colors, equality: 3 pts. If you want to leave early, push a tag "END" and obtain my approval.
 * Primitive types (autoboxing)
 * Optionals; give guarantees: https://github.com/oliviercailloux/java-course/blob/main/Style/Null.adoc[Protect against null references]
 * https://github.com/oliviercailloux/java-course/blob/main/Syntax/README.adoc#varargs[Varargs]
