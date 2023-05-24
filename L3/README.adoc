@@ -108,7 +108,7 @@ TODO @ home: finish all those exercices
 * https://github.com/oliviercailloux/java-course/blob/main/Syntax/README.adoc#varargs[Varargs]
 * Maps
 
-Deadline end of Sunday 28 May: commit a second chance for Colors with a doc that explains the differences compared to your initial proposition.
+Deadline end of Sunday 28 May: commit a second chance for Colors with a doc that explains the differences compared to your initial proposition. You might want to copy https://github.com/oliviercailloux-org/ex-colors/blob/main/src/test/java/io/github/oliviercailloux/exercices/colors/CyclingColorsTests.java[these tests] for some help.
 
 [[S12]]
 == S12: 26 May
