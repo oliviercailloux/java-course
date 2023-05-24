@@ -108,12 +108,19 @@ TODO @ home: finish all those exercices
 * https://github.com/oliviercailloux/java-course/blob/main/Syntax/README.adoc#varargs[Varargs]
 * Maps
 
-== Overview
+Deadline end of Sunday 28 May: commit a second chance for Colors with a doc that explains the differences compared to your initial proposition.
+
+[[S12]]
+== S12: 26 May
 * Files and https://github.com/oliviercailloux/java-course/blob/main/Flows.adoc[flows]
 * https://github.com/oliviercailloux/java-course/blob/main/Execution/Resources.adoc[Resources]
 * https://github.com/oliviercailloux/java-course/blob/main/Style/README.adoc[Favor static factory methods]
-* https://github.com/oliviercailloux/java-course/blob/main/Objects%20%26%20interfaces/Equals.adoc[Equality and hash codes]
 * https://github.com/oliviercailloux/java-course/blob/main/Log/README.adoc[Logging]
+
+TODO @ home: move project forward
+
+== Overview
+* https://github.com/oliviercailloux/java-course/blob/main/Objects%20%26%20interfaces/Equals.adoc[Equality and hash codes]
 * https://github.com/oliviercailloux/java-course/raw/main/Annotations/presentation.pdf[Annotations]
 * https://github.com/oliviercailloux/java-course/blob/main/Dev%20tools/CI.adoc[CI]: GitHub Workflows
 * https://github.com/oliviercailloux/projets/raw/main/Licences/Declaration%20of%20licensing.odt[Declarations of licensing]. https://github.com/oliviercailloux/projets/blob/main/Licences/Licence.adoc[Licences] and philosophy: https://www.gnu.org/philosophy/philosophy.html[GNU]; https://opensource.org/[OSI]; Copyleft (GNU https://opensource.org/licenses/GPL-3.0[GPL]); Non-copyleft (https://opensource.org/licenses/MIT[MIT])
