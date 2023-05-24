@@ -81,6 +81,9 @@ The above code presents several deficiencies.
 
 Here is a possible solution to those problems.
 
+.Click to reveal the answer
+[%collapsible]
+====
 .A better implementation
 [source, Java]
 ----
@@ -203,4 +206,4 @@ public class Person {
 . This implementation chooses to represent an absent address with an empty string, and advertises this choice. The user may fearlessly type: `p.getAddress().toUpperCase()`.
 . This implementation chooses to represent “no email addresses” with an empty list, and advertises this choice. The user may fearlessly loop over all email addresses in the list returned by `getEmails()` without having to check that it is not `null`. Furthermore, the setter has been removed, as the returned list is indicated as being writeable.
 . This implementation chooses to indicate clearly that the gender information may be missing. If missing, it returns an empty `Optional`, but it never returns `null`. The risk that a user forgets to check for the case of absence of information is therefore greatly reduced.
-
+====
