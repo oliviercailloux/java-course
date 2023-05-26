@@ -33,7 +33,7 @@ Vous procéderez à trois livraisons, à la manière agile. Chacune doit fournir
 Chaque livraison doit s’accompagner d’une documentation compacte (c-à-d succincte et éclairante) expliquant la structure et le fonctionnement de votre logiciel et vos contributions. La structure est décrite typiquement via un ou plusieurs diagrammes de classe (qui peuvent être dessinés à la main puis scannés), et éventuellement de diagrammes de séquence. Vos contributions sont indiquées sous forme d’une liste de responsabilités.
 
 Vos notes seront individuelles et reflèteront vos contributions telles qu’indiquées dans les responsabilités.
-Je jugerai entre autres des aspects suivants, selon ce qui est applicable. Les intervalles de pondération sont approximatifs.
+Je jugerai entre autres des aspects suivants, selon ce qui est applicable. Les intervalles de pondération sont approximatifs _et sont valables pour chaque livraison_.
 
 * Découpe conceptuelle, contrat : clarté des interfaces, javadoc appropriée (non exigée partout) (jusqu’à 10/20)
 * Implémentation technique : algorithmes appropriés, code en anglais compréhensible, programmation défensive (jusqu’à 7/20)

@@ -117,11 +117,25 @@ Deadline end of Sunday 28 May: commit a second chance for Colors with a doc that
 * Comparators, maps, https://github.com/oliviercailloux/java-course/blob/main/Collections/README.adoc#maps-and-comparators[exercices]
 * Files and https://github.com/oliviercailloux/java-course/blob/main/Flows.adoc[flows]
 * https://github.com/oliviercailloux/java-course/blob/main/Execution/Resources.adoc[Resources]
+
+TODO @ home: finish exercices S11 and S12.
+
+[[S13]]
+== S13: 7 June
 * https://github.com/oliviercailloux/java-course/blob/main/Log/README.adoc[Logging]
+* Work on projects
 
-TODO @ home: finish exercices S11 and S12; project
+TODO @ home: exercice Chess (in Collections)
 
-== Overview
+[[S14]]
+== S14: 19 June
+* Graded exercice about every topics seen in this course (files and flows in particular). Coefficient is double.
+
+[[S15]]
+== S15: 21 June
+Presentations!
+
+== More
 * https://github.com/oliviercailloux/java-course/raw/main/Annotations/presentation.pdf[Annotations]
 * https://github.com/oliviercailloux/java-course/blob/main/Dev%20tools/CI.adoc[CI]: GitHub Workflows
 * https://github.com/oliviercailloux/projets/raw/main/Licences/Declaration%20of%20licensing.odt[Declarations of licensing]. https://github.com/oliviercailloux/projets/blob/main/Licences/Licence.adoc[Licences] and philosophy: https://www.gnu.org/philosophy/philosophy.html[GNU]; https://opensource.org/[OSI]; Copyleft (GNU https://opensource.org/licenses/GPL-3.0[GPL]); Non-copyleft (https://opensource.org/licenses/MIT[MIT])
