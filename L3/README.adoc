@@ -123,9 +123,10 @@ TODO @ home: finish exercices S11 and S12.
 [[S13]]
 == S13: 7 June
 * https://github.com/oliviercailloux/java-course/blob/main/Log/README.adoc[Logging]
+* Chess (in https://github.com/oliviercailloux/java-course/blob/main/Collections/README.adoc[Collections])
 * Work on projects
 
-TODO @ home: exercice Chess (in Collections)
+TODO @ home: exercice Chess
 
 [[S14]]
 == S14: 19 June
