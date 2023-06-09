@@ -129,11 +129,16 @@ TODO @ home: finish exercices S11 and S12.
 TODO @ home: exercice Chess
 
 [[S14]]
-== S14: 19 June
-* Graded exercice about every topics seen in this course (files and flows in particular). Coefficient is double.
+== S14: 9 June
+* Note on https://github.com/oliviercailloux/java-course/blob/main/Java%20FX.adoc[Java FX]
+* Work on projects
 
 [[S15]]
-== S15: 21 June
+== S15: 19 June
+* Graded exercice about every topics seen in this course (files and flows in particular). Coefficient is double.
+
+[[S17]]
+== S17: 21 June
 Presentations!
 
 == More
