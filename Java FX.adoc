@@ -1,0 +1,8 @@
+= Java FX
+
+Java FX will not start in a non-modular project (as used in this course) if your `main` is in a class that extends `Application`.
+Make sure your `main` is in an independent class to solve this problem.
+(You may call another `main` from this independent `main`.)
+
+See https://stackoverflow.com/a/67854230[here] for the gory detail.
+
