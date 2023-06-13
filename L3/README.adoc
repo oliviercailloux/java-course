@@ -137,9 +137,26 @@ TODO @ home: exercice Chess
 == S15: 19 June
 * Graded exercice about every topics seen in this course (files and flows in particular). Coefficient is double.
 
+[[S16]]
+== S16: 21 June
+* Work on projects
+
 [[S17]]
 == S17: 21 June
 Presentations!
+
+* 10 to 15 minutes per team
+* Using _my_ computer and the `main` branch.
+* Push a file `doc/Présentation.pdf`
+* Order to be determined
+* https://github.com/oliviercailloux-org/projet-boardbusters/blob/main/doc/Pr%C3%A9sentation.pdf
+* https://github.com/oliviercailloux-org/projet-dream-team-7-wonders/blob/main/doc/Pr%C3%A9sentation.pdf
+* https://github.com/oliviercailloux-org/projet-les-pirates-7-wonders/blob/main/doc/Pr%C3%A9sentation.pdf
+* https://github.com/oliviercailloux-org/projet-los-quatros-amigos/blob/main/doc/Pr%C3%A9sentation.pdf
+* https://github.com/oliviercailloux-org/projet-the-6-wonders/blob/main/doc/Pr%C3%A9sentation.pdf
+* Vote for best app
+
+Expected for release 3: about 16 h work per person (counting from release 2)
 
 == More
 * https://github.com/oliviercailloux/java-course/raw/main/Annotations/presentation.pdf[Annotations]
