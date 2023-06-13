@@ -149,11 +149,11 @@ Presentations!
 * Using _my_ computer and the `main` branch.
 * Push a file `doc/Présentation.pdf`
 * Order to be determined
-* https://github.com/oliviercailloux-org/projet-boardbusters/blob/main/doc/Pr%C3%A9sentation.pdf
-* https://github.com/oliviercailloux-org/projet-dream-team-7-wonders/blob/main/doc/Pr%C3%A9sentation.pdf
-* https://github.com/oliviercailloux-org/projet-les-pirates-7-wonders/blob/main/doc/Pr%C3%A9sentation.pdf
-* https://github.com/oliviercailloux-org/projet-los-quatros-amigos/blob/main/doc/Pr%C3%A9sentation.pdf
-* https://github.com/oliviercailloux-org/projet-the-6-wonders/blob/main/doc/Pr%C3%A9sentation.pdf
+* https://github.com/oliviercailloux-org/projet-boardbusters/blob/main/doc/Pr%C3%A9sentation.pdf[boardbusters]
+* https://github.com/oliviercailloux-org/projet-dream-team-7-wonders/blob/main/doc/Pr%C3%A9sentation.pdf[dream-team-7-wonders]
+* https://github.com/oliviercailloux-org/projet-les-pirates-7-wonders/blob/main/doc/Pr%C3%A9sentation.pdf[les-pirates-7-wonders]
+* https://github.com/oliviercailloux-org/projet-los-quatros-amigos/blob/main/doc/Pr%C3%A9sentation.pdf[los-quatros-amigos]
+* https://github.com/oliviercailloux-org/projet-the-6-wonders/blob/main/doc/Pr%C3%A9sentation.pdf[the-6-wonders]
 * Vote for best app
 
 Expected for release 3: about 16 h work per person (counting from release 2)
