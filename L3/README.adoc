@@ -142,7 +142,7 @@ TODO @ home: exercice Chess
 * Work on projects
 
 [[S17]]
-== S17: 21 June
+== S17: 23 June
 Presentations!
 
 * 10 to 15 minutes per team
