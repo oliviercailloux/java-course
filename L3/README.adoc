@@ -135,7 +135,7 @@ TODO @ home: exercice Chess
 
 [[S15]]
 == S15: 19 June
-* Graded exercice about every topics seen in this course (files and flows in particular): https://classroom.github.com/a/jMJEdFAD[computer-customer]. Coefficient is double.
+* Graded exercice about every topics seen in this course: https://classroom.github.com/a/jMJEdFAD[computer-customer]. Coefficient is double.
 ** Implement Computer (6 pts)
 ** Implement Customer#empty, #placeOrder, #ordered, #allOrders and Order; neglecting the constraint of increasing time on #allOrders and the constraint of writeability on Order#simpleOrders (7 pts)
 ** Write unit tests to test your implementation so far!
