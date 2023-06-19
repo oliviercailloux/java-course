@@ -143,8 +143,8 @@ TODO @ home: exercice Chess
 ** Implement Customer#allOrders with the right ordering (2 pts)
 ** Implement Order#simpleOrders to satisfy the writeability requirement (3 pts)
 ** Push frequently (check that your code compiles first)!
-** Time: 2 hours, plus 30 minutes with penalty
-** To leave earlier than 2h20, push a tag END and wait for my approval
+** Deadline: 15:50, plus 30 minutes with penalty
+** To leave earlier than 16:10, push a tag END and wait for my approval
 ** (Then: projects)
 
 [[S16]]
