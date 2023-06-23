@@ -158,13 +158,14 @@ Presentations!
 * 10 to 15 minutes per team
 * Using _my_ computer and the `main` branch.
 * Push a file `doc/Présentation.pdf`
-* Order to be determined
 * https://github.com/oliviercailloux-org/projet-the-6-wonders/blob/main/doc/Pr%C3%A9sentation.pdf[the-6-wonders]
 * https://github.com/oliviercailloux-org/projet-dream-team-7-wonders/blob/main/doc/Pr%C3%A9sentation.pdf[dream-team-7-wonders]
 * https://github.com/oliviercailloux-org/projet-boardbusters/blob/main/doc/Pr%C3%A9sentation.pdf[boardbusters]
 * https://github.com/oliviercailloux-org/projet-les-pirates-7-wonders/blob/main/doc/Pr%C3%A9sentation.pdf[les-pirates-7-wonders]
 * https://github.com/oliviercailloux-org/projet-los-quatros-amigos/blob/main/doc/Pr%C3%A9sentation.pdf[los-quatros-amigos]
 * Vote for best app
+* Disclaimer
+* Evaluation of the course
 
 Expected for release 3: about 16 h work per person (counting from release 2)
 
