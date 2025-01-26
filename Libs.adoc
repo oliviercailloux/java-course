@@ -17,4 +17,10 @@ My recommendations concerning various libraries.
 ** https://github.com/monora/jgraphl[jgraphl] is https://github.com/monora/jgraphl/commits/master[almost] inactive
 * Personaly, I refrain from using https://github.com/vavr-io/vavr[vʌvr] (despite its very cool name), because it uses https://www.javadoc.io/static/io.vavr/vavr/0.10.3/io/vavr/control/Try.html#get--[sneaky throws] (this position is https://medium.com/@sebastien_pel/java-exception-and-lambda-to-go-sneaky-or-not-part-1-d31d6911eeed[debated]). Same for https://github.com/zalando/faux-pas#throwing-functional-interfaces[Faux Pas], https://noexception.machinezoo.com/javadoc/com/machinezoo/noexception/Exceptions.html#sneak--[NoException] and _fge_’s https://github.com/fge/throwing-lambdas/wiki/How-it-works#throwing-and-chainer[throwing-lambdas].
 * Native system information: https://github.com/oshi/oshi[OSHI]
-
+* JSON parsing: I like Jakarta. Although I like spec-driven APIs, I do not recommend JSON-B anymore. Here are the reasons.
+** The spec process is painfully slow. In June 2021 discussions started about https://github.com/jakartaee/jsonb-api/issues/278[supporting records] officially; it was soon clear that implementations in fact did support them already, but more than three years later (Jan 2025), still nothing in the spec.
+*** Jackson: similar https://github.com/FasterXML/jackson-databind/issues/3180[discussion] started in June 2021, issue completed in January 2023.
+** The spec wording is often unclear, it seems to not have been reviewed by fluent English speakers.
+** The discussions to improve the spec are painfully slow and non-converging. I have spent unreasonable efforts making a https://github.com/jakartaee/jsonb-api/issues/108[simple point] (`close()` throws `Exception`, it shouldn’t), to no avail; here are https://github.com/jakartaee/jsonb-api/issues/112[other] https://github.com/jakartaee/jsonb-api/issues/346[examples].
+** There is a huge difference between the number of users of JSON-B and its main alternatives (GSON and Jackson), judging by the number of artifacts in Maven central using them. This lets me think that JSON-B will evolve slower than the alternatives, so that the gap will grow.
+** More voices for Jackson VS JSON-B https://groups.google.com/g/quarkus-dev/c/RTnvH6LSdxs?pli=1[here].

@@ -76,16 +76,6 @@ Implement https://javaee.github.io/javaee-spec/javadocs/javax/json/bind/adapter/
 
 Implement https://javaee.github.io/javaee-spec/javadocs/javax/json/bind/serializer/JsonbDeserializer.html[`JsonbSerializer`] in order to serialize an original type using a provided https://javaee.github.io/javaee-spec/javadocs/javax/json/stream/JsonGenerator.html[`JsonGenerator`]; and similarly https://javaee.github.io/javaee-spec/javadocs/javax/json/bind/serializer/JsonbDeserializer.html[`JsonbDeserializer`] using a provided https://javaee.github.io/javaee-spec/javadocs/javax/json/stream/JsonParser.html[`JsonParser`]. Register those instances with JsonbConfig::withSerializers and JsonbConfig::withDeserializers or annotate the related type with https://javaee.github.io/javaee-spec/javadocs/javax/json/bind/serializer/JsonbSerializer.html[`@JsonbSerializer`] or https://javaee.github.io/javaee-spec/javadocs/javax/json/bind/serializer/JsonbDeserializer.html[`@JsonbDeserializer`].
 
-== Recommendation
-Although I like spec-driven APIs, I do not recommend JSON-B anymore. Here are the reasons.
-
-* The spec process is painfully slow. In June 2021 discussions started about https://github.com/jakartaee/jsonb-api/issues/278[supporting records] officially; it was soon clear that implementations in fact did support them already, but more than three years later (Jan 2025), still nothing in the spec.
-** Jackson: similar https://github.com/FasterXML/jackson-databind/issues/3180[discussion] started in June 2021, issue completed in January 2023.
-* The spec wording is often unclear, it seems to not have been reviewed by fluent English speakers.
-* The discussions to improve the spec are painfully slow and non-converging. I have spent unreasonable efforts making a simple point (close() throws Exception, it shouldn’t), to no avail; https://github.com/jakartaee/jsonb-api/issues/112[here] is another example.
-* There is a huge difference between the number of users of JSON-B and its main alternatives (GSON and Jackson), judging by the number of artifacts in Maven central using them. This lets me think that JSON-B will evolve slower than the alternatives, so that the gap will grow.
-* More voices for Jackson VS JSON-B https://groups.google.com/g/quarkus-dev/c/RTnvH6LSdxs?pli=1[here].
-
 == References
 * https://jakarta.ee/specifications/jsonb/3.0/[API] (version 3.0)
 * https://github.com/jakartaee/jsonb-api[Specs repository]
