@@ -52,7 +52,7 @@ Authentication fails if you use your GitHub password. You must use a personal ac
 == References
 * The git https://github.github.com/training-kit/[Cheat sheets],
 * The https://git.wiki.kernel.org/index.php/Git_FAQ#Why_the_.27Git.27_name.3F[git name].
-* Learn Git Branching https://learngitbranching.js.org/[tutorial] and https://learngitbranching.js.org/?NODEMO[live demo]
+* Learn Git Branching https://learngitbranching.js.org/[tutorial] and https://learngitbranching.js.org/?NODEMO[live demo] (https://onlywei.github.io/explain-git-with-d3/[alternative])
 // alternative: https://git-school.github.io/visualizing-git/[visualizing-git], but flaws (master, git checkout, HEAD pointer unclear)
 * https://git-scm.com/[Git-SCM]: Videos; Cheat Sheets; Book https://git-scm.com/book[Pro Git] (free, as in speech and beer)
 * Videos (I haven’t watched any of those): see https://git-scm.com/videos[Git-SCM videos]; https://www.git-tower.com/learn/git/videos[Videos by Tower]

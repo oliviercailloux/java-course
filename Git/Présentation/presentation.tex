@@ -1,5 +1,4 @@
 \RequirePackage[l2tabu, orthodox]{nag}
-\RequirePackage{silence}
 \documentclass[english, french]{beamer}
 \input{preamble/packages}
 \input{preamble/math_basics}
@@ -56,8 +55,8 @@
 		\item Un ou plusieurs contributeurs
 		\item Pour tous types de projet : code, images, présentations, article…
 		\item VCS souvent centralisés : historique sur un serveur distant
-		\item Git ? \onslide<2->{Local (!); usage local, centralisé ou distribué ⇒ tout le monde a une copie complète de l’historique}
-		\item Créé par ? \onslide<3->{Linus \href{https://en.wikipedia.org/wiki/Linus_Torvalds}{Torvalds} (?)} \onslide<4>{Créateur du noyau Linux}
+		\item Git ? \onslide<2->{Local (\string!); usage local, centralisé ou distribué ⇒ tout le monde a une copie complète de l’historique}
+		\item Créé par ? \onslide<3->{Linus \href{https://en.wikipedia.org/wiki/Linus_Torvalds}{Torvalds} (\string?)} \onslide<4>{Créateur du noyau Linux}
 	\end{itemize}
 \end{frame}
 
@@ -246,7 +245,8 @@
 		\item \texttt{git remote show origin} : voir les réf. distantes
 		\item Suivre une branche distante \texttt{origin/br} : \texttt{checkout br}
 	\end{itemize}
-	\href{https://onlywei.github.io/explain-git-with-d3/\#fetch}{Illustration}
+	% \href{https://onlywei.github.io/explain-git-with-d3/\#fetch}{Illustration}
+	\href{https://learngitbranching.js.org/?NODEMO}{Illustration}
 \end{frame}
 
 \section{Divers}
