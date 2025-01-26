@@ -18,7 +18,7 @@ The entry page of the Java course in L3.
 * The most important exercices are marked with [I]. Make sure you do not skip these ones.
 
 [[S1]]
-== S1: 8 March 2023
+== S1: 5 Feb 2025
 * https://github.com/oliviercailloux/java-course/raw/main/L3/Pr%C3%A9sentation%20du%20cours%20Objet/presentation.pdf[Pres course]
 * https://github.com/oliviercailloux/java-course/blob/main/Git/Shell.adoc[Shell]: 2 exercices
 * https://github.com/oliviercailloux/java-course/blob/main/Git/README.adoc[Git]: Configure & Step by step
@@ -28,151 +28,151 @@ TODO at home:
 * Install the https://github.com/oliviercailloux/java-course/blob/main/Best%20practices/Various.adoc#installing-the-jdk[JDK]
 
 [[S2]]
-== S2: 10 March
+== S2: 7 Feb
 * https://github.com/oliviercailloux/java-course/blob/main/Git/README.adoc[Git]: remotes ; Step by step (end)
 * Read the https://github.com/oliviercailloux/java-course/blob/main/Git/Graded%20exercices.adoc[graded exercices] procedure and take the “training” assignment; Practice with the other exercices on the Git page
 * https://github.com/oliviercailloux/java-course/blob/main/Syntax/README.adoc[Syntax]: basics; exercices (Shorts and Methods); then Classes
 
 TODO @ home: Git step-by-step (entirely); “graded exercices” and “training” (see above); Exercices of “Syntax” until “Classes” (not: “More about classes”).
 
-[[S3]]
-== S3: 22 March
-* Graded exercice about git: accept https://classroom.github.com/a/WAdAuWNU[two-files]; clone your resulting online repository; add a commit that deletes the file `Some file.txt`; add a commit that modifies anything in the file `Some folder/Another file.txt`; add a commit that deletes that file. Push to your online repository frequently. Make sure that your git `user.name` equals your GitHub user account. You will get points according to each of these commits (even if not in the right order). If some of your commits are wrong, you can try again starting from the original `main` branch; spurious commits will not penalize you. Deadline: 14h18 (overtime commits are penalized linearly up to zero points for 5 minutes delay).
-* Syntax, exercice: More about classes
-* https://github.com/oliviercailloux/java-course/blob/main/Execution/README.adoc[Execution], without packages, exercices
-* Syntax: packages
-* Execution, with packages, exercices
+// [[S3]]
+// == S3: 19 Feb
+// * Graded exercice about git: accept https://classroom.github.com/a/WAdAuWNU[two-files]; clone your resulting online repository; add a commit that deletes the file `Some file.txt`; add a commit that modifies anything in the file `Some folder/Another file.txt`; add a commit that deletes that file. Push to your online repository frequently. Make sure that your git `user.name` equals your GitHub user account. You will get points according to each of these commits (even if not in the right order). If some of your commits are wrong, you can try again starting from the original `main` branch; spurious commits will not penalize you. Deadline: 14h18 (overtime commits are penalized linearly up to zero points for 5 minutes delay).
+// * Syntax, exercice: More about classes
+// * https://github.com/oliviercailloux/java-course/blob/main/Execution/README.adoc[Execution], without packages, exercices
+// * Syntax: packages
+// * Execution, with packages, exercices
 
-TODO @ home: Install Eclipse (see link below).
+// TODO @ home: Install Eclipse (see link below).
 
-[[S4]]
-== S4: 24 March
-* https://github.com/oliviercailloux/java-course/blob/main/Dev%20tools/Eclipse.adoc[Eclipse & Java] (and Configuration, Start project). Re-create some classes you did in the Syntax part (see here above) in Eclipse and make sure you can run the `main` method.
-* Unit testing, demo, https://github.com/oliviercailloux/java-course/blob/main/JUnit/Overview.adoc[overview]; exercice: write unit tests for the exercices in Syntax.
-* Two major aspects of software engineering: https://github.com/oliviercailloux/java-course/blob/main/Contrat/README.adoc[contract] and fail-fast.
+// [[S4]]
+// == S4: 24 March
+// * https://github.com/oliviercailloux/java-course/blob/main/Dev%20tools/Eclipse.adoc[Eclipse & Java] (and Configuration, Start project). Re-create some classes you did in the Syntax part (see here above) in Eclipse and make sure you can run the `main` method.
+// * Unit testing, demo, https://github.com/oliviercailloux/java-course/blob/main/JUnit/Overview.adoc[overview]; exercice: write unit tests for the exercices in Syntax.
+// * Two major aspects of software engineering: https://github.com/oliviercailloux/java-course/blob/main/Contrat/README.adoc[contract] and fail-fast.
 
-TODO @ home: Syntax, More exercices (up to EE3.6 included); Eclipse and Unit testing (see above).
+// TODO @ home: Syntax, More exercices (up to EE3.6 included); Eclipse and Unit testing (see above).
 
-[[S5]]
-== S5: 5 April
-* Graded exercice about git: https://github.com/oliviercailloux/java-course/blob/main/Git/Git%20branching%203.adoc[branching].
-* Contract: exercices
-* https://github.com/oliviercailloux/java-course/blob/main/Objects%20%26%20interfaces/README.adoc[Objects & interfaces].
+// [[S5]]
+// == S5: 5 April
+// * Graded exercice about git: https://github.com/oliviercailloux/java-course/blob/main/Git/Git%20branching%203.adoc[branching].
+// * Contract: exercices
+// * https://github.com/oliviercailloux/java-course/blob/main/Objects%20%26%20interfaces/README.adoc[Objects & interfaces].
 
-TODO @ home: Contract EE4.3 and 4.4.
+// TODO @ home: Contract EE4.3 and 4.4.
 
-[[S6]]
-== S6: 7 April
-* Graded exercice about syntax and contracts: accept https://classroom.github.com/a/Nx0aPoYm[strings], clone the repo locally, import into an IDE, add the required code, push your changes to the remote. Make sure the code compiles. Use the provided unit tests to test your code. You may not change the provided method headers. You may add new classes or anything else you want (and these additions will be available when auto-grading your code). Deadline: 14:15, plus 5 minutes with penalty.
-* Objects. Exercices up to 5.3, then Three dice.
-* Interfaces. Exercice: I like to move it move it; Coffee
+// [[S6]]
+// == S6: 7 April
+// * Graded exercice about syntax and contracts: accept https://classroom.github.com/a/Nx0aPoYm[strings], clone the repo locally, import into an IDE, add the required code, push your changes to the remote. Make sure the code compiles. Use the provided unit tests to test your code. You may not change the provided method headers. You may add new classes or anything else you want (and these additions will be available when auto-grading your code). Deadline: 14:15, plus 5 minutes with penalty.
+// * Objects. Exercices up to 5.3, then Three dice.
+// * Interfaces. Exercice: I like to move it move it; Coffee
 
-[[S7]]
-== S7: 19 April
-* Graded exercice about objects and interfaces: https://classroom.github.com/a/O_Hb-4UL[car]. Implement all three classes. Deadline: 14h31, plus 10 minutes with penalty, increasing slowly at first. If you finish early, you must push a branch “end” at your last commit before exitting the room.
-* Correct your own exercice with help of teammates.
-* Polymorphism: inheritance
-* Exercices: extend SimpleCar with one that remembers its first three moves. 421.
-* https://github.com/oliviercailloux/java-course/blob/main/L3/Projets.adoc[Projects]: 40 to 60% of the final grade
+// [[S7]]
+// == S7: 19 April
+// * Graded exercice about objects and interfaces: https://classroom.github.com/a/O_Hb-4UL[car]. Implement all three classes. Deadline: 14h31, plus 10 minutes with penalty, increasing slowly at first. If you finish early, you must push a branch “end” at your last commit before exitting the room.
+// * Correct your own exercice with help of teammates.
+// * Polymorphism: inheritance
+// * Exercices: extend SimpleCar with one that remembers its first three moves. 421.
+// * https://github.com/oliviercailloux/java-course/blob/main/L3/Projets.adoc[Projects]: 40 to 60% of the final grade
 
-TODO @ home: you _may_ try again the strings graded exercice. Follow the instructions https://github.com/oliviercailloux/java-course/blob/main/L3/Exercices%20not%C3%A9s.adoc#Collective[here] if you wish to try to improve your grade. Your new aggregated grade will be composed of the original one, with a weight of 30% to 80%, and the new (second chance) one, with the weight _depending on the number of lines that you changed_. Deadline: end of Sunday 23 April (linear penalty up to 100% after 30 minutes lateness).
+// TODO @ home: you _may_ try again the strings graded exercice. Follow the instructions https://github.com/oliviercailloux/java-course/blob/main/L3/Exercices%20not%C3%A9s.adoc#Collective[here] if you wish to try to improve your grade. Your new aggregated grade will be composed of the original one, with a weight of 30% to 80%, and the new (second chance) one, with the weight _depending on the number of lines that you changed_. Deadline: end of Sunday 23 April (linear penalty up to 100% after 30 minutes lateness).
 
-[[S8]]
-== S8: 21 April
-* Polymorphism: SimpleCar, 421. (Still: https://github.com/oliviercailloux/java-course/blob/main/Objects%20%26%20interfaces/README.adoc[objects & interfaces].)
-* The `Object` class and its methods: `toString()`, `equals`, `hashcode`. Exercice: Car string
+// [[S8]]
+// == S8: 21 April
+// * Polymorphism: SimpleCar, 421. (Still: https://github.com/oliviercailloux/java-course/blob/main/Objects%20%26%20interfaces/README.adoc[objects & interfaces].)
+// * The `Object` class and its methods: `toString()`, `equals`, `hashcode`. Exercice: Car string
 
-TODO @ home: Project structure and start.
+// TODO @ home: Project structure and start.
 
-[[S9]]
-== S9: 10 May
-* Reviews project start
-* https://github.com/oliviercailloux/java-course/blob/main/Objects%20%26%20interfaces/README.adoc#checked-exceptions[Exceptions], exercices
-// * https://github.com/oliviercailloux/java-course/blob/main/Contrat/Exceptions.adoc[Exceptions].
-* https://github.com/oliviercailloux/java-course/blob/main/Maven/README.adoc[Maven]
-* Generics (see Objects & interfaces), exercice Generic pair
+// [[S9]]
+// == S9: 10 May
+// * Reviews project start
+// * https://github.com/oliviercailloux/java-course/blob/main/Objects%20%26%20interfaces/README.adoc#checked-exceptions[Exceptions], exercices
+// // * https://github.com/oliviercailloux/java-course/blob/main/Contrat/Exceptions.adoc[Exceptions].
+// * https://github.com/oliviercailloux/java-course/blob/main/Maven/README.adoc[Maven]
+// * Generics (see Objects & interfaces), exercice Generic pair
 
-[[S10]]
-== S10: 12 May
-* Exercices Generic pair, Exceptions, Maven
-* https://github.com/oliviercailloux/java-course/blob/main/Collections/README.adoc[Collections]: Iterator, Iterable, Collection, Set, List; exercices “defining iterables” and “using collections” (especially 10.2)
-* Unit testing https://github.com/oliviercailloux/java-course/blob/main/JUnit/Exercice.adoc[exercice] about iterators
+// [[S10]]
+// == S10: 12 May
+// * Exercices Generic pair, Exceptions, Maven
+// * https://github.com/oliviercailloux/java-course/blob/main/Collections/README.adoc[Collections]: Iterator, Iterable, Collection, Set, List; exercices “defining iterables” and “using collections” (especially 10.2)
+// * Unit testing https://github.com/oliviercailloux/java-course/blob/main/JUnit/Exercice.adoc[exercice] about iterators
 
-TODO @ home: finish all those exercices
+// TODO @ home: finish all those exercices
 
-[[S11]]
-== S11: 24 May
-* Graded exercice: https://classroom.github.com/a/C4GFEiYc[colors]. Implement the class CyclingColors as documented. Deadline 14h55, plus up to 20 minutes with increasing penalty. For up to three colors without asSetOfColors() and equality: 7pts. More than three colors without asSetOfColors() and equality: 6pts. More than three colors, asSetOfColors(): 4 pts. More than three colors, equality: 3 pts. If you want to leave early, push a tag "END" and obtain my approval.
-* Primitive types (autoboxing)
-* Optionals; give guarantees: https://github.com/oliviercailloux/java-course/blob/main/Style/Null.adoc[Protect against null references]
-* https://github.com/oliviercailloux/java-course/blob/main/Syntax/README.adoc#varargs[Varargs]
-* Maps
+// [[S11]]
+// == S11: 24 May
+// * Graded exercice: https://classroom.github.com/a/C4GFEiYc[colors]. Implement the class CyclingColors as documented. Deadline 14h55, plus up to 20 minutes with increasing penalty. For up to three colors without asSetOfColors() and equality: 7pts. More than three colors without asSetOfColors() and equality: 6pts. More than three colors, asSetOfColors(): 4 pts. More than three colors, equality: 3 pts. If you want to leave early, push a tag "END" and obtain my approval.
+// * Primitive types (autoboxing)
+// * Optionals; give guarantees: https://github.com/oliviercailloux/java-course/blob/main/Style/Null.adoc[Protect against null references]
+// * https://github.com/oliviercailloux/java-course/blob/main/Syntax/README.adoc#varargs[Varargs]
+// * Maps
 
-Deadline end of Sunday 28 May: commit a second chance for Colors with a doc that explains the differences compared to your initial proposition. You might want to copy https://github.com/oliviercailloux-org/ex-colors/blob/main/src/test/java/io/github/oliviercailloux/exercices/colors/CyclingColorsTests.java[these tests] for some help.
+// Deadline end of Sunday 28 May: commit a second chance for Colors with a doc that explains the differences compared to your initial proposition. You might want to copy https://github.com/oliviercailloux-org/ex-colors/blob/main/src/test/java/io/github/oliviercailloux/exercices/colors/CyclingColorsTests.java[these tests] for some help.
 
-[[S12]]
-== S12: 26 May
-* https://github.com/oliviercailloux/java-course/blob/main/Objects%20%26%20interfaces/Equals.adoc[Equality and hash codes], exercice
-* https://github.com/oliviercailloux/java-course/blob/main/Style/README.adoc[Favor static factory methods]
-* Comparators, maps, https://github.com/oliviercailloux/java-course/blob/main/Collections/README.adoc#maps-and-comparators[exercices]
-* Files and https://github.com/oliviercailloux/java-course/blob/main/Flows.adoc[flows]
-* https://github.com/oliviercailloux/java-course/blob/main/Execution/Resources.adoc[Resources]
+// [[S12]]
+// == S12: 26 May
+// * https://github.com/oliviercailloux/java-course/blob/main/Objects%20%26%20interfaces/Equals.adoc[Equality and hash codes], exercice
+// * https://github.com/oliviercailloux/java-course/blob/main/Style/README.adoc[Favor static factory methods]
+// * Comparators, maps, https://github.com/oliviercailloux/java-course/blob/main/Collections/README.adoc#maps-and-comparators[exercices]
+// * Files and https://github.com/oliviercailloux/java-course/blob/main/Flows.adoc[flows]
+// * https://github.com/oliviercailloux/java-course/blob/main/Execution/Resources.adoc[Resources]
 
-TODO @ home: finish exercices S11 and S12.
+// TODO @ home: finish exercices S11 and S12.
 
-[[S13]]
-== S13: 7 June
-* https://github.com/oliviercailloux/java-course/blob/main/Log/README.adoc[Logging]
-* Chess (in https://github.com/oliviercailloux/java-course/blob/main/Collections/README.adoc[Collections])
-* Work on projects
+// [[S13]]
+// == S13: 7 June
+// * https://github.com/oliviercailloux/java-course/blob/main/Log/README.adoc[Logging]
+// * Chess (in https://github.com/oliviercailloux/java-course/blob/main/Collections/README.adoc[Collections])
+// * Work on projects
 
-TODO @ home: exercice Chess
+// TODO @ home: exercice Chess
 
-[[S14]]
-== S14: 9 June
-* Note on https://github.com/oliviercailloux/java-course/blob/main/Java%20FX.adoc[Java FX]
-* Work on projects
+// [[S14]]
+// == S14: 9 June
+// * Note on https://github.com/oliviercailloux/java-course/blob/main/Java%20FX.adoc[Java FX]
+// * Work on projects
 
-[[S15]]
-== S15: 19 June
-* Graded exercice about every topics seen in this course: https://classroom.github.com/a/jMJEdFAD[computer-customer]. Coefficient is double.
-** Implement Computer (6 pts)
-** Implement Customer#empty, #placeOrder, #ordered, #allOrders and Order; neglecting the constraint of increasing time on #allOrders and the constraint of writeability on Order#simpleOrders (7 pts)
-** Write unit tests to test your implementation so far!
-** Implement Customer#readOrders, #usingOrders (2 pts)
-** Implement Customer#allOrders with the right ordering (2 pts)
-** Implement Order#simpleOrders to satisfy the writeability requirement (3 pts)
-** Push frequently (check that your code compiles first)!
-** Deadline: 15:50, plus 30 minutes with penalty
-** To leave earlier than 16:10, push a tag END and wait for my approval
-** (Then: projects)
+// [[S15]]
+// == S15: 19 June
+// * Graded exercice about every topics seen in this course: https://classroom.github.com/a/jMJEdFAD[computer-customer]. Coefficient is double.
+// ** Implement Computer (6 pts)
+// ** Implement Customer#empty, #placeOrder, #ordered, #allOrders and Order; neglecting the constraint of increasing time on #allOrders and the constraint of writeability on Order#simpleOrders (7 pts)
+// ** Write unit tests to test your implementation so far!
+// ** Implement Customer#readOrders, #usingOrders (2 pts)
+// ** Implement Customer#allOrders with the right ordering (2 pts)
+// ** Implement Order#simpleOrders to satisfy the writeability requirement (3 pts)
+// ** Push frequently (check that your code compiles first)!
+// ** Deadline: 15:50, plus 30 minutes with penalty
+// ** To leave earlier than 16:10, push a tag END and wait for my approval
+// ** (Then: projects)
 
-[[S16]]
-== S16: 21 June
-* Work on projects
+// [[S16]]
+// == S16: 21 June
+// * Work on projects
 
-[[S17]]
-== S17: 23 June
-Presentations!
+// [[S17]]
+// == S17: 23 June
+// Presentations!
 
-* 10 to 15 minutes per team
-* Using _my_ computer and the `main` branch.
-* Push a file `doc/Présentation.pdf`
-* https://github.com/oliviercailloux-org/projet-the-6-wonders/blob/main/doc/Pr%C3%A9sentation.pdf[the-6-wonders]
-* https://github.com/oliviercailloux-org/projet-dream-team-7-wonders/blob/main/doc/Pr%C3%A9sentation.pdf[dream-team-7-wonders]
-* https://github.com/oliviercailloux-org/projet-boardbusters/blob/main/doc/Pr%C3%A9sentation.pdf[boardbusters]
-* https://github.com/oliviercailloux-org/projet-les-pirates-7-wonders/blob/main/doc/Pr%C3%A9sentation.pdf[les-pirates-7-wonders]
-* https://github.com/oliviercailloux-org/projet-los-quatros-amigos/blob/main/doc/Pr%C3%A9sentation.pdf[los-quatros-amigos]
-* Vote for best app
-* Disclaimer
-* Evaluation of the course
+// * 10 to 15 minutes per team
+// * Using _my_ computer and the `main` branch.
+// * Push a file `doc/Présentation.pdf`
+// * https://github.com/oliviercailloux-org/projet-the-6-wonders/blob/main/doc/Pr%C3%A9sentation.pdf[the-6-wonders]
+// * https://github.com/oliviercailloux-org/projet-dream-team-7-wonders/blob/main/doc/Pr%C3%A9sentation.pdf[dream-team-7-wonders]
+// * https://github.com/oliviercailloux-org/projet-boardbusters/blob/main/doc/Pr%C3%A9sentation.pdf[boardbusters]
+// * https://github.com/oliviercailloux-org/projet-les-pirates-7-wonders/blob/main/doc/Pr%C3%A9sentation.pdf[les-pirates-7-wonders]
+// * https://github.com/oliviercailloux-org/projet-los-quatros-amigos/blob/main/doc/Pr%C3%A9sentation.pdf[los-quatros-amigos]
+// * Vote for best app
+// * Disclaimer
+// * Evaluation of the course
 
-Expected for release 3: about 16 h work per person (counting from release 2)
+// Expected for release 3: about 16 h work per person (counting from release 2)
 
-== More
-* https://github.com/oliviercailloux/java-course/raw/main/Annotations/presentation.pdf[Annotations]
-* https://github.com/oliviercailloux/java-course/blob/main/Dev%20tools/CI.adoc[CI]: GitHub Workflows
-* https://github.com/oliviercailloux/projets/raw/main/Licences/Declaration%20of%20licensing.odt[Declarations of licensing]. https://github.com/oliviercailloux/projets/blob/main/Licences/Licence.adoc[Licences] and philosophy: https://www.gnu.org/philosophy/philosophy.html[GNU]; https://opensource.org/[OSI]; Copyleft (GNU https://opensource.org/licenses/GPL-3.0[GPL]); Non-copyleft (https://opensource.org/licenses/MIT[MIT])
-* Parsing HTML (info): https://github.com/oliviercailloux/java-course/blob/main/DOM.adoc[DOM]
-* Accessing REST web services (info): https://github.com/oliviercailloux/java-course/blob/main/WS%20client/JAX-RS%20client.adoc[JAX-RS client]
+// == More
+// * https://github.com/oliviercailloux/java-course/raw/main/Annotations/presentation.pdf[Annotations]
+// * https://github.com/oliviercailloux/java-course/blob/main/Dev%20tools/CI.adoc[CI]: GitHub Workflows
+// * https://github.com/oliviercailloux/projets/raw/main/Licences/Declaration%20of%20licensing.odt[Declarations of licensing]. https://github.com/oliviercailloux/projets/blob/main/Licences/Licence.adoc[Licences] and philosophy: https://www.gnu.org/philosophy/philosophy.html[GNU]; https://opensource.org/[OSI]; Copyleft (GNU https://opensource.org/licenses/GPL-3.0[GPL]); Non-copyleft (https://opensource.org/licenses/MIT[MIT])
+// * Parsing HTML (info): https://github.com/oliviercailloux/java-course/blob/main/DOM.adoc[DOM]
+// * Accessing REST web services (info): https://github.com/oliviercailloux/java-course/blob/main/WS%20client/JAX-RS%20client.adoc[JAX-RS client]
 
