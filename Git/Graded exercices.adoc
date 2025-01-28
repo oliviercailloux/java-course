@@ -19,10 +19,8 @@ This document explains how to submit your solutions for the graded exercices of 
 == Configuration
 It is important that your git `user.name` https://github.com/oliviercailloux/java-course/blob/main/Git/README.adoc#Configure-git[equals] (exactly) your GitHub username, so that I can associate your contributions to you (this will be important when working on projects but I will also grade whether you configured your git correctly even before projects, as part of each graded exercice).
 
-You must also apply https://github.com/oliviercailloux/java-course/blob/main/Git/README.adoc#About-authentication-on-GitHub[About authentication on GitHub].
-
 == The `training` assignment
-* Here is https://classroom.github.com/a/uAsNcmqi[the link] for the “training” assignment. 
+* Here is https://classroom.github.com/a/82sB-Te7[the link] for the “training” assignment. 
 * You should be able to predict the name of the GitHub repository that will be created when you will accept this assignment.
 * You can use this to practice as much as you want. 
 * This repository will not be used to grade your work.
@@ -31,5 +29,5 @@ You must also apply https://github.com/oliviercailloux/java-course/blob/main/Git
 If you want to start fresh (for example, before starting a new exercice), https://docs.github.com/repositories/creating-and-managing-repositories/deleting-a-repository[delete] your “training” repository.
 
 == Exercice: hello world
-Accept the https://classroom.github.com/a/uAsNcmqi[`training`] assignment and translate the content of the file `hello.txt` to say hello in another language of your choice. Make sure this is visible on your remote repository.
+Accept the `training` assignment (link here above) and translate the content of the file `hello.txt` to say hello in another language of your choice. One prestige point to you if it is a language that I have not yet seen in other student works and you did not use external help for the translation. Make sure this is visible on your remote repository.
 
