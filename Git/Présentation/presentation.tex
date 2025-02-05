@@ -162,12 +162,11 @@
 \section{Branches}
 \begin{frame}
 	\frametitle{Références git (git refs)}
+  2 sortes de références git
 	\begin{itemize}
-		\item Pointent vers des commits ou vers d’autres refs
-		\item Branches et références spéciales
-		\item Branche : pointeur vers un commit
-		\item HEAD : pointeur vers une branche {\tiny (typiquement)} et un commit
-		\item Branche et commit \emph{actuels} désignés par HEAD
+		\item Branche {\tiny et tags et remote refs} : pointeur vers un commit
+		\item Référence symbolique : pointeur vers une autre référence
+		\item HEAD : ref symbolique désignant la branche {\tiny (typiquement)} et le commit \emph{actuels}
     \item \texttt{git commit} : bouge branche et commit actuels
 	\end{itemize}
   \begin{center}
@@ -185,8 +184,7 @@
 \begin{frame}
 	\frametitle{Circuler dans l’historique}
 	\begin{itemize}
-		\item HEAD : pointe un commit, et généralement une branche ; appelés \emph{actuels}
-		\item Indique le commit d’où est issu la version actuelle
+		\item HEAD : indique le commit d’où est issu le work dir actuel
 		\item \texttt{git branch truc} : crée branche \texttt{truc}. HEAD inchangé !
 		\item \texttt{git checkout truc} : change HEAD et met à jour WD
 	\end{itemize}
@@ -223,7 +221,7 @@
 		\item \texttt{git merge autrebranche} : fusionne changements de \texttt{autrebranche} dans branche actuelle
 		\item Si \texttt{autrebranche} est en avant de l’actuelle : \og{}fast-forward\fg{}
 		\item Sinon, \og{}merge conflict\fg{} possible. Modifier les fichiers à la main et les ajouter à l’index puis commit pour créer un merge. 
-		\item checkout d’un commit {\tiny (ou tag)} sans branche {\tiny (detached head state)} : lecture !
+		\item checkout d’un commit {\tiny (ou tag)} sans branche : \emph{detached head}
 	\end{itemize}
 \end{frame}
 
