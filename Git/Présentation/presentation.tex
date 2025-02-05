@@ -56,7 +56,7 @@
 		\item Pour tous types de projet : code, images, présentations, article…
 		\item VCS souvent centralisés : historique sur un serveur distant
 		\item Git ? \onslide<2->{Local (\string!); usage local, centralisé ou distribué ⇒ tout le monde a une copie complète de l’historique}
-		\item Créé par ? \onslide<3->{Linus \href{https://en.wikipedia.org/wiki/Linus_Torvalds}{Torvalds} (\string?)} \onslide<4>{Créateur du noyau Linux}
+		\item Créé par ? \onslide<3->{Linus \href{https://en.wikipedia.org/wiki/Linus_Torvalds}{Torvalds}}\only<3>{ (\string?)}\onslide<4>{, Créateur du noyau Linux}
 	\end{itemize}
 \end{frame}
 
@@ -71,9 +71,9 @@
 		\end{itemize}
 		\item Histoire : un DAG de \og{}commits\fg{}
 		\item Conservée dans un \emph{dépôt} (repository)
+		\item Circuler en utilisant la commande \texttt{checkout <SHA-1>}
 	\end{itemize}
-	{
-		\centering
+	\begin{center}
 		\begin{tikzpicture}
 			\path node[/Git/commit] (c1) {98C49C};
 			\path (c1.east) ++ (\GitCommitSep, 0) node[anchor=west, /Git/commit] (c2) {34AC2} edge[->] (c1);
@@ -81,32 +81,7 @@
 			\path (c2.east) ++ (\GitCommitSep, -6mm) node[anchor=west, /Git/commit] (c3S) {C32AC} edge[->] (c2);
 			\path (c2 -| c3N.east) ++ (\GitCommitSep, 0) node[anchor=west, /Git/commit] (c4) {175E3A} edge[->] (c3N) edge[->] (c3S);
 		\end{tikzpicture}\par
-	}
-\end{frame}
-
-\begin{frame}
-	\frametitle{Circuler dans l’historique}
-	\begin{itemize}
-		\item Références git (git refs) : branches et références spéciales
-		\item Références pointent vers des commits ou vers d’autres refs
-		\item Branche : pointe un commit
-		\item HEAD : pointe un commit, et généralement une branche ; appelés \emph{actuels}
-		\item Indique le commit d’où est issu la version actuelle
-		\item Circuler en utilisant la commande \texttt{checkout <branche>}
-	\end{itemize}
-	{
-		\centering
-		\begin{tikzpicture}
-			\path node[/Git/commit] (c1) {98C49C};
-			\path (c1.east) ++ (\GitCommitSep, 0) node[anchor=west, /Git/commit] (c2) {34AC2} edge[->] (c1);
-			\path (c2.east) ++ (\GitCommitSep, 6mm) node[anchor=west, /Git/commit] (c3N) {F30AB} edge[->] (c2);
-			\path (c2.east) ++ (\GitCommitSep, -6mm) node[anchor=west, /Git/commit] (c3S) {C32AC} edge[->] (c2);
-			\path (c2 -| c3N.east) ++ (\GitCommitSep, 0) node[anchor=west, /Git/commit] (c4) {175E3A} edge[->] (c3N) edge[->] (c3S);
-			\path (c4.north) ++ (0, 3mm) node[anchor=south, /Git/branch] (main) {main} edge[->] (c4);
-			\path (c2.north) ++ (0, 3mm) node[anchor=south, /Git/branch] (dev) {dev} edge[->] (c2);
-			\path (main.north) ++ (0, 3mm) node[anchor=south, /Git/head] (head) {HEAD} edge[->] (main);
-		\end{tikzpicture}\par
-	}
+	\end{center}
 \end{frame}
 
 \begin{frame}
@@ -162,8 +137,8 @@
 		\end{itemize}
 	\end{minipage}
 	\begin{itemize}
-		\item \emph{Index} : changements à apporter au prochain commit
-		\item \emph{HEAD} : état capturé dans le commit référencé
+		\item \emph{Index} : zone de stockage du commit en préparation
+		\item \emph{HEAD} : contenu du commit actuel
 		\item Initialisation nouveau dépôt ? \onslide<2->{Index et HEAD vides}
 		\item Juste après un commit ? \onslide<3->{Index vide}
 	\end{itemize}
@@ -180,33 +155,54 @@
 			\item \texttt{git diff -{}-staged} : index VS HEAD
 			\item \texttt{git commit} : commenter et expédier ! (Renvoie son id SHA-1)
 			\item \texttt{git commit -v} : voir l’index en détail
-			\item NB : commit bouge la branche actuelle
 		\end{itemize}
 %	\end{block}
 \end{frame}
 
 \section{Branches}
 \begin{frame}
-	\frametitle{Branches et HEAD}
+	\frametitle{Références git (git refs)}
 	\begin{itemize}
+		\item Pointent vers des commits ou vers d’autres refs
+		\item Branches et références spéciales
 		\item Branche : pointeur vers un commit
-		\item HEAD : pointeur vers {\tiny (typiquement)} une branche\\et un commit
-		\item Branche actuelle\\désignée par HEAD
+		\item HEAD : pointeur vers une branche {\tiny (typiquement)} et un commit
+		\item Branche et commit \emph{actuels} désignés par HEAD
+    \item \texttt{git commit} : bouge branche et commit actuels
 	\end{itemize}
-	\begin{tikzpicture}[overlay]
-		\path (3.7cm, 0) node[/Git/commit] (c1) {98C49C};
-		\path (c1.east) ++ (\GitCommitSep, 0) node[anchor=west, /Git/commit] (c2) {34AC2} edge[->] (c1);
-		\path (c2.east) ++ (\GitCommitSep, 0) node[anchor=west, /Git/commit] (c3) {F30AB} edge[->] (c2);
-		\path (c2.north) ++ (0, 3mm) node[anchor=south, /Git/branch] (main) {main} edge[->] (c2);
-		\path (c3.north) ++ (0, 3mm) node[anchor=south, /Git/branch] (br) {br} edge[->] (c3);
-		\path (br.north) ++ (0, 3mm) node[anchor=south, /Git/head] (head) {HEAD} edge[->] (br);
-	\end{tikzpicture}
-	\vspace{3mm}
+  \begin{center}
+    \begin{tikzpicture}
+      \path (3.7cm, 0) node[/Git/commit] (c1) {98C49C};
+      \path (c1.east) ++ (\GitCommitSep, 0) node[anchor=west, /Git/commit] (c2) {34AC2} edge[->] (c1);
+      \path (c2.east) ++ (\GitCommitSep, 0) node[anchor=west, /Git/commit] (c3) {F30AB} edge[->] (c2);
+      \path (c2.north) ++ (0, 3mm) node[anchor=south, /Git/branch] (main) {main} edge[->] (c2);
+      \path (c3.north) ++ (0, 3mm) node[anchor=south, /Git/branch] (br) {br} edge[->] (c3);
+      \path (br.north) ++ (0, 3mm) node[anchor=south, /Git/head] (head) {HEAD} edge[->] (br);
+    \end{tikzpicture}
+  \end{center}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Circuler dans l’historique}
 	\begin{itemize}
-		\item commit : avance HEAD et branche actuelle
+		\item HEAD : pointe un commit, et généralement une branche ; appelés \emph{actuels}
+		\item Indique le commit d’où est issu la version actuelle
 		\item \texttt{git branch truc} : crée branche \texttt{truc}. HEAD inchangé !
 		\item \texttt{git checkout truc} : change HEAD et met à jour WD
 	\end{itemize}
+	{
+		\centering
+		\begin{tikzpicture}
+			\path node[/Git/commit] (c1) {98C49C};
+			\path (c1.east) ++ (\GitCommitSep, 0) node[anchor=west, /Git/commit] (c2) {34AC2} edge[->] (c1);
+			\path (c2.east) ++ (\GitCommitSep, 6mm) node[anchor=west, /Git/commit] (c3N) {F30AB} edge[->] (c2);
+			\path (c2.east) ++ (\GitCommitSep, -6mm) node[anchor=west, /Git/commit] (c3S) {C32AC} edge[->] (c2);
+			\path (c2 -| c3N.east) ++ (\GitCommitSep, 0) node[anchor=west, /Git/commit] (c4) {175E3A} edge[->] (c3N) edge[->] (c3S);
+			\path (c4.north) ++ (0, 3mm) node[anchor=south, /Git/branch] (main) {main} edge[->] (c4);
+			\path (c2.north) ++ (0, 3mm) node[anchor=south, /Git/branch] (dev) {dev} edge[->] (c2);
+			\path (main.north) ++ (0, 3mm) node[anchor=south, /Git/head] (head) {HEAD} edge[->] (main);
+		\end{tikzpicture}\par
+	}
 \end{frame}
 
 \begin{frame}
