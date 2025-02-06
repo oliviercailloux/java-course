@@ -14,10 +14,12 @@ This document explains how to submit your solutions for the graded exercices of 
 * Do whatever the assignment asks you to do (for example, add some code to some files, create new files, …) in your local repository
 * Push your work to your remote
 ** Push regularly, do not wait the end of the allowed time, so as to prevent last minute problems
+** Remember that you need to push all branches that you want me to see
 * Hint: Check with the GitHub web interface that your commits and branches have reached the remote repository
+* Your last commit on time is graded. Also, your commits overtime are graded, and penalized linearly according to the delay, so that five minutes delay is penalized 100%. The best grade is kept. So, pushing after the delay can only improve your grade.
 
 == Configuration
-It is important that your git `user.name` https://github.com/oliviercailloux/java-course/blob/main/Git/README.adoc#Configure-git[equals] (exactly) your GitHub username, so that I can associate your contributions to you (this will be important when working on projects but I will also grade whether you configured your git correctly even before projects, as part of each graded exercice).
+It is important that your git `user.name` https://github.com/oliviercailloux/java-course/blob/main/Git/README.adoc#Configure-git[equals] (exactly) your GitHub username, so that I can associate your contributions to you. This will be important when working on projects. I will also grade whether you configured your git correctly even before projects, as part of each graded exercice.
 
 == The `training` assignment
 * Here is https://classroom.github.com/a/82sB-Te7[the link] for the “training” assignment. 

@@ -87,6 +87,7 @@
 \begin{frame}
 	\frametitle{Work dir (WD)}
 	\begin{itemize}
+    \item \texttt{git init} : dépôt vide dans rép. courant (rien n’est traqué)
 		\item Histoire conservée \emph{localement} dans \texttt{.git} à la racine du projet
 		\item WD (\og{}work dir\fg{}) : version du projet (fichiers et sous-répert.)
 		\item Interaction avec sous-rép. \texttt{.git} via commandes git
@@ -188,8 +189,7 @@
 		\item \texttt{git branch truc} : crée branche \texttt{truc}. HEAD inchangé !
 		\item \texttt{git checkout truc} : change HEAD et met à jour WD
 	\end{itemize}
-	{
-		\centering
+	\begin{center}
 		\begin{tikzpicture}
 			\path node[/Git/commit] (c1) {98C49C};
 			\path (c1.east) ++ (\GitCommitSep, 0) node[anchor=west, /Git/commit] (c2) {34AC2} edge[->] (c1);
@@ -199,15 +199,14 @@
 			\path (c4.north) ++ (0, 3mm) node[anchor=south, /Git/branch] (main) {main} edge[->] (c4);
 			\path (c2.north) ++ (0, 3mm) node[anchor=south, /Git/branch] (dev) {dev} edge[->] (c2);
 			\path (main.north) ++ (0, 3mm) node[anchor=south, /Git/head] (head) {HEAD} edge[->] (main);
-		\end{tikzpicture}\par
-	}
+		\end{tikzpicture}
+  \end{center}
 \end{frame}
 
 \begin{frame}
 	\frametitle{Fusion de branches}
-	{
-	\centering
-	\begin{tikzpicture}
+	\begin{center}
+    \begin{tikzpicture}
 		\path (3.7cm, 0) node[/Git/commit] (c1) {98C49C};
 		\path (c1.east) ++ (\GitCommitSep, 0) node[anchor=west, /Git/commit] (c2) {34AC2} edge[->] (c1);
 		\path (c2.east) ++ (\GitCommitSep, 4mm) node[anchor=west, /Git/commit] (c3N) {F30AB} edge[->] (c2);
@@ -215,8 +214,8 @@
 		\path (c2.north) ++ (0, 3mm) node[anchor=south, /Git/branch] (main) {main} edge[->] (c2);
 		\path (c3N.north) ++ (0, 3mm) node[anchor=south, /Git/branch] (br) {br} edge[->] (c3N);
 		\path (br.north) ++ (0, 3mm) node[anchor=south, /Git/head] (head) {HEAD} edge[->] (br);
-	\end{tikzpicture}\par
-	}
+	\end{tikzpicture}
+\end{center}
 	\begin{itemize}
 		\item \texttt{git merge autrebranche} : fusionne changements de \texttt{autrebranche} dans branche actuelle
 		\item Si \texttt{autrebranche} est en avant de l’actuelle : \og{}fast-forward\fg{}
@@ -239,8 +238,6 @@
 		\item \texttt{git remote show origin} : voir les réf. distantes
 		\item Suivre une branche distante \texttt{origin/br} : \texttt{checkout br}
 	\end{itemize}
-	% \href{https://onlywei.github.io/explain-git-with-d3/\#fetch}{Illustration}
-	\href{https://learngitbranching.js.org/?NODEMO}{Illustration}
 \end{frame}
 
 \section{Divers}
@@ -251,7 +248,6 @@
 		\item Utilisez gitignore {\tiny (\href{https://github.com/github/gitignore}{modèles})}
 		\item Créez-vous une paire clé publique / privée
 		\item Raccourcis : à éviter au début
-		\item \texttt{git init} : dépôt vide dans rép. courant (rien n’est traqué)
 		\item \texttt{git clone url} : cloner un dépôt
 		\item \texttt{git stash} : WD $←$ HEAD
 		\item \texttt{git tag -a montag} {\tiny (tag annoté, recommandé)} puis \texttt{git push origin montag}
