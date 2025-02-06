@@ -37,21 +37,21 @@ TODO @ home: Git step-by-step (entirely); “graded exercices” and “training
 
 [[S3]]
 == S3: 19 Feb
-* Graded exercice about git: https://github.com/oliviercailloux/java-course/blob/main/Git/Git%20branching%203.adoc[branching]. Deadline: 14h25.
+* Graded exercice about https://github.com/oliviercailloux/java-course/blob/main/Git/README.adoc[git branching]. Deadline: 14h25.
 * Syntax, exercice: More about classes
 * https://github.com/oliviercailloux/java-course/blob/main/Execution/README.adoc[Execution], without packages, exercices
 * Syntax: packages
 * Execution, with packages, exercices
 
-TODO @ home: Install Eclipse (see link below).
+TODO @ home: Install https://github.com/oliviercailloux/java-course/blob/main/Dev%20tools/VS%20Code.adoc[Visual Studio Code].
 
 [[S4]]
 == S4: 21 Feb
-* https://github.com/oliviercailloux/java-course/blob/main/Dev%20tools/Eclipse.adoc[Eclipse & Java] (and Configuration, Start project). Re-create some classes you did in the Syntax part (see here above) in Eclipse and make sure you can run the `main` method.
+* Re-create some classes that you designed in the Syntax part (see here above) in VS Code and make sure you can run the `main` method.
 * Unit testing, demo, https://github.com/oliviercailloux/java-course/blob/main/JUnit/Overview.adoc[overview]; exercice: write unit tests for the exercices in Syntax.
 * Two major aspects of software engineering: https://github.com/oliviercailloux/java-course/blob/main/Contrat/README.adoc[contract] and fail-fast.
 
-TODO @ home: Syntax, More exercices (up to EE3.6 included); Eclipse and Unit testing (see above).
+TODO @ home: Syntax, More exercices (up to EE3.6 included); VS Code and Unit testing (see above).
 
 // [[S5]]
 // == S5: 5 April

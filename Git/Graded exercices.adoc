@@ -12,6 +12,7 @@ This document explains how to submit your solutions for the graded exercices of 
 ** Both you and I have access to your remote repository. I use this access to grade your work
 ** Note that I have no access to your local repository, so, whatever you do not push, I cannot grade
 * Do whatever the assignment asks you to do (for example, add some code to some files, create new files, …) in your local repository
+** You can use pre-existing resources on your computer (course, your notes…) and on the internet. You can search on Google, StackOverflow, or any other engine that returns pre-existing answers. It is _absolutely forbidden_ to use any resource that is generated on the fly, such as large language models (ChatGPT or others), post a question on a forum, …
 * Push your work to your remote
 ** Push regularly, do not wait the end of the allowed time, so as to prevent last minute problems
 ** Remember that you need to push all branches that you want me to see

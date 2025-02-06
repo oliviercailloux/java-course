@@ -1,0 +1,21 @@
+= Visual Studio Code
+
+== Set up
+* Install a https://github.com/oliviercailloux/java-course/blob/main/Best%20practices/Various.adoc#installing-the-jdk[JDK]
+* Install https://code.visualstudio.com/[Visual Studio Code]
+* Read the https://code.visualstudio.com/docs/getstarted/getting-started[tutorial] page
+* Install the following extensions: https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack[Extension Pack for Java] (not the Coding Pack for Java) and https://marketplace.visualstudio.com/items?itemName=bierner.docs-view[Docs View].
+* From the user guide, read the https://code.visualstudio.com/docs/editor/codebasics[Basic Editing] and the https://code.visualstudio.com/docs/editor/editingevolved[Code Navigation] pages.
+(You can also read https://code.visualstudio.com/docs/languages/java[Java in Visual Studio Code] or https://code.visualstudio.com/docs/java/java-tutorial[Getting Started with Java in VS Code] but I don’t find them very enlightening.)
+* Dock the https://code.visualstudio.com/docs/getstarted/tips-and-tricks#_outline-view[Outline view] on the Secondary Side Bar (if you have enough screen space)
+* Dock the Documentation view on the Panel
+
+== Basic exercices
+* Clone the https://github.com/JodaOrg/joda-money[Joda-Money] repository
+* Open it from VS Code
+* Go directly to the class `Money` using a keyboard shortcut, then, using the relevant view
+* Using the relevant view, go directly to the method `convertedTo` (without scrolling through the text)
+* Focus on the text `withCurrencyScale`, in the method implementation. Make sure your Documentation view shows the documentation of that method.
+
+== Train
+To train with graded exercices about Java, accept https://classroom.github.com/a/_7XNzi-3[this assignment], clone the resulting repository, import it in VS Code, modify the method `App#sayHello()`, run the code to check that it works, and push your changes. Check that you see them online.
