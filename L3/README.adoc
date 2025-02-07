@@ -34,12 +34,12 @@ TODO at home:
 * Read the https://github.com/oliviercailloux/java-course/blob/main/Git/Graded%20exercices.adoc[graded exercices] procedure and take the “training” assignment; Practice with the other exercices on the Git page
 * https://github.com/oliviercailloux/java-course/blob/main/Syntax/README.adoc[Syntax]: basics; exercices (Shorts and Methods); then Classes
 
-TODO @ home: Git step-by-step (entirely); “graded exercices” and “training” (see above); Exercices of “Syntax” until “Classes” (not: “More about classes”).
+TODO @ home: Git step-by-step (entirely); “graded exercices” and “training” (see above); Exercices of “Syntax” until “Methods” (not: “Classes”).
 
 [[S3]]
 == S3: 19 Feb
 * Graded exercice about https://github.com/oliviercailloux/java-course/blob/main/Git/README.adoc[git branching]. Deadline: 14h25.
-* Syntax, exercice: More about classes
+* Syntax, exercice: Classes
 * https://github.com/oliviercailloux/java-course/blob/main/Execution/README.adoc[Execution], without packages, exercices
 * Syntax: packages
 * Execution, with packages, exercices
