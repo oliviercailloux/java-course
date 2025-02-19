@@ -42,14 +42,14 @@ TODO @ home: Git step-by-step (entirely); “graded exercices” and “training
 ** Accept https://classroom.github.com/a/pbpeqLQ8[this]. Clone the resulting remote repository. Modify the file `a folder/a file.txt`, so that it contains “Hello” (or anything else than its original content). Push to your remote.
 * Syntax, exercice: Classes
 * https://github.com/oliviercailloux/java-course/blob/main/Execution/README.adoc[Execution], without packages, exercices
-* Syntax: packages
-* Execution, with packages, exercices
 
 TODO @ home: Install https://github.com/oliviercailloux/java-course/blob/main/Dev%20tools/VS%20Code.adoc[Visual Studio Code].
 
 [[S4]]
 == S4: 21 Feb
 * Graded exercice about https://github.com/oliviercailloux/java-course/blob/main/Git/README.adoc[git branching]. Deadline: 14h25.
+* Syntax: packages
+* Execution, with packages, exercices
 * Exercices: https://github.com/oliviercailloux/java-course/blob/main/Dev%20tools/VS%20Code.adoc[VS Code]
 * Re-create some classes that you designed in the Syntax part (see here above) in VS Code and make sure you can run the `main` method.
 * Unit testing, demo, https://github.com/oliviercailloux/java-course/blob/main/JUnit/Overview.adoc[overview]; exercice: write unit tests for the exercices in Syntax.
