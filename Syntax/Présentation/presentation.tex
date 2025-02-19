@@ -151,7 +151,7 @@ int z = -(x - y);
 \end{frame}
 
 \begin{frame}[fragile]
-	\frametitle{Opérations binaires}
+	\frametitle{Opérateurs binaires}
 	\begin{description}
 		\item[\texttt{+}, \texttt{-}, \texttt{*}, \texttt{/}] NB \texttt{/} sur entiers ≠ \texttt{/} sur double : toujours préciser le type pour meilleure lisibilité
 		\item[\texttt{+}] sur \texttt{String}: concaténation de chaines
@@ -165,8 +165,20 @@ int z = -(x - y);
 	\end{description}
 	\begin{block}{Exemple}
 		\begin{lstlisting}
-boolean c = (!b && (x > y)) || (a != 3)
+boolean cond = (!b && (x > y)) || (a != 3)
 		\end{lstlisting}	
+	\end{block}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Opérateur ternaire}
+	\begin{description}
+		\item[\texttt{b ? x : y}] teste \texttt{b}, si vrai, vaut \texttt{x}, sinon vaut \texttt{y}
+	\end{description}
+	\begin{block}{Exemple}
+		\begin{lstlisting}
+double result = cond ? 3 : 4
+		\end{lstlisting}
 	\end{block}
 \end{frame}
 
@@ -302,7 +314,7 @@ class MyMathClass {
 }
 		\end{lstlisting}	
 	\end{block}
-	Puis appel avec : \texttt{MyMathClass.sum(3d, 1d);}
+	Puis appel avec : \texttt{MyMathClass.sum(3d, 1d);} ou \texttt{sum(3d, 1d);}
 \end{frame}
 
 \begin{frame}[fragile]
@@ -339,27 +351,6 @@ double r = MyMathClass.wSum(2d, 4d);
 	\end{lstlisting}
 	Il est donc toujours possible de distinguer une variable d’une méthode
 \end{frame}
-	
-\begin{frame}[fragile]
-	\frametitle{Classes : variables privées}
-	Une classe peut restreindre l’accès à ses variables à elle-même
-	\begin{block}{Exemple}
-		\begin{lstlisting}
-class MyMathClass {
-	private static double w1;
-	private static double w2;
-	static void setWeights(double wt1, wt2) {
-		w1 = wt1;
-		w2 = wt2;
-	}
-	static double wSum(double a, double b) {
-		return w1 * a + w2 * b;
-	}
-}
-		\end{lstlisting}	
-	\end{block}
-	Fortement conseillé pour simplifier l’analyse !
-\end{frame}
 
 \begin{frame}
 	\frametitle{Variables et méthodes dans le JDK}
@@ -372,6 +363,27 @@ class MyMathClass {
 		\item Méthodes pour créer des entiers, par exemple \texttt{Integer.\href{https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html\#parseInt(java.lang.String)}{parseInt}("10");}
 		\item Méthodes pour créer des chaines, par exemple \texttt{String.\href{https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html\#format(java.lang.String,java.lang.Object...)}{format}("Hello \%s, your age is \%s.", "Ann", "25");}
 	\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Classes : variables privées}
+	Une classe peut restreindre l’accès à ses variables à elle-même
+	\begin{block}{Exemple}
+		\begin{lstlisting}
+class MyMathClass {
+	private static double w1;
+	private static double w2;
+	static void setWeights(double wt1, wt2) {
+		w1 = wt1 < 0d ? Double.NaN : wt1;
+		w2 = wt2 < 0d ? Double.NaN : wt2;
+	}
+	static double wSum(double a, double b) {
+		return w1 * a + w2 * b;
+	}
+}
+		\end{lstlisting}	
+	\end{block}
+	Offre des \emph{garanties logiques} !
 \end{frame}
 
 \section{Packages}
@@ -391,10 +403,9 @@ class MyMathClass {
 \begin{frame}
 	\frametitle{Organisation}
 	\begin{itemize}
-		\item Packages structurés hiérarchiquement, comme un arbre
+		\item Convention : packages structurés hiérarchiquement, comme un arbre
 		\item Structure indiquée par des points
-		\item Organiser par thème (\href{https://docs.geotools.org/latest/javadocs/}{exemple})
-		\item Référence à la classe par son nom complet ou nom simple avec import
+		\item Organiser par thème (\hrefblue{https://docs.geotools.org/latest/javadocs/}{exemple})
 	\end{itemize}
 \end{frame}
 
@@ -420,10 +431,10 @@ class Maths {
 \begin{frame}[fragile]
 	\frametitle{Référence}
 	\begin{itemize}
-		\item Au sein d’un package {\tiny et pour \texttt{java.lang}} : utiliser le nom simple
 		\item Référence à la classe par son nom complet ? \onslide<2->{\texttt{io.github.oliviercailloux.math.Maths.isEven(4);}}
 		\item Pas pratique !
-		\item \og{}Importer\fg{} son nom dans l’espace de noms courants
+		\item Au sein d’un package {\tiny et pour \texttt{java.lang}} : utiliser le nom simple
+		\item Hors du package ? \onslide<3->{\og{}Importer\fg{} son nom dans l’espace de noms courants}
 		\item Puis référence à la classe par son nom simple
 	\end{itemize}
 	\begin{lstlisting}
