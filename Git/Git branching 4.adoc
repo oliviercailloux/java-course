@@ -1,14 +1,13 @@
 = Git branching 4
 :xrefstyle: short
 
-In this graded exercice, we’ll simulate that we create several branches (to try different approaches) and merge some of them.
+In this graded exercice, we’ll create several branches and merge some of them.
 
-Deadline: 14h05. If you are late, the penalty increases linearly until 14h10.
 
-// * Accept the graded exercice: https://classroom.github.com/a/lV2GDdGT[branching bis]
-* Start with a first commit, that we will name `Start`, that contains a single file, `starting point.txt`, containing “A starting point”
+* Accept the graded exercice: [branching bis]. This creates a repository for you.
+* Your repository currently has one commit. I’ll refer to it as “start” (you do not have to create it, it exists already).
 * Create the branches so as to end up as illustated in the figure below (<<Goal>>). (You may have to create branches along the way, not necessarily now.)
-* Commit `A` adds a file named `first file.txt` containing “Hello!”; its parent is `Start`.
+* Commit `A` adds a file named `afile.txt` containing “Hello!”; its parent is `Start`.
 * Commit `B` adds a file whose relative path is `My folder/second file.txt` containing “Second”; its parent is `A`. You must thus create the required intermediate folder.
 * Commit `C` adds a file named `first file.txt` containing “Coucou !”; its parent is `Start`.
 * Commit `D` is the result of merging `B` and `C` (after resolving the conflict). It keeps both the text “Hello!” AND the text “Coucou !” (on the next line), thus, commit `D` contains a blob `first file.txt` that contains two lines (in addition to the other blobs coming from its parents).
@@ -17,5 +16,9 @@ To recap, you must create five commits and three branches in total. The history 
 
 [[Goal]]
 .Desired history at end of the exercice
-image::Git%20branching%203.svg[opts="inline"]
+image::Git%20branching%204.svg[opts="inline"]
 
+add a remote pointing to the original repository that can be found https://github.com/oliviercailloux/google-or-tools-java/[online].
+fetch from this remote
+find the right commit
+push your branch to your repository
