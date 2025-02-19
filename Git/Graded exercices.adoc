@@ -18,6 +18,7 @@ This document explains how to submit your solutions for the graded exercices of 
 ** Remember that you need to push all branches that you want me to see
 * Hint: Check with the GitHub web interface that your commits and branches have reached the remote repository
 * Your last commit on time is graded. Also, your commits overtime are graded, and penalized linearly according to the delay, so that five minutes delay is penalized 100%. The best grade is kept. So, pushing after the delay can only improve your grade.
+* When you are done, you may exit the classroom only if you push a tag `END` anywhere on your remote repository.
 
 == Configuration
 It is important that your git `user.name` https://github.com/oliviercailloux/java-course/blob/main/Git/README.adoc#Configure-git[equals] (exactly) your GitHub username, so that I can associate your contributions to you. This will be important when working on projects. I will also grade whether you configured your git correctly even before projects, as part of each graded exercice.
