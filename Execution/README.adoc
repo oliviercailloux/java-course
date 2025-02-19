@@ -5,8 +5,7 @@ NOTE: The reader is supposed to have a minimal knowledge of the https://github.c
 Here we learn how to compile and execute Java code, first in a simple case, then, in more general cases such as when using non-default packages. See: https://github.com/oliviercailloux/java-course/raw/main/Execution/Pr%C3%A9sentation/presentation.pdf[présentation].
 
 == Exercice
-* Define a method `greatestDivisor` that accepts an integer parameter and returns its greatest divisor except itself.
-* Define a class `MyMathClass` containing the method `greatestDivisor` and a method that returns the smallest divisor (greater than one) of its parameter; and a class `MyBooleanClass` containing a method `xor` returning `true` iff exactly one of its parameter is `true`.
+* Define a class `MyMathClass` containing the method `greatestDivisor` (see https://github.com/oliviercailloux/java-course/blob/main/Syntax/README.adoc#methods[Syntax]) and a method that returns the smallest divisor (greater than one) of its parameter; and a class `MyBooleanClass` containing a method `xor` returning `true` iff exactly one of its parameter is `true`.
 * Add a `main` method to your `MyBooleanClass` that prints “Hello, this is my boolean class.” Use `System.out.println("…")` to print.
 * Compile `MyBooleanClass` with `javac`, move the resulting file into its own directory, execute it from the source directory.
 * Find out _in the javac documentation_ how to compile the class and let the resulting class be placed in its own directory, in a single step (without you having to move the file afterwards). Type just `javac` to see its documentation.

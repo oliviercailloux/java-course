@@ -21,7 +21,7 @@ You can achieve all these tasks with only the syntax seen in this presentation, 
 . Assign 4659 and 23 to variables, and show the result of multiplying these variables
 . Compute the greatest divisor of 4659 that is different than 4659 (use the `%` operator and a loop) (to check your answer, look at https://www.wolframalpha.com/input?i2d=true&i=factor%5C%2840%294659%5C%2841%29[its factors])
 . Define a method that returns the greatest divisor of 4659 that is different than 4659
-. Define a method that accepts an integer parameter and returns its greatest divisor except itself; use it to show the greatest divisor of 4659.
+. Define a method `greatestDivisor` that accepts an integer parameter and returns its greatest divisor except itself; use it to show the greatest divisor of 4659.
 
 == Classes
 In a text editor, define a class `MyMathClass` containing a method that accepts an integer parameter and returns its greatest divisor except itself, and a method that returns the smallest divisor of its parameter except one; and a class `MyBooleanClass` containing a method `xor` returning `true` iff exactly one of its two boolean parameters is `true`. Copy-paste this in jshell and call all these methods from jshell.
