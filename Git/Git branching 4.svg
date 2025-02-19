@@ -59,23 +59,23 @@
 	<line id="D_to_C" x1="300" y1="30" x2="220" y2="21" stroke="black" stroke-width="0.5" marker-end="url(#arrow)" />
 	<line id="D_to_A" x1="300" y1="30" x2="120" y2="39" stroke="black" stroke-width="0.5" marker-end="url(#arrow)" />
 
-	<g transform="translate(100, 0)">
-			<g transform="translate(0, 54)">
+	<g transform="translate(100, 54)">
 				<ellipse cx="10" cy="0" rx="10" ry="3" stroke="black" fill="white" stroke-width="0.5" />
 				<text x="10" y="1" font-style="italic" fill="red" stroke-width="0.25">br2</text>
 			</g>
-			<g transform="translate(0, 6)">
+			<g transform="translate(100, 6)">
 				<ellipse cx="10" cy="0" rx="10" ry="3" stroke="black" fill="white" stroke-width="0.5" />
 				<text x="10" y="1" font-style="italic" fill="red" stroke-width="0.25">br1</text>
 			</g>
+      <g transform="translate(100, 0)">
 		<line id="br1_to_A" x1="10" y1="51" x2="10" y2="42" stroke="black" stroke-width="0.5" stroke-dasharray="2, 1" marker-end="url(#arrow)" />
 		<line id="br2_to_B" x1="10" y1="9" x2="10" y2="18" stroke="black" stroke-width="0.5" stroke-dasharray="2, 1" marker-end="url(#arrow)" />
 	</g>
-	<g transform="translate(300, 0)">
-		<g transform="translate(0, 15)">
+	<g transform="translate(300, 15)">
 			<ellipse cx="10" cy="0" rx="10" ry="3" stroke="black" fill="white" stroke-width="0.5" />
 			<text x="10" y="1" font-style="italic" fill="red" stroke-width="0.25">br3</text>
 		</g>
+    <g transform="translate(300, 0)">
 		<line id="br3_to_D" x1="10" y1="18" x2="10" y2="27" stroke="black" stroke-width="0.5" stroke-dasharray="2, 1" marker-end="url(#arrow)" />
 	</g>
 </svg>
