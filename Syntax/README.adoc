@@ -32,11 +32,11 @@ Define a class `MovingThing` that has a static variable `currentSpeed` and a sta
 Once this works, make all your variables private so that nobody but your own class can touch them. Modify your class to make it still useable by providing appropriate methods to get or set their values as required. Make sure to restrict access as much as reasonable, for example, an external user should not be able to modify the `totalLength` directly.
 
 == More exercices
-Our goal here is to reach exercice 3.6 (here below), which requires to print out all numbers that have the maximum number of divisors. This requires to achieve exercices 3.1 and 3.2 first. Optionally, you may also want to attempt exercices 3.8 and 3.9 if you want some more advanced challenges.
+Our goal here is to reach exercice 3.6 (here below), which requires to print out all numbers that have the maximum number of divisors. This requires to achieve exercice 3.2 first. Optionally, you may also want to attempt exercices 3.1, and 3.8 and 3.9 if you want some more advanced challenges.
 
-* https://math.hws.edu/javanotes/c3/exercises.html[EE3.1] to 3.2
+* https://math.hws.edu/javanotes/c3/exercises.html[3.2]
 * 3.6
-* EE3.8, 3.9 (optional)
+* EE3.1, EE3.8, 3.9 (optional)
 
 The following two subsections are here for reference; we will come back to it later in the course.
 
