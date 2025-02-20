@@ -5,7 +5,7 @@ In this graded exercice, we’ll create several commits and branches and merge s
 
 == Main instructions (indicative weight: 18/20)
 
-* Accept the graded exercice: https://classroom.github.com/a/7vbbk09D[git branching]. This creates a repository for you.
+* Accept the graded exercice: https://classroom.github.com/a/_BCTKoaP[git branching]. This creates a repository for you.
 ** Your repository currently has one commit. I’ll refer to it as “Start”.
 ** All the paths given here below are relative to the project root (where the file `pom.xml` lies).
 * Create commits and branches so as to end up as illustated in <<Goal>>, below. (You may have to create branches along the way, not necessarily now.)
