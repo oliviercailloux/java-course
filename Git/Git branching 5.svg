@@ -28,37 +28,54 @@
       <text x="50%" y="70%">A</text>
       <circle cx="50%" cy="50%" r="1" fill="red" />
     </svg>
-    <line id="A_to_S" x1="0" y1="3" x2="-20" y2="23" stroke="black" stroke-width="0.5" marker-end="url(#arrow)" />
+    <line id="A_to_S" x1="0" y1="3" x2="-20" y2="20" stroke="black" stroke-width="0.5" marker-end="url(#arrow)" />
   </g>
 
-  <svg x="40" y="40" width="20" height="6">
-    <use xlink:href="#commit" />
-    <text x="50%" y="70%">B</text>
-    <circle cx="50%" cy="50%" r="1" fill="red" />
-  </svg>
+  <g transform="translate(40, 40)">
+    <svg width="20" height="6">
+      <use xlink:href="#commit" />
+      <text x="50%" y="70%">B</text>
+      <circle cx="50%" cy="50%" r="1" fill="red" />
+    </svg>
+    <line id="B_to_S" x1="0" y1="3" x2="-20" y2="3" stroke="black" stroke-width="0.5" marker-end="url(#arrow)" />
+  </g>
 
-  <svg x="40" y="60" width="20" height="6">
-    <use xlink:href="#commit" />
-    <text x="50%" y="70%">C</text>
-    <circle cx="50%" cy="50%" r="1" fill="red" />
-  </svg>
+  <g transform="translate(40, 60)">
+    <svg width="20" height="6">
+      <use xlink:href="#commit" />
+      <text x="50%" y="70%">C</text>
+      <circle cx="50%" cy="50%" r="1" fill="red" />
+    </svg>
+    <line id="C_to_S" x1="0" y1="3" x2="-20" y2="-14" stroke="black" stroke-width="0.5" marker-end="url(#arrow)" />
+  </g>
 
-  <svg x="80" y="10" width="20" height="6">
-    <use xlink:href="#commit" />
-    <text x="50%" y="70%">D</text>
-    <circle cx="50%" cy="50%" r="1" fill="red" />
-  </svg>
+  <g transform="translate(80, 10)">
+    <svg width="20" height="6">
+      <use xlink:href="#commit" />
+      <text x="50%" y="70%">D</text>
+      <circle cx="50%" cy="50%" r="1" fill="red" />
+    </svg>
+    <line id="D_to_A" x1="0" y1="3" x2="-20" y2="10" stroke="black" stroke-width="0.5" marker-end="url(#arrow)" />
+  </g>
 
-  <svg x="80" y="30" width="20" height="6">
-    <use xlink:href="#commit" />
-    <text x="50%" y="70%">E</text>
-    <circle cx="50%" cy="50%" r="1" fill="red" />
-  </svg>
+  <g transform="translate(80, 30)">
+    <svg width="20" height="6">
+      <use xlink:href="#commit" />
+      <text x="50%" y="70%">E</text>
+      <circle cx="50%" cy="50%" r="1" fill="red" />
+    </svg>
+    <line id="E_to_A" x1="0" y1="3" x2="-20" y2="-7" stroke="black" stroke-width="0.5" marker-end="url(#arrow)" />
+    <line id="E_to_B" x1="0" y1="3" x2="-20" y2="13" stroke="black" stroke-width="0.5" marker-end="url(#arrow)" />
+  </g>
 
-  <svg x="120" y="50" width="20" height="6">
-    <use xlink:href="#commit" />
-    <text x="50%" y="70%">F</text>
-    <circle cx="50%" cy="50%" r="1" fill="red" />
-  </svg>
+  <g transform="translate(120, 50)">
+    <svg width="20" height="6">
+      <use xlink:href="#commit" />
+      <text x="50%" y="70%">F</text>
+      <circle cx="50%" cy="50%" r="1" fill="red" />
+    </svg>
+    <line id="F_to_B" x1="0" y1="3" x2="-20" y2="-17" stroke="black" stroke-width="0.5" marker-end="url(#arrow)" />
+    <line id="F_to_C" x1="0" y1="3" x2="-60" y2="13" stroke="black" stroke-width="0.5" marker-end="url(#arrow)" />
+  </g>
 
 </svg>
