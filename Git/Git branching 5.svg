@@ -38,13 +38,11 @@
     <svg width="20" height="6">
       <use xlink:href="#commit" />
       <text x="50%" y="70%">Start</text>
-      <circle cx="50%" cy="50%" r="1" fill="red" />
     </svg>
     <g transform="translate(0, -15)">
       <ellipse cx="10" cy="0" rx="10" ry="4" />
       <text x="10" y="1.5" class="branch">orig</text>
       <line x1="10" y1="4" x2="10" y2="15" class="brline" />
-      <circle cx="10" cy="1.5" r="1" fill="red" />
     </g>
   </g>
 
@@ -52,7 +50,6 @@
     <svg width="20" height="6">
       <use xlink:href="#commit" />
       <text x="50%" y="70%">A</text>
-      <circle cx="50%" cy="50%" r="1" fill="red" />
     </svg>
     <line id="A_to_S" x1="0" y1="3" x2="-20" y2="20" stroke="black" stroke-width="0.5" marker-end="url(#arrow)" />
   </g>
@@ -61,13 +58,11 @@
     <svg width="20" height="6">
       <use xlink:href="#commit" />
       <text x="50%" y="70%">B</text>
-      <circle cx="50%" cy="50%" r="1" fill="red" />
     </svg>
     <g transform="translate(31, 7)">
       <ellipse cx="10" cy="0" rx="10" ry="4" />
       <text x="10" y="1.5" class="branch">test</text>
       <line x1="0" y1="0" x2="-11" y2="-1" class="brline" />
-      <circle cx="10" cy="1.5" r="1" fill="red" />
     </g>
     <line id="B_to_S" x1="0" y1="3" x2="-20" y2="3" stroke="black" stroke-width="0.5" marker-end="url(#arrow)" />
   </g>
@@ -76,7 +71,6 @@
     <svg width="20" height="6">
       <use xlink:href="#commit" />
       <text x="50%" y="70%">C</text>
-      <circle cx="50%" cy="50%" r="1" fill="red" />
     </svg>
     <line id="C_to_S" x1="0" y1="3" x2="-20" y2="-14" stroke="black" stroke-width="0.5" marker-end="url(#arrow)" />
   </g>
@@ -85,13 +79,11 @@
     <svg width="20" height="6">
       <use xlink:href="#commit" />
       <text x="50%" y="70%">D</text>
-      <circle cx="50%" cy="50%" r="1" fill="red" />
     </svg>
     <g transform="translate(31, 3)">
       <ellipse cx="10" cy="0" rx="10" ry="4" />
       <text x="10" y="1.5" class="branch">draft</text>
       <line x1="0" y1="0" x2="-11" y2="0" class="brline" />
-      <circle cx="10" cy="1.5" r="1" fill="red" />
     </g>
     <line id="D_to_A" x1="0" y1="3" x2="-20" y2="10" stroke="black" stroke-width="0.5" marker-end="url(#arrow)" />
   </g>
@@ -100,7 +92,6 @@
     <svg width="20" height="6">
       <use xlink:href="#commit" />
       <text x="50%" y="70%">E</text>
-      <circle cx="50%" cy="50%" r="1" fill="red" />
     </svg>
     <line id="E_to_A" x1="0" y1="3" x2="-20" y2="-7" stroke="black" stroke-width="0.5" marker-end="url(#arrow)" />
     <line id="E_to_B" x1="0" y1="3" x2="-20" y2="13" stroke="black" stroke-width="0.5" marker-end="url(#arrow)" />
@@ -110,13 +101,11 @@
     <svg width="20" height="6">
       <use xlink:href="#commit" />
       <text x="50%" y="70%">F</text>
-      <circle cx="50%" cy="50%" r="1" fill="red" />
     </svg>
     <g transform="translate(0, -15)">
       <ellipse cx="10" cy="0" rx="10" ry="4" />
       <text x="10" y="1.5" class="branch">main</text>
       <line x1="10" y1="4" x2="10" y2="15" class="brline" />
-      <circle cx="10" cy="1.5" r="1" fill="red" />
     </g>
     <line id="F_to_B" x1="0" y1="3" x2="-20" y2="-17" stroke="black" stroke-width="0.5" marker-end="url(#arrow)" />
     <line id="F_to_C" x1="0" y1="3" x2="-60" y2="13" stroke="black" stroke-width="0.5" marker-end="url(#arrow)" />
