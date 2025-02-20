@@ -5,7 +5,7 @@ In this graded exercice, we’ll create several commits and branches and merge s
 
 == Main instructions (indicative weight: 18/20)
 
-* Accept the graded exercice: [branching bis]. This creates a repository for you.
+* Accept the graded exercice: https://classroom.github.com/a/7vbbk09D[git branching]. This creates a repository for you.
 ** Your repository currently has one commit. I’ll refer to it as “Start”.
 ** All the paths given here below are relative to the project root (where the file `pom.xml` lies).
 * Create commits and branches so as to end up as illustated in <<Goal>>, below. (You may have to create branches along the way, not necessarily now.)
@@ -14,7 +14,7 @@ In this graded exercice, we’ll create several commits and branches and merge s
 * Commit `C` adds a file named `afile.txt` containing “Third”.
 * Commit `D` adds a file whose relative path is `My folder/one more file.txt` containing “Something”. You must thus create the required intermediate folder.
 * Commit `E` adds nothing more than what comes from its parents.
-* Commit `F` keeps both the text “Second” AND the text “Third” (on the next line), thus, commit `D` contains a blob `afile.txt` that contains two lines (in addition to the other blobs coming from its parents).
+* Commit `F` keeps both the text “Second” AND the text “Third” (on the next line), thus, commit `F` contains a blob `afile.txt` that contains two lines (in addition to the other blobs coming from its parents).
 
 To recap, at this stage, you must have created (at least) six commits and four branches in total. The history should look like <<Goal>> when you are done. Make sure your pointers are exactly as pictured, and that the branches are named as in the figure. (You may have more branches and commits, and the only thing that matters with respect to branches is their final positions, not how they moved.)
 
@@ -23,9 +23,11 @@ To recap, at this stage, you must have created (at least) six commits and four b
 image::Git%20branching%205.svg[opts="inline"]
 
 == Supplementary instruction (indicative weight: 2/20)
+This part proposes a challenge that goes beyond what has been covered in the exercices.
+Our goal is to bring an old commit, coming from the original repository (that your repository originates from), back to your repository.
 
-* Add a remote pointing to the original repository that can be found https://github.com/oliviercailloux/google-or-tools-java/[online].
+* Add a remote pointing to the original repository that can be found https://github.com/oliviercailloux/google-or-tools-java/[online]
 * Fetch from this remote
-* Add a branch pointing to the commit whose SHA-1 contains `f88600`
+* Add a branch `old` pointing to the commit whose SHA-1 contains `f88600` and push it to your repository
 * This is _not_ illustrated in <<Goal>>
 
