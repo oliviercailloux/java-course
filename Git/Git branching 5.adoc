@@ -19,7 +19,7 @@ In this graded exercice, we’ll create several commits and branches and merge s
 To recap, at this stage, you must have created (at least) six commits and four branches in total. The history should look like <<Goal>> when you are done. Make sure your pointers are exactly as pictured, and that the branches are named as in the figure. (You may have more branches and commits, and the only thing that matters with respect to branches is their final positions, not how they moved.)
 
 [[Goal]]
-.Desired history at end of the exercice
+.Desired history at end of the exercice, showing only the _new_ branches
 image::Git%20branching%205.svg[opts="inline"]
 
 == Supplementary instruction (indicative weight: 2/20)
