@@ -47,7 +47,7 @@ TODO @ home: Install https://github.com/oliviercailloux/java-course/blob/main/De
 
 [[S4]]
 == S4: 21 Feb
-* Graded exercice about https://github.com/oliviercailloux/java-course/blob/main/Git/README.adoc[git branching]. Deadline: 14h25.
+* Graded exercice: https://github.com/oliviercailloux/java-course/blob/main/Git/Git%20branching%205.adoc[Git branching]. Deadline: 14h35.
 * Syntax: packages
 * Execution, with packages, exercices
 * Exercices: https://github.com/oliviercailloux/java-course/blob/main/Dev%20tools/VS%20Code.adoc[VS Code]
