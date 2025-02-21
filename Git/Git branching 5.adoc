@@ -8,7 +8,7 @@ In this graded exercice, we’ll create several commits and branches and merge s
 * Accept the graded exercice: https://classroom.github.com/a/_BCTKoaP[git branching]. This creates a repository for you.
 ** Your repository currently has one commit. I’ll refer to it as “Start”.
 ** All the paths given here below are relative to the project root (where the file `pom.xml` lies).
-* Create commits and branches so as to end up as illustated in <<Goal>>, below. (You may have to create branches along the way, not necessarily now.)
+* Create commits and branches so as to end up as illustated in <<Goal>>, below. Note that all the branches on that figure are to be created by you. (You may have to create branches along the way, not necessarily now.)
 * Commit `A` adds a file named `hello.txt` containing “Hello!”.
 * Commit `B` adds a file named `afile.txt` containing “Second”.
 * Commit `C` adds a file named `afile.txt` containing “Third”.
