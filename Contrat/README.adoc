@@ -7,7 +7,8 @@ We will learn about the following mechanisms, that implement these principles: i
 See: https://github.com/oliviercailloux/java-course/raw/main/Contrat/Pr%C3%A9sentation/presentation.pdf[présentation].
 
 == Technical hints
-* Generate Javadoc from Eclipse: `Source` / `Generate Element Comment` (on methods and classes!); use the `Javadoc` view
+* Generate Javadoc from VS Code: type `/**`, https://github.com/redhat-developer/vscode-java/issues/228#issuecomment-414857416[click]
+* Use the https://github.com/oliviercailloux/java-course/blob/main/Dev%20tools/VS%20Code.adoc[`Documentation`] view
 
 == Exercices
 . Implement a method `randomFail()` that throws an `IllegalStateException` with one chance on two. Call this method three times in a row from your main (without looping). Run your program until it fails. Determine how to find which of the three calls raised the exception, just by looking at the stack trace (hint: look at the line numbers).
