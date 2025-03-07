@@ -58,10 +58,11 @@ TODO @ home: Syntax, More exercices (up to EE3.6 included); VS Code (see above).
 [[S5]]
 == S5: 7 March
 * Unit testing, demo, https://github.com/oliviercailloux/java-course/blob/main/JUnit/Overview.adoc[overview]; exercice: write unit tests for the exercices in Syntax.
+* Please register your project team https://classroom.github.com/a/VtYNqTPm[here]
 * Two major aspects of software engineering: https://github.com/oliviercailloux/java-course/blob/main/Contrat/README.adoc[contract] and fail-fast.
 * Contract: exercices
 
-TODO @ home: Contract EE4.3 and 4.4.
+TODO @ home: Contract EE4.3 and 4.4. Before end of 14 March: git-branching-2. Submit new attempt at git-branching. Grade git-branching-final: max(git-branching, git-branching × (1 − w) + git-branching-2 × w), w = (20 - a) / 40. Grade git-modify-final: max(git-modify, git-branching-final).
 
 [[S6]]
 == S6: 21 March
