@@ -4,6 +4,7 @@
 * Install a https://github.com/oliviercailloux/java-course/blob/main/Best%20practices/Various.adoc#installing-the-jdk[JDK]
 * Install https://code.visualstudio.com/[Visual Studio Code]
 * Read the https://code.visualstudio.com/docs/getstarted/getting-started[tutorial] page
+** In particular, find out how to access the _Command Palette_
 * Install the following extensions: https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack[Extension Pack for Java] (not the Coding Pack for Java) and https://marketplace.visualstudio.com/items?itemName=bierner.docs-view[Docs View].
 * From the user guide, read the https://code.visualstudio.com/docs/editor/codebasics[Basic Editing] and the https://code.visualstudio.com/docs/editor/editingevolved[Code Navigation] pages.
 (You can also read https://code.visualstudio.com/docs/languages/java[Java in Visual Studio Code] or https://code.visualstudio.com/docs/java/java-tutorial[Getting Started with Java in VS Code] but I don’t find them very enlightening.)
