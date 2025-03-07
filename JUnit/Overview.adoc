@@ -25,7 +25,7 @@ Let us write a test for this method!
 * Finally, invoke `https://junit.org/junit5/docs/current/api/org.junit.jupiter.api/org/junit/jupiter/api/Assertions.html#assertEquals(int,int)[Assertions.assertEquals](3, actual)`, where the first parameter is the value you expect to obtain (in this example, we test that `complicatedComputation(0)` returns `3`).
 ** You need to have Jupiter on the build path in order to compile and run this.
 ** You should obtain something like https://github.com/oliviercailloux/Sample-JUnit-5/blob/with-test/src/test/java/io/github/oliviercailloux/sample_junit_5/SuperComputerTests.java[this].
-* See https://help.eclipse.org/latest/topic/org.eclipse.jdt.doc.user/tips/jdt_tips.html[Writing and running JUnit tests] to run your test. (That documentation is about a much older version of JUnit, but the part about running the tests still applies.)
+* See the https://github.com/oliviercailloux/java-course/blob/main/Dev%20tools/VS%20Code.adoc[VS Code doc] to run your test.
 * Check whether the test succeeds or fails depending on your source code.
 
 == Usage
