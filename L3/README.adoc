@@ -64,7 +64,7 @@ TODO @ home: Syntax, More exercices (up to EE3.6 included); VS Code (see above).
 
 TODO @ home: Contract EE4.3 and 4.4. 
 Before end of 9 March: register for a team, otherwise I’ll register you according to remaining seats.
-Before end of 14 March: git-branching-2. Submit new attempt at git-branching. Grade git-branching-final: max(git-branching, git-branching × (1 − w) + git-branching-2 × w), w = (20 - a) / 40. Grade git-modify-final: max(git-modify, git-branching-final).
+Before end of 14 March: git-branching-2. Submit new attempt at git-branching. Grade git-branching-final: max(git-branching, git-branching × (1 − w) + git-branching-2 × w), w = (20 - git-branching) / 40. Grade git-modify-final: max(git-modify, git-branching-final).
 
 [[S6]]
 == S6: 21 March
