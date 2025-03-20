@@ -1,0 +1,28 @@
+= Let’s multiply
+
+This class permits to store two operands, and compute the result of multiplying them. Thus, after calling `setFirstOperand(3)` and `setSecondOperand(4)`, `multiply()` should return 12.
+
+== General mode
+By default, the class is in general mode.
+In general mode, the operands and the result of multiplication can be any value (positive, negative or zero).
+
+== Positive mode
+The class can be switched to positive mode.
+In positive mode, the operands can be set only to strictly positive values and the result of multiplication must be strictly positive.
+
+== Positive result mode
+The class can be switched to positive result mode.
+In positive result mode, the operands can be set to any value and the result of multiplication must be strictly positive.
+
+== Requirements
+Implement the method `setPositiveMode` and `setPositiveResultMode` that switches the class to the corresponding mode and `setGeneralMode` that switches the class back to general mode.
+Implement the methods `setFirstOperand`, `setSecondOperand` and `multiply` that react according to the current mode. 
+Throw exceptions appropriately.
+
+== Hints
+
+One way to implement the requirements is to store the operands and the mode in variables (but you are free to choose another way).
+
+Note that the specifications here are incomplete. You may choose any reasonable way to implement the requirements, as long as you satisfy all of them.
+
+If you implement only the general mode, you will get 30% of the points.
