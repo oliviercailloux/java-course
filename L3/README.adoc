@@ -68,7 +68,7 @@ Before end of 14 March (linear penalty for lateness, 100 % at end of 15 March)
 
 [[S6]]
 == S6: 21 March
-* Graded exercice about syntax and contracts: https://classroom.github.com/a/Wa20i3UR[multiply]. _You must disable LLM completions_
+* Graded exercice about syntax and contracts: https://classroom.github.com/a/Wa20i3UR[multiply]. _You must disable LLM completions._ Deadline: 14:07 plus five minutes late max.
 * https://github.com/oliviercailloux/java-course/blob/main/Objects%20%26%20interfaces/README.adoc[Objects & interfaces].
 * Objects. Exercices up to 5.3, then Three dice.
 * Interfaces. Exercice: I like to move it move it; Coffee
