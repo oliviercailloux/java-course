@@ -18,6 +18,7 @@ In positive result mode, the operands can be set to any value and the result of 
 Implement the method `setPositiveMode` and `setPositiveResultMode` that switches the class to the corresponding mode and `setGeneralMode` that switches the class back to general mode.
 Implement the methods `setFirstOperand`, `setSecondOperand` and `multiply` that react according to the current mode. 
 Throw exceptions appropriately.
+*For this exercice we will favor `IllegalStateException` over `IllegalArgumentException`, in case both are reasonable candidates.*
 
 == Hints
 
