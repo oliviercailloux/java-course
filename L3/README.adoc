@@ -69,13 +69,18 @@ Before end of 14 March (linear penalty for lateness, 100 % at end of 15 March)
 [[S6]]
 == S6: 21 March
 * Graded exercice about syntax and contracts: https://classroom.github.com/a/Wa20i3UR[multiply], wording https://github.com/oliviercailloux/java-course/blob/main/Contrat/Multiply.adoc[here]. _You must disable LLM completions._ Deadline: 14:20 plus five minutes late max.
+* Review static variables
 * https://github.com/oliviercailloux/java-course/blob/main/Objects%20%26%20interfaces/README.adoc[Objects & interfaces].
+* Objects (just started). Exercices up to 5.3, then Three dice.
+
+TODO @ home.
+Before end of 1 April (linear penalty up to 100% for 12 hours late): submit new attempt at multiply (you may delete your repository and start anew). Grade multiply-final: max(multiply, multiply × 0.1 + multiply-2 × 0.9). This exercice will have a lower weight (not counted in the general owa).
+
+[[S7]]
+== S7: 2 April
 * Objects. Exercices up to 5.3, then Three dice.
 * Interfaces. Exercice: I like to move it move it; Coffee
-
-// [[S7]]
-// == S7: 19 April
-// * Graded exercice about objects and interfaces: https://classroom.github.com/a/O_Hb-4UL[car]. Implement all three classes. Deadline: 14h31, plus 10 minutes with penalty, increasing slowly at first. If you finish early, you must push a branch “end” at your last commit before exitting the room.
+// * Graded exercice about objects and interfaces: https://classroom.github.com/a/O_Hb-4UL[car]. Implement all three classes.
 // * Correct your own exercice with help of teammates.
 // * Polymorphism: inheritance
 // * Exercices: extend SimpleCar with one that remembers its first three moves. 421.
