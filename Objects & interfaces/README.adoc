@@ -26,10 +26,10 @@ See https://github.com/oliviercailloux/java-course/blob/main/Syntax/Classes%20as
 
 Hints for self-correction https://github.com/oliviercailloux/java-course/blob/main/Objects%20%26%20interfaces/Correction%20of%20Three%20dice.adoc[here]. Do not look at it before having implemented your own version!
 
-== Two players
+== Multiple players
 * Implement a two players (random) game. Each player has a triplet of dice. Each player throw their dice. Player one loses one point and rethrows if the other player has at least as high a total as hers. Then same thing for player two. After twenty turns, the highest total wins.
-Example run: P1 has 10, P2 has 7. P1 keeps her roll. P2 loses one point and rerolls and obtains 14. P1 loses one point and rerolls and obtains 11. P2 keeps her roll.
-* Create a class Player that contains her dice and her current result. Implement the game by using this class.
+Example run: P1 has 10, P2 has 7. P1 keeps her roll. P2 loses one point and rerolls and obtains 14. P1 loses one point and rerolls and obtains 11. P2 keeps her roll. P1 loses one point and rerolls and obtain 15. And so on. If the game ends now, P1 has −2 and P2 has −1 so P2 wins.
+* Create a class Player that contains her name, her dice and her current result. Implement the game by using this class.
 * Extend to three players.
 
 == Interfaces: syntax and example
