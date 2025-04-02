@@ -82,7 +82,7 @@ Before end of 1 April (linear penalty up to 100% for 12 hours late): submit new 
 * https://github.com/oliviercailloux/java-course/blob/main/L3/Projets.adoc[Projects]: initial planning
 
 TODO @ home.
-Finish Three dice.
+Finish Exercices up to 5.3, Three dice, and Two players.
 
 [[S8]]
 == S8: 4 April
