@@ -79,8 +79,11 @@ Before end of 1 April (linear penalty up to 100% for 12 hours late): submit new 
 [[S7]]
 == S7: 2 April
 * Objects. Exercices up to 5.3, then Three dice.
-* Interfaces. Exercice: I like to move it move it; Coffee
 * https://github.com/oliviercailloux/java-course/blob/main/L3/Projets.adoc[Projects]: initial planning
+
+[[S8]]
+== S8: 4 April
+* Interfaces. Exercice: I like to move it move it; Coffee
 // * Graded exercice about objects and interfaces: https://classroom.github.com/a/O_Hb-4UL[car]. Implement all three classes.
 // * Correct your own exercice with help of teammates.
 // * Polymorphism: inheritance
@@ -88,9 +91,6 @@ Before end of 1 April (linear penalty up to 100% for 12 hours late): submit new 
 // * : 40 to 60% of the final grade
 
 // TODO @ home: you _may_ try again the strings graded exercice. Follow the instructions https://github.com/oliviercailloux/java-course/blob/main/L3/Exercices%20not%C3%A9s.adoc#Collective[here] if you wish to try to improve your grade. Your new aggregated grade will be composed of the original one, with a weight of 30% to 80%, and the new (second chance) one, with the weight _depending on the number of lines that you changed_. Deadline: end of Sunday 23 April (linear penalty up to 100% after 30 minutes lateness).
-
-// [[S8]]
-// == S8: 21 April
 // * Polymorphism: SimpleCar, 421. (Still: https://github.com/oliviercailloux/java-course/blob/main/Objects%20%26%20interfaces/README.adoc[objects & interfaces].)
 // * The `Object` class and its methods: `toString()`, `equals`, `hashcode`. Exercice: Car string
 
