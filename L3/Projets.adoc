@@ -4,7 +4,6 @@
 Les projets sont ci-dessous. 
 Lisez la doc du vôtre.
 Voyez le fichier TODO.adoc pour vous faire une idée approximative des tâches possibles. Vous ne devez pas tout faire ! Placez l’emphase sur ce qui vous intéresse et proposez.
-2DL, Apartment, J-Conf, J-Voting, MIDO-SVG, J-MCDA
 
 * https://github.com/oliviercailloux/2D-Library[2D Library]
 * https://github.com/oliviercailloux/Apartments[Apartments]
