@@ -81,6 +81,9 @@ Before end of 1 April (linear penalty up to 100% for 12 hours late): submit new 
 * Objects. Exercices up to 5.3, then Three dice.
 * https://github.com/oliviercailloux/java-course/blob/main/L3/Projets.adoc[Projects]: initial planning
 
+TODO @ home.
+Finish Three dice.
+
 [[S8]]
 == S8: 4 April
 * Interfaces. Exercice: I like to move it move it; Coffee
