@@ -86,7 +86,11 @@ Finish Exercices up to 5.3, Three dice, and Two players.
 
 [[S8]]
 == S8: 4 April
-* Interfaces. Exercice: I like to move it move it; Coffee
+* Interfaces. Exercice: I like to move it move it; Coffee; 421
+* https://github.com/oliviercailloux/java-course/blob/main/Objects%20%26%20interfaces/README.adoc#checked-exceptions[Exceptions], exercices
+// * https://github.com/oliviercailloux/java-course/blob/main/Contrat/Exceptions.adoc[Exceptions].
+* https://github.com/oliviercailloux/java-course/blob/main/Maven/README.adoc[Maven]
+// * Generics (see Objects & interfaces), exercice Generic pair
 // * Graded exercice about objects and interfaces: https://classroom.github.com/a/O_Hb-4UL[car]. Implement all three classes.
 // * Correct your own exercice with help of teammates.
 // * Polymorphism: inheritance
@@ -102,10 +106,6 @@ Finish Exercices up to 5.3, Three dice, and Two players.
 // [[S9]]
 // == S9: 10 May
 // * Reviews project start
-// * https://github.com/oliviercailloux/java-course/blob/main/Objects%20%26%20interfaces/README.adoc#checked-exceptions[Exceptions], exercices
-// // * https://github.com/oliviercailloux/java-course/blob/main/Contrat/Exceptions.adoc[Exceptions].
-// * https://github.com/oliviercailloux/java-course/blob/main/Maven/README.adoc[Maven]
-// * Generics (see Objects & interfaces), exercice Generic pair
 
 // [[S10]]
 // == S10: 12 May
