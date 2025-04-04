@@ -94,7 +94,7 @@ Finish Exercices up to 5.3, Three dice, and Two players.
 
 [[S9]]
 == S9: 9 April
-* Graded exercice: objects, interfaces, unit tests (and the content seen previously)
+* Graded exercice: objects, interfaces, unit tests, Maven (and the content seen previously)
 * Polymorphism: inheritance
 * https://github.com/oliviercailloux/java-course/blob/main/Objects%20%26%20interfaces/README.adoc#checked-exceptions[Exceptions], exercices
 * Exercices: extend SimpleCar with one that remembers its first three moves.
