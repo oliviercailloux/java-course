@@ -37,7 +37,7 @@ Example run: P1 has 10, P2 has 7. P1 keeps her roll. P2 loses one point and rero
 * Import https://github.com/oliviercailloux/sample-interface[this sample interface project] for an example with one `Computer` interface implemented as an `EcologicalComputer` and as a `CryptographyComputer`, and used by a `CryptographyService`. See this https://raw.githubusercontent.com/oliviercailloux/Simple-Papyrus-project/interface/An%20interface%20and%20two%20realizations.svg[diagram].
 
 == Exercice: I like to move it move it
-Program an interface `MovableObject` with methods `canAccelerate(): boolean`, `accelerate(): void` and `getTimeToMove(double): double`; implement it twice in classes `ConstantSpeedMovable` and `GeneralMovable`, in a reasonable way of your choice. In a class `MovableUser`, program a `main` method that instanciates one `ConstantSpeedMovable` and two `GeneralMovable` objects, accelerate one of them, and prints the times to move 1 km for each of these instances. Add a method `brake(): void` to `MovableObject`. Add to `MovableUser` a method `getTotalTime(movable: MovableObject): double` that computes the total time taken for the given movable object to move 1 km then brake then move 100m then accelerate then move 1 km again. Should `getTotalTime` be static? Change your `main` so that it also prints that total time, for each of the three objects created in the method.
+Program an interface `MovableObject` with methods `canAccelerate(): boolean`, `accelerate(): void` and `getTimeToMove(double): double`; implement it twice in classes `ConstantSpeedMovable` and `GeneralMovable`, in a reasonable way of your choice. In a class `MovableUser`, program a `main` method that instanciates one `ConstantSpeedMovable` and two `GeneralMovable` objects, accelerate one of them, and prints the times to move 1 km for each of these instances. Add a method `brake(): void` to `MovableObject`. Add to `MovableUser` a method `getTotalTime(movable: MovableObject): double` that computes the total time taken for the given movable object to move 1 km, then brake if possible, then move 100m, then accelerate if possible, then move 1 km again. Should `getTotalTime` be static? Change your `main` so that it also prints that total time, for each of the three objects created in the method.
 
 == Exercice: Coffee
 Clone https://github.com/oliviercailloux/coffee/[this repository]. Implement the classes `DripCoffeeMaker` and `MyEspressoMachine`, making sure they satisfy their contracts. You are encouraged to discuss your ideas or doubt with classmates.
@@ -74,7 +74,7 @@ Do it first by modifying some variables from `SimpleCar` from `private` to `prot
 Create an object `Car extends Object` that does not override `toString()`, call its `toString()` method, explain what happens. Override `toString()` in your class `Car`, call the `toString()` method, explain what happens. Consider the following code: `Object car = new Car(); car.toString()`. Will the method be the one declared in `Object` or in `Car`, and why? What changes if we instead write `Car car = new Car(); …`?
 
 == Checked exceptions
-Exceptions, checked and unchecked: see this https://www.programcreek.com/2009/02/diagram-for-hierarchy-of-exception-classes/[diagram] or this https://rollbar.com/blog/java-exceptions-hierarchy-explained/#[hierarchy].
+Exceptions, checked and unchecked: see this https://www.programcreek.com/2009/02/diagram-for-hierarchy-of-exception-classes/[diagram] (or https://rollbar.com/blog/java-exceptions-hierarchy-explained/#[here], more complete).
 
 Exercice about syntax
 
