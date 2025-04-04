@@ -74,7 +74,7 @@ Do it first by modifying some variables from `SimpleCar` from `private` to `prot
 Create an object `Car extends Object` that does not override `toString()`, call its `toString()` method, explain what happens. Override `toString()` in your class `Car`, call the `toString()` method, explain what happens. Consider the following code: `Object car = new Car(); car.toString()`. Will the method be the one declared in `Object` or in `Car`, and why? What changes if we instead write `Car car = new Car(); …`?
 
 == Checked exceptions
-Exceptions, checked and unchecked: see this https://www.programcreek.com/2009/02/diagram-for-hierarchy-of-exception-classes/[diagram].
+Exceptions, checked and unchecked: see this https://www.programcreek.com/2009/02/diagram-for-hierarchy-of-exception-classes/[diagram] or this https://rollbar.com/blog/java-exceptions-hierarchy-explained/#[hierarchy].
 
 Exercice about syntax
 
@@ -86,6 +86,8 @@ Exercice about declaring exceptions
 . Program a method called `readOrder` that throws a `FileNotFoundException` with one chance on two. Give it an appropriate header.
 . Program a method called `writeOrder` that throws an `IOException` with one chance on two. Give it an appropriate header.
 . Program a method called `order` that throws an `IllegalStateException` with one chance on three and (with the remaining two chances on three) calls `readOrder` then (if this succeeds) `writeOrder`. Think about your options about declaring exceptions. Which one is best?
+
+See also: https://github.com/oliviercailloux/java-course/blob/main/Contrat/Exceptions.adoc[best practices].
 
 .Answer
 [%collapsible]

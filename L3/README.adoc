@@ -96,7 +96,6 @@ Finish Exercices up to 5.3, Three dice, and Two players.
 == S9: 10 May
 * Polymorphism: inheritance
 * https://github.com/oliviercailloux/java-course/blob/main/Objects%20%26%20interfaces/README.adoc#checked-exceptions[Exceptions], exercices
-* https://github.com/oliviercailloux/java-course/blob/main/Contrat/Exceptions.adoc[Exceptions].
 * Exercices: extend SimpleCar with one that remembers its first three moves.
 
 // TODO @ home: you _may_ try again the strings graded exercice. Follow the instructions https://github.com/oliviercailloux/java-course/blob/main/L3/Exercices%20not%C3%A9s.adoc#Collective[here] if you wish to try to improve your grade. Your new aggregated grade will be composed of the original one, with a weight of 30% to 80%, and the new (second chance) one, with the weight _depending on the number of lines that you changed_. Deadline: end of Sunday 23 April (linear penalty up to 100% after 30 minutes lateness).

@@ -1,6 +1,6 @@
-= Exceptions
+= Exceptions: best practices
 
-See: https://rollbar.com/blog/java-exceptions-hierarchy-explained/#[hierarchy].
+See: https://github.com/oliviercailloux/java-course/blob/main/Objects%20%26%20interfaces/README.adoc#checked-exceptions[Exceptions].
 
 Here are a few advices for dealing with various kinds of throwables.
 
