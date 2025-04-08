@@ -1,0 +1,22 @@
+= Graded exercice: mvni
+
+* Accept this to create your repository
+* You will find in the root of your repository a folder `Coding` that contains a coding exercice skeleton
+* You will need to create in the root of your repository a new Maven project in a folder `myartifact`
+* Thus, at the end of this exercice, you need to have two folders in the root of your repository (each with a pom.xml file and subfolders)
+
+== Coding exercice
+For this part, open the folder `Coding` in your IDE
+
+* Open the interfaces and read their Javadoc
+* In `CounterTests`, provide two tests, one for each of the methods `restore` and `twice` in interface `Counter`. For each of these methods, your test must create an instance using `CounterFactory.create()` and check whether it implements the method correctly, assuming that all other methods are correctly implemented.
+* You must use in your tests only methods that are declared in the interface (to grade your tests, I will provide my own implementations of the interface)
+* Implement the class `CounterFactory` and `MyCounter` (advice: use your own tests to test your interface; but of course I will use my own tests to grade your interface)
+* You do not have to implement the interface `Constanter`
+* You can create more interfaces, classes, methods than currently exist, but you *may not* modify the provided headers
+* Make sure your project compiles and push your code frequently
+
+== Maven exercice
+* Generate a new project using the archetype having groupId `io.gatling.highcharts`, artifactId `gatling-highcharts-maven-archetype` and version `3.4.0`. Your project (that you generate) should have groupId `mygroup` and artifactId `myartifact` and default version and package.
+* Push the file `pom.xml` and the folder `src/test/scala/` and its content to your repository, but not the folder `src/test/resources/`
+* In the project that you just created, add a dependency to the artifact with groupId `project org.dishevelled`, artifactId `dsh-bio-assembly` and version `2.2.2`
