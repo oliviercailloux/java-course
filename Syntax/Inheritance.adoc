@@ -39,7 +39,7 @@ For this to compile, `CameleonCar` must have access to the property `color` of t
 
 Given a variable `x` with declared type `CameleonCar`, the compiler will accept a call to the method `paint()` and everything that is permitted for a `Car`, such as, `x.getColor()`.
 
-We can also _change_ the implementation of some methods in `CamelelonCar`.
+We can also _change_ the implementation of some methods in `CameleonCar`.
 
 .The `CameleonCar` class: overriding some methods
 [source, java]
