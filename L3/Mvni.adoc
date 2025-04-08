@@ -1,6 +1,6 @@
 = Graded exercice: mvni
 
-* Accept this to create your repository
+* Accept https://classroom.github.com/a/u6xtvOlC[this] to create your repository
 * You will find in the root of your repository a folder `Coding` that contains a coding exercice skeleton
 * You will need to create in the root of your repository a new Maven project in a folder `myartifact`
 * Thus, at the end of this exercice, you need to have two folders in the root of your repository (each with a pom.xml file and subfolders)
