@@ -94,19 +94,19 @@ Finish Exercices up to 5.3, Three dice, and Two players.
 
 [[S9]]
 == S9: 9 April
-* Graded exercice: objects, interfaces, unit tests, Maven (and the content seen previously)
-* Polymorphism: inheritance
-* https://github.com/oliviercailloux/java-course/blob/main/Objects%20%26%20interfaces/README.adoc#checked-exceptions[Exceptions], exercices
+* Exercice: Car.
+* Polymorphism: inheritance; SimpleCar, 421 (see again objects & interfaces)
 * Exercices: extend SimpleCar with one that remembers its first three moves.
+* https://github.com/oliviercailloux/java-course/blob/main/Objects%20%26%20interfaces/README.adoc#checked-exceptions[Exceptions], exercices
+
+[[S10]]
+== S10: 11 April
+* Graded exercice: objects, interfaces, polymorphism; unit tests; Maven (and the content seen previously)
+* The `Object` class and its methods: `toString()`, `equals`, `hashcode`. Exercice: Car string
 
 // TODO @ home: you _may_ try again the strings graded exercice. Follow the instructions https://github.com/oliviercailloux/java-course/blob/main/L3/Exercices%20not%C3%A9s.adoc#Collective[here] if you wish to try to improve your grade. Your new aggregated grade will be composed of the original one, with a weight of 30% to 80%, and the new (second chance) one, with the weight _depending on the number of lines that you changed_. Deadline: end of Sunday 23 April (linear penalty up to 100% after 30 minutes lateness).
-// * Polymorphism: SimpleCar, 421. (Still: https://github.com/oliviercailloux/java-course/blob/main/Objects%20%26%20interfaces/README.adoc[objects & interfaces].)
-// * The `Object` class and its methods: `toString()`, `equals`, `hashcode`. Exercice: Car string
 
 // TODO @ home: Project structure and start.
-
-// [[S10]]
-// == S10: 12 May
 // * Exercices Generic pair, Exceptions, Maven
 // * https://github.com/oliviercailloux/java-course/blob/main/Collections/README.adoc[Collections]: Iterator, Iterable, Collection, Set, List; exercices “defining iterables” and “using collections” (especially 10.2)
 // * Unit testing https://github.com/oliviercailloux/java-course/blob/main/JUnit/Exercice.adoc[exercice] about iterators
