@@ -94,13 +94,14 @@ Finish Exercices up to 5.3, Three dice, and Two players.
 
 [[S9]]
 == S9: 9 April
-* Exercice: Car.
-* Polymorphism: inheritance; SimpleCar, 421 (see again objects & interfaces)
-* Exercices: extend SimpleCar with one that remembers its first three moves.
-* https://github.com/oliviercailloux/java-course/blob/main/Objects%20%26%20interfaces/README.adoc#checked-exceptions[Exceptions], exercices
+* Exercice: Car (see Objects & interfaces)
+* Polymorphism: inheritance; SimpleCar
+* Exercices: Car extension
+* Project: your proposals
 
 [[S10]]
 == S10: 11 April
+* https://github.com/oliviercailloux/java-course/blob/main/Objects%20%26%20interfaces/README.adoc#checked-exceptions[Exceptions], exercices
 * Graded exercice: objects, interfaces, polymorphism; unit tests; Maven (and the content seen previously)
 * The `Object` class and its methods: `toString()`, `equals`, `hashcode`. Exercice: Car string
 
