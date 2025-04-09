@@ -51,9 +51,6 @@ Clone https://github.com/oliviercailloux/coffee/[this repository]. Implement the
 * `dripMachine.getTimeForCoffee(10.2d)` should throw an instance of `IllegalArgumentException` [Time throws]
 ====
 
-== Exercice: Car
-Clone https://github.com/oliviercailloux-org/car/[car] and implement as required.
-
 == Exercice: 421
 Clone https://github.com/oliviercailloux-org/sample-g421[this repository]. Implement the interface `Game421`. You may name the class as you like. Do not change the `Game421` or `DiceRoller` interfaces.
 
@@ -61,13 +58,16 @@ A class `RandomDiceRoller` is provided that implements `DiceRoller` to help you 
 
 Provide a non random `DiceRoller`.
 
+== Exercice: Car
+Clone https://github.com/oliviercailloux-org/car/[car] and implement as required.
+
 == Inheritance
 See: https://github.com/oliviercailloux/java-course/blob/main/Syntax/Inheritance.adoc[Inheritance], or read https://math.hws.edu/javanotes/contents-with-subsections.html[ES5.5] to 5.8
 
 Remember that Interfaces may _extend_ other interfaces; classes may _implement_ interfaces and _extend_ other classes
 
 == Exercice: Car extension
-Assume you have a `SimpleCar` class that implements the interface https://github.com/oliviercailloux-org/car/blob/user/src/main/java/io/github/oliviercailloux/exercices/car/Car.java[`Car`] in the simplest possible way.
+We start from the solution of the car exercice here above.
 Create a `MemorizerCar` that can be used as follows: after calling several times `drive`, the user can query what the positions of the car was after its first move, second move, and third move (in supplement to be able to query its current position). Here position means total traveled distance.
 See https://github.com/oliviercailloux-org/car/blob/user/src/main/java/io/github/oliviercailloux/exercices/car/user/CarUser.java[`CarUser`] for an example of use of your class to be built.
 
