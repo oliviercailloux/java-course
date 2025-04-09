@@ -51,6 +51,9 @@ Clone https://github.com/oliviercailloux/coffee/[this repository]. Implement the
 * `dripMachine.getTimeForCoffee(10.2d)` should throw an instance of `IllegalArgumentException` [Time throws]
 ====
 
+== Exercice: Car
+Clone https://github.com/oliviercailloux-org/car/[car] and implement as required.
+
 == Exercice: 421
 Clone https://github.com/oliviercailloux-org/sample-g421[this repository]. Implement the interface `Game421`. You may name the class as you like. Do not change the `Game421` or `DiceRoller` interfaces.
 
