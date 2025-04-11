@@ -68,13 +68,13 @@ Before end of 14 March (linear penalty for lateness, 100 % at end of 15 March)
 
 [[S6]]
 == S6: 21 March
-* Graded exercice about syntax and contracts: https://classroom.github.com/a/Wa20i3UR[multiply], wording https://github.com/oliviercailloux/java-course/blob/main/Contrat/Multiply.adoc[here]. _You must disable LLM completions._ Deadline: 14:20 plus five minutes late max.
+* Graded exercice about syntax and contracts: https://classroom.github.com/a/Wa20i3UR[multiply], wording https://github.com/oliviercailloux/java-course/blob/main/Contrat/Multiply.adoc[here]. _You must disable LLM completions._ Deadline: 14:20 plus five minutes late max. Grade multiply-after-corr: max(multiply, multiply-corrected)
 * Review static variables
 * https://github.com/oliviercailloux/java-course/blob/main/Objects%20%26%20interfaces/README.adoc[Objects & interfaces].
 * Objects (just started). Exercices up to 5.3, then Three dice.
 
 TODO @ home.
-Before end of 1 April (linear penalty up to 100% for 12 hours late): submit new attempt at multiply (you may delete your repository and start anew). Grade multiply-final: max(multiply, multiply × 0.1 + multiply-2 × 0.9). This exercice will have a lower weight (not counted in the general owa).
+Before end of 1 April (linear penalty up to 100% for 12 hours late): submit new attempt at multiply (you may delete your repository and start anew). Grade multiply-final: max(multiply-after-corr, multiply-after-corr × 0.1 + multiply-homework × 0.9). This exercice will have a lower weight (not counted in the general owa).
 
 [[S7]]
 == S7: 2 April
@@ -102,7 +102,12 @@ Finish Exercices up to 5.3, Three dice, and Two players.
 
 [[S10]]
 == S10: 11 April
-* Graded exercice: objects, interfaces; unit tests; Maven (and the content seen previously)
+* Graded exercice: https://github.com/oliviercailloux/java-course/blob/main/L3/Mvni.adoc[mvni]. Deadline: 15h, plus 15 minutes max with penalty.
+* Project: your proposals
+
+[[S11]]
+== S11
+* More about https://github.com/oliviercailloux/java-course/blob/main/Syntax/Inheritance.adoc[inheritance] and information hiding
 * https://github.com/oliviercailloux/java-course/blob/main/Objects%20%26%20interfaces/README.adoc#checked-exceptions[Exceptions], exercices
 * The `Object` class and its methods: `toString()`, `equals`, `hashcode`. Exercice: Car string
 
@@ -111,9 +116,6 @@ Finish Exercices up to 5.3, Three dice, and Two players.
 // * Unit testing https://github.com/oliviercailloux/java-course/blob/main/JUnit/Exercice.adoc[exercice] about iterators
 
 // TODO @ home: finish all those exercices
-
-// [[S11]]
-// == S11: 24 May
 // * Graded exercice: https://classroom.github.com/a/C4GFEiYc[colors]. Implement the class CyclingColors as documented. Deadline 14h55, plus up to 20 minutes with increasing penalty. For up to three colors without asSetOfColors() and equality: 7pts. More than three colors without asSetOfColors() and equality: 6pts. More than three colors, asSetOfColors(): 4 pts. More than three colors, equality: 3 pts. If you want to leave early, push a tag "END" and obtain my approval.
 // * Primitive types (autoboxing)
 // * Optionals; give guarantees: https://github.com/oliviercailloux/java-course/blob/main/Style/Null.adoc[Protect against null references]
