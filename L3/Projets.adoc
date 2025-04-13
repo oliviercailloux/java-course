@@ -31,7 +31,7 @@ Vos commits doivent être des ancêtres de ce commit. Chaque contributeur est re
 Chaque tâche doit s’accompagner d’une documentation compacte (c-à-d succincte et éclairante), intégrée à la documentation existante, expliquant la structure et le fonctionnement de vos contributions. Des diagrammes de classe au format plantuml sont appréciés si opportuns.
 Vos notes seront individuelles et reflèteront vos contributions telles qu’indiquées dans les responsabilités.
 
-Je jugerai entre autres des aspects suivants, selon ce qui est applicable. Les intervalles de pondération sont approximatifs.
+Je jugerai entre autres des aspects suivants, selon ce qui est applicable. Les intervalles de pondération sont approximatifs. Vous recevrez une appréciation informelle à l’issue de la livraison 1, qui aura pour but uniquement de vous guider (ou une pénalité sur votre note finale si vous ne livrez pas au moins un descriptif des tâches envisagées). Vous recevrez une note seulement à l’issue de la livraison 2.
 
 * Découpe conceptuelle, contrat : clarté des interfaces, javadoc appropriée (jusqu’à 10/20)
 * Implémentation technique : algorithmes appropriés, code en anglais compréhensible, programmation défensive (jusqu’à 7/20)
