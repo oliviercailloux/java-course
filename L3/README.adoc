@@ -102,7 +102,7 @@ Finish Exercices up to 5.3, Three dice, and Two players.
 
 [[S10]]
 == S10: 11 April
-* Graded exercice: https://github.com/oliviercailloux/java-course/blob/main/L3/Mvni.adoc[mvni]. Deadline: 15h, plus 15 minutes max with penalty.
+* Graded exercice: https://github.com/oliviercailloux/java-course/blob/main/L3/Mvni.adoc[mvni]. Deadline: 15:00, plus 15 minutes max with penalty.
 * Project: your proposals
 
 [[S11]]
