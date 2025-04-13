@@ -18,14 +18,14 @@ Possibilité de basculer sur https://github.com/oliviercailloux/JLP[Java Linear 
 À discuter avec moi.
 
 == Instructions
-Vous procéderez à deux livraisons, à la manière agile. Chacune doit fournir une tâche qui se résume raisonnablement simplement et a été approuvée aupréalable. Vous êtes encouragés à me montrer votre avancement au fur et à mesure des séances.
+Vous procéderez à deux livraisons, à la manière agile. Chacune doit fournir une tâche par personne qui se résume raisonnablement simplement et a été approuvée aupréalable. Vous êtes encouragés à me montrer votre avancement au fur et à mesure des séances.
 
 . Livraison 1 : fin du dimanche 18 mai
 . Livraison 2 : fin du dimanche 22 juin
 
-Créez un fichier votreprojet/2025.adoc avec une section Livraison 1 et (au moment de la seconde livraison) une section Livraison 2. Chaque section contiendra une liste des noms d’utilisateurs GitHub des participants au projet avec pour chacune les commits qui représentent sa tâche. Ces commits doivent avoir votre nom d’utilisateur pour auteur.
+Créez, à la racine de votre projet, un fichier 2025.adoc avec une section Livraison 1 et (au moment de la seconde livraison) une section Livraison 2. Chaque section contiendra une liste des noms d’utilisateurs GitHub des participants au projet avec pour chacune les commits qui représentent sa tâche. Ces commits doivent avoir votre nom d’utilisateur pour auteur.
 
-Concrètement, vous livrerez en livrant un tag `release-x` (x = 1 ou 2).
+Concrètement, vous livrerez en livrant une branche `release-x` (x = 1 ou 2). Le commit que la branche désigne au moment de la limite de temps est la version livrée.
 Vos commits doivent être des ancêtres de ce commit. Chaque contributeur est responsable de la fonctionnalité du tout (il ne faut pas que votre contribution casse celle d’autrui).
 
 Chaque tâche doit s’accompagner d’une documentation compacte (c-à-d succincte et éclairante), intégrée à la documentation existante, expliquant la structure et le fonctionnement de vos contributions. Des diagrammes de classe au format plantuml sont appréciés si opportuns.
