@@ -88,10 +88,6 @@ Finish Exercices up to 5.3, Three dice, and Two players.
 == S8: 4 April
 * Interfaces. Exercice: I like to move it move it; Coffee; 421
 * https://github.com/oliviercailloux/java-course/blob/main/Maven/README.adoc[Maven]
-// * Generics (see Objects & interfaces), exercice Generic pair
-// TODO @ home: you _may_ try again the strings graded exercice.
-// * Graded exercice about objects and interfaces: https://classroom.github.com/a/O_Hb-4UL[car]. Implement all three classes.
-// * Correct your own exercice with help of teammates.
 
 [[S9]]
 == S9: 9 April
@@ -105,13 +101,17 @@ Finish Exercices up to 5.3, Three dice, and Two players.
 * Graded exercice: https://github.com/oliviercailloux/java-course/blob/main/L3/Mvni.adoc[mvni]. Deadline: 15:00, plus 15 minutes max with penalty.
 * Project: your proposals
 
+TODO @ home. Draft of your project proposals (for each individual), to be discussed during S11.
+
 [[S11]]
 == S11
+* Project: your proposals, review per group
 * More about https://github.com/oliviercailloux/java-course/blob/main/Syntax/Inheritance.adoc[inheritance] and information hiding
 * https://github.com/oliviercailloux/java-course/blob/main/Objects%20%26%20interfaces/README.adoc#checked-exceptions[Exceptions], exercices
 * The `Object` class and its methods: `toString()`, `equals`, `hashcode`. Exercice: Car string
-
+* Generics (see Objects & interfaces), exercice Generic pair
 // * Exercices Generic pair, Exceptions, Maven
+
 // * https://github.com/oliviercailloux/java-course/blob/main/Collections/README.adoc[Collections]: Iterator, Iterable, Collection, Set, List; exercices “defining iterables” and “using collections” (especially 10.2)
 // * Unit testing https://github.com/oliviercailloux/java-course/blob/main/JUnit/Exercice.adoc[exercice] about iterators
 
