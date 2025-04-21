@@ -19,4 +19,4 @@ For this part, open the folder `Coding` in your IDE
 == Maven exercice
 * Generate a new project using the archetype having groupId `io.gatling.highcharts`, artifactId `gatling-highcharts-maven-archetype` and version `3.4.0`. Your project (that you generate) should have groupId `mygroup` and artifactId `myartifact` and default version and package.
 * Push the file `pom.xml` and the folder `src/test/scala/` and its content to your repository, but not the folder `src/test/resources/`
-* In the project that you just created, add a dependency to the artifact with groupId `project org.dishevelled`, artifactId `dsh-bio-assembly` and version `2.2.2`
+* In the project that you just created, add a dependency to the artifact with groupId `org.dishevelled`, artifactId `dsh-bio-assembly` and version `2.2.2`
