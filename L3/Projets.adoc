@@ -43,7 +43,7 @@ Je jugerai entre autres des aspects suivants, selon ce qui est applicable. Les i
 ** Usage des collections
 * Couverture de tests (non nécessairement unitaires), qui doivent couvrir seulement et effectivement les aspects non triviaux (jusqu’à −8/20 sinon)
 * Usage approprié de bibliothèques (jusqu’à −3/20 sinon)
-** Vous devez utiliser autant que possible les technologies https://github.com/oliviercailloux/java-course/blob/main/Libs.adoc[recommandées dans ce cours] et les standards ISO, W3C et JSR Java (JSON-P ou Jackson et non JSON-B).
+** Vous devez utiliser autant que possible les technologies https://github.com/oliviercailloux/java-course/blob/main/Libs.adoc[recommandées dans ce cours] ou, sans autre précision, les standards ISO, W3C et JSR Java (JSON-P ou Jackson par exemple).
 ** Ne réinventez pas la roue ! Cela augmente votre base de code, donc rend la maintenance plus difficile. Réutilisez les bibliothèques existantes. Si le problème que vous souhaitez résoudre est raisonnablement commun, il existe sûrement une bibliothèque de bonne qualité prête à être réutilisée.
 * POM Maven correct (jusqu’à −3/20 sinon)
 * Doc (jusqu’à 5/20)
