@@ -101,10 +101,12 @@ Finish Exercices up to 5.3, Three dice, and Two players.
 * Graded exercice: https://github.com/oliviercailloux/java-course/blob/main/L3/Mvni.adoc[mvni]. Deadline: 15:00, plus 15 minutes max with penalty.
 * Project: your proposals
 
-TODO @ home. Draft of your project proposals (for each individual), to be discussed during S11.
+TODO @ home. 
+Draft of your project proposals (for each individual), to be discussed during S11.
+Submit a new attempt at your `mvni` repository. Grade `mvni-final`: max(mvni, mvni-homework × w + mvni × (1 − w)), with w equal to, by default, 90% − 7% × d, where d is the https://github.com/oliviercailloux/java-course/blob/main/Git/Graded%20exercices.adoc#trying-again[number of lines] changed between mvni and mvni-homework (considering the commits that bring you most points). You may _not_ delete your repository to start anew, you must start from one of your existing commits (which one does not matter for your grade). You may discuss with me for considering w differently if you are in a special situation.
 
 [[S11]]
-== S11
+== S11: 7 May
 * Project: your proposals, review per group
 * More about https://github.com/oliviercailloux/java-course/blob/main/Syntax/Inheritance.adoc[inheritance] and information hiding
 * https://github.com/oliviercailloux/java-course/blob/main/Objects%20%26%20interfaces/README.adoc#checked-exceptions[Exceptions], exercices
