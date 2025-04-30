@@ -18,7 +18,7 @@ Possibilité de basculer sur https://github.com/oliviercailloux/JLP[Java Linear 
 À discuter avec moi.
 
 == Instructions
-Vous procéderez à deux livraisons, à la manière agile. Chacune doit fournir une tâche par personne qui se résume raisonnablement simplement et a été approuvée aupréalable. Vous êtes encouragés à me montrer votre avancement au fur et à mesure des séances.
+Vous procéderez à deux livraisons, à la manière agile. Chacune doit fournir une tâche par personne qui se résume raisonnablement simplement et a été approuvée au préalable. Vous êtes encouragés à me montrer votre avancement au fur et à mesure des séances.
 
 . Livraison 1 : fin du dimanche 18 mai
 . Livraison 2 : fin du dimanche 22 juin
