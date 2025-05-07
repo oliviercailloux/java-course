@@ -110,7 +110,7 @@ Submit a new attempt at your `mvni` repository, before end of 6 May (linear pena
 * Project: your proposals, review per group
 * More about https://github.com/oliviercailloux/java-course/blob/main/Syntax/Inheritance.adoc[inheritance] and information hiding
 * https://github.com/oliviercailloux/java-course/blob/main/Objects%20%26%20interfaces/README.adoc#checked-exceptions[Exceptions], exercices
-* The `Object` class and its methods: `toString()`, `equals`, `hashcode`. Exercice: Car string ; https://github.com/oliviercailloux/java-course/blob/main/Objects%20%26%20interfaces/Equals.adoc[Equality and hash codes]
+* The `Object` class and its methods: `toString()`, `equals`, `hashcode`. Exercice: Car string; https://github.com/oliviercailloux/java-course/blob/main/Objects%20%26%20interfaces/Equals.adoc[Equality and hash codes]
 * Generics (see Objects & interfaces), exercice Generic pair
 // * Exercices Generic pair, Exceptions, Maven
 
