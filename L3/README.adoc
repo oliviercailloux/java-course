@@ -124,13 +124,14 @@ Submit a new attempt at your `mvni` repository, before end of 6 May (linear pena
 
 [[S13]]
 == S13: 23 May
+* Update on notation. Grades: <git-modify-final, git-branching-final, multiply-final, mvni-final, mvni-final, last, last>. OWA with weights 0.1, 0.1, 1, 1, 1, 1, 2 but weights of _L = {git-modify-final, git-branching-final, multiply-final}_ are maximum 0.7 and weight 2 is attributed to highest of _{mvni-final, mvni-final, last, last}_. Thus: weight 2 to _max{mvni-final, last}_, order remaining grades _g1_ to _g6_ (_g1_ the best one), each of _g1_, _g2_, _g3_ and _g4_ receive weight 1 or 0.7 if they are in _L_, weight 0.1 to _g5_ and _g6_.
+* Maps
+* All exercices in _Collections_
+* Write unit tests for CyclingColors: at least one per method
+* https://github.com/oliviercailloux-org/comp_cust[computer-customer]
 * Primitive types (autoboxing)
 * Optionals; give guarantees: https://github.com/oliviercailloux/java-course/blob/main/Style/Null.adoc[Protect against null references]
 * https://github.com/oliviercailloux/java-course/blob/main/Syntax/README.adoc#varargs[Varargs]
-* Maps
-* Write unit tests for CyclingColors: at least one per method
-* Chess (in https://github.com/oliviercailloux/java-course/blob/main/Collections/README.adoc[Collections])
-* https://github.com/oliviercailloux-org/comp_cust[computer-customer]
 // ** Implement Computer (6 pts)
 // ** Implement Customer#empty, #placeOrder, #ordered, #allOrders and Order; neglecting the constraint of increasing time on #allOrders and the constraint of writeability on Order#simpleOrders (7 pts)
 // ** Write unit tests to test your implementation so far!
@@ -142,6 +143,7 @@ Submit a new attempt at your `mvni` repository, before end of 6 May (linear pena
 [[S14]]
 == S14: 4 June
 * Graded exercice about every topics seen in this course
+** You will have a last chance to improve your answer afterwards, but you will have to minimize the number of differences (as last time)
 * Work on projects
 // * sol tests cycling
 
