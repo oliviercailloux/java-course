@@ -131,7 +131,7 @@ Submit a new attempt at your `mvni` repository, before end of 6 May (linear pena
 * https://github.com/oliviercailloux-org/comp_cust[computer-customer]
 * Primitive types (autoboxing)
 * Optionals; give guarantees: https://github.com/oliviercailloux/java-course/blob/main/Style/Null.adoc[Protect against null references]
-* https://github.com/oliviercailloux/java-course/blob/main/Syntax/README.adoc#varargs[Varargs]
+// * https://github.com/oliviercailloux/java-course/blob/main/Syntax/README.adoc#varargs[Varargs]
 // ** Implement Computer (6 pts)
 // ** Implement Customer#empty, #placeOrder, #ordered, #allOrders and Order; neglecting the constraint of increasing time on #allOrders and the constraint of writeability on Order#simpleOrders (7 pts)
 // ** Write unit tests to test your implementation so far!
