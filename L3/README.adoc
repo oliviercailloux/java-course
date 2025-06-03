@@ -183,7 +183,9 @@ Presentations!
 * Note on https://github.com/oliviercailloux/java-course/blob/main/Java%20FX.adoc[Java FX]
 * https://github.com/oliviercailloux/java-course/raw/main/Annotations/presentation.pdf[Annotations]
 * https://github.com/oliviercailloux/java-course/blob/main/Dev%20tools/CI.adoc[CI]: GitHub Workflows
-* https://github.com/oliviercailloux/projets/raw/main/Licences/Declaration%20of%20licensing.odt[Declarations of licensing]. https://github.com/oliviercailloux/projets/blob/main/Licences/Licence.adoc[Licences] and philosophy: https://www.gnu.org/philosophy/philosophy.html[GNU]; https://opensource.org/[OSI]; Copyleft (GNU https://opensource.org/licenses/GPL-3.0[GPL]); Non-copyleft (https://opensource.org/licenses/MIT[MIT])
+* https://github.com/oliviercailloux/projets/raw/main/Licences/Declaration%20of%20licensing.odt[Declarations of licensing]. 
+https://github.com/oliviercailloux/projets/blob/main/Licences/Licence.adoc[Licences] and philosophy: 
+https://www.gnu.org/philosophy/philosophy.html[GNU]; https://opensource.org/[OSI]; Copyleft (GNU https://opensource.org/licenses/GPL-3.0[GPL]); Non-copyleft (https://opensource.org/licenses/MIT[MIT])
 * Parsing HTML: https://github.com/oliviercailloux/java-course/blob/main/DOM.adoc[DOM]
 * Accessing REST web services: https://github.com/oliviercailloux/java-course/blob/main/WS%20client/JAX-RS%20client.adoc[JAX-RS client]
 
