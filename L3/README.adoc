@@ -142,8 +142,7 @@ Submit a new attempt at your `mvni` repository, before end of 6 May (linear pena
 
 [[S14]]
 == S14: 4 June
-* Graded exercice about every topics seen in this course
-// https://github.com/oliviercailloux/java-course/blob/main/L3/Signalling%20trees.adoc
+* Graded exercice about every topics seen in this course: https://github.com/oliviercailloux/java-course/blob/main/L3/Signalling%20trees.adoc
 ** You will have a last chance to improve your answer afterwards, but you will have to minimize the difference (as last time)
 * Work on projects
 // * sol tests cycling
