@@ -21,7 +21,7 @@ This document explains how to submit your solutions for the graded exercices of 
 * When you are done, you may exit the classroom only if you push a tag `END` on the latest commit that you want to be considered.
 
 == Configuration
-It is important that your git `user.name` https://github.com/oliviercailloux/java-course/blob/main/Git/README.adoc#Configure-git[equals] (exactly) your GitHub username, so that I can associate your contributions to you. This will be important when working on projects. I will also grade whether you configured your git correctly even before projects, as part of each graded exercice.
+It is important that your git `user.name` https://github.com/oliviercailloux/java-course/blob/main/Git/README.adoc#Configure-git[equals] (exactly) your GitHub username, so that I can associate your contributions to you. This will be important when working on projects. I will also grade whether you configured your git correctly even before projects, as part of most graded exercice.
 
 == The `training` assignment
 * Here is https://classroom.github.com/a/82sB-Te7[the link] for the “training” assignment. 
@@ -34,6 +34,9 @@ If you want to start fresh (for example, before starting a new exercice), https:
 
 == Exercice: hello world
 Accept the `training` assignment (link here above) and translate the content of the file `hello.txt` to say hello in another language of your choice. One prestige point to you if it is a language that I have not yet seen in other student works and you did not use external help for the translation. Make sure this is visible on your remote repository.
+
+== Permissions
+You may add methods to classes and you may add classes but you may not change the provided headers (you may not add parameters for example) or change the interfaces. Moreover, your unit tests have to test the contracts as specified, they may not use supplementary methods or classes.
 
 == Trying again
 I will sometimes grant a second chance. In those cases, the new grade will, unless noted otherwise, consider the number of lines that you changed in between both attempts. Here is a related comment from a previous year (in French).
