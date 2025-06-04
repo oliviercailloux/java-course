@@ -1,0 +1,29 @@
+= Signalling trees
+
+Accept https://classroom.github.com/a/inxYz2iq[this assignment].
+You must implement all documented contracts.
+Hint: you do not have to implement `Iterable` or `Iterator` for this exercice, try to rather use structures that you know.
+You may use all the dependencies contained in the POM but you may not add dependencies.
+This exercice is (very loosely) inspired by https://doi.org/10.1111/pce.13966[this article] (you do not have to read the article).
+
+When the instructions don’t specify some behavior exactly, you can choose your own approach - as long as you still meet all the stated requirements. 
+I will not provide supplementary explanations unless there is a mistake in the wording.
+
+Here is a suggestion for ordering your work.
+
+- Implement `Signal`
+- Implement `Forester`
+- Implement `TreeTests` (one is provided for you)
+- Implement the easy methods among `Tree` and `ComplexTree` (do not forget `equals` and the like)
+- Implement `Forest` methods that return instances of other classes (most important as this is required to test your other classes), such as `plantTree` and `forester`
+- Implement the remaining methods of `Tree`, `ComplexTree`, `Forest`
+-- Implement `transitiveSignals` last, as it is more difficult
+
+Here is an indicative decomposition. Points will be awarded only for the instances that can be created through the documented methods.
+
+- `Signal`: 1.5 points
+- `Forester`: 1.5 points
+- `TreeTests`: 5 points
+- `Tree` and `ComplexTree`, except `transitiveSignals`: 7 points
+- `Forest`: 3 points
+- `transitiveSignals`: 2 points (1.5/2 if it works only on DAGs)
