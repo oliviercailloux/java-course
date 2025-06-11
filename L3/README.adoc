@@ -116,7 +116,7 @@ Submit a new attempt at your `mvni` repository, before end of 6 May (linear pena
 [[S12]]
 == S12: 21 May
 // 4 up to start S12, 3 after S14, S15, S16, these three for projects thus 4.5 × 7 + 8
-* Expected for projet: total per person equivalent to 40h work
+* Expected for projet
 * https://github.com/oliviercailloux/java-course/blob/main/Collections/README.adoc[Collections]: Iterator, Iterable, Collection, Set, List; exercices “defining iterables” and “using collections” (especially 10.2)
 * Unit testing https://github.com/oliviercailloux/java-course/blob/main/JUnit/Exercice.adoc[exercice] about iterators
 * Exercice: https://github.com/oliviercailloux-org/ex-colors[colors]. Implement the class CyclingColors as documented (skip for now the methods that involve unknown types).

@@ -23,13 +23,14 @@ Vous procéderez à deux livraisons, à la manière agile. Chacune doit fournir 
 . Livraison 1 : fin du dimanche 18 mai
 . Livraison 2 : fin du dimanche 22 juin
 
-Créez, à la racine de votre projet, un fichier 2025.adoc avec une section Livraison 1 et (au moment de la seconde livraison) une section Livraison 2. Chaque section contiendra une liste des noms d’utilisateurs GitHub des participants au projet avec pour chacune les commits qui représentent sa tâche. Ces commits doivent avoir votre nom d’utilisateur pour auteur.
+Créez, à la racine de votre projet, un fichier `2025.adoc`. Il contiendra une liste des noms d’utilisateurs GitHub des participants au projet avec pour chacune les commits qui représentent sa tâche. Ces commits doivent avoir votre nom d’utilisateur pour auteur.
 
 Concrètement, vous livrerez en livrant une branche `release-x` (x = 1 ou 2). Le commit que la branche désigne au moment de la limite de temps est la version livrée.
 Vos commits doivent être des ancêtres de ce commit. Chaque contributeur est responsable de la fonctionnalité du tout (il ne faut pas que votre contribution casse celle d’autrui).
 
 Chaque tâche doit s’accompagner d’une documentation compacte (c-à-d succincte et éclairante), intégrée à la documentation existante, expliquant la structure et le fonctionnement de vos contributions. Des diagrammes de classe au format plantuml sont appréciés si opportuns.
-Vos notes seront individuelles et reflèteront vos contributions telles qu’indiquées dans les responsabilités.
+Vos notes seront individuelles et reflèteront vos contributions telles qu’indiquées dans le fichier `2025.adoc`.
+Je m’attends à des contributions équivalentes, par personne, à 40h de travail d’un étudiant attentif au cours et raisonnablement efficace.
 
 Je jugerai entre autres des aspects suivants, selon ce qui est applicable. Les intervalles de pondération sont approximatifs. Vous recevrez une appréciation informelle à l’issue de la livraison 1, qui aura pour but uniquement de vous guider (ou une pénalité sur votre note finale si vous ne livrez pas au moins un descriptif des tâches envisagées). Vous recevrez une note seulement à l’issue de la livraison 2.
 
