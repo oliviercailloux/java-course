@@ -72,3 +72,18 @@ Chaque membre doit ensuite cloner le projet ainsi créé sur sa machine locale.
 Prenez le temps de réfléchir ensemble globalement au projet et tracez les grandes lignes de votre ambition à la fin de l’année. 
 Ceci est utile pour construire un sens commun de votre objectif global.
 Inutile d’élaborer un plan détaillé ! 
+
+== Présentations finales
+À la fin de l’année, vous présenterez votre projet.
+Elles sont adressées à la classe, pas à moi.
+Tâchez de respecter ces critères au mieux.
+
+* Présentation compréhensible (pour l’audience) de l’objectif du projet
+* Distinction claire entre les fonctionnalités présentes au départ et vos ajouts
+* Présentation de vos ajouts, de leur intérêt, de leur fonctionnement (présentation de la doc, du code possible, pas nécessairement d’une démonstration fonctionnelle)
+* Présentation de la structure du code, des choix techniques, des difficultés… (selon intérêt)
+* Concision : pas de remplissage avec des éléments inintéressants
+* Respect des équipes des années passées (cela n’empêche pas de dire ce qui ne fonctionnait pas)
+* Dynamisme : transitions fluides, éviter de lire ses notes, parler à l’audience
+* Qualité des diapos : légères, texte lisible dans les figures…
+* Originalité, humour… (sans obligation !)

@@ -131,7 +131,6 @@ Submit a new attempt at your `mvni` repository, before end of 6 May (linear pena
 * https://github.com/oliviercailloux-org/comp_cust[computer-customer]
 * Primitive types (autoboxing)
 * Optionals; give guarantees: https://github.com/oliviercailloux/java-course/blob/main/Style/Null.adoc[Protect against null references]
-// * https://github.com/oliviercailloux/java-course/blob/main/Syntax/README.adoc#varargs[Varargs]
 // ** Implement Computer (6 pts)
 // ** Implement Customer#empty, #placeOrder, #ordered, #allOrders and Order; neglecting the constraint of increasing time on #allOrders and the constraint of writeability on Order#simpleOrders (7 pts)
 // ** Write unit tests to test your implementation so far!
@@ -160,23 +159,27 @@ Submit a new attempt at your `mvni` repository, before end of 6 May (linear pena
 == S17: 20 June
 Presentations!
 
-* 10 to 20 minutes per team
-// * Using _my_ computer and the `main` branch.
+* 10 to 20 minutes (strict) per team
 * Push a file `doc/Présentation.pdf`
-// * https://github.com/oliviercailloux-org/projet-the-6-wonders/blob/main/doc/Pr%C3%A9sentation.pdf[the-6-wonders]
-// * https://github.com/oliviercailloux-org/projet-dream-team-7-wonders/blob/main/doc/Pr%C3%A9sentation.pdf[dream-team-7-wonders]
-// * https://github.com/oliviercailloux-org/projet-boardbusters/blob/main/doc/Pr%C3%A9sentation.pdf[boardbusters]
-// * https://github.com/oliviercailloux-org/projet-les-pirates-7-wonders/blob/main/doc/Pr%C3%A9sentation.pdf[les-pirates-7-wonders]
-// * https://github.com/oliviercailloux-org/projet-los-quatros-amigos/blob/main/doc/Pr%C3%A9sentation.pdf[los-quatros-amigos]
-// * Vote for best app
-// * Disclaimer
-// * Evaluation of the course
+* Using _my_ computer and the `main` branch as of 20 June 13:30
+* Worth 10% of project grade (see instructions)
+* https://github.com/oliviercailloux-org/project-aice/blob/main@{2025-06-20%2013:30}/doc/Pr%C3%A9sentation.pdf[AICE]
+* https://github.com/oliviercailloux-org/project-l-equipe-de-cyprien/blob/main@{2025-06-20%2013:30}/doc/Pr%C3%A9sentation.pdf[l'équipe de cyprien]
+* https://github.com/oliviercailloux-org/project-les-fennecs/blob/main@{2025-06-20%2013:30}/doc/Pr%C3%A9sentation.pdf[LES FENNECS]
+* https://github.com/oliviercailloux-org/project-les-gitbud/blob/main@{2025-06-20%2013:30}/doc/Pr%C3%A9sentation.pdf[Les GitBud]
+* https://github.com/oliviercailloux-org/project-les-racailloux/blob/main@{2025-06-20%2013:30}/doc/Pr%C3%A9sentation.pdf[Les RaCailloux]
+* https://github.com/oliviercailloux-org/project-trestyles/blob/main@{2025-06-20%2013:30}/doc/Pr%C3%A9sentation.pdf[TresTyles]
+* Vote for best increase
+* Disclaimer
+* Evaluation of the course
 
-// Expected for release 3: about 16 h work per person (counting from release 2)
+TODO @ home. 
+Submit a new attempt at your `signalling` repository, before end of 29 June (linear penalty up to 12h delay). Grade `signalling-final`: max(signalling, signalling-homework × w + signalling × (1 − w)), with w equal to, by default, 75% − 4% × d, where d is the https://github.com/oliviercailloux/java-course/blob/main/Git/Graded%20exercices.adoc#trying-again[number of lines] changed between signalling (considering the last commit on time) and signalling-homework. You may _not_ delete your repository to start anew, you must start from one of your existing commits. You may discuss with me for considering w differently if you are in a special situation.
 
 == More
 * https://github.com/oliviercailloux/java-course/blob/main/Log/README.adoc[Logging]
 * https://github.com/oliviercailloux/java-course/blob/main/Style/README.adoc[Favor static factory methods]
+* https://github.com/oliviercailloux/java-course/blob/main/Syntax/README.adoc#varargs[Varargs]
 * Comparators, maps, https://github.com/oliviercailloux/java-course/blob/main/Collections/README.adoc#maps-and-comparators[exercices]
 * Files and https://github.com/oliviercailloux/java-course/blob/main/Flows.adoc[flows]
 * https://github.com/oliviercailloux/java-course/blob/main/Execution/Resources.adoc[Resources]
