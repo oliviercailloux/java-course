@@ -153,15 +153,16 @@ Submit a new attempt at your `mvni` repository, before end of 6 May (linear pena
 
 [[S16]]
 == S16: 18 June
+* Q&A?
 * Work on projects
 
 [[S17]]
 == S17: 20 June
 Presentations!
 
-// * 10 to 15 minutes per team
+* 10 to 20 minutes per team
 // * Using _my_ computer and the `main` branch.
-// * Push a file `doc/Présentation.pdf`
+* Push a file `doc/Présentation.pdf`
 // * https://github.com/oliviercailloux-org/projet-the-6-wonders/blob/main/doc/Pr%C3%A9sentation.pdf[the-6-wonders]
 // * https://github.com/oliviercailloux-org/projet-dream-team-7-wonders/blob/main/doc/Pr%C3%A9sentation.pdf[dream-team-7-wonders]
 // * https://github.com/oliviercailloux-org/projet-boardbusters/blob/main/doc/Pr%C3%A9sentation.pdf[boardbusters]
