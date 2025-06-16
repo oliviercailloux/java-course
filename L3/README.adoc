@@ -157,9 +157,7 @@ Submit a new attempt at your `mvni` repository, before end of 6 May (linear pena
 
 [[S17]]
 == S17: 20 June
-Presentations!
-
-* 10 to 20 minutes (strict) per team
+* Presentations! 10 to 20 minutes (strict) per team
 * Push a file `doc/Présentation.pdf`
 * Worth 10% of project grade (see instructions)
 * Using _my_ computer and the `main` branch as of 20 June 13:30
