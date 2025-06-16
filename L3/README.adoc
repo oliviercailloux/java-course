@@ -170,8 +170,8 @@ Presentations!
 * https://github.com/oliviercailloux-org/project-les-racailloux/blob/main@{2025-06-20%2013:30}/doc/Pr%C3%A9sentation.pdf[Les RaCailloux]
 * https://github.com/oliviercailloux-org/project-trestyles/blob/main@{2025-06-20%2013:30}/doc/Pr%C3%A9sentation.pdf[TresTyles]
 * Vote for best increase
-* Disclaimer
 * Evaluation of the course
+* Conclusion and https://www.businessballs.com/local/pix/businessballs/treeswing/computer_book_treeswing_pictures.jpg[the alignment problem] (https://www.businessballs.com/amusement-stress-relief/tree-swing-cartoon-pictures-early-versions/[history])
 
 TODO @ home. 
 Submit a new attempt at your `signalling` repository, before end of 29 June (linear penalty up to 12h delay). Grade `signalling-final`: max(signalling, signalling-homework × w + signalling × (1 − w)), with w equal to, by default, 75% − 4% × d, where d is the https://github.com/oliviercailloux/java-course/blob/main/Git/Graded%20exercices.adoc#trying-again[number of lines] changed between signalling (considering the last commit on time) and signalling-homework. You may _not_ delete your repository to start anew, you must start from one of your existing commits. You may discuss with me for considering w differently if you are in a special situation.
