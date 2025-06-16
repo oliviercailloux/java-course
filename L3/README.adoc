@@ -160,15 +160,15 @@ Submit a new attempt at your `mvni` repository, before end of 6 May (linear pena
 Presentations!
 
 * 10 to 20 minutes (strict) per team
+* Push a file `doc/Présentation.pdf`
+* Worth 10% of project grade (see instructions)
+* Using _my_ computer and the `main` branch as of 20 June 13:30
 ** https://github.com/oliviercailloux-org/project-aice/blob/main@{2025-06-20%2013:30}/doc/Pr%C3%A9sentation.pdf[AICE]
 ** https://github.com/oliviercailloux-org/project-l-equipe-de-cyprien/blob/main@{2025-06-20%2013:30}/doc/Pr%C3%A9sentation.pdf[l'équipe de cyprien]
 ** https://github.com/oliviercailloux-org/project-les-fennecs/blob/main@{2025-06-20%2013:30}/doc/Pr%C3%A9sentation.pdf[LES FENNECS]
 ** https://github.com/oliviercailloux-org/project-les-gitbud/blob/main@{2025-06-20%2013:30}/doc/Pr%C3%A9sentation.pdf[Les GitBud]
 ** https://github.com/oliviercailloux-org/project-les-racailloux/blob/main@{2025-06-20%2013:30}/doc/Pr%C3%A9sentation.pdf[Les RaCailloux]
 ** https://github.com/oliviercailloux-org/project-trestyles/blob/main@{2025-06-20%2013:30}/doc/Pr%C3%A9sentation.pdf[TresTyles]
-* Push a file `doc/Présentation.pdf`
-* Using _my_ computer and the `main` branch as of 20 June 13:30
-* Worth 10% of project grade (see instructions)
 * Vote for best increase
 * Evaluation of the course
 * Conclusion and https://www.businessballs.com/local/pix/businessballs/treeswing/computer_book_treeswing_pictures.jpg[the alignment problem] (https://www.businessballs.com/amusement-stress-relief/tree-swing-cartoon-pictures-early-versions/[history])
