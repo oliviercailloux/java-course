@@ -10,26 +10,28 @@ The entry page of the Java course in L3.
 * You are able to understand texts in English relating to computer science
 
 == General references
-* https://github.com/oliviercailloux/java-course/raw/main/L3/Lecture%20notes.pdf[Lecture notes PDF]
+// * https://github.com/oliviercailloux/java-course/raw/main/L3/Lecture%20notes.pdf[Lecture notes PDF]
 * Eck’s https://math.hws.edu/javanotes/[book]
 * Stéphane Airiau’s https://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/[course] (in French)
-* Java API https://docs.oracle.com/en/java/javase/17/docs[Javadoc]
+* Java https://docs.oracle.com/en/java/javase/17/docs[API]
 * https://github.com/oliviercailloux/Teaching/blob/main/README.adoc#take-notes[Take notes]!
-* The most important exercices are marked with [I]. Make sure you do not skip these ones.
 
 [[S1]]
-== S1: 5 Feb 2025
+== S1: 9 Jan 2026
 * https://github.com/oliviercailloux/java-course/raw/main/L3/Pr%C3%A9sentation%20du%20cours%20Objet/presentation.pdf[Pres course]
+* https://github.com/oliviercailloux/java-course/blob/main/L3/Projet.adoc[Projet]
 * https://github.com/oliviercailloux/java-course/blob/main/Git/Shell.adoc[Shell]: 2 exercices
 * https://github.com/oliviercailloux/java-course/blob/main/Git/README.adoc[Git]: Configure & Step by step
 
 TODO at home:
 
 * Install the https://github.com/oliviercailloux/java-course/blob/main/Best%20practices/Various.adoc#installing-the-jdk[JDK]
+* Talk to your favorite future supervisor
+* Register for two slots on Moodle
 
 [[S2]]
-== S2: 7 Feb
-* Projets : 3 projets × 4 pers / projet + 3 projet × 5 pers / projet
+== S2: 16 Jan
+* Projet
 * https://github.com/oliviercailloux/java-course/blob/main/Git/README.adoc[Git]: remotes ; Step by step (end)
 * Read the https://github.com/oliviercailloux/java-course/blob/main/Git/Graded%20exercices.adoc[graded exercices] procedure and take the “training” assignment; Practice with the other exercices on the Git page
 * https://github.com/oliviercailloux/java-course/blob/main/Syntax/README.adoc[Syntax]: basics; exercices (Shorts and Methods)
@@ -37,16 +39,16 @@ TODO at home:
 TODO @ home: Git step-by-step (entirely); “graded exercices” and “training” (see above); Exercices of “Syntax” until “Methods” (not: “Classes”).
 
 [[S3]]
-== S3: 19 Feb
+== S3: 30 Jan
 * Graded exercice about https://github.com/oliviercailloux/java-course/blob/main/Git/README.adoc[git]. Deadline: 14h15.
-** Accept https://classroom.github.com/a/pbpeqLQ8[this]. Clone the resulting remote repository. Modify the file `a folder/a file.txt`, so that it contains “Hello” (or anything else than its original content). Push to your remote.
+// ** Accept https://classroom.github.com/a/pbpeqLQ8[this]. Clone the resulting remote repository. Modify the file `a folder/a file.txt`, so that it contains “Hello” (or anything else than its original content). Push to your remote.
 * Syntax, exercice: Classes
 * https://github.com/oliviercailloux/java-course/blob/main/Execution/README.adoc[Execution], without packages, exercices
 
 TODO @ home: Install https://github.com/oliviercailloux/java-course/blob/main/Dev%20tools/VS%20Code.adoc[Visual Studio Code].
 
 [[S4]]
-== S4: 21 Feb
+== S4: 13 Feb
 * Graded exercice: https://github.com/oliviercailloux/java-course/blob/main/Git/Git%20branching%205.adoc[Git branching]. Deadline: 14h45.
 * Syntax: packages
 * Execution, with packages, exercices
@@ -56,7 +58,7 @@ TODO @ home: Install https://github.com/oliviercailloux/java-course/blob/main/De
 TODO @ home: Syntax, More exercices (up to EE3.6 included); VS Code (see above).
 
 [[S5]]
-== S5: 7 March
+== S5: 18 Feb
 * Unit testing, demo, https://github.com/oliviercailloux/java-course/blob/main/JUnit/Overview.adoc[overview]; exercice: write unit tests for the exercices in Syntax.
 * Please register your project team https://classroom.github.com/a/VtYNqTPm[here]
 * Two major aspects of software engineering: https://github.com/oliviercailloux/java-course/blob/main/Contrat/README.adoc[contract] and fail-fast.
@@ -67,7 +69,7 @@ Before end of 9 March: register for a team, otherwise I’ll register you accord
 Before end of 14 March (linear penalty for lateness, 100 % at end of 15 March): git-branching-2. Submit new attempt at git-branching (you may delete your repository and start anew). Grade git-branching-final: max(git-branching, git-branching × (1 − w) + git-branching-2 × w), w = (20 - git-branching) / 40. Grade git-modify-final: max(git-modify, git-branching-final).
 
 [[S6]]
-== S6: 21 March
+== S6: 20 Feb
 * Graded exercice about syntax and contracts: https://classroom.github.com/a/Wa20i3UR[multiply], wording https://github.com/oliviercailloux/java-course/blob/main/Contrat/Multiply.adoc[here]. _You must disable LLM completions._ Deadline: 14:20 plus five minutes late max. Grade multiply-after-corr: max(multiply, multiply-corrected)
 * Review static variables
 * https://github.com/oliviercailloux/java-course/blob/main/Objects%20%26%20interfaces/README.adoc[Objects & interfaces].
@@ -77,7 +79,7 @@ TODO @ home.
 Before end of 1 April (linear penalty up to 100% for 12 hours late): submit new attempt at multiply (you may delete your repository and start anew). Grade multiply-final: max(multiply-after-corr, multiply-after-corr × 0.1 + multiply-homework × 0.9). This exercice will have a lower weight (not counted in the general owa).
 
 [[S7]]
-== S7: 2 April
+== S7: 13 Mar
 * Objects. Exercices up to 5.3, Three dice, and Two players.
 * https://github.com/oliviercailloux/java-course/blob/main/L3/Projets.adoc[Projects]: initial planning
 
@@ -85,19 +87,19 @@ TODO @ home.
 Finish Exercices up to 5.3, Three dice, and Two players.
 
 [[S8]]
-== S8: 4 April
+== S8: 27 Mar
 * Interfaces. Exercice: I like to move it move it; Coffee; 421
 * https://github.com/oliviercailloux/java-course/blob/main/Maven/README.adoc[Maven]
 
 [[S9]]
-== S9: 9 April
+== S9: 8 April
 * Exercice: Car (see Objects & interfaces)
 * Polymorphism: inheritance; SimpleCar
 * Exercices: Car extension
 * Project: your proposals
 
 [[S10]]
-== S10: 11 April
+== S10: 10 April
 * Graded exercice: https://github.com/oliviercailloux/java-course/blob/main/L3/Mvni.adoc[mvni]. Deadline: 15:00, plus 15 minutes max with penalty.
 * Project: your proposals
 
@@ -106,7 +108,7 @@ Draft of your project proposals (for each individual), to be discussed during S1
 Submit a new attempt at your `mvni` repository, before end of 6 May (linear penalty up to 12h delay). Grade `mvni-final`: max(mvni, mvni-homework × w + mvni × (1 − w)), with w equal to, by default, 90% − 7% × d, where d is the https://github.com/oliviercailloux/java-course/blob/main/Git/Graded%20exercices.adoc#trying-again[number of lines] changed between mvni (considering the last commit on time) and mvni-homework. You may _not_ delete your repository to start anew, you must start from one of your existing commits. You may discuss with me for considering w differently if you are in a special situation.
 
 [[S11]]
-== S11: 7 May
+== S11: 15 April
 * Project: your proposals, review per group
 * More about https://github.com/oliviercailloux/java-course/blob/main/Syntax/Inheritance.adoc[inheritance] and information hiding
 * https://github.com/oliviercailloux/java-course/blob/main/Objects%20%26%20interfaces/README.adoc#checked-exceptions[Exceptions], exercices
@@ -114,7 +116,7 @@ Submit a new attempt at your `mvni` repository, before end of 6 May (linear pena
 * Generics (see Objects & interfaces), exercice Generic pair
 
 [[S12]]
-== S12: 21 May
+== S12: 17 April
 // 4 up to start S12, 3 after S14, S15, S16, these three for projects thus 4.5 × 7 + 8
 * Expected for projet
 * https://github.com/oliviercailloux/java-course/blob/main/Collections/README.adoc[Collections]: Iterator, Iterable, Collection, Set, List; exercices “defining iterables” and “using collections” (especially 10.2)
@@ -123,7 +125,7 @@ Submit a new attempt at your `mvni` repository, before end of 6 May (linear pena
 // TODO @ home: finish all those exercices
 
 [[S13]]
-== S13: 23 May
+== S13: 22 May
 * Update on notation. Grades: <git-modify-final, git-branching-final, multiply-final, mvni-final, mvni-final, last, last>. OWA with weights 0.1, 0.1, 1, 1, 1, 1, 2 except that weights of _L = {git-modify-final, git-branching-final, multiply-final}_ are maximum 0.7 and weight 2 goes to highest of _{mvni-final, mvni-final, last, last}_. Thus: weight 2 to _max{mvni-final, last}_, order remaining grades _g1_ to _g6_ (_g1_ the best one), each of _g1_, _g2_, _g3_ and _g4_ receive weight 1 or 0.7 if they are in _L_, weight 0.1 to _g5_ and _g6_.
 * Maps
 * Write unit tests for CyclingColors: at least one per method
