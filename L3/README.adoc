@@ -32,7 +32,7 @@ TODO at home:
 [[S2]]
 == S2: 16 Jan
 * Projet
-* https://github.com/oliviercailloux/java-course/blob/main/Git/README.adoc[Git]: remotes ; Step by step (end)
+* Git: remotes ; Step by step (end)
 * Read the https://github.com/oliviercailloux/java-course/blob/main/Git/Graded%20exercices.adoc[graded exercices] procedure and take the “training” assignment; Practice with the other exercices on the Git page
 * https://github.com/oliviercailloux/java-course/blob/main/Syntax/README.adoc[Syntax]: basics; exercices (Shorts and Methods)
 
