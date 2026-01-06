@@ -18,7 +18,7 @@ See: https://github.com/oliviercailloux/java-course/raw/main/Contrat/Pr%C3%A9sen
 In the exercices below, comment at least one of the method you develop with proper Javadoc comments. Indicate what the method does, what parameter values are appropriate, which exceptions can be thrown.
 
 * https://math.hws.edu/javanotes/c4/exercises.html[EE4.1], 4.2
-* EE4.3, 4.4 [I]
+* EE4.3, 4.4 [most important]
 * EE4.7
 
 == References
@@ -27,8 +27,8 @@ From Eck’s book:
 
 * https://math.hws.edu/javanotes/contents-with-subsections.html[ES3.7] Exceptions (except 3.7.3)
 * ES4 Subroutines, lambdas, packages, javadoc.
-* ES4.2.4 Member Variables [I]
-* ES4.3 intro to 4.3.2, 4.7.1 Preconditions and Postconditions [I]
+* ES4.2.4 Member Variables [most important]
+* ES4.3 intro to 4.3.2, 4.7.1 Preconditions and Postconditions [most important]
 * https://math.hws.edu/javanotes/c4/quiz.html[EQ4]
 * Illustration: ES4.7.2 A Design Example
 
