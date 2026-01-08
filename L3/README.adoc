@@ -20,7 +20,7 @@ The entry page of the Java course in L3.
 == S1: 9 Jan 2026
 * https://github.com/oliviercailloux/java-course/raw/main/L3/Pr%C3%A9sentation%20du%20cours%20Objet/presentation.pdf[Pres course]
 * https://github.com/oliviercailloux/java-course/blob/main/L3/Projet.adoc[Projet]
-* https://github.com/oliviercailloux/java-course/blob/main/Git/Shell.adoc[Shell]: 2 exercices
+* https://github.com/oliviercailloux/java-course/blob/main/Git/Shell.adoc[Shell]
 * https://github.com/oliviercailloux/java-course/blob/main/Git/README.adoc[Git]: Configure & Step by step
 
 TODO at home:

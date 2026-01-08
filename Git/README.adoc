@@ -41,7 +41,7 @@ Here we want to associate your name as a value to the option `user.name`.
 Git will use this to sign your commits.
 
 * Type `git config --global --get user.name` to see the value currently associated to the option `user.name` (which will probably be empty at first)
-* Type `git config --global --add user.name MyUserName` to associate the value `MyUserName` to the option `user.name`
+* Type `git config --global --add user.name MyGitHubUserName` to associate to the option `user.name` the value `MyGitHubUserName`
 * Check again the value currently associated to the option `user.name`
 
 For more info: https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup[initial setup]; GitHub usage of https://docs.github.com/en/get-started/getting-started-with-git/setting-your-username-in-git#about-git-usernames[`user.name`] and https://help.github.com/en/github/setting-up-and-managing-your-github-user-account/setting-your-commit-email-address[`user.email`]

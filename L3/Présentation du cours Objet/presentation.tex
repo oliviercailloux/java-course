@@ -52,7 +52,7 @@
 		\item Programmer de \og{}vraies\fg{} applications
 		\item De qualité
 		\item Fournir et utiliser des composants réutilisables
-		\item Conception objet
+		\item Moyens : interfaces claires, gestion des échecs, couplage faible, clarté conceptuelle du code, paradigme orienté objet
 		\item Prise en main d’outils de dév.\ avancés : 
 		\begin{itemize}
 			\item Visual Studio Code
@@ -68,12 +68,12 @@
 	\begin{itemize}
 		\item Syntaxe Java
 		\item Programmation objets : responsabilités ; techniques
-		\item Maven
 		\item Éléments d’ingénierie : programmation par contrat ; patrons de conception…
-		\item Collections
 		\item Tests unitaires
-		\item Utilisation de bibliothèques tierces
+		\item Collections
 		\item Exceptions
+		\item Utilisation de bibliothèques tierces
+		\item Gestion des dépendances
 		\item …
 	\end{itemize}
 \end{frame}
@@ -83,10 +83,10 @@
 	\frametitle{Intérêt pratique}
 	\begin{itemize}
 		\item Technologies omniprésentes et très demandées {\tiny (15 In-Demand Tech-Focused (And Tech-Adjacent) Skills And Specialties, 2022, \href{https://www.forbes.com/sites/forbestechcouncil/2022/07/11/15-in-demand-tech-focused-and-tech-adjacent-skills-and-specialties/?sh=44e82adc38d8}{Forbes Technology Council} ; Emploi informatique 2023, \href{https://emploi.developpez.com/actu/356753/}{Developpez.com})}
-		\item Qu’on soit programmeur, qu’on discute avec des programmeurs
+		\item Qu’on soit programmeur, qu’on discute avec des programmeurs (ou avec des robots !)
+		\item Utile au-delà de la programmation
 		\item Décomposition en responsabilités, en sous-problèmes
 		\item Respect des spécifications
-		\item Utile au-delà de la programmation
 	\end{itemize}
 \end{frame}
 
@@ -94,7 +94,6 @@
 	\frametitle{Demander simplement au chat ?}
 	\begin{itemize}
 		\item Le chat doit savoir ce qui est à faire
-		\item Il faut dialoguer avec le chat, pas l’écouter aveuglément
 		\item Comment savoir si le chat se trompe ? Lui demander d’expliquer ? Et si le chat \hrefblue{https://www.youtube.com/watch?v=R2fjRbc9Sa0}{baratine} ?
 		\item Le chat semble \href{https://www.nber.org/papers/w31161}{aider} {\tiny (pour le moment)} surtout les débutants
 	\end{itemize}
@@ -102,7 +101,6 @@
   \begin{itemize}
 		\item Savoir calculer, savoir coder
 		\item Connaitre la plomberie sans faire de la plomberie
-		\item Avec aide
 		\item Comprendre et critiquer
 	\end{itemize}
 \end{frame}
@@ -113,9 +111,9 @@
 	\begin{itemize}
 		\item Notions algorithmiques élémentaires (boucles, structures de listes, d’arbres…)
 		\item Familiarité avec un langage tel que C++ ou Python
+		\item Un ordinateur fonctionnel
 		\item Manipulation de votre système d’exploitation : installation de logiciels, navigation dans le système de fichiers, démarrage de programmes
 		\item Capacité à comprendre des textes en anglais liés à l’informatique
-		\item Un ordinateur fonctionnel
 	\end{itemize}
 \end{frame}
 
@@ -128,9 +126,9 @@
 		\item ≈ 4 tests en séance (annoncés)
 		\item Devoirs maison : contributions individuelles à un projet commun
 		% \item (Possible selon avancement)  QCMs
-		\item Aggrégation des notes reçues au long de l’année
-		\item 
-    Pondérations {\tiny (\og{}\href{https://en.wikipedia.org/wiki/Ordered_weighted_averaging}{owa}\fg)} projet VS tests : au pire par individu parmi $\set{1/5, 4/5}$
+		\item Aggrégation {\tiny (\og{}\href{https://en.wikipedia.org/wiki/Ordered_weighted_averaging}{owa}\fg)} des notes reçues au long de l’année
+		\item Pondérations tests à déterminer ; exemple : 1 pour git et au mieux par individu parmi $\set{1, 2, 3}$
+    \item Pondérations projet VS tests : au pire par individu parmi $\set{1/5, 4/5}$
     % \begin{description}[Projet VS tests]
     %   \item[tests 1 à 6] au mieux par individu parmi $\set{1/10, 1/10,\allowbreak 1,\allowbreak 1,\allowbreak 1,\allowbreak 1}$ {\tiny (plafond possible pour tests simples)}, 
     %   \item[dernier test] $2$
@@ -141,27 +139,27 @@
 
 \begin{frame}
 	\frametitle{Évaluation des tests}
-  Avec ressources pré-existantes, sans LLM
+  Avec ressources pré-existantes, sans IA générative
 	\begin{itemize}
 		\item Code doit compiler
 		\item Livraison via git
 		\item Respect précis des instructions
 		\item Évaluation généralement automatique
 		\item Points pour chaque aspect fonctionnel
-		\item Rattrapage possible avec pénalité
+		\item Rattrapage possible avec pénalité si solution presque fonctionnelle
 	\end{itemize}
 \end{frame}
 
 \begin{frame}
 	\frametitle{Projet}
-  LLM autorisés
+  IA génératives autorisées
 	\begin{itemize}
 		\item Projet commun : jeu de \href{https://world-geography-games.com/en/countries_world.html}{localisation géographique} de pays
 		\item Architecture client-serveur REST
 		\item Outils modernes : Quarkus, Docker…
 		\item À apprendre en autonomie !
-		\item Bloquer deux dates de livraison, espacées d’au moins deux semaines
-		\item Deux volontaires intégration
+		\item Bloquer deux dates de livraison, espacées d’au moins trois semaines
+		\item Deux volontaires intégration (considérez le \href{https://doi.org/10.1093/ej/uez050}{biais de genre})
 		\item Livraison : indiquer sur devoir Moodle le lien \href{https://docs.github.com/en/pull-requests/committing-changes-to-your-project/viewing-and-comparing-commits/comparing-commits\#comparing-commits}{diff}
 	\end{itemize}
 \end{frame}

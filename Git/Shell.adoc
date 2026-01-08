@@ -1,16 +1,16 @@
 = Shell
 
 == Introduction
-A shell (also called a terminal or a command line interface) permits to invoke programs by typing commands.
+A shell (also called a terminal or a command-line interface) permits to invoke programs by typing commands.
 
 * Under Linux, use BASH (Bourne-again Shell), for example.
 * Under Windows, choose one of these routes.
 ** Install https://git-scm.com/download[git]; use Git BASH (recommended for beginners);
-** use (Windows) https://docs.microsoft.com/powershell/scripting/install/installing-windows-powershell[PowerShell], which is probably installed already (recommended for power users).
+** use (Windows) https://docs.microsoft.com/powershell/scripting/install/installing-windows-powershell[PowerShell] (recommended for power users).
 * (Different shells admit slightly different syntax and provide slightly different capabilities, and commands sometimes differ, but the commands we will need for this course are the same in most classical shells, except when indicated.)
 
 == Basics
-Read https://tutorial.djangogirls.org/en/intro_to_command_line/[Introduction to command line] for the very basics of using a shell. Use ↑ (keyboard up https://en.wikipedia.org/wiki/Arrow_keys[arrow]) to reuse previous commands. (https://www.lamsade.dauphine.fr/~bnegrevergne/ens/Unix/static/TP_Shell_Unix.pdf[This tutorial] could help as well.)
+Read https://tutorial.djangogirls.org/en/intro_to_command_line/[Introduction to the command-line interface] for the very basics of using a shell. Use ↑ (keyboard up https://en.wikipedia.org/wiki/Arrow_keys[arrow]) to reuse previous commands. (https://www.lamsade.dauphine.fr/~bnegrevergne/ens/Unix/static/TP_Shell_Unix.pdf[This tutorial] could help as well.)
 
 At the end of this part you are supposed to be able to use a shell to, at least, change directory and list files.
 
@@ -32,7 +32,7 @@ Open a shell, navigate (using `cd`) to some different place of your choice on yo
 == Relative and absolute paths
 It is often necessary to refer to files or directories as arguments to commands in the terminal. You do this usually by using absolute or relative file or directory paths.
 
-A file or a directory stored on your hard disk has an absolute “path” (or, less technically, “name”) that refers to it unambiguously. For example, under Linux (or MacOS): `/home/user2/statusReport`; and under Windows: `C:\Documents\myprojectdirectory\README.txt`. (Windows uses backslashes instead of slashes to separate path names and a slightly different naming scheme.) Examples in this course follow the Linux-like naming.
+A file or a directory stored on your hard disk has an absolute “path” (or, less technically, “name”) that refers to it unambiguously. For example, under Unix-based OSes (Linux, macOS): `/home/user2/statusReport`; and under Windows: `C:\Documents\myprojectdirectory\README.txt`. (Windows uses backslashes instead of slashes to separate path names and a slightly different naming scheme.) Examples in this course follow the Unix-like naming.
 
 The term “path” comes from the fact that this way of referring to files correspond to following a path in a tree that represents the hierarchy of files on your file system. In the file system displayed below (from https://docs.oracle.com/javase/tutorial/essential/io/path.html[Oracle tutorial]), a file has the path `/home/user1/foo`, for example.
 
@@ -40,13 +40,13 @@ The term “path” comes from the fact that this way of referring to files corr
 .A tree representing a file system
 image::https://docs.oracle.com/javase/tutorial/figures/essential/io-dirStructure.gif[opts="inline"]
 
-A file or a directory can also be referred to using a path that is _relative_ to another directory. For example, relative to the directory `/home/user2/`, a relative path for the file in the above example is `statusReport`. A path relative to `/home/` is `user2/statusReport`. Relative paths can also use `..` segments to “climb up” one level in the hierarchy. That is, relative to `/home/user2/bar/`, a path of the example file is `../statusReport`. The mechanism for referring to directories using relative paths is similar. For example, a relative path to refer to the directory `/home/user2/bar/`, relative to `/home/`, is `user2/bar/`. A relative path never starts with a `/`, an absolute path always does (this is also true under Windows, if replacing `/` with `\` and neglecting the drive letter).
+A file or a directory can also be referred to using a path that is _relative_ to another directory. For example, relative to the directory `/home/user2/`, a relative path for the file in the above example is `statusReport`. A path relative to `/home/` is `user2/statusReport`. Paths can also use `..` segments to “climb up” one level in the hierarchy. That is, relative to `/home/user2/bar/`, a path to the example file is `../statusReport`. The mechanism for referring to directories using relative paths is similar. For example, a relative path to refer to the directory `/home/user2/bar/`, relative to `/home/`, is `user2/bar/`. A relative path never starts with a `/`, an absolute path always does (this is also true under Windows, if replacing `/` with `\` and neglecting the drive letter).
 
 Referring to some file or directory as an argument of a command typed in a terminal can usually be done using its absolute path or its path relative to your current directory. For example, if you are in the directory `/home/user2/`, you can use both `/home/user2/statusReport` or `statusReport` to refer to the same file.
 
 You can use the special name `.` to refer to the current directory. For example, you can use `ls somepath` to list the content of the directory specified by `somepath`, and thus typing `ls .` lists the content of your current directory.
 
-This course uses Linux-like commands (in particular, uses forward slashes to separate paths), which you should be able to use in any of the environments listed here above: Git BASH emulates a Linux environment and PowerShell https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_path_syntax[authorizes] this use.
+This course uses Unix-like commands (in particular, uses forward slashes to separate paths), which you should be able to use in any of the environments listed here above: Git BASH provides a Unix-like environment and PowerShell https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_path_syntax[authorizes] this use.
 
 === Exercice
 Open a shell, navigate (using `cd`) to some directory of your choice `D1`. Use `ls` to list the content of a directory `D2` that is not a subdirectory of `D1`, using an absolute name for `D2`, then using a relative name. Still from `D1`, create a file in `D2`, using `touch`, by using an absolute file name as argument, then using a relative file name as argument.
