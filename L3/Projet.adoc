@@ -2,7 +2,7 @@
 
 Un jeu de https://world-geography-games.com/en/countries_world.html[localisation géographique] de pays
 
-// https://classroom.github.com/a/2tc61U1b
+https://classroom.github.com/a/2tc61U1b
 
 == Généralités
 - Deux superviseurices auront connaissance de l’état actuel de la branche dev.
