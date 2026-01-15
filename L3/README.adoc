@@ -21,9 +21,9 @@ The entry page of the Java course in L3.
 * https://github.com/oliviercailloux/java-course/raw/main/L3/Pr%C3%A9sentation%20du%20cours%20Objet/presentation.pdf[Pres course]
 * https://github.com/oliviercailloux/java-course/blob/main/L3/Projet.adoc[Projet]
 * https://github.com/oliviercailloux/java-course/blob/main/Git/Shell.adoc[Shell]
-* https://github.com/oliviercailloux/java-course/blob/main/Git/README.adoc[Git]: Configure & Step by step
+* https://github.com/oliviercailloux/java-course/blob/main/Git/README.adoc[Git]: Configure
 
-TODO at home:
+TODO @ home:
 
 * Install the https://github.com/oliviercailloux/java-course/blob/main/Best%20practices/Various.adoc#installing-the-jdk[JDK]
 * Talk to your favorite future supervisor
@@ -31,12 +31,15 @@ TODO at home:
 
 [[S2]]
 == S2: 16 Jan
-* Projet
-* Git: remotes ; Step by step (end)
+* Git Step by step (start)
+* Git remotes
+* Git Step by step (end)
+* Projet: supervisors; random registration
 * Read the https://github.com/oliviercailloux/java-course/blob/main/Git/Graded%20exercices.adoc[graded exercices] procedure and take the “training” assignment; Practice with the other exercices on the Git page
-* https://github.com/oliviercailloux/java-course/blob/main/Syntax/README.adoc[Syntax]: basics; exercices (Shorts and Methods)
+// * https://github.com/oliviercailloux/java-course/blob/main/Syntax/README.adoc[Syntax]: basics; exercices (Shorts and Methods)
 
-TODO @ home: Git step-by-step (entirely); “graded exercices” and “training” (see above); Exercices of “Syntax” until “Methods” (not: “Classes”).
+TODO @ home: Git step-by-step (entirely); “graded exercices” and “training” (see above)
+//; Exercices of “Syntax” until “Methods” (not: “Classes”).
 
 [[S3]]
 == S3: 30 Jan

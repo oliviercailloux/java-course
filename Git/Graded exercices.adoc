@@ -16,6 +16,7 @@ This document explains how to submit your solutions for the graded exercices of 
 * Push your work to your remote
 ** Push regularly, do not wait the end of the allowed time, so as to prevent last minute problems
 ** Remember that you need to push all branches that you want me to see
+** You may _not_ use the GitHub web interface to edit files, create branches, or do any other operation
 * Hint: Check with the GitHub web interface that your commits and branches have reached the remote repository
 * Your last commit on time is graded. Also, your commits overtime are graded, and penalized linearly according to the delay, so that five minutes delay is penalized 100%. The best grade is kept. So, pushing after the delay can only improve your grade.
 * When you are done, you may exit the classroom only if you push a tag `END` on the latest commit that you want to be considered.
@@ -23,17 +24,20 @@ This document explains how to submit your solutions for the graded exercices of 
 == Configuration
 It is important that your git `user.name` https://github.com/oliviercailloux/java-course/blob/main/Git/README.adoc#Configure-git[equals] (exactly) your GitHub username, so that I can associate your contributions to you. This will be important when working on projects. I will also grade whether you configured your git correctly even before projects, as part of most graded exercice.
 
-== The `training` assignment
-* Here is https://classroom.github.com/a/82sB-Te7[the link] for the “training” assignment. 
-* You should be able to predict the name of the GitHub repository that will be created when you will accept this assignment.
-* You can use this to practice as much as you want. 
-* This repository will not be used to grade your work.
-* In this assignment, you start with a file named `hello.txt` which contains `Hello, world.`
-
-If you want to start fresh (for example, before starting a new exercice), https://docs.github.com/repositories/creating-and-managing-repositories/deleting-a-repository[delete] your “training” repository.
+== Exercice
+Predict the name of the GitHub repository that will be created when you will accept the “training” assignment.
 
 == Exercice: hello world
-Accept the `training` assignment (link here above) and translate the content of the file `hello.txt` to say hello in another language of your choice. One prestige point to you if it is a language that I have not yet seen in other student works and you did not use external help for the translation. Make sure this is visible on your remote repository.
+* Accept the https://classroom.github.com/a/YnnapXNF[training assignment].
+* In this assignment, you start with a file named `hello.txt` which contains `Hello, world.`
+* Translate the content of the file `hello.txt` to say hello in another language of your choice.
+* One prestige point to you if it is a language that I have not yet seen in other student works and you did not use external help for the translation. Make sure this is visible on your remote repository.
+
+Notes.
+
+* You can use this to practice as much as you want. 
+* This repository will not be used to grade your work.
+* If you want to start fresh (for example, before starting a new exercice), https://docs.github.com/repositories/creating-and-managing-repositories/deleting-a-repository[delete] your “training” repository.
 
 == Permissions
 You may add methods to classes and you may add classes but you may not change the provided headers (you may not add parameters for example) or change the interfaces. Moreover, your unit tests have to test the contracts as specified, they may not use supplementary methods or classes.
