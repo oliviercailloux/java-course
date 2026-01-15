@@ -39,7 +39,7 @@ Hint: do not try to remember all the shortcut commands and options git provides.
 Git can be configured by associating string values to “options”. 
 An option can be configured locally (for a given repository) or globally (for every time you use git on that system).
 
-* Type `git config --global --list` to see which options are currently configured globally (you will see an (almost) empty list if you haven’t configured anything yet)
+* Type `git config list --global` to see which options are currently configured globally (you will see an (almost) empty list if you haven’t configured anything yet)
 
 Here we want to associate your name as a value to the option `user.name`. 
 Git will use this to sign your commits.
