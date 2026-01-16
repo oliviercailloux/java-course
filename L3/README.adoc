@@ -44,7 +44,6 @@ TODO @ home: Git step-by-step (entirely); “graded exercices” and “training
 [[S3]]
 == S3: 30 Jan
 * Graded exercice about https://github.com/oliviercailloux/java-course/blob/main/Git/README.adoc[git]. Deadline: 14h15.
-// // ** Accept https://classroom.github.com/a/pbpeqLQ8[this]. Clone the resulting remote repository. Modify the file `a folder/a file.txt`, so that it contains “Hello” (or anything else than its original content). Push to your remote.
 * Syntax, exercice: Classes
 * https://github.com/oliviercailloux/java-course/blob/main/Execution/README.adoc[Execution], without packages, exercices
 
