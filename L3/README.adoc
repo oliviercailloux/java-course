@@ -35,7 +35,7 @@ TODO @ home:
 * Projet: supervisors; random registration
 * Git remotes
 * Git Step by step (end)
-* Read the https://github.com/oliviercailloux/java-course/blob/main/Git/Graded%20exercices.adoc[graded exercices] procedure and take the “training” assignment; Practice with the other exercices on the Git page
+* Read the “graded exercices” procedure and take the “training” assignment; Practice with the other exercices on the Git page
 // * https://github.com/oliviercailloux/java-course/blob/main/Syntax/README.adoc[Syntax]: basics; exercices (Shorts and Methods)
 
 TODO @ home:

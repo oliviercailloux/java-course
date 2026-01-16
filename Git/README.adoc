@@ -15,7 +15,8 @@ Then see:
 https://github.com/oliviercailloux/java-course/blob/main/Git/Git%20branching%202.adoc[Git branching 2], 
 https://github.com/oliviercailloux/java-course/blob/main/Git/Git%20branching%203.adoc[Git branching 3], 
 https://github.com/oliviercailloux/java-course/blob/main/Git/Git%20branching%204.adoc[Git branching 4], 
-https://github.com/oliviercailloux/java-course/blob/main/Git/Git%20branching%205.adoc[Git branching 5]
+https://github.com/oliviercailloux/java-course/blob/main/Git/Git%20branching%205.adoc[Git branching 5],
+https://github.com/oliviercailloux/java-course/blob/main/Git/Graded%20exercices.adoc[graded exercices] 
 * https://github.com/oliviercailloux/java-course/blob/main/Git/Best%20practices.adoc[best practices].
 
 == Learning the basics
