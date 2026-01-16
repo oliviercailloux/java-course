@@ -32,13 +32,18 @@ TODO @ home:
 [[S2]]
 == S2: 16 Jan
 * Git Step by step (start)
+* Projet: supervisors; random registration
 * Git remotes
 * Git Step by step (end)
-* Projet: supervisors; random registration
 * Read the https://github.com/oliviercailloux/java-course/blob/main/Git/Graded%20exercices.adoc[graded exercices] procedure and take the “training” assignment; Practice with the other exercices on the Git page
 // * https://github.com/oliviercailloux/java-course/blob/main/Syntax/README.adoc[Syntax]: basics; exercices (Shorts and Methods)
 
-TODO @ home: Git step-by-step (entirely); “graded exercices” and “training” (see above)
+TODO @ home:
+
+* Git step-by-step (entirely)
+* “graded exercices” procedure and “training” (see above)
+* Register for second slots on Moodle if not done yet
+
 //; Exercices of “Syntax” until “Methods” (not: “Classes”).
 
 [[S3]]
