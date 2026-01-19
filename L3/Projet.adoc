@@ -16,7 +16,7 @@ https://classroom.github.com/a/2tc61U1b
 == Que livrer
 - Si branche dev diffère de branche main, votre principale responsabilité est de restaurer la fonctionnalité main
 - Retirer les tâches faites du TODO, ajouter des propositions éventuellement
-- Documenter en Asciidoc et en https://plantuml.com/[PlantUML] dans le répertoire `Doc`, d’une façon accessible depuis le README.
+- Documenter en https://docs.asciidoctor.org/asciidoc/latest/[Asciidoc] et en https://plantuml.com/[PlantUML] dans le répertoire `Doc`, d’une façon accessible depuis le README.
 - Minimisez les changements : ne changez pas les espaces en fin de ligne, ne reformatez pas le code existant…
 - Formattez correctement _votre_ code !
 
