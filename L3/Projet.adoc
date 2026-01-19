@@ -9,8 +9,7 @@ https://classroom.github.com/a/2tc61U1b
 - Sur volontariat, le projet sera éventuellement livré en open source en fin d’année.
 
 == Préparation
-- Chaque étudiante et étudiant doit bloquer deux créneaux sur la https://universitedauphine-my.sharepoint.com/:x:/r/personal/olivier_cailloux_dauphine_psl_eu/Documents/Cr%C3%A9neaux%20Java.xlsx?d=w03111a9d637a48f7a88036779a413aa4[feuille partagée]
-// - Chaque étudiante et étudiant doit bloquer deux créneaux sur la https://universitedauphine-my.sharepoint.com/:x:/r/personal/olivier_cailloux_dauphine_psl_eu/Documents/Cr%C3%A9neaux%20Java.xlsx?d=w03111a9d637a48f7a88036779a413aa4&csf=1&web=1&e=DT2ey7[feuille partagée]
+- Chaque étudiante et étudiant doit bloquer deux créneaux sur la feuille partagée
 - Aucun créneau bloqué précédemment ne peut être libéré sans mon consentement, par contre il est permis d’échanger des créneaux jusqu’à l’avant-veille
 
 == Que livrer
