@@ -9,7 +9,7 @@ https://classroom.github.com/a/2tc61U1b
 - Sur volontariat, le projet sera éventuellement livré en open source en fin d’année.
 
 == Préparation
-- Chaque étudiante et étudiant doit bloquer deux créneaux sur la feuille partagée
+- Chaque étudiante et étudiant doit bloquer deux créneaux sur la feuille partagée (lien via Moodle)
 - Aucun créneau bloqué précédemment ne peut être libéré sans mon consentement, par contre il est permis d’échanger des créneaux jusqu’à l’avant-veille
 
 == Que livrer
