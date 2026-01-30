@@ -43,21 +43,21 @@ TODO @ home:
 * “graded exercices” procedure and “training” (see above)
 * Register for second slots on Moodle if not done yet
 
-//; Exercices of “Syntax” until “Methods” (not: “Classes”).
-
 [[S3]]
 == S3: 30 Jan
 * Graded exercice about git: https://github.com/oliviercailloux/java-course/blob/main/Git/Git%20branching%205.adoc[Git branching 5]. 
 Deadline: 15h25 (plus 10 minutes max with penalty).
 * https://github.com/oliviercailloux/java-course/blob/main/Syntax/README.adoc[Syntax]: basics; exercices (Shorts and Methods)
 * Syntax, exercice: Classes
-* https://github.com/oliviercailloux/java-course/blob/main/Execution/README.adoc[Execution], without packages, exercices
 
-TODO @ home: Install https://github.com/oliviercailloux/java-course/blob/main/Dev%20tools/VS%20Code.adoc[Visual Studio Code].
+TODO @ home:
 
+- Install https://github.com/oliviercailloux/java-course/blob/main/Dev%20tools/VS%20Code.adoc[Visual Studio Code].
+- Finish Syntax exercices up to and including Classes (not: More about classes)
+
+// * https://github.com/oliviercailloux/java-course/blob/main/Execution/README.adoc[Execution], without packages, exercices
 // [[S4]]
 // == S4: 13 Feb
-// * Graded exercice: https://github.com/oliviercailloux/java-course/blob/main/Git/Git%20branching%205.adoc[Git branching]. Deadline: 14h45.
 // * Syntax: packages
 // * Execution, with packages, exercices
 // * Exercices: https://github.com/oliviercailloux/java-course/blob/main/Dev%20tools/VS%20Code.adoc[VS Code]
