@@ -48,7 +48,7 @@ TODO @ home:
 [[S3]]
 == S3: 30 Jan
 * Graded exercice about git: https://github.com/oliviercailloux/java-course/blob/main/Git/Git%20branching%205.adoc[Git branching 5]. 
-// Deadline: 14h45.
+Deadline: 15h25 (plus 10 minutes max with penalty).
 * https://github.com/oliviercailloux/java-course/blob/main/Syntax/README.adoc[Syntax]: basics; exercices (Shorts and Methods)
 * Syntax, exercice: Classes
 * https://github.com/oliviercailloux/java-course/blob/main/Execution/README.adoc[Execution], without packages, exercices
