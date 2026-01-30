@@ -36,7 +36,6 @@ TODO @ home:
 * Git remotes
 * Git Step by step (end)
 * Read the “graded exercices” procedure and take the “training” assignment; Practice with the other exercices on the Git page
-// * https://github.com/oliviercailloux/java-course/blob/main/Syntax/README.adoc[Syntax]: basics; exercices (Shorts and Methods)
 
 TODO @ home:
 
@@ -48,7 +47,9 @@ TODO @ home:
 
 [[S3]]
 == S3: 30 Jan
-* Graded exercice about https://github.com/oliviercailloux/java-course/blob/main/Git/README.adoc[git]. Deadline: 14h15.
+* Graded exercice about git: https://github.com/oliviercailloux/java-course/blob/main/Git/Git%20branching%205.adoc[Git branching 5]. 
+// Deadline: 14h45.
+* https://github.com/oliviercailloux/java-course/blob/main/Syntax/README.adoc[Syntax]: basics; exercices (Shorts and Methods)
 * Syntax, exercice: Classes
 * https://github.com/oliviercailloux/java-course/blob/main/Execution/README.adoc[Execution], without packages, exercices
 
