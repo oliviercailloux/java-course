@@ -55,30 +55,36 @@ TODO @ home:
 - Install https://github.com/oliviercailloux/java-course/blob/main/Dev%20tools/VS%20Code.adoc[Visual Studio Code].
 - Finish Syntax exercices up to and including Classes (not: More about classes)
 
-// * https://github.com/oliviercailloux/java-course/blob/main/Execution/README.adoc[Execution], without packages, exercices
-// [[S4]]
-// == S4: 13 Feb
-// * Syntax: packages
-// * Execution, with packages, exercices
-// * Exercices: https://github.com/oliviercailloux/java-course/blob/main/Dev%20tools/VS%20Code.adoc[VS Code]
-// * Re-create some classes that you designed in the Syntax part (see here above) in VS Code and make sure you can run the `main` method.
+// notes sur Moodle: check with me if very low grade compared to what you did; understand and bring proof
+// show a grading example
+// use my SVG lib
+// previous students project, commit correctly, ask if no grade
+// students that were not registered to my course?
+// machine lab
 
-// TODO @ home: Syntax, More exercices (up to EE3.6 included); VS Code (see above).
+[[S4]]
+== S4: 13 Feb
+* Syntax: visibility; More about classes
+* https://github.com/oliviercailloux/java-course/blob/main/Execution/README.adoc[Execution], without packages, exercices
+* Syntax: packages
+* Execution, with packages, exercices
+* Exercices: https://github.com/oliviercailloux/java-course/blob/main/Dev%20tools/VS%20Code.adoc[VS Code]
+* Re-create some classes that you designed in “Syntax” in VS Code and make sure you can run the `main` method.
 
-// [[S5]]
-// == S5: 18 Feb
-// * Unit testing, demo, https://github.com/oliviercailloux/java-course/blob/main/JUnit/Overview.adoc[overview]; exercice: write unit tests for the exercices in Syntax.
-// * Please register your project team https://classroom.github.com/a/VtYNqTPm[here]
-// * Two major aspects of software engineering: https://github.com/oliviercailloux/java-course/blob/main/Contrat/README.adoc[contract] and fail-fast.
-// * Contract: exercices
+TODO @ home: Syntax, More exercices (up to EE3.6 included); VS Code (see above).
 
-// TODO @ home: Contract EE4.3 and 4.4. 
-// Before end of 9 March: register for a team, otherwise I’ll register you according to remaining seats.
-// Before end of 14 March (linear penalty for lateness, 100 % at end of 15 March): git-branching-2. Submit new attempt at git-branching (you may delete your repository and start anew). Grade git-branching-final: max(git-branching, git-branching × (1 − w) + git-branching-2 × w), w = (20 - git-branching) / 40. Grade git-modify-final: max(git-modify, git-branching-final).
+[[S5]]
+== S5: 18 Feb
+* Unit testing, demo, https://github.com/oliviercailloux/java-course/blob/main/JUnit/Overview.adoc[overview]; exercice: write unit tests for the exercices in Syntax.
+* Two major aspects of software engineering: https://github.com/oliviercailloux/java-course/blob/main/Contrat/README.adoc[contract] and fail-fast.
+* Contract: exercices
 
-// [[S6]]
-// == S6: 20 Feb
-// * Graded exercice about syntax and contracts: https://classroom.github.com/a/Wa20i3UR[multiply], wording https://github.com/oliviercailloux/java-course/blob/main/Contrat/Multiply.adoc[here]. _You must disable LLM completions._ Deadline: 14:20 plus five minutes late max. Grade multiply-after-corr: max(multiply, multiply-corrected)
+TODO @ home: Contract EE4.3 and 4.4. 
+
+[[S6]]
+== S6: 20 Feb
+* Graded exercice about syntax and contracts (previous year, https://github.com/oliviercailloux/java-course/blob/main/Contrat/Multiply.adoc[Multiply]). _You must disable LLM completions._
+//  Deadline: 14:20 plus five minutes late max. Grade multiply-after-corr: max(multiply, multiply-corrected)
 // * Review static variables
 // * https://github.com/oliviercailloux/java-course/blob/main/Objects%20%26%20interfaces/README.adoc[Objects & interfaces].
 // * Objects (just started). Exercices up to 5.3, then Three dice.
