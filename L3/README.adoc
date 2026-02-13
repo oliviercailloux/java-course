@@ -57,10 +57,7 @@ TODO @ home:
 
 // notes sur Moodle: check with me if very low grade compared to what you did; understand and bring proof
 // show a grading example
-// use my SVG lib
 // previous students project, commit correctly, ask if no grade
-// students that were not registered to my course?
-// machine lab
 
 [[S4]]
 == S4: 13 Feb
@@ -69,12 +66,13 @@ TODO @ home:
 * Syntax: packages
 * Execution, with packages, exercices
 * Exercices: https://github.com/oliviercailloux/java-course/blob/main/Dev%20tools/VS%20Code.adoc[VS Code]
-* Re-create some classes that you designed in “Syntax” in VS Code and make sure you can run the `main` method.
 
-TODO @ home: Syntax, More exercices (up to EE3.6 included); VS Code (see above).
+TODO @ home: Execution; VS Code (see above).
 
 [[S5]]
 == S5: 18 Feb
+* Re-create some classes that you designed in “Syntax” in VS Code and make sure you can run the `main` method.
+* Syntax, More exercices (up to EE3.6 included)
 * Unit testing, demo, https://github.com/oliviercailloux/java-course/blob/main/JUnit/Overview.adoc[overview]; exercice: write unit tests for the exercices in Syntax.
 * Two major aspects of software engineering: https://github.com/oliviercailloux/java-course/blob/main/Contrat/README.adoc[contract] and fail-fast.
 * Contract: exercices
@@ -83,7 +81,8 @@ TODO @ home: Contract EE4.3 and 4.4.
 
 [[S6]]
 == S6: 20 Feb
-* Graded exercice about syntax and contracts (previous year, https://github.com/oliviercailloux/java-course/blob/main/Contrat/Multiply.adoc[Multiply]). _You must disable LLM completions._
+* Graded exercice training: https://github.com/oliviercailloux/java-course/blob/main/Contrat/Multiply.adoc[Multiply].
+//  _You must disable LLM completions._
 //  Deadline: 14:20 plus five minutes late max. Grade multiply-after-corr: max(multiply, multiply-corrected)
 // * Review static variables
 // * https://github.com/oliviercailloux/java-course/blob/main/Objects%20%26%20interfaces/README.adoc[Objects & interfaces].
@@ -94,6 +93,7 @@ TODO @ home: Contract EE4.3 and 4.4.
 
 // [[S7]]
 // == S7: 13 Mar
+* Graded exercice about syntax and contracts
 // * Objects. Exercices up to 5.3, Three dice, and Two players.
 // * https://github.com/oliviercailloux/java-course/blob/main/L3/Projets.adoc[Projects]: initial planning
 

@@ -19,4 +19,4 @@
 * Focus on the text `withCurrencyScale`, in the method implementation. Make sure your Documentation view shows the documentation of that method.
 
 == Train
-To train with graded exercices about Java, accept https://classroom.github.com/a/_7XNzi-3[this assignment], clone the resulting repository, import it in VS Code, modify the method `App#sayHello()`, run the code to check that it works, and push your changes. Check that you see them online.
+To train with graded exercices about Java, accept https://classroom.github.com/a/jhYbdOWn[this assignment], clone the resulting repository, import it in VS Code, modify the method `App#sayHello()`, run the code to check that it works, and push your changes. Check that you see them online.
