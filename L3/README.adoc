@@ -91,8 +91,8 @@ TODO @ home: Contract EE4.3 and 4.4.
 // TODO @ home.
 // Before end of 1 April (linear penalty up to 100% for 12 hours late): submit new attempt at multiply (you may delete your repository and start anew). Grade multiply-final: max(multiply-after-corr, multiply-after-corr × 0.1 + multiply-homework × 0.9). This exercice will have a lower weight (not counted in the general owa).
 
-// [[S7]]
-// == S7: 13 Mar
+[[S7]]
+== S7: 13 Mar
 * Graded exercice about syntax and contracts
 // * Objects. Exercices up to 5.3, Three dice, and Two players.
 // * https://github.com/oliviercailloux/java-course/blob/main/L3/Projets.adoc[Projects]: initial planning
