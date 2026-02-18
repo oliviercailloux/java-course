@@ -71,9 +71,8 @@ TODO @ home: Execution; VS Code (see above).
 
 [[S5]]
 == S5: 18 Feb
-* Re-create some classes that you designed in “Syntax” in VS Code and make sure you can run the `main` method.
+* Re-create the classes that you designed in “Syntax” in VS Code and make sure you can run the `main` method.
 * Syntax, More exercices (up to EE3.6 included)
-* Unit testing, demo, https://github.com/oliviercailloux/java-course/blob/main/JUnit/Overview.adoc[overview]; exercice: write unit tests for the exercices in Syntax.
 * Two major aspects of software engineering: https://github.com/oliviercailloux/java-course/blob/main/Contrat/README.adoc[contract] and fail-fast.
 * Contract: exercices
 
@@ -81,7 +80,8 @@ TODO @ home: Contract EE4.3 and 4.4.
 
 [[S6]]
 == S6: 20 Feb
-* Graded exercice training: https://github.com/oliviercailloux/java-course/blob/main/Contrat/Multiply.adoc[Multiply].
+* Graded exercice training: https://github.com/oliviercailloux/java-course/blob/main/Contrat/Multiply.adoc[Multiply] (https://classroom.github.com/a/1G1AoFDf[accept this]).
+* Unit testing, demo, https://github.com/oliviercailloux/java-course/blob/main/JUnit/Overview.adoc[overview]; exercice: write unit tests for the exercices in Syntax.
 //  _You must disable LLM completions._
 //  Deadline: 14:20 plus five minutes late max. Grade multiply-after-corr: max(multiply, multiply-corrected)
 // * Review static variables
