@@ -13,14 +13,30 @@ https://classroom.github.com/a/2tc61U1b
 - Aucun créneau bloqué précédemment ne peut être libéré sans mon consentement, par contre il est permis d’échanger des créneaux jusqu’à l’avant-veille
 
 == Que livrer
-- Si branche dev diffère de branche main, votre principale responsabilité est de restaurer la fonctionnalité main
-- Retirer les tâches faites du TODO, ajouter des propositions éventuellement
+- Aller dans la section Projects puis sélectionner "Project Roadmap", possibilité de:
+    * Choisir une tâche déjà commencé, section "In Progress"
+    * Commencer une nouvelle tâche, section "Ready"
+    * Ajouter une tâche, section "Backlog"
 - Documenter en https://docs.asciidoctor.org/asciidoc/latest/[Asciidoc] et en https://plantuml.com/[PlantUML] dans le répertoire `Doc`, d’une façon accessible depuis le README
 - Minimisez les changements : ne changez pas les espaces en fin de ligne, ne reformatez pas le code existant…
 - Formattez correctement _votre_ code !
 
 == Comment livrer
-- Livrer sur branche dev. Fusionner sur branche main si pas de régression
-- Un étudiant non superviseurice ne peut pousser sur les branches dev et main que le jour de son créneau
-- Remettre sur Moodle : indiquer pour chaque tâche un lien vers la https://docs.github.com/en/pull-requests/committing-changes-to-your-project/viewing-and-comparing-commits/comparing-commits\#comparing-commits[diff] entre le commit de la position précédente de dev et sa nouvelle position (exemple : si deux tâches accomplies, indiquer deux liens, un de C1 à C3 et un de C3 à C7, où C1 est l’ancien commit de dev, C3 le commit après la première tâche, C7 le commit après la deuxième tâche et le nouveau commit de dev) ; indiquer si fusionné sur main ou pourquoi pas
-- Avant la fin du jour de votre créneau
+Cas où un étudiant commence une nouvelle tâche :
+
+- S'actualiser avec la branche dev : `git pull origin dev`
+- Créer une nouvelle branche : `git branch nom_tache`
+- Se rendre sur la branche créée : `git checkout nom_tache`
+
+Cas où un étudiant reprend une tâche déjà commencée :
+
+- S'actualiser avec la branche de la tâche : `git pull origin nom_tache`
+- Se rendre sur la branche de la tâche : `git checkout nom_tache`
+
+Méthode de rendu :
+
+- Push sur la branche : `git push origin nom_tache`
+- Créer une https://docs.github.com/en/pull-requests[Pull Request] ou s'associer à une déjà existante : onglet "Pull Requests"
+- La Pull Request doit avoir pour base la branche dev (par défaut)
+- Il sera impossible de valider une Pull Request avec un code qui ne compile pas
+- Remettre sur Moodle : indiquer pour chaque tâche un lien vers la Pull Request associée, ainsi qu'une description claire des modifications apportées.
