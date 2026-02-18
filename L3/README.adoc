@@ -80,7 +80,7 @@ TODO @ home: Contract EE4.3 and 4.4.
 
 [[S6]]
 == S6: 20 Feb
-* Graded exercice training: https://github.com/oliviercailloux/java-course/blob/main/Contrat/Multiply.adoc[Multiply] (https://classroom.github.com/a/1G1AoFDf[accept this]).
+* Training: https://github.com/oliviercailloux/java-course/blob/main/Contrat/Multiply.adoc[Multiply] (https://classroom.github.com/a/1G1AoFDf[accept this]).
 * Unit testing, demo, https://github.com/oliviercailloux/java-course/blob/main/JUnit/Overview.adoc[overview]; exercice: write unit tests for the exercices in Syntax.
 //  _You must disable LLM completions._
 //  Deadline: 14:20 plus five minutes late max. Grade multiply-after-corr: max(multiply, multiply-corrected)
