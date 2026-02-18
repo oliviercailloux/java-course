@@ -13,8 +13,8 @@ https://classroom.github.com/a/2tc61U1b
 - Aucun créneau bloqué précédemment ne peut être libéré sans mon consentement, par contre il est permis d’échanger des créneaux jusqu’à l’avant-veille
 
 == Que livrer
-- Aller dans la section Projects puis sélectionner "Project Roadmap", possibilité de:
-    * Choisir une tâche déjà commencé, section "In Progress"
+- Dans la section Projects, sélectionner `Project Roadmap`, possibilité de :
+    * Choisir une tâche déjà commencée, section "In Progress"
     * Commencer une nouvelle tâche, section "Ready"
     * Ajouter une tâche, section "Backlog"
 - Documenter en https://docs.asciidoctor.org/asciidoc/latest/[Asciidoc] et en https://plantuml.com/[PlantUML] dans le répertoire `Doc`, d’une façon accessible depuis le README
@@ -24,19 +24,19 @@ https://classroom.github.com/a/2tc61U1b
 == Comment livrer
 Cas où un étudiant commence une nouvelle tâche :
 
-- S'actualiser avec la branche dev : `git pull origin dev`
+- S’actualiser avec la branche dev : `git pull origin dev`
 - Créer une nouvelle branche : `git branch nom_tache`
 - Se rendre sur la branche créée : `git checkout nom_tache`
 
 Cas où un étudiant reprend une tâche déjà commencée :
 
-- S'actualiser avec la branche de la tâche : `git pull origin nom_tache`
+- S’actualiser avec la branche de la tâche : `git pull origin nom_tache`
 - Se rendre sur la branche de la tâche : `git checkout nom_tache`
 
 Méthode de rendu :
 
 - Push sur la branche : `git push origin nom_tache`
-- Créer une https://docs.github.com/en/pull-requests[Pull Request] ou s'associer à une déjà existante : onglet "Pull Requests"
-- La Pull Request doit avoir pour base la branche dev (par défaut)
-- Il sera impossible de valider une Pull Request avec un code qui ne compile pas
-- Remettre sur Moodle : indiquer pour chaque tâche un lien vers la Pull Request associée, ainsi qu'une description claire des modifications apportées.
+- Créer une https://docs.github.com/en/pull-requests[Pull Request] (PR) ou s'associer à une PR existante : onglet "Pull Requests"
+- La PR doit avoir pour base la branche `dev` (par défaut)
+- Si le code ne compile pas, la PR ne sera pas validée
+- Remettre sur Moodle : indiquer pour chaque tâche un lien vers la PR associée (qu’elle soit validée ou non), ainsi qu'une description claire des modifications apportées
