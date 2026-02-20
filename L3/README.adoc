@@ -79,7 +79,6 @@ TODO @ home: Execution; VS Code (see above).
 TODO @ home: Contract EE4.3 and 4.4. 
 
 // étudiants non enregistrés dans mon org, Oweys?
-// son ?
 [[S6]]
 == S6: 20 Feb
 * Training (https://app.wooclap.com/events/HDARZP/[poll]): https://github.com/oliviercailloux/java-course/blob/main/Contrat/Multiply.adoc[Multiply] (https://classroom.github.com/a/1G1AoFDf[accept this]).
