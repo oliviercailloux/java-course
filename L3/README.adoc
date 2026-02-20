@@ -81,7 +81,7 @@ TODO @ home: Contract EE4.3 and 4.4.
 // étudiants non enregistrés dans mon org, Oweys?
 [[S6]]
 == S6: 20 Feb
-* Training (https://app.wooclap.com/HDARZP/[poll]): https://github.com/oliviercailloux/java-course/blob/main/Contrat/Multiply.adoc[Multiply] (https://classroom.github.com/a/1G1AoFDf[accept this]).
+* Training: https://github.com/oliviercailloux/java-course/blob/main/Contrat/Multiply.adoc[Multiply] (https://classroom.github.com/a/1G1AoFDf[accept this]).
 * Unit testing, demo, https://github.com/oliviercailloux/java-course/blob/main/JUnit/Overview.adoc[overview]; exercice: write unit tests for the exercices in Syntax and Multiply.
 //  _You must disable LLM completions._
 // * Review static variables
