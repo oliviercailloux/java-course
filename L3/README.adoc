@@ -78,12 +78,13 @@ TODO @ home: Execution; VS Code (see above).
 
 TODO @ home: Contract EE4.3 and 4.4. 
 
+// étudiants non enregistrés dans mon org, Oweys?
+// son ?
 [[S6]]
 == S6: 20 Feb
-* Training: https://github.com/oliviercailloux/java-course/blob/main/Contrat/Multiply.adoc[Multiply] (https://classroom.github.com/a/1G1AoFDf[accept this]).
-* Unit testing, demo, https://github.com/oliviercailloux/java-course/blob/main/JUnit/Overview.adoc[overview]; exercice: write unit tests for the exercices in Syntax.
+* Training (https://app.wooclap.com/events/HDARZP/[poll]): https://github.com/oliviercailloux/java-course/blob/main/Contrat/Multiply.adoc[Multiply] (https://classroom.github.com/a/1G1AoFDf[accept this]).
+* Unit testing, demo, https://github.com/oliviercailloux/java-course/blob/main/JUnit/Overview.adoc[overview]; exercice: write unit tests for the exercices in Syntax and Multiply.
 //  _You must disable LLM completions._
-//  Deadline: 14:20 plus five minutes late max. Grade multiply-after-corr: max(multiply, multiply-corrected)
 // * Review static variables
 // * https://github.com/oliviercailloux/java-course/blob/main/Objects%20%26%20interfaces/README.adoc[Objects & interfaces].
 // * Objects (just started). Exercices up to 5.3, then Three dice.
