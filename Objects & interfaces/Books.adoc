@@ -1,0 +1,6 @@
+= Exercice: Books
+
+* Accept https://classroom.github.com/a/K7gYNLeK[this] exercice, clone the repository, work locally, send your changes to GitHub
+* Implement the class `Books` (15 points) and implement the tests in `BooksTests` (5 points).
+* Make sure you respect the contracts. Any behavior that is not documented or ambiguous: you are free to choose!
+* You may add classes and methods. You may not change the headers of the provided methods.
