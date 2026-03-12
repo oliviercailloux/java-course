@@ -20,7 +20,7 @@ For this course, use by default: `ArrayList` / `ImmutableList`; `LinkedHashSet` 
 // list of words
 * https://math.hws.edu/javanotes/c7/exercises.html[EE7.6] (you may use standard input instead of file input)
 // set (long)
-* https://math.hws.edu/javanotes/c10/exercises.html[EE10.2] [I]
+* https://math.hws.edu/javanotes/c10/exercises.html[EE10.2] [most important]
 // read, sort a list
 * https://math.hws.edu/javanotes/c7/exercises.html[EE7.1], 7.5 (except that you can use built-sorting functions from the Java API).
 

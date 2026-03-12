@@ -75,7 +75,7 @@
 	\frametitle{Distribution et utilisation}
 	Comment rendre son programme Java utilisable ?
 	\begin{enumerate}
-		\item \label{unik} JVM unique + fichiers \texttt{.class}, séparément
+		\item \label{unik} JVM système + fichiers \texttt{.class}, séparément
 		\begin{itemize}
 			\item Installer la JDK sur le système, inclut la JVM [U]
 			\item Récupérer les \texttt{.class} [U]
@@ -89,7 +89,7 @@
 		\end{itemize}
 		\item \label{srv} La JVM tourne sur un serveur et communique avec l’utilisateur par le réseau
 	\end{enumerate}
-	Dans ce cours : JVM unique (\ref{unik}), peut-être serveur (\ref{srv})
+	Dans ce cours : JVM système (\ref{unik}) ; Projet : serveur (\ref{srv})
 \end{frame}
 
 \section{Commandes}
@@ -147,7 +147,7 @@
 		\item Mais que manque-t-il ? \uncover<4->{Où trouver cette classe !}
 		\item Class path : les chemins que la JVM utilise pendant son exécution pour charger les classes {\tiny (sauf celles de l’API Java)}
 		\item Class path fourni à la JVM au démarrage
-		\item Exemple : \zeroboxonly{1-4}{?}\uncover<5->{\texttt{java -cp "My project/src/" "me.myapp.mytheme.MyClass"}}
+		\item Exemple : \zeroboxonly{1-4}{?}\uncover<5->{\texttt{java -cp "My project/target/" "me.myapp.mytheme.MyClass"}}
 	\end{itemize}
 \end{frame}
 

@@ -21,3 +21,6 @@ Important advice. Uninstall every version of Java you have, keep only one: the l
 To check that it is correctly installed, open a https://github.com/oliviercailloux/java-course/blob/main/Git/Shell.adoc[shell], and verify that both the `java --version` and `javac --version` commands print the correct java version; then, verify that typing `jshell` does start jshell (it should say something like "Welcome to JShell" and display a jshell prompt; type `/exit` to exit).
 
 (Look at https://github.com/oliviercailloux/java-course/blob/8f61ac1a6cdc1c9b00237e1a1f26e947d5b26e58/Best%20practices/Various.adoc#installing-the-jdk[this previous version] for manual installation of the OpenJDK build on Windows or more information about the configuration of environment variables.)
+
+== Also
+https://jlbp.dev/[Google Best Practices for Java Libraries]

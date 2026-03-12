@@ -3,8 +3,10 @@
 Accept https://classroom.github.com/a/inxYz2iq[this assignment].
 You must implement all documented contracts.
 Hint: you do not have to implement `Iterable` or `Iterator` for this exercice, try to rather use structures that you know.
-You may use all the dependencies contained in the POM but you may not add dependencies.
 This exercice is (very loosely) inspired by https://doi.org/10.1111/pce.13966[this article] (you do not have to read the article).
+
+You may use all the dependencies contained in the POM but you may not add dependencies.
+You may add methods to classes and you may add classes but you may not change the provided headers (you may not add parameters for example) or change the interfaces. Moreover, your unit tests have to test the contracts as specified, they may not use supplementary methods or classes.
 
 When the instructions don’t specify some behavior exactly, you can choose your own approach - as long as you still meet all the stated requirements. 
 I will not provide supplementary explanations unless there is a mistake in the wording.

@@ -72,7 +72,7 @@
 		\end{itemize}
 		\item Histoire : un DAG de \og{}commits\fg{}
 		\item Conservée dans un \emph{dépôt} (repository)
-		\item Circuler en utilisant la commande \texttt{checkout <SHA-1>}
+		\item Circuler en utilisant la commande \texttt{git checkout <SHA-1>}
 	\end{itemize}
 	\begin{center}
 		\begin{tikzpicture}
@@ -105,7 +105,17 @@
 \end{frame}
 
 \begin{frame}
-	\frametitle{Préparer un commit}
+	\frametitle{Préparer un commit}%
+	\begin{minipage}[t]{0.33 \columnwidth}
+		\textbf{HEAD}
+		\begin{itemize}
+			\item[] \texttt{/rép1}
+			\begin{itemize}
+				\item[] \texttt{/fich1}
+			\end{itemize}\vspace{-0.8ex}
+			\item[] \texttt{/fich2}
+		\end{itemize}
+	\end{minipage}%
 	\begin{minipage}[t]{0.33 \columnwidth}
 		\textbf{Work dir}
 		\begin{itemize}
@@ -127,21 +137,11 @@
 			\end{itemize}\vspace{-0.8ex}
 			\item[] \texttt{/fich2'}
 		\end{itemize}
-	\end{minipage}%
-	\begin{minipage}[t]{0.33 \columnwidth}
-		\textbf{HEAD}
-		\begin{itemize}
-			\item[] \texttt{/rép1}
-			\begin{itemize}
-				\item[] \texttt{/fich1}
-			\end{itemize}\vspace{-0.8ex}
-			\item[] \texttt{/fich2}
-		\end{itemize}
 	\end{minipage}
 	\begin{itemize}
+		\item \emph{HEAD} : commit actuel
 		\item \emph{Index} : zone de stockage du commit en préparation
-		\item \emph{HEAD} : contenu du commit actuel
-		\item Initialisation nouveau dépôt ? \onslide<2->{Index et HEAD vides}
+		\item Initialisation nouveau dépôt ? \onslide<2->{HEAD non existant, Index vide}
 		\item Juste après un commit ? \onslide<3->{Index vide}
 	\end{itemize}
 \end{frame}

@@ -11,7 +11,12 @@ Then see:
 * https://raw.githubusercontent.com/oliviercailloux/java-course/main/Git/Pr%C3%A9sentation/presentation.pdf[présentation] (or read below), 
 * https://github.com/oliviercailloux/java-course/blob/main/Git/README.adoc#configure-git[configure] git,
 * https://github.com/oliviercailloux/java-course/blob/main/Git/Step-by-step.adoc[step-by-step exercices], 
-* https://github.com/oliviercailloux/java-course/blob/main/Git/Git%20branching%201.adoc[Git branching 1], https://github.com/oliviercailloux/java-course/blob/main/Git/Git%20branching%202.adoc[Git branching 2],  https://github.com/oliviercailloux/java-course/blob/main/Git/Git%20branching%203.adoc[Git branching 3]
+* https://github.com/oliviercailloux/java-course/blob/main/Git/Git%20branching%201.adoc[Git branching 1], 
+https://github.com/oliviercailloux/java-course/blob/main/Git/Git%20branching%202.adoc[Git branching 2], 
+https://github.com/oliviercailloux/java-course/blob/main/Git/Git%20branching%203.adoc[Git branching 3], 
+https://github.com/oliviercailloux/java-course/blob/main/Git/Git%20branching%204.adoc[Git branching 4], 
+https://github.com/oliviercailloux/java-course/blob/main/Git/Git%20branching%205.adoc[Git branching 5],
+https://github.com/oliviercailloux/java-course/blob/main/Git/Graded%20exercices.adoc[graded exercices] 
 * https://github.com/oliviercailloux/java-course/blob/main/Git/Best%20practices.adoc[best practices].
 
 == Learning the basics
@@ -35,13 +40,13 @@ Hint: do not try to remember all the shortcut commands and options git provides.
 Git can be configured by associating string values to “options”. 
 An option can be configured locally (for a given repository) or globally (for every time you use git on that system).
 
-* Type `git config --global --list` to see which options are currently configured globally (you will see an (almost) empty list if you haven’t configured anything yet)
+* Type `git config list --global` to see which options are currently configured globally (you will see an (almost) empty list if you haven’t configured anything yet)
 
 Here we want to associate your name as a value to the option `user.name`. 
 Git will use this to sign your commits.
 
-* Type `git config --global --get user.name` to see the value currently associated to the option `user.name` (which will probably be empty at first)
-* Type `git config --global --add user.name MyUserName` to associate the value `MyUserName` to the option `user.name`
+* Type `git config get --global user.name` to see the value currently associated to the option `user.name` (which will probably be empty at first)
+* Type `git config set --global user.name MyGitHubUserName` to associate to the option `user.name` the value `MyGitHubUserName`
 * Check again the value currently associated to the option `user.name`
 
 For more info: https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup[initial setup]; GitHub usage of https://docs.github.com/en/get-started/getting-started-with-git/setting-your-username-in-git#about-git-usernames[`user.name`] and https://help.github.com/en/github/setting-up-and-managing-your-github-user-account/setting-your-commit-email-address[`user.email`]
