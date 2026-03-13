@@ -88,7 +88,7 @@ TODO @ home: Contract EE4.3 and 4.4.
 
 [[S7]]
 == S7: 13 Mar
-* Graded exercice about syntax, contracts, unit tests: https://github.com/oliviercailloux/java-course/blob/main/Contrat/Books.adoc[Books] (45 minutes plus 15 minutes with increasing penalty)
+* Graded exercice about syntax, contracts, unit tests: https://github.com/oliviercailloux/java-course/blob/main/Contrat/Books.adoc[Books] (deadline: 15h19, plus 15 minutes with increasing penalty)
 * https://github.com/oliviercailloux/java-course/blob/main/Objects%20%26%20interfaces/README.adoc[Objects & interfaces].
 * Objects, Exercices up to 5.3, then Three dice.
 // * Objects. Exercices up to 5.3, Three dice, and Two players.
