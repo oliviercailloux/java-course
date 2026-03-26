@@ -91,51 +91,49 @@ TODO @ home: Contract EE4.3 and 4.4.
 * Graded exercice about syntax, contracts, unit tests: https://github.com/oliviercailloux/java-course/blob/main/Contrat/Books.adoc[Books] (deadline: 15h19, plus 15 minutes with increasing penalty)
 * https://github.com/oliviercailloux/java-course/blob/main/Objects%20%26%20interfaces/README.adoc[Objects & interfaces].
 * Objects, Exercices up to 5.3, then Three dice.
-// * Objects. Exercices up to 5.3, Three dice, and Two players.
 
 TODO @ home.
 Finish Exercices up to 5.3, Three dice, and Two players.
 
-// [[S8]]
-// == S8: 27 Mar
-// * Interfaces. Exercice: I like to move it move it; Coffee; 421
-// * https://github.com/oliviercailloux/java-course/blob/main/Maven/README.adoc[Maven]
-
-// [[S9]]
-// == S9: 8 April
-// * Exercice: Car (see Objects & interfaces)
-// * Polymorphism: inheritance; SimpleCar
-// * Exercices: Car extension
-// * Project: your proposals
-
-// [[S10]]
-// == S10: 10 April
+[[S8]]
+== S8: 27 Mar
+* Java Interfaces. Exercice: I like to move it move it; 421; Car
+* https://github.com/oliviercailloux/java-course/blob/main/Maven/README.adoc[Maven] (optional)
 // * Graded exercice: https://github.com/oliviercailloux/java-course/blob/main/L3/Mvni.adoc[mvni]. Deadline: 15:00, plus 15 minutes max with penalty.
-// * Project: your proposals
+// * Before end of 5 April: second chance Multiply (optional). Weight new is (13 - _l_)/20 with _l_ the number of modified lines. See Git / Graded exercices / Trying again.
 
-// TODO @ home. 
-// Draft of your project proposals (for each individual), to be discussed during S11.
-// Submit a new attempt at your `mvni` repository, before end of 6 May (linear penalty up to 12h delay). Grade `mvni-final`: max(mvni, mvni-homework × w + mvni × (1 − w)), with w equal to, by default, 90% − 7% × d, where d is the https://github.com/oliviercailloux/java-course/blob/main/Git/Graded%20exercices.adoc#trying-again[number of lines] changed between mvni (considering the last commit on time) and mvni-homework. You may _not_ delete your repository to start anew, you must start from one of your existing commits. You may discuss with me for considering w differently if you are in a special situation.
+TODO @ home.
+Finish exercices of today’s program (and previous ones if not done already).
 
-// [[S11]]
-// == S11: 15 April
-// * Project: your proposals, review per group
+[[S9]]
+== S9: 8 April
+* Graded exercice.
+// * Exercice: Car (see Objects & interfaces)
+* Polymorphism: inheritance; SimpleCar
+* Exercices: Car extension; Coffee
+
+[[S10]]
+== S10: 10 April
+* Generics (see Objects & interfaces), exercice Generic pair
+
+[[S11]]
+== S11: 17 April
 // * More about https://github.com/oliviercailloux/java-course/blob/main/Syntax/Inheritance.adoc[inheritance] and information hiding
 // * https://github.com/oliviercailloux/java-course/blob/main/Objects%20%26%20interfaces/README.adoc#checked-exceptions[Exceptions], exercices
 // * The `Object` class and its methods: `toString()`, `equals`, `hashcode`. Exercice: Car string; https://github.com/oliviercailloux/java-course/blob/main/Objects%20%26%20interfaces/Equals.adoc[Equality and hash codes]
-// * Generics (see Objects & interfaces), exercice Generic pair
+* https://github.com/oliviercailloux/java-course/blob/main/Collections/README.adoc[Collections]: Iterator, Iterable, Collection, Set, List; exercices “defining iterables” and “using collections” (especially 10.2)
+* Unit testing https://github.com/oliviercailloux/java-course/blob/main/JUnit/Exercice.adoc[exercice] about iterators
 
-// [[S12]]
-// == S12: 17 April
+[[S12]]
+== S12: 22 May
 // // 4 up to start S12, 3 after S14, S15, S16, these three for projects thus 4.5 × 7 + 8
 // * Expected for projet
-// * https://github.com/oliviercailloux/java-course/blob/main/Collections/README.adoc[Collections]: Iterator, Iterable, Collection, Set, List; exercices “defining iterables” and “using collections” (especially 10.2)
-// * Unit testing https://github.com/oliviercailloux/java-course/blob/main/JUnit/Exercice.adoc[exercice] about iterators
 // * Exercice: https://github.com/oliviercailloux-org/ex-colors[colors]. Implement the class CyclingColors as documented (skip for now the methods that involve unknown types).
 // // TODO @ home: finish all those exercices
 
-// [[S13]]
-// == S13: 22 May
+[[S13]]
+== S13: 22 May
+* Final graded exercice
 // * Update on notation. Grades: <git-modify-final, git-branching-final, multiply-final, mvni-final, mvni-final, last, last>. OWA with weights 0.1, 0.1, 1, 1, 1, 1, 2 except that weights of _L = {git-modify-final, git-branching-final, multiply-final}_ are maximum 0.7 and weight 2 goes to highest of _{mvni-final, mvni-final, last, last}_. Thus: weight 2 to _max{mvni-final, last}_, order remaining grades _g1_ to _g6_ (_g1_ the best one), each of _g1_, _g2_, _g3_ and _g4_ receive weight 1 or 0.7 if they are in _L_, weight 0.1 to _g5_ and _g6_.
 // * Maps
 // * Write unit tests for CyclingColors: at least one per method
