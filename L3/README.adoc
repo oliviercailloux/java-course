@@ -108,28 +108,25 @@ Finish exercices of today’s program (and previous ones if not done already).
 [[S9]]
 == S9: 8 April
 * Graded exercice.
-// * Exercice: Car (see Objects & interfaces)
-* Polymorphism: inheritance; SimpleCar
+* More about https://github.com/oliviercailloux/java-course/blob/main/Syntax/Inheritance.adoc[inheritance] and information hiding
+* Use of `this`
+* The `Object` class and its methods: `toString()`, `equals`, `hashcode`. Exercice: Car string; https://github.com/oliviercailloux/java-course/blob/main/Objects%20%26%20interfaces/Equals.adoc[Equality and hash codes]
 * Exercices: Car extension; Coffee
 
 [[S10]]
 == S10: 10 April
 * Generics (see Objects & interfaces), exercice Generic pair
+* https://github.com/oliviercailloux/java-course/blob/main/Collections/README.adoc[Collections]: Iterator, Iterable, Collection, Set, List; exercices “defining iterables” and “using collections” (especially 10.2)
 
 [[S11]]
 == S11: 17 April
-// * More about https://github.com/oliviercailloux/java-course/blob/main/Syntax/Inheritance.adoc[inheritance] and information hiding
 // * https://github.com/oliviercailloux/java-course/blob/main/Objects%20%26%20interfaces/README.adoc#checked-exceptions[Exceptions], exercices
-// * The `Object` class and its methods: `toString()`, `equals`, `hashcode`. Exercice: Car string; https://github.com/oliviercailloux/java-course/blob/main/Objects%20%26%20interfaces/Equals.adoc[Equality and hash codes]
-* https://github.com/oliviercailloux/java-course/blob/main/Collections/README.adoc[Collections]: Iterator, Iterable, Collection, Set, List; exercices “defining iterables” and “using collections” (especially 10.2)
 * Unit testing https://github.com/oliviercailloux/java-course/blob/main/JUnit/Exercice.adoc[exercice] about iterators
+* Collections
 
 [[S12]]
 == S12: 22 May
-// // 4 up to start S12, 3 after S14, S15, S16, these three for projects thus 4.5 × 7 + 8
-// * Expected for projet
-// * Exercice: https://github.com/oliviercailloux-org/ex-colors[colors]. Implement the class CyclingColors as documented (skip for now the methods that involve unknown types).
-// // TODO @ home: finish all those exercices
+* Maps
 
 [[S13]]
 == S13: 22 May
