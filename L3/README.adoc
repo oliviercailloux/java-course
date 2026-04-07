@@ -107,7 +107,7 @@ Finish exercices of today’s program (and previous ones if not done already).
 
 [[S9]]
 == S9: 8 April
-* Graded exercice.
+* Graded exercice: https://classroom.github.com/a/fef79c78[countries]. Implement both interfaces, as documented in their contracts and in the test classes.
 // * Exercice: Car (see Objects & interfaces)
 * Polymorphism: inheritance; SimpleCar
 * Exercices: Car extension; Coffee
