@@ -107,7 +107,7 @@ Finish exercices of today’s program (and previous ones if not done already).
 
 [[S9]]
 == S9: 8 April
-* Graded exercice: https://classroom.github.com/a/fef79c78[countries]. Implement both interfaces, as documented in their contracts and in the test classes.
+* Graded exercice: https://classroom.github.com/a/fef79c78[countries]. Implement both interfaces, as documented in their contracts and in the test classes. Deadline: 15h10 (plus 10 minutes with penalty).
 * More about https://github.com/oliviercailloux/java-course/blob/main/Syntax/Inheritance.adoc[inheritance] and information hiding
 * Use of `this`
 * The `Object` class and its methods: `toString()`, `equals`, `hashcode`. Exercice: Car string; https://github.com/oliviercailloux/java-course/blob/main/Objects%20%26%20interfaces/Equals.adoc[Equality and hash codes]
