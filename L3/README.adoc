@@ -100,10 +100,10 @@ Finish Exercices up to 5.3, Three dice, and Two players.
 * Java Interfaces. Exercice: I like to move it move it; 421; Car
 * https://github.com/oliviercailloux/java-course/blob/main/Maven/README.adoc[Maven] (optional)
 // * Graded exercice: https://github.com/oliviercailloux/java-course/blob/main/L3/Mvni.adoc[mvni]. Deadline: 15:00, plus 15 minutes max with penalty.
-* Before end of 5 April: second chance Books (optional). Weight new is (13 - _l_)/20 with _l_ the number of modified lines. See Git / Graded exercices / Trying again.
 
 TODO @ home.
-Finish exercices of today’s program (and previous ones if not done already).
+* Before end of 5 April: second chance Books (optional). Weight new is (13 - _l_)/20 with _l_ the number of modified lines. See Git / Graded exercices / Trying again.
+* Finish exercices of today’s program (and previous ones if not done already).
 
 [[S9]]
 == S9: 8 April
@@ -123,6 +123,9 @@ Finish exercices of today’s program (and previous ones if not done already).
 // * https://github.com/oliviercailloux/java-course/blob/main/Objects%20%26%20interfaces/README.adoc#checked-exceptions[Exceptions], exercices
 * Unit testing https://github.com/oliviercailloux/java-course/blob/main/JUnit/Exercice.adoc[exercice] about iterators
 * Collections
+
+TODO @ home.
+* Before end of 18 May: second chance Countries (optional). Weight new is (13 - _l_ / 3)/20 with _l_ the number of modified lines. See Git / Graded exercices / Trying again.
 
 [[S12]]
 == S12: 22 May
