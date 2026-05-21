@@ -39,9 +39,16 @@ For this course, use by default: `ArrayList` / `ImmutableList`; `LinkedHashSet` 
 //.. (micro) pas de comparaison à `true` (`if(isBig == true)`)
 //.. vous arrivez à voir le résultat de votre code javadoc (exemple: `@param truc of type String` inutile)
 
-== Maps and comparators
+== Maps
 More info: https://math.hws.edu/eck/cs124/javanotes7/c10/[ES10.3] to 10.5, https://math.hws.edu/eck/cs124/javanotes7/c8/[ES8] intro to 8.4, Airiau https://www.lamsade.dauphine.fr/~airiau/Teaching/L3-Java/cours6.pdf[C6]
 
+Exercice:
+
+* Write a static method that takes a `String` (supposedly, a sentence) as parameter, and returns a `Map<String, Integer>` that associates each word in the sentence to the number of times it appears in the sentence. For example, if the input is “the cat and the hat”, the output is a map associating “the” to 2, “cat” to 1, “and” to 1, and “hat” to 1. You can suppose that words are separated by spaces, and that there is no punctuation. Use Java maps and interfaces appropriately.
+* Transform your static method into an instance method with no parameter. The String parameter is now a member of the instance.
+* Using an `ImmutableMap` (see the Guava doc), invert the map. Why do you now get collections as values? Use this technique to create methods that return the word seen only once (if there is a single such word), the word seen the most, and the set of words that are repeated.
+
+== Maps and comparators
 Exercice:
 
 * Define an interface `EasyMap` with two methods: a method that puts a pair of key (`String`, the last name of a person, here supposed to be unique) and value (`Person`, having a first name and a last name) into a map, and a method that returns an `Optional` containing the value corresponding to the given key (parameter of the method) or that returns an empty `Optional` if there is no such value. Implement this interface in a class `EasyMapImpl`. Provide a static factory method in the interface `EasyMap` (it declares that it returns an `EasyMap`, and does it by instanciating your `EasyMapImpl`). Make sure that all the constructors of `EasyMapImpl` are private. Minimize the number of lines of code (but not at the price of readability). Note that this exercice implements a part of the https://en.wikipedia.org/wiki/Forwarding_(object-oriented_programming)[forwarding] pattern.
