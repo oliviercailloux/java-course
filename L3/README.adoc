@@ -142,7 +142,8 @@ TODO @ home.
 (thus, they may not explicitly refer to your supplementary methods, if you have added some).
 ** Any missing indication in the statement: you can implement in any reasonable way of your choice.
 I will not provide supplementary details or hints. 
-** Deadline: 15h45 (plus 5 minutes max with penalty).
+** Deadline: 15h46 (plus 5 minutes max with penalty).
+** Finished early? Follow the https://github.com/oliviercailloux/java-course/blob/main/Git/Graded%20exercices.adoc[instructions] and wait for my permission before leaving.
 
 * Conclusion and https://i0.wp.com/jonathanbecher.com/wp-content/uploads/2010/05/org-view-by-tree1.png[the alignment problem] (https://www.businessballs.com/amusement-stress-relief/tree-swing-cartoon-pictures-early-versions/[history])
 * https://github.com/oliviercailloux/java-course/raw/refs/heads/main/L3/Appr%C3%A9ciation%20Java.odt[Appréciation du cours]
